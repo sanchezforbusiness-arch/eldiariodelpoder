@@ -3,8 +3,8 @@ import g1 from "@/assets/guest-1.jpg";
 import g5 from "@/assets/guest-5.jpg";
 
 const episodes = [
-  { n: "EP. 02", guest: "José María Aznar", title: "Liderazgo, Estado y la responsabilidad de gobernar", img: g1, dur: "1h 12m", url: "https://youtu.be/ZydPM-xkYvA" },
-  { n: "EP. 01", guest: "Guillermo Lasso", title: "Gestión de crisis y visión de país", img: g5, dur: "1h 04m", url: "https://youtu.be/2XZuIBfyBH0" },
+  { n: "EP. 02", guest: "José María Aznar", title: "Liderazgo, Estado y la responsabilidad de gobernar", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
+  { n: "EP. 01", guest: "Guillermo Lasso", title: "Gestión de crisis y visión de país", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
 ];
 
 export function Episodes() {
@@ -57,7 +57,6 @@ export function Episodes() {
                     <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                     Nuevo
                   </span>
-                  <span>{e.dur}</span>
                 </div>
                 <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full border border-gold flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm bg-background/40">
                   <Play size={16} className="fill-current ml-0.5" />
