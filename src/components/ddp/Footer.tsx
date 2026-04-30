@@ -23,9 +23,10 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#top" className="hover:text-foreground transition-colors">Home</a></li>
-              <li><a href="#episodes" className="hover:text-foreground transition-colors">Episodios</a></li>
+              <li><a href="#manifesto" className="hover:text-foreground transition-colors">Manifiesto</a></li>
               <li><a href="#guests" className="hover:text-foreground transition-colors">Invitados</a></li>
+              <li><a href="#episodes" className="hover:text-foreground transition-colors">Episodios</a></li>
+              <li><a href="#club" className="hover:text-foreground transition-colors">Club del Poder</a></li>
               <li><a href="#sponsors" className="hover:text-foreground transition-colors">Sponsors</a></li>
               <li><a href="#team" className="hover:text-foreground transition-colors">Equipo</a></li>
             </ul>

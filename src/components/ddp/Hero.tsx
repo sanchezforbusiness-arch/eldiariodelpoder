@@ -1,10 +1,10 @@
 import heroImg from "@/assets/hero-studio.jpg";
 import { ArrowUpRight, Play } from "lucide-react";
 
-const stats = [
-  { v: "+50K", l: "Comunidad" },
-  { v: "Top 10", l: "Spotify ES · Negocios" },
-  { v: "+1M", l: "Reproducciones" },
+const anchors = [
+  { v: "Madrid", l: "Estudio editorial" },
+  { v: "Sin guion", l: "Conversaciones de fondo" },
+  { v: "C-Suite", l: "Audiencia directiva" },
 ];
 
 export function Hero() {
@@ -58,9 +58,9 @@ export function Hero() {
           </div>
 
           <div className="mt-16 grid grid-cols-3 gap-6 sm:gap-10 max-w-xl border-t border-border/60 pt-8">
-            {stats.map((s) => (
+            {anchors.map((s) => (
               <div key={s.l}>
-                <div className="font-serif text-3xl md:text-4xl text-gold leading-none">{s.v}</div>
+                <div className="font-serif text-xl md:text-2xl text-gold italic leading-none">{s.v}</div>
                 <div className="mt-2 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-muted-foreground leading-snug">{s.l}</div>
               </div>
             ))}
