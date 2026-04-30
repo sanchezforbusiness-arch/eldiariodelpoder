@@ -55,7 +55,7 @@ export function Club() {
 
         <div className="mt-14 text-center">
           <a
-            href="mailto:contactoeldiariodelpoder@gmail.com?subject=Únete%20al%20Club%20del%20Poder"
+            href="#newsletter"
             className="inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors"
           >
             Únete a la Comunidad →
