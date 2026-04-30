@@ -2,7 +2,6 @@ import heroImg from "@/assets/hero-studio.jpg";
 import { ArrowUpRight, Play } from "lucide-react";
 
 const anchors = [
-  { v: "Madrid", l: "Estudio editorial" },
   { v: "Sin guion", l: "Conversaciones de fondo" },
   { v: "C-Suite", l: "Audiencia directiva" },
 ];
@@ -57,7 +56,7 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 gap-6 sm:gap-10 max-w-xl border-t border-border/60 pt-8">
+          <div className="mt-16 grid grid-cols-2 gap-6 sm:gap-10 max-w-md border-t border-border/60 pt-8">
             {anchors.map((s) => (
               <div key={s.l}>
                 <div className="font-serif text-xl md:text-2xl text-gold italic leading-none">{s.v}</div>
@@ -69,7 +68,7 @@ export function Hero() {
 
         <div className="absolute bottom-10 left-6 md:left-10 right-6 md:right-10 flex items-end justify-between text-muted-foreground">
           <div className="hidden md:block text-[11px] tracking-[0.3em] uppercase">
-            Madrid · Conversaciones de fondo
+            Conversaciones de fondo · ES
           </div>
           <div className="text-[11px] tracking-[0.3em] uppercase ml-auto">
             Scroll <span className="text-gold">↓</span>
