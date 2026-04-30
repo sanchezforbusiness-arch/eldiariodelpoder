@@ -25,9 +25,10 @@ const advisors = [
   {
     name: "Federica Ilaria Fornaciari",
     role: "Advisor · Estrategia & Marca",
-    bio: "CEO & Founder de SenYours Consulting y NOBRAINER M&A. Board Member en WAM Global y AR Hotels. Forbes Top 100, ex Bain, profesora en IE, IESE y Bocconi. 17+ años entre consultoría, lujo, media y transformación.",
+    bio: "Founder & CEO de SenYours Consulting y NoBrainer Partners. Ex-Bain & Company, con 17+ años entre consultoría estratégica, lujo, telco, tecnología y media en Italia y España. Board member, asesora de C-suite y operadora de M&A cross-border. Profesora en IE, IESE y Bocconi — siete Best Professor Awards consecutivos. Autora académica del modelo IES–BBPP de liderazgo relacional y de The CEO as a Brand Operating System (2026). Conferenciante habitual en Forbes Summit, IESE Next y Business Insider.",
     img: g8,
     ln: "https://www.linkedin.com/in/federica-ilaria-fornaciari-mba",
+    pills: ["Forbes Top 100", "7× Best Professor", "IE · IESE · Bocconi", "Ex-Bain", "Board · WAM · AR Hotels"],
   },
   {
     name: "Iñigo Rivero Iruretagoyena",
@@ -38,7 +39,7 @@ const advisors = [
   },
 ];
 
-function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string } }) {
+function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string; pills?: string[] } }) {
   return (
     <article className="group">
       <div className="relative aspect-[4/5] overflow-hidden bg-card mb-6">
@@ -62,6 +63,15 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
         </a>
       </div>
       <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-md">{m.bio}</p>
+      {m.pills && (
+        <div className="mt-4 flex flex-wrap gap-2 max-w-md">
+          {m.pills.map((p) => (
+            <span key={p} className="text-[10px] tracking-[0.18em] uppercase text-gold/90 border border-gold/40 px-2.5 py-1">
+              {p}
+            </span>
+          ))}
+        </div>
+      )}
     </article>
   );
 }

@@ -15,7 +15,7 @@ const guests = [
   { name: "Iván Duque", role: "Expresidente de Colombia", img: g2 },
   { name: "Martín Sellés", role: "CEO Johnson & Johnson", img: g6 },
   { name: "Esperanza Aguirre", role: "Expresidenta C. de Madrid", img: g7 },
-  { name: "Federica I. Fornaciari", role: "Advisor de Forbes · Empresaria", img: g8 },
+  { name: "Federica I. Fornaciari", role: "CEO & Founder · Estratega de marca", img: g8 },
 ];
 
 export function Guests() {
