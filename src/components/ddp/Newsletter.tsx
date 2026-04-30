@@ -41,7 +41,7 @@ export function Newsletter() {
             Novedades, contenido exclusivo y oportunidades para ser parte de nuestro ecosistema.
           </p>
           <p className="mt-4 text-[11px] tracking-[0.28em] uppercase text-gold/80">
-            +5.000 lectores · Sin spam · Cancela cuando quieras
+            Conversaciones, criterio &amp; legado · Sin spam · Cancela cuando quieras
           </p>
 
           {sent ? (

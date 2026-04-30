@@ -6,12 +6,6 @@ const sponsors = [
   { name: "Metalabs", tag: "Tecnología" },
 ];
 const partners = ["Forbes España", "La Vanguardia", "ABC"];
-const kpis = [
-  { v: "+50K", l: "Comunidad activa multiplataforma" },
-  { v: "+1M", l: "Reproducciones acumuladas" },
-  { v: "7/10", l: "Audiencia directiva & C-suite" },
-  { v: "Top 10", l: "Spotify España · Negocios" },
-];
 const indirect = [
   { t: "Menciones editoriales", d: "Forbes, La Vanguardia, ABC y prensa especializada han hablado del Diario en T1." },
   { t: "Acceso C-suite", d: "Cada episodio abre la puerta a una red de C-Level — sponsors invitados a la mesa antes de la grabación." },
@@ -52,21 +46,11 @@ export function Sponsors() {
             + and more → <span className="text-gold/90">Cupos abiertos para nuevos aliados</span>
           </p>
 
-          {/* KPIs */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
-            {kpis.map((k) => (
-              <div key={k.l} className="bg-background py-10 px-5 text-center">
-                <div className="font-serif text-3xl md:text-4xl text-gold">{k.v}</div>
-                <div className="mt-2 text-[11px] tracking-[0.22em] uppercase text-muted-foreground leading-tight">{k.l}</div>
-              </div>
-            ))}
-          </div>
-
           {/* Lo que no se ve en los KPIs */}
           <div className="mt-20">
             <div className="flex items-center gap-3 mb-8 justify-center">
               <span className="h-px w-6 bg-gold/60" />
-              <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">Lo que no se ve en los KPIs</span>
+              <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">El valor que no se mide en métricas</span>
               <span className="h-px w-6 bg-gold/60" />
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
