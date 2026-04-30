@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
 
 const links = [
-  { href: "#about", label: "Sobre" },
+  { href: "#manifesto", label: "Manifiesto" },
   { href: "#guests", label: "Invitados" },
   { href: "#episodes", label: "Episodios" },
+  { href: "#club", label: "Club" },
   { href: "#sponsors", label: "Sponsors" },
   { href: "#team", label: "Equipo" },
-  { href: "#contact", label: "Contacto" },
 ];
 
 export function Navbar() {

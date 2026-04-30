@@ -1,5 +1,24 @@
-const sponsors = ["Metlabs", "Senyours Consulting", "Nobrainer", "Pateberg"];
-const partners = ["Forbes España", "La Vanguardia"];
+const sponsors = [
+  { name: "NoBrainer Partners", tag: "M&A · Advisory" },
+  { name: "Le Jeune Asesores & Economistas", tag: "Legal · Patrimonios" },
+  { name: "Pateberg", tag: "Capital privado" },
+  { name: "SenYours Consulting", tag: "Estrategia · Marca" },
+  { name: "Metalabs", tag: "Tecnología" },
+];
+const partners = ["Forbes España", "La Vanguardia", "ABC"];
+const kpis = [
+  { v: "+50K", l: "Comunidad activa multiplataforma" },
+  { v: "+1M", l: "Reproducciones acumuladas" },
+  { v: "7/10", l: "Audiencia directiva & C-suite" },
+  { v: "Top 10", l: "Spotify España · Negocios" },
+];
+const indirect = [
+  { t: "Menciones editoriales", d: "Forbes, La Vanguardia, ABC y prensa especializada han hablado del Diario en T1." },
+  { t: "Acceso C-suite", d: "Cada episodio abre la puerta a una red de C-Level — sponsors invitados a la mesa antes de la grabación." },
+  { t: "Alcance LinkedIn", d: "Los invitados comparten el episodio en sus redes. Multiplicador medio: 3,5× sobre la audiencia base." },
+  { t: "Doble evento anual", d: "120–150 asistentes presenciales en cada cita, prensa especializada y derivadas en formato vídeo / píldora." },
+  { t: "Forbes House & ecosistema", d: "Asociación natural a la red Forbes Spain Media y futuras integraciones con plataforma media nacional." },
+];
 
 export function Sponsors() {
   return (
@@ -8,32 +27,65 @@ export function Sponsors() {
         <div>
           <div className="flex items-center gap-3 mb-6 justify-center">
             <span className="h-px w-8 bg-gold" />
-            <span className="eyebrow">Colaboradores</span>
+            <span className="eyebrow">Aliados editoriales</span>
             <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-center leading-tight max-w-3xl mx-auto">
-            Marcas que comparten nuestra visión de <span className="italic text-gold">prestigio y criterio</span>.
+            Marcas con <span className="italic text-gold">criterio</span> asociadas al ecosistema.
           </h2>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border border-border">
             {sponsors.map((s) => (
               <div
-                key={s}
-                className="bg-background py-12 px-6 flex items-center justify-center text-center group hover:bg-card transition-colors"
+                key={s.name}
+                className="bg-background py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card transition-colors min-h-[140px]"
               >
-                <span className="font-serif text-xl md:text-2xl text-muted-foreground group-hover:text-gold transition-colors">
-                  {s}
+                <span className="font-serif text-lg md:text-xl text-foreground/85 group-hover:text-gold transition-colors leading-tight">
+                  {s.name}
                 </span>
+                <span className="mt-2 text-[10px] tracking-[0.22em] uppercase text-muted-foreground">{s.tag}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <p className="mt-6 text-center text-sm italic text-muted-foreground">
+            + and more → <span className="text-gold/90">Cupos abiertos para nuevos aliados</span>
+          </p>
+
+          {/* KPIs */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
+            {kpis.map((k) => (
+              <div key={k.l} className="bg-background py-10 px-5 text-center">
+                <div className="font-serif text-3xl md:text-4xl text-gold">{k.v}</div>
+                <div className="mt-2 text-[11px] tracking-[0.22em] uppercase text-muted-foreground leading-tight">{k.l}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Lo que no se ve en los KPIs */}
+          <div className="mt-20">
+            <div className="flex items-center gap-3 mb-8 justify-center">
+              <span className="h-px w-6 bg-gold/60" />
+              <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">Lo que no se ve en los KPIs</span>
+              <span className="h-px w-6 bg-gold/60" />
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {indirect.map((i) => (
+                <div key={i.t} className="border border-border p-6 hover:border-gold/40 transition-colors">
+                  <div className="text-gold mb-3">★</div>
+                  <h4 className="font-serif text-lg leading-snug mb-2">{i.t}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{i.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
             <a
-              href="mailto:contactoeldiariodelpoder@gmail.com"
-              className="inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-gold border-b border-gold/40 hover:border-gold pb-1 transition-colors"
+              href="mailto:contactoeldiariodelpoder@gmail.com?subject=Solicitar%20Media%20Kit%20—%20Diario%20del%20Poder"
+              className="inline-flex items-center gap-2 px-6 py-3 text-[12px] tracking-[0.22em] uppercase border border-gold text-gold hover:bg-gold hover:text-gold-foreground transition-all"
             >
-              ¿Quieres colaborar con nosotros? →
+              Solicitar Media Kit →
             </a>
           </div>
         </div>

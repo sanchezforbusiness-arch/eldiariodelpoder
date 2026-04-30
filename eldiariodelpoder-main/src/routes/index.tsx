@@ -2,10 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
 import { About } from "@/components/ddp/About";
+import { Manifesto } from "@/components/ddp/Manifesto";
+import { DosVoces } from "@/components/ddp/DosVoces";
 import { Guests } from "@/components/ddp/Guests";
 import { PullQuote } from "@/components/ddp/PullQuote";
 import { Episodes } from "@/components/ddp/Episodes";
+import { Formatos } from "@/components/ddp/Formatos";
+import { Avanguardia } from "@/components/ddp/Avanguardia";
 import { WhyDDP } from "@/components/ddp/WhyDDP";
+import { Club } from "@/components/ddp/Club";
+import { Pildoras } from "@/components/ddp/Pildoras";
 import { Sponsors } from "@/components/ddp/Sponsors";
 import { Team } from "@/components/ddp/Team";
 import { Newsletter } from "@/components/ddp/Newsletter";
@@ -37,11 +43,17 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <Manifesto />
         <About />
+        <DosVoces />
         <Guests />
         <PullQuote />
         <Episodes />
+        <Formatos />
+        <Avanguardia />
         <WhyDDP />
+        <Club />
+        <Pildoras />
         <Sponsors />
         <Team />
         <Newsletter />

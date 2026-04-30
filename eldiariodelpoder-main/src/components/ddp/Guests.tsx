@@ -15,7 +15,18 @@ const guests = [
   { name: "Iván Duque", role: "Expresidente de Colombia", img: g2 },
   { name: "Martín Sellés", role: "CEO Johnson & Johnson", img: g6 },
   { name: "Esperanza Aguirre", role: "Expresidenta C. de Madrid", img: g7 },
-  { name: "Federica I. Fornaciari", role: "Advisor de Forbes · Empresaria", img: g8 },
+  { name: "Federica I. Fornaciari", role: "CEO & Founder · Estratega de marca", img: g8 },
+];
+
+const upcoming = [
+  { name: "Elena Gil Lizasoain", role: "Consejera independiente · Top Voice Tecnología" },
+  { name: "Carmen Fernández de Alarcón", role: "CEO · Liderazgo femenino" },
+  { name: "Maite Aranzabal", role: "Top Voice Consejos · Retail" },
+  { name: "Luis Huete", role: "Global Top Voice · Coaching ejecutivo" },
+  { name: "Giuseppe Stigliano", role: "Global Top Voice · Liderazgo" },
+  { name: "Iñigo Ugarte", role: "Politics, lobbying & entrepreneurship" },
+  { name: "Alma Vázquez", role: "C-Level Communication · Havas" },
+  { name: "Sergio de León", role: "CEO & Marketing voice" },
 ];
 
 export function Guests() {
@@ -60,6 +71,21 @@ export function Guests() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-24">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="h-px w-6 bg-gold/60" />
+            <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">Los que vendrán</span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+            {upcoming.map((u) => (
+              <div key={u.name} className="bg-background p-6 hover:bg-card transition-colors">
+                <h4 className="font-serif text-lg leading-snug">{u.name}</h4>
+                <p className="mt-2 text-[10px] tracking-[0.22em] uppercase text-muted-foreground">{u.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
