@@ -1,5 +1,6 @@
 import heroImg from "@/assets/hero-studio.jpg";
 import { ArrowUpRight, Play } from "lucide-react";
+import { GuestsMarquee } from "./GuestsMarquee";
 
 const anchors = [
   { v: "Sin guion", l: "Conversaciones de fondo" },
@@ -79,6 +80,14 @@ export function Hero() {
             Scroll <span className="text-gold bounce-down">↓</span>
           </div>
         </div>
+      </div>
+
+      {/* Guest names marquee — DOAC-inspired credibility band */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border/40 bg-background/40 backdrop-blur-sm">
+        <div className="text-center pt-4 pb-1 text-[10px] tracking-[0.3em] uppercase text-gold/80">
+          Han pasado por la mesa
+        </div>
+        <GuestsMarquee />
       </div>
     </section>
   );
