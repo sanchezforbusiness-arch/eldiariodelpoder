@@ -19,19 +19,25 @@ const guests = [
 ];
 
 export function Guests() {
+  const loop = [...guests, ...guests];
   return (
     <section id="guests" className="relative py-24 md:py-36 border-t border-border bg-card/20 overflow-hidden">
-      <div className="container-ddp relative">
-        <div className="mb-12 md:mb-16 max-w-3xl">
+      <div className="container-ddp relative mb-12 md:mb-16">
+        <div className="max-w-3xl">
           <span className="eyebrow block mb-5">Invitados</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
             Gente que ha estado <span className="italic text-gold">donde se decide</span>.
           </h2>
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-          {guests.map((g) => (
-            <article key={g.name} className="group relative bg-background aspect-[4/5] overflow-hidden">
+      <div className="relative overflow-hidden mask-fade-x">
+        <div className="marquee gap-4 md:gap-5">
+          {loop.map((g, i) => (
+            <article
+              key={i}
+              className="group relative shrink-0 w-[230px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden bg-background"
+            >
               <img
                 src={g.img}
                 alt={g.name}
