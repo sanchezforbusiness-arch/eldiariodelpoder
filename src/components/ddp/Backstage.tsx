@@ -10,29 +10,26 @@ import urbea from "@/assets/bts-jordi-urbea-talk.jpg";
 import osasuna from "@/assets/bts-osasuna.jpg";
 
 const shots = [
-  { src: aznarFaes, alt: "Con José María Aznar en FAES", caption: "Con Aznar · FAES, Madrid", span: "md:col-span-2 md:row-span-2" },
-  { src: andres, alt: "Con Andrés Rodríguez", caption: "Andrés Rodríguez · Forbes" },
-  { src: lasso, alt: "Con Guillermo Lasso", caption: "Guillermo Lasso · Quito" },
-  { src: aznarFirma, alt: "Aznar firmando un libro", caption: "Backstage · FAES" },
+  { src: aznarFaes, alt: "Con José María Aznar en FAES", caption: "Aznar · FAES", span: "md:col-span-2 md:row-span-2" },
+  { src: andres, alt: "Con Andrés Rodríguez", caption: "Andrés Rodríguez" },
+  { src: lasso, alt: "Con Guillermo Lasso", caption: "Lasso · Quito" },
+  { src: aznarFirma, alt: "Aznar firmando", caption: "Backstage" },
   { src: monitor, alt: "Monitor de grabación", caption: "On set" },
-  { src: mikelPalco, alt: "Grabación con Mikel Echavarren en el Metropolitano", caption: "Con Mikel · Palco VIP, Metropolitano", span: "md:col-span-2" },
-  { src: hostsPalco, alt: "Alejandro y Víctor en el palco", caption: "Hosts · Metropolitano" },
-  { src: metropolitano, alt: "Estadio Cívitas Metropolitano vacío", caption: "Cívitas Metropolitano" },
-  { src: urbea, alt: "Jordi Urbea en el evento con Osasuna", caption: "Jordi Urbea · CEO Ogilvy" },
-  { src: osasuna, alt: "Evento con Club Atlético Osasuna", caption: "Evento DDP × Osasuna", span: "md:col-span-2" },
+  { src: mikelPalco, alt: "Con Mikel Echavarren en el Metropolitano", caption: "Mikel · Metropolitano", span: "md:col-span-2" },
+  { src: hostsPalco, alt: "Alejandro y Víctor en el palco", caption: "Hosts" },
+  { src: metropolitano, alt: "Estadio Cívitas Metropolitano", caption: "Cívitas Metropolitano" },
+  { src: urbea, alt: "Jordi Urbea de Ogilvy", caption: "Jordi Urbea · Ogilvy" },
+  { src: osasuna, alt: "Evento con Osasuna", caption: "DDP × Osasuna", span: "md:col-span-2" },
 ];
 
 export function Backstage() {
   return (
-    <section id="backstage" className="py-28 md:py-40 border-t border-border">
+    <section id="backstage" className="py-24 md:py-36 border-t border-border">
       <div className="container-ddp">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-gold" />
-              <span className="eyebrow">Detrás de cámara</span>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+            <span className="eyebrow block mb-5">Detrás de cámara</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
               Lo que pasa <span className="italic text-gold">fuera</span> del plano.
             </h2>
           </div>
@@ -43,17 +40,14 @@ export function Backstage() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-3 md:gap-4">
           {shots.map((s, i) => (
-            <figure
-              key={i}
-              className={`group relative overflow-hidden bg-card border border-border ${s.span ?? ""}`}
-            >
+            <figure key={i} className={`group relative overflow-hidden bg-card ${s.span ?? ""}`}>
               <img
                 src={s.src}
                 alt={s.alt}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-[1.04] transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 p-4 text-[10px] md:text-[11px] tracking-[0.22em] uppercase text-gold/90">
                 {s.caption}
               </figcaption>

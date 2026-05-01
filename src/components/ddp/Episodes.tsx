@@ -4,30 +4,27 @@ import g5 from "@/assets/guest-5.jpg";
 import gEchavarren from "@/assets/guest-echavarren.jpg";
 
 const episodes = [
-  { n: "EP. 03", guest: "Mikel Echavarren", title: "Real estate, ciclos y la nueva geografía del capital", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8" },
-  { n: "EP. 02", guest: "José María Aznar", title: "Liderazgo, Estado y la responsabilidad de gobernar", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
-  { n: "EP. 01", guest: "Guillermo Lasso", title: "Gestión de crisis y visión de país", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
+  { n: "03", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8", isNew: true },
+  { n: "02", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
+  { n: "01", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
 ];
 
 export function Episodes() {
   return (
-    <section id="episodes" className="py-28 md:py-40">
+    <section id="episodes" className="py-24 md:py-36 border-t border-border">
       <div className="container-ddp">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-gold" />
-              <span className="eyebrow">El Podcast</span>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-              Últimos <span className="italic text-gold">episodios</span>
+            <span className="eyebrow block mb-5">Episodios</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+              Lo último que hemos <span className="italic text-gold">grabado</span>.
             </h2>
           </div>
           <a
             href="https://www.youtube.com/@eldiariodelpoder"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-gold hover:text-foreground transition-colors"
+            className="group inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-foreground/70 hover:text-gold transition-colors self-start md:self-end"
           >
             Ver todos
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -36,14 +33,8 @@ export function Episodes() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {episodes.map((e) => (
-            <a
-              key={e.n}
-              href={e.url}
-              target="_blank"
-              rel="noreferrer"
-              className="group block"
-            >
-              <div className="relative aspect-video overflow-hidden bg-card border border-border hover-lift">
+            <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
+              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift">
                 <img
                   src={e.img}
                   alt={e.guest}
@@ -52,36 +43,33 @@ export function Episodes() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
-                <div className="absolute top-4 left-4 text-[11px] tracking-[0.3em] uppercase text-gold">{e.n}</div>
-                <div className="absolute top-4 right-4 flex items-center gap-2 text-[11px] tracking-wide text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-1 border border-gold/50 text-gold text-[10px] tracking-[0.22em] uppercase">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                    Nuevo
-                  </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                <div className="absolute top-5 left-5 flex items-center gap-3">
+                  <span className="font-serif text-3xl text-gold/90">{e.n}</span>
+                  {e.isNew && (
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-gold border-l border-gold/50 pl-3">
+                      Nuevo
+                    </span>
+                  )}
                 </div>
-                <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full border border-gold flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm bg-background/40">
-                  <Play size={16} className="fill-current ml-0.5" />
+                <div className="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-gold text-gold-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Play size={14} className="fill-current ml-0.5" />
                 </div>
-              </div>
-              <div className="pt-5">
-                <p className="text-[11px] tracking-[0.22em] uppercase text-gold/90 mb-2">{e.guest}</p>
-                <h3 className="font-serif text-xl md:text-2xl leading-snug group-hover:text-gold transition-colors">
-                  {e.title}
-                </h3>
-                <p className="mt-3 inline-flex items-center gap-1.5 text-[11px] tracking-[0.22em] uppercase text-muted-foreground group-hover:text-gold transition-colors">
-                  Ver en YouTube <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </p>
+                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                  <p className="text-[11px] tracking-[0.22em] uppercase text-gold/90 mb-2">{e.guest}</p>
+                  <h3 className="font-serif text-2xl md:text-[1.7rem] leading-tight">
+                    {e.title}
+                  </h3>
+                </div>
               </div>
             </a>
           ))}
         </div>
 
-        <div className="mt-16 border border-dashed border-border/70 px-6 py-8 text-center">
-          <p className="text-[11px] tracking-[0.32em] uppercase text-gold mb-2">Próximamente</p>
-          <p className="font-serif text-xl md:text-2xl text-foreground/85">
-            Nuevos episodios con <span className="italic text-gold">Javier Tebas</span>, <span className="italic text-gold">Iván Duque</span>, <span className="italic text-gold">Andrés Rodríguez</span> y más.
-          </p>
+        <div className="mt-16 flex items-center gap-4 text-sm text-muted-foreground">
+          <span className="h-px flex-1 bg-border" />
+          <span>Pronto: <span className="text-gold/90">Javier Tebas · Iván Duque · Andrés Rodríguez</span></span>
+          <span className="h-px flex-1 bg-border" />
         </div>
       </div>
     </section>
