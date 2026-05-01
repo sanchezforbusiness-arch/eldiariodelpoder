@@ -6,38 +6,24 @@ const TikTok = (props: { size?: number }) => (
 
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-border bg-card/40">
-      <div className="container-ddp py-20">
+    <footer id="contact" className="border-t border-border bg-card/30">
+      <div className="container-ddp py-16 md:py-20">
         <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-5">
-            <div className="font-serif text-3xl text-gold">DDP</div>
-            <p className="mt-4 font-serif text-2xl md:text-3xl leading-snug max-w-md">
-              La voz del <span className="italic">legado</span>.
+          <div className="md:col-span-6">
+            <div className="font-serif text-3xl text-gold mb-5">DDP</div>
+            <p className="font-serif text-3xl md:text-4xl leading-snug max-w-md font-light">
+              Hablamos con <span className="italic">los que mandan</span>.
             </p>
-            <p className="mt-6 text-sm text-muted-foreground max-w-sm">
-              Conversaciones de fondo. Hecho en Madrid.
-            </p>
+            <p className="mt-5 text-sm text-muted-foreground">Hecho en Madrid.</p>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-3">
             <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><a href="#episodes" className="hover:text-foreground transition-colors">Episodios</a></li>
               <li><a href="#guests" className="hover:text-foreground transition-colors">Invitados</a></li>
-              <li><a href="#club" className="hover:text-foreground transition-colors">Club del Poder</a></li>
-              <li><a href="#sponsors" className="hover:text-foreground transition-colors">Sponsors</a></li>
+              <li><a href="#club" className="hover:text-foreground transition-colors">Club</a></li>
               <li><a href="#team" className="hover:text-foreground transition-colors">Equipo</a></li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Plataformas</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" className="hover:text-foreground">Spotify</a></li>
-              <li><a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" className="hover:text-foreground">YouTube</a></li>
-              <li><a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" className="hover:text-foreground">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" className="hover:text-foreground">LinkedIn</a></li>
-              <li><a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" className="hover:text-foreground">TikTok</a></li>
             </ul>
           </div>
 
@@ -56,11 +42,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-muted-foreground">
-          <p>© 2025 Diario del Poder · La voz del legado.</p>
+        <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-muted-foreground">
+          <p>© 2025 Diario del Poder</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground">Política de privacidad</a>
-            <a href="#" className="hover:text-foreground">Términos de uso</a>
+            <a href="#" className="hover:text-foreground">Privacidad</a>
+            <a href="#" className="hover:text-foreground">Términos</a>
           </div>
         </div>
       </div>
