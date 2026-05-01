@@ -16,6 +16,7 @@ import { Sponsors } from "@/components/ddp/Sponsors";
 import { Team } from "@/components/ddp/Team";
 import { Newsletter } from "@/components/ddp/Newsletter";
 import { Footer } from "@/components/ddp/Footer";
+import { MarqueeBand } from "@/components/ddp/MarqueeBand";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -46,6 +47,7 @@ function Index() {
       <main>
         <Hero />
         <Manifesto />
+        <MarqueeBand variant="solid" text="Diario del Poder" />
         <About />
         <DosVoces />
         <Guests />
@@ -53,6 +55,7 @@ function Index() {
         <Episodes />
         <Formatos />
         <Avanguardia />
+        <MarqueeBand variant="outline" text="Criterio sobre ruido" separator="—" />
         <WhyDDP />
         <Club />
         <Pildoras />
