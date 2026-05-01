@@ -31,16 +31,17 @@ const upcoming = [
 
 export function Guests() {
   return (
-    <section id="guests" className="py-28 md:py-40 border-t border-border bg-card/30">
-      <div className="container-ddp">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+    <section id="guests" className="relative py-28 md:py-40 border-t border-border bg-card/30 overflow-hidden">
+      <div className="gold-glow float-slower w-[600px] h-[600px] -top-40 -right-40 opacity-50" />
+      <div className="container-ddp relative">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 reveal">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-gold" />
+              <span className="accent-line w-8" />
               <span className="eyebrow">Invitados</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-2xl">
-              Hemos conversado con <span className="italic text-gold">líderes</span> como
+              Hemos conversado con <span className="italic shimmer-gold">líderes</span> como
             </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">

@@ -11,13 +11,13 @@ export function Pildoras() {
   return (
     <section id="pildoras" className="py-28 md:py-40 border-t border-border bg-card/30">
       <div className="container-ddp">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-16 reveal">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-gold" />
+            <span className="accent-line w-8" />
             <span className="eyebrow">Píldoras del Poder</span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-            Thought leadership, en <span className="italic text-gold">formato corto</span>.
+            Thought leadership, en <span className="italic shimmer-gold">formato corto</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
             Clips editoriales de 8–10 minutos donde una marca-aliada habla de un tema vertical desde su criterio, en el lenguaje del Diario y con la producción del Diario. Cada sponsor cuenta con su píldora trimestral, con identidad propia dentro de la marca paraguas DDP. No es publicidad: es <em className="text-foreground/90 italic">thought leadership</em>.

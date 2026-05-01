@@ -162,4 +162,91 @@
   .hover-lift:hover {
     transform: translateY(-4px);
   }
+
+  /* Soft pulsing gold light */
+  .gold-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    background: radial-gradient(circle, color-mix(in oklab, var(--color-gold-bright) 55%, transparent), transparent 70%);
+    animation: glow-pulse 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50%      { opacity: 0.7;  transform: scale(1.15); }
+  }
+
+  /* Floating drift for ambient lights */
+  .float-slow { animation: float-slow 14s ease-in-out infinite; }
+  @keyframes float-slow {
+    0%, 100% { transform: translate3d(0,0,0); }
+    50%      { transform: translate3d(0,-22px,0); }
+  }
+  .float-slower { animation: float-slow 22s ease-in-out infinite reverse; }
+
+  /* Gold shimmer sweep across text */
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      var(--color-gold) 0%,
+      var(--color-gold-bright) 35%,
+      #fff5d1 50%,
+      var(--color-gold-bright) 65%,
+      var(--color-gold) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Animated underline accent line */
+  .accent-line {
+    position: relative;
+    display: inline-block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold-bright), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 5s linear infinite;
+  }
+
+  /* Slow rotating light */
+  .spin-slow { animation: spin-slow 40s linear infinite; }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* Down-arrow bounce */
+  .bounce-down { animation: bounce-down 2.4s ease-in-out infinite; display: inline-block; }
+  @keyframes bounce-down {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50%      { transform: translateY(6px); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gold-glow, .float-slow, .float-slower, .shimmer-gold, .accent-line, .spin-slow, .bounce-down {
+      animation: none !important;
+    }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
 }

@@ -16,6 +16,7 @@ import { Sponsors } from "@/components/ddp/Sponsors";
 import { Team } from "@/components/ddp/Team";
 import { Newsletter } from "@/components/ddp/Newsletter";
 import { Footer } from "@/components/ddp/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +39,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useReveal();
   return (
     <div className="bg-background text-foreground">
       <Navbar />
