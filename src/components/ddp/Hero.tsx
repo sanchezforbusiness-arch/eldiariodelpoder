@@ -34,7 +34,7 @@ export function Hero() {
             <span className="italic shimmer-gold">del legado</span>.
           </h1>
 
-          <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-8 max-w-md text-base md:text-lg text-muted-foreground leading-relaxed">
             Conversaciones con expresidentes, CEOs y líderes que mueven el país.
           </p>
 
