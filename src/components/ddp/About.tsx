@@ -4,10 +4,9 @@ export function About() {
       <div className="container-ddp relative">
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="md:col-span-5">
-            <span className="eyebrow block mb-6">Qué hacemos</span>
+            <span className="eyebrow block mb-6">Quiénes somos</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Conversaciones <span className="italic text-gold">largas</span>.<br />
-              Sin prisa.
+              ¿Qué es <span className="italic text-gold">Diario<br />del Poder</span>?
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 reveal">
