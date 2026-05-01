@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
 import { About } from "@/components/ddp/About";
@@ -10,14 +11,16 @@ import { Episodes } from "@/components/ddp/Episodes";
 import { Formatos } from "@/components/ddp/Formatos";
 import { Avanguardia } from "@/components/ddp/Avanguardia";
 import { WhyDDP } from "@/components/ddp/WhyDDP";
-import { Club } from "@/components/ddp/Club";
-import { Pildoras } from "@/components/ddp/Pildoras";
-import { Sponsors } from "@/components/ddp/Sponsors";
-import { Team } from "@/components/ddp/Team";
-import { Newsletter } from "@/components/ddp/Newsletter";
-import { Footer } from "@/components/ddp/Footer";
 import { MarqueeBand } from "@/components/ddp/MarqueeBand";
 import { useReveal } from "@/hooks/use-reveal";
+
+// Below-the-fold sections — lazy-loaded to reduce initial JS bundle
+const Club = lazy(() => import("@/components/ddp/Club").then((m) => ({ default: m.Club })));
+const Pildoras = lazy(() => import("@/components/ddp/Pildoras").then((m) => ({ default: m.Pildoras })));
+const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
+const Team = lazy(() => import("@/components/ddp/Team").then((m) => ({ default: m.Team })));
+const Newsletter = lazy(() => import("@/components/ddp/Newsletter").then((m) => ({ default: m.Newsletter })));
+const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,13 +60,17 @@ function Index() {
         <Avanguardia />
         <MarqueeBand variant="outline" text="Criterio sobre ruido" separator="—" />
         <WhyDDP />
-        <Club />
-        <Pildoras />
-        <Sponsors />
-        <Team />
-        <Newsletter />
+        <Suspense fallback={<div style={{ minHeight: "200vh" }} />}>
+          <Club />
+          <Pildoras />
+          <Sponsors />
+          <Team />
+          <Newsletter />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
