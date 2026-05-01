@@ -7,27 +7,49 @@ import { useEffect } from "react";
 export function useReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
-    if (!els.length) return;
 
-    if (typeof IntersectionObserver === "undefined") {
-      els.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
+    let io: IntersectionObserver | null = null;
+    let cancelled = false;
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-    );
+    // Defer DOM queries + observer setup off the critical rendering path
+    // to avoid forced reflows during hydration / initial paint.
+    const schedule =
+      (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
+        .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
 
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const handle = schedule(() => {
+      if (cancelled) return;
+      const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+      if (!els.length) return;
+
+      if (typeof IntersectionObserver === "undefined") {
+        els.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+
+      io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io?.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      els.forEach((el) => io!.observe(el));
+    });
+
+    return () => {
+      cancelled = true;
+      const cancel = (window as unknown as {
+        cancelIdleCallback?: (h: number) => void;
+      }).cancelIdleCallback;
+      if (cancel) cancel(handle as number);
+      else window.clearTimeout(handle as number);
+      io?.disconnect();
+    };
   }, []);
 }
