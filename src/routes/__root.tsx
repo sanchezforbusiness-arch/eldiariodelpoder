@@ -2,6 +2,51 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 
 import appCss from "../styles.css?url";
 
+const SITE_URL = "https://eldiariodelpoder.com";
+const SITE_NAME = "Diario del Poder";
+const SITE_TITLE = "Diario del Poder — La voz del legado | Podcast";
+const SITE_DESCRIPTION =
+  "Diario del Poder es el podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido.";
+const SITE_IMAGE =
+  "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: SITE_IMAGE,
+      sameAs: [
+        "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
+        "https://www.youtube.com/@eldiariodelpoder",
+        "https://www.instagram.com/eldiariodelpoder/",
+        "https://www.linkedin.com/company/eldiariodelpoder",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "es-ES",
+    },
+    {
+      "@type": "PodcastSeries",
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      inLanguage: "es-ES",
+      image: SITE_IMAGE,
+      webFeed: "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
+    },
+  ],
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -29,20 +74,26 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Diario del Poder — La voz del legado" },
-      { name: "description", content: "Podcast premium con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido." },
-      { name: "author", content: "Diario del Poder" },
-      { property: "og:title", content: "Diario del Poder — La voz del legado" },
-      { property: "og:description", content: "Podcast premium con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido." },
+      { title: SITE_TITLE },
+      { name: "description", content: SITE_DESCRIPTION },
+      { name: "author", content: SITE_NAME },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "googlebot", content: "index, follow" },
+      { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast España, podcast política, podcast empresarial, CEOs, expresidentes, podcast premium, liderazgo" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: "es_ES" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:title", content: SITE_TITLE },
+      { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Diario del Poder — La voz del legado" },
-      { name: "twitter:description", content: "Podcast premium con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
+      { property: "og:image", content: SITE_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SITE_TITLE },
+      { name: "twitter:description", content: SITE_DESCRIPTION },
+      { name: "twitter:image", content: SITE_IMAGE },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
@@ -57,6 +108,12 @@ export const Route = createRootRoute({
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(structuredData),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -65,7 +122,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
