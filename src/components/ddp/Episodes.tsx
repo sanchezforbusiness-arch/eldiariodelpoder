@@ -4,9 +4,9 @@ import g5 from "@/assets/guest-5.jpg";
 import gEchavarren from "@/assets/guest-echavarren.jpg";
 
 const episodes = [
-  { n: "03", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8", isNew: true },
-  { n: "02", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
   { n: "01", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
+  { n: "02", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
+  { n: "03", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8", isNew: true },
 ];
 
 export function Episodes() {
