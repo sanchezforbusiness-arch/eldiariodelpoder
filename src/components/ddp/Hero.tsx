@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-studio.jpg";
+import heroImg from "@/assets/hero-studio.webp";
 import { ArrowUpRight, Play } from "lucide-react";
 import { GuestsMarquee } from "./GuestsMarquee";
 
@@ -15,6 +15,8 @@ export function Hero() {
         alt="Estudio de Diario del Poder"
         width={1920}
         height={1080}
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover opacity-55"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
