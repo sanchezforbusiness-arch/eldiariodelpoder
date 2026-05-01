@@ -34,19 +34,14 @@ export function Guests() {
     <section id="guests" className="relative py-28 md:py-40 border-t border-border bg-card/30 overflow-hidden">
       <div className="gold-glow float-slower w-[600px] h-[600px] -top-40 -right-40 opacity-50" />
       <div className="container-ddp relative">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 reveal">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="accent-line w-8" />
-              <span className="eyebrow">Invitados</span>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-2xl">
-              Hemos conversado con <span className="italic shimmer-gold">líderes</span> como
-            </h2>
+        <div className="mb-12 md:mb-16 reveal">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="accent-line w-8" />
+            <span className="eyebrow">Invitados</span>
           </div>
-          <p className="text-sm text-muted-foreground max-w-xs">
-            …y muchos otros referentes en política, empresa, medios y pensamiento estratégico.
-          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-2xl">
+            Han pasado por <span className="italic shimmer-gold">la mesa</span>.
+          </h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border">

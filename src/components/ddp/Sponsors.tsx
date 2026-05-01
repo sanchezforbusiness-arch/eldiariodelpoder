@@ -9,13 +9,6 @@ const sponsors = [
   { name: "Metalabs", tag: "Tecnología" },
 ];
 const partners = ["Forbes España", "La Vanguardia", "ABC"];
-const indirect = [
-  { t: "Menciones editoriales", d: "Forbes, La Vanguardia, ABC y prensa especializada ya han hablado del Diario." },
-  { t: "Acceso C-suite", d: "Sponsors invitados a la mesa antes de cada grabación." },
-  { t: "Alcance LinkedIn", d: "Los invitados comparten el episodio. Multiplicador medio: 3,5× la audiencia base." },
-  { t: "Doble evento anual", d: "120–150 asistentes por cita, con prensa y derivadas en vídeo y píldora." },
-  { t: "Forbes House & ecosistema", d: "Asociación natural con Forbes Spain Media y futuras integraciones nacionales." },
-];
 
 export function Sponsors() {
   const email = "contactoeldiariodelpoder@gmail.com";
@@ -38,7 +31,7 @@ export function Sponsors() {
         <div>
           <div className="flex items-center gap-3 mb-6 justify-center">
             <span className="h-px w-8 bg-gold" />
-            <span className="eyebrow">Aliados editoriales</span>
+            <span className="eyebrow">Sponsors</span>
             <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-center leading-tight max-w-3xl mx-auto">
@@ -63,25 +56,7 @@ export function Sponsors() {
             + and more → <span className="text-gold/90">Cupos abiertos para nuevos aliados</span>
           </p>
 
-          {/* Lo que no se ve en los KPIs */}
-          <div className="mt-20">
-            <div className="flex items-center gap-3 mb-8 justify-center">
-              <span className="h-px w-6 bg-gold/60" />
-              <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">Lo que no sale en las métricas</span>
-              <span className="h-px w-6 bg-gold/60" />
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {indirect.map((i) => (
-                <div key={i.t} className="border border-border p-6 hover:border-gold/40 transition-colors">
-                  <div className="text-gold mb-3">★</div>
-                  <h4 className="font-serif text-lg leading-snug mb-2">{i.t}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{i.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col items-center gap-4">
+          <div className="mt-16 flex flex-col items-center gap-4">
             {!revealed ? (
               <button
                 type="button"
@@ -129,10 +104,7 @@ export function Sponsors() {
             <span className="eyebrow">Media Partners</span>
             <span className="h-px w-8 bg-gold" />
           </div>
-          <p className="font-serif text-xl md:text-2xl text-center max-w-2xl mx-auto text-foreground/85 leading-snug">
-            Trabajamos con los medios de referencia.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-12 md:gap-20">
+          <div className="mt-10 flex flex-wrap justify-center gap-12 md:gap-20">
             {partners.map((p) => (
               <span key={p} className="font-serif text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors cursor-default">
                 {p}
