@@ -1,8 +1,10 @@
 import { Play, ArrowUpRight } from "lucide-react";
 import g1 from "@/assets/guest-1.jpg";
 import g5 from "@/assets/guest-5.jpg";
+import gEchavarren from "@/assets/guest-echavarren.jpg";
 
 const episodes = [
+  { n: "EP. 03", guest: "Mikel Echavarren", title: "Real estate, ciclos y la nueva geografía del capital", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8" },
   { n: "EP. 02", guest: "José María Aznar", title: "Liderazgo, Estado y la responsabilidad de gobernar", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
   { n: "EP. 01", guest: "Guillermo Lasso", title: "Gestión de crisis y visión de país", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
 ];
