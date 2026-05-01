@@ -104,6 +104,18 @@ export const Route = createRootRoute({
         crossOrigin: "anonymous",
       },
       {
+        rel: "preload",
+        as: "style",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap",
+        media: "print",
+        // Swap to all once loaded (non-render-blocking)
+        onLoad: "this.media='all'",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
