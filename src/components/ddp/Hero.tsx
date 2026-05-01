@@ -2,11 +2,6 @@ import heroImg from "@/assets/hero-studio.webp";
 import { ArrowUpRight, Play } from "lucide-react";
 import { GuestsMarquee } from "./GuestsMarquee";
 
-const anchors = [
-  { v: "Sin guion", l: "Conversaciones de fondo" },
-  { v: "C-Suite", l: "Audiencia directiva" },
-];
-
 export function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain pb-40 md:pb-44">
@@ -40,8 +35,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            Conversaciones con expresidentes, CEOs y líderes que están marcando
-            la conversación en política, empresa e instituciones.
+            Conversaciones con expresidentes, CEOs y líderes que mueven el país.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -63,14 +57,6 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 gap-6 sm:gap-10 max-w-md border-t border-border/60 pt-8">
-            {anchors.map((s) => (
-              <div key={s.l}>
-                <div className="font-serif text-xl md:text-2xl text-gold italic leading-none">{s.v}</div>
-                <div className="mt-2 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-muted-foreground leading-snug">{s.l}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
       </div>

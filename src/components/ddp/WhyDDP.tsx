@@ -1,8 +1,8 @@
 const pillars = [
-  { n: "I", t: "Perspectiva, no titular", d: "Conversaciones que se sostienen en el tiempo y dejan algo útil." },
-  { n: "II", t: "Invitados de verdad", d: "Personas que han tomado decisiones difíciles y saben contarlas." },
-  { n: "III", t: "Audiencia con propósito", d: "Profesionales y emprendedores que vienen a aprender, no a entretenerse." },
-  { n: "IV", t: "Producción seria", d: "Entrevistas cuidadas, sin guion comercial, en todas las plataformas." },
+  { n: "I", t: "Perspectiva", d: "Conversaciones que duran." },
+  { n: "II", t: "Invitados de verdad", d: "Han decidido cosas difíciles." },
+  { n: "III", t: "Audiencia con propósito", d: "Vienen a aprender." },
+  { n: "IV", t: "Producción cuidada", d: "Sin guion comercial." },
 ];
 
 export function WhyDDP() {

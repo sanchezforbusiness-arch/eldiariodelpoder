@@ -89,7 +89,7 @@ export function Team() {
             Detrás de cada <span className="italic text-gold">conversación</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Un equipo joven, rodeado de mentores y operadores con recorrido.
+            Equipo joven. Mentores con recorrido.
           </p>
         </div>
 

@@ -22,7 +22,7 @@ export function Club() {
             El poder, entendido como <span className="italic text-gold">servicio</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Poder es la capacidad de decidir bien y de dejar huella. El Club es donde la comunidad se encuentra para compartir, abrir puertas e influir en positivo.
+            Decidir bien y dejar huella. El Club es donde la comunidad se encuentra.
           </p>
         </div>
 
