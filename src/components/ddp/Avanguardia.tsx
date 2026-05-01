@@ -3,14 +3,14 @@ export function Avanguardia() {
     <section id="avanguardia" className="py-28 md:py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none" />
       <div className="container-ddp relative">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center reveal">
           <div className="inline-flex items-center gap-2 border border-gold/50 px-4 py-1.5 mb-8">
             <span className="text-gold">⚑</span>
             <span className="text-[11px] tracking-[0.3em] uppercase text-gold">Anuncio editorial</span>
           </div>
           <p className="eyebrow mb-4">Acuerdo cerrado · La Vanguardia</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1]">
-            El Diario del Poder se integra en <span className="italic text-gold">La Vanguardia</span>.
+            El Diario del Poder se integra en <span className="italic shimmer-gold">La Vanguardia</span>.
           </h2>
         </div>
 
