@@ -9,7 +9,7 @@ const anchors = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
+    <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain pb-40 md:pb-44">
       <img
         src={heroImg}
         alt="Estudio de Diario del Poder"
@@ -25,14 +25,14 @@ export function Hero() {
       <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-80" />
       <div className="gold-glow float-slow w-[360px] h-[360px] bottom-0 left-1/3" style={{ animationDelay: "-4s" }} />
 
-      <div className="container-ddp relative z-10 pt-32 pb-24">
+      <div className="container-ddp relative z-10 pt-32 pb-12">
         <div className="max-w-3xl fade-up">
           <div className="flex items-center gap-3 mb-8">
             <span className="accent-line w-10" />
             <span className="eyebrow">El Podcast · ES / 2025</span>
           </div>
 
-          <h1 className="font-serif text-[3.25rem] sm:text-6xl md:text-7xl lg:text-[6rem] xl:text-[7rem] leading-[0.95] tracking-[-0.02em]">
+          <h1 className="font-serif text-[3.5rem] sm:text-6xl md:text-7xl lg:text-[7rem] xl:text-[8rem] leading-[0.92] tracking-[-0.025em]">
             La voz<br />
             <span className="italic shimmer-gold">del legado</span>.
           </h1>
@@ -72,14 +72,6 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-6 md:left-10 right-6 md:right-10 flex items-end justify-between text-muted-foreground">
-          <div className="hidden md:block text-[11px] tracking-[0.3em] uppercase">
-            Conversaciones de fondo · ES
-          </div>
-          <div className="text-[11px] tracking-[0.3em] uppercase ml-auto">
-            Scroll <span className="text-gold bounce-down">↓</span>
-          </div>
-        </div>
       </div>
 
       {/* Guest names marquee — DOAC-inspired credibility band */}
