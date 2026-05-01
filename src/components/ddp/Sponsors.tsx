@@ -84,7 +84,7 @@ export function Sponsors() {
         </div>
 
         <div>
-          <p className="text-center text-[11px] tracking-[0.32em] uppercase text-gold/70 mb-8">Aparecemos en</p>
+          <p className="text-center text-[11px] tracking-[0.32em] uppercase text-gold/70 mb-8">MEDIA PARTNERS</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {partners.map((p) => (
               <span key={p} className="font-serif text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors cursor-default">
