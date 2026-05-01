@@ -8,7 +8,7 @@ const sponsors = [
   { name: "SenYours Consulting", tag: "Estrategia · Marca" },
   { name: "Metalabs", tag: "Tecnología" },
 ];
-const partners = ["Forbes España", "La Vanguardia", "ABC"];
+const partners = ["Forbes España", "La Vanguardia"];
 
 export function Sponsors() {
   const email = "contactoeldiariodelpoder@gmail.com";
