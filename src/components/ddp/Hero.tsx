@@ -40,9 +40,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            Conversaciones con expresidentes, CEOs y referentes del mundo político,
-            empresarial e institucional. Para una generación con ambición que busca
-            criterio, no ruido.
+            Conversaciones con expresidentes, CEOs y líderes que están marcando
+            la conversación en política, empresa e instituciones.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">

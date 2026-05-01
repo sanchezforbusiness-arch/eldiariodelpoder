@@ -1,12 +1,12 @@
 const pillars = [
-  { n: "I", t: "Criterio compartido", d: "Conversaciones cerradas con invitados del Diario y miembros del Club. Lo que no se dice en el podcast, se dice aquí." },
-  { n: "II", t: "Impacto, no etiqueta", d: "Una red de profesionales que entiende el poder como vehículo para construir, no como decoración. Mentoría real, oportunidades reales." },
-  { n: "III", t: "Legado en acción", d: "Encuentros físicos en Madrid, contenido exclusivo y acceso a los dos eventos anuales del Diario. Para una generación que quiere dejar huella." },
+  { n: "I", t: "Conversaciones cerradas", d: "Lo que no entra en el podcast, se queda aquí. Con invitados y miembros." },
+  { n: "II", t: "Red que construye", d: "Profesionales que usan el poder para hacer cosas. Mentoría y oportunidades reales." },
+  { n: "III", t: "Legado en acción", d: "Encuentros en Madrid, contenido exclusivo y acceso a los dos eventos anuales." },
 ];
 
 const events = [
-  { t: "Encuentro del Poder", season: "Primavera · Madrid", d: "Cena editorial cerrada. 60–80 asistentes. Invitados del Diario + sponsors + comunidad. Forbes House o equivalente." },
-  { t: "Cumbre del Legado", season: "Otoño · Madrid", d: "Formato conferencia + paneles. 120–150 asistentes. Conversación pública, contenido para distribución multimedia, presencia editorial sponsor." },
+  { t: "Encuentro del Poder", season: "Primavera · Madrid", d: "Cena cerrada para 60–80 personas. Invitados, sponsors y comunidad." },
+  { t: "Cumbre del Legado", season: "Otoño · Madrid", d: "Conferencia y paneles para 120–150 asistentes. Conversación pública y contenido en directo." },
 ];
 
 export function Club() {
@@ -19,10 +19,10 @@ export function Club() {
             <span className="eyebrow">✦ El Club del Poder · La Comunidad</span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-            Aquí, el poder se entiende como <span className="italic text-gold">servicio</span>.
+            El poder, entendido como <span className="italic text-gold">servicio</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            "Poder" no es lo que dicen los titulares. Es la capacidad de decidir bien, de ayudar, de dejar huella. El Club del Poder es el espacio donde nuestra comunidad se encuentra para compartir criterio, abrir oportunidades e influir en positivo.
+            Poder es la capacidad de decidir bien y de dejar huella. El Club es donde la comunidad se encuentra para compartir, abrir puertas e influir en positivo.
           </p>
         </div>
 

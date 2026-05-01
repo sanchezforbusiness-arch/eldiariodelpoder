@@ -37,11 +37,10 @@ export function Newsletter() {
             Sé parte del <span className="italic text-gold">círculo</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            Recibe conversaciones, insights y criterio directamente en tu inbox.
-            Novedades, contenido exclusivo y oportunidades para ser parte de nuestro ecosistema.
+            Lo mejor de cada episodio, contenido exclusivo y avisos antes que nadie.
           </p>
           <p className="mt-4 text-[11px] tracking-[0.28em] uppercase text-gold/80">
-            Conversaciones, criterio &amp; legado · Sin spam · Cancela cuando quieras
+            Sin spam · Cancela cuando quieras
           </p>
 
           {sent ? (

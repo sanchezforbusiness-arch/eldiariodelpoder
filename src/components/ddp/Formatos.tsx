@@ -1,9 +1,9 @@
 const formats = [
-  { t: "El Episodio Largo", tag: "Formato editorial flagship", d: "Conversaciones de 60–90 minutos sin guion ni interrupción comercial. El centro del ecosistema." },
-  { t: "Las Píldoras", tag: "Cápsula breve", d: "Clips de 8–10 minutos by sponsor. Thought leadership con voz editorial DDP." },
-  { t: "El Boletín del Poder", tag: "Newsletter", d: "Análisis semanal: lo que se ha dicho, lo que no se ha dicho y por qué importa. Para suscriptores del Club." },
-  { t: "Los Encuentros", tag: "Off the record", d: "Las dos citas anuales del Diario — Madrid, formato cerrado, prensa cualificada. Networking C-suite real." },
-  { t: "Las Series Especiales", tag: "Verticales temáticas", d: "Tandas curadas con un hilo común — España 2030, Liderazgo Femenino, Capital Cross-Border." },
+  { t: "El Episodio Largo", tag: "Formato principal", d: "60–90 minutos, sin guion ni cortes. El centro de todo." },
+  { t: "Las Píldoras", tag: "Cápsula breve", d: "Clips de 8–10 minutos firmados por una marca aliada." },
+  { t: "El Boletín del Poder", tag: "Newsletter", d: "Análisis semanal de lo que se dijo y lo que no. Para el Club." },
+  { t: "Los Encuentros", tag: "Off the record", d: "Dos citas anuales en Madrid, formato cerrado, networking real." },
+  { t: "Las Series Especiales", tag: "Verticales", d: "Tandas con un hilo común: España 2030, Liderazgo Femenino, Capital Cross-Border." },
 ];
 
 export function Formatos() {
@@ -16,7 +16,7 @@ export function Formatos() {
             <span className="eyebrow">Más allá del podcast</span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-            El Diario del Poder es más que <span className="italic text-gold">una hora</span> de conversación.
+            Más que <span className="italic text-gold">una hora</span> de conversación.
           </h2>
         </div>
 

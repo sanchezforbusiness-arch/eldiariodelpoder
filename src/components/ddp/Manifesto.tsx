@@ -13,19 +13,19 @@ export function Manifesto() {
             No hay nada como el <span className="italic shimmer-gold">Diario del Poder</span>.
           </h2>
           <p className="mt-6 font-serif italic text-base md:text-lg text-muted-foreground">
-            Un manifiesto editorial. La línea que separa lo que somos de lo que está alrededor.
+            Un manifiesto editorial.
           </p>
         </div>
 
         <div className="reveal mt-16 max-w-2xl mx-auto border-t border-b border-border/70 py-14 px-2 space-y-7 text-center">
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
-            España no tenía un espacio donde el poder hablara <em className="text-gold not-italic font-normal italic">en voz baja</em> y con criterio. Donde un expresidente, un CEO global y un líder institucional pudieran sentarse sin guion y sin prisa, frente a una generación que escucha de verdad.
+            En España faltaba un sitio donde un expresidente, un CEO o un líder institucional se sentaran <em className="text-gold not-italic font-normal italic">sin guion ni prisa</em>, frente a alguien dispuesto a escucharles de verdad.
           </p>
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
-            Los grandes medios llegan tarde y con el formato equivocado. Los podcasts generalistas no tienen acceso. Lo que existía era ruido. Lo que faltaba <em className="text-gold not-italic font-normal italic">somos nosotros.</em>
+            Los grandes medios llegan tarde. Los podcasts generalistas no tienen acceso. Hacía falta <em className="text-gold not-italic font-normal italic">otra cosa.</em>
           </p>
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
-            El Diario del Poder es una <em className="text-gold not-italic font-normal italic">plataforma editorial premium</em>: conversaciones de fondo, criterio sobre titular, legado sobre tendencia. Hecho por una nueva generación, para hablar con quienes han decidido — y con quienes decidirán.
+            El Diario del Poder es eso: conversaciones largas, hechas por una generación que pregunta distinto, con quienes ya han decidido — y con quienes van a decidir.
           </p>
         </div>
 
