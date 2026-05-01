@@ -8,6 +8,7 @@ import { Episodes } from "@/components/ddp/Episodes";
 import { useReveal } from "@/hooks/use-reveal";
 
 // Below-the-fold sections — lazy-loaded to reduce initial JS bundle
+const Manifesto = lazy(() => import("@/components/ddp/Manifesto").then((m) => ({ default: m.Manifesto })));
 const Backstage = lazy(() => import("@/components/ddp/Backstage").then((m) => ({ default: m.Backstage })));
 const Club = lazy(() => import("@/components/ddp/Club").then((m) => ({ default: m.Club })));
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
@@ -47,9 +48,10 @@ function Index() {
       <main>
         <Hero />
         <About />
-        <Episodes />
-        <Guests />
         <Suspense fallback={<div style={{ minHeight: "150vh" }} />}>
+          <Manifesto />
+          <Episodes />
+          <Guests />
           <Backstage />
           <Club />
           <Sponsors />
