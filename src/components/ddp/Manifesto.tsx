@@ -1,22 +1,23 @@
 export function Manifesto() {
   return (
-    <section id="manifesto" className="py-28 md:py-40 border-t border-border">
-      <div className="container-ddp">
-        <div className="max-w-3xl mx-auto text-center">
+    <section id="manifesto" className="relative py-28 md:py-40 border-t border-border overflow-hidden">
+      <div className="gold-glow float-slower w-[520px] h-[520px] -top-32 left-1/2 -translate-x-1/2 opacity-60" />
+      <div className="container-ddp relative">
+        <div className="max-w-3xl mx-auto text-center reveal">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <span className="h-px w-8 bg-gold" />
+            <span className="accent-line w-8" />
             <span className="eyebrow">El Manifiesto</span>
-            <span className="h-px w-8 bg-gold" />
+            <span className="accent-line w-8" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1]">
-            No hay nada como el <span className="italic text-gold">Diario del Poder</span>.
+            No hay nada como el <span className="italic shimmer-gold">Diario del Poder</span>.
           </h2>
           <p className="mt-6 font-serif italic text-base md:text-lg text-muted-foreground">
             Un manifiesto editorial. La línea que separa lo que somos de lo que está alrededor.
           </p>
         </div>
 
-        <div className="mt-16 max-w-2xl mx-auto border-t border-b border-border/70 py-14 px-2 space-y-7 text-center">
+        <div className="reveal mt-16 max-w-2xl mx-auto border-t border-b border-border/70 py-14 px-2 space-y-7 text-center">
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
             España no tenía un espacio donde el poder hablara <em className="text-gold not-italic font-normal italic">en voz baja</em> y con criterio. Donde un expresidente, un CEO global y un líder institucional pudieran sentarse sin guion y sin prisa, frente a una generación que escucha de verdad.
           </p>
