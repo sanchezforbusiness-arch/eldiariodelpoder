@@ -12,7 +12,7 @@ import osasuna from "@/assets/bts-osasuna.jpg";
 type Shot = { src: string; alt: string; caption: string; span?: string; pos?: string };
 const shots: Shot[] = [
   { src: aznarFaes, alt: "Con José María Aznar en FAES", caption: "Aznar · FAES", span: "md:col-span-2 md:row-span-2" },
-  { src: andres, alt: "Con Andrés Rodríguez", caption: "Mikel · Palco Atlético de Madrid", pos: "object-top" },
+  { src: andres, alt: "Con Andrés Rodríguez", caption: "Mikel · Palco Atlético de Madrid" },
   { src: lasso, alt: "Con Guillermo Lasso", caption: "Lasso · Quito" },
   { src: aznarFirma, alt: "Aznar firmando", caption: "Backstage" },
   { src: monitor, alt: "Monitor de grabación", caption: "On set" },
