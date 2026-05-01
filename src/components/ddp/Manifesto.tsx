@@ -19,13 +19,13 @@ export function Manifesto() {
 
         <div className="reveal mt-16 max-w-2xl mx-auto border-t border-b border-border/70 py-14 px-2 space-y-7 text-center">
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
-            En España faltaba un sitio donde un expresidente, un CEO o un líder institucional se sentaran <em className="text-gold not-italic font-normal italic">sin guion ni prisa</em>, frente a alguien dispuesto a escucharles de verdad.
+            Faltaba un sitio donde el poder hablara <em className="text-gold not-italic font-normal italic">sin prisa</em>.
           </p>
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
-            Los grandes medios llegan tarde. Los podcasts generalistas no tienen acceso. Hacía falta <em className="text-gold not-italic font-normal italic">otra cosa.</em>
+            Los medios llegan tarde. Los podcasts no tienen acceso.
           </p>
           <p className="font-serif text-lg md:text-xl leading-relaxed text-foreground/90">
-            El Diario del Poder es eso: conversaciones largas, hechas por una generación que pregunta distinto, con quienes ya han decidido — y con quienes van a decidir.
+            Conversaciones largas con los que ya deciden — y los que decidirán.
           </p>
         </div>
 

@@ -20,7 +20,7 @@ export function Pildoras() {
             Ideas grandes, en <span className="italic shimmer-gold">formato corto</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Clips de 8–10 minutos donde una marca aliada habla de su terreno, con el lenguaje y la producción del Diario. Una píldora trimestral por sponsor.
+            Clips de 8–10 minutos. Una marca, su terreno, nuestra producción. Una píldora por trimestre.
           </p>
         </div>
 
