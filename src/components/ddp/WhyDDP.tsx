@@ -9,13 +9,13 @@ export function WhyDDP() {
   return (
     <section className="py-28 md:py-40 border-t border-border bg-card/30">
       <div className="container-ddp">
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-20 reveal">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-gold" />
+            <span className="accent-line w-8" />
             <span className="eyebrow">Por qué DDP</span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-            Lo que nos <span className="italic text-gold">diferencia</span>.
+            Lo que nos <span className="italic shimmer-gold">diferencia</span>.
           </h2>
         </div>
 
