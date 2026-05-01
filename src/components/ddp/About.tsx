@@ -11,10 +11,10 @@ export function About() {
           </div>
           <div className="md:col-span-6 md:col-start-7 reveal">
             <p className="font-serif text-2xl md:text-3xl text-foreground/90 leading-snug">
-              Cada semana nos sentamos con alguien que ha tomado decisiones que importan.
+              Cada semana nos sentamos con alguien influyente en la sociedad que ha tomado decisiones que importan.
             </p>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-              Presidentes, CEOs, fundadores. Les preguntamos lo que nadie pregunta y les damos tiempo para responder. Hecho desde Madrid.
+              Presidentes, CEOs, fundadores, deportistas, artistas. Les preguntamos lo que nadie pregunta y les damos tiempo para responder. Hecho desde Madrid.
             </p>
           </div>
         </div>

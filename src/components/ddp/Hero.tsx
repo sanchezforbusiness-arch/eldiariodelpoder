@@ -30,7 +30,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-10 max-w-lg text-lg md:text-xl text-foreground/75 leading-relaxed">
-            Expresidentes, CEOs y fundadores. Sin guion, sin titulares. Una conversación de verdad.
+            Expresidentes, CEOs, fundadores, deportistas, artistas. Sin guion, sin titulares. Una conversación de verdad.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
