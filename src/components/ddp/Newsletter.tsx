@@ -15,38 +15,27 @@ export function Newsletter() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setErr("Introduce un email válido.");
     if (!accept) return setErr("Acepta la política de privacidad.");
     setLoading(true);
-    // Submit to Beehiiv via hidden iframe — keeps user on page.
     formRef.current?.submit();
-    setTimeout(() => {
-      setLoading(false);
-      setSent(true);
-    }, 900);
+    setTimeout(() => { setLoading(false); setSent(true); }, 900);
   };
 
   return (
-    <section id="newsletter" className="py-28 md:py-40 relative overflow-hidden grain">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/40 to-background" />
+    <section id="newsletter" className="py-24 md:py-36 relative overflow-hidden grain border-t border-border">
+      <div className="gold-glow float-slow w-[500px] h-[500px] -top-20 left-1/2 -translate-x-1/2 opacity-40" />
       <div className="container-ddp relative">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="h-px w-8 bg-gold" />
-            <span className="eyebrow">Newsletter</span>
-            <span className="h-px w-8 bg-gold" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-            Sé parte del <span className="italic text-gold">círculo</span>.
+        <div className="max-w-2xl mx-auto text-center">
+          <span className="eyebrow block mb-6">Newsletter</span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+            Lo bueno, <span className="italic text-gold">en tu correo</span>.
           </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            Lo mejor de cada episodio. Antes que nadie.
-          </p>
-          <p className="mt-4 text-[11px] tracking-[0.28em] uppercase text-gold/80">
-            Sin spam · Cancela cuando quieras
+          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+            Cada nuevo episodio. Un email. Sin más.
           </p>
 
           {sent ? (
-            <div className="mt-12 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
+            <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
               <Check size={18} className="text-gold" />
-              <span className="text-sm text-foreground/90">¡Bienvenido al círculo! Revisa tu email para confirmar la suscripción.</span>
+              <span className="text-sm">Listo. Revisa tu email para confirmar.</span>
             </div>
           ) : (
             <>
@@ -57,7 +46,7 @@ export function Newsletter() {
               action="https://eldiariodelpoder.beehiiv.com/subscribe"
               method="POST"
               target="ddp-newsletter-frame"
-              className="mt-12 max-w-xl mx-auto"
+              className="mt-10"
             >
               <div className="flex flex-col sm:flex-row border border-border focus-within:border-gold transition-colors">
                 <input
@@ -74,7 +63,7 @@ export function Newsletter() {
                   disabled={loading}
                   className="group inline-flex items-center justify-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors"
                 >
-                  {loading ? <Loader2 size={14} className="animate-spin" /> : <>Unirme<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>}
+                  {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>}
                 </button>
               </div>
               <label className="mt-5 flex items-start gap-3 text-left text-xs text-muted-foreground cursor-pointer">
@@ -84,7 +73,7 @@ export function Newsletter() {
                   onChange={(e) => setAccept(e.target.checked)}
                   className="mt-0.5 accent-[var(--color-gold)]"
                 />
-                <span>He leído y acepto la <a href="#" className="underline hover:text-gold">política de privacidad</a> de Diario del Poder.</span>
+                <span>Acepto la <a href="#" className="underline hover:text-gold">política de privacidad</a>.</span>
               </label>
               {err && <p className="mt-3 text-xs text-destructive text-left">{err}</p>}
             </form>
