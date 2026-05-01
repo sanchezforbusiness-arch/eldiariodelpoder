@@ -77,7 +77,7 @@ export const Route = createRootRoute({
       { title: SITE_TITLE },
       { name: "description", content: SITE_DESCRIPTION },
       { name: "author", content: SITE_NAME },
-      { name: "google-site-verification", content: "m2Mn29bOhpHxtZN" },
+      { name: "google-site-verification", content: "m2Mn29bOhpHxtZMGx_Nsy0bQXUtJfmf5XdRwwL4110w" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "googlebot", content: "index, follow" },
       { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast España, podcast política, podcast empresarial, CEOs, expresidentes, podcast premium, liderazgo" },
