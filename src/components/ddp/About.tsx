@@ -1,6 +1,6 @@
 const pillars = [
   { n: "01", t: "Invitados de primer nivel", d: "Expresidentes, CEOs, deportistas y artistas." },
-  { n: "02", t: "Sin guion", d: "Sin prisa. Sin atajos." },
+  { n: "02", t: "Sin guion", d: "Sin prisa. Sin titulares." },
   { n: "03", t: "Audiencia con propósito", d: "Profesionales que vienen a aprender." },
   { n: "04", t: "Producción cuidada", d: "En todas las plataformas." },
 ];
