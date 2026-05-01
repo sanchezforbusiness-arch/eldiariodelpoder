@@ -10,11 +10,11 @@ const sponsors = [
 ];
 const partners = ["Forbes España", "La Vanguardia", "ABC"];
 const indirect = [
-  { t: "Menciones editoriales", d: "Forbes, La Vanguardia, ABC y prensa especializada han hablado del Diario en T1." },
-  { t: "Acceso C-suite", d: "Cada episodio abre la puerta a una red de C-Level — sponsors invitados a la mesa antes de la grabación." },
-  { t: "Alcance LinkedIn", d: "Los invitados comparten el episodio en sus redes. Multiplicador medio: 3,5× sobre la audiencia base." },
-  { t: "Doble evento anual", d: "120–150 asistentes presenciales en cada cita, prensa especializada y derivadas en formato vídeo / píldora." },
-  { t: "Forbes House & ecosistema", d: "Asociación natural a la red Forbes Spain Media y futuras integraciones con plataforma media nacional." },
+  { t: "Menciones editoriales", d: "Forbes, La Vanguardia, ABC y prensa especializada ya han hablado del Diario." },
+  { t: "Acceso C-suite", d: "Sponsors invitados a la mesa antes de cada grabación." },
+  { t: "Alcance LinkedIn", d: "Los invitados comparten el episodio. Multiplicador medio: 3,5× la audiencia base." },
+  { t: "Doble evento anual", d: "120–150 asistentes por cita, con prensa y derivadas en vídeo y píldora." },
+  { t: "Forbes House & ecosistema", d: "Asociación natural con Forbes Spain Media y futuras integraciones nacionales." },
 ];
 
 export function Sponsors() {
@@ -42,7 +42,7 @@ export function Sponsors() {
             <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-center leading-tight max-w-3xl mx-auto">
-            Marcas con <span className="italic text-gold">criterio</span> asociadas al ecosistema.
+            Las marcas que nos <span className="italic text-gold">acompañan</span>.
           </h2>
 
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border border-border">
@@ -67,7 +67,7 @@ export function Sponsors() {
           <div className="mt-20">
             <div className="flex items-center gap-3 mb-8 justify-center">
               <span className="h-px w-6 bg-gold/60" />
-              <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">El valor que no se mide en métricas</span>
+              <span className="text-[11px] tracking-[0.3em] uppercase text-gold/90">Lo que no sale en las métricas</span>
               <span className="h-px w-6 bg-gold/60" />
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -130,7 +130,7 @@ export function Sponsors() {
             <span className="h-px w-8 bg-gold" />
           </div>
           <p className="font-serif text-xl md:text-2xl text-center max-w-2xl mx-auto text-foreground/85 leading-snug">
-            Trabajamos con los medios más respetados para llevar conversaciones de calidad.
+            Trabajamos con los medios de referencia.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-12 md:gap-20">
             {partners.map((p) => (

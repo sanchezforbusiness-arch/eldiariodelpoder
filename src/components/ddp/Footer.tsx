@@ -15,8 +15,7 @@ export function Footer() {
               La voz del <span className="italic">legado</span>.
             </p>
             <p className="mt-6 text-sm text-muted-foreground max-w-sm">
-              Conversaciones de fondo con líderes que dejan criterio.
-              Crafted with purpose desde Madrid.
+              Conversaciones de fondo con líderes que dejan huella. Hecho en Madrid.
             </p>
           </div>
 

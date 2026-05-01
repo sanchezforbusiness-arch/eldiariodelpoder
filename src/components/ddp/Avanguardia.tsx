@@ -15,9 +15,9 @@ export function Avanguardia() {
         </div>
 
         <div className="mt-14 max-w-2xl mx-auto space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed text-center">
-          <p>Es oficial: hemos cerrado el acuerdo con <em className="text-foreground/90 italic">La Vanguardia</em>. Un <em className="text-foreground/90 italic">salto editorial</em> que hasta hoy ningún podcast independiente español había dado.</p>
-          <p>El Diario del Poder se integra en una de las cabeceras de referencia nacional, con distribución multimillonaria, infraestructura de estudio y respaldo editorial al nivel del contenido que producimos.</p>
-          <p>Para nuestros invitados, significa entrar en una conversación de mayor alcance. Para nuestra comunidad, ver el Diario donde se ven las marcas que importan. Para nuestros sponsors, asociar su nombre <em className="text-foreground/90 italic">desde el primer capítulo</em> de esta nueva etapa.</p>
+          <p>Es oficial: cerramos el acuerdo con <em className="text-foreground/90 italic">La Vanguardia</em>. Un salto que ningún podcast independiente en España había dado.</p>
+          <p>El Diario se integra en una cabecera de referencia, con distribución, estudio y respaldo editorial a la altura del proyecto.</p>
+          <p>Más alcance para los invitados, más visibilidad para la comunidad y, para los sponsors, asociar su marca <em className="text-foreground/90 italic">desde el primer capítulo</em> de esta etapa.</p>
         </div>
 
         <p className="mt-12 text-center font-serif italic text-2xl md:text-3xl text-gold">
