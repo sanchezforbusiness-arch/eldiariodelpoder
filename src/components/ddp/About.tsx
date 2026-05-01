@@ -7,19 +7,20 @@ const points = [
 
 export function About() {
   return (
-    <section id="about" className="py-28 md:py-40">
-      <div className="container-ddp">
+    <section id="about" className="relative py-28 md:py-40 overflow-hidden">
+      <div className="gold-glow float-slow w-[480px] h-[480px] top-10 -left-32 opacity-50" />
+      <div className="container-ddp relative">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 reveal">
             <div className="flex items-center gap-3 mb-8">
-              <span className="h-px w-8 bg-gold" />
+              <span className="accent-line w-8" />
               <span className="eyebrow">Quiénes somos</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-              ¿Qué es <span className="italic text-gold">Diario del Poder</span>?
+              ¿Qué es <span className="italic shimmer-gold">Diario del Poder</span>?
             </h2>
           </div>
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-8 reveal">
             <p className="text-lg md:text-xl text-foreground/85 leading-relaxed font-light">
               Somos un ecosistema de comunicación premium dedicado a las conversaciones
               que importan. Nuestro propósito es acercar a jóvenes con ambición la
