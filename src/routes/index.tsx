@@ -21,6 +21,7 @@ const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ d
 const Team = lazy(() => import("@/components/ddp/Team").then((m) => ({ default: m.Team })));
 const Newsletter = lazy(() => import("@/components/ddp/Newsletter").then((m) => ({ default: m.Newsletter })));
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const Backstage = lazy(() => import("@/components/ddp/Backstage").then((m) => ({ default: m.Backstage })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,6 +68,7 @@ function Index() {
         <Suspense fallback={<div style={{ minHeight: "200vh" }} />}>
           <Club />
           <Pildoras />
+          <Backstage />
           <Sponsors />
           <Team />
           <Newsletter />
