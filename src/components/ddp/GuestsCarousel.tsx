@@ -18,11 +18,11 @@ const guests = [
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
 ];
 
-export function Guests() {
+export function GuestsCarousel() {
   const loop = [...guests, ...guests];
   return (
-    <section id="guests" className="relative py-24 md:py-36 border-t border-border bg-card/20 overflow-hidden">
-      <div className="container-ddp relative mb-12 md:mb-16">
+    <section id="guests" className="relative py-20 md:py-28 border-t border-border bg-card/20 overflow-hidden">
+      <div className="container-ddp relative mb-10 md:mb-14">
         <div className="max-w-3xl">
           <span className="eyebrow block mb-5">Invitados</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">

@@ -3,8 +3,8 @@ import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
 import { About } from "@/components/ddp/About";
-import { Guests } from "@/components/ddp/Guests";
 import { Episodes } from "@/components/ddp/Episodes";
+import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { useReveal } from "@/hooks/use-reveal";
 
 // Below-the-fold sections — lazy-loaded to reduce initial JS bundle
@@ -47,11 +47,11 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <GuestsCarousel />
         <About />
         <Suspense fallback={<div style={{ minHeight: "150vh" }} />}>
           <Manifesto />
           <Episodes />
-          <Guests />
           <Backstage />
           <Club />
           <Sponsors />
