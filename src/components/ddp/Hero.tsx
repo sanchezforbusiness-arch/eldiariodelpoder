@@ -1,10 +1,9 @@
 import heroImg from "@/assets/hero-studio.webp";
 import { Play } from "lucide-react";
-import { GuestsMarquee } from "./GuestsMarquee";
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain pb-36 md:pb-40">
+    <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain pb-20 md:pb-28">
       <img
         src={heroImg}
         alt="Estudio de Diario del Poder"
@@ -53,12 +52,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border/40 bg-background/60 backdrop-blur-sm">
-        <div className="text-center pt-4 pb-1 text-[10px] tracking-[0.32em] uppercase text-gold/70">
-          Han pasado por aquí
-        </div>
-        <GuestsMarquee />
-      </div>
     </section>
   );
 }
