@@ -17,10 +17,10 @@ export function Pildoras() {
             <span className="eyebrow">Píldoras del Poder</span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-            Thought leadership, en <span className="italic shimmer-gold">formato corto</span>.
+            Ideas grandes, en <span className="italic shimmer-gold">formato corto</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Clips editoriales de 8–10 minutos donde una marca-aliada habla de un tema vertical desde su criterio, en el lenguaje del Diario y con la producción del Diario. Cada sponsor cuenta con su píldora trimestral, con identidad propia dentro de la marca paraguas DDP. No es publicidad: es <em className="text-foreground/90 italic">thought leadership</em>.
+            Clips de 8–10 minutos donde una marca aliada habla de su terreno, con el lenguaje y la producción del Diario. Una píldora trimestral por sponsor.
           </p>
         </div>
 

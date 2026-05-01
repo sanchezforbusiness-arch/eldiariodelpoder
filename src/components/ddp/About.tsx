@@ -1,8 +1,8 @@
 const points = [
-  { k: "01", t: "Invitados de primer nivel", d: "Expresidentes, CEOs, líderes institucionales y de medios." },
-  { k: "02", t: "Conversaciones cuidadas", d: "Sin guión comercial. Auténticas, de fondo y sin prisa." },
-  { k: "03", t: "Audiencia con propósito", d: "Jóvenes profesionales, emprendedores y futuros líderes." },
-  { k: "04", t: "Producción premium", d: "Contenido serio, accesible en todas las plataformas." },
+  { k: "01", t: "Invitados de primer nivel", d: "Expresidentes, CEOs y líderes institucionales." },
+  { k: "02", t: "Conversaciones de fondo", d: "Sin guion, sin prisa, sin atajos." },
+  { k: "03", t: "Audiencia con propósito", d: "Profesionales y emprendedores que vienen a aprender." },
+  { k: "04", t: "Producción premium", d: "Cuidada en cada detalle, en todas las plataformas." },
 ];
 
 export function About() {
@@ -22,10 +22,9 @@ export function About() {
           </div>
           <div className="lg:col-span-7 space-y-8 reveal">
             <p className="text-lg md:text-xl text-foreground/85 leading-relaxed font-light">
-              Somos un ecosistema de comunicación premium dedicado a las conversaciones
-              que importan. Nuestro propósito es acercar a jóvenes con ambición la
-              visión, experiencia y criterio de los líderes que están dejando huella
-              en política, empresa, medios e instituciones.
+              Un espacio donde se sientan los líderes que están dejando huella
+              en política, empresa e instituciones, frente a una generación
+              que tiene ganas de escucharlos en serio.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8 pt-8 border-t border-border">
@@ -41,8 +40,7 @@ export function About() {
             </div>
 
             <p className="pt-6 font-serif italic text-xl md:text-2xl text-foreground/90 leading-snug">
-              "El verdadero poder no está en hablar más fuerte. Está en pensar mejor,
-              decidir mejor y sostener una visión durante años."
+              "El poder de verdad no grita. Decide bien y sostiene una visión durante años."
             </p>
           </div>
         </div>

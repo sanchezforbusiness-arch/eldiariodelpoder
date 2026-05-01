@@ -1,8 +1,8 @@
 const pillars = [
-  { n: "I", t: "Criterio sobre ruido", d: "No buscamos trending topics. Buscamos conversaciones que aporten perspectiva real y marcos mentales útiles." },
-  { n: "II", t: "Invitados de verdad", d: "Expresidentes, CEOs globales, directores de medios. Gente que ha tomado decisiones difíciles y puede transmitir criterio." },
-  { n: "III", t: "Audiencia con propósito", d: "Profesionales, emprendedores y futuros líderes que no quieren consumo pasivo, sino aprendizaje real." },
-  { n: "IV", t: "Producción seria", d: "Entrevistas cuidadas, sin guión comercial. Contenido profesional, accesible en todas las plataformas." },
+  { n: "I", t: "Perspectiva, no titular", d: "Conversaciones que se sostienen en el tiempo y dejan algo útil." },
+  { n: "II", t: "Invitados de verdad", d: "Personas que han tomado decisiones difíciles y saben contarlas." },
+  { n: "III", t: "Audiencia con propósito", d: "Profesionales y emprendedores que vienen a aprender, no a entretenerse." },
+  { n: "IV", t: "Producción seria", d: "Entrevistas cuidadas, sin guion comercial, en todas las plataformas." },
 ];
 
 export function WhyDDP() {

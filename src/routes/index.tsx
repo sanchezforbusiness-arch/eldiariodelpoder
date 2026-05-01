@@ -62,7 +62,7 @@ function Index() {
         <Episodes />
         <Formatos />
         <Avanguardia />
-        <MarqueeBand variant="outline" text="Criterio sobre ruido" separator="—" />
+        <MarqueeBand variant="outline" text="La voz del legado" separator="—" />
         <WhyDDP />
         <Suspense fallback={<div style={{ minHeight: "200vh" }} />}>
           <Club />

@@ -10,8 +10,8 @@ export function PullQuote() {
           <span className="font-serif text-7xl md:text-8xl text-gold/40 leading-none block">"</span>
           <p className="font-serif italic text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-foreground/95 -mt-4">
             No buscamos titulares.<br />
-            Buscamos <span className="shimmer-gold not-italic">conversaciones</span> que<br />
-            se sostengan en el tiempo.
+            Buscamos <span className="shimmer-gold not-italic">conversaciones</span><br />
+            que duren.
           </p>
           <div className="mt-12 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-gold" />
