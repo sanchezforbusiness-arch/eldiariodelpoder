@@ -66,23 +66,29 @@ function ClubPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
+    <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden grain">
       <img src={dialogos} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="gold-glow w-[520px] h-[520px] -top-40 -left-40 float-slow" />
 
       <div className="container-ddp relative grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-7 fade-up">
-          <span className="eyebrow block mb-6">El Club del Poder</span>
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
+          <div className="flex items-center gap-4 mb-7">
+            <span className="h-px w-12 bg-gold/70" />
+            <span className="eyebrow">El Club del Poder</span>
+          </div>
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.035em]">
             Una comunidad<br /> de <span className="italic shimmer-gold">líderes</span>.
           </h1>
-          <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
-            Acceso por invitación. Cero ruido.
+          <p className="mt-7 max-w-md text-base md:text-lg text-foreground/80 leading-[1.65]">
+            Un círculo cerrado de jóvenes con criterio, ambición e influencia. Acceso por invitación.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#apply" className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors">
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <a href="#apply" className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-9 py-4 text-[11px] tracking-[0.28em] uppercase hover:bg-gold-bright transition-colors">
               Solicitar acceso
+            </a>
+            <a href="/" className="inline-flex items-center gap-2 px-7 py-4 text-[11px] tracking-[0.28em] uppercase text-foreground/80 border border-foreground/25 hover:border-gold hover:text-gold transition-colors">
+              Volver al inicio
             </a>
           </div>
         </div>
