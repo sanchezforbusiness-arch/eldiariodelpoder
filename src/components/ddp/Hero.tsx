@@ -11,10 +11,10 @@ export function Hero() {
         height={1080}
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className="absolute inset-0 w-full h-full object-cover opacity-80"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/55 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/20 to-transparent" />
 
       <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
       <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-50" />
