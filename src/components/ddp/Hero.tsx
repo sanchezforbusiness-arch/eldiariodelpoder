@@ -24,7 +24,7 @@ export function Hero() {
           <span className="eyebrow block mb-8">Podcast · Madrid</span>
 
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.98] tracking-[-0.03em] font-light">
-            Conversaciones que dejan <span className="italic text-gold">criterio</span>,<br className="hidden sm:block" /> no ruido.
+            La voz del <span className="italic text-gold">legado</span>.
           </h1>
 
           <p className="mt-10 max-w-xl text-lg md:text-xl text-foreground/75 leading-relaxed">
