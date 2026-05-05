@@ -20,12 +20,12 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-24 md:py-36 relative overflow-hidden grain border-t border-border">
-      <div className="gold-glow float-slow w-[500px] h-[500px] -top-20 left-1/2 -translate-x-1/2 opacity-40" />
+    <section id="newsletter" className="py-28 md:py-40 relative overflow-hidden grain border-t border-border">
+      <div className="gold-glow float-slow w-[560px] h-[560px] -top-24 left-1/2 -translate-x-1/2 opacity-35" />
       <div className="container-ddp relative">
         <div className="max-w-2xl mx-auto text-center">
           <span className="eyebrow block mb-6">Newsletter</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
             Lo bueno, <span className="italic text-gold">en tu correo</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
