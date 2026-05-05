@@ -26,7 +26,7 @@ export function Manifesto() {
         <div className="text-band">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex items-center">
-              {["Criterio", "Visión", "Influencia", "Decisión"].map((w) => (
+              {["Criterio", "Visión", "Influencia"].map((w) => (
                 <span key={k + w} className="flex items-center">
                   <span className="text-band-item italic text-foreground/85">{w}</span>
                   <span className="text-band-dot" />
