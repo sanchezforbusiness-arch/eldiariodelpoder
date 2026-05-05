@@ -99,11 +99,11 @@ function Hero() {
 
 function Pillars() {
   return (
-    <section className="py-20 md:py-28 border-t border-border">
+    <section className="py-16 md:py-24 border-t border-border">
       <div className="container-ddp">
-        <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
+        <div className="reveal grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
           {pillars.map((p) => (
-            <div key={p.n} className="bg-background p-12 md:p-16 text-center">
+            <div key={p.n} className="bg-background p-10 md:p-14 text-center">
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-4">{p.n}</p>
               <h3 className="font-serif text-4xl md:text-5xl italic text-gold">{p.t}</h3>
             </div>
@@ -117,10 +117,10 @@ function Pillars() {
 function Gallery() {
   const shots = [signingHands, setMonitors, hosts, signing, metropolitano, dialogos];
   return (
-    <section className="py-20 md:py-28 border-t border-border overflow-hidden">
-      <div className="container-ddp mb-10">
+    <section className="py-16 md:py-24 border-t border-border overflow-hidden">
+      <div className="container-ddp mb-10 reveal">
         <span className="eyebrow block mb-5">El Club por dentro</span>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl">
+        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl tracking-[-0.02em]">
           Lo que <span className="italic text-gold">no se publica</span>.
         </h2>
       </div>
@@ -140,12 +140,12 @@ function Gallery() {
 
 function Philosophy() {
   return (
-    <section className="py-24 md:py-36 border-t border-border bg-card/20">
-      <div className="container-ddp">
+    <section className="py-20 md:py-28 border-t border-border bg-card/20">
+      <div className="container-ddp reveal">
         <span className="eyebrow block mb-8">Filosofía</span>
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 reveal-stagger">
           {philosophy.map((p, i) => (
-            <p key={i} className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.15] font-light border-l-2 border-gold/60 pl-6">
+            <p key={i} className="font-serif text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.2] font-light border-l-2 border-gold/60 pl-6">
               {p}
             </p>
           ))}
@@ -158,10 +158,10 @@ function Philosophy() {
 function Apply() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="apply" className="py-24 md:py-36 border-t border-border">
-      <div className="container-ddp max-w-3xl">
+    <section id="apply" className="py-20 md:py-28 border-t border-border">
+      <div className="container-ddp max-w-3xl reveal">
         <span className="eyebrow block mb-5">Solicita tu acceso</span>
-        <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light">
+        <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light tracking-[-0.025em]">
           Capacidad <span className="italic text-gold">limitada</span>.
         </h2>
 
@@ -207,10 +207,13 @@ function Field({ label, name, type = "text", required }: { label: string; name: 
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 md:py-36 border-t border-border">
-      <div className="container-ddp max-w-3xl">
+    <section className="py-20 md:py-28 border-t border-border">
+      <div className="container-ddp max-w-3xl reveal">
         <span className="eyebrow block mb-5">FAQ</span>
-        <div className="border-t border-border mt-10">
+        <h2 className="font-serif text-4xl md:text-5xl leading-[1.0] font-light tracking-[-0.02em] mb-10">
+          Preguntas <span className="italic text-gold">frecuentes</span>.
+        </h2>
+        <div className="border-t border-border">
           {faqs.map((f, i) => {
             const active = open === i;
             return (
