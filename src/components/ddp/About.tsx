@@ -9,17 +9,17 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 md:py-36 overflow-hidden">
+    <section id="about" className="relative py-28 md:py-44 overflow-hidden border-t border-border">
       <div className="container-ddp relative">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-stretch">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-stretch">
           <div className="md:col-span-6 reveal">
-            <span className="eyebrow block mb-6">Quiénes somos</span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light">
+            <span className="eyebrow block mb-7">Quiénes somos</span>
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
               Donde los que <span className="italic text-gold">deciden</span><br />
               se sientan a hablar.
             </h2>
 
-            <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mt-10 text-base md:text-[1.05rem] text-muted-foreground max-w-xl leading-[1.75]">
               Diario del Poder es el podcast de referencia sobre liderazgo, empresa y política en España.
               Sentamos frente al micrófono a las personas que toman las decisiones — y dejamos que hablen.
             </p>
