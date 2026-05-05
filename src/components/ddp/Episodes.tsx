@@ -2,11 +2,13 @@ import { Play, ArrowUpRight } from "lucide-react";
 import g1 from "@/assets/guest-1.jpg";
 import g5 from "@/assets/guest-5.jpg";
 import gEchavarren from "@/assets/guest-echavarren.jpg";
+import gAndres from "@/assets/bts-andres-rodriguez.jpg";
 
 const episodes = [
-  { n: "01", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
-  { n: "02", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
-  { n: "03", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8", isNew: true },
+  { n: "01", guest: "Andrés Rodríguez", title: "Forbes, lujo y poder desde la Forbes House", img: gAndres, url: "https://youtu.be/nTtgtxG7UNs", isNew: true },
+  { n: "02", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
+  { n: "03", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
+  { n: "04", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8" },
 ];
 
 export function Episodes() {
@@ -68,7 +70,7 @@ export function Episodes() {
 
         <div className="mt-16 flex items-center gap-4 text-sm text-muted-foreground">
           <span className="h-px flex-1 bg-border" />
-          <span>Pronto: <span className="text-gold/90">Javier Tebas · Iván Duque · Andrés Rodríguez</span></span>
+          <span>Pronto: <span className="text-gold/90">Javier Tebas · Iván Duque</span></span>
           <span className="h-px flex-1 bg-border" />
         </div>
       </div>
