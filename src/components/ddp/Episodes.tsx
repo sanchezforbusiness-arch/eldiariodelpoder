@@ -14,9 +14,9 @@ const episodes = [
 export function Episodes() {
   const [featured, ...rest] = episodes;
   return (
-    <section id="episodes" className="py-28 md:py-40 border-t border-border">
+    <section id="episodes" className="py-20 md:py-28 border-t border-border">
       <div className="container-ddp">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
           <div>
             <span className="eyebrow block mb-5">Episodios</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
