@@ -21,13 +21,18 @@ const guests = [
 export function GuestsCarousel() {
   const loop = [...guests, ...guests];
   return (
-    <section id="guests" className="relative py-20 md:py-28 border-t border-border bg-card/20 overflow-hidden">
-      <div className="container-ddp relative mb-10 md:mb-14">
-        <div className="max-w-3xl">
-          <span className="eyebrow block mb-5">Invitados</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-            Gente que ha estado <span className="italic text-gold">donde se decide</span>.
-          </h2>
+    <section id="guests" className="relative py-24 md:py-32 border-t border-border bg-card/20 overflow-hidden">
+      <div className="container-ddp relative mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-3xl">
+            <span className="eyebrow block mb-5">Invitados</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+              Gente que ha estado <span className="italic text-gold">donde se decide</span>.
+            </h2>
+          </div>
+          <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-[14rem]">
+            Presidentes · CEOs · Fundadores
+          </p>
         </div>
       </div>
 

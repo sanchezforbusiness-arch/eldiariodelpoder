@@ -19,34 +19,34 @@ export function Hero() {
       <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
       <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-40" />
 
-      <div className="container-ddp relative z-10 pt-32 pb-40 md:pb-48 fade-up">
+      <div className="container-ddp relative z-10 pt-32 pb-44 md:pb-52 fade-up">
         <div className="max-w-5xl">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="h-px w-12 bg-gold/60" />
+          <div className="flex items-center gap-4 mb-10">
+            <span className="h-px w-14 bg-gold/70" />
             <span className="eyebrow">Podcast · Madrid</span>
           </div>
 
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.9] tracking-[-0.04em] font-light">
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.88] tracking-[-0.045em] font-light">
             La voz<br />del <span className="italic shimmer-gold">legado</span>.
           </h1>
 
-          <p className="mt-10 max-w-xl text-base md:text-lg text-foreground/70 leading-relaxed">
+          <p className="mt-12 max-w-xl text-base md:text-[1.05rem] text-foreground/75 leading-[1.7]">
             El podcast donde expresidentes, CEOs y fundadores hablan sin guion sobre liderazgo, decisiones y legado.
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-4">
+          <div className="mt-14 flex flex-wrap items-center gap-5">
             <a
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
-              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
+              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-9 py-4 text-[11px] tracking-[0.28em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
             >
               <Play size={14} className="fill-current" />
               Escuchar
             </a>
             <a
               href="#episodes"
-              className="inline-flex items-center gap-2 px-6 py-4 text-[12px] tracking-[0.22em] uppercase text-foreground border border-foreground/30 hover:border-gold hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-4 text-[11px] tracking-[0.28em] uppercase text-foreground/85 border border-foreground/25 hover:border-gold hover:text-gold transition-colors"
             >
               Ver episodios
             </a>
