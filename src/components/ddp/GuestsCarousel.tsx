@@ -32,11 +32,11 @@ export function GuestsCarousel() {
       </div>
 
       <div className="relative overflow-hidden mask-fade-x">
-        <div className="marquee gap-4 md:gap-5">
+        <div className="marquee marquee-fast gap-4 md:gap-5">
           {loop.map((g, i) => (
             <article
               key={i}
-              className="group relative shrink-0 w-[230px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden bg-background"
+              className="group relative shrink-0 w-[230px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden bg-background hover-cinema"
             >
               <img
                 src={g.img}
@@ -44,7 +44,7 @@ export function GuestsCarousel() {
                 width={512}
                 height={640}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
