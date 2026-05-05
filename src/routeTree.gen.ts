@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ClubRouteImport } from './routes/club'
 import { Route as IndexRouteImport } from './routes/index'
 
+const EpisodiosRoute = EpisodiosRouteImport.update({
+  id: '/episodios',
+  path: '/episodios',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ClubRoute = ClubRouteImport.update({
   id: '/club',
   path: '/club',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/club': typeof ClubRoute
+  '/episodios': typeof EpisodiosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/club': typeof ClubRoute
+  '/episodios': typeof EpisodiosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/club': typeof ClubRoute
+  '/episodios': typeof EpisodiosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/club'
+  fullPaths: '/' | '/club' | '/episodios'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/club'
-  id: '__root__' | '/' | '/club'
+  to: '/' | '/club' | '/episodios'
+  id: '__root__' | '/' | '/club' | '/episodios'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClubRoute: typeof ClubRoute
+  EpisodiosRoute: typeof EpisodiosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/episodios': {
+      id: '/episodios'
+      path: '/episodios'
+      fullPath: '/episodios'
+      preLoaderRoute: typeof EpisodiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/club': {
       id: '/club'
       path: '/club'
@@ -71,7 +88,17 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClubRoute: ClubRoute,
+  EpisodiosRoute: EpisodiosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
