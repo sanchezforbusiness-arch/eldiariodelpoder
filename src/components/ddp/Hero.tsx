@@ -19,13 +19,20 @@ export function Hero() {
       <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
       <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-40" />
 
-      <div className="container-ddp relative z-10 pt-32 pb-32 md:pb-40 fade-up">
+      <div className="container-ddp relative z-10 pt-32 pb-40 md:pb-48 fade-up">
         <div className="max-w-5xl">
-          <span className="eyebrow block mb-8">Podcast · Madrid</span>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="h-px w-12 bg-gold/60" />
+            <span className="eyebrow">Podcast · Madrid</span>
+          </div>
 
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] leading-[0.92] tracking-[-0.035em] font-light">
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.9] tracking-[-0.04em] font-light">
             La voz<br />del <span className="italic shimmer-gold">legado</span>.
           </h1>
+
+          <p className="mt-10 max-w-xl text-base md:text-lg text-foreground/70 leading-relaxed">
+            El podcast donde expresidentes, CEOs y fundadores hablan sin guion sobre liderazgo, decisiones y legado.
+          </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <a
@@ -47,13 +54,25 @@ export function Hero() {
         </div>
       </div>
 
-      <a
-        href="#guests"
-        aria-label="Bajar"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-gold/80 hover:text-gold"
-      >
-        <ArrowDown size={20} className="bounce-down" />
-      </a>
+      {/* Bottom proof strip */}
+      <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/40 backdrop-blur-sm">
+        <div className="container-ddp py-5 flex items-center justify-between gap-6">
+          <div className="flex items-center gap-6 md:gap-10 text-[10px] md:text-[11px] tracking-[0.24em] uppercase text-muted-foreground overflow-hidden">
+            <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
+            <span className="text-foreground/85">Andrés Rodríguez</span>
+            <span className="text-gold/40">·</span>
+            <span className="hidden md:inline text-foreground/60">Presidente Forbes</span>
+          </div>
+          <a
+            href="#guests"
+            aria-label="Bajar"
+            className="flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-gold/80 hover:text-gold transition-colors"
+          >
+            Scroll
+            <ArrowDown size={14} className="bounce-down" />
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
