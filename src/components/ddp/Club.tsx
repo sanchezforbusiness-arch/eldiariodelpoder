@@ -1,41 +1,47 @@
-const events = [
-  { t: "Encuentro del Poder", season: "Primavera · Madrid", d: "Cena cerrada con 60–80 invitados." },
-  { t: "Cumbre del Legado", season: "Otoño · Madrid", d: "Conferencia y paneles. Hasta 150 asistentes." },
-];
+import { ArrowUpRight } from "lucide-react";
+import dialogos from "@/assets/bts-aznar-dialogos.jpg";
+import hosts from "@/assets/bts-hosts-palco.jpg";
+import signing from "@/assets/bts-signing-pen.jpg";
 
 export function Club() {
   return (
-    <section id="club" className="py-24 md:py-36 border-t border-border bg-card/20">
+    <section id="club" className="relative py-24 md:py-36 border-t border-border bg-card/20 overflow-hidden">
       <div className="container-ddp">
-        <div className="grid md:grid-cols-12 gap-10 mb-14">
-          <div className="md:col-span-7">
-            <span className="eyebrow block mb-5">Club del Poder</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              La comunidad <span className="italic text-gold">del Diario</span>.
+        <div className="grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-5 reveal">
+            <span className="eyebrow block mb-5">El Club del Poder</span>
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light">
+              Una red <span className="italic text-gold">real</span>.<br />
+              No de LinkedIn.
             </h2>
+            <p className="mt-8 text-base text-muted-foreground max-w-md">
+              Dos eventos al año en Madrid. Contenido cerrado. Acceso por invitación.
+            </p>
+            <a
+              href="/club"
+              className="mt-10 group inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors ring-pulse"
+            >
+              Descubre el Club
+              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
-          <p className="md:col-span-5 text-base md:text-lg text-muted-foreground leading-relaxed self-end">
-            Dos eventos al año en Madrid. Contenido cerrado. Una red real, no de LinkedIn.
-          </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border border border-border">
-          {events.map((e) => (
-            <article key={e.t} className="bg-background p-10 md:p-12 group hover:bg-card transition-colors">
-              <p className="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">{e.season}</p>
-              <h3 className="font-serif text-3xl md:text-4xl leading-snug">{e.t}</h3>
-              <p className="mt-5 text-base text-muted-foreground leading-relaxed">{e.d}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <a
-            href="/club"
-            className="inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors"
-          >
-            Descubre el Club
-          </a>
+          <div className="md:col-span-7 grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 aspect-[6/5] reveal-stagger">
+            <div className="col-span-4 row-span-4 relative overflow-hidden hover-cinema">
+              <img src={dialogos} alt="" className="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+            </div>
+            <div className="col-span-2 row-span-3 relative overflow-hidden hover-cinema drift-y">
+              <img src={signing} alt="" className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" />
+            </div>
+            <div className="col-span-2 row-span-3 relative overflow-hidden hover-cinema">
+              <img src={hosts} alt="" className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" />
+            </div>
+            <div className="col-span-4 row-span-2 relative overflow-hidden bg-background border border-gold/20 flex items-center justify-center">
+              <p className="font-serif italic text-2xl md:text-3xl text-gold/90 px-4 text-center">
+                "Quienes ya están, deciden quién entra."
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
