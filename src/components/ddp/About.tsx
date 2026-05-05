@@ -1,9 +1,10 @@
-import bts from "@/assets/bts-aznar-dialogos.jpg";
+import founderAlejandro from "@/assets/founder-alejandro.jpg";
+import founderVictor from "@/assets/founder-victor.jpg";
 
 const pillars = [
-  { n: "01", t: "Invitados", d: "Presidentes. CEOs. Referentes." },
-  { n: "02", t: "Sin guion", d: "Sin prisa. Sin titulares." },
-  { n: "03", t: "Producción", d: "Cuidada hasta el último detalle." },
+  { n: "01", t: "Conversaciones", d: "Sin prisa. Sin guion. Sin titulares." },
+  { n: "02", t: "Invitados", d: "Presidentes, CEOs y referentes que marcan agenda." },
+  { n: "03", t: "Producción", d: "Estética cuidada. Cada detalle pensado." },
 ];
 
 export function About() {
@@ -18,6 +19,11 @@ export function About() {
               se sientan a hablar.
             </h2>
 
+            <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+              Diario del Poder es el podcast de referencia sobre liderazgo, empresa y política en España.
+              Sentamos frente al micrófono a las personas que toman las decisiones — y dejamos que hablen.
+            </p>
+
             <div className="mt-12 grid grid-cols-3 gap-6 reveal-stagger">
               {pillars.map((p) => (
                 <div key={p.n} className="border-t border-border pt-4">
@@ -30,17 +36,32 @@ export function About() {
           </div>
 
           <div className="md:col-span-6 relative reveal">
-            <div className="relative aspect-[4/5] overflow-hidden hover-cinema">
-              <img
-                src={bts}
-                alt="Aznar firmando — Diálogos FAES"
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover grayscale-[0.15]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Diálogos FAES</p>
-                <p className="font-serif text-2xl md:text-3xl mt-1 leading-tight">José María Aznar</p>
+            <div className="grid grid-cols-2 gap-4 md:gap-5">
+              <div className="relative aspect-[3/4] overflow-hidden hover-cinema mt-10">
+                <img
+                  src={founderAlejandro}
+                  alt="Alejandro — fundador de Diario del Poder"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Fundador</p>
+                  <p className="font-serif text-xl mt-1">Alejandro</p>
+                </div>
+              </div>
+              <div className="relative aspect-[3/4] overflow-hidden hover-cinema">
+                <img
+                  src={founderVictor}
+                  alt="Víctor — fundador de Diario del Poder"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Fundador</p>
+                  <p className="font-serif text-xl mt-1">Víctor</p>
+                </div>
               </div>
             </div>
           </div>
