@@ -55,6 +55,23 @@ export function GuestsCarousel() {
           ))}
         </div>
       </div>
+
+      {/* Stats strip */}
+      <div className="container-ddp relative mt-16 md:mt-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
+          {[
+            { k: "+30", l: "Episodios" },
+            { k: "+1M", l: "Reproducciones" },
+            { k: "4", l: "Países" },
+            { k: "Top 10", l: "Podcast España" },
+          ].map((s) => (
+            <div key={s.l} className="bg-background py-8 md:py-10 px-5 text-center">
+              <div className="font-serif text-3xl md:text-5xl text-gold">{s.k}</div>
+              <div className="mt-2 text-[10px] tracking-[0.24em] uppercase text-muted-foreground">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
