@@ -31,10 +31,10 @@ export function Club() {
 
         <div className="mt-12 text-center">
           <a
-            href="#newsletter"
+            href="/club"
             className="inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors"
           >
-            Quiero entrar
+            Descubre el Club
           </a>
         </div>
       </div>
