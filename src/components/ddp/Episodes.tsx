@@ -12,6 +12,7 @@ const episodes = [
 ];
 
 export function Episodes() {
+  const [featured, ...rest] = episodes;
   return (
     <section id="episodes" className="py-24 md:py-36 border-t border-border">
       <div className="container-ddp">
@@ -33,8 +34,47 @@ export function Episodes() {
           </a>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {episodes.map((e) => (
+        {/* Featured episode */}
+        <a
+          href={featured.url}
+          target="_blank"
+          rel="noreferrer"
+          className="group block relative overflow-hidden mb-10 md:mb-12 reveal"
+        >
+          <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-card">
+            <img
+              src={featured.img}
+              alt={featured.guest}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-[1100ms]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
+
+            <div className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-3">
+              <span className="text-[10px] tracking-[0.28em] uppercase text-gold border border-gold/60 px-3 py-1.5">
+                Nuevo episodio
+              </span>
+              <span className="font-serif text-3xl text-gold/80">{featured.n}</span>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 p-6 md:p-12">
+              <p className="text-[11px] md:text-[12px] tracking-[0.28em] uppercase text-gold/90 mb-3">{featured.guest}</p>
+              <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.02] font-light max-w-3xl">
+                {featured.title}
+              </h3>
+              <div className="mt-6 inline-flex items-center gap-3 text-[12px] tracking-[0.22em] uppercase text-foreground group-hover:text-gold transition-colors">
+                <span className="w-12 h-12 rounded-full bg-gold text-gold-foreground flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play size={14} className="fill-current ml-0.5" />
+                </span>
+                Reproducir
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal-stagger">
+          {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
               <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift">
                 <img
