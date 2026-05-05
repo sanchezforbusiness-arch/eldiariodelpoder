@@ -21,8 +21,8 @@ const guests = [
 export function GuestsCarousel() {
   const loop = [...guests, ...guests];
   return (
-    <section id="guests" className="relative py-24 md:py-32 border-t border-border bg-card/20 overflow-hidden">
-      <div className="container-ddp relative mb-12 md:mb-16">
+    <section id="guests" className="relative py-20 md:py-24 border-t border-border bg-card/20 overflow-hidden">
+      <div className="container-ddp relative mb-10 md:mb-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-3xl">
             <span className="eyebrow block mb-5">Invitados</span>
