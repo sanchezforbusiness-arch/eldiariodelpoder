@@ -27,9 +27,9 @@ export const Route = createFileRoute("/club")({
 });
 
 const pillars = [
-  { n: "01", t: "Criterio" },
-  { n: "02", t: "Comunidad" },
-  { n: "03", t: "Influencia" },
+  { n: "01", t: "Criterio", d: "Pensar bien antes de hablar fuerte." },
+  { n: "02", t: "Comunidad", d: "Pocos. Bien escogidos. De verdad." },
+  { n: "03", t: "Influencia", d: "La que se construye, no la que se exhibe." },
 ];
 
 const philosophy = [
@@ -66,7 +66,7 @@ function ClubPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden grain">
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden grain">
       <img src={dialogos} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="gold-glow w-[520px] h-[520px] -top-40 -left-40 float-slow" />
@@ -77,25 +77,30 @@ function Hero() {
             <span className="h-px w-12 bg-gold/70" />
             <span className="eyebrow">El Club del Poder</span>
           </div>
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.035em]">
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.9] font-light tracking-[-0.04em]">
             Una comunidad<br /> de <span className="italic shimmer-gold">líderes</span>.
           </h1>
-          <p className="mt-7 max-w-md text-base md:text-lg text-foreground/80 leading-[1.65]">
+          <p className="mt-8 max-w-md text-base md:text-[1.05rem] text-foreground/75 leading-[1.7]">
             Un círculo cerrado de jóvenes con criterio, ambición e influencia. Acceso por invitación.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <a href="#apply" className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-9 py-4 text-[11px] tracking-[0.28em] uppercase hover:bg-gold-bright transition-colors">
               Solicitar acceso
             </a>
-            <a href="/" className="inline-flex items-center gap-2 px-7 py-4 text-[11px] tracking-[0.28em] uppercase text-foreground/80 border border-foreground/25 hover:border-gold hover:text-gold transition-colors">
+            <a href="/" className="inline-flex items-center gap-2 px-7 py-4 text-[11px] tracking-[0.28em] uppercase text-foreground/85 border border-foreground/25 hover:border-gold hover:text-gold transition-colors">
               Volver al inicio
             </a>
           </div>
         </div>
         <div className="hidden md:block md:col-span-5">
-          <div className="relative aspect-[3/4] max-w-[360px] ml-auto overflow-hidden drift-y">
+          <div className="relative aspect-[3/4] max-w-[380px] ml-auto overflow-hidden drift-y">
             <img src={portrait} alt="" className="absolute inset-0 w-full h-full object-cover ken-burns" />
             <div className="absolute inset-0 ring-1 ring-gold/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Acceso</p>
+              <p className="font-serif text-xl mt-1">Por invitación</p>
+            </div>
           </div>
         </div>
       </div>
@@ -105,13 +110,20 @@ function Hero() {
 
 function Pillars() {
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section className="py-20 md:py-28 border-t border-border">
       <div className="container-ddp">
+        <div className="reveal mb-12 max-w-2xl">
+          <span className="eyebrow block mb-5">Tres pilares</span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+            Lo que nos <span className="italic text-gold">define</span>.
+          </h2>
+        </div>
         <div className="reveal grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
           {pillars.map((p) => (
-            <div key={p.n} className="bg-background p-10 md:p-14 text-center">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-4">{p.n}</p>
+            <div key={p.n} className="bg-background p-10 md:p-14 text-center group hover:bg-card/40 transition-colors">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-5">{p.n}</p>
               <h3 className="font-serif text-4xl md:text-5xl italic text-gold">{p.t}</h3>
+              <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-[22ch] mx-auto">{p.d}</p>
             </div>
           ))}
         </div>
@@ -148,12 +160,22 @@ function Philosophy() {
   return (
     <section className="py-20 md:py-28 border-t border-border bg-card/20">
       <div className="container-ddp reveal">
-        <span className="eyebrow block mb-8">Filosofía</span>
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 reveal-stagger">
+        <div className="max-w-2xl mb-12">
+          <span className="eyebrow block mb-5">Filosofía</span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+            Cómo <span className="italic text-gold">pensamos</span>.
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-x-14 gap-y-10 reveal-stagger">
           {philosophy.map((p, i) => (
-            <p key={i} className="font-serif text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.2] font-light border-l-2 border-gold/60 pl-6">
-              {p}
-            </p>
+            <div key={i} className="border-l-2 border-gold/60 pl-6">
+              <span className="text-[10px] tracking-[0.28em] uppercase text-gold/80 block mb-3">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="font-serif text-2xl md:text-3xl lg:text-[2rem] leading-[1.22] font-light">
+                {p}
+              </p>
+            </div>
           ))}
         </div>
       </div>
@@ -170,6 +192,9 @@ function Apply() {
         <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light tracking-[-0.025em]">
           Capacidad <span className="italic text-gold">limitada</span>.
         </h2>
+        <p className="mt-6 max-w-xl text-base text-muted-foreground leading-[1.7]">
+          Revisamos cada solicitud personalmente. Si encajas, te escribimos en 5–7 días.
+        </p>
 
         {submitted ? (
           <div className="mt-10 border border-gold/40 bg-card/40 p-8">
