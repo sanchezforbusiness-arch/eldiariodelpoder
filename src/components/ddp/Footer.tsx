@@ -14,7 +14,7 @@ export function Footer() {
             <p className="font-serif text-3xl md:text-4xl leading-snug max-w-md font-light">
               Hablamos con <span className="italic">los que mandan</span>.
             </p>
-            <p className="mt-5 text-sm text-muted-foreground">Hecho en Madrid.</p>
+            <p className="mt-5 text-sm text-muted-foreground">ESPAÑA. 2026</p>
           </div>
 
           <div className="md:col-span-3">

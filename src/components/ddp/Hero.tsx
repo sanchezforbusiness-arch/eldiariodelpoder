@@ -23,7 +23,7 @@ export function Hero() {
         <div className="max-w-5xl">
           <div className="flex items-center gap-4 mb-7">
             <span className="h-px w-14 bg-gold/70" />
-            <span className="eyebrow">Podcast · Madrid</span>
+            <span className="eyebrow">Podcast · ESPAÑA</span>
           </div>
 
           <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.9] tracking-[-0.045em] font-light">
