@@ -1,12 +1,6 @@
 import founderAlejandro from "@/assets/founder-alejandro.jpg";
 import founderVictor from "@/assets/founder-victor.jpg";
 
-const pillars = [
-  { n: "01", t: "Conversaciones", d: "Sin prisa. Sin guion. Sin titulares." },
-  { n: "02", t: "Invitados", d: "Presidentes, CEOs y referentes que marcan agenda." },
-  { n: "03", t: "Producción", d: "Estética cuidada. Cada detalle pensado." },
-];
-
 export function About() {
   return (
     <section id="about" className="relative py-20 md:py-28 overflow-hidden border-t border-border">
@@ -23,16 +17,6 @@ export function About() {
               Diario del Poder es el podcast de referencia sobre liderazgo, empresa y política en España.
               Sentamos frente al micrófono a las personas que toman las decisiones — y dejamos que hablen.
             </p>
-
-            <div className="mt-10 grid grid-cols-3 gap-6 reveal-stagger">
-              {pillars.map((p) => (
-                <div key={p.n} className="border-t border-border pt-4">
-                  <span className="text-[10px] tracking-[0.22em] uppercase text-gold/80">{p.n}</span>
-                  <h3 className="font-serif text-xl md:text-2xl mt-2">{p.t}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{p.d}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="md:col-span-6 relative reveal">
