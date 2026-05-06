@@ -14,7 +14,7 @@ const episodes = [
 export function Episodes() {
   const [featured, ...rest] = episodes;
   return (
-    <section id="episodes" className="py-20 md:py-28 border-t border-border">
+    <section id="episodes" className="pt-20 md:pt-28 pb-12 md:pb-16 border-t border-border">
       <div className="container-ddp">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
           <div>
@@ -108,7 +108,7 @@ export function Episodes() {
           ))}
         </div>
 
-        <div className="mt-16 flex items-center gap-4 text-sm text-muted-foreground">
+        <div className="mt-10 flex items-center gap-4 text-sm text-muted-foreground">
           <span className="h-px flex-1 bg-border" />
           <span>Pronto: <span className="text-gold/90">Javier Tebas · Iván Duque</span></span>
           <span className="h-px flex-1 bg-border" />
