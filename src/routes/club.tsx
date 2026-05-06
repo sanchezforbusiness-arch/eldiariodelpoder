@@ -166,7 +166,7 @@ function Philosophy() {
             Cómo <span className="italic text-gold">pensamos</span>.
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-x-14 gap-y-10 reveal-stagger">
+        <div className="reveal grid md:grid-cols-2 gap-x-14 gap-y-10 reveal-stagger">
           {philosophy.map((p, i) => (
             <div key={i} className="border-l-2 border-gold/60 pl-6">
               <span className="text-[10px] tracking-[0.28em] uppercase text-gold/80 block mb-3">
