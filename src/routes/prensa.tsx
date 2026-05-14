@@ -15,13 +15,16 @@ const medios = [
   { name: "Diario de Navarra", program: "Navarra", url: "https://www.diariodenavarra.es/noticias/navarra/2026/05/07/reina-letizia-vuelve-pamplona-directo-acto-celebracion-dia-mundial-cruz-roja-819846-15.html" },
   { name: "Vozpópuli", program: "Dolce Vita", url: "https://www.vozpopuli.com/dolcevita/la-reina-letizia-se-hace-viral-por-lo-que-le-dijo-a-unos-jovenes-que-querian-entrevistarla-en-su-podcast.html" },
   { name: "Infobae", program: "España", url: "https://www.infobae.com/espana/2026/05/08/la-elegante-forma-en-la-que-la-reina-letizia-evita-la-invitacion-al-podcast-de-unos-estudiantes-para-hacerles-ella-la-entrevista-sois-de-que-facultad/" },
+  { name: "El Mundo", program: "Actualidad", url: "https://www.elmundo.es/" },
+  { name: "El Periódico", program: "Gente", url: "https://www.elperiodico.com/" },
+  { name: "El Debate", program: "España", url: "https://www.eldebate.com/" },
 ];
 
 const newsLd = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   headline: "Diario del Poder — Cobertura en medios nacionales",
-  description: "Cobertura en 7 medios españoles tras el encuentro con la Reina Letizia.",
+  description: "Cobertura en 10 medios españoles tras el encuentro con la Reina Letizia.",
   image: `${SITE}/og-prensa.jpg`,
   author: { "@type": "Organization", name: "Diario del Poder" },
   publisher: {
@@ -36,14 +39,14 @@ export const Route = createFileRoute("/prensa")({
   head: () => ({
     meta: [
       { title: "Diario del Poder en Prensa | Cobertura Mediática" },
-      { name: "description", content: "Mencionados en 7 medios españoles: Antena 3, El Español, ¡Hola!, Semana, Diario de Navarra, Vozpópuli, Infobae. Validación de credibilidad nacional." },
+      { name: "description", content: "Mencionados en 10 medios españoles: Antena 3, El Español, ¡Hola!, Semana, Diario de Navarra, Vozpópuli, Infobae, El Mundo, El Periódico y El Debate." },
       { property: "og:title", content: "Diario del Poder en los medios españoles" },
-      { property: "og:description", content: "Cobertura de 7 medios nacionales tras el encuentro con la Reina Letizia. Credibilidad verificada." },
+      { property: "og:description", content: "Cobertura de 10 medios nacionales tras el encuentro con la Reina Letizia." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE}/prensa` },
       { property: "og:image", content: `${SITE}/og-default.jpg` },
       { name: "twitter:title", content: "Diario del Poder en los medios españoles" },
-      { name: "twitter:description", content: "Cobertura de 7 medios nacionales tras el encuentro con la Reina Letizia." },
+      { name: "twitter:description", content: "Cobertura de 10 medios nacionales tras el encuentro con la Reina Letizia." },
     ],
     links: [{ rel: "canonical", href: `${SITE}/prensa` }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(newsLd) }],
