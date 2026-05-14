@@ -12,6 +12,7 @@ import g6 from "@/assets/guest-6.jpg";
 import g7 from "@/assets/guest-7.jpg";
 import g8 from "@/assets/guest-8.jpg";
 import gEcha from "@/assets/guest-echavarren.jpg";
+import gJordi from "@/assets/guest-jordi-juan.jpg";
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
@@ -35,14 +36,15 @@ const presidentes: Guest[] = [
 ];
 
 const empresariales: Guest[] = [
-  { name: "Andrés Rodríguez", role: "Presidente de Forbes España", img: g4, ep: "01", youtube: "https://youtu.be/nTtgtxG7UNs", spotify: SPOTIFY },
+  { name: "Javier Tebas", role: "Presidente de LaLiga", img: g3, wiki: "https://es.wikipedia.org/wiki/Javier_Tebas" },
   { name: "Mikel Echavarren", role: "CEO de Colliers — Real estate", img: gEcha, ep: "04", youtube: "https://youtu.be/ARO5S1I5cg8", spotify: SPOTIFY },
   { name: "Martín Sellés", role: "CEO Johnson & Johnson España", img: g6 },
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
 ];
 
 const mediaticos: Guest[] = [
-  { name: "Javier Tebas", role: "Presidente de LaLiga", img: g3, wiki: "https://es.wikipedia.org/wiki/Javier_Tebas" },
+  { name: "Andrés Rodríguez", role: "Presidente y fundador de Forbes España", img: g4, ep: "01", youtube: "https://youtu.be/nTtgtxG7UNs", spotify: SPOTIFY },
+  { name: "Jordi Juan", role: "Director de La Vanguardia", img: gJordi, wiki: "https://es.wikipedia.org/wiki/Jordi_Juan_(periodista)" },
 ];
 
 const allGuests = [...presidentes, ...empresariales, ...mediaticos];
