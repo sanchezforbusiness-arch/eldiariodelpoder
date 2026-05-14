@@ -1,10 +1,43 @@
 # Diario del Poder
 
-> Podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido.
+> Podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido. Cobertura en 7 medios nacionales.
+
+Fundado por Alejandro Sánchez Martínez y Víctor Gandarilla. Con sede en Pamplona, España.
 
 ## Pages
 
-- [Inicio](/): Presentación del podcast Diario del Poder.
-- [Episodios](/episodios): Todos los episodios con expresidentes, CEOs y líderes institucionales.
-- [Invitados](/invitados): Lista de invitados que han pasado por el podcast.
-- [El Club del Poder](/club): Comunidad selectiva de jóvenes líderes. Acceso por invitación.
+- [Inicio](/): Hero con foto del encuentro con la Reina Letizia, últimos episodios, cobertura en prensa y newsletter.
+- [Invitados](/invitados): Roster de invitados — expresidentes, CEOs y líderes mediáticos.
+- [Nosotros](/nosotros): Propósito, equipo (Alejandro y Víctor), números y valores.
+- [Prensa](/prensa): Cobertura mediática — encuentro con la Reina Letizia y enlaces a los 7 medios.
+- [Escúchanos](/escuchanos): Spotify, YouTube, Instagram, LinkedIn, TikTok y newsletter.
+- [Contacto](/contacto): Email, formulario y redes sociales.
+- [Episodios](/episodios): Todos los episodios publicados.
+
+## Key Guests
+
+### Expresidentes
+- José María Aznar — Expresidente del Gobierno de España (1996–2004)
+- Guillermo Lasso — Expresidente de la República del Ecuador
+- Iván Duque — Expresidente de Colombia
+- Esperanza Aguirre — Expresidenta de la Comunidad de Madrid
+
+### CEOs y líderes empresariales
+- Andrés Rodríguez — Presidente de Forbes España
+- Mikel Echavarren — CEO de Colliers
+- Martín Sellés — CEO Johnson & Johnson España
+- Federica Fornaciari — CEO SenYours
+
+### Periodistas y líderes mediáticos
+- Javier Tebas — Presidente de LaLiga
+
+## Press Coverage
+
+Mencionados en 7 medios españoles tras encuentro con la Reina Letizia:
+- Antena 3 (Espejo Público)
+- El Español
+- ¡Hola!
+- Semana
+- Diario de Navarra
+- Vozpópuli
+- Infobae
