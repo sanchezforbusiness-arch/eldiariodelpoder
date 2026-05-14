@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { ArrowUpRight, Play } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Episodes } from "@/components/ddp/Episodes";
+import { GuestsMasonry } from "@/components/ddp/GuestsMasonry";
 import { useReveal } from "@/hooks/use-reveal";
 import letiziaImg from "@/assets/letizia-encuentro.jpg";
 import alejandroImg from "@/assets/founder-alejandro.jpg";
@@ -36,6 +37,7 @@ function HomePage() {
       <main>
         <LetiziaHero />
         <PressStrip />
+        <GuestsMasonry />
         <Episodes />
         <AboutPreview />
         <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
