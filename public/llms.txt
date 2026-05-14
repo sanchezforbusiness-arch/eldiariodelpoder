@@ -8,7 +8,9 @@ Fundado por Alejandro Sánchez Martínez y Víctor Gandarilla. Con sede en Pampl
 
 - [Inicio](/): Hero con foto del encuentro con la Reina Letizia, últimos episodios, cobertura en prensa y newsletter.
 - [Invitados](/invitados): Roster de invitados — expresidentes, CEOs y líderes mediáticos.
-- [Nosotros](/nosotros): Propósito, equipo (Alejandro y Víctor), números y valores.
+- [Nosotros](/nosotros): Hub corto con números clave y enlaces a Equipo y Manifiesto.
+- [Equipo](/equipo): Fundadores (Alejandro y Víctor) y advisors (Federica Fornaciari, Iñigo Rivero).
+- [Manifiesto](/manifiesto): Propósito y valores editoriales.
 - [Prensa](/prensa): Cobertura mediática — encuentro con la Reina Letizia y enlaces a los 7 medios.
 - [Escúchanos](/escuchanos): Spotify, YouTube, Instagram, LinkedIn, TikTok y newsletter.
 - [Contacto](/contacto): Email, formulario y redes sociales.
