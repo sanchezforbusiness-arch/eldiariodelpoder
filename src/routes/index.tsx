@@ -6,8 +6,6 @@ import { Episodes } from "@/components/ddp/Episodes";
 import { GuestsMasonry } from "@/components/ddp/GuestsMasonry";
 import { useReveal } from "@/hooks/use-reveal";
 import letiziaImg from "@/assets/letizia-encuentro.jpg";
-import alejandroImg from "@/assets/founder-alejandro.jpg";
-import victorImg from "@/assets/founder-victor.jpg";
 
 const Newsletter = lazy(() => import("@/components/ddp/Newsletter").then((m) => ({ default: m.Newsletter })));
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
@@ -16,7 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Diario del Poder — La voz del legado | Podcast" },
-      { name: "description", content: "Diario del Poder: el podcast premium en español con expresidentes, CEOs y líderes institucionales. Cobertura en 7 medios nacionales." },
+      { name: "description", content: "Diario del Poder: el podcast premium en español con expresidentes, CEOs y líderes institucionales. Cobertura en 10 medios nacionales." },
       { property: "og:title", content: "Diario del Poder — La voz del legado | Podcast" },
       { property: "og:description", content: "El podcast premium en español con expresidentes, CEOs y líderes institucionales." },
       { property: "og:type", content: "website" },
@@ -32,15 +30,15 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   useReveal();
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-white text-foreground">
       <Navbar />
       <main>
         <LetiziaHero />
         <PressStrip />
         <GuestsMasonry />
         <Episodes />
-        <AboutPreview />
-        <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+        <AboutMini />
+        <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
           <Newsletter />
         </Suspense>
       </main>
@@ -53,50 +51,43 @@ function HomePage() {
 
 function LetiziaHero() {
   return (
-    <section id="top" className="relative min-h-[100svh] flex items-end overflow-hidden grain">
+    <section id="top" className="relative min-h-[100svh] overflow-hidden bg-card">
       <img
         src={letiziaImg}
-        alt="Víctor Gandarilla saluda a la Reina Letizia durante un acto institucional, junto a Alejandro Sánchez Martínez — Diario del Poder"
+        alt="Alejandro Sánchez y Víctor Gandarilla con la Reina Letizia en Pamplona — encuentro que generó cobertura en 10 medios nacionales"
         width={1920}
         height={1280}
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover object-[35%_30%] ken-burns"
+        className="absolute inset-0 w-full h-full object-cover object-[35%_30%]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/35 to-transparent" />
-      <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-50" />
+      {/* Soft white fade for overlay legibility */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-transparent" />
 
-      <div className="container-ddp relative z-10 pt-32 pb-24 md:pb-32 fade-up">
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-4 mb-7">
-            <span className="h-px w-14 bg-gold/70" />
-            <span className="eyebrow">Podcast · ESPAÑA</span>
-          </div>
-
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-[-0.045em] font-light">
-            La voz<br />del <span className="italic shimmer-gold">legado</span>.
-          </h1>
-
-          <p className="mt-8 max-w-xl text-base md:text-[1.1rem] text-foreground/85 leading-[1.65]">
-            Conversaciones que dejan criterio con los líderes que más importan.
-            Expresidentes, CEOs y figuras institucionales hablan sin guion.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              to="/episodios"
-              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-9 py-4 text-[11px] tracking-[0.28em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
-            >
-              <Play size={14} className="fill-current" />
-              Descubre los episodios
-            </Link>
-            <Link
-              to="/prensa"
-              className="inline-flex items-center gap-2 px-7 py-4 text-[11px] tracking-[0.28em] uppercase text-foreground/85 border border-foreground/25 hover:border-gold hover:text-gold transition-colors"
-            >
-              Ver cobertura en prensa
-            </Link>
+      <div className="container-ddp relative z-10 pt-28 md:pt-32 pb-10 min-h-[100svh] flex items-end md:items-end">
+        <div className="w-full md:flex md:justify-end fade-up">
+          <div className="bg-white border border-border p-8 md:p-10 max-w-[460px] w-full md:ml-auto shadow-[0_18px_50px_-25px_rgba(0,0,0,0.25)]">
+            <span className="eyebrow block mb-4">La voz del legado</span>
+            <h1 className="font-display text-3xl md:text-[2.6rem] font-bold leading-[1.05] tracking-[-0.03em] text-foreground">
+              Conversaciones que dejan criterio con los líderes que más importan.
+            </h1>
+            <p className="mt-5 text-[15px] text-muted-foreground leading-[1.7]">
+              Expresidentes, CEOs y figuras institucionales hablan sin guion.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                to="/escuchanos"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-[13px] font-semibold tracking-[0.06em] uppercase hover:opacity-90 transition-opacity"
+              >
+                <Play size={14} className="fill-current" /> Escúchanos
+              </Link>
+              <Link
+                to="/invitados"
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-[13px] font-semibold tracking-[0.06em] uppercase border border-border text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                Ver invitados
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -105,43 +96,40 @@ function LetiziaHero() {
 }
 
 const medios = [
-  "Antena 3",
-  "El Español",
-  "Hola",
-  "Semana",
-  "Diario de Navarra",
-  "Vozpopuli",
-  "Infobae",
+  "Antena 3", "El Español", "¡Hola!", "Semana",
+  "Diario de Navarra", "Vozpópuli", "Infobae",
+  "El Mundo", "El Periódico", "El Debate",
 ];
 
 function PressStrip() {
   return (
-    <section className="py-16 md:py-20 border-t border-border bg-card/20">
+    <section className="py-16 md:py-20 bg-card">
       <div className="container-ddp">
-        <div className="grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-4 reveal">
-            <span className="eyebrow block mb-5">Vistos en</span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-              7 medios <span className="italic text-gold">nacionales</span>.
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="reveal">
+            <span className="eyebrow block mb-4">Cobertura</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-[-0.03em] text-foreground">
+              10 medios españoles cubrieron nuestro encuentro
             </h2>
-            <p className="mt-5 text-sm text-muted-foreground leading-[1.7] max-w-sm">
-              Tras nuestro encuentro con la Reina Letizia, la historia la contaron ellos.
+            <p className="mt-5 text-base text-muted-foreground leading-[1.7] max-w-md">
+              Cuando haces algo real, los medios lo notan. En 48 horas, Antena 3,
+              El Español, ¡Hola!, El Mundo y otros cubrieron el encuentro con la Reina Letizia.
             </p>
             <Link
               to="/prensa"
-              className="mt-7 inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-gold hover:text-gold-bright transition-colors group"
+              className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-primary hover:opacity-80 transition-opacity group"
             >
               Ver cobertura completa
-              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
 
-          <div className="md:col-span-8 reveal">
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-border border border-border">
+          <div className="reveal">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-border border border-border">
               {medios.map((m) => (
                 <li
                   key={m}
-                  className="bg-background px-4 py-5 flex items-center justify-center text-center text-[11px] md:text-[12px] tracking-[0.18em] uppercase text-foreground/80 hover:text-gold transition-colors"
+                  className="bg-white px-4 py-6 flex items-center justify-center text-center text-[13px] font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
                 >
                   {m}
                 </li>
@@ -154,52 +142,26 @@ function PressStrip() {
   );
 }
 
-function AboutPreview() {
+function AboutMini() {
   return (
-    <section className="py-20 md:py-28 border-t border-border">
-      <div className="container-ddp grid md:grid-cols-12 gap-12 items-center">
-        <div className="md:col-span-7 reveal">
-          <span className="eyebrow block mb-5">Quiénes somos</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-            Un ecosistema de <span className="italic text-gold">influencia</span>.
-          </h2>
-          <div className="mt-7 space-y-4 text-base md:text-[1.05rem] text-foreground/80 leading-[1.75] max-w-xl">
-            <p>
-              Diario del Poder es un proyecto de comunicación premium dedicado al
-              liderazgo, la influencia y el legado.
-            </p>
-            <p>
-              Entrevistamos a los perfiles que importan. Compartimos su criterio con
-              una generación que lo entiende.
-            </p>
-          </div>
-          <Link
-            to="/nosotros"
-            className="mt-9 inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-gold hover:text-gold-bright transition-colors group"
-          >
-            Conoce a Alejandro y Víctor
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </Link>
-        </div>
-
-        <div className="md:col-span-5 grid grid-cols-2 gap-4">
-          <figure className="relative aspect-[3/4] overflow-hidden bg-card hover-cinema">
-            <img src={alejandroImg} alt="Alejandro Sánchez Martínez, fundador de Diario del Poder" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <figcaption className="absolute bottom-4 left-4 right-4">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Fundador</p>
-              <p className="font-serif text-lg mt-0.5">Alejandro</p>
-            </figcaption>
-          </figure>
-          <figure className="relative aspect-[3/4] overflow-hidden bg-card hover-cinema mt-8">
-            <img src={victorImg} alt="Víctor Gandarilla, co-fundador de Diario del Poder" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <figcaption className="absolute bottom-4 left-4 right-4">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Co-fundador</p>
-              <p className="font-serif text-lg mt-0.5">Víctor</p>
-            </figcaption>
-          </figure>
-        </div>
+    <section className="py-24 md:py-32 bg-card">
+      <div className="container-ddp max-w-3xl text-center">
+        <span className="eyebrow block mb-5">Quiénes somos</span>
+        <h2 className="font-display text-4xl md:text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground">
+          Somos la voz del legado
+        </h2>
+        <p className="mt-7 text-lg text-muted-foreground leading-[1.8]">
+          Diario del Poder acerca conversaciones de criterio a jóvenes con ambición.
+          Entrevistamos expresidentes, CEOs globales y líderes que comparten su visión,
+          experiencia y legado.
+        </p>
+        <Link
+          to="/equipo"
+          className="mt-8 inline-flex items-center gap-2 text-[14px] font-semibold text-primary hover:opacity-80 transition-opacity group"
+        >
+          Conoce a Alejandro y Víctor
+          <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </Link>
       </div>
     </section>
   );
