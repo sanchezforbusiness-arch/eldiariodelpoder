@@ -8,13 +8,13 @@ import letiziaImg from "@/assets/letizia-encuentro.jpg";
 const SITE = "https://eldiariodelpoder.com";
 
 const medios = [
-  { name: "Antena 3", program: "Espejo Público", url: "#" },
-  { name: "El Español", program: "Crónica Social", url: "#" },
-  { name: "¡Hola!", program: "Casa Real", url: "#" },
-  { name: "Semana", program: "Actualidad", url: "#" },
-  { name: "Diario de Navarra", program: "Local", url: "#" },
-  { name: "Vozpópuli", program: "Sociedad", url: "#" },
-  { name: "Infobae", program: "España", url: "#" },
+  { name: "Antena 3", program: "Espejo Público", url: "https://www.antena3.com/programas/espejo-publico/noticias/chascarrillo-reina-letizia-dos-jovenes-que-pedian-entrevista-antes-delante-camara-era-inviable_202605116a01daefb5b06629960c3679.html" },
+  { name: "El Español", program: "Royals", url: "https://www.elespanol.com/mujer/royals/20260508/anecdota-reina-letizia-chicos-querian-hablara-podcast-entrevistada-entrevistadora/1003744238033_0.html" },
+  { name: "¡Hola!", program: "Actualidad", url: "https://www.hola.com/actualidad/20260509900617/letizia-de-entrevistada-a-entrevistadora/" },
+  { name: "Semana", program: "Realeza", url: "https://www.semana.es/realeza/reina-letizia-se-vuelve-viral-por-su-reaccion-propuesta-entrevista-yo-creo-que-estais-consiguiendo_2814249" },
+  { name: "Diario de Navarra", program: "Navarra", url: "https://www.diariodenavarra.es/noticias/navarra/2026/05/07/reina-letizia-vuelve-pamplona-directo-acto-celebracion-dia-mundial-cruz-roja-819846-15.html" },
+  { name: "Vozpópuli", program: "Dolce Vita", url: "https://www.vozpopuli.com/dolcevita/la-reina-letizia-se-hace-viral-por-lo-que-le-dijo-a-unos-jovenes-que-querian-entrevistarla-en-su-podcast.html" },
+  { name: "Infobae", program: "España", url: "https://www.infobae.com/espana/2026/05/08/la-elegante-forma-en-la-que-la-reina-letizia-evita-la-invitacion-al-podcast-de-unos-estudiantes-para-hacerles-ella-la-entrevista-sois-de-que-facultad/" },
 ];
 
 const newsLd = {
