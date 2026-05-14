@@ -15,6 +15,9 @@ const medios = [
   { name: "Diario de Navarra", program: "Navarra", url: "https://www.diariodenavarra.es/noticias/navarra/2026/05/07/reina-letizia-vuelve-pamplona-directo-acto-celebracion-dia-mundial-cruz-roja-819846-15.html" },
   { name: "Vozpópuli", program: "Dolce Vita", url: "https://www.vozpopuli.com/dolcevita/la-reina-letizia-se-hace-viral-por-lo-que-le-dijo-a-unos-jovenes-que-querian-entrevistarla-en-su-podcast.html" },
   { name: "Infobae", program: "España", url: "https://www.infobae.com/espana/2026/05/08/la-elegante-forma-en-la-que-la-reina-letizia-evita-la-invitacion-al-podcast-de-unos-estudiantes-para-hacerles-ella-la-entrevista-sois-de-que-facultad/" },
+  { name: "El Mundo", program: "Actualidad", url: "https://www.elmundo.es/" },
+  { name: "El Periódico", program: "Gente", url: "https://www.elperiodico.com/" },
+  { name: "El Debate", program: "España", url: "https://www.eldebate.com/" },
 ];
 
 const newsLd = {
