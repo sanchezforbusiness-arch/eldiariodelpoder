@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
 
 const TikTok = (props: { size?: number }) => (
@@ -20,10 +21,11 @@ export function Footer() {
           <div className="md:col-span-3">
             <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#episodes" className="hover:text-foreground transition-colors">Episodios</a></li>
-              <li><a href="#guests" className="hover:text-foreground transition-colors">Invitados</a></li>
-              <li><a href="#club" className="hover:text-foreground transition-colors">Club</a></li>
-              <li><a href="#team" className="hover:text-foreground transition-colors">Equipo</a></li>
+              <li><Link to="/invitados" className="hover:text-foreground transition-colors">Invitados</Link></li>
+              <li><Link to="/nosotros" className="hover:text-foreground transition-colors">Nosotros</Link></li>
+              <li><Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link></li>
+              <li><Link to="/escuchanos" className="hover:text-foreground transition-colors">Escúchanos</Link></li>
+              <li><Link to="/contacto" className="hover:text-foreground transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
