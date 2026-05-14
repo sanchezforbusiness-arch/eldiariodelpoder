@@ -4,7 +4,9 @@ import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
 
 const links = [
   { to: "/invitados", label: "Invitados" },
+  { to: "/equipo", label: "Equipo" },
   { to: "/nosotros", label: "Nosotros" },
+  { to: "/manifiesto", label: "Manifiesto" },
   { to: "/prensa", label: "Prensa" },
   { to: "/escuchanos", label: "Escúchanos" },
   { to: "/contacto", label: "Contacto" },
