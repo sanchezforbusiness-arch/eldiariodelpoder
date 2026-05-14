@@ -96,18 +96,6 @@ export const Route = createRootRoute({
         crossOrigin: "anonymous",
       },
       {
-        rel: "preload",
-        as: "style",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap",
-      },
-      {
-        rel: "preload",
-        as: "font",
-        type: "font/woff2",
-        href: "https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2",
-        crossOrigin: "anonymous",
-      },
-      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -116,10 +104,6 @@ export const Route = createRootRoute({
       {
         type: "application/ld+json",
         children: JSON.stringify(structuredData),
-      },
-      {
-        children:
-          "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap';l.media='print';l.onload=function(){this.media='all'};document.head.appendChild(l);})();",
       },
     ],
   }),
