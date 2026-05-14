@@ -1,12 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Linkedin, Instagram, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
-import alejandroImg from "@/assets/founder-alejandro.jpg";
-import victorImg from "@/assets/founder-victor.jpg";
-import federicaImg from "@/assets/guest-8.jpg";
-import inigoImg from "@/assets/advisor-inigo.jpg";
 
 const SITE = "https://eldiariodelpoder.com";
 
