@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
+import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as InvitadosRouteImport } from './routes/invitados'
 import { Route as EscuchanosRouteImport } from './routes/escuchanos'
+import { Route as EquipoRouteImport } from './routes/equipo'
 import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as IndexRouteImport } from './routes/index'
@@ -27,6 +29,11 @@ const NosotrosRoute = NosotrosRouteImport.update({
   path: '/nosotros',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManifiestoRoute = ManifiestoRouteImport.update({
+  id: '/manifiesto',
+  path: '/manifiesto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InvitadosRoute = InvitadosRouteImport.update({
   id: '/invitados',
   path: '/invitados',
@@ -35,6 +42,11 @@ const InvitadosRoute = InvitadosRouteImport.update({
 const EscuchanosRoute = EscuchanosRouteImport.update({
   id: '/escuchanos',
   path: '/escuchanos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipoRoute = EquipoRouteImport.update({
+  id: '/equipo',
+  path: '/equipo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EpisodiosRoute = EpisodiosRouteImport.update({
@@ -57,8 +69,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
   '/episodios': typeof EpisodiosRoute
+  '/equipo': typeof EquipoRoute
   '/escuchanos': typeof EscuchanosRoute
   '/invitados': typeof InvitadosRoute
+  '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
   '/prensa': typeof PrensaRoute
 }
@@ -66,8 +80,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
   '/episodios': typeof EpisodiosRoute
+  '/equipo': typeof EquipoRoute
   '/escuchanos': typeof EscuchanosRoute
   '/invitados': typeof InvitadosRoute
+  '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
   '/prensa': typeof PrensaRoute
 }
@@ -76,8 +92,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
   '/episodios': typeof EpisodiosRoute
+  '/equipo': typeof EquipoRoute
   '/escuchanos': typeof EscuchanosRoute
   '/invitados': typeof InvitadosRoute
+  '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
   '/prensa': typeof PrensaRoute
 }
@@ -87,8 +105,10 @@ export interface FileRouteTypes {
     | '/'
     | '/contacto'
     | '/episodios'
+    | '/equipo'
     | '/escuchanos'
     | '/invitados'
+    | '/manifiesto'
     | '/nosotros'
     | '/prensa'
   fileRoutesByTo: FileRoutesByTo
@@ -96,8 +116,10 @@ export interface FileRouteTypes {
     | '/'
     | '/contacto'
     | '/episodios'
+    | '/equipo'
     | '/escuchanos'
     | '/invitados'
+    | '/manifiesto'
     | '/nosotros'
     | '/prensa'
   id:
@@ -105,8 +127,10 @@ export interface FileRouteTypes {
     | '/'
     | '/contacto'
     | '/episodios'
+    | '/equipo'
     | '/escuchanos'
     | '/invitados'
+    | '/manifiesto'
     | '/nosotros'
     | '/prensa'
   fileRoutesById: FileRoutesById
@@ -115,8 +139,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactoRoute: typeof ContactoRoute
   EpisodiosRoute: typeof EpisodiosRoute
+  EquipoRoute: typeof EquipoRoute
   EscuchanosRoute: typeof EscuchanosRoute
   InvitadosRoute: typeof InvitadosRoute
+  ManifiestoRoute: typeof ManifiestoRoute
   NosotrosRoute: typeof NosotrosRoute
   PrensaRoute: typeof PrensaRoute
 }
@@ -137,6 +163,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NosotrosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manifiesto': {
+      id: '/manifiesto'
+      path: '/manifiesto'
+      fullPath: '/manifiesto'
+      preLoaderRoute: typeof ManifiestoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/invitados': {
       id: '/invitados'
       path: '/invitados'
@@ -149,6 +182,13 @@ declare module '@tanstack/react-router' {
       path: '/escuchanos'
       fullPath: '/escuchanos'
       preLoaderRoute: typeof EscuchanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipo': {
+      id: '/equipo'
+      path: '/equipo'
+      fullPath: '/equipo'
+      preLoaderRoute: typeof EquipoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/episodios': {
@@ -179,11 +219,22 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactoRoute: ContactoRoute,
   EpisodiosRoute: EpisodiosRoute,
+  EquipoRoute: EquipoRoute,
   EscuchanosRoute: EscuchanosRoute,
   InvitadosRoute: InvitadosRoute,
+  ManifiestoRoute: ManifiestoRoute,
   NosotrosRoute: NosotrosRoute,
   PrensaRoute: PrensaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
