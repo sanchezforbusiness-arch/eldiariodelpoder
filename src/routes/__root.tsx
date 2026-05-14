@@ -74,8 +74,6 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: SITE_TITLE },
-      { name: "description", content: SITE_DESCRIPTION },
       { name: "author", content: SITE_NAME },
       { name: "google-site-verification", content: "m2Mn29bOhpHxtZMGx_Nsy0bQXUtJfmf5XdRwwL4110w" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
@@ -83,18 +81,12 @@ export const Route = createRootRoute({
       { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast España, podcast política, podcast empresarial, CEOs, expresidentes, podcast premium, liderazgo" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: "es_ES" },
-      { property: "og:url", content: SITE_URL },
-      { property: "og:title", content: SITE_TITLE },
-      { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:image", content: SITE_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: SITE_TITLE },
-      { name: "twitter:description", content: SITE_DESCRIPTION },
       { name: "twitter:image", content: SITE_IMAGE },
     ],
     links: [
-      { rel: "canonical", href: SITE_URL },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
