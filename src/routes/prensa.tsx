@@ -41,7 +41,7 @@ export const Route = createFileRoute("/prensa")({
       { property: "og:description", content: "Cobertura de 7 medios nacionales tras el encuentro con la Reina Letizia. Credibilidad verificada." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE}/prensa` },
-      { property: "og:image", content: `${SITE}/og-prensa.jpg` },
+      { property: "og:image", content: `${SITE}/og-default.jpg` },
       { name: "twitter:title", content: "Diario del Poder en los medios españoles" },
       { name: "twitter:description", content: "Cobertura de 7 medios nacionales tras el encuentro con la Reina Letizia." },
     ],
