@@ -24,7 +24,7 @@ const newsLd = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   headline: "Diario del Poder — Cobertura en medios nacionales",
-  description: "Cobertura en 7 medios españoles tras el encuentro con la Reina Letizia.",
+  description: "Cobertura en 10 medios españoles tras el encuentro con la Reina Letizia.",
   image: `${SITE}/og-prensa.jpg`,
   author: { "@type": "Organization", name: "Diario del Poder" },
   publisher: {
