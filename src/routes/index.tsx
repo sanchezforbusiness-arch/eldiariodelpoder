@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   useReveal();
   return (
-    <div className="bg-white text-foreground">
+    <div className="bg-background text-foreground">
       <Navbar />
       <main>
         <LetiziaHero />
@@ -66,7 +66,7 @@ function LetiziaHero() {
 
       <div className="container-ddp relative z-10 pt-28 md:pt-32 pb-10 min-h-[100svh] flex items-end md:items-end">
         <div className="w-full md:flex md:justify-end fade-up">
-          <div className="bg-white border border-border p-8 md:p-10 max-w-[460px] w-full md:ml-auto shadow-[0_18px_50px_-25px_rgba(0,0,0,0.25)]">
+          <div className="bg-background border border-border p-8 md:p-10 max-w-[460px] w-full md:ml-auto shadow-[0_18px_50px_-25px_rgba(0,0,0,0.25)]">
             <span className="eyebrow block mb-4">La voz del legado</span>
             <h1 className="font-display text-3xl md:text-[2.6rem] font-bold leading-[1.05] tracking-[-0.03em] text-foreground">
               Conversaciones que dejan criterio con los líderes que más importan.
@@ -129,7 +129,7 @@ function PressStrip() {
               {medios.map((m) => (
                 <li
                   key={m}
-                  className="bg-white px-4 py-6 flex items-center justify-center text-center text-[13px] font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
+                  className="bg-background px-4 py-6 flex items-center justify-center text-center text-[13px] font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
                 >
                   {m}
                 </li>

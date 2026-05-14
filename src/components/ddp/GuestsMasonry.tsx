@@ -31,7 +31,7 @@ const guests: Guest[] = [
 
 export function GuestsMasonry() {
   return (
-    <section id="invitados" className="py-20 md:py-28 bg-white">
+    <section id="invitados" className="py-20 md:py-28 bg-background">
       <div className="container-ddp">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16 reveal">
           <div className="max-w-2xl">

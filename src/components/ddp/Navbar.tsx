@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 bg-background transition-shadow duration-300 ${
         scrolled ? "shadow-[0_1px_0_0_var(--color-border)]" : "border-b border-transparent"
       }`}
     >
@@ -72,7 +72,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-white">
+        <div className="lg:hidden border-t border-border bg-background">
           <nav className="container-ddp py-6 flex flex-col gap-5">
             {links.map((l) => (
               <Link

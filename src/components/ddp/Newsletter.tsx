@@ -36,7 +36,7 @@ export function Newsletter() {
           </p>
 
           {sent ? (
-            <div className="mt-10 inline-flex items-center gap-3 border border-primary/40 bg-white px-6 py-4">
+            <div className="mt-10 inline-flex items-center gap-3 border border-primary/40 bg-background px-6 py-4">
               <Check size={18} className="text-primary" />
               <span className="text-sm text-foreground">Listo. Revisa tu email para confirmar.</span>
             </div>
@@ -59,7 +59,7 @@ export function Newsletter() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="tu@email.com"
                     required
-                    className="flex-1 bg-white border border-border focus:border-primary px-5 py-4 text-base text-foreground placeholder:text-muted-foreground/70 focus:outline-none transition-colors"
+                    className="flex-1 bg-background border border-border focus:border-primary px-5 py-4 text-base text-foreground placeholder:text-muted-foreground/70 focus:outline-none transition-colors"
                   />
                   <button
                     type="submit"

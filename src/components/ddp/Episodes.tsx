@@ -14,7 +14,7 @@ const episodes = [
 export function Episodes() {
   const [featured, ...rest] = episodes;
   return (
-    <section id="episodes" className="py-20 md:py-28 bg-white border-t border-border">
+    <section id="episodes" className="py-20 md:py-28 bg-background border-t border-border">
       <div className="container-ddp">
         <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center reveal">
           <a
