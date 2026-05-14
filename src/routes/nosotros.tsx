@@ -5,6 +5,8 @@ import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 import alejandroImg from "@/assets/founder-alejandro.jpg";
 import victorImg from "@/assets/founder-victor.jpg";
+import federicaImg from "@/assets/guest-8.jpg";
+import inigoImg from "@/assets/advisor-inigo.jpg";
 
 const SITE = "https://eldiariodelpoder.com";
 
@@ -22,6 +24,22 @@ const peopleLd = [
     "@type": "Person",
     name: "Víctor Gandarilla",
     jobTitle: "Co-Fundador & Dirección de Operaciones",
+    affiliation: { "@type": "Organization", name: "Diario del Poder" },
+    url: `${SITE}/nosotros`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Federica Fornaciari",
+    jobTitle: "Advisor · Estrategia & Marca",
+    affiliation: { "@type": "Organization", name: "Diario del Poder" },
+    url: `${SITE}/nosotros`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Iñigo Rivero",
+    jobTitle: "Advisor · M&A & Patrimonios",
     affiliation: { "@type": "Organization", name: "Diario del Poder" },
     url: `${SITE}/nosotros`,
   },
@@ -54,6 +72,7 @@ function NosotrosPage() {
         <Hero />
         <Proposito />
         <Equipo />
+        <Advisors />
         <Numeros />
         <Valores />
         <CTA />
@@ -135,6 +154,64 @@ function Equipo() {
         </div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 reveal reveal-stagger">
           {team.map((p) => (
+            <article key={p.name}>
+              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-cinema">
+                <img src={p.img} alt={`${p.name}, ${p.role} de Diario del Poder`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+              <h3 className="mt-7 font-serif text-3xl md:text-4xl">{p.name}</h3>
+              <p className="mt-2 text-[11px] tracking-[0.24em] uppercase text-gold">{p.role}</p>
+              <p className="mt-5 text-base text-muted-foreground leading-[1.75] max-w-md">{p.bio}</p>
+              <div className="mt-5 flex items-center gap-4 text-muted-foreground">
+                {p.links.map((l) => (
+                  <a key={l.label} href={l.href} target="_blank" rel="noreferrer" aria-label={`${p.name} en ${l.label}`} className="hover:text-gold transition-colors">
+                    <l.icon size={18} />
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Advisors() {
+  const advisors = [
+    {
+      img: federicaImg,
+      name: "Federica Fornaciari",
+      role: "Advisor · Estrategia & Marca",
+      bio: "Founder de SenYours y NoBrainer Partners. Ex-Bain. Profesora en IE, IESE y Bocconi. Forbes Top 100.",
+      links: [
+        { icon: Linkedin, href: "https://www.linkedin.com/in/federica-ilaria-fornaciari-mba", label: "LinkedIn" },
+      ],
+    },
+    {
+      img: inigoImg,
+      name: "Iñigo Rivero",
+      role: "Advisor · M&A & Patrimonios",
+      bio: "Managing Partner de Paterberg y Lejeune. Asesora a family offices, consejos y grandes patrimonios.",
+      links: [
+        { icon: Linkedin, href: "https://www.linkedin.com/in/iñigo-rivero-iruretagoyena-88351b30", label: "LinkedIn" },
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-20 md:py-28 border-t border-border">
+      <div className="container-ddp">
+        <div className="reveal mb-14 max-w-2xl">
+          <span className="eyebrow block mb-5">Advisors</span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+            Quienes nos <span className="italic text-gold">aconsejan</span>.
+          </h2>
+          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+            Dos perfiles con recorrido real que validan criterio editorial y estrategia.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 reveal reveal-stagger">
+          {advisors.map((p) => (
             <article key={p.name}>
               <div className="relative aspect-[4/5] overflow-hidden bg-card hover-cinema">
                 <img src={p.img} alt={`${p.name}, ${p.role} de Diario del Poder`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
