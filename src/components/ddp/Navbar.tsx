@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 const links = [
   { to: "/", label: "Inicio" },
   { to: "/invitados", label: "Invitados" },
-  { to: "/nosotros", label: "Nosotros" },
   { to: "/prensa", label: "Prensa" },
+  { to: "/eventos", label: "Eventos" },
   { to: "/escuchanos", label: "Escúchanos" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
@@ -56,10 +56,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            to="/escuchanos"
+            to="/contacto"
             className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-[12px] font-semibold tracking-[0.06em] uppercase hover:opacity-90 transition-opacity"
           >
-            Escúchanos
+            Únete
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}

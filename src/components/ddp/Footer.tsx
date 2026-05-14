@@ -7,48 +7,48 @@ const TikTok = (props: { size?: number }) => (
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-foreground text-background">
       <div className="container-ddp py-16 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-5">
-            <div className="font-display text-2xl font-bold text-foreground mb-3">Diario del Poder</div>
-            <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+            <div className="font-display text-2xl font-bold text-background mb-3">Diario del Poder</div>
+            <p className="text-base text-background/70 leading-relaxed max-w-md">
               Conversaciones de criterio con expresidentes, CEOs y líderes que han estado donde se decide.
             </p>
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-[12px] font-semibold tracking-[0.14em] uppercase text-primary mb-5">Navegar</h4>
+            <h4 className="text-[12px] font-semibold tracking-[0.14em] uppercase text-background/60 mb-5">Navegar</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/invitados" className="text-foreground hover:text-primary transition-colors">Invitados</Link></li>
-              <li><Link to="/nosotros" className="text-foreground hover:text-primary transition-colors">Nosotros</Link></li>
-              <li><Link to="/prensa" className="text-foreground hover:text-primary transition-colors">Prensa</Link></li>
-              <li><Link to="/escuchanos" className="text-foreground hover:text-primary transition-colors">Escúchanos</Link></li>
-              <li><Link to="/contacto" className="text-foreground hover:text-primary transition-colors">Contacto</Link></li>
+              <li><Link to="/invitados" className="text-background hover:text-background/60 transition-colors">Invitados</Link></li>
+              <li><Link to="/prensa" className="text-background hover:text-background/60 transition-colors">Prensa</Link></li>
+              <li><Link to="/eventos" className="text-background hover:text-background/60 transition-colors">Eventos</Link></li>
+              <li><Link to="/escuchanos" className="text-background hover:text-background/60 transition-colors">Escúchanos</Link></li>
+              <li><Link to="/contacto" className="text-background hover:text-background/60 transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-4">
-            <h4 className="text-[12px] font-semibold tracking-[0.14em] uppercase text-primary mb-5">Contacto</h4>
-            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-sm text-foreground hover:text-primary transition-colors break-all">
+            <h4 className="text-[12px] font-semibold tracking-[0.14em] uppercase text-background/60 mb-5">Contacto</h4>
+            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-sm text-background hover:text-background/60 transition-colors break-all">
               contactoeldiariodelpoder@gmail.com
             </a>
-            <p className="mt-4 text-sm text-muted-foreground">Pamplona · España</p>
-            <div className="mt-6 flex items-center gap-5 text-foreground">
-              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram size={18} /></a>
-              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors"><Youtube size={18} /></a>
-              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin size={18} /></a>
-              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-primary transition-colors"><Music2 size={18} /></a>
-              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-primary transition-colors"><TikTok size={18} /></a>
+            <p className="mt-4 text-sm text-background/70">Pamplona · España</p>
+            <div className="mt-6 flex items-center gap-5 text-background">
+              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-background/60 transition-colors"><Instagram size={18} /></a>
+              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-background/60 transition-colors"><Youtube size={18} /></a>
+              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-background/60 transition-colors"><Linkedin size={18} /></a>
+              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-background/60 transition-colors"><Music2 size={18} /></a>
+              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-background/60 transition-colors"><TikTok size={18} /></a>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-muted-foreground">
+        <div className="mt-14 pt-6 border-t border-background/15 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-background/60">
           <p>© 2026 Diario del Poder</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-primary transition-colors">Términos</a>
+            <a href="#" className="hover:text-background transition-colors">Privacidad</a>
+            <a href="#" className="hover:text-background transition-colors">Términos</a>
           </div>
         </div>
       </div>
