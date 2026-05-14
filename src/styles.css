@@ -39,29 +39,28 @@
 
 :root {
   --radius: 0.25rem;
-  /* Diario del Poder — White + Premium Green */
+  /* Diario del Poder — Pure Black & White */
   --background: oklch(1 0 0);                   /* #FFFFFF */
   --foreground: oklch(0.18 0.005 240);          /* #1a1a1a */
-  --card: oklch(0.98 0.002 240);                /* #F8F8F8 */
+  --card: oklch(0.965 0 0);                     /* #f5f5f5 */
   --card-foreground: oklch(0.18 0.005 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.005 240);
-  --primary: oklch(0.43 0.10 145);              /* #1B6E3B verde premium */
+  --primary: oklch(0.18 0.005 240);             /* #1a1a1a negro */
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.003 240);
+  --secondary: oklch(0.965 0 0);
   --secondary-foreground: oklch(0.18 0.005 240);
-  --muted: oklch(0.96 0.003 240);
-  --muted-foreground: oklch(0.48 0.005 240);    /* #666666 */
-  --accent: oklch(0.43 0.10 145);
+  --muted: oklch(0.965 0 0);
+  --muted-foreground: oklch(0.42 0 0);          /* #555 */
+  --accent: oklch(0.18 0.005 240);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.62 0.21 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.003 240);              /* #ececec */
-  --input: oklch(0.92 0.003 240);
-  --ring: oklch(0.43 0.10 145);
-  /* "gold" tokens kept as alias to accent for backward compatibility */
-  --gold: oklch(0.43 0.10 145);
-  --gold-bright: oklch(0.50 0.115 145);
+  --border: oklch(0.90 0 0);                    /* #e5e5e5 */
+  --input: oklch(0.90 0 0);
+  --ring: oklch(0.18 0.005 240);
+  --gold: oklch(0.18 0.005 240);
+  --gold-bright: oklch(0.30 0 0);
   --gold-foreground: oklch(1 0 0);
 }
 
