@@ -83,7 +83,7 @@ function Hero() {
           <span className="h-px w-12 bg-gold/70" />
           <span className="eyebrow">Nosotros</span>
         </div>
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.92] font-light tracking-[-0.04em] max-w-5xl fade-up">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] leading-[0.95] font-bold tracking-[-0.035em] max-w-5xl fade-up">
           Somos <span className="italic shimmer-gold">convicción</span>.
         </h1>
         <p className="mt-8 max-w-2xl text-base md:text-[1.1rem] text-foreground/75 leading-[1.7] fade-up">
@@ -106,7 +106,7 @@ function Numeros() {
       <div className="container-ddp">
         <div className="reveal mb-12 max-w-2xl">
           <span className="eyebrow block mb-5">Números</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-bold tracking-[-0.03em]">
             Prueba de que <span className="italic text-gold">funciona</span>.
           </h2>
         </div>
@@ -135,7 +135,7 @@ function Hub() {
       <div className="container-ddp">
         <div className="reveal mb-12 max-w-2xl">
           <span className="eyebrow block mb-5">Sigue explorando</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-bold tracking-[-0.03em]">
             Cuatro caminos, un <span className="italic text-gold">proyecto</span>.
           </h2>
         </div>

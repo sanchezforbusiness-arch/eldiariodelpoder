@@ -118,7 +118,7 @@ function Hero() {
           <span className="h-px w-12 bg-gold/70" />
           <span className="eyebrow">Invitados</span>
         </div>
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.92] font-light tracking-[-0.04em] max-w-5xl">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] leading-[0.95] font-bold tracking-[-0.035em] max-w-5xl">
           El roster que<br />lo <span className="italic shimmer-gold">valida</span> todo.
         </h1>
         <p className="mt-8 max-w-2xl text-base md:text-[1.1rem] text-foreground/75 leading-[1.7]">
@@ -137,7 +137,7 @@ function Group({ title, eyebrow, guests, accent }: { title: string; eyebrow: str
       <div className="container-ddp">
         <div className="reveal mb-12 max-w-3xl">
           <span className="eyebrow block mb-5">{eyebrow}</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-light tracking-[-0.02em]">{title}</h2>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-bold tracking-[-0.03em]">{title}</h2>
         </div>
         <div className="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal-stagger">
           {guests.map((g) => (

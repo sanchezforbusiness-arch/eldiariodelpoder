@@ -62,7 +62,7 @@ function Hero() {
           <span className="eyebrow">Escúchanos</span>
           <span className="h-px w-10 bg-gold/70" />
         </div>
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[7rem] leading-[0.95] font-light tracking-[-0.04em]">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] leading-[0.95] font-bold tracking-[-0.035em]">
           En todas partes<br />donde <span className="italic shimmer-gold">escuches</span>.
         </h1>
         <p className="mt-7 text-base md:text-[1.05rem] text-foreground/75 leading-[1.7]">

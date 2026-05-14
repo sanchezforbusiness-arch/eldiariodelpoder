@@ -79,7 +79,7 @@ function Hero() {
           <span className="h-px w-12 bg-gold/70" />
           <span className="eyebrow">Prensa</span>
         </div>
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.92] font-light tracking-[-0.04em] max-w-5xl fade-up">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] leading-[0.95] font-bold tracking-[-0.035em] max-w-5xl fade-up">
           Cuando la historia<br />se cuenta <span className="italic shimmer-gold">sola</span>.
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-[1.1rem] text-foreground/75 leading-[1.7] fade-up">
@@ -110,7 +110,7 @@ function Highlight() {
 
         <div className="md:col-span-5 reveal">
           <span className="eyebrow block mb-5">El encuentro</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-bold tracking-[-0.03em]">
             Cuando la entrevistadora se convierte en <span className="italic text-gold">entrevistada</span>.
           </h2>
           <div className="mt-6 space-y-4 text-base text-foreground/80 leading-[1.75]">
@@ -142,7 +142,7 @@ function MediosList() {
       <div className="container-ddp">
         <div className="reveal mb-12 max-w-2xl">
           <span className="eyebrow block mb-5">Cobertura</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-bold tracking-[-0.03em]">
             Los medios que lo <span className="italic text-gold">contaron</span>.
           </h2>
         </div>
