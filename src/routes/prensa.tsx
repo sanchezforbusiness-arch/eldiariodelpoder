@@ -83,7 +83,7 @@ function Hero() {
           Cuando la historia<br />se cuenta <span className="italic shimmer-gold">sola</span>.
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-[1.1rem] text-foreground/75 leading-[1.7] fade-up">
-          Cobertura en 7 medios españoles de referencia. Porque el trabajo habla.
+          Cobertura en 10 medios españoles de referencia. Porque el trabajo habla.
         </p>
       </div>
     </section>
@@ -125,7 +125,7 @@ function Highlight() {
               </span>
             </p>
             <p>
-              Lo que pasó después lo cubrieron 7 medios españoles de referencia
+              Lo que pasó después lo cubrieron 10 medios españoles de referencia
               en 48 horas. A veces, el mejor endorsement no viene de un comunicado.
               Viene de una conversación.
             </p>
