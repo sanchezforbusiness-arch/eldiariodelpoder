@@ -18,13 +18,14 @@ const medios = [
   { name: "El Mundo", program: "Actualidad", url: "https://www.elmundo.es/" },
   { name: "El Periódico", program: "Gente", url: "https://www.elperiodico.com/" },
   { name: "El Debate", program: "España", url: "https://www.eldebate.com/" },
+  { name: "Univision", program: "Internacional", url: "https://www.univision.com/" },
 ];
 
 const newsLd = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   headline: "Diario del Poder — Cobertura en medios nacionales",
-  description: "Cobertura en 10 medios españoles tras el encuentro con la Reina Letizia.",
+  description: "Cobertura en 11 medios (España e internacional) tras el encuentro con la Reina Letizia.",
   image: `${SITE}/og-prensa.jpg`,
   author: { "@type": "Organization", name: "Diario del Poder" },
   publisher: {
@@ -39,14 +40,14 @@ export const Route = createFileRoute("/prensa")({
   head: () => ({
     meta: [
       { title: "Diario del Poder en Prensa | Cobertura Mediática" },
-      { name: "description", content: "Mencionados en 10 medios españoles: Antena 3, El Español, ¡Hola!, Semana, Diario de Navarra, Vozpópuli, Infobae, El Mundo, El Periódico y El Debate." },
+      { name: "description", content: "Mencionados en 11 medios: Antena 3, El Español, ¡Hola!, Semana, Diario de Navarra, Vozpópuli, Infobae, El Mundo, El Periódico, El Debate y Univision." },
       { property: "og:title", content: "Diario del Poder en los medios españoles" },
-      { property: "og:description", content: "Cobertura de 10 medios nacionales tras el encuentro con la Reina Letizia." },
+      { property: "og:description", content: "Cobertura de 11 medios (España e internacional) tras el encuentro con la Reina Letizia." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE}/prensa` },
       { property: "og:image", content: `${SITE}/og-default.jpg` },
       { name: "twitter:title", content: "Diario del Poder en los medios españoles" },
-      { name: "twitter:description", content: "Cobertura de 10 medios nacionales tras el encuentro con la Reina Letizia." },
+      { name: "twitter:description", content: "Cobertura de 11 medios (España e internacional) tras el encuentro con la Reina Letizia." },
     ],
     links: [{ rel: "canonical", href: `${SITE}/prensa` }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(newsLd) }],
