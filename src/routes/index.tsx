@@ -75,22 +75,22 @@ function HomePage() {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative bg-background pt-32 md:pt-40 pb-20 md:pb-28">
-      <div className="container-ddp text-center fade-up">
-        <h1 className="font-display font-bold tracking-[-0.04em] leading-[0.98] text-foreground text-[clamp(3rem,9vw,5.5rem)]">
-          Diario del Poder
+    <section className="relative bg-background pt-36 md:pt-48 pb-24 md:pb-32 overflow-hidden">
+      <div className="gold-glow w-[640px] h-[640px] -top-40 -left-32 float-slow opacity-60" />
+      <div className="gold-glow w-[520px] h-[520px] bottom-[-10%] right-[-10%] float-slower opacity-40" />
+      <div className="container-ddp relative text-center fade-up">
+        <span className="eyebrow">Podcast · España</span>
+        <h1 className="mt-6 font-display font-medium tracking-[-0.02em] leading-[0.95] text-foreground text-[clamp(3.25rem,10vw,7rem)]">
+          La voz del <span className="italic text-gold">legado</span>.
         </h1>
-        <p className="mt-6 font-display text-xl md:text-2xl text-muted-foreground">
-          La voz del legado
+        <p className="mt-7 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-[1.6]">
+          Conversaciones de nivel con líderes que dejan huella.
         </p>
-        <p className="mt-6 max-w-xl mx-auto text-base text-muted-foreground leading-[1.7]">
-          Conversaciones que dejan criterio con los líderes que más importan.
-        </p>
-        <div className="mt-9 flex justify-center gap-3">
+        <div className="mt-10 flex justify-center gap-3 flex-wrap">
           <Link to="/escuchanos" className="btn-primary">
-            <Play size={14} className="fill-current" /> Escúchanos
+            <Play size={14} className="fill-current" /> Escucha episodios
           </Link>
-          <Link to="/invitados" className="btn-ghost">Ver invitados</Link>
+          <Link to="/invitados" className="btn-ghost">Descubre invitados</Link>
         </div>
       </div>
     </section>
