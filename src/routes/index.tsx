@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { ArrowUpRight, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { useReveal } from "@/hooks/use-reveal";
+import heroBg from "@/assets/hero-studio.webp";
 import founderAle from "@/assets/founder-alejandro.jpg";
 import founderVic from "@/assets/founder-victor.jpg";
 import g1 from "@/assets/guest-1.jpg";
@@ -75,23 +76,30 @@ function HomePage() {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative bg-background pt-36 md:pt-48 pb-24 md:pb-32 overflow-hidden">
-      <div className="gold-glow w-[640px] h-[640px] -top-40 -left-32 float-slow opacity-60" />
-      <div className="gold-glow w-[520px] h-[520px] bottom-[-10%] right-[-10%] float-slower opacity-40" />
-      <div className="container-ddp relative text-center fade-up">
-        <span className="eyebrow">Podcast · España</span>
-        <h1 className="mt-6 font-display font-medium tracking-[-0.02em] leading-[0.95] text-foreground text-[clamp(3.25rem,10vw,7rem)]">
-          La voz del <span className="italic text-gold">legado</span>.
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background">
+      <img
+        src={heroBg}
+        alt="Diario del Poder"
+        className="absolute inset-0 w-full h-full object-cover ken-burns opacity-55"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background" />
+      <div className="container-ddp relative text-center fade-up px-4">
+        <h1 className="font-display uppercase leading-[0.85] tracking-[-0.01em] text-gold text-[clamp(4rem,16vw,12rem)]">
+          Diario<br />del Poder
         </h1>
-        <p className="mt-7 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-[1.6]">
-          Conversaciones de nivel con líderes que dejan huella.
+        <p className="mt-8 max-w-xl mx-auto text-base md:text-lg text-foreground/80 leading-[1.6] uppercase tracking-[0.18em] font-semibold">
+          La voz del legado
         </p>
         <div className="mt-10 flex justify-center gap-3 flex-wrap">
           <Link to="/escuchanos" className="btn-primary">
             <Play size={14} className="fill-current" /> Escucha episodios
           </Link>
-          <Link to="/invitados" className="btn-ghost">Descubre invitados</Link>
+          <Link to="/invitados" className="btn-ghost">Ver invitados</Link>
         </div>
+      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground/70 text-[11px] tracking-[0.3em] uppercase flex flex-col items-center gap-2">
+        Scroll
+        <span className="text-gold text-lg bounce-down">↓</span>
       </div>
     </section>
   );
