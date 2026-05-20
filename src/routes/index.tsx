@@ -2,12 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { useReveal } from "@/hooks/use-reveal";
 import heroBg from "@/assets/hero-studio.webp";
-import founderAle from "@/assets/founder-alejandro.jpg";
-import founderVic from "@/assets/founder-victor.jpg";
 import g1 from "@/assets/guest-1.jpg";
 import g2 from "@/assets/guest-2.jpg";
 import g3 from "@/assets/guest-3.jpg";
@@ -54,17 +52,10 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <TextBand items={["DIARIO DEL PODER", "LA VOZ DEL LEGADO", "EL PODCAST"]} />
-        <MediaMarquee />
-        <EpisodesSlider />
-        <TextBand items={["EXPRESIDENTES", "CEOS", "LÍDERES", "FUNDADORES"]} reverse />
-        <Purpose />
-        <GuestsSlider />
-        <TextBand items={["BACKSTAGE", "EN VIVO", "SIN GUION"]} />
-        <EventosGrid />
-        <FoundersBand />
-        <JoinForm />
-        <RosterMarquee />
+        <Intro />
+        <PopularEpisodes />
+        <SubscribeBand />
+        <NewsStories />
         <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
           <Newsletter />
         </Suspense>
