@@ -30,10 +30,9 @@ export function Navbar() {
       }`}
     >
       <div className="container-ddp flex items-center justify-between h-[64px]">
-        <Link to="/" className="flex items-baseline gap-2 group" onClick={() => setOpen(false)}>
-          <span className="font-display text-xl font-bold tracking-tight text-foreground">DDP</span>
-          <span className="hidden sm:inline text-[11px] font-semibold tracking-[0.18em] uppercase text-muted-foreground group-hover:text-primary transition-colors">
-            Diario del Poder
+        <Link to="/" className="group" onClick={() => setOpen(false)}>
+          <span className="font-display text-primary text-[22px] md:text-[26px] leading-none tracking-[-0.01em]">
+            DIARIO DEL PODER
           </span>
         </Link>
 
@@ -44,7 +43,7 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`text-[14px] font-semibold tracking-tight transition-colors ${
+                className={`font-display text-[14px] tracking-[0.1em] uppercase transition-colors ${
                   active ? "text-primary" : "text-foreground hover:text-primary"
                 }`}
               >
@@ -55,31 +54,25 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            to="/contacto"
-            className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-[12px] font-semibold tracking-[0.06em] uppercase hover:opacity-90 transition-opacity"
-          >
-            Únete
-          </Link>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden text-foreground p-2"
+            className="text-foreground p-2 hover:text-primary transition-colors"
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <nav className="container-ddp py-6 flex flex-col gap-5">
+        <div className="border-t border-border bg-background">
+          <nav className="container-ddp py-8 flex flex-col gap-5">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="text-base font-semibold text-foreground hover:text-primary"
+                className="font-display text-2xl md:text-4xl uppercase text-foreground hover:text-primary transition-colors"
               >
                 {l.label}
               </Link>
