@@ -54,12 +54,15 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <TextBand items={["DIARIO DEL PODER", "LA VOZ DEL LEGADO", "EL PODCAST"]} />
         <MediaMarquee />
-        <Purpose />
-        <FoundersBand />
-        <GuestsSlider />
         <EpisodesSlider />
+        <TextBand items={["EXPRESIDENTES", "CEOS", "LÍDERES", "FUNDADORES"]} reverse />
+        <Purpose />
+        <GuestsSlider />
+        <TextBand items={["BACKSTAGE", "EN VIVO", "SIN GUION"]} />
         <EventosGrid />
+        <FoundersBand />
         <JoinForm />
         <RosterMarquee />
         <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
@@ -80,26 +83,36 @@ function Hero() {
       <img
         src={heroBg}
         alt="Diario del Poder"
-        className="absolute inset-0 w-full h-full object-cover ken-burns opacity-55"
+        className="absolute inset-0 w-full h-full object-cover ken-burns"
+        fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background/60" />
+      <div className="absolute inset-0 bg-background/20" />
       <div className="container-ddp relative text-center fade-up px-4">
-        <h1 className="font-display uppercase leading-[0.85] tracking-[-0.01em] text-gold text-[clamp(4rem,16vw,12rem)]">
+        <h1 className="font-display uppercase leading-[0.88] tracking-[-0.02em] text-primary text-[clamp(4.5rem,17vw,14rem)] drop-shadow-[0_4px_30px_rgba(0,0,0,0.4)]">
           Diario<br />del Poder
         </h1>
-        <p className="mt-8 max-w-xl mx-auto text-base md:text-lg text-foreground/80 leading-[1.6] uppercase tracking-[0.18em] font-semibold">
-          La voz del legado
-        </p>
-        <div className="mt-10 flex justify-center gap-3 flex-wrap">
-          <Link to="/escuchanos" className="btn-primary">
-            <Play size={14} className="fill-current" /> Escucha episodios
-          </Link>
-          <Link to="/invitados" className="btn-ghost">Ver invitados</Link>
-        </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground/70 text-[11px] tracking-[0.3em] uppercase flex flex-col items-center gap-2">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/90 text-[11px] tracking-[0.35em] uppercase flex flex-col items-center gap-3 font-display">
         Scroll
-        <span className="text-gold text-lg bounce-down">↓</span>
+        <span className="text-foreground text-xl bounce-down">↓</span>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- TEXT BAND (slicer) ---------- */
+function TextBand({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
+  const loop = [...items, ...items, ...items, ...items];
+  return (
+    <section className="py-8 md:py-12 bg-background overflow-hidden border-y border-border">
+      <div className={`text-band ${reverse ? "marquee-reverse" : ""}`}>
+        {loop.map((t, i) => (
+          <span key={i} className="text-band-item flex items-center gap-8">
+            <span className={i % 2 === 0 ? "text-foreground" : "text-primary"}>{t}</span>
+            <span className="text-band-dot" />
+          </span>
+        ))}
       </div>
     </section>
   );
