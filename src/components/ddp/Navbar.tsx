@@ -31,7 +31,7 @@ export function Navbar() {
     >
       <div className="container-ddp flex items-center justify-between h-[64px]">
         <Link to="/" className="group" onClick={() => setOpen(false)}>
-          <span className="font-display text-primary text-[22px] md:text-[26px] leading-none tracking-[-0.01em]">
+          <span className="font-display text-foreground text-[18px] md:text-[20px] leading-none tracking-[0.02em]">
             DIARIO DEL PODER
           </span>
         </Link>
