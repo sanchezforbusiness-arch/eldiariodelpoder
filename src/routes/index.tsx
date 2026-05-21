@@ -75,15 +75,15 @@ function Hero() {
         className="absolute inset-0 w-full h-full object-cover ken-burns"
         fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-background/35" />
-      <div className="container-ddp relative text-center fade-up px-4">
-        <h1 className="font-display uppercase leading-[0.88] tracking-[-0.02em] text-primary text-[clamp(4.5rem,17vw,14rem)] drop-shadow-[0_4px_30px_rgba(0,0,0,0.45)]">
+      <div className="absolute inset-0 bg-background/20" />
+      <div className="container-ddp relative fade-up px-4">
+        <h1 className="font-display uppercase leading-[0.88] tracking-[-0.015em] text-primary text-[clamp(4rem,13vw,11rem)] text-center">
           Diario<br />del Poder
         </h1>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/90 text-[11px] tracking-[0.35em] uppercase flex flex-col items-center gap-3 font-display">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground text-[11px] tracking-[0.32em] uppercase flex flex-col items-center gap-2 font-display">
         Scroll
-        <span className="text-foreground text-xl bounce-down">↓</span>
+        <span className="text-primary text-base bounce-down">↓</span>
       </div>
     </section>
   );
