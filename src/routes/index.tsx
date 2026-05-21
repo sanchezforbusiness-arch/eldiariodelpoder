@@ -75,15 +75,15 @@ function Hero() {
         className="absolute inset-0 w-full h-full object-cover ken-burns"
         fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-background/35" />
-      <div className="container-ddp relative text-center fade-up px-4">
-        <h1 className="font-display uppercase leading-[0.88] tracking-[-0.02em] text-primary text-[clamp(4.5rem,17vw,14rem)] drop-shadow-[0_4px_30px_rgba(0,0,0,0.45)]">
+      <div className="absolute inset-0 bg-background/20" />
+      <div className="container-ddp relative fade-up px-4">
+        <h1 className="font-display uppercase leading-[0.88] tracking-[-0.015em] text-primary text-[clamp(4rem,13vw,11rem)] text-center">
           Diario<br />del Poder
         </h1>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/90 text-[11px] tracking-[0.35em] uppercase flex flex-col items-center gap-3 font-display">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground text-[11px] tracking-[0.32em] uppercase flex flex-col items-center gap-2 font-display">
         Scroll
-        <span className="text-foreground text-xl bounce-down">↓</span>
+        <span className="text-primary text-base bounce-down">↓</span>
       </div>
     </section>
   );
@@ -258,7 +258,7 @@ function SubscribeBand() {
   return (
     <section className="py-20 md:py-28 bg-primary text-primary-foreground">
       <div className="container-ddp">
-        <h2 className="font-display uppercase text-center text-[clamp(1.6rem,3vw,2.6rem)] leading-tight tracking-[-0.005em] mb-12 md:mb-14 reveal">
+        <h2 className="font-display uppercase text-center text-[clamp(1.1rem,1.8vw,1.6rem)] leading-tight tracking-[0.04em] mb-10 md:mb-12 reveal text-primary-foreground">
           Suscríbete en tu plataforma favorita
         </h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 reveal">
@@ -268,21 +268,53 @@ function SubscribeBand() {
               href={c.href}
               target="_blank"
               rel="noreferrer"
-              className="bg-background text-foreground rounded-xl py-7 md:py-9 px-6 flex items-center justify-center gap-3 hover:-translate-y-1 transition-transform shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
+              className="bg-background text-foreground rounded-2xl py-6 md:py-7 px-6 flex items-center justify-center gap-3 hover:-translate-y-1 transition-transform shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
             >
-              <span
-                className="w-9 h-9 rounded-md flex items-center justify-center text-white font-display text-sm"
-                style={{ background: { apple: "#9B49E5", spotify: "#1DB954", youtube: "#FF0000", ivoox: "#EE7202" }[c.kind] }}
-                aria-hidden
-              >
-                {labels[c.kind][0]}
-              </span>
-              <span className="font-display uppercase text-base md:text-lg tracking-tight">{labels[c.kind]}</span>
+              <BrandLogo kind={c.kind} />
+              <span className="font-sans font-bold text-base md:text-[17px] tracking-tight">{labels[c.kind]}</span>
             </a>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function BrandLogo({ kind }: { kind: "apple" | "spotify" | "youtube" | "ivoox" }) {
+  if (kind === "spotify") {
+    return (
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+        <circle cx="12" cy="12" r="12" fill="#1DB954" />
+        <path fill="#fff" d="M17.4 16.4c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.4-2.8c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.6-1.3-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.8-1.1 8.6-.6 11.9 1.4.4.2.5.7.3 1.1zm.1-2.9c-3.4-2-9.1-2.2-12.4-1.2-.5.2-1.1-.2-1.2-.7-.2-.5.2-1.1.7-1.2 3.7-1.1 10-.9 13.9 1.4.5.3.6.9.4 1.4-.3.4-.9.6-1.4.3z"/>
+      </svg>
+    );
+  }
+  if (kind === "youtube") {
+    return (
+      <svg width="30" height="22" viewBox="0 0 28 20" aria-hidden>
+        <rect width="28" height="20" rx="5" fill="#FF0000" />
+        <path d="M11.2 6.2v7.6L17.6 10z" fill="#fff" />
+      </svg>
+    );
+  }
+  if (kind === "apple") {
+    return (
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+        <defs>
+          <linearGradient id="apl" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#F452FF" />
+            <stop offset="1" stopColor="#832BC1" />
+          </linearGradient>
+        </defs>
+        <rect width="24" height="24" rx="5" fill="url(#apl)" />
+        <circle cx="12" cy="9.2" r="2.2" fill="#fff" />
+        <path d="M9 16.2c.6-.9 1.8-1.5 3-1.5s2.4.6 3 1.5l-.8 1.4c-.5-.7-1.3-1.2-2.2-1.2s-1.7.5-2.2 1.2z" fill="#fff" />
+        <rect x="11.2" y="11.6" width="1.6" height="6.4" rx=".8" fill="#fff" />
+      </svg>
+    );
+  }
+  return (
+    <span className="w-7 h-7 rounded-md bg-[#EE7202] text-white font-display text-sm flex items-center justify-center" aria-hidden>iV</span>
   );
 }
 
