@@ -75,9 +75,9 @@ function Hero() {
         className="absolute inset-0 w-full h-full object-cover ken-burns"
         fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-background/20" />
-      <div className="container-ddp relative fade-up px-4">
-        <h1 className="font-display uppercase leading-[0.88] tracking-[-0.015em] text-primary text-[clamp(4rem,13vw,11rem)] text-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-background/65 via-background/25 to-background/10" />
+      <div className="container-ddp relative fade-up w-full">
+        <h1 className="font-display uppercase leading-[0.86] tracking-[-0.02em] text-primary text-[clamp(3.5rem,12vw,10.5rem)] text-left max-w-[14ch]">
           Diario<br />del Poder
         </h1>
       </div>
@@ -171,7 +171,7 @@ function PopularEpisodes() {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container-ddp">
-        <h2 className="font-display uppercase text-[clamp(2rem,4vw,3.5rem)] leading-none tracking-[-0.01em] mb-14 md:mb-20 reveal">
+        <h2 className="font-display uppercase text-[clamp(1rem,1.4vw,1.35rem)] tracking-[0.04em] mb-12 md:mb-16 reveal">
           Episodios más vistos
         </h2>
 
@@ -191,13 +191,10 @@ function PopularEpisodes() {
                 </a>
 
                 <div>
-                  <h3 className="font-display uppercase text-[clamp(1.4rem,2.4vw,2.4rem)] leading-[1.05] tracking-[-0.01em]">
-                    {e.guest}
-                    <span className="block text-primary text-base md:text-lg mt-2 tracking-[0.08em]">
-                      {e.role}
-                    </span>
+                  <h3 className="font-display uppercase text-[clamp(1.6rem,2.6vw,2.6rem)] leading-[1.02] tracking-[-0.01em] text-foreground">
+                    Nº{String(i + 1).padStart(2, "0")} {e.guest} — {e.role}
                   </h3>
-                  <p className="mt-5 text-base md:text-lg text-muted-foreground leading-[1.7] max-w-2xl">
+                  <p className="mt-5 text-sm md:text-[15px] text-muted-foreground leading-[1.7] max-w-2xl">
                     {isOpen ? e.copy : `${e.copy.slice(0, 110)}…`}
                     {" "}
                     <button onClick={() => setExpanded(isOpen ? null : i)} className="text-primary hover:underline">
@@ -205,11 +202,11 @@ function PopularEpisodes() {
                     </button>
                   </p>
 
-                  <div className="mt-7 flex flex-wrap items-center justify-between gap-6">
-                    <a href={e.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 font-display uppercase text-primary tracking-[0.14em] text-sm md:text-base hover:gap-5 transition-all">
-                      Ver episodio <ArrowRight size={18} />
+                  <div className="mt-6 flex flex-wrap items-center justify-between gap-5">
+                    <a href={e.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-display uppercase text-primary tracking-[0.18em] text-[13px] hover:gap-3 transition-all">
+                      Ver episodio <ArrowRight size={14} />
                     </a>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5">
                       <PlatformIcon kind="apple" href={platformLinks.apple} />
                       <PlatformIcon kind="spotify" href={platformLinks.spotify} />
                       <PlatformIcon kind="youtube" href={platformLinks.youtube} />
@@ -230,7 +227,6 @@ function PopularEpisodes() {
 }
 
 function PlatformIcon({ kind, href }: { kind: "apple" | "spotify" | "youtube" | "ivoox"; href: string }) {
-  const bg = { apple: "#9B49E5", spotify: "#1DB954", youtube: "#FF0000", ivoox: "#EE7202" }[kind];
   const label = { apple: "Apple Podcasts", spotify: "Spotify", youtube: "YouTube", ivoox: "iVoox" }[kind];
   return (
     <a
@@ -238,10 +234,40 @@ function PlatformIcon({ kind, href }: { kind: "apple" | "spotify" | "youtube" | 
       target="_blank"
       rel="noreferrer"
       aria-label={`Escuchar en ${label}`}
-      className="w-10 h-10 rounded-md flex items-center justify-center text-white hover:scale-110 transition-transform"
-      style={{ background: bg }}
+      className="w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition-transform overflow-hidden"
     >
-      <span className="font-display text-xs">{label[0]}</span>
+      {kind === "spotify" && (
+        <svg viewBox="0 0 24 24" className="w-9 h-9" aria-hidden>
+          <circle cx="12" cy="12" r="12" fill="#1DB954" />
+          <path fill="#000" d="M17.4 16.4c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.4-2.8c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.6-1.3-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.8-1.1 8.6-.6 11.9 1.4.4.2.5.7.3 1.1zm.1-2.9c-3.4-2-9.1-2.2-12.4-1.2-.5.2-1.1-.2-1.2-.7-.2-.5.2-1.1.7-1.2 3.7-1.1 10-.9 13.9 1.4.5.3.6.9.4 1.4-.3.4-.9.6-1.4.3z"/>
+        </svg>
+      )}
+      {kind === "youtube" && (
+        <svg viewBox="0 0 24 24" className="w-9 h-9" aria-hidden>
+          <circle cx="12" cy="12" r="12" fill="#FF0000" />
+          <path d="M10 8.5v7l6-3.5z" fill="#fff" />
+        </svg>
+      )}
+      {kind === "apple" && (
+        <svg viewBox="0 0 24 24" className="w-9 h-9" aria-hidden>
+          <defs>
+            <linearGradient id={`apl-${href}`} x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stopColor="#F452FF" />
+              <stop offset="1" stopColor="#832BC1" />
+            </linearGradient>
+          </defs>
+          <circle cx="12" cy="12" r="12" fill={`url(#apl-${href})`} />
+          <circle cx="12" cy="9.5" r="1.8" fill="#fff" />
+          <path d="M9 16c.6-.9 1.8-1.5 3-1.5s2.4.6 3 1.5l-.7 1.2c-.5-.7-1.3-1.1-2.3-1.1s-1.8.4-2.3 1.1z" fill="#fff" />
+          <rect x="11.2" y="11.6" width="1.6" height="6" rx=".8" fill="#fff" />
+        </svg>
+      )}
+      {kind === "ivoox" && (
+        <svg viewBox="0 0 24 24" className="w-9 h-9" aria-hidden>
+          <circle cx="12" cy="12" r="12" fill="#EE7202" />
+          <text x="12" y="16" textAnchor="middle" fontSize="10" fontWeight="800" fill="#fff" fontFamily="Inter, sans-serif">iV</text>
+        </svg>
+      )}
     </a>
   );
 }
@@ -283,7 +309,7 @@ function SubscribeBand() {
 function BrandLogo({ kind }: { kind: "apple" | "spotify" | "youtube" | "ivoox" }) {
   if (kind === "spotify") {
     return (
-      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+      <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden>
         <circle cx="12" cy="12" r="12" fill="#1DB954" />
         <path fill="#fff" d="M17.4 16.4c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.4-2.8c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.6-1.3-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.8-1.1 8.6-.6 11.9 1.4.4.2.5.7.3 1.1zm.1-2.9c-3.4-2-9.1-2.2-12.4-1.2-.5.2-1.1-.2-1.2-.7-.2-.5.2-1.1.7-1.2 3.7-1.1 10-.9 13.9 1.4.5.3.6.9.4 1.4-.3.4-.9.6-1.4.3z"/>
       </svg>
@@ -291,7 +317,7 @@ function BrandLogo({ kind }: { kind: "apple" | "spotify" | "youtube" | "ivoox" }
   }
   if (kind === "youtube") {
     return (
-      <svg width="30" height="22" viewBox="0 0 28 20" aria-hidden>
+      <svg width="42" height="30" viewBox="0 0 28 20" aria-hidden>
         <rect width="28" height="20" rx="5" fill="#FF0000" />
         <path d="M11.2 6.2v7.6L17.6 10z" fill="#fff" />
       </svg>
@@ -299,7 +325,7 @@ function BrandLogo({ kind }: { kind: "apple" | "spotify" | "youtube" | "ivoox" }
   }
   if (kind === "apple") {
     return (
-      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+      <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden>
         <defs>
           <linearGradient id="apl" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stopColor="#F452FF" />
@@ -314,7 +340,7 @@ function BrandLogo({ kind }: { kind: "apple" | "spotify" | "youtube" | "ivoox" }
     );
   }
   return (
-    <span className="w-7 h-7 rounded-md bg-[#EE7202] text-white font-display text-sm flex items-center justify-center" aria-hidden>iV</span>
+    <span className="w-9 h-9 rounded-md bg-[#EE7202] text-white font-display text-base flex items-center justify-center" aria-hidden>iV</span>
   );
 }
 
