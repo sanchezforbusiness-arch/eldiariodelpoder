@@ -7,7 +7,8 @@ const SITE_NAME = "Diario del Poder";
 const SITE_TITLE = "Diario del Poder — La voz del legado | Podcast";
 const SITE_DESCRIPTION =
   "Diario del Poder es el podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido.";
-const SITE_IMAGE = `${SITE_URL}/og-default.jpg`;
+const SITE_IMAGE =
+  "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -73,6 +74,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: SITE_TITLE },
+      { name: "description", content: SITE_DESCRIPTION },
       { name: "author", content: SITE_NAME },
       { name: "google-site-verification", content: "m2Mn29bOhpHxtZMGx_Nsy0bQXUtJfmf5XdRwwL4110w" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
@@ -80,12 +83,18 @@ export const Route = createRootRoute({
       { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast España, podcast política, podcast empresarial, CEOs, expresidentes, podcast premium, liderazgo" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: "es_ES" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:title", content: SITE_TITLE },
+      { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:image", content: SITE_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SITE_TITLE },
+      { name: "twitter:description", content: SITE_DESCRIPTION },
       { name: "twitter:image", content: SITE_IMAGE },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
@@ -93,6 +102,18 @@ export const Route = createRootRoute({
       {
         rel: "preconnect",
         href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        as: "style",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap",
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2",
         crossOrigin: "anonymous",
       },
       {
@@ -104,6 +125,10 @@ export const Route = createRootRoute({
       {
         type: "application/ld+json",
         children: JSON.stringify(structuredData),
+      },
+      {
+        children:
+          "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap';l.media='print';l.onload=function(){this.media='all'};document.head.appendChild(l);})();",
       },
     ],
   }),
