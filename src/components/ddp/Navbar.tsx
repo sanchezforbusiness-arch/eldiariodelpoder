@@ -4,6 +4,7 @@ import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
 const links = [
   { href: "#episodes", label: "Episodios" },
   { href: "#guests", label: "Invitados" },
+  { href: "#publicaciones", label: "Publicaciones" },
   { href: "#club", label: "Club" },
   { href: "#team", label: "Equipo" },
 ];
