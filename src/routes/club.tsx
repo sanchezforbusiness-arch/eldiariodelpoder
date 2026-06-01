@@ -1,102 +1,246 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteNav } from "@/components/ddp/SiteNav";
-import { SiteFooter } from "@/components/ddp/SiteFooter";
+import { useState } from "react";
+import { Plus, Minus, ArrowUpRight } from "lucide-react";
+import { Navbar } from "@/components/ddp/Navbar";
+import { Footer } from "@/components/ddp/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 import dialogos from "@/assets/bts-aznar-dialogos.jpg";
+import signing from "@/assets/bts-signing-pen.jpg";
+import signingHands from "@/assets/bts-signing-hands.jpg";
+import setMonitors from "@/assets/bts-set-monitors.jpg";
+import portrait from "@/assets/portrait-host.jpg";
+import hosts from "@/assets/bts-hosts-palco.jpg";
+import metropolitano from "@/assets/bts-metropolitano.jpg";
 
 export const Route = createFileRoute("/club")({
   head: () => ({
     meta: [
-      { title: "El Club del Poder — Diario del Poder" },
-      { name: "description", content: "Una red real. No de LinkedIn. Acceso solo por invitación." },
+      { title: "El Club del Poder — Comunidad de líderes" },
+      { name: "description", content: "El Club del Poder: comunidad selectiva de jóvenes líderes con criterio, ambición e influencia real." },
+      { property: "og:title", content: "El Club del Poder" },
+      { property: "og:description", content: "Comunidad selectiva de líderes jóvenes. Acceso por invitación." },
+      { property: "og:url", content: "https://eldiariodelpoder.com/club" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/club" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "¿Quién puede unirse?", acceptedAnswer: { "@type": "Answer", text: "Profesionales y emprendedores con interés real en liderazgo, criterio e influencia positiva." } },
+            { "@type": "Question", name: "¿Cómo se entra?", acceptedAnswer: { "@type": "Answer", text: "Solicitas acceso. Revisamos tu perfil. Si encajas, te damos la bienvenida." } },
+            { "@type": "Question", name: "¿Hay cuota?", acceptedAnswer: { "@type": "Answer", text: "Sí, anual. Compartimos los detalles tras la solicitud." } },
+            { "@type": "Question", name: "¿Eventos?", acceptedAnswer: { "@type": "Answer", text: "Dos al año en Madrid. Cenas y diálogos cerrados." } },
+          ],
+        }),
+      },
+    ],
   }),
   component: ClubPage,
 });
 
-const GOLD = "#B8935A";
+const pillars = [
+  { n: "01", t: "Criterio" },
+  { n: "02", t: "Comunidad" },
+  { n: "03", t: "Influencia" },
+];
+
+const philosophy = [
+  "El poder no es un fin. Es responsabilidad.",
+  "El liderazgo real rara vez necesita parecer liderazgo.",
+  "La influencia que deja huella nace del criterio.",
+  "Construimos comunidad alrededor de ideas, no de contactos.",
+];
+
+const faqs = [
+  { q: "¿Quién puede unirse?", a: "Profesionales y emprendedores con interés real en liderazgo, criterio e influencia positiva." },
+  { q: "¿Cómo se entra?", a: "Solicitas acceso. Revisamos tu perfil. Si encajas, te damos la bienvenida." },
+  { q: "¿Hay cuota?", a: "Sí, anual. Compartimos los detalles tras la solicitud." },
+  { q: "¿Eventos?", a: "Dos al año en Madrid. Cenas y diálogos cerrados." },
+];
 
 function ClubPage() {
+  useReveal();
   return (
-    <div className="ddp-page" style={{ background: "#0A0A0B", color: "#F0EDE8", minHeight: "100vh" }}>
-      <SiteNav />
+    <div className="bg-background text-foreground">
+      <Navbar />
       <main>
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 1,
-            background: "rgba(255,255,255,0.06)",
-            minHeight: 480,
-          }}
-        >
-          <div style={{ background: "#0A0A0B", padding: "40px 32px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 32 }}>
-            <div>
-              <div style={{ fontSize: 9, textTransform: "uppercase", color: GOLD, letterSpacing: "0.2em", marginBottom: 14 }}>
-                El Club del Poder
-              </div>
-              <h1 style={{ fontFamily: "var(--font-serif)", fontSize: 42, fontWeight: 300, lineHeight: 1, margin: "0 0 20px", letterSpacing: "-0.02em" }}>
-                Una red real.<br />
-                <span style={{ fontStyle: "italic" }}>No de LinkedIn.</span>
-              </h1>
-              <p style={{ fontFamily: "var(--font-sans)", fontSize: 12, lineHeight: 1.8, color: "rgba(240,237,232,0.38)", fontWeight: 300, marginBottom: 28 }}>
-                Un círculo cerrado. Madrid. Sin cámaras, sin agenda, sin protocolo. Solo conversación.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {["Dos eventos al año", "Acceso solo por invitación", "Quienes ya están, deciden quién entra"].map((f) => (
-                  <div key={f} style={{ display: "flex", gap: 10, alignItems: "center", fontSize: 11, color: "rgba(240,237,232,0.45)" }}>
-                    <span style={{ width: 3, height: 3, background: GOLD, display: "inline-block" }} />
-                    {f}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <a
-              href="mailto:contactoeldiariodelpoder@gmail.com?subject=Solicitar%20acceso%20al%20Club"
-              style={{
-                alignSelf: "flex-start",
-                background: GOLD,
-                color: "#0A0A0B",
-                fontSize: 10,
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-                padding: "11px 22px",
-                textDecoration: "none",
-                transition: "opacity 0.2s ease",
-              }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.82")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-            >
-              Solicitar acceso →
+        <Hero />
+        <Pillars />
+        <Gallery />
+        <Philosophy />
+        <Apply />
+        <FAQ />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
+      <img src={dialogos} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
+      <div className="gold-glow w-[520px] h-[520px] -top-40 -left-40 float-slow" />
+
+      <div className="container-ddp relative grid md:grid-cols-12 gap-10 items-center">
+        <div className="md:col-span-7 fade-up">
+          <span className="eyebrow block mb-6">El Club del Poder</span>
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
+            Una comunidad<br /> de <span className="italic shimmer-gold">líderes</span>.
+          </h1>
+          <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
+            Acceso por invitación. Cero ruido.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#apply" className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors">
+              Solicitar acceso
             </a>
           </div>
-
-          <div style={{ background: "#0D0D0E", overflow: "hidden", position: "relative" }}>
-            <img
-              src={dialogos}
-              alt="Aznar en Diálogos"
-              style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(15%)" }}
-            />
-            <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, background: "rgba(10,10,11,0.7)", padding: 24 }}>
-              <blockquote
-                style={{
-                  margin: 0,
-                  fontFamily: "var(--font-serif)",
-                  fontSize: 16,
-                  fontStyle: "italic",
-                  lineHeight: 1.5,
-                  color: "rgba(240,237,232,0.75)",
-                  borderLeft: `1px solid ${GOLD}`,
-                  paddingLeft: 14,
-                }}
-              >
-                No buscamos ruido. Buscamos conversaciones que dejen huella.
-              </blockquote>
-            </div>
+        </div>
+        <div className="hidden md:block md:col-span-5">
+          <div className="relative aspect-[3/4] max-w-[360px] ml-auto overflow-hidden drift-y">
+            <img src={portrait} alt="" className="absolute inset-0 w-full h-full object-cover ken-burns" />
+            <div className="absolute inset-0 ring-1 ring-gold/30" />
           </div>
-        </section>
-      </main>
-      <SiteFooter />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pillars() {
+  return (
+    <section className="py-20 md:py-28 border-t border-border">
+      <div className="container-ddp">
+        <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
+          {pillars.map((p) => (
+            <div key={p.n} className="bg-background p-12 md:p-16 text-center">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-4">{p.n}</p>
+              <h2 className="font-serif text-4xl md:text-5xl italic text-gold">{p.t}</h2>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Gallery() {
+  const shots = [signingHands, setMonitors, hosts, signing, metropolitano, dialogos];
+  return (
+    <section className="py-20 md:py-28 border-t border-border overflow-hidden">
+      <div className="container-ddp mb-10">
+        <span className="eyebrow block mb-5">El Club por dentro</span>
+        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl">
+          Lo que <span className="italic text-gold">no se publica</span>.
+        </h2>
+      </div>
+      <div className="relative overflow-hidden mask-fade-x">
+        <div className="marquee marquee-fast gap-4 md:gap-5">
+          {[...shots, ...shots].map((src, i) => (
+            <figure key={i} className="group relative shrink-0 w-[280px] sm:w-[340px] md:w-[400px] aspect-[4/5] overflow-hidden bg-card hover-cinema">
+              <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Philosophy() {
+  return (
+    <section className="py-24 md:py-36 border-t border-border bg-card/20">
+      <div className="container-ddp">
+        <span className="eyebrow block mb-8">Filosofía</span>
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 reveal-stagger">
+          {philosophy.map((p, i) => (
+            <p key={i} className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.15] font-light border-l-2 border-gold/60 pl-6">
+              {p}
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Apply() {
+  const [submitted, setSubmitted] = useState(false);
+  return (
+    <section id="apply" className="py-24 md:py-36 border-t border-border">
+      <div className="container-ddp max-w-3xl">
+        <span className="eyebrow block mb-5">Solicita tu acceso</span>
+        <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light">
+          Capacidad <span className="italic text-gold">limitada</span>.
+        </h2>
+
+        {submitted ? (
+          <div className="mt-10 border border-gold/40 bg-card/40 p-8">
+            <p className="font-serif text-2xl">Hemos recibido tu solicitud.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Nos pondremos en contacto en 5–7 días.</p>
+          </div>
+        ) : (
+          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="mt-10 grid gap-5">
+            <div className="grid md:grid-cols-2 gap-5">
+              <Field label="Nombre" name="name" required />
+              <Field label="Email" name="email" type="email" required />
+              <Field label="Empresa / cargo" name="role" required />
+              <Field label="Teléfono" name="phone" />
+            </div>
+            <div>
+              <label className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">¿Por qué encajas?</label>
+              <textarea required rows={3} maxLength={500}
+                className="w-full bg-background border border-border focus:border-gold outline-none px-4 py-3 text-sm transition-colors" />
+            </div>
+            <button type="submit" className="ring-pulse justify-self-start inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors">
+              Solicitar acceso
+              <ArrowUpRight size={14} />
+            </button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+  return (
+    <div>
+      <label htmlFor={name} className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">{label}</label>
+      <input id={name} name={name} type={type} required={required} maxLength={150}
+        className="w-full bg-background border border-border focus:border-gold outline-none px-4 py-3 text-sm transition-colors" />
     </div>
+  );
+}
+
+function FAQ() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <section className="py-24 md:py-36 border-t border-border">
+      <div className="container-ddp max-w-3xl">
+        <span className="eyebrow block mb-5">FAQ</span>
+        <div className="border-t border-border mt-10">
+          {faqs.map((f, i) => {
+            const active = open === i;
+            return (
+              <div key={f.q} className="border-b border-border">
+                <button onClick={() => setOpen(active ? null : i)} aria-expanded={active}
+                  className="w-full flex items-center justify-between gap-6 py-6 text-left group">
+                  <span className="font-serif text-xl md:text-2xl group-hover:text-gold transition-colors">{f.q}</span>
+                  {active ? <Minus size={18} className="text-gold shrink-0" /> : <Plus size={18} className="text-gold shrink-0" />}
+                </button>
+                {active && <p className="pb-6 pr-10 text-sm md:text-base text-muted-foreground leading-relaxed">{f.a}</p>}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
