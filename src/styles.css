@@ -350,3 +350,31 @@
     .reveal { opacity: 1; transform: none; transition: none; }
   }
 }
+
+@layer utilities {
+  .ddp-page { animation: ddp-page-in 0.35s ease both; }
+  @keyframes ddp-page-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .ddp-img { filter: grayscale(15%); transition: filter 0.5s ease, transform 0.5s ease; }
+  .ddp-img-hover:hover .ddp-img,
+  .ddp-img:hover { filter: grayscale(0%); transform: scale(1.03); }
+
+  .ddp-ticker { display: flex; width: max-content; animation: ddp-ticker 22s linear infinite; }
+  @keyframes ddp-ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .ddp-row-l { display: flex; width: max-content; animation: ddp-row-l 30s linear infinite; gap: 8px; }
+  @keyframes ddp-row-l {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .ddp-row-r { display: flex; width: max-content; animation: ddp-row-r 32s linear infinite; gap: 8px; }
+  @keyframes ddp-row-r {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
+}
