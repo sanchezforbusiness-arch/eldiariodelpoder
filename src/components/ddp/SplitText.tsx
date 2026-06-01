@@ -1,8 +1,8 @@
-import React from "react";
+import React, { type ElementType } from "react";
 
 type Props = {
   text: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   className?: string;
   start?: number;
   goldWords?: string[];
