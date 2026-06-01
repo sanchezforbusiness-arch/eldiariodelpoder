@@ -35,7 +35,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-10 max-w-md text-base text-foreground/75 leading-[1.7]">
-            Sin guion. Con quienes dejan huella.
+            La voz del legado.
           </p>
 
           <div className="mt-14 flex flex-wrap items-center gap-5">
