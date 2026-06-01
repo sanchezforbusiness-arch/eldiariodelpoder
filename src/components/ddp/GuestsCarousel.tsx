@@ -7,6 +7,7 @@ import g1 from "@/assets/guest-1.jpg";
 import coelloAsset from "@/assets/guest-coello.png.asset.json";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAsset from "@/assets/guest-rosa-lagarrigue.png.asset.json";
+import jcghAsset from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 
 const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
@@ -17,6 +18,7 @@ const guests = [
   { name: "Martín Sellés", role: "CEO Johnson & Johnson", img: g6 },
   { name: "Jordi Juan", role: "Director de La Vanguardia", img: jordiAsset.url },
   { name: "Rosa Lagarrigue", role: "Manager · RLM Music", img: rosaAsset.url },
+  { name: "José Carlos González Hurtado", role: "Dueño de EWTN · Ex CEO P&G", img: jcghAsset.url },
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
 ];
 
