@@ -7,7 +7,7 @@ import gAndres from "@/assets/bts-andres-rodriguez.jpg";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 
 const episodes = [
-  { n: "01", guest: "Jordi Juan", title: "La teoría de los cajones para afrontar la crisis", img: jordiAsset.url, url: "https://www.youtube.com/watch?v=onHImjPIYJI", isNew: true },
+  { n: "01", guest: "Jordi Juan", title: "La teoría de los cajones para afrontar la crisis", img: jordiAsset.url, url: "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html", isNew: true },
   { n: "02", guest: "Andrés Rodríguez", title: "Forbes, lujo y poder desde la Forbes House", img: gAndres, url: "https://youtu.be/nTtgtxG7UNs" },
   { n: "03", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
   { n: "04", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
