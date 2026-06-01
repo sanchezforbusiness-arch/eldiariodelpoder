@@ -10,18 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as InvitadosRouteImport } from './routes/invitados'
-import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ClubRouteImport } from './routes/club'
 import { Route as IndexRouteImport } from './routes/index'
 
 const InvitadosRoute = InvitadosRouteImport.update({
   id: '/invitados',
   path: '/invitados',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EpisodiosRoute = EpisodiosRouteImport.update({
-  id: '/episodios',
-  path: '/episodios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClubRoute = ClubRouteImport.update({
@@ -38,34 +32,30 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/club': typeof ClubRoute
-  '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/club': typeof ClubRoute
-  '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/club': typeof ClubRoute
-  '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/club' | '/episodios' | '/invitados'
+  fullPaths: '/' | '/club' | '/invitados'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/club' | '/episodios' | '/invitados'
-  id: '__root__' | '/' | '/club' | '/episodios' | '/invitados'
+  to: '/' | '/club' | '/invitados'
+  id: '__root__' | '/' | '/club' | '/invitados'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClubRoute: typeof ClubRoute
-  EpisodiosRoute: typeof EpisodiosRoute
   InvitadosRoute: typeof InvitadosRoute
 }
 
@@ -76,13 +66,6 @@ declare module '@tanstack/react-router' {
       path: '/invitados'
       fullPath: '/invitados'
       preLoaderRoute: typeof InvitadosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/episodios': {
-      id: '/episodios'
-      path: '/episodios'
-      fullPath: '/episodios'
-      preLoaderRoute: typeof EpisodiosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/club': {
@@ -105,7 +88,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClubRoute: ClubRoute,
-  EpisodiosRoute: EpisodiosRoute,
   InvitadosRoute: InvitadosRoute,
 }
 export const routeTree = rootRouteImport
