@@ -2,20 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
-import { About } from "@/components/ddp/About";
-import { Episodes } from "@/components/ddp/Episodes";
+import { TextBand } from "@/components/ddp/TextBand";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
+import { Episodes } from "@/components/ddp/Episodes";
 import { useReveal } from "@/hooks/use-reveal";
 
-// Below-the-fold sections — lazy-loaded to reduce initial JS bundle
-const Manifesto = lazy(() => import("@/components/ddp/Manifesto").then((m) => ({ default: m.Manifesto })));
+// Below-the-fold — lazy-loaded
 const Backstage = lazy(() => import("@/components/ddp/Backstage").then((m) => ({ default: m.Backstage })));
-const Club = lazy(() => import("@/components/ddp/Club").then((m) => ({ default: m.Club })));
-const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
-const Team = lazy(() => import("@/components/ddp/Team").then((m) => ({ default: m.Team })));
+const AboutTeaser = lazy(() => import("@/components/ddp/AboutTeaser").then((m) => ({ default: m.AboutTeaser })));
+const ClubTeaser = lazy(() => import("@/components/ddp/ClubTeaser").then((m) => ({ default: m.ClubTeaser })));
 const Newsletter = lazy(() => import("@/components/ddp/Newsletter").then((m) => ({ default: m.Newsletter })));
-const Publications = lazy(() => import("@/components/ddp/Publications").then((m) => ({ default: m.Publications })));
-const Press = lazy(() => import("@/components/ddp/Press").then((m) => ({ default: m.Press })));
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
 
 export const Route = createFileRoute("/")({
@@ -38,21 +34,17 @@ export const Route = createFileRoute("/")({
 function Index() {
   useReveal();
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-background text-foreground page-enter">
       <Navbar />
       <main>
         <Hero />
+        <TextBand />
         <GuestsCarousel />
-        <About />
-        <Suspense fallback={<div style={{ minHeight: "150vh" }} />}>
-          <Manifesto />
-          <Episodes />
+        <Episodes />
+        <Suspense fallback={<div style={{ minHeight: "120vh" }} />}>
           <Backstage />
-          <Publications />
-          <Press />
-          <Club />
-          <Sponsors />
-          <Team />
+          <AboutTeaser />
+          <ClubTeaser />
           <Newsletter />
         </Suspense>
       </main>

@@ -33,12 +33,12 @@ export function Backstage() {
   const rowB = [...shots].reverse().concat([...shots].reverse());
   return (
     <section id="backstage" className="py-24 md:py-36 border-t border-border overflow-hidden">
-      <div className="container-ddp mb-12">
+      <div className="container-ddp mb-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <span className="eyebrow block mb-5">Detrás de cámara</span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light">
-              Lo que pasa <span className="italic text-gold">fuera de cámara</span>.
+            <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Detrás de cámara</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[0.98] font-light">
+              <span className="italic text-gold">Fuera de cámara</span>.
             </h2>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-xs">
