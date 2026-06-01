@@ -5,6 +5,7 @@ const links = [
   { href: "#episodes", label: "Episodios" },
   { href: "#guests", label: "Invitados" },
   { href: "#publicaciones", label: "Publicaciones" },
+  { href: "#prensa", label: "Prensa" },
   { href: "#club", label: "Club" },
   { href: "#team", label: "Equipo" },
 ];
