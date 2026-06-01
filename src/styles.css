@@ -340,10 +340,60 @@
     50%      { transform: translateY(6px); opacity: 1; }
   }
 
+  /* Page transition — fade + soft rise */
+  .page-enter {
+    animation: page-enter 0.7s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes page-enter {
+    from { opacity: 0; transform: translateY(14px); filter: blur(6px); }
+    to   { opacity: 1; transform: none; filter: blur(0); }
+  }
+
+  /* Split-text: each word fades up with stagger via CSS var --i */
+  .split-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.6em);
+    animation: split-rise 0.9s cubic-bezier(.2,.7,.2,1) forwards;
+    animation-delay: calc(var(--i, 0) * 80ms);
+    will-change: opacity, transform;
+  }
+  @keyframes split-rise {
+    to { opacity: 1; transform: none; }
+  }
+
+  /* Magnetic gold dot — small original detail */
+  .dot-gold {
+    display: inline-block;
+    width: 0.45rem; height: 0.45rem;
+    border-radius: 9999px;
+    background: var(--color-gold-bright);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-gold-bright) 18%, transparent);
+    animation: dot-pulse 2.2s ease-in-out infinite;
+    vertical-align: middle;
+  }
+  @keyframes dot-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.35); opacity: 0.75; }
+  }
+
+  /* Ticker — slower, larger editorial marquee */
+  .ticker {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 2.5rem;
+    animation: marquee 48s linear infinite;
+    will-change: transform;
+  }
+  .ticker:hover { animation-play-state: paused; }
+
   @media (prefers-reduced-motion: reduce) {
     .gold-glow, .float-slow, .float-slower, .shimmer-gold, .accent-line, .spin-slow, .bounce-down {
       animation: none !important;
     }
     .reveal { opacity: 1; transform: none; transition: none; }
+    .split-word { opacity: 1; transform: none; animation: none; }
+    .page-enter { animation: none; }
   }
 }
