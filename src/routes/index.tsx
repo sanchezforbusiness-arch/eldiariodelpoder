@@ -20,19 +20,12 @@ const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ defau
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Diario del Poder — La voz del legado | Podcast" },
-      { name: "description", content: "Diario del Poder: el podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido." },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#0A0A0B" },
-      { property: "og:title", content: "Diario del Poder — La voz del legado | Podcast" },
-      { property: "og:description", content: "El podcast premium en español con expresidentes, CEOs y líderes institucionales." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Diario del Poder" },
       { property: "og:locale", content: "es_ES" },
-      { property: "og:url", content: "https://eldiariodelpoder.com/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Diario del Poder — La voz del legado | Podcast" },
-      { name: "twitter:description", content: "El podcast premium en español con expresidentes, CEOs y líderes institucionales." },
     ],
     links: [
       { rel: "canonical", href: "https://eldiariodelpoder.com/" },
