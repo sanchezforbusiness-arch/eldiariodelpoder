@@ -14,7 +14,6 @@ import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as InvitadosRouteImport } from './routes/invitados'
 import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ClubRouteImport } from './routes/club'
-import { Route as IndexRouteImport } from './routes/index'
 
 const PrensaRoute = PrensaRouteImport.update({
   id: '/prensa',
@@ -41,14 +40,8 @@ const ClubRoute = ClubRouteImport.update({
   path: '/club',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
@@ -56,7 +49,6 @@ export interface FileRoutesByFullPath {
   '/prensa': typeof PrensaRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
@@ -65,7 +57,6 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
@@ -74,18 +65,11 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/club'
-    | '/episodios'
-    | '/invitados'
-    | '/manifiesto'
-    | '/prensa'
+  fullPaths: '/club' | '/episodios' | '/invitados' | '/manifiesto' | '/prensa'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/club' | '/episodios' | '/invitados' | '/manifiesto' | '/prensa'
+  to: '/club' | '/episodios' | '/invitados' | '/manifiesto' | '/prensa'
   id:
     | '__root__'
-    | '/'
     | '/club'
     | '/episodios'
     | '/invitados'
@@ -94,7 +78,6 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   ClubRoute: typeof ClubRoute
   EpisodiosRoute: typeof EpisodiosRoute
   InvitadosRoute: typeof InvitadosRoute
@@ -139,18 +122,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClubRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   ClubRoute: ClubRoute,
   EpisodiosRoute: EpisodiosRoute,
   InvitadosRoute: InvitadosRoute,
@@ -160,3 +135,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
