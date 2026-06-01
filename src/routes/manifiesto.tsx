@@ -17,6 +17,7 @@ export const Route = createFileRoute("/manifiesto")({
       { name: "description", content: "Por qué hacemos Diario del Poder. Quiénes lo hacemos y cómo lo entendemos." },
       { property: "og:title", content: "Manifiesto — Diario del Poder" },
       { property: "og:description", content: "Conversaciones con quienes dejan huella. Sin guion." },
+      { property: "og:url", content: "https://eldiariodelpoder.com/manifiesto" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/manifiesto" }],
   }),
@@ -34,6 +35,11 @@ function ManifiestoPage() {
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
+        <header className="container-ddp pt-8 pb-2">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+            Nuestro <span className="italic text-gold">manifiesto</span>
+          </h1>
+        </header>
         <Manifesto />
         <About />
         <Suspense fallback={null}>
