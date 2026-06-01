@@ -94,7 +94,6 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: SITE_IMAGE },
     ],
     links: [
-      { rel: "canonical", href: SITE_URL },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
