@@ -22,6 +22,21 @@ export const Route = createFileRoute("/club")({
       { property: "og:url", content: "https://eldiariodelpoder.com/club" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/club" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "¿Quién puede unirse?", acceptedAnswer: { "@type": "Answer", text: "Profesionales y emprendedores con interés real en liderazgo, criterio e influencia positiva." } },
+            { "@type": "Question", name: "¿Cómo se entra?", acceptedAnswer: { "@type": "Answer", text: "Solicitas acceso. Revisamos tu perfil. Si encajas, te damos la bienvenida." } },
+            { "@type": "Question", name: "¿Hay cuota?", acceptedAnswer: { "@type": "Answer", text: "Sí, anual. Compartimos los detalles tras la solicitud." } },
+            { "@type": "Question", name: "¿Eventos?", acceptedAnswer: { "@type": "Answer", text: "Dos al año en Madrid. Cenas y diálogos cerrados." } },
+          ],
+        }),
+      },
+    ],
   }),
   component: ClubPage,
 });
@@ -105,7 +120,7 @@ function Pillars() {
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-12 md:p-16 text-center">
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-4">{p.n}</p>
-              <h3 className="font-serif text-4xl md:text-5xl italic text-gold">{p.t}</h3>
+              <h2 className="font-serif text-4xl md:text-5xl italic text-gold">{p.t}</h2>
             </div>
           ))}
         </div>
