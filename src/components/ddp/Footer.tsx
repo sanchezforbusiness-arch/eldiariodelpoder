@@ -1,4 +1,5 @@
 import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const TikTok = (props: { size?: number }) => (
   <svg width={props.size || 16} height={props.size || 16} viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.62a8.16 8.16 0 0 0 4.77 1.52V6.69h-1.84z"/></svg>
@@ -20,10 +21,11 @@ export function Footer() {
           <div className="md:col-span-3">
             <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#episodes" className="hover:text-foreground transition-colors">Episodios</a></li>
-              <li><a href="#guests" className="hover:text-foreground transition-colors">Invitados</a></li>
-              <li><a href="#club" className="hover:text-foreground transition-colors">Club</a></li>
-              <li><a href="#team" className="hover:text-foreground transition-colors">Equipo</a></li>
+              <li><Link to="/episodios" className="hover:text-foreground transition-colors">Episodios</Link></li>
+              <li><Link to="/invitados" className="hover:text-foreground transition-colors">Invitados</Link></li>
+              <li><Link to="/club" className="hover:text-foreground transition-colors">Club</Link></li>
+              <li><Link to="/manifiesto" className="hover:text-foreground transition-colors">Manifiesto</Link></li>
+              <li><Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link></li>
             </ul>
           </div>
 
