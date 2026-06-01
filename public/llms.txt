@@ -1,0 +1,12 @@
+# Diario del Poder
+
+> Podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio sobre liderazgo, decisiones y legado.
+
+Diario del Poder es un podcast producido en Madrid que reúne a figuras de máxima responsabilidad — expresidentes de Gobierno, fundadores y altos directivos — para hablar sin guion sobre poder, criterio e influencia real.
+
+## Pages
+
+- [Inicio](/): Presentación del podcast, últimos episodios e invitados destacados.
+- [Episodios](/episodios): Catálogo completo de conversaciones publicadas.
+- [Invitados](/invitados): Personalidades que han pasado por el podcast.
+- [El Club del Poder](/club): Comunidad selectiva de líderes jóvenes. Acceso por invitación.
