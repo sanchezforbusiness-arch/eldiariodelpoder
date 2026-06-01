@@ -1,4 +1,5 @@
 import { Play, ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import g1 from "@/assets/guest-1.jpg";
 import g5 from "@/assets/guest-5.jpg";
 import gEchavarren from "@/assets/guest-echavarren.jpg";
@@ -16,22 +17,20 @@ export function Episodes() {
   return (
     <section id="episodes" className="py-28 md:py-40 border-t border-border">
       <div className="container-ddp">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
           <div>
-            <span className="eyebrow block mb-5">Episodios</span>
+            <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Las últimas <span className="italic text-gold">conversaciones</span>.
+              Últimas <span className="italic text-gold">conversaciones</span>.
             </h2>
           </div>
-          <a
-            href="https://www.youtube.com/@eldiariodelpoder"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to="/episodios"
             className="group inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-foreground/70 hover:text-gold transition-colors self-start md:self-end"
           >
             Ver todos
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
+          </Link>
         </div>
 
         {/* Featured episode */}
@@ -108,9 +107,9 @@ export function Episodes() {
           ))}
         </div>
 
-        <div className="mt-16 flex items-center gap-4 text-sm text-muted-foreground">
+        <div className="mt-14 flex items-center gap-4 text-sm text-muted-foreground">
           <span className="h-px flex-1 bg-border" />
-          <span>Próximamente: <span className="text-gold/90">Javier Tebas, Iván Duque</span> y más voces por venir</span>
+          <span>Próximamente · <span className="text-gold/90">Tebas · Duque</span></span>
           <span className="h-px flex-1 bg-border" />
         </div>
       </div>
