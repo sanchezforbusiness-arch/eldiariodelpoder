@@ -1,20 +1,20 @@
-import g1 from "@/assets/guest-1.jpg";
-import g2 from "@/assets/guest-2.jpg";
 import g3 from "@/assets/guest-3.jpg";
 import g4 from "@/assets/guest-4.jpg";
 import g5 from "@/assets/guest-5.jpg";
 import g6 from "@/assets/guest-6.jpg";
-import g7 from "@/assets/guest-7.jpg";
 import g8 from "@/assets/guest-8.jpg";
+import g1 from "@/assets/guest-1.jpg";
+import coelloAsset from "@/assets/guest-coello.png.asset.json";
+import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 
 const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
   { name: "Guillermo Lasso", role: "Expresidente de Ecuador", img: g5 },
   { name: "Javier Tebas", role: "Presidente de La Liga", img: g3 },
   { name: "Andrés Rodríguez", role: "Presidente de Forbes", img: g4 },
-  { name: "Iván Duque", role: "Expresidente de Colombia", img: g2 },
+  { name: "Arturo Coello", role: "Nº 1 del mundo de pádel", img: coelloAsset.url },
   { name: "Martín Sellés", role: "CEO Johnson & Johnson", img: g6 },
-  { name: "Esperanza Aguirre", role: "Expresidenta de Madrid", img: g7 },
+  { name: "Jordi Juan", role: "Director de La Vanguardia", img: jordiAsset.url },
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
 ];
 
