@@ -1,17 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
-import { Navbar } from "@/components/ddp/Navbar";
-import { Hero } from "@/components/ddp/Hero";
-import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
-import { Episodes } from "@/components/ddp/Episodes";
-import { useReveal } from "@/hooks/use-reveal";
-
-// Below-the-fold — lazy-loaded
-const Backstage = lazy(() => import("@/components/ddp/Backstage").then((m) => ({ default: m.Backstage })));
-const AboutTeaser = lazy(() => import("@/components/ddp/AboutTeaser").then((m) => ({ default: m.AboutTeaser })));
-const ClubTeaser = lazy(() => import("@/components/ddp/ClubTeaser").then((m) => ({ default: m.ClubTeaser })));
-const Newsletter = lazy(() => import("@/components/ddp/Newsletter").then((m) => ({ default: m.Newsletter })));
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+import { DDPLanding } from "@/components/ddp/DDPLanding";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,24 +19,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  useReveal();
-  return (
-    <div className="bg-background text-foreground page-enter">
-      <Navbar />
-      <main>
-        <Hero />
-        <GuestsCarousel />
-        <Episodes />
-        <Suspense fallback={<div style={{ minHeight: "120vh" }} />}>
-          <Backstage />
-          <AboutTeaser />
-          <ClubTeaser />
-          <Newsletter />
-        </Suspense>
-      </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
-    </div>
-  );
+  return <DDPLanding />;
 }
