@@ -106,7 +106,7 @@ export const Route = createRootRoute({
       {
         rel: "preload",
         as: "style",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap",
       },
       {
         rel: "preload",
@@ -127,7 +127,7 @@ export const Route = createRootRoute({
       },
       {
         children:
-          "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap';l.media='print';l.onload=function(){this.media='all'};document.head.appendChild(l);})();",
+          "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap';l.media='print';l.onload=function(){this.media='all'};document.head.appendChild(l);})();",
       },
     ],
   }),
