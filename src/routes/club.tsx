@@ -4,13 +4,13 @@ import { Plus, Minus, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
-import dialogos from "@/assets/bts-aznar-dialogos.jpg";
-import signing from "@/assets/bts-signing-pen.jpg";
-import signingHands from "@/assets/bts-signing-hands.jpg";
-import setMonitors from "@/assets/bts-set-monitors.jpg";
-import portrait from "@/assets/portrait-host.jpg";
-import hosts from "@/assets/bts-hosts-palco.jpg";
-import metropolitano from "@/assets/bts-metropolitano.jpg";
+import dialogos from "@/assets/bts-aznar-dialogos.webp";
+import signing from "@/assets/bts-signing-pen.webp";
+import signingHands from "@/assets/bts-signing-hands.webp";
+import setMonitors from "@/assets/bts-set-monitors.webp";
+import portrait from "@/assets/portrait-host.webp";
+import hosts from "@/assets/bts-hosts-palco.webp";
+import metropolitano from "@/assets/bts-metropolitano.webp";
 
 export const Route = createFileRoute("/club")({
   head: () => ({

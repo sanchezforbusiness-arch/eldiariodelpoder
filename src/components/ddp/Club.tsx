@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import hosts from "@/assets/bts-hosts-palco.jpg";
-import dialogos from "@/assets/bts-aznar-dialogos.jpg";
-import signing from "@/assets/bts-signing-pen.jpg";
+import hosts from "@/assets/bts-hosts-palco.webp";
+import dialogos from "@/assets/bts-aznar-dialogos.webp";
+import signing from "@/assets/bts-signing-pen.webp";
 
 const stats = [
   { k: "2", l: "Eventos / año" },

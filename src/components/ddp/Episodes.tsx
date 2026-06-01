@@ -1,9 +1,9 @@
 import { Play, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import g1 from "@/assets/guest-1.jpg";
-import g5 from "@/assets/guest-5.jpg";
-import gEchavarren from "@/assets/guest-echavarren.jpg";
-import gAndres from "@/assets/bts-andres-rodriguez.jpg";
+import g1 from "@/assets/guest-1.webp";
+import g5 from "@/assets/guest-5.webp";
+import gEchavarren from "@/assets/guest-echavarren.webp";
+import gAndres from "@/assets/bts-andres-rodriguez.webp";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 
 const episodes = [

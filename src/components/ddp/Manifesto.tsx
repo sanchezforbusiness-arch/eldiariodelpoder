@@ -1,4 +1,4 @@
-import signing from "@/assets/bts-signing-pen.jpg";
+import signing from "@/assets/bts-signing-pen.webp";
 
 export function Manifesto() {
   return (

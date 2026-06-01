@@ -1,5 +1,5 @@
-import founderAlejandro from "@/assets/founder-alejandro.jpg";
-import founderVictor from "@/assets/founder-victor.jpg";
+import founderAlejandro from "@/assets/founder-alejandro.webp";
+import founderVictor from "@/assets/founder-victor.webp";
 
 const pillars = [
   { n: "01", t: "Conversaciones", d: "Sin prisa, sin guion, sin titulares." },
