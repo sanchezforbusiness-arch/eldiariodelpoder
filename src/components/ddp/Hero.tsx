@@ -31,7 +31,7 @@ export function Hero() {
 
           <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.88] tracking-[-0.045em] font-light">
             <SplitText text="Conversaciones que" /><br />
-            <SplitText text="importan." goldWords={["importan."]} italicWords={["importan."]} start={3} />
+            <SplitText text="importan." goldWords={["importan"]} italicWords={["importan"]} start={3} />
           </h1>
 
           <p className="mt-10 max-w-md text-base text-foreground/75 leading-[1.7]">
