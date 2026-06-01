@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, KeyRound } from "lucide-react";
-import hosts from "@/assets/bts-hosts-palco.jpg";
+import hosts from "@/assets/bts-hosts-palco.webp";
 import { SplitText } from "./SplitText";
 
 export function ClubTeaser() {
   return (
     <section id="club" className="relative border-t border-border overflow-hidden">
       <div className="relative min-h-[70vh] flex items-center">
-        <img src={hosts} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover ken-burns opacity-90" />
+        <img src={hosts} alt="" aria-hidden loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover ken-burns opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/30 to-transparent" />
         <div className="gold-glow float-slow w-[520px] h-[520px] -bottom-32 -right-32 opacity-40" />

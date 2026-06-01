@@ -1,4 +1,4 @@
-import signing from "@/assets/bts-signing-pen.jpg";
+import signing from "@/assets/bts-signing-pen.webp";
 
 export function Manifesto() {
   return (
@@ -7,6 +7,8 @@ export function Manifesto() {
         src={signing}
         alt=""
         aria-hidden
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover opacity-20 ken-burns"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />

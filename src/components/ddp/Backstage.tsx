@@ -1,15 +1,15 @@
-import aznarFaes from "@/assets/bts-aznar-faes.jpg";
-import aznarFirma from "@/assets/bts-aznar-firma.jpg";
-import monitor from "@/assets/bts-monitor-aznar.jpg";
-import lasso from "@/assets/bts-guillermo-lasso.jpg";
-import andres from "@/assets/bts-andres-rodriguez.jpg";
-import mikelPalco from "@/assets/bts-mikel-palco.jpg";
-import hostsPalco from "@/assets/bts-hosts-palco.jpg";
-import metropolitano from "@/assets/bts-metropolitano.jpg";
-import urbea from "@/assets/bts-jordi-urbea-talk.jpg";
-import osasuna from "@/assets/bts-osasuna.jpg";
-import signingHands from "@/assets/bts-signing-hands.jpg";
-import setMonitors from "@/assets/bts-set-monitors.jpg";
+import aznarFaes from "@/assets/bts-aznar-faes.webp";
+import aznarFirma from "@/assets/bts-aznar-firma.webp";
+import monitor from "@/assets/bts-monitor-aznar.webp";
+import lasso from "@/assets/bts-guillermo-lasso.webp";
+import andres from "@/assets/bts-andres-rodriguez.webp";
+import mikelPalco from "@/assets/bts-mikel-palco.webp";
+import hostsPalco from "@/assets/bts-hosts-palco.webp";
+import metropolitano from "@/assets/bts-metropolitano.webp";
+import urbea from "@/assets/bts-jordi-urbea-talk.webp";
+import osasuna from "@/assets/bts-osasuna.webp";
+import signingHands from "@/assets/bts-signing-hands.webp";
+import setMonitors from "@/assets/bts-set-monitors.webp";
 
 type Shot = { src: string; alt: string; caption: string; pos?: string };
 const shots: Shot[] = [

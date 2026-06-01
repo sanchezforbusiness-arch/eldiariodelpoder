@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import founderAlejandro from "@/assets/founder-alejandro.jpg";
-import founderVictor from "@/assets/founder-victor.jpg";
+import founderAlejandro from "@/assets/founder-alejandro.webp";
+import founderVictor from "@/assets/founder-victor.webp";
 import { SplitText } from "./SplitText";
 
 export function AboutTeaser() {

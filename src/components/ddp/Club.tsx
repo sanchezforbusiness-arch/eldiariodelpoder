@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import hosts from "@/assets/bts-hosts-palco.jpg";
-import dialogos from "@/assets/bts-aznar-dialogos.jpg";
-import signing from "@/assets/bts-signing-pen.jpg";
+import hosts from "@/assets/bts-hosts-palco.webp";
+import dialogos from "@/assets/bts-aznar-dialogos.webp";
+import signing from "@/assets/bts-signing-pen.webp";
 
 const stats = [
   { k: "2", l: "Eventos / año" },
@@ -18,6 +18,8 @@ export function Club() {
           src={hosts}
           alt=""
           aria-hidden
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover ken-burns"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
@@ -64,11 +66,11 @@ export function Club() {
         {/* Floating side images */}
         <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-10 space-y-4 reveal">
           <div className="relative w-44 h-56 overflow-hidden hover-cinema drift-y">
-            <img src={dialogos} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={dialogos} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 ring-1 ring-gold/30" />
           </div>
           <div className="relative w-44 h-56 overflow-hidden hover-cinema ml-10">
-            <img src={signing} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={signing} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 ring-1 ring-gold/30" />
           </div>
         </div>

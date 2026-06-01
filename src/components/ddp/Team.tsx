@@ -1,8 +1,8 @@
 import { Linkedin } from "lucide-react";
-import g8 from "@/assets/guest-8.jpg";
-import inigo from "@/assets/advisor-inigo.jpg";
-import alejandro from "@/assets/founder-alejandro.jpg";
-import victor from "@/assets/founder-victor.jpg";
+import g8 from "@/assets/guest-8.webp";
+import inigo from "@/assets/advisor-inigo.webp";
+import alejandro from "@/assets/founder-alejandro.webp";
+import victor from "@/assets/founder-victor.webp";
 
 const founders = [
   {
