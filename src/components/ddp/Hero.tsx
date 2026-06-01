@@ -30,13 +30,9 @@ export function Hero() {
           </div>
 
           <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.88] tracking-[-0.045em] font-light">
-            <SplitText text="Conversaciones que" /><br />
-            <SplitText text="importan." goldWords={["importan"]} italicWords={["importan"]} start={3} />
+            <SplitText text="La voz" /><br />
+            <SplitText text="del legado." goldWords={["legado"]} italicWords={["legado"]} start={2} />
           </h1>
-
-          <p className="mt-10 max-w-xl font-serif text-3xl sm:text-4xl md:text-5xl text-foreground/90 leading-[1.1] tracking-[-0.02em] italic">
-            La voz del legado.
-          </p>
 
           <div className="mt-14 flex flex-wrap items-center gap-5">
             <a
