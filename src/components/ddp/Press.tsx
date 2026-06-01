@@ -74,7 +74,7 @@ const stats = [
 export function Press() {
   const featured = items.find((i) => i.featured);
   const rest = items.filter((i) => !i.featured);
-  const tickerOutlets = [...items, ...items];
+  
 
   return (
     <section id="prensa" className="relative py-24 md:py-36 border-t border-border overflow-hidden">
