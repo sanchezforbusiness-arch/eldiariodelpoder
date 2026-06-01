@@ -20,7 +20,7 @@ export function Episodes() {
           <div>
             <span className="eyebrow block mb-5">Episodios</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Lo último que hemos <span className="italic text-gold">grabado</span>.
+              Las últimas <span className="italic text-gold">conversaciones</span>.
             </h2>
           </div>
           <a
@@ -53,7 +53,7 @@ export function Episodes() {
 
             <div className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-3">
               <span className="text-[10px] tracking-[0.28em] uppercase text-gold border border-gold/60 px-3 py-1.5">
-                Nuevo episodio
+                Recién publicado
               </span>
               <span className="font-serif text-3xl text-gold/80">{featured.n}</span>
             </div>
@@ -110,7 +110,7 @@ export function Episodes() {
 
         <div className="mt-16 flex items-center gap-4 text-sm text-muted-foreground">
           <span className="h-px flex-1 bg-border" />
-          <span>Pronto: <span className="text-gold/90">Javier Tebas · Iván Duque</span></span>
+          <span>Próximamente: <span className="text-gold/90">Javier Tebas, Iván Duque</span> y más voces por venir</span>
           <span className="h-px flex-1 bg-border" />
         </div>
       </div>

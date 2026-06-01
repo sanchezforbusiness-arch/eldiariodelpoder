@@ -28,13 +28,12 @@ export function Club() {
           <div className="max-w-4xl reveal">
             <span className="eyebrow block mb-6 text-gold">El Club del Poder</span>
             <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.025em]">
-              Una red <span className="italic shimmer-gold">real</span>.<br />
-              No de LinkedIn.
+              Una <span className="italic shimmer-gold">comunidad real</span>.<br />
+              No una red de contactos.
             </h2>
 
             <p className="mt-8 text-lg md:text-xl text-foreground/80 max-w-xl leading-relaxed">
-              Un círculo cerrado de fundadores, ejecutivos y líderes que se reúnen
-              en Madrid para conversar sin cámaras, sin guion y sin ruido.
+              Un grupo de fundadores, ejecutivos y líderes que se encuentra en Madrid para conversar sin cámaras, sin prisa. Para aprender unos de otros — y a veces, simplemente compartir mesa.
             </p>
 
             {/* Stats row */}
@@ -56,7 +55,7 @@ export function Club() {
                 <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <p className="font-serif italic text-base md:text-lg text-foreground/70 max-w-xs">
-                "Quienes ya están, deciden quién entra."
+                "Quienes ya están dentro, abren la puerta a los que vienen."
               </p>
             </div>
           </div>

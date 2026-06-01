@@ -26,16 +26,16 @@ export function Newsletter() {
         <div className="max-w-2xl mx-auto text-center">
           <span className="eyebrow block mb-6">Newsletter</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-            Lo bueno, <span className="italic text-gold">en tu correo</span>.
+            Ideas que <span className="italic text-gold">importan</span>, en tu correo.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Cada nuevo episodio. Un email. Sin más.
+            Cada conversación, un email. Sin ruido, sin spam. Solo lo que merece la pena leer.
           </p>
 
           {sent ? (
             <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
               <Check size={18} className="text-gold" />
-              <span className="text-sm">Listo. Revisa tu email para confirmar.</span>
+              <span className="text-sm">Gracias. Mira tu correo para confirmar — te esperamos dentro.</span>
             </div>
           ) : (
             <>

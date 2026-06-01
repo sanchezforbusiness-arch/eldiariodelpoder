@@ -31,13 +31,13 @@ export function Publications() {
               Newsletter.
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-              Entrevistas cortas con los mayores referentes. En tu correo.
+              Entrevistas cortas con quienes están dejando huella. En tu correo, cada semana.
             </p>
 
           {sent ? (
             <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
               <Check size={18} className="text-gold" />
-              <span className="text-sm">Listo. Revisa tu email para confirmar.</span>
+              <span className="text-sm">Gracias. Mira tu correo para confirmar — te esperamos dentro.</span>
             </div>
           ) : (
             <>

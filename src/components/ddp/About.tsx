@@ -2,9 +2,9 @@ import founderAlejandro from "@/assets/founder-alejandro.jpg";
 import founderVictor from "@/assets/founder-victor.jpg";
 
 const pillars = [
-  { n: "01", t: "Conversaciones", d: "Sin prisa. Sin guion. Sin titulares." },
-  { n: "02", t: "Invitados", d: "Presidentes, CEOs y referentes que marcan agenda." },
-  { n: "03", t: "Producción", d: "Estética cuidada. Cada detalle pensado." },
+  { n: "01", t: "Conversaciones", d: "Sin prisa, sin guion, sin titulares." },
+  { n: "02", t: "Invitados", d: "Personas que están marcando el paso." },
+  { n: "03", t: "Producción", d: "Cuidamos cada detalle como cuidamos cada palabra." },
 ];
 
 export function About() {
@@ -15,13 +15,12 @@ export function About() {
           <div className="md:col-span-6 reveal">
             <span className="eyebrow block mb-7">Quiénes somos</span>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
-              Donde los que <span className="italic text-gold">deciden</span><br />
-              se sientan a hablar.
+              Donde quienes <span className="italic text-gold">deciden</span><br />
+              se sientan a contarlo.
             </h2>
 
             <p className="mt-10 text-base md:text-[1.05rem] text-muted-foreground max-w-xl leading-[1.75]">
-              Diario del Poder es el podcast de referencia sobre liderazgo, empresa y política en España.
-              Sentamos frente al micrófono a las personas que toman las decisiones — y dejamos que hablen.
+              Diario del Poder nació para hablar con quienes están construyendo lo que viene: presidentes, fundadores y líderes que rara vez se sientan a contar su versión. Sin prisa, sin guion. Solo conversación honesta.
             </p>
 
             <div className="mt-12 grid grid-cols-3 gap-6 reveal-stagger">

@@ -63,10 +63,10 @@ export function Press() {
         <div className="max-w-3xl mb-16 md:mb-20 reveal">
           <span className="eyebrow block mb-6">Prensa</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.02em] font-light">
-            Han hablado de <span className="italic shimmer-gold">nosotros</span>.
+            Lo que cuentan <span className="italic shimmer-gold">de nosotros</span>.
           </h2>
           <p className="mt-6 text-muted-foreground max-w-xl">
-            Una selección de medios que han cubierto las conversaciones y los momentos de Diario del Poder.
+            Algunos de los medios que han querido contar lo que hacemos. Gracias por sumar voz.
           </p>
         </div>
 
