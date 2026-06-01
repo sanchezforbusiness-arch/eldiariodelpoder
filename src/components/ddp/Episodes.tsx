@@ -4,12 +4,14 @@ import g1 from "@/assets/guest-1.jpg";
 import g5 from "@/assets/guest-5.jpg";
 import gEchavarren from "@/assets/guest-echavarren.jpg";
 import gAndres from "@/assets/bts-andres-rodriguez.jpg";
+import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 
 const episodes = [
-  { n: "01", guest: "Andrés Rodríguez", title: "Forbes, lujo y poder desde la Forbes House", img: gAndres, url: "https://youtu.be/nTtgtxG7UNs", isNew: true },
-  { n: "02", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
-  { n: "03", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
-  { n: "04", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8" },
+  { n: "01", guest: "Jordi Juan", title: "La teoría de los cajones para afrontar la crisis", img: jordiAsset.url, url: "https://www.youtube.com/watch?v=onHImjPIYJI", isNew: true },
+  { n: "02", guest: "Andrés Rodríguez", title: "Forbes, lujo y poder desde la Forbes House", img: gAndres, url: "https://youtu.be/nTtgtxG7UNs" },
+  { n: "03", guest: "Guillermo Lasso", title: "Gobernar en plena crisis", img: g5, url: "https://youtu.be/2XZuIBfyBH0" },
+  { n: "04", guest: "José María Aznar", title: "Liderar un país", img: g1, url: "https://youtu.be/ZydPM-xkYvA" },
+  { n: "05", guest: "Mikel Echavarren", title: "Real estate, ciclos y dinero inteligente", img: gEchavarren, url: "https://youtu.be/ARO5S1I5cg8" },
 ];
 
 export function Episodes() {
