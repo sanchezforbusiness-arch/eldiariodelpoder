@@ -96,12 +96,20 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
           <nav className="container-ddp py-6 flex flex-col gap-4">
+            <Link
+              to="/"
+              hash="top"
+              onClick={() => setOpen(false)}
+              className={`text-sm transition-colors ${pathname === "/" ? "text-gold" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              Inicio
+            </Link>
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="text-sm text-muted-foreground hover:text-foreground"
+                className={`text-sm transition-colors ${pathname === l.to ? "text-gold" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {l.label}
               </Link>
