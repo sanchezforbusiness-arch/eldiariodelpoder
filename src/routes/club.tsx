@@ -82,7 +82,7 @@ function ClubPage() {
 function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
-      <img src={dialogos} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
+      <img src={dialogos} alt="" aria-hidden fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="gold-glow w-[520px] h-[520px] -top-40 -left-40 float-slow" />
 
@@ -103,7 +103,7 @@ function Hero() {
         </div>
         <div className="hidden md:block md:col-span-5">
           <div className="relative aspect-[3/4] max-w-[360px] ml-auto overflow-hidden drift-y">
-            <img src={portrait} alt="" className="absolute inset-0 w-full h-full object-cover ken-burns" />
+            <img src={portrait} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover ken-burns" />
             <div className="absolute inset-0 ring-1 ring-gold/30" />
           </div>
         </div>
@@ -143,7 +143,7 @@ function Gallery() {
         <div className="marquee marquee-fast gap-4 md:gap-5">
           {[...shots, ...shots].map((src, i) => (
             <figure key={i} className="group relative shrink-0 w-[280px] sm:w-[340px] md:w-[400px] aspect-[4/5] overflow-hidden bg-card hover-cinema">
-              <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" />
+              <img src={src} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </figure>
           ))}
