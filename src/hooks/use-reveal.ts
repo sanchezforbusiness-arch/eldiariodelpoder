@@ -19,7 +19,9 @@ export function useReveal() {
 
     const handle = schedule(() => {
       if (cancelled) return;
-      const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+      const els = Array.from(
+        document.querySelectorAll<HTMLElement>(".reveal, .reveal-stagger"),
+      );
       if (!els.length) return;
 
       if (typeof IntersectionObserver === "undefined") {
