@@ -33,12 +33,12 @@ export function AboutTeaser() {
           <div className="md:col-span-5 reveal">
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden hover-cinema mt-8">
-                <img src={founderAlejandro} alt="Alejandro" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={founderAlejandro} alt="Alejandro, cofundador de Diario del Poder" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <p className="absolute bottom-3 left-3 font-serif text-lg">Alejandro</p>
               </div>
               <div className="relative aspect-[3/4] overflow-hidden hover-cinema">
-                <img src={founderVictor} alt="Víctor" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={founderVictor} alt="Víctor, cofundador de Diario del Poder" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <p className="absolute bottom-3 left-3 font-serif text-lg">Víctor</p>
               </div>

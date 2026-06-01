@@ -11,9 +11,10 @@ export const Route = createFileRoute("/prensa")({
   head: () => ({
     meta: [
       { title: "Prensa — Diario del Poder" },
-      { name: "description", content: "Los medios que han hablado de Diario del Poder." },
+      { name: "description", content: "Cobertura de prensa de Diario del Poder: medios, televisión y referencias digitales que están hablando del podcast en España." },
       { property: "og:title", content: "Prensa — Diario del Poder" },
       { property: "og:description", content: "Cobertura, partners y apariciones en prensa." },
+      { property: "og:url", content: "https://eldiariodelpoder.com/prensa" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/prensa" }],
   }),
@@ -31,6 +32,11 @@ function PrensaPage() {
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
+        <header className="container-ddp pt-8 pb-2">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+            Prensa & <span className="italic text-gold">medios</span>
+          </h1>
+        </header>
         <Press />
         <Suspense fallback={null}>
           <Footer />

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/club")({
     meta: [
       { title: "El Club del Poder — Una comunidad real" },
       { name: "description", content: "El Club del Poder: una comunidad real de líderes jóvenes que se cuidan, comparten mesa y aprenden juntos. Acceso por invitación." },
-      { property: "og:title", content: "El Club del Poder" },
+      { property: "og:title", content: "El Club del Poder — Una comunidad real" },
       { property: "og:description", content: "Una comunidad real de líderes jóvenes. Acceso por invitación." },
       { property: "og:url", content: "https://eldiariodelpoder.com/club" },
     ],
