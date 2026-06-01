@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const links = [
   { href: "#episodes", label: "Episodios" },
@@ -60,18 +61,19 @@ export function Navbar() {
       }`}
     >
       <div className="container-ddp flex items-center justify-between py-5">
-        <a href="#top" className="flex items-baseline gap-2 group">
+        <Link to="/" hash="top" className="flex items-baseline gap-2 group">
           <span className="font-serif text-2xl tracking-tight text-gold">DDP</span>
           <span className="hidden sm:inline text-[10px] tracking-[0.32em] uppercase text-muted-foreground group-hover:text-foreground transition-colors">
             Diario del Poder
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to="/"
+              hash={l.href.replace("#", "")}
               className={`relative text-[13px] tracking-wide transition-colors ${
                 active === l.href ? "text-gold" : "text-muted-foreground hover:text-foreground"
               }`}
@@ -80,7 +82,7 @@ export function Navbar() {
               {active === l.href && (
                 <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />
               )}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -91,12 +93,13 @@ export function Navbar() {
             <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-gold transition-colors"><Linkedin size={16} /></a>
             <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-gold transition-colors"><Music2 size={16} /></a>
           </div>
-          <a
-            href="#newsletter"
+          <Link
+            to="/"
+            hash="newsletter"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-[12px] tracking-[0.18em] uppercase border border-gold text-gold hover:bg-gold hover:text-gold-foreground transition-all"
           >
             Newsletter
-          </a>
+          </Link>
           <button
             onClick={() => setOpen((v) => !v)}
             className="lg:hidden text-foreground p-2"
@@ -113,14 +116,15 @@ export function Navbar() {
         <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
           <nav className="container-ddp py-6 flex flex-col gap-4">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.href}
-                href={l.href}
+                to="/"
+                hash={l.href.replace("#", "")}
                 onClick={() => setOpen(false)}
                 className="text-sm text-muted-foreground hover:text-foreground"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
