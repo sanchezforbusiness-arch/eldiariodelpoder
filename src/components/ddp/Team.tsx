@@ -74,11 +74,11 @@ export function Team() {
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">Quiénes somos</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Detrás de cada <span className="italic text-gold">conversación</span>.
+              Las personas detrás de cada <span className="italic text-gold">conversación</span>.
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">
-            Dos fundadores. Dos asesores con recorrido. Madrid.
+            Dos fundadores y dos asesores que nos acompañan. Hecho en Madrid, con cuidado.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export function Team() {
           {founders.map((m) => <Person key={m.name} m={m} />)}
         </div>
 
-        <div className="mt-20 mb-8 text-[11px] tracking-[0.3em] uppercase text-gold/80">Advisors</div>
+        <div className="mt-20 mb-8 text-[11px] tracking-[0.3em] uppercase text-gold/80">Quienes nos guían</div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {advisors.map((m) => <Person key={m.name} m={m} />)}
         </div>

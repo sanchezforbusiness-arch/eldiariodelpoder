@@ -30,7 +30,7 @@ export function Sponsors() {
           <div className="text-center mb-12">
             <span className="eyebrow block mb-5">Sponsors</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Marcas que nos <span className="italic text-gold">acompañan</span>.
+              Marcas que nos <span className="italic text-gold">acompañan en el camino</span>.
             </h2>
           </div>
 
@@ -59,7 +59,7 @@ export function Sponsors() {
               </button>
             ) : (
               <div className="w-full max-w-xl border border-gold/50 bg-card/40 px-6 py-6 text-center">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Escríbenos</p>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Hablemos</p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                   <a
                     href={`mailto:${email}?subject=Media%20Kit%20—%20Diario%20del%20Poder`}

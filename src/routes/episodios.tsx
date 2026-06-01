@@ -8,9 +8,9 @@ export const Route = createFileRoute("/episodios")({
   head: () => ({
     meta: [
       { title: "Episodios — Diario del Poder" },
-      { name: "description", content: "Todos los episodios de Diario del Poder: conversaciones con expresidentes, CEOs y líderes institucionales." },
+      { name: "description", content: "Todos los episodios de Diario del Poder: conversaciones sin prisa con presidentes, CEOs y referentes que están construyendo lo que viene." },
       { property: "og:title", content: "Episodios — Diario del Poder" },
-      { property: "og:description", content: "Conversaciones con criterio. Expresidentes, CEOs y líderes institucionales." },
+      { property: "og:description", content: "Conversaciones honestas, sin guion. Presidentes, fundadores y referentes contando lo que de verdad les ha movido." },
       { property: "og:url", content: "https://eldiariodelpoder.com/episodios" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/episodios" }],
@@ -26,7 +26,7 @@ function EpisodiosPage() {
       <main className="pt-24">
         <header className="container-ddp pt-8 pb-4">
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
-            Episodios de <span className="italic text-gold">Diario del Poder</span>
+            Todas las <span className="italic text-gold">conversaciones</span>
           </h1>
         </header>
         <Episodes />

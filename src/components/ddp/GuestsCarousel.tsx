@@ -27,7 +27,7 @@ export function GuestsCarousel() {
           <div className="max-w-3xl">
             <span className="eyebrow block mb-5">Invitados</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Gente que ha estado <span className="italic text-gold">donde se decide</span>.
+              Voces que están <span className="italic text-gold">construyendo lo que viene</span>.
             </h2>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-[14rem]">

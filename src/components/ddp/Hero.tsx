@@ -27,11 +27,11 @@ export function Hero() {
           </div>
 
           <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.88] tracking-[-0.045em] font-light">
-            La voz<br />del <span className="italic shimmer-gold">legado</span>.
+            Conversaciones<br />que <span className="italic shimmer-gold">importan</span>.
           </h1>
 
           <p className="mt-12 max-w-xl text-base md:text-[1.05rem] text-foreground/75 leading-[1.7]">
-            El podcast donde expresidentes, CEOs y fundadores hablan sin guion sobre liderazgo, decisiones y legado.
+            Nos sentamos, sin prisa, con quienes están dejando huella. Presidentes, fundadores y referentes contando, sin guion, lo que de verdad les ha movido.
           </p>
 
           <div className="mt-14 flex flex-wrap items-center gap-5">

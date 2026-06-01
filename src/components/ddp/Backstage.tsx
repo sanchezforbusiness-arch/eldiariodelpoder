@@ -38,7 +38,7 @@ export function Backstage() {
           <div>
             <span className="eyebrow block mb-5">Detrás de cámara</span>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light">
-              Fuera del <span className="italic text-gold">plano</span>.
+              Lo que pasa <span className="italic text-gold">fuera de cámara</span>.
             </h2>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-xs">

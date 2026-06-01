@@ -15,10 +15,10 @@ import metropolitano from "@/assets/bts-metropolitano.jpg";
 export const Route = createFileRoute("/club")({
   head: () => ({
     meta: [
-      { title: "El Club del Poder — Comunidad de líderes" },
-      { name: "description", content: "El Club del Poder: comunidad selectiva de jóvenes líderes con criterio, ambición e influencia real." },
+      { title: "El Club del Poder — Una comunidad real" },
+      { name: "description", content: "El Club del Poder: una comunidad real de líderes jóvenes que se cuidan, comparten mesa y aprenden juntos. Acceso por invitación." },
       { property: "og:title", content: "El Club del Poder" },
-      { property: "og:description", content: "Comunidad selectiva de líderes jóvenes. Acceso por invitación." },
+      { property: "og:description", content: "Una comunidad real de líderes jóvenes. Acceso por invitación." },
       { property: "og:url", content: "https://eldiariodelpoder.com/club" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/club" }],
@@ -29,10 +29,10 @@ export const Route = createFileRoute("/club")({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
-            { "@type": "Question", name: "¿Quién puede unirse?", acceptedAnswer: { "@type": "Answer", text: "Profesionales y emprendedores con interés real en liderazgo, criterio e influencia positiva." } },
-            { "@type": "Question", name: "¿Cómo se entra?", acceptedAnswer: { "@type": "Answer", text: "Solicitas acceso. Revisamos tu perfil. Si encajas, te damos la bienvenida." } },
-            { "@type": "Question", name: "¿Hay cuota?", acceptedAnswer: { "@type": "Answer", text: "Sí, anual. Compartimos los detalles tras la solicitud." } },
-            { "@type": "Question", name: "¿Eventos?", acceptedAnswer: { "@type": "Answer", text: "Dos al año en Madrid. Cenas y diálogos cerrados." } },
+            { "@type": "Question", name: "¿Quién puede unirse?", acceptedAnswer: { "@type": "Answer", text: "Profesionales y emprendedores con ganas reales de aportar, aprender y rodearse bien." } },
+            { "@type": "Question", name: "¿Cómo se entra?", acceptedAnswer: { "@type": "Answer", text: "Nos cuentas quién eres. Leemos tu perfil con calma. Si encajas, te damos la bienvenida en persona." } },
+            { "@type": "Question", name: "¿Hay cuota?", acceptedAnswer: { "@type": "Answer", text: "Sí, anual. Te contamos los detalles cuando hablemos." } },
+            { "@type": "Question", name: "¿Eventos?", acceptedAnswer: { "@type": "Answer", text: "Dos al año en Madrid. Cenas cerradas y diálogos a puerta cerrada." } },
           ],
         }),
       },
@@ -48,17 +48,17 @@ const pillars = [
 ];
 
 const philosophy = [
-  "El poder no es un fin. Es responsabilidad.",
-  "El liderazgo real rara vez necesita parecer liderazgo.",
-  "La influencia que deja huella nace del criterio.",
-  "Construimos comunidad alrededor de ideas, no de contactos.",
+  "El poder no es un fin. Es una forma de cuidar lo que importa.",
+  "El liderazgo de verdad casi nunca necesita parecerlo.",
+  "La influencia que deja huella nace de mirar despacio.",
+  "Nos juntamos alrededor de ideas, no de contactos.",
 ];
 
 const faqs = [
-  { q: "¿Quién puede unirse?", a: "Profesionales y emprendedores con interés real en liderazgo, criterio e influencia positiva." },
-  { q: "¿Cómo se entra?", a: "Solicitas acceso. Revisamos tu perfil. Si encajas, te damos la bienvenida." },
-  { q: "¿Hay cuota?", a: "Sí, anual. Compartimos los detalles tras la solicitud." },
-  { q: "¿Eventos?", a: "Dos al año en Madrid. Cenas y diálogos cerrados." },
+  { q: "¿Quién puede unirse?", a: "Profesionales y emprendedores con ganas reales de aportar, aprender y rodearse bien." },
+  { q: "¿Cómo se entra?", a: "Nos cuentas quién eres. Leemos tu perfil con calma. Si encajas, te damos la bienvenida en persona." },
+  { q: "¿Hay cuota?", a: "Sí, anual. Te contamos los detalles cuando hablemos." },
+  { q: "¿Eventos?", a: "Dos al año en Madrid. Cenas cerradas y diálogos a puerta cerrada." },
 ];
 
 function ClubPage() {
@@ -90,10 +90,10 @@ function Hero() {
         <div className="md:col-span-7 fade-up">
           <span className="eyebrow block mb-6">El Club del Poder</span>
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
-            Una comunidad<br /> de <span className="italic shimmer-gold">líderes</span>.
+            Una comunidad<br /> que <span className="italic shimmer-gold">se cuida</span>.
           </h1>
           <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
-            Acceso por invitación. Cero ruido.
+            Acceso por invitación. Sin ruido, sin postureo. Solo gente con ganas de aportar.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a href="#apply" className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors">
@@ -177,13 +177,16 @@ function Apply() {
       <div className="container-ddp max-w-3xl">
         <span className="eyebrow block mb-5">Solicita tu acceso</span>
         <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light">
-          Capacidad <span className="italic text-gold">limitada</span>.
+          Cuéntanos <span className="italic text-gold">quién eres</span>.
         </h2>
+        <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl">
+          Leemos cada solicitud con calma. Si encajas, te escribimos para conocernos en persona.
+        </p>
 
         {submitted ? (
           <div className="mt-10 border border-gold/40 bg-card/40 p-8">
-            <p className="font-serif text-2xl">Hemos recibido tu solicitud.</p>
-            <p className="mt-2 text-sm text-muted-foreground">Nos pondremos en contacto en 5–7 días.</p>
+            <p className="font-serif text-2xl">Gracias. Te hemos leído.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Te escribimos en 5–7 días, sin prisa.</p>
           </div>
         ) : (
           <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="mt-10 grid gap-5">
@@ -194,7 +197,7 @@ function Apply() {
               <Field label="Teléfono" name="phone" />
             </div>
             <div>
-              <label className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">¿Por qué encajas?</label>
+              <label className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">Cuéntanos un poco sobre ti</label>
               <textarea required rows={3} maxLength={500}
                 className="w-full bg-background border border-border focus:border-gold outline-none px-4 py-3 text-sm transition-colors" />
             </div>
