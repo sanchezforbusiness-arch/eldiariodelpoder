@@ -57,7 +57,7 @@ export function Publications() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="tu@email.com"
-                    className="flex-1 bg-transparent px-5 py-4 text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+                    className="flex-1 bg-transparent px-5 py-4 text-base text-foreground placeholder:text-muted-foreground focus:outline-none"
                     required
                   />
                   <button

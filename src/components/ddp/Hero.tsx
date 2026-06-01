@@ -61,7 +61,7 @@ export function Hero() {
             <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
             <span className="text-foreground/85">Andrés Rodríguez</span>
             <span className="text-gold/40">·</span>
-            <span className="hidden md:inline text-foreground/60">Presidente Forbes</span>
+            <span className="hidden md:inline text-muted-foreground">Presidente Forbes</span>
           </div>
           <a
             href="#guests"
