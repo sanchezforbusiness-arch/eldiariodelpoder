@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
-import { TextBand } from "@/components/ddp/TextBand";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { Episodes } from "@/components/ddp/Episodes";
 import { useReveal } from "@/hooks/use-reveal";
@@ -38,7 +37,6 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
-        <TextBand />
         <GuestsCarousel />
         <Episodes />
         <Suspense fallback={<div style={{ minHeight: "120vh" }} />}>
