@@ -42,7 +42,10 @@ const items: PressItem[] = [
   { outlet: "El Mundo" },
   { outlet: "El Periódico" },
   { outlet: "El Debate" },
-  { outlet: "Huffpost" },
+  {
+    outlet: "Huffpost",
+    url: "https://www.huffingtonpost.es/virales/le-piden-letizia-salir-podcast-respuesta-reina-esperan-nadie-f202605.html",
+  },
   { outlet: "Navarra TV" },
   {
     outlet: "Univision",
