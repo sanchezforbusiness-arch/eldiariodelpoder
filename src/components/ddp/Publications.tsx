@@ -49,12 +49,12 @@ export function Publications() {
       <div className="container-ddp relative">
         <div className="flex items-end justify-between flex-wrap gap-6 mb-16 md:mb-24">
           <div className="max-w-2xl">
-            <span className="eyebrow block mb-6">Publicaciones</span>
+            <span className="eyebrow block mb-6">Newsletter</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Lecturas <span className="italic text-gold">del poder</span>.
+              Newsletter.
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-              Los últimos análisis y notas enviados a la newsletter. Sin ruido, con contexto.
+              Entrevistas cortas con los mayores referentes. En tu correo.
             </p>
           </div>
           <a
