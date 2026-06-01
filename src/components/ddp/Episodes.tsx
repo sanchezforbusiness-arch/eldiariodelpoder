@@ -109,11 +109,6 @@ export function Episodes() {
           ))}
         </div>
 
-        <div className="mt-14 flex items-center gap-4 text-sm text-muted-foreground">
-          <span className="h-px flex-1 bg-border" />
-          <span>Próximamente · <span className="text-gold/90">Tebas · Duque</span></span>
-          <span className="h-px flex-1 bg-border" />
-        </div>
       </div>
     </section>
   );
