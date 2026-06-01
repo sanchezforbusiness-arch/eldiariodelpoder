@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 
-const links = [
-  { href: "#episodes", label: "Episodios" },
-  { href: "#guests", label: "Invitados" },
-  { href: "#publicaciones", label: "Publicaciones" },
-  { href: "#prensa", label: "Prensa" },
-  { href: "#club", label: "Club" },
-  { href: "#team", label: "Equipo" },
+type NavLink = { to: string; label: string };
+const links: NavLink[] = [
+  { to: "/episodios", label: "Episodios" },
+  { to: "/invitados", label: "Invitados" },
+  { to: "/club", label: "Club" },
+  { to: "/manifiesto", label: "Manifiesto" },
+  { to: "/prensa", label: "Prensa" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<string>("");
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     let ticking = false;
@@ -31,25 +31,6 @@ export function Navbar() {
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const ids = links.map((l) => l.href.replace("#", ""));
-    const els = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => Boolean(el));
-    if (!els.length) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(`#${visible.target.id}`);
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
-    );
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
   }, []);
 
   return (
@@ -69,21 +50,21 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              to="/"
-              hash={l.href.replace("#", "")}
-              className={`relative text-[13px] tracking-wide transition-colors ${
-                active === l.href ? "text-gold" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {l.label}
-              {active === l.href && (
-                <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />
-              )}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const active = pathname === l.to;
+            return (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`relative text-[13px] tracking-wide transition-colors ${
+                  active ? "text-gold" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {l.label}
+                {active && <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -117,9 +98,8 @@ export function Navbar() {
           <nav className="container-ddp py-6 flex flex-col gap-4">
             {links.map((l) => (
               <Link
-                key={l.href}
-                to="/"
-                hash={l.href.replace("#", "")}
+                key={l.to}
+                to={l.to}
                 onClick={() => setOpen(false)}
                 className="text-sm text-muted-foreground hover:text-foreground"
               >
