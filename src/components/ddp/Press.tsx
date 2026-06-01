@@ -221,20 +221,6 @@ export function Press() {
           })}
         </div>
 
-        {/* Ticker — names in marquee */}
-        <div className="mt-20 md:mt-28 relative overflow-hidden mask-fade-x border-y border-border py-6 reveal">
-          <div className="marquee marquee-slow gap-12 md:gap-16">
-            {tickerOutlets.map((o, i) => (
-              <span
-                key={i}
-                className="font-serif text-2xl md:text-3xl lg:text-4xl font-light text-foreground/40 whitespace-nowrap tracking-[-0.01em]"
-              >
-                {o.outlet}
-                <span className="mx-6 md:mx-8 text-gold/40">✦</span>
-              </span>
-            ))}
-          </div>
-        </div>
 
         {/* Press contact */}
         <div className="mt-20 md:mt-28 grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
