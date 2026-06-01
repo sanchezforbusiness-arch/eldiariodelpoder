@@ -34,7 +34,7 @@ export function Hero() {
             <SplitText text="importan." goldWords={["importan"]} italicWords={["importan"]} start={3} />
           </h1>
 
-          <p className="mt-10 max-w-md text-base text-foreground/75 leading-[1.7]">
+          <p className="mt-10 max-w-xl font-serif text-3xl sm:text-4xl md:text-5xl text-foreground/90 leading-[1.1] tracking-[-0.02em] italic">
             La voz del legado.
           </p>
 
