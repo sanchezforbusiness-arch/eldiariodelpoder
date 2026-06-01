@@ -1,148 +1,112 @@
 import { useEffect, useState } from "react";
+import { Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
 
-const links = [
-  { href: "#episodios", label: "Episodios" },
-  { href: "#invitados", label: "Invitados" },
-  { href: "#prensa", label: "Prensa" },
-  { href: "#club", label: "Club" },
+type NavLink = { to: string; label: string };
+const links: NavLink[] = [
+  { to: "/episodios", label: "Episodios" },
+  { to: "/invitados", label: "Invitados" },
+  { to: "/club", label: "Club" },
+  { to: "/manifiesto", label: "Manifiesto" },
+  { to: "/prensa", label: "Prensa" },
 ];
 
 export function Navbar() {
-  const [active, setActive] = useState<string>("");
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    const ids = links.map((l) => l.href.slice(1));
-    const handler = () => {
-      const y = window.scrollY + 120;
-      let cur = "";
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= y) cur = id;
-      }
-      setActive(cur);
+    let ticking = false;
+    const update = () => {
+      setScrolled(window.scrollY > 24);
+      ticking = false;
     };
-    handler();
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50"
-      style={{
-        height: 58,
-        background: "rgba(0,0,0,0.9)",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
-      }}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "backdrop-blur-md bg-background/85 border-b border-border/60"
+          : "bg-transparent"
+      }`}
     >
-      <div
-        className="h-full flex items-center justify-between"
-        style={{ padding: "0 24px" }}
-      >
-        <a
-          href="#top"
-          className="font-display text-white"
-          style={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.1em" }}
-        >
-          DDP
-        </a>
+      <div className="container-ddp flex items-center justify-between py-5">
+        <Link to="/" hash="top" className="flex items-baseline gap-2 group">
+          <span className="font-serif text-2xl tracking-tight text-gold">DDP</span>
+          <span className="hidden sm:inline text-[10px] tracking-[0.32em] uppercase text-muted-foreground group-hover:text-foreground transition-colors">
+            Diario del Poder
+          </span>
+        </Link>
 
-        <nav className="hidden md:flex items-center" style={{ gap: 32 }}>
+        <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => {
-            const isActive = active === l.href.slice(1);
+            const active = pathname === l.to;
             return (
-              <a
-                key={l.href}
-                href={l.href}
-                className="font-display uppercase transition-colors duration-200"
-                style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  color: isActive ? "#fff" : "rgba(255,255,255,0.4)",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = isActive ? "#fff" : "rgba(255,255,255,0.4)";
-                }}
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`relative text-[13px] tracking-wide transition-colors ${
+                  active ? "text-gold" : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {l.label}
-              </a>
+                {active && <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />}
+              </Link>
             );
           })}
         </nav>
 
-        <a
-          href="#club"
-          className="hidden md:inline-flex font-display uppercase transition-opacity"
-          style={{
-            background: "#B8935A",
-            color: "#000",
-            fontSize: 11,
-            fontWeight: 700,
-            letterSpacing: "0.1em",
-            padding: "9px 20px",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-        >
-          Únete al Club →
-        </a>
-
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden text-white p-2"
-          aria-label="Menu"
-        >
-          <div className="w-5 h-px bg-current mb-1.5" />
-          <div className="w-5 h-px bg-current mb-1.5" />
-          <div className="w-3 h-px bg-current ml-auto" />
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 mr-2 text-muted-foreground">
+            <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold transition-colors"><Instagram size={16} /></a>
+            <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-gold transition-colors"><Youtube size={16} /></a>
+            <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-gold transition-colors"><Linkedin size={16} /></a>
+            <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-gold transition-colors"><Music2 size={16} /></a>
+          </div>
+          <Link
+            to="/"
+            hash="newsletter"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-[12px] tracking-[0.18em] uppercase border border-gold text-gold hover:bg-gold hover:text-gold-foreground transition-all"
+          >
+            Newsletter
+          </Link>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="lg:hidden text-foreground p-2"
+            aria-label="Menu"
+          >
+            <div className="w-5 h-px bg-current mb-1.5" />
+            <div className="w-5 h-px bg-current mb-1.5" />
+            <div className="w-3 h-px bg-current ml-auto" />
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div
-          className="md:hidden"
-          style={{
-            background: "rgba(0,0,0,0.95)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-            padding: "16px 24px",
-          }}
-        >
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block font-display uppercase py-2"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                color: "rgba(255,255,255,0.6)",
-              }}
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#club"
-            onClick={() => setOpen(false)}
-            className="inline-flex mt-4 font-display uppercase"
-            style={{
-              background: "#B8935A",
-              color: "#000",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              padding: "9px 20px",
-            }}
-          >
-            Únete al Club →
-          </a>
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <nav className="container-ddp py-6 flex flex-col gap-4">
+            {links.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="text-sm text-muted-foreground hover:text-foreground"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       )}
     </header>
