@@ -1,5 +1,6 @@
 import heroImg from "@/assets/hero-studio.webp";
 import { Play, ArrowDown } from "lucide-react";
+import { SplitText } from "./SplitText";
 
 export function Hero() {
   return (
@@ -23,15 +24,18 @@ export function Hero() {
         <div className="max-w-5xl">
           <div className="flex items-center gap-4 mb-10">
             <span className="h-px w-14 bg-gold/70" />
-            <span className="eyebrow">Podcast · Madrid</span>
+            <span className="eyebrow flex items-center gap-2">
+              <span className="dot-gold" /> Podcast · Madrid
+            </span>
           </div>
 
           <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.88] tracking-[-0.045em] font-light">
-            Conversaciones<br />que <span className="italic shimmer-gold">importan</span>.
+            <SplitText text="Conversaciones que" /><br />
+            <SplitText text="importan." goldWords={["importan."]} italicWords={["importan."]} start={3} />
           </h1>
 
-          <p className="mt-12 max-w-xl text-base md:text-[1.05rem] text-foreground/75 leading-[1.7]">
-            Nos sentamos, sin prisa, con quienes están dejando huella. Presidentes, fundadores y referentes contando, sin guion, lo que de verdad les ha movido.
+          <p className="mt-10 max-w-md text-base text-foreground/75 leading-[1.7]">
+            Sin guion. Con quienes dejan huella.
           </p>
 
           <div className="mt-14 flex flex-wrap items-center gap-5">
