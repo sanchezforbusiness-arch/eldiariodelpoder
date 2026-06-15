@@ -8,10 +8,12 @@ import coelloAsset from "@/assets/guest-coello.png.asset.json";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAsset from "@/assets/guest-rosa-lagarrigue.png.asset.json";
 import jcghAsset from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
+import aguirreAsset from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 
 const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
   { name: "Guillermo Lasso", role: "Expresidente de Ecuador", img: g5 },
+  { name: "Esperanza Aguirre", role: "Expresidenta de la Comunidad de Madrid", img: aguirreAsset.url },
   { name: "Javier Tebas", role: "Presidente de La Liga", img: g3 },
   { name: "Andrés Rodríguez", role: "Presidente de Forbes", img: g4 },
   { name: "Arturo Coello", role: "Nº 1 del mundo de pádel", img: coelloAsset.url },
@@ -21,6 +23,7 @@ const guests = [
   { name: "José Carlos González Hurtado", role: "Dueño de EWTN · Ex CEO P&G", img: jcghAsset.url },
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
 ];
+
 
 export function GuestsCarousel() {
   const loop = [...guests, ...guests];
