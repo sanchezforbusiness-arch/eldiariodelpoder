@@ -29,6 +29,10 @@ const shots: Shot[] = [
   { src: metropolitano, alt: "Estadio Cívitas Metropolitano", caption: "Cívitas Metropolitano" },
   { src: urbea, alt: "Jordi Urbea de Ogilvy", caption: "Jordi Urbea · Ogilvy" },
   { src: osasuna, alt: "Evento con Osasuna", caption: "DDP × Osasuna" },
+  { src: upload1.url, alt: "Backstage", caption: "Backstage" },
+  { src: upload2.url, alt: "Backstage", caption: "Backstage" },
+  { src: upload3.url, alt: "Backstage", caption: "Backstage" },
+  { src: upload4.url, alt: "Backstage", caption: "Backstage" },
 ];
 
 export function Backstage() {
