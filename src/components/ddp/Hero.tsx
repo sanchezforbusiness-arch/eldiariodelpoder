@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-studio.webp";
+import heroAsset from "@/assets/hero-portada.webp.asset.json";
 import { Play, ArrowDown } from "lucide-react";
 import { SplitText } from "./SplitText";
 
@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
       <img
-        src={heroImg}
-        alt="Estudio de Diario del Poder"
+        src={heroAsset.url}
+        alt="Portada Diario del Poder"
         width={1920}
         height={1080}
         fetchPriority="high"
