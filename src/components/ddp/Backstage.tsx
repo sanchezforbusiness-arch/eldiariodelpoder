@@ -10,6 +10,10 @@ import urbea from "@/assets/bts-jordi-urbea-talk.webp";
 import osasuna from "@/assets/bts-osasuna.webp";
 import signingHands from "@/assets/bts-signing-hands.webp";
 import setMonitors from "@/assets/bts-set-monitors.webp";
+import upload1 from "@/assets/upload-1C6E912A.jpg.asset.json";
+import upload2 from "@/assets/upload-56D2680B.jpg.asset.json";
+import upload3 from "@/assets/upload-846FDD15.jpg.asset.json";
+import upload4 from "@/assets/upload-E1BC5EA9.jpg.asset.json";
 
 type Shot = { src: string; alt: string; caption: string; pos?: string };
 const shots: Shot[] = [
