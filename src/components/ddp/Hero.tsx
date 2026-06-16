@@ -1,4 +1,4 @@
-import heroAsset from "@/assets/hero-portada.webp.asset.json";
+import heroAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
 import { Play, ArrowDown } from "lucide-react";
 import { SplitText } from "./SplitText";
 
