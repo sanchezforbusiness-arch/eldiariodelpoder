@@ -8,11 +8,11 @@ const TikTok = (props: { size?: number }) => (
 export function Footer() {
   return (
     <footer id="contact" className="border-t border-border bg-card/30">
-      <div className="container-ddp py-16 md:py-20">
-        <div className="grid md:grid-cols-12 gap-12">
+      <div className="container-ddp py-14 md:py-20">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-6">
             <div className="font-serif text-3xl text-gold mb-5">DDP</div>
-            <p className="font-serif text-3xl md:text-4xl leading-snug max-w-md font-light">
+            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-snug max-w-md font-light">
               Conversamos con quienes están <span className="italic">dejando huella</span>.
             </p>
             <p className="mt-5 text-sm text-muted-foreground">Hecho en Madrid, con cuidado.</p>
@@ -29,9 +29,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 min-w-0">
             <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h4>
-            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-sm text-foreground hover:text-gold transition-colors break-all">
+            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
               contactoeldiariodelpoder@gmail.com
             </a>
             <div className="mt-6 flex items-center gap-4 text-muted-foreground">
