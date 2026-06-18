@@ -6,24 +6,24 @@ import { SplitText } from "./SplitText";
 
 export function AboutTeaser() {
   return (
-    <section id="about" className="relative py-24 md:py-36 overflow-hidden border-t border-border">
+    <section id="about" className="relative py-20 md:py-36 overflow-hidden border-t border-border">
       <div className="container-ddp relative">
-        <div className="grid md:grid-cols-12 gap-12 items-center">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12 items-center">
           <div className="md:col-span-7 reveal">
-            <span className="eyebrow block mb-6"><span className="dot-gold mr-2" />Quiénes somos</span>
+            <span className="eyebrow block mb-5 md:mb-6"><span className="dot-gold mr-2" />Quiénes somos</span>
             <SplitText
               as="h2"
               text="Donde quienes deciden se sientan a contarlo."
               goldWords={["deciden"]}
               italicWords={["deciden"]}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.025em]"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light tracking-[-0.025em]"
             />
-            <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
+            <p className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
               Dos fundadores. Conversaciones sin guion. Madrid, con cuidado.
             </p>
             <Link
               to="/manifiesto"
-              className="group inline-flex items-center gap-3 mt-10 text-[12px] tracking-[0.24em] uppercase text-gold border-b border-gold/40 pb-2 hover:border-gold transition-colors"
+              className="group inline-flex items-center gap-3 mt-8 md:mt-10 text-[12px] tracking-[0.24em] uppercase text-gold border-b border-gold/40 pb-2 hover:border-gold transition-colors"
             >
               Leer el manifiesto
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
