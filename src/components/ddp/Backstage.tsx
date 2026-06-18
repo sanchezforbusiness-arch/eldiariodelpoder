@@ -40,8 +40,8 @@ export function Backstage() {
   const rowA = loop;
   const rowB = [...shots].reverse().concat([...shots].reverse());
   return (
-    <section id="backstage" className="py-24 md:py-36 border-t border-border overflow-hidden">
-      <div className="container-ddp mb-10">
+    <section id="backstage" className="py-20 md:py-36 border-t border-border overflow-hidden">
+      <div className="container-ddp mb-8 md:mb-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Detrás de cámara</span>
@@ -55,17 +55,17 @@ export function Backstage() {
         </div>
       </div>
 
-      <div className="space-y-5">
+      <div className="space-y-4 md:space-y-5">
         {[
-          { items: rowA, classes: "marquee gap-4 md:gap-5" },
-          { items: rowB, classes: "marquee marquee-slow marquee-reverse gap-4 md:gap-5" },
+          { items: rowA, classes: "marquee gap-3 sm:gap-4 md:gap-5" },
+          { items: rowB, classes: "marquee marquee-slow marquee-reverse gap-3 sm:gap-4 md:gap-5" },
         ].map((row, ri) => (
           <div key={ri} className="relative overflow-hidden mask-fade-x">
             <div className={row.classes}>
               {row.items.map((s, i) => (
                 <figure
                   key={ri + "-" + i}
-                  className="group relative shrink-0 w-[260px] sm:w-[320px] md:w-[400px] aspect-[4/3] overflow-hidden bg-card hover-cinema"
+                  className="group relative shrink-0 w-[220px] sm:w-[320px] md:w-[400px] aspect-[4/3] overflow-hidden bg-card hover-cinema"
                 >
                   <img
                     src={s.src}
