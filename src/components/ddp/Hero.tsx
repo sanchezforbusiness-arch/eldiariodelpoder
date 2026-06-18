@@ -20,33 +20,33 @@ export function Hero() {
       <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
       <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-40" />
 
-      <div className="container-ddp relative z-10 pt-32 pb-44 md:pb-52 fade-up">
+      <div className="container-ddp relative z-10 pt-28 sm:pt-32 pb-32 md:pb-52 fade-up">
         <div className="max-w-5xl">
-          <div className="flex items-center gap-4 mb-10">
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
             <span className="h-px w-14 bg-gold/70" />
             <span className="eyebrow flex items-center gap-2">
               <span className="dot-gold" /> Podcast · Madrid
             </span>
           </div>
 
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.88] tracking-[-0.045em] font-light">
+          <h1 className="font-serif text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.9] sm:leading-[0.88] tracking-[-0.04em] font-light">
             <SplitText text="La voz" /><br />
             <SplitText text="del legado." goldWords={["legado"]} italicWords={["legado"]} start={2} />
           </h1>
 
-          <div className="mt-14 flex flex-wrap items-center gap-5">
+          <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-3 sm:gap-5">
             <a
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
-              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-9 py-4 text-[11px] tracking-[0.28em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
+              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-7 sm:px-9 py-3.5 sm:py-4 text-[11px] tracking-[0.24em] sm:tracking-[0.28em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
             >
               <Play size={14} className="fill-current" />
               Escuchar
             </a>
             <a
               href="#episodes"
-              className="inline-flex items-center gap-2 px-7 py-4 text-[11px] tracking-[0.28em] uppercase text-foreground/85 border border-foreground/25 hover:border-gold hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 text-[11px] tracking-[0.24em] sm:tracking-[0.28em] uppercase text-foreground/85 border border-foreground/25 hover:border-gold hover:text-gold transition-colors"
             >
               Ver episodios
             </a>
@@ -56,17 +56,17 @@ export function Hero() {
 
       {/* Bottom proof strip */}
       <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/40 backdrop-blur-sm">
-        <div className="container-ddp py-5 flex items-center justify-between gap-6">
-          <div className="flex items-center gap-6 md:gap-10 text-[10px] md:text-[11px] tracking-[0.24em] uppercase text-muted-foreground overflow-hidden">
+        <div className="container-ddp py-4 sm:py-5 flex items-center justify-between gap-4 sm:gap-6">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-6 md:gap-10 text-[10px] md:text-[11px] tracking-[0.2em] sm:tracking-[0.24em] uppercase text-muted-foreground overflow-hidden">
             <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
-            <span className="text-foreground/85">Andrés Rodríguez</span>
-            <span className="text-gold/40">·</span>
+            <span className="text-foreground/85 truncate">Andrés Rodríguez</span>
+            <span className="text-gold/40 hidden sm:inline">·</span>
             <span className="hidden md:inline text-muted-foreground">Presidente Forbes</span>
           </div>
           <a
             href="#guests"
             aria-label="Bajar"
-            className="flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-gold/80 hover:text-gold transition-colors"
+            className="flex items-center gap-2 shrink-0 text-[10px] tracking-[0.24em] sm:tracking-[0.28em] uppercase text-gold/80 hover:text-gold transition-colors"
           >
             Scroll
             <ArrowDown size={14} className="bounce-down" />
