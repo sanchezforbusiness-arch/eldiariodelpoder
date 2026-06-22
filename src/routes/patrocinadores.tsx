@@ -50,7 +50,6 @@ const tiers = [
   {
     name: "Plata",
     pitch: "Presencia continuada",
-    price: "10 000 € – 25 000 €",
     perks: [
       "Logo en web y newsletter",
       "1 mención por episodio",
@@ -60,7 +59,6 @@ const tiers = [
   {
     name: "Oro",
     pitch: "Asociación de marca",
-    price: "25 000 € – 50 000 €",
     perks: [
       "Todo lo anterior",
       "Lectura cuidada en cabecera de episodio",
@@ -72,7 +70,6 @@ const tiers = [
   {
     name: "Platino",
     pitch: "Patrocinador principal",
-    price: "Desde 50 000 €",
     perks: [
       "Todo lo anterior",
       "Presentación in-line en cada episodio",
@@ -216,12 +213,9 @@ function Tiers() {
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-3">
                 {t.pitch}
               </p>
-              <h3 className="font-serif text-4xl md:text-5xl font-light mb-6">
+              <h3 className="font-serif text-4xl md:text-5xl font-light mb-8">
                 {t.name}
               </h3>
-              <p className="font-serif text-lg md:text-xl text-foreground/90 -mt-3 mb-6">
-                {t.price}
-              </p>
               <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
                 {t.perks.map((p) => (
                   <li key={p} className="flex items-start gap-3">
