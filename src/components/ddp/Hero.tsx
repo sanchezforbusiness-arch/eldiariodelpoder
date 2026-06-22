@@ -42,10 +42,16 @@ export function Hero() {
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
           </figure>
 
-          <h1 className="font-serif text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.9] sm:leading-[0.88] tracking-[-0.04em] font-light">
-            <SplitText text="La voz" /><br />
-            <SplitText text="del legado." goldWords={["legado"]} italicWords={["legado"]} start={2} />
+          <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
+            <SplitText text="Donde quienes deciden" goldWords={["deciden"]} italicWords={["deciden"]} />
+            <br />
+            <SplitText text="se sientan a contarlo." start={3} />
           </h1>
+
+          <p className="mt-7 md:mt-9 max-w-xl text-base md:text-lg text-foreground/75 leading-relaxed">
+            Conversaciones sin guion con expresidentes, CEOs y líderes que están dejando huella.
+            Criterio antes que audiencia.
+          </p>
 
           <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-3 sm:gap-5">
             <a
@@ -55,7 +61,7 @@ export function Hero() {
               className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-7 sm:px-9 py-3.5 sm:py-4 text-[11px] tracking-[0.24em] sm:tracking-[0.28em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
             >
               <Play size={14} className="fill-current" />
-              Escuchar
+              Escuchar último episodio
             </a>
             <a
               href="#episodes"

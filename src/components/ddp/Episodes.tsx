@@ -23,7 +23,7 @@ export function Episodes() {
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Últimas <span className="italic text-gold">conversaciones</span>.
+              Conversaciones <span className="italic text-gold">recientes</span>.
             </h2>
           </div>
           <Link

@@ -26,6 +26,7 @@ export function Footer() {
               <li><Link to="/club" className="hover:text-foreground transition-colors">Club</Link></li>
               <li><Link to="/manifiesto" className="hover:text-foreground transition-colors">Manifiesto</Link></li>
               <li><Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link></li>
+              <li><Link to="/patrocinadores" className="hover:text-foreground transition-colors">Patrocinadores</Link></li>
             </ul>
           </div>
 
