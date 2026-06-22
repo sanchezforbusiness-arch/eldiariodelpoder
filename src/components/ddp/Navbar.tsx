@@ -9,6 +9,7 @@ const links: NavLink[] = [
   { to: "/club", label: "Club" },
   { to: "/manifiesto", label: "Manifiesto" },
   { to: "/prensa", label: "Prensa" },
+  { to: "/patrocinadores", label: "Patrocinadores" },
 ];
 
 export function Navbar() {

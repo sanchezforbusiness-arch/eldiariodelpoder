@@ -13,13 +13,13 @@ export function AboutTeaser() {
             <span className="eyebrow block mb-5 md:mb-6"><span className="dot-gold mr-2" />Quiénes somos</span>
             <SplitText
               as="h2"
-              text="Donde quienes deciden se sientan a contarlo."
-              goldWords={["deciden"]}
-              italicWords={["deciden"]}
+              text="Donde la credibilidad tiene nombre."
+              goldWords={["credibilidad"]}
+              italicWords={["credibilidad"]}
               className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light tracking-[-0.025em]"
             />
             <p className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Dos fundadores. Conversaciones sin guion. Madrid, con cuidado.
+              Dos fundadores. Conversaciones sin guion. Un compromiso: editorial rigurosa en un mundo de ruido.
             </p>
             <Link
               to="/manifiesto"

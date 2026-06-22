@@ -36,6 +36,9 @@ export function GuestsCarousel() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
               Voces que <span className="italic text-gold">construyen</span>.
             </h2>
+            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-lg">
+              Líderes que dan conversación a conversación.
+            </p>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-[14rem]">
             Presidentes · CEOs · Fundadores

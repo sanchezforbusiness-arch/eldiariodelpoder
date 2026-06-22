@@ -46,11 +46,11 @@ export function Backstage() {
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Detrás de cámara</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[0.98] font-light">
-              <span className="italic text-gold">Fuera de cámara</span>.
+              <span className="italic text-gold">Fuera de guion</span>.
             </h2>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-xs">
-            Madrid · Quito · Pamplona
+            Madrid · donde se graban las historias
           </p>
         </div>
       </div>
