@@ -12,7 +12,7 @@ export function Hero() {
         height={1080}
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover opacity-80 ken-burns"
+        className="absolute inset-0 w-full h-full object-cover object-[70%_center] sm:object-center opacity-80 ken-burns"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
