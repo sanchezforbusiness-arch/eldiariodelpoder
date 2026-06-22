@@ -39,7 +39,7 @@
 
 :root {
   --radius: 0.25rem;
-  /* Diario del Poder — deep noir + champagne gold + ember */
+  /* Diario del Poder — deep noir + champagne gold + burgundy */
   --background: oklch(0.10 0.003 280);          /* #0A0A0B */
   --background-alt: oklch(0.17 0.003 280);      /* #1A1A1C */
   --foreground: oklch(0.97 0.005 80);           /* #F5F3F0 */
