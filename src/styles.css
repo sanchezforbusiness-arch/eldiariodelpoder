@@ -39,7 +39,7 @@
 
 :root {
   --radius: 0.25rem;
-  /* Diario del Poder — deep noir + champagne gold + ember */
+  /* Diario del Poder — deep noir + champagne gold + burgundy */
   --background: oklch(0.10 0.003 280);          /* #0A0A0B */
   --background-alt: oklch(0.17 0.003 280);      /* #1A1A1C */
   --foreground: oklch(0.97 0.005 80);           /* #F5F3F0 */
@@ -53,7 +53,7 @@
   --secondary-foreground: oklch(0.97 0.005 80);
   --muted: oklch(0.22 0.003 280);
   --muted-foreground: oklch(0.70 0.008 80);
-  --accent: oklch(0.68 0.20 38);                /* ember #FF6B35 */
+  --accent: oklch(0.44 0.085 25);               /* burgundy #8B4545 */
   --accent-foreground: oklch(0.10 0.003 280);
   --destructive: oklch(0.62 0.21 25);
   --destructive-foreground: oklch(0.98 0.01 80);
@@ -63,7 +63,7 @@
   --gold: oklch(0.73 0.062 80);                 /* #C4A77D */
   --gold-bright: oklch(0.81 0.067 82);          /* #D9BE92 */
   --gold-foreground: oklch(0.10 0.003 280);
-  --ember: oklch(0.68 0.20 38);                 /* #FF6B35 */
+  --ember: oklch(0.44 0.085 25);                /* burgundy #8B4545 */
   --ember-foreground: oklch(0.97 0.005 80);
 }
 
