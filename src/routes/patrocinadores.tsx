@@ -50,7 +50,6 @@ const tiers = [
   {
     name: "Plata",
     pitch: "Presencia continuada",
-    price: "10 000 € – 25 000 €",
     perks: [
       "Logo en web y newsletter",
       "1 mención por episodio",
@@ -60,7 +59,6 @@ const tiers = [
   {
     name: "Oro",
     pitch: "Asociación de marca",
-    price: "25 000 € – 50 000 €",
     perks: [
       "Todo lo anterior",
       "Lectura cuidada en cabecera de episodio",
@@ -72,7 +70,6 @@ const tiers = [
   {
     name: "Platino",
     pitch: "Patrocinador principal",
-    price: "Desde 50 000 €",
     perks: [
       "Todo lo anterior",
       "Presentación in-line en cada episodio",
