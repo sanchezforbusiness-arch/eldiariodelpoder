@@ -42,10 +42,9 @@ export function Hero() {
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
           </figure>
 
-          <h1 className="font-serif text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[9.75rem] leading-[0.9] sm:leading-[0.88] tracking-[-0.04em] font-light">
-            <SplitText text="Donde quienes" /><br />
-            <SplitText text="deciden" goldWords={["deciden"]} italicWords={["deciden"]} start={2} />
-            <span className="font-serif"> </span>
+          <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
+            <SplitText text="Donde quienes deciden" goldWords={["deciden"]} italicWords={["deciden"]} />
+            <br />
             <SplitText text="se sientan a contarlo." start={3} />
           </h1>
 
