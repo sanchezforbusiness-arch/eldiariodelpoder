@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PrensaRouteImport } from './routes/prensa'
+import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as InvitadosRouteImport } from './routes/invitados'
 import { Route as EpisodiosRouteImport } from './routes/episodios'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const PrensaRoute = PrensaRouteImport.update({
   id: '/prensa',
   path: '/prensa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatrocinadoresRoute = PatrocinadoresRouteImport.update({
+  id: '/patrocinadores',
+  path: '/patrocinadores',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManifiestoRoute = ManifiestoRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
 }
 export interface FileRouteTypes {
@@ -80,9 +89,17 @@ export interface FileRouteTypes {
     | '/episodios'
     | '/invitados'
     | '/manifiesto'
+    | '/patrocinadores'
     | '/prensa'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/club' | '/episodios' | '/invitados' | '/manifiesto' | '/prensa'
+  to:
+    | '/'
+    | '/club'
+    | '/episodios'
+    | '/invitados'
+    | '/manifiesto'
+    | '/patrocinadores'
+    | '/prensa'
   id:
     | '__root__'
     | '/'
@@ -90,6 +107,7 @@ export interface FileRouteTypes {
     | '/episodios'
     | '/invitados'
     | '/manifiesto'
+    | '/patrocinadores'
     | '/prensa'
   fileRoutesById: FileRoutesById
 }
@@ -99,6 +117,7 @@ export interface RootRouteChildren {
   EpisodiosRoute: typeof EpisodiosRoute
   InvitadosRoute: typeof InvitadosRoute
   ManifiestoRoute: typeof ManifiestoRoute
+  PatrocinadoresRoute: typeof PatrocinadoresRoute
   PrensaRoute: typeof PrensaRoute
 }
 
@@ -109,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/prensa'
       fullPath: '/prensa'
       preLoaderRoute: typeof PrensaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patrocinadores': {
+      id: '/patrocinadores'
+      path: '/patrocinadores'
+      fullPath: '/patrocinadores'
+      preLoaderRoute: typeof PatrocinadoresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manifiesto': {
@@ -155,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   EpisodiosRoute: EpisodiosRoute,
   InvitadosRoute: InvitadosRoute,
   ManifiestoRoute: ManifiestoRoute,
+  PatrocinadoresRoute: PatrocinadoresRoute,
   PrensaRoute: PrensaRoute,
 }
 export const routeTree = rootRouteImport
