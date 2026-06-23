@@ -39,18 +39,12 @@ export function Hero() {
             </span>
           </div>
 
-          <figure className="sm:hidden relative mb-8 overflow-hidden border border-foreground/10">
-            <img
-              src={heroMobileAsset.url}
-              alt="Diario del Poder — conversación con un referente"
-              width={1182}
-              height={665}
-              fetchPriority="high"
-              decoding="async"
-              className="w-full h-auto block ken-burns"
-            />
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
-          </figure>
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
+            <span className="h-px w-14 bg-gold/70" />
+            <span className="eyebrow flex items-center gap-2">
+              <span className="dot-gold" /> Podcast · Madrid
+            </span>
+          </div>
 
           <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
             <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
