@@ -6,15 +6,23 @@ import { SplitText } from "./SplitText";
 export function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
-      <img
-        src={heroAsset.url}
-        alt="Portada Diario del Poder"
-        width={1920}
-        height={1080}
-        fetchPriority="high"
-        decoding="async"
-        className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center opacity-80 ken-burns"
-      />
+      {/* Video de fondo (desktop) */}
+      <div className="hidden sm:block absolute inset-0 overflow-hidden pointer-events-none">
+        <iframe
+          src="https://www.youtube.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&start=9&end=60"
+          title="Diario del Poder — fondo"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          loading="eager"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full opacity-70"
+          style={{ border: 0 }}
+        />
+        <img
+          src={heroAsset.url}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-0"
+        />
+      </div>
       <img
         src={heroMobileAsset.url}
         alt="Diario del Poder — conversación con un referente"
