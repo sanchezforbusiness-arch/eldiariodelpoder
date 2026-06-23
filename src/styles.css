@@ -35,46 +35,36 @@
   --color-ember: var(--ember);
   --color-ember-foreground: var(--ember-foreground);
   --color-background-alt: var(--background-alt);
-  --color-success: var(--success);
-  --color-luxury: var(--luxury);
-  --color-cyan: var(--cyan-accent);
-  --color-orange: var(--orange-accent);
 }
 
 :root {
   --radius: 0.25rem;
-  /* Diario del Poder — vibrant podcast palette (orange + cyan + lux gold) */
-  --background: #0F1419;
-  --background-alt: #1F2937;
-  --foreground: #FFFFFF;
-  --card: #1A2129;
-  --card-foreground: #FFFFFF;
-  --popover: #14191F;
-  --popover-foreground: #FFFFFF;
-  --primary: #FF6B35;                            /* orange action */
-  --primary-foreground: #FFFFFF;
-  --secondary: #1F2937;
-  --secondary-foreground: #FFFFFF;
-  --muted: #1F2937;
-  --muted-foreground: #E8E8E8;
-  --accent: #00D9FF;                             /* cyan trust */
-  --accent-foreground: #0F1419;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  --border: #2A323D;
-  --input: #2A323D;
-  --ring: #FF6B35;
-  /* Legacy token mapping — keeps existing components vibrant without rewrites */
-  --gold: #FF6B35;                               /* CTA / action — was champagne */
-  --gold-bright: #FF8559;                        /* CTA hover */
-  --gold-foreground: #FFFFFF;
-  --ember: #00D9FF;                              /* accent / secondary — was burgundy */
-  --ember-foreground: #0F1419;
-  /* Extended palette */
-  --success: #10B981;
-  --luxury: #D4AF37;                             /* numbers / premium accents */
-  --cyan-accent: #00D9FF;
-  --orange-accent: #FF6B35;
+  /* Diario del Poder — deep noir + champagne gold + burgundy */
+  --background: oklch(0.10 0.003 280);          /* #0A0A0B */
+  --background-alt: oklch(0.17 0.003 280);      /* #1A1A1C */
+  --foreground: oklch(0.97 0.005 80);           /* #F5F3F0 */
+  --card: oklch(0.15 0.003 280);
+  --card-foreground: oklch(0.97 0.005 80);
+  --popover: oklch(0.13 0.003 280);
+  --popover-foreground: oklch(0.97 0.005 80);
+  --primary: oklch(0.73 0.062 80);              /* champagne #C4A77D */
+  --primary-foreground: oklch(0.10 0.003 280);
+  --secondary: oklch(0.20 0.003 280);
+  --secondary-foreground: oklch(0.97 0.005 80);
+  --muted: oklch(0.22 0.003 280);
+  --muted-foreground: oklch(0.70 0.008 80);
+  --accent: oklch(0.44 0.085 25);               /* burgundy #8B4545 */
+  --accent-foreground: oklch(0.10 0.003 280);
+  --destructive: oklch(0.62 0.21 25);
+  --destructive-foreground: oklch(0.98 0.01 80);
+  --border: oklch(0.24 0.003 280);
+  --input: oklch(0.24 0.003 280);
+  --ring: oklch(0.73 0.062 80);
+  --gold: oklch(0.73 0.062 80);                 /* #C4A77D */
+  --gold-bright: oklch(0.81 0.067 82);          /* #D9BE92 */
+  --gold-foreground: oklch(0.10 0.003 280);
+  --ember: oklch(0.44 0.085 25);                /* burgundy #8B4545 */
+  --ember-foreground: oklch(0.97 0.005 80);
 }
 
 @layer base {
