@@ -25,6 +25,11 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://eldiariodelpoder.com/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/__l5e/assets-v1/" ,
+      },
     ],
   }),
   component: Index,
