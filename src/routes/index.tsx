@@ -5,6 +5,8 @@ import { Hero } from "@/components/ddp/Hero";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { Episodes } from "@/components/ddp/Episodes";
 import { useReveal } from "@/hooks/use-reveal";
+import heroDesktop from "@/assets/hero-portada-nueva.jpg.asset.json";
+import heroMobile from "@/assets/hero-mobile.jpg.asset.json";
 
 // Below-the-fold — lazy-loaded
 const Backstage = lazy(() => import("@/components/ddp/Backstage").then((m) => ({ default: m.Backstage })));
@@ -25,11 +27,8 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://eldiariodelpoder.com/" },
-      {
-        rel: "preload",
-        as: "image",
-        href: "/__l5e/assets-v1/" ,
-      },
+      { rel: "preload", as: "image", href: heroMobile.url, media: "(max-width: 639px)", fetchpriority: "high" },
+      { rel: "preload", as: "image", href: heroDesktop.url, media: "(min-width: 640px)", fetchpriority: "high" },
     ],
   }),
   component: Index,
