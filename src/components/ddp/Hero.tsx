@@ -32,8 +32,8 @@ export function Hero() {
 
           <figure className="sm:hidden relative mb-8 overflow-hidden border border-foreground/10">
             <img
-              src={heroAsset.url}
-              alt="Diario del Poder — los hosts"
+              src={heroMobileAsset.url}
+              alt="Diario del Poder — conversación con un referente"
               width={1182}
               height={665}
               fetchPriority="high"
