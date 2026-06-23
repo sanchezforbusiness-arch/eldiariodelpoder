@@ -39,12 +39,6 @@ export function Hero() {
             </span>
           </div>
 
-          <div className="flex items-center gap-4 mb-8 md:mb-10">
-            <span className="h-px w-14 bg-gold/70" />
-            <span className="eyebrow flex items-center gap-2">
-              <span className="dot-gold" /> Podcast · Madrid
-            </span>
-          </div>
 
           <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
             <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
