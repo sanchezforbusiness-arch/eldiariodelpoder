@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Radio, Mic, Globe2, Users, Star } from "lucide-react";
 
 type Stat = {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
   value: number;
   suffix: string;
   label: string;
