@@ -1,4 +1,5 @@
 import heroAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
+import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
 import { Play, ArrowDown } from "lucide-react";
 import { SplitText } from "./SplitText";
 
