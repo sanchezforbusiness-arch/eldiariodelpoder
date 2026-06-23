@@ -15,8 +15,17 @@ export function Hero() {
         decoding="async"
         className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center opacity-80 ken-burns"
       />
-      <div className="hidden sm:block absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
-      <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
+      <img
+        src={heroMobileAsset.url}
+        alt="Diario del Poder — conversación con un referente"
+        width={1182}
+        height={1576}
+        fetchPriority="high"
+        decoding="async"
+        className="sm:hidden absolute inset-0 w-full h-full object-cover object-center opacity-80 ken-burns"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
 
       <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
       <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-40" />
