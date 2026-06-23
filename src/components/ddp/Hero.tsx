@@ -22,7 +22,7 @@ export function Hero() {
         height={1576}
         fetchPriority="high"
         decoding="async"
-        className="sm:hidden absolute inset-0 w-full h-full object-cover object-[50%_45%] opacity-80 ken-burns"
+        className="sm:hidden absolute inset-0 w-full h-full object-cover object-[50%_35%] opacity-80 ken-burns"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
