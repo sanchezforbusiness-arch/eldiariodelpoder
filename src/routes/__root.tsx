@@ -103,6 +103,9 @@ export const Route = createRootRoute({
         href: "https://fonts.gstatic.com",
         crossOrigin: "anonymous",
       },
+      { rel: "preconnect", href: "https://www.youtube-nocookie.com" },
+      { rel: "preconnect", href: "https://i.ytimg.com" },
+      { rel: "dns-prefetch", href: "https://www.youtube.com" },
       {
         rel: "preload",
         as: "style",
