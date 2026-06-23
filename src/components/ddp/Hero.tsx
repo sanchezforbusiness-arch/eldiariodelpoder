@@ -2,26 +2,48 @@ import heroAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
 import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
 import { Play, ArrowDown } from "lucide-react";
 import { SplitText } from "./SplitText";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(max-width: 639px)").matches) return;
+    const idle =
+      (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number })
+        .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1200));
+    const id = idle(() => setShowVideo(true), { timeout: 2500 });
+    return () => {
+      const cancel =
+        (window as unknown as { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback ??
+        ((id: number) => window.clearTimeout(id));
+      cancel(id as number);
+    };
+  }, []);
+
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
       {/* Video de fondo (desktop) */}
       <div className="hidden sm:block absolute inset-0 overflow-hidden pointer-events-none">
-        <iframe
-          src="https://www.youtube.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=5&end=60"
-          title="Diario del Poder — fondo"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          loading="eager"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full opacity-70"
-          style={{ border: 0 }}
-        />
         <img
           src={heroAsset.url}
           alt=""
           aria-hidden
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-0"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
         />
+        {showVideo && (
+          <iframe
+            src="https://www.youtube.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=5&end=60"
+            title="Diario del Poder — fondo"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            loading="lazy"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full opacity-70"
+            style={{ border: 0 }}
+          />
+        )}
       </div>
       <img
         src={heroMobileAsset.url}
