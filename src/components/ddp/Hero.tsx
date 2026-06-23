@@ -9,7 +9,7 @@ export function Hero() {
       {/* Video de fondo (desktop) */}
       <div className="hidden sm:block absolute inset-0 overflow-hidden pointer-events-none">
         <iframe
-          src="https://www.youtube.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&start=9&end=60"
+          src="https://www.youtube.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=5&end=60"
           title="Diario del Poder — fondo"
           allow="autoplay; encrypted-media; picture-in-picture"
           loading="eager"
