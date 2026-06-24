@@ -38,8 +38,8 @@ export function Hero() {
               style={{ border: 0 }}
             />
             {/* Máscaras para ocultar logo de YouTube y branding */}
-            <div className="absolute inset-x-0 top-0 h-24 bg-background pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-background pointer-events-none" />
+            {/* Capa transparente para bloquear interacción con el iframe */}
+            <div className="absolute inset-0 pointer-events-auto" />
           </div>
         )}
       </div>
