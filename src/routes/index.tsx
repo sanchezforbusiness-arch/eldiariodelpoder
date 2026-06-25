@@ -43,12 +43,20 @@ function Index() {
         <Hero />
         <GuestsCarousel />
         <Episodes />
-        <Suspense fallback={<div style={{ minHeight: "120vh" }} />}>
-          <Backstage />
-          <AboutTeaser />
-          <ClubTeaser />
-          <Newsletter />
-        </Suspense>
+        <div className="cv-auto">
+          <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+            <Backstage />
+          </Suspense>
+          <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
+            <AboutTeaser />
+          </Suspense>
+          <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
+            <ClubTeaser />
+          </Suspense>
+          <Suspense fallback={<div style={{ minHeight: "30vh" }} />}>
+            <Newsletter />
+          </Suspense>
+        </div>
       </main>
       <Suspense fallback={null}>
         <Footer />

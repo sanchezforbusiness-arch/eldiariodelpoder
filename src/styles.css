@@ -400,6 +400,12 @@
   }
   .ticker:hover { animation-play-state: paused; }
 
+  /* Saltar layout/paint en secciones fuera de viewport */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .gold-glow, .float-slow, .float-slower, .shimmer-gold, .accent-line, .spin-slow, .bounce-down {
       animation: none !important;

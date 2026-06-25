@@ -5,51 +5,63 @@ import { SplitText } from "./SplitText";
 import { useEffect, useState } from "react";
 
 export function Hero() {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [loadVideo, setLoadVideo] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Cargamos el iframe siempre tras el primer render para no bloquear la pintura inicial
-    const t = window.setTimeout(() => setIsDesktop(true), 0);
-    return () => window.clearTimeout(t);
+    // Solo cargamos el iframe en desktop, respetando reduce-motion y save-data.
+    const mqDesktop = window.matchMedia("(min-width: 768px)");
+    const mqReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    const slow = conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType));
+    if (!mqDesktop.matches || mqReduced.matches || slow) return;
+
+    let handle: number | undefined;
+    const schedule =
+      (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number })
+        .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
+    // Esperamos a que termine la pintura inicial y el LCP antes de pedir YouTube.
+    const t = window.setTimeout(() => {
+      handle = schedule(() => setLoadVideo(true), { timeout: 3000 });
+    }, 1200);
+    return () => {
+      window.clearTimeout(t);
+      const cancel = (window as unknown as { cancelIdleCallback?: (h: number) => void }).cancelIdleCallback;
+      if (handle != null && cancel) cancel(handle);
+    };
   }, []);
 
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
-      {/* Video de fondo (desktop + móvil) */}
+      {/* Imagen LCP + vídeo perezoso de fondo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img
-          src={heroAsset.url}
-          alt=""
-          aria-hidden
-          fetchPriority="high"
-          decoding="async"
-          className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center opacity-70"
-        />
-        {isDesktop && (
+        <picture>
+          <source media="(max-width: 639px)" srcSet={heroMobileAsset.url} />
+          <img
+            src={heroAsset.url}
+            alt="Diario del Poder — conversación con un referente"
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-center sm:object-center opacity-70 ken-burns"
+            style={{ objectPosition: "50% 35%" }}
+          />
+        </picture>
+        {loadVideo && (
           <div className="absolute inset-0 overflow-hidden">
             <iframe
               src="https://www.youtube-nocookie.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=5&end=60"
               title="Diario del Poder — fondo"
               allow="autoplay; encrypted-media; picture-in-picture"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300vw] h-[300vw] sm:w-[140vw] sm:h-[140vh] opacity-70 pointer-events-none scale-125"
+              loading="lazy"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vh] opacity-70 pointer-events-none scale-125"
               style={{ border: 0 }}
             />
-            {/* Máscaras para ocultar logo de YouTube y branding */}
-            {/* Capa transparente para bloquear interacción con el iframe */}
             <div className="absolute inset-0 pointer-events-auto" />
           </div>
         )}
       </div>
-      <img
-        src={heroMobileAsset.url}
-        alt="Diario del Poder — conversación con un referente"
-        width={1182}
-        height={1576}
-        fetchPriority="high"
-        decoding="async"
-        className="sm:hidden absolute inset-0 w-full h-full object-cover object-[50%_35%] opacity-80 ken-burns -z-10"
-      />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
 
