@@ -9,24 +9,22 @@ export function Hero() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(min-width: 640px)");
-    setIsDesktop(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+    // Cargamos el iframe siempre tras el primer render para no bloquear la pintura inicial
+    const t = window.setTimeout(() => setIsDesktop(true), 0);
+    return () => window.clearTimeout(t);
   }, []);
 
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
-      {/* Video de fondo (desktop) */}
-      <div className="hidden sm:block absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Video de fondo (desktop + móvil) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <img
           src={heroAsset.url}
           alt=""
           aria-hidden
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center opacity-70"
         />
         {isDesktop && (
           <div className="absolute inset-0 overflow-hidden">
@@ -34,7 +32,7 @@ export function Hero() {
               src="https://www.youtube-nocookie.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=5&end=60"
               title="Diario del Poder — fondo"
               allow="autoplay; encrypted-media; picture-in-picture"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vh] opacity-70 pointer-events-none scale-125"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300vw] h-[300vw] sm:w-[140vw] sm:h-[140vh] opacity-70 pointer-events-none scale-125"
               style={{ border: 0 }}
             />
             {/* Máscaras para ocultar logo de YouTube y branding */}
@@ -50,7 +48,7 @@ export function Hero() {
         height={1576}
         fetchPriority="high"
         decoding="async"
-        className="sm:hidden absolute inset-0 w-full h-full object-cover object-[50%_35%] opacity-80 ken-burns"
+        className="sm:hidden absolute inset-0 w-full h-full object-cover object-[50%_35%] opacity-80 ken-burns -z-10"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
