@@ -14,6 +14,10 @@ import upload1 from "@/assets/upload-1C6E912A.jpg.asset.json";
 import upload2 from "@/assets/upload-56D2680B.jpg.asset.json";
 import upload3 from "@/assets/upload-846FDD15.jpg.asset.json";
 import upload4 from "@/assets/upload-E1BC5EA9.jpg.asset.json";
+import extra1 from "@/assets/backstage-extra-1.jpeg.asset.json";
+import extra2 from "@/assets/backstage-extra-2.jpeg.asset.json";
+import extra3 from "@/assets/backstage-extra-3.jpeg.asset.json";
+import extra4 from "@/assets/backstage-extra-4.jpeg.asset.json";
 
 type Shot = { src: string; alt: string; caption: string; pos?: string };
 const shots: Shot[] = [
@@ -33,6 +37,10 @@ const shots: Shot[] = [
   { src: upload2.url, alt: "Backstage", caption: "Backstage" },
   { src: upload3.url, alt: "Backstage", caption: "Backstage" },
   { src: upload4.url, alt: "Backstage", caption: "Backstage" },
+  { src: extra1.url, alt: "Lectura en casa", caption: "Lecturas · Madrid", pos: "object-center" },
+  { src: extra2.url, alt: "Encuentro con la Reina Letizia", caption: "S.M. La Reina · Encuentro" },
+  { src: extra3.url, alt: "Backstage en Madrid", caption: "Madrid · Vistas" },
+  { src: extra4.url, alt: "Backstage tras la grabación", caption: "Después del rodaje" },
 ];
 
 export function Backstage() {
