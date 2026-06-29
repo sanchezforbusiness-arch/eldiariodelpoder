@@ -49,10 +49,7 @@ export function Club() {
             </div>
 
             <div className="mt-12 flex flex-wrap items-center gap-6">
-              <a
-                href="/club"
-                className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-10 py-5 text-[12px] tracking-[0.24em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
-              >
+              <a href="/club" className="btn-primary">
                 Solicitar acceso
                 <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>

@@ -75,11 +75,7 @@ export function Navbar() {
             <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-gold transition-colors"><Linkedin size={16} /></a>
             <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-gold transition-colors"><Music2 size={16} /></a>
           </div>
-          <Link
-            to="/"
-            hash="newsletter"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-[12px] tracking-[0.18em] uppercase border border-gold text-gold hover:bg-gold hover:text-gold-foreground transition-all"
-          >
+          <Link to="/" hash="newsletter" className="btn-gold-ghost hidden sm:inline-flex">
             Newsletter
           </Link>
           <button
