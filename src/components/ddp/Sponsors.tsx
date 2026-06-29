@@ -50,11 +50,7 @@ export function Sponsors() {
 
           <div className="mt-12 flex flex-col items-center gap-4">
             {!revealed ? (
-              <button
-                type="button"
-                onClick={() => setRevealed(true)}
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-[12px] tracking-[0.22em] uppercase border border-gold/70 text-gold hover:bg-gold hover:text-gold-foreground transition-all"
-              >
+              <button type="button" onClick={() => setRevealed(true)} className="btn-gold-ghost">
                 Quiero el media kit
               </button>
             ) : (

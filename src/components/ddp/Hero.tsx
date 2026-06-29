@@ -91,15 +91,12 @@ export function Hero() {
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
-              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-7 sm:px-9 py-3.5 sm:py-4 text-[11px] tracking-[0.24em] sm:tracking-[0.28em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
+              className="btn-primary"
             >
               <Play size={14} className="fill-current" />
               Escuchar último episodio
             </a>
-            <a
-              href="#episodes"
-              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 text-[11px] tracking-[0.24em] sm:tracking-[0.28em] uppercase text-foreground/85 border border-foreground/25 hover:border-gold hover:text-gold transition-colors"
-            >
+            <a href="#episodes" className="btn-outline">
               Ver episodios
             </a>
           </div>

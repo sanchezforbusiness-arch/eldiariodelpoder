@@ -126,17 +126,11 @@ function Hero() {
             que están dejando huella.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#contacto"
-              className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors"
-            >
+            <a href="#contacto" className="btn-primary">
               Hablar con el equipo
               <ArrowUpRight size={14} />
             </a>
-            <a
-              href="#opciones"
-              className="inline-flex items-center gap-2 px-7 py-4 text-[12px] tracking-[0.22em] uppercase border border-foreground/25 hover:border-gold hover:text-gold transition-colors"
-            >
+            <a href="#opciones" className="btn-outline">
               Ver opciones
             </a>
           </div>
@@ -267,7 +261,7 @@ function Contact() {
           <div className="mt-10 inline-flex flex-col items-center gap-5">
             <a
               href="mailto:contactoeldiariodelpoder@gmail.com?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder"
-              className="ring-pulse group inline-flex items-center gap-3 bg-gold text-gold-foreground px-10 py-4 text-[12px] tracking-[0.24em] uppercase hover:bg-gold-bright transition-colors"
+              className="btn-primary"
             >
               <Mail size={14} />
               Hablar con nuestro equipo

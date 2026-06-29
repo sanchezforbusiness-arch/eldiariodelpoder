@@ -405,7 +405,189 @@
     content-visibility: auto;
     contain-intrinsic-size: 800px;
   }
+}
 
+/* === Button system — clean, editorial, gold-forward === */
+/* Defined at top level: Tailwind v4 does not allow @utility inside @layer. */
+
+  /* Primary — gold filled with subtle sheen */
+  @utility btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 1rem 1.75rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease,
+                border-color 0.35s ease, transform 0.35s cubic-bezier(.2,.7,.2,1),
+                box-shadow 0.35s ease;
+    background-color: var(--color-gold);
+    color: var(--color-gold-foreground);
+    box-shadow: 0 1px 0 color-mix(in oklab, #fff 40%, transparent) inset,
+                0 8px 24px -16px color-mix(in oklab, var(--color-gold-bright) 80%, transparent);
+    & svg { transition: transform 0.35s cubic-bezier(.2,.7,.2,1); position: relative; z-index: 1; }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,
+        transparent 30%,
+        color-mix(in oklab, #fff 55%, transparent) 50%,
+        transparent 70%);
+      transform: translateX(-120%);
+      transition: transform 0.9s cubic-bezier(.2,.7,.2,1);
+      pointer-events: none;
+      z-index: 0;
+    }
+    & > * { position: relative; z-index: 1; }
+    &:hover {
+      background-color: var(--color-gold-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 1px 0 color-mix(in oklab, #fff 50%, transparent) inset,
+                  0 18px 36px -20px color-mix(in oklab, var(--color-gold-bright) 90%, transparent);
+    }
+    &:hover::after { transform: translateX(120%); }
+    &:hover svg { transform: translateX(3px); }
+    &:active { transform: translateY(0); }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-background),
+                  0 0 0 3px var(--color-gold-bright);
+    }
+    &:disabled { opacity: 0.55; cursor: not-allowed; transform: none !important; }
+  }
+
+  /* Outline — hairline border, gold on hover */
+  @utility btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 1rem 1.75rem;
+    border: 1px solid color-mix(in oklab, var(--color-foreground) 22%, transparent);
+    background-color: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(.2,.7,.2,1);
+    color: color-mix(in oklab, var(--color-foreground) 90%, transparent);
+    & svg { transition: transform 0.35s cubic-bezier(.2,.7,.2,1); }
+    &:hover {
+      color: var(--color-gold-bright);
+      border-color: var(--color-gold-bright);
+      transform: translateY(-1px);
+    }
+    &:hover svg { transform: translateX(3px); }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-background), 0 0 0 3px var(--color-gold-bright);
+    }
+  }
+
+  /* Gold ghost — gold border + text, fills on hover */
+  @utility btn-gold-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+    color: var(--color-gold-bright);
+    border: 1px solid color-mix(in oklab, var(--color-gold-bright) 65%, transparent);
+    background-color: transparent;
+    &:hover {
+      background-color: var(--color-gold);
+      color: var(--color-gold-foreground);
+      border-color: var(--color-gold);
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-background), 0 0 0 3px var(--color-gold-bright);
+    }
+  }
+
+  /* Compact link with arrow underline */
+  @utility btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--color-foreground) 80%, transparent);
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-gold-bright) 35%, transparent);
+    transition: color 0.3s ease, border-color 0.3s ease;
+    &:hover {
+      color: var(--color-gold-bright);
+      border-color: var(--color-gold-bright);
+    }
+    & svg { transition: transform 0.3s cubic-bezier(.2,.7,.2,1); }
+    &:hover svg { transform: translate(3px,-2px); }
+  }
+
+  /* Form inputs — line-based, gold focus */
+  @utility input-line {
+    width: 100%;
+    background-color: transparent;
+    color: var(--color-foreground);
+    border: 1px solid var(--color-border);
+    padding: 0.875rem 1.125rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    &::placeholder { color: var(--color-muted-foreground); }
+    &:hover { border-color: color-mix(in oklab, var(--color-gold-bright) 40%, var(--color-border)); }
+    &:focus, &:focus-visible {
+      outline: none;
+      border-color: var(--color-gold-bright);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-gold-bright) 18%, transparent);
+      background-color: color-mix(in oklab, var(--color-gold-bright) 3%, transparent);
+    }
+  }
+
+  /* Compact size modifier for buttons */
+  @utility btn-sm {
+    padding: 0.625rem 1.125rem;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+  }
+
+  /* Soft hairline divider used between sections */
+  @utility hairline {
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent,
+      color-mix(in oklab, var(--color-gold-bright) 50%, transparent) 50%,
+      transparent);
+  }
+
+@layer utilities {
   @media (prefers-reduced-motion: reduce) {
     .gold-glow, .float-slow, .float-slower, .shimmer-gold, .accent-line, .spin-slow, .bounce-down {
       animation: none !important;

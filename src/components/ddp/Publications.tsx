@@ -50,21 +50,17 @@ export function Publications() {
                 target="ddp-pub-newsletter-frame"
                 className="mt-10"
               >
-                <div className="flex flex-col sm:flex-row border border-border focus-within:border-gold transition-colors">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
                   <input
                     type="email"
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="tu@email.com"
-                    className="flex-1 bg-transparent px-5 py-4 text-base text-foreground placeholder:text-muted-foreground focus:outline-none"
+                    className="input-line flex-1 sm:border-r-0"
                     required
                   />
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="group inline-flex items-center justify-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors"
-                  >
+                  <button type="submit" disabled={loading} className="btn-primary">
                     {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>}
                   </button>
                 </div>

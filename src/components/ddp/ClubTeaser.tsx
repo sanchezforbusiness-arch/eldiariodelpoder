@@ -41,10 +41,7 @@ export function ClubTeaser() {
               ))}
             </ul>
 
-            <Link
-              to="/club"
-              className="ring-pulse group inline-flex items-center gap-3 mt-8 md:mt-10 bg-gold text-gold-foreground px-7 sm:px-9 py-3.5 sm:py-4 text-[11px] sm:text-[12px] tracking-[0.22em] sm:tracking-[0.24em] uppercase font-medium hover:bg-gold-bright transition-all hover:-translate-y-0.5"
-            >
+            <Link to="/club" className="btn-primary mt-8 md:mt-10">
               Solicitar acceso
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>

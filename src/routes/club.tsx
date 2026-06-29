@@ -96,7 +96,7 @@ function Hero() {
             Acceso por invitación. Sin ruido, sin postureo. Solo gente con ganas de aportar.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#apply" className="ring-pulse inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors">
+            <a href="#apply" className="btn-primary">
               Solicitar acceso
             </a>
           </div>
@@ -198,10 +198,9 @@ function Apply() {
             </div>
             <div>
               <label className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">Cuéntanos un poco sobre ti</label>
-              <textarea required rows={3} maxLength={500}
-                className="w-full bg-background border border-border focus:border-gold outline-none px-4 py-3 text-sm transition-colors" />
+              <textarea required rows={3} maxLength={500} className="input-line" />
             </div>
-            <button type="submit" className="ring-pulse justify-self-start inline-flex items-center gap-2 bg-gold text-gold-foreground px-8 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-gold-bright transition-colors">
+            <button type="submit" className="btn-primary justify-self-start">
               Solicitar acceso
               <ArrowUpRight size={14} />
             </button>
@@ -216,8 +215,7 @@ function Field({ label, name, type = "text", required }: { label: string; name: 
   return (
     <div>
       <label htmlFor={name} className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">{label}</label>
-      <input id={name} name={name} type={type} required={required} maxLength={150}
-        className="w-full bg-background border border-border focus:border-gold outline-none px-4 py-3 text-sm transition-colors" />
+      <input id={name} name={name} type={type} required={required} maxLength={150} className="input-line" />
     </div>
   );
 }
