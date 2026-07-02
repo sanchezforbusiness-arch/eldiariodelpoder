@@ -43,6 +43,16 @@ const structuredData = {
       inLanguage: "es-ES",
       image: SITE_IMAGE,
       webFeed: "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      sameAs: [
+        "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
+        "https://www.youtube.com/@eldiariodelpoder",
+      ],
+      about: [
+        "Liderazgo", "Poder", "Política", "Empresa", "CEOs", "Expresidentes", "Legado", "Toma de decisiones",
+      ],
+      keywords:
+        "podcast de éxito, podcast en español, expresidentes, CEOs, liderazgo, entrevistas, Diario del Poder",
     },
     {
       "@type": "WebSite",
@@ -52,6 +62,52 @@ const structuredData = {
         target: `${SITE_URL}/episodios?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "¿Qué es Diario del Poder?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Diario del Poder es un podcast en español de entrevistas largas con expresidentes, CEOs y grandes referentes internacionales. Conversaciones con criterio sobre liderazgo, poder y legado, producidas en Madrid.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Dónde puedo escuchar Diario del Poder?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "En Spotify (open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ), en YouTube (@eldiariodelpoder) y en eldiariodelpoder.com.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Quiénes han sido invitados en el podcast?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Entre otros: José María Aznar, Guillermo Lasso, Esperanza Aguirre, Javier Tebas, Andrés Rodríguez (Forbes), Jordi Juan (La Vanguardia), Rosa Lagarrigue, José Carlos González Hurtado (EWTN), Martín Sellés (Farmaindustria), Arturo Coello, Miguel Anxo Bastos y Mikel Echavarren.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Cómo puedo contactar con Diario del Poder para prensa o patrocinios?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Escribiendo a contactoeldiariodelpoder@gmail.com.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Qué es el Club del Poder?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "El Club del Poder es una comunidad privada de jóvenes líderes vinculada al podcast Diario del Poder. El acceso es por invitación y candidatura.",
+          },
+        },
+      ],
     },
   ],
 };
