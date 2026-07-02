@@ -4,9 +4,9 @@ import appCss from "../styles.css?url";
 
 const SITE_URL = "https://eldiariodelpoder.com";
 const SITE_NAME = "Diario del Poder";
-const SITE_TITLE = "Diario del Poder — La voz del legado | Podcast";
+const SITE_TITLE = "Diario del Poder — Podcast de éxito con expresidentes y CEOs";
 const SITE_DESCRIPTION =
-  "Diario del Poder es el podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio, no ruido.";
+  "Diario del Poder: el podcast en español donde expresidentes, CEOs y grandes referentes dejan su legado. Conversaciones con criterio, sin ruido. Escúchalo en Spotify y YouTube.";
 const SITE_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
 
@@ -44,6 +44,15 @@ const structuredData = {
       image: SITE_IMAGE,
       webFeed: "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
     },
+    {
+      "@type": "WebSite",
+      url: SITE_URL,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${SITE_URL}/episodios?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
   ],
 };
 
@@ -80,7 +89,7 @@ export const Route = createRootRoute({
       { name: "google-site-verification", content: "m2Mn29bOhpHxtZMGx_Nsy0bQXUtJfmf5XdRwwL4110w" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "googlebot", content: "index, follow" },
-      { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast España, podcast política, podcast empresarial, CEOs, expresidentes, podcast premium, liderazgo" },
+      { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast de éxito, mejores podcast España, podcast en español, podcast política, podcast empresarial, podcast liderazgo, CEOs, expresidentes, podcast premium" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: "es_ES" },
       { property: "og:url", content: SITE_URL },
