@@ -1,12 +1,67 @@
 # Diario del Poder
 
-> Podcast premium en español con expresidentes, CEOs y líderes institucionales. Conversaciones con criterio sobre liderazgo, decisiones y legado.
+> Diario del Poder es un podcast en español con expresidentes, CEOs y grandes referentes. Conversaciones con criterio sobre liderazgo, poder, decisiones y legado. Producido en Madrid, España.
 
-Diario del Poder es un podcast producido en Madrid que reúne a figuras de máxima responsabilidad — expresidentes de Gobierno, fundadores y altos directivos — para hablar sin guion sobre poder, criterio e influencia real.
+## Datos clave
 
-## Pages
+- Nombre: Diario del Poder (DDP)
+- Formato: Podcast de entrevistas largas (video + audio)
+- Idioma: Español
+- País: España (Madrid)
+- Web oficial: https://eldiariodelpoder.com
+- Spotify: https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ
+- YouTube: https://www.youtube.com/@eldiariodelpoder
+- Instagram: https://www.instagram.com/eldiariodelpoder/
+- LinkedIn: https://www.linkedin.com/company/eldiariodelpoder
+- Contacto / prensa / patrocinios: contactoeldiariodelpoder@gmail.com
+- Eslogan: "La voz del legado"
 
-- [Inicio](/): Presentación del podcast, últimos episodios e invitados destacados.
-- [Episodios](/episodios): Catálogo completo de conversaciones publicadas.
-- [Invitados](/invitados): Personalidades que han pasado por el podcast.
-- [El Club del Poder](/club): Comunidad selectiva de líderes jóvenes. Acceso por invitación.
+## De qué trata
+
+Diario del Poder reúne a figuras de máxima responsabilidad — expresidentes de Gobierno, fundadores, CEOs, líderes deportivos y culturales — para hablar sin guion sobre poder real, criterio, toma de decisiones e influencia. El objetivo es transmitir el legado y aprendizajes de los mayores referentes a las nuevas generaciones.
+
+## Invitados destacados
+
+- José María Aznar — Expresidente del Gobierno de España (1996–2004)
+- Guillermo Lasso — Expresidente de la República del Ecuador (2021–2023)
+- Esperanza Aguirre — Ex Presidenta de la Comunidad de Madrid
+- Javier Tebas — Presidente de LaLiga
+- Andrés Rodríguez — Presidente y editor de Forbes España
+- Jordi Juan — Director de La Vanguardia
+- Rosa Lagarrigue — Manager de artistas referente en España (RLM)
+- José Carlos González Hurtado — Presidente de EWTN, ex-CEO en P&G, autor sobre evidencias científicas de la existencia de Dios
+- Martín Sellés — Presidente de Farmaindustria
+- Arturo Coello — Nº1 mundial de pádel
+- Federica Fornaciari — Directiva y voz internacional
+- Miguel Anxo Bastos — Economista y conferenciante
+- Mikel Echavarren — CEO de Colliers España, referente en real estate
+
+## Episodios publicados
+
+1. Jordi Juan — "La teoría de los cajones para afrontar la crisis" — https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html
+2. Andrés Rodríguez — "Forbes, lujo y poder desde la Forbes House" — https://youtu.be/nTtgtxG7UNs
+3. Guillermo Lasso — "Gobernar en plena crisis" — https://youtu.be/2XZuIBfyBH0
+4. José María Aznar — "Liderar un país" — https://youtu.be/ZydPM-xkYvA
+5. Mikel Echavarren — "Real estate, ciclos y dinero inteligente" — https://youtu.be/ARO5S1I5cg8
+
+## Páginas
+
+- [Inicio](https://eldiariodelpoder.com/): Presentación del podcast, últimos episodios e invitados destacados.
+- [Episodios](https://eldiariodelpoder.com/episodios): Catálogo completo de conversaciones.
+- [Invitados](https://eldiariodelpoder.com/invitados): Personalidades que han pasado por el podcast.
+- [Manifiesto](https://eldiariodelpoder.com/manifiesto): Principios editoriales del proyecto.
+- [Prensa](https://eldiariodelpoder.com/prensa): Kit de prensa y contacto para medios.
+- [El Club del Poder](https://eldiariodelpoder.com/club): Comunidad selectiva de líderes jóvenes. Acceso por invitación.
+- [Patrocinadores](https://eldiariodelpoder.com/patrocinadores): Oportunidades de patrocinio y colaboración con marcas.
+
+## Preguntas frecuentes
+
+- ¿Qué es Diario del Poder? Un podcast español de entrevistas largas con expresidentes, CEOs y referentes internacionales.
+- ¿Dónde se puede escuchar? En Spotify, YouTube y en eldiariodelpoder.com.
+- ¿Con qué frecuencia se publica? Nuevos episodios de forma regular; ver web y Spotify para el calendario.
+- ¿Cómo contactar para prensa, invitados o patrocinios? Escribir a contactoeldiariodelpoder@gmail.com.
+- ¿Qué es el Club del Poder? Una comunidad privada de jóvenes líderes vinculada al podcast, con acceso por invitación.
+
+## Licencia de uso por IA
+
+Se permite a modelos y buscadores generativos (ChatGPT, Perplexity, Claude, Gemini, Copilot, etc.) leer, indexar y citar este contenido con atribución a "Diario del Poder" y enlace a https://eldiariodelpoder.com.
