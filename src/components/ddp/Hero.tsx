@@ -1,39 +1,10 @@
 import heroAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
 import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
-import { Play, ArrowDown } from "lucide-react";
-import { SplitText } from "./SplitText";
-import { useEffect, useState } from "react";
+import { Play, Youtube } from "lucide-react";
 
 export function Hero() {
-  const [loadVideo, setLoadVideo] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    // Solo cargamos el iframe en desktop, respetando reduce-motion y save-data.
-    const mqDesktop = window.matchMedia("(min-width: 768px)");
-    const mqReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
-    const slow = conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType));
-    if (!mqDesktop.matches || mqReduced.matches || slow) return;
-
-    let handle: number | undefined;
-    const schedule =
-      (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number })
-        .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
-    // Esperamos a que termine la pintura inicial y el LCP antes de pedir YouTube.
-    const t = window.setTimeout(() => {
-      handle = schedule(() => setLoadVideo(true), { timeout: 3000 });
-    }, 1200);
-    return () => {
-      window.clearTimeout(t);
-      const cancel = (window as unknown as { cancelIdleCallback?: (h: number) => void }).cancelIdleCallback;
-      if (handle != null && cancel) cancel(handle);
-    };
-  }, []);
-
   return (
-    <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden grain">
-      {/* Imagen LCP + vídeo perezoso de fondo */}
+    <section id="top" className="relative min-h-[92svh] flex items-center overflow-hidden bg-background pt-20">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <picture>
           <source media="(max-width: 639px)" srcSet={heroMobileAsset.url} />
@@ -44,82 +15,59 @@ export function Hero() {
             height={1080}
             fetchPriority="high"
             decoding="async"
-            className="absolute inset-0 w-full h-full object-cover object-center sm:object-center opacity-70 ken-burns"
-            style={{ objectPosition: "50% 35%" }}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "50% 30%", opacity: 0.35, filter: "saturate(0.85)" }}
           />
         </picture>
-        {loadVideo && (
-          <div className="absolute inset-0 overflow-hidden">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/nTtgtxG7UNs?autoplay=1&mute=1&loop=1&playlist=nTtgtxG7UNs&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=5&end=60"
-              title="Diario del Poder — fondo"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              loading="lazy"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vh] opacity-70 pointer-events-none scale-125"
-              style={{ border: 0 }}
-            />
-            <div className="absolute inset-0 pointer-events-auto" />
-          </div>
-        )}
+        {/* Paper overlay to keep light editorial feel */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(250,247,242,0.55) 0%, rgba(250,247,242,0.82) 60%, #FAF7F2 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(250,247,242,0.9) 0%, rgba(250,247,242,0.5) 45%, transparent 100%)" }} />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
 
-      <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
-      <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-40" />
+      <div className="container-ddp relative z-10 py-16 md:py-28">
+        <div className="max-w-4xl">
+          <span className="eyebrow inline-flex items-center gap-3">
+            <span className="h-px w-8 bg-primary/60" />
+            Podcast · Madrid
+          </span>
 
-      <div className="container-ddp relative z-10 pt-28 sm:pt-32 pb-32 md:pb-52 fade-up">
-        <div className="max-w-5xl">
-          <div className="flex items-center gap-4 mb-8 md:mb-10">
-            <span className="h-px w-14 bg-gold/70" />
-            <span className="eyebrow flex items-center gap-2">
-              <span className="dot-gold" /> Podcast · Madrid
-            </span>
-          </div>
-
-
-          <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
-            <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
+          <h1 className="mt-8 font-serif text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[7.5rem] leading-[0.95] tracking-[-0.035em] font-light text-foreground">
+            La voz del <span className="italic text-primary">legado</span>.
           </h1>
 
-          <p className="mt-7 md:mt-9 max-w-xl text-base md:text-lg text-foreground/75 leading-relaxed">
-            Donde los mayores referentes del mundo dejan su legado a la juventud.
+          <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-xl text-foreground/70 leading-relaxed">
+            Conversaciones donde los mayores referentes dejan su legado a la nueva generación.
           </p>
 
-          <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-3 sm:gap-5">
+          <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
               className="btn-primary"
             >
-              <Play size={14} className="fill-current" />
-              Escuchar último episodio
+              <Play size={13} className="fill-current" />
+              Escuchar en Spotify
             </a>
-            <a href="#episodes" className="btn-outline">
-              Ver episodios
+            <a
+              href="https://www.youtube.com/@eldiariodelpoder"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline"
+            >
+              <Youtube size={14} />
+              Ver en YouTube
             </a>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom proof strip */}
-      <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/40 backdrop-blur-sm">
-        <div className="container-ddp py-4 sm:py-5 flex items-center justify-between gap-4 sm:gap-6">
-          <div className="flex min-w-0 items-center gap-3 sm:gap-6 md:gap-10 text-[10px] md:text-[11px] tracking-[0.2em] sm:tracking-[0.24em] uppercase text-muted-foreground overflow-hidden">
-            <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
-            <span className="text-foreground/85 truncate">Andrés Rodríguez</span>
-            <span className="text-gold/40 hidden sm:inline">·</span>
-            <span className="hidden md:inline text-muted-foreground">Presidente Forbes</span>
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] tracking-[0.22em] uppercase text-muted-foreground">
+            <span className="text-foreground/50">Disponible en</span>
+            <span>Spotify</span>
+            <span className="text-foreground/30">·</span>
+            <span>YouTube</span>
+            <span className="text-foreground/30">·</span>
+            <span>Apple Podcasts</span>
           </div>
-          <a
-            href="#guests"
-            aria-label="Bajar"
-            className="flex items-center gap-2 shrink-0 text-[10px] tracking-[0.24em] sm:tracking-[0.28em] uppercase text-gold/80 hover:text-gold transition-colors"
-          >
-            Scroll
-            <ArrowDown size={14} className="bounce-down" />
-          </a>
         </div>
       </div>
     </section>

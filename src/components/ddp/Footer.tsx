@@ -7,40 +7,40 @@ const TikTok = (props: { size?: number }) => (
 
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-border bg-card/30">
+    <footer id="contact" className="border-t border-border bg-card">
       <div className="container-ddp py-14 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-6">
-            <div className="font-serif text-3xl text-gold mb-5">DDP</div>
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-snug max-w-md font-light">
-              Conversamos con quienes están <span className="italic">dejando huella</span>.
+            <div className="font-serif text-3xl text-primary mb-5 font-medium">DDP</div>
+            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-snug max-w-md font-light text-foreground">
+              Conversamos con quienes están <span className="italic text-primary">dejando huella</span>.
             </p>
             <p className="mt-5 text-sm text-muted-foreground">Hecho en Madrid, con cuidado.</p>
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h4>
+            <h4 className="text-[11px] tracking-[0.3em] uppercase text-primary mb-5">Navegar</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link to="/episodios" className="hover:text-foreground transition-colors">Episodios</Link></li>
-              <li><Link to="/invitados" className="hover:text-foreground transition-colors">Invitados</Link></li>
-              <li><Link to="/club" className="hover:text-foreground transition-colors">Club</Link></li>
-              <li><Link to="/manifiesto" className="hover:text-foreground transition-colors">Manifiesto</Link></li>
-              <li><Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link></li>
-              <li><Link to="/patrocinadores" className="hover:text-foreground transition-colors">Patrocinadores</Link></li>
+              <li><Link to="/episodios" className="hover:text-primary transition-colors">Episodios</Link></li>
+              <li><Link to="/invitados" className="hover:text-primary transition-colors">Invitados</Link></li>
+              <li><Link to="/club" className="hover:text-primary transition-colors">Club</Link></li>
+              <li><Link to="/patrocinadores" className="hover:text-primary transition-colors">Patrocinadores</Link></li>
+              <li><Link to="/manifiesto" className="hover:text-primary transition-colors">Manifiesto</Link></li>
+              <li><Link to="/prensa" className="hover:text-primary transition-colors">Prensa</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-3 min-w-0">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h4>
-            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
+            <h4 className="text-[11px] tracking-[0.3em] uppercase text-primary mb-5">Contacto</h4>
+            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground hover:text-primary transition-colors break-all">
               contactoeldiariodelpoder@gmail.com
             </a>
             <div className="mt-6 flex items-center gap-4 text-muted-foreground">
-              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold"><Instagram size={18} /></a>
-              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-gold"><Youtube size={18} /></a>
-              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-gold"><Linkedin size={18} /></a>
-              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-gold"><Music2 size={18} /></a>
-              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-gold"><TikTok size={18} /></a>
+              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram size={18} /></a>
+              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors"><Youtube size={18} /></a>
+              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin size={18} /></a>
+              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-primary transition-colors"><Music2 size={18} /></a>
+              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-primary transition-colors"><TikTok size={18} /></a>
             </div>
           </div>
         </div>
