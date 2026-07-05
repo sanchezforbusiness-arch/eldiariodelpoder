@@ -100,6 +100,15 @@ export function Navbar() {
             >
               Escuchar en Spotify
             </a>
+            <a
+              href="https://cal.com/el-diario-del-poder-wwdlhf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="btn-outline btn-sm mt-1 self-start"
+            >
+              Reservar una llamada
+            </a>
           </nav>
         </div>
       )}
