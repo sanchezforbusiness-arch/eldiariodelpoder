@@ -20,19 +20,25 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-32 relative overflow-hidden border-t border-border" style={{ backgroundColor: "var(--color-primary)" }}>
+    <section id="newsletter" className="py-16 md:py-24 relative overflow-hidden filete bg-background">
       <div className="container-ddp relative">
-        <div className="max-w-xl mx-auto text-center" style={{ color: "var(--color-primary-foreground)" }}>
-          <span className="block mb-5 text-[11px] tracking-[0.32em] uppercase" style={{ color: "rgba(250,247,242,0.7)" }}>Newsletter</span>
-          <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.025em]" style={{ color: "var(--color-primary-foreground)" }}>
-            Una conversación. Un email. Sin ruido.
-          </h2>
-          <p className="mt-4 text-sm md:text-base" style={{ color: "rgba(250,247,242,0.75)" }}>
-            La lectura corta que reciben quienes escuchan Diario del Poder.
-          </p>
+        <div className="max-w-2xl mx-auto">
+          {/* Classified ad frame: double border */}
+          <div className="border-2 border-foreground p-6 md:p-10 relative" style={{ boxShadow: "inset 0 0 0 4px var(--color-background), inset 0 0 0 5px var(--color-foreground)" }}>
+            <div className="text-center">
+              <p className="text-[10px] tracking-[0.32em] uppercase text-foreground/70 pb-3 mb-6 border-b border-foreground inline-block">
+                Anuncio · Newsletter
+              </p>
+              <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.025em] text-foreground">
+                Una conversación. Un email. <span className="italic text-primary">Sin ruido</span>.
+              </h2>
+              <p className="mt-4 text-sm md:text-base text-foreground/70">
+                La lectura corta que reciben quienes escuchan Diario del Poder.
+              </p>
+            </div>
 
           {sent ? (
-            <div className="mt-10 inline-flex items-center gap-3 border px-6 py-4" style={{ borderColor: "rgba(250,247,242,0.4)", backgroundColor: "rgba(250,247,242,0.08)" }}>
+            <div className="mt-8 flex items-center justify-center gap-3 border border-primary px-6 py-4 text-primary">
               <Check size={18} />
               <span className="text-sm">Gracias. Mira tu correo para confirmar — te esperamos dentro.</span>
             </div>
@@ -45,41 +51,40 @@ export function Newsletter() {
               action="https://eldiariodelpoder.beehiiv.com/subscribe"
               method="POST"
               target="ddp-newsletter-frame"
-              className="mt-10"
+              className="mt-8"
             >
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
+              <div className="flex flex-col sm:flex-row gap-0">
                 <input
                   type="email"
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="flex-1 px-4 py-3 text-sm sm:border-r-0 outline-none"
-                  style={{ backgroundColor: "rgba(250,247,242,0.95)", color: "#141414", border: "1px solid rgba(250,247,242,0.4)" }}
+                  className="flex-1 px-4 py-3 text-sm outline-none bg-background text-foreground border border-foreground sm:border-r-0"
                   required
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.14em] transition-colors"
-                  style={{ backgroundColor: "#FAF7F2", color: "#6E1423" }}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] bg-primary text-primary-foreground border border-primary hover:opacity-90 transition-opacity"
                 >
                   {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme <ArrowRight size={14} /></>}
                 </button>
               </div>
-              <label className="mt-5 flex items-start gap-3 text-left text-xs cursor-pointer" style={{ color: "rgba(250,247,242,0.75)" }}>
+              <label className="mt-4 flex items-start gap-3 text-left text-xs cursor-pointer text-foreground/70">
                 <input
                   type="checkbox"
                   checked={accept}
                   onChange={(e) => setAccept(e.target.checked)}
                   className="mt-0.5"
                 />
-                <span>Acepto la <a href="#" className="underline">política de privacidad</a>.</span>
+                <span>Acepto la <a href="#" className="press-underline">política de privacidad</a>.</span>
               </label>
-              {err && <p className="mt-3 text-xs text-left" style={{ color: "#FFD9DE" }}>{err}</p>}
+              {err && <p className="mt-3 text-xs text-left text-primary">{err}</p>}
             </form>
             </>
           )}
+          </div>
         </div>
       </div>
     </section>
