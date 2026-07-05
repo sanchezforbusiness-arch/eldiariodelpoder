@@ -23,8 +23,6 @@ import hostMic1 from "@/assets/host-mic-1.jpeg.asset.json";
 import setGuest1 from "@/assets/set-guest-1.jpeg.asset.json";
 import guestPortrait1 from "@/assets/guest-portrait-1.jpeg.asset.json";
 import hostsSet from "@/assets/hosts-set.jpeg.asset.json";
-import guestPortrait2 from "@/assets/guest-portrait-2.jpeg.asset.json";
-import hostsMentor from "@/assets/hosts-mentor.jpeg.asset.json";
 import hostsWithGuest from "@/assets/hosts-with-guest.jpeg.asset.json";
 
 type Shot = { src: string; alt: string };
