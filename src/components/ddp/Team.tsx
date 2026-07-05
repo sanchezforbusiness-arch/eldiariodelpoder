@@ -1,6 +1,7 @@
 import { Linkedin } from "lucide-react";
 import g8 from "@/assets/guest-8.webp";
-import inigo from "@/assets/advisor-inigo.webp";
+import inigoAsset from "@/assets/advisor-inigo-portrait.png.asset.json";
+const inigo = inigoAsset.url;
 import alejandro from "@/assets/founder-alejandro.webp";
 import victor from "@/assets/founder-victor.webp";
 

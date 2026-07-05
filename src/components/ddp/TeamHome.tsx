@@ -1,6 +1,7 @@
 import founderAlejandro from "@/assets/founder-alejandro.webp";
 import founderVictor from "@/assets/founder-victor.webp";
 import federicaImg from "@/assets/guest-8.webp";
+import inigoAsset from "@/assets/advisor-inigo-portrait.png.asset.json";
 
 type Person = { name: string; role: string; img?: string; initials?: string };
 
@@ -11,7 +12,7 @@ const team: Person[] = [
 
 const advisory: Person[] = [
   { name: "Federica Ilaria Fornaciari", role: "CEO SenYours · Forbes Top 100 · IE Business School", img: federicaImg },
-  { name: "Iñigo Rivero Iruretagoyena", role: "Managing Partner · Paterberg & Lejeune", initials: "IR" },
+  { name: "Iñigo Rivero Iruretagoyena", role: "Managing Partner · Paterberg & Lejeune", img: inigoAsset.url },
 ];
 
 function Card({ p }: { p: Person }) {
