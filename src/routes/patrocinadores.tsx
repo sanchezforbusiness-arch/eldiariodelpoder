@@ -101,6 +101,7 @@ function PatrocinadoresPage() {
         <Hero />
         <Pillars />
         <Tiers />
+        <TrustedBy />
         <Contact />
       </main>
       <Footer />
