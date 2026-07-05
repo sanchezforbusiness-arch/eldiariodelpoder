@@ -83,8 +83,9 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 350;
+    letter-spacing: -0.025em;
+    color: var(--color-foreground);
   }
 
   ::selection {
