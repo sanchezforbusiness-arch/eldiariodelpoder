@@ -218,11 +218,11 @@ function PrensaPage() {
         <section className="border-t border-white/10">
           <div className="container-ddp py-16 md:py-24 text-center">
             <p className="eyebrow mb-6">Contacto de prensa</p>
-            <p className="text-2xl md:text-4xl leading-[1.2] max-w-3xl mx-auto text-foreground">
+            <p className="text-xl sm:text-2xl md:text-4xl leading-[1.2] max-w-3xl mx-auto text-foreground break-words">
               Para entrevistas, medios y colaboraciones editoriales:{" "}
               <a
                 href="mailto:contactoeldiariodelpoder@gmail.com"
-                className="text-primary underline decoration-primary/40 underline-offset-[6px] hover:decoration-primary"
+                className="text-primary underline decoration-primary/40 underline-offset-[6px] hover:decoration-primary break-all"
               >
                 contactoeldiariodelpoder@gmail.com
               </a>
