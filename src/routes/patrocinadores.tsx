@@ -79,7 +79,19 @@ const tiers = [
   },
 ];
 
-function PatrocinadoresPage() {
+const trustedBrands = [
+  "Telefónica",
+  "SenYours Consulting",
+  "Paterberg",
+  "NoBrainer",
+  "Metlabs",
+  "IE Team",
+  "Contents.com",
+  "Fondo Alkemia",
+  "Campus Home",
+  "UNOde50",
+];
+
   useReveal();
   return (
     <div className="bg-background text-foreground page-enter">
