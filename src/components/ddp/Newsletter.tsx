@@ -20,22 +20,21 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-28 bg-background border-t border-white/5">
+    <section id="newsletter" className="py-24 md:py-32 bg-background">
       <div className="container-ddp">
-        <div className="max-w-4xl mx-auto bg-card border border-white/10 rounded-md p-8 md:p-14">
+        <div className="max-w-4xl mx-auto bg-[#F5F3EF] text-[#0C0C0E] rounded-sm p-10 md:p-16">
           <div className="text-center">
-            <p className="eyebrow mb-5">Newsletter</p>
-            <h2 className="display-md text-foreground max-w-2xl mx-auto">
-              Una conversación.<br />
-              <span className="text-primary">Un email. Sin ruido.</span>
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-black/55 mb-5">Newsletter</p>
+            <h2 className="display-md max-w-2xl mx-auto text-black">
+              Una conversación.<br />Un email. Sin ruido.
             </h2>
-            <p className="mt-5 text-sm md:text-base text-foreground/65 max-w-lg mx-auto">
+            <p className="mt-5 text-sm md:text-base text-black/65 max-w-lg mx-auto">
               La lectura corta que reciben quienes escuchan Diario del Poder.
             </p>
           </div>
 
           {sent ? (
-            <div className="mt-10 flex items-center justify-center gap-2 text-primary">
+            <div className="mt-10 flex items-center justify-center gap-2 text-black">
               <Check size={18} strokeWidth={1.6} />
               <span className="text-sm tracking-[0.14em] uppercase">Suscripción confirmada</span>
             </div>
@@ -60,28 +59,28 @@ export function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="input-line flex-1"
+                  className="flex-1 bg-transparent text-black border border-black/25 rounded-sm px-4 py-3 text-base placeholder:text-black/40 focus:outline-none focus:border-black transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-primary inline-flex items-center gap-2"
+                  className="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-black/85 transition-colors disabled:opacity-50"
                 >
                   {loading ? <Loader2 size={14} className="animate-spin" /> : <ArrowRight size={14} strokeWidth={1.8} />}
                   Suscribirme
                 </button>
               </div>
 
-              <label className="mt-4 flex items-start gap-2 text-xs text-foreground/60">
+              <label className="mt-4 flex items-start gap-2 text-xs text-black/60">
                 <input
                   type="checkbox"
                   checked={accept}
                   onChange={(e) => setAccept(e.target.checked)}
-                  className="mt-0.5 accent-primary"
+                  className="mt-0.5 accent-black"
                 />
                 Acepto la política de privacidad y recibir el newsletter.
               </label>
-              {err && <p className="mt-3 text-xs text-primary">{err}</p>}
+              {err && <p className="mt-3 text-xs text-black">{err}</p>}
             </form>
           )}
         </div>
