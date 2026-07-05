@@ -30,12 +30,12 @@ const guests = [
 export function GuestsCarousel() {
   const loop = [...guests, ...guests];
   return (
-    <section id="guests" className="relative py-16 md:py-24 filete bg-background overflow-hidden">
+    <section id="guests" className="relative py-16 md:py-24 border-t border-white/5 bg-background overflow-hidden">
       <div className="container-ddp relative mb-10 md:mb-14">
-        <div className="kicker mb-8"><span className="kicker-num">Sección 03</span><span>Invitados</span></div>
+        <p className="eyebrow mb-6">Los invitados</p>
         <div className="grid grid-cols-12 gap-6 items-end">
-          <h2 className="col-span-12 md:col-span-8 font-serif text-[2.4rem] md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.03em]">
-            Presidentes, CEOs y referentes que han construido lo que otros <span className="italic text-primary">estudian</span>.
+          <h2 className="col-span-12 md:col-span-8 display-lg text-foreground">
+            Presidentes, CEOs<br />y referentes.
           </h2>
           <p className="col-span-12 md:col-span-4 text-[11px] tracking-[0.26em] uppercase text-foreground/60 md:text-right">
             Presidentes · CEOs · Fundadores
