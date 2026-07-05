@@ -79,6 +79,19 @@ const tiers = [
   },
 ];
 
+const trustedBrands = [
+  "Telefónica",
+  "SenYours Consulting",
+  "Paterberg",
+  "NoBrainer",
+  "Metlabs",
+  "IE Team",
+  "Contents.com",
+  "Fondo Alkemia",
+  "Campus Home",
+  "UNOde50",
+];
+
 function PatrocinadoresPage() {
   useReveal();
   return (
@@ -88,6 +101,7 @@ function PatrocinadoresPage() {
         <Hero />
         <Pillars />
         <Tiers />
+        <TrustedBy />
         <Contact />
       </main>
       <Footer />
@@ -236,6 +250,34 @@ function Tiers() {
         <p className="mt-10 text-xs tracking-[0.2em] uppercase text-muted-foreground text-center">
           Acuerdos anuales o por temporada · cerramos detalles en una llamada
         </p>
+      </div>
+    </section>
+  );
+}
+
+function TrustedBy() {
+  return (
+    <section className="py-20 md:py-28 border-t border-border">
+      <div className="container-ddp">
+        <div className="max-w-3xl mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em] pb-4 border-b border-border">
+            Han confiado en nosotros
+          </h2>
+          <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
+            Marcas que comparten nuestra visión de largo plazo.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-12">
+          {trustedBrands.map((brand) => (
+            <span
+              key={brand}
+              className="font-serif text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default"
+            >
+              {brand}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
