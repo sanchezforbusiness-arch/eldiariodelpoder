@@ -34,7 +34,7 @@ export function Hero() {
             fetchPriority="high"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "50% 35%", opacity: 0.38 }}
+            style={{ objectPosition: "50% 40%", opacity: 0.5 }}
           />
         </picture>
         {/* Vignette / gradient layers */}
