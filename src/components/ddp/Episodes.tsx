@@ -47,7 +47,7 @@ export function Episodes() {
               src={featured.img}
               alt={featured.guest}
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-[1100ms]"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[1100ms]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
@@ -77,14 +77,14 @@ export function Episodes() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 reveal-stagger">
           {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift">
+              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift rounded-md">
                 <img
                   src={e.img}
                   alt={e.guest}
                   width={512}
                   height={640}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <div className="absolute top-5 left-5 flex items-center gap-3">

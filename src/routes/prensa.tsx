@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { useReveal } from "@/hooks/use-reveal";
 import { useCurtain } from "@/hooks/use-curtain";
-import extra2 from "@/assets/backstage-extra-2.jpeg.asset.json";
+import reinaLetizia from "@/assets/reina-letizia.jpeg.asset.json";
 
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
 
@@ -77,45 +77,41 @@ function PrensaPage() {
 
         {/* Cabecera */}
         <header className="container-ddp pt-10 pb-16 md:pb-24">
-          <div className="text-[11px] tracking-[0.32em] uppercase text-primary mb-6">
-            Prensa — Diario del Poder en los medios
-          </div>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em] max-w-5xl">
-            Lo que dicen <span className="italic">de nosotros.</span>
+          <p className="eyebrow mb-6">Prensa</p>
+          <h1 className="display-xl text-foreground max-w-5xl">
+            En los medios.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed font-serif">
-            Cobertura nacional e internacional de un proyecto que acerca a los grandes referentes a la nueva generación.
+          <p className="mt-8 max-w-2xl text-lg md:text-xl text-foreground/70 leading-relaxed">
+            Cobertura nacional e internacional del podcast.
           </p>
         </header>
 
         {/* Bloque destacado La Vanguardia */}
-        <section className="border-t border-foreground">
+        <section className="border-t border-white/10">
           <div className="container-ddp py-16 md:py-24">
-            <div className="text-[10px] tracking-[0.36em] uppercase text-primary mb-8">
-              Sección 01 — Media Partner oficial
-            </div>
-            <div className="filete-double p-6 md:p-12">
+            <p className="eyebrow mb-8"><span className="text-primary">Media Partner oficial</span></p>
+            <div className="border border-white/15 bg-card rounded-md p-6 md:p-12">
               <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
                 <div className="md:col-span-5">
-                  <div className="font-serif uppercase leading-[0.9] tracking-[-0.01em] text-[clamp(2.2rem,6vw,4.5rem)]">
+                  <div className="font-display font-black uppercase leading-[0.9] tracking-tight text-[clamp(2.2rem,6vw,4.5rem)] text-foreground">
                     La Vanguardia
                   </div>
-                  <div className="mt-4 text-[10px] tracking-[0.3em] uppercase text-foreground/60">
+                  <div className="mt-4 text-[10px] tracking-[0.3em] uppercase text-foreground/55">
                     Grupo Godó · Barcelona
                   </div>
                 </div>
                 <div className="md:col-span-7">
-                  <p className="font-serif text-2xl md:text-3xl leading-[1.25] tracking-[-0.01em]">
-                    Media Partner oficial de Diario del Poder. Cada episodio se amplifica en La Vanguardia, dando a cada conversación alcance, permanencia y autoridad a nivel nacional.
+                  <p className="text-lg md:text-2xl leading-[1.3] text-foreground/85">
+                    Media Partner oficial de Diario del Poder. Cada episodio se amplifica en La Vanguardia.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-foreground/40">
-                <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/60 mb-4">
+              <div className="mt-12 pt-8 border-t border-white/15">
+                <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/55 mb-4">
                   Publicado en La Vanguardia
                 </div>
-                <ul className="divide-y divide-foreground/20">
+                <ul className="divide-y divide-white/10">
                   {vanguardiaLinks.map((c) => (
                     <li key={c.url}>
                       <a
@@ -125,9 +121,9 @@ function PrensaPage() {
                         className="group flex items-baseline justify-between gap-6 py-4 hover:text-primary transition-colors"
                       >
                         <div className="min-w-0">
-                          <div className="font-serif text-lg md:text-xl leading-snug">{c.headline}</div>
+                          <div className="text-base md:text-lg leading-snug text-foreground">{c.headline}</div>
                           {c.date && (
-                            <div className="mt-1 text-[10px] tracking-[0.28em] uppercase text-foreground/55">{c.date}</div>
+                            <div className="mt-1 text-[10px] tracking-[0.28em] uppercase text-foreground/50">{c.date}</div>
                           )}
                         </div>
                         <span className="shrink-0 inline-flex items-center gap-1 text-[11px] tracking-[0.24em] uppercase text-primary">
@@ -143,16 +139,14 @@ function PrensaPage() {
         </section>
 
         {/* Apariciones — recortes */}
-        <section className="border-t border-foreground">
+        <section className="border-t border-white/10">
           <div className="container-ddp py-16 md:py-24">
-            <div className="text-[10px] tracking-[0.36em] uppercase text-primary mb-8">
-              Sección 02 — Apariciones y entrevistas
-            </div>
-            <h2 className="font-serif text-4xl md:text-6xl leading-[0.98] tracking-[-0.02em] max-w-3xl mb-14">
-              Recortes de <span className="italic">prensa.</span>
+            <p className="eyebrow mb-6">Apariciones y entrevistas</p>
+            <h2 className="display-lg text-foreground max-w-3xl mb-14">
+              Recortes<br />de prensa.
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-foreground/20 border border-foreground/30">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/15">
               {clips.map((c, i) => {
                 const Tag = c.url ? "a" : "div";
                 // asimetría: filas alternas de altura
@@ -165,18 +159,18 @@ function PrensaPage() {
                       tall ? "min-h-[240px] md:min-h-[280px]" : "min-h-[180px] md:min-h-[220px]"
                     } ${c.url ? "group hover:bg-card/40 transition-colors" : ""}`}
                   >
-                    <div className="font-serif uppercase leading-[0.9] tracking-[-0.01em] text-[clamp(1.6rem,3.2vw,2.6rem)]">
+                    <div className="font-display font-black uppercase leading-[0.9] tracking-tight text-[clamp(1.6rem,3.2vw,2.6rem)] text-foreground">
                       {c.outlet}
                     </div>
                     <div className="mt-6">
                       {c.headline ? (
                         <>
-                          <p className="font-serif text-lg md:text-xl leading-snug text-foreground/85">
+                          <p className="text-sm md:text-base leading-snug text-foreground/80">
                             {c.headline}
                           </p>
                           <div className="mt-4 flex items-center justify-between">
                             {c.date ? (
-                              <span className="text-[10px] tracking-[0.28em] uppercase text-foreground/55">{c.date}</span>
+                              <span className="text-[10px] tracking-[0.28em] uppercase text-foreground/50">{c.date}</span>
                             ) : <span />}
                             {c.url && (
                               <span className="inline-flex items-center gap-1 text-[11px] tracking-[0.24em] uppercase text-primary group-hover:translate-x-0.5 transition-transform">
@@ -186,7 +180,7 @@ function PrensaPage() {
                           </div>
                         </>
                       ) : (
-                        <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/55">
+                        <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/50">
                           Aparición en medios
                         </div>
                       )}
@@ -199,22 +193,20 @@ function PrensaPage() {
         </section>
 
         {/* Reconocimiento institucional */}
-        <section className="border-t border-foreground">
+        <section className="border-t border-white/10">
           <div className="container-ddp py-16 md:py-24">
-            <div className="text-[10px] tracking-[0.36em] uppercase text-primary mb-8">
-              Sección 03 — Reconocimiento institucional
-            </div>
+            <p className="eyebrow mb-8">Reconocimiento institucional</p>
             <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-              <figure className="md:col-span-8 curtain curtain-burdeos">
+              <figure className="md:col-span-8 overflow-hidden rounded-md">
                 <img
-                  src={extra2.url}
+                  src={reinaLetizia.url}
                   alt="Encuentro con S.M. la Reina Doña Letizia en la Universidad de Navarra"
-                  className="w-full h-auto object-cover grayscale"
+                  className="w-full h-auto object-cover"
                   loading="lazy"
                 />
               </figure>
               <div className="md:col-span-4">
-                <p className="font-serif text-2xl md:text-3xl leading-[1.2] tracking-[-0.01em]">
+                <p className="text-xl md:text-2xl leading-[1.3] text-foreground/85">
                   Reconocimiento de S.M. la Reina Doña Letizia en la Universidad de Navarra.
                 </p>
               </div>
@@ -223,12 +215,10 @@ function PrensaPage() {
         </section>
 
         {/* Colofón — contacto prensa */}
-        <section className="border-t border-foreground">
+        <section className="border-t border-white/10">
           <div className="container-ddp py-16 md:py-24 text-center">
-            <div className="text-[10px] tracking-[0.36em] uppercase text-foreground/60 mb-6">
-              Colofón — Contacto de prensa
-            </div>
-            <p className="font-serif text-2xl md:text-4xl leading-[1.2] tracking-[-0.01em] max-w-3xl mx-auto">
+            <p className="eyebrow mb-6">Contacto de prensa</p>
+            <p className="text-2xl md:text-4xl leading-[1.2] max-w-3xl mx-auto text-foreground">
               Para entrevistas, medios y colaboraciones editoriales:{" "}
               <a
                 href="mailto:contactoeldiariodelpoder@gmail.com"
@@ -237,7 +227,7 @@ function PrensaPage() {
                 contactoeldiariodelpoder@gmail.com
               </a>
             </p>
-            <p className="mt-6 text-base md:text-lg text-foreground/75 max-w-2xl mx-auto">
+            <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
               O si lo prefiere,{" "}
               <a
                 href="https://cal.com/el-diario-del-poder-wwdlhf"
@@ -245,7 +235,7 @@ function PrensaPage() {
                 rel="noreferrer"
                 className="text-primary underline decoration-primary/40 underline-offset-[4px] hover:decoration-primary"
               >
-                reserve directamente una llamada con nuestro equipo
+                reserve una llamada con nuestro equipo
               </a>
               .
             </p>
