@@ -8,15 +8,15 @@ import victor from "@/assets/founder-victor.webp";
 const founders = [
   {
     name: "Alejandro Sánchez Martínez",
-    role: "Co-fundador · Host",
-    bio: "Host del podcast. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez (Forbes) o Tomás Villén (Porsche).",
+    role: "Cofundador · Director editorial",
+    bio: "Host del podcast. Presidente de Kifaru Club. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez y Tomás Villén, entre otros.",
     img: alejandro,
     ln: "https://www.linkedin.com/in/alejandrosanchezmartinez",
   },
   {
-    name: "Víctor Hugo Gandarilla",
-    role: "Co-fundador · Host",
-    bio: "Host del podcast. Top 10 de España en Marketing & Comunicación (Nova 111). Estudia en la Universidad de Navarra.",
+    name: "Víctor Hugo Gandarilla de Andrés",
+    role: "Cofundador · Operaciones",
+    bio: "Host del podcast. Top 10 de España en Marketing y Comunicación (Nova 111). Estudia en la Universidad de Navarra.",
     img: victor,
     ln: "https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres",
   },
@@ -24,15 +24,15 @@ const founders = [
 
 const advisors = [
   {
-    name: "Federica Fornaciari",
-    role: "Advisor · Estrategia & Marca",
-    bio: "Founder de SenYours y NoBrainer Partners. Ex-Bain. Profesora en IE, IESE y Bocconi. Forbes Top 100.",
+    name: "Federica Ilaria Fornaciari",
+    role: "CEO SenYours · Forbes Top 100 · IE Business School",
+    bio: "CEO de SenYours y fundadora de NoBrainer Partners. Ex-Bain. Profesora en IE, IESE y Bocconi.",
     img: g8,
     ln: "https://www.linkedin.com/in/federica-ilaria-fornaciari-mba",
   },
   {
-    name: "Iñigo Rivero",
-    role: "Advisor · M&A & Patrimonios",
+    name: "Iñigo Rivero Iruretagoyena",
+    role: "Managing Partner · Paterberg & Lejeune",
     bio: "Managing Partner de Paterberg y Lejeune. Asesora a family offices, consejos y grandes patrimonios.",
     img: inigo,
     ln: "https://www.linkedin.com/in/iñigo-rivero-iruretagoyena-88351b30",
