@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { useReveal } from "@/hooks/use-reveal";
+import { useCurtain } from "@/hooks/use-curtain";
 import extra2 from "@/assets/backstage-extra-2.jpeg.asset.json";
 
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
@@ -63,6 +64,7 @@ const clips: Clip[] = [
 
 function PrensaPage() {
   useReveal();
+  useCurtain();
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
@@ -203,7 +205,7 @@ function PrensaPage() {
               Sección 03 — Reconocimiento institucional
             </div>
             <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-              <figure className="md:col-span-8">
+              <figure className="md:col-span-8 curtain curtain-burdeos">
                 <img
                   src={extra2.url}
                   alt="Encuentro con S.M. la Reina Doña Letizia en la Universidad de Navarra"
