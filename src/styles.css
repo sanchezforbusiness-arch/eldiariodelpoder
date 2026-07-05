@@ -80,11 +80,17 @@
 
   body {
     background-color: var(--color-background);
+    background-image:
+      radial-gradient(60% 45% at 50% 0%, rgba(42, 10, 17, 0.55) 0%, rgba(12, 12, 14, 0) 65%),
+      radial-gradient(80% 50% at 50% 100%, rgba(42, 10, 17, 0.35) 0%, rgba(12, 12, 14, 0) 70%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-size: 16px;
   }
 
   h1, h2, h3, h4 {
@@ -345,6 +351,22 @@
 
   .hairline { height: 1px; background: var(--color-border); }
   .gold-divider { height: 1px; background: var(--color-border); }
+
+  /* Gradient section divider (burgundy → transparent) */
+  .divider-ember {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(158, 27, 48, 0.5) 50%, transparent 100%);
+    border: 0;
+  }
+
+  /* Refined text gradient for the "legado" word */
+  .text-legado {
+    background: linear-gradient(120deg, #F5F3EF 0%, #E7B4BE 55%, #9E1B30 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 /* ===== Buttons — modern, cinematic ===== */
