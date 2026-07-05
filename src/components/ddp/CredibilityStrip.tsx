@@ -1,7 +1,9 @@
+import { Link } from "@tanstack/react-router";
+
 export function CredibilityStrip() {
   return (
     <section aria-label="En medios" className="filete filete-b bg-background">
-      <div className="container-ddp py-4 md:py-5">
+      <Link to="/prensa" className="block container-ddp py-4 md:py-5 hover:bg-card/40 transition-colors">
         <p className="text-[10px] md:text-[11px] tracking-[0.26em] uppercase text-foreground/85 leading-relaxed">
           <span className="text-foreground/55">Han hablado de nosotros:</span>{" "}
           <span className="font-medium">La Vanguardia</span>{" "}
@@ -12,7 +14,7 @@ export function CredibilityStrip() {
           <span className="text-foreground/30 mx-2">·</span>Forbes España
           <span className="text-foreground/30 mx-2">·</span>El Español
         </p>
-      </div>
+      </Link>
     </section>
   );
 }
