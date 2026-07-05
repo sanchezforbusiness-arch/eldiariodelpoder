@@ -3,6 +3,7 @@ import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
+import { CalInlineEmbed, CAL_URL } from "@/components/ddp/CalEmbed";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
 export const Route = createFileRoute("/patrocinadores")({
@@ -103,6 +104,7 @@ function PatrocinadoresPage() {
         <Tiers />
         <TrustedBy />
         <Contact />
+        <BookCall />
       </main>
       <Footer />
     </div>
@@ -140,9 +142,12 @@ function Hero() {
             que están dejando huella.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#contacto" className="btn-primary">
-              Hablar con el equipo
+            <a href="#agenda" className="btn-primary">
+              Reservar una llamada
               <ArrowUpRight size={14} />
+            </a>
+            <a href="#contacto" className="btn-outline">
+              Hablar con el equipo
             </a>
             <a href="#opciones" className="btn-outline">
               Ver opciones
