@@ -55,10 +55,9 @@ const row3: Shot[] = [
   { src: bts_aznarSign, alt: "Aznar firmando" },
   { src: hostsSet.url, alt: "Los hosts en el set" },
   { src: bts_metro, alt: "Metropolitano" },
-  { src: hostsMentor.url, alt: "Los hosts con un mentor" },
+  { src: extra2.url, alt: "Backstage" },
   { src: extra3.url, alt: "Backstage" },
   { src: bts_signPen, alt: "Detalle de firma" },
-  { src: guestPortrait2.url, alt: "Invitada al micrófono" },
   { src: bts_osasuna, alt: "Osasuna" },
   { src: extra4.url, alt: "Backstage" },
 ];
