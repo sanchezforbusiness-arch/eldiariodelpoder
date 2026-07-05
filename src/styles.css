@@ -194,16 +194,8 @@
     flex-shrink: 0;
   }
 
-  /* Ken-Burns slow zoom on hero / feature images */
-  .ken-burns {
-    animation: ken-burns 22s ease-in-out infinite alternate;
-    transform-origin: center;
-    will-change: transform;
-  }
-  @keyframes ken-burns {
-    0%   { transform: scale(1) translate3d(0,0,0); }
-    100% { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
-  }
+  /* Ken-Burns disabled in editorial theme */
+  .ken-burns { animation: none; }
 
   /* Strong hover on cards: zoom + slight rotation */
   .hover-cinema {
@@ -274,49 +266,14 @@
     transform: translateY(-4px);
   }
 
-  /* Soft pulsing gold light */
-  .gold-glow {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(80px);
-    background: radial-gradient(circle, color-mix(in oklab, var(--color-gold-bright) 55%, transparent), transparent 70%);
-    animation: glow-pulse 9s ease-in-out infinite;
-    pointer-events: none;
-  }
-  @keyframes glow-pulse {
-    0%, 100% { opacity: 0.35; transform: scale(1); }
-    50%      { opacity: 0.7;  transform: scale(1.15); }
-  }
+  /* Gold glow removed in editorial theme */
+  .gold-glow { display: none !important; }
 
-  /* Floating drift for ambient lights */
-  .float-slow { animation: float-slow 14s ease-in-out infinite; }
-  @keyframes float-slow {
-    0%, 100% { transform: translate3d(0,0,0); }
-    50%      { transform: translate3d(0,-22px,0); }
-  }
-  .float-slower { animation: float-slow 22s ease-in-out infinite reverse; }
+  .float-slow, .float-slower { animation: none; }
 
-  /* Gold shimmer sweep across text */
-  .shimmer-gold {
-    background: linear-gradient(
-      90deg,
-      var(--color-gold) 0%,
-      var(--color-gold-bright) 35%,
-      #fff5d1 50%,
-      var(--color-gold-bright) 65%,
-      var(--color-gold) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    animation: shimmer 6s linear infinite;
-  }
-  @keyframes shimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
+  /* Shimmer removed — solid burdeos */
+  .shimmer-gold { color: var(--color-primary); }
+  @keyframes shimmer { 0%,100% { background-position: 0 0; } }
 
   /* Reveal-on-scroll */
   .reveal {
@@ -347,12 +304,7 @@
     to   { transform: rotate(360deg); }
   }
 
-  /* Down-arrow bounce */
-  .bounce-down { animation: bounce-down 2.4s ease-in-out infinite; display: inline-block; }
-  @keyframes bounce-down {
-    0%, 100% { transform: translateY(0); opacity: 0.7; }
-    50%      { transform: translateY(6px); opacity: 1; }
-  }
+  .bounce-down { display: inline-block; }
 
   /* Page transition — fade + soft rise */
   .page-enter {
