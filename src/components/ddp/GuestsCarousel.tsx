@@ -30,49 +30,39 @@ const guests = [
 export function GuestsCarousel() {
   const loop = [...guests, ...guests];
   return (
-    <section id="guests" className="relative py-16 md:py-28 border-t border-border bg-card overflow-hidden">
+    <section id="guests" className="relative py-16 md:py-24 filete bg-background overflow-hidden">
       <div className="container-ddp relative mb-10 md:mb-14">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="max-w-3xl">
-            <span className="eyebrow block mb-4">Invitados</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Voces que <span className="italic text-primary">construyen</span>.
-            </h2>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Presidentes, CEOs y referentes que han construido lo que otros estudian.
-            </p>
-          </div>
-          <p className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground max-w-[14rem]">
+        <div className="kicker mb-8"><span className="kicker-num">Sección 03</span><span>Invitados</span></div>
+        <div className="grid grid-cols-12 gap-6 items-end">
+          <h2 className="col-span-12 md:col-span-8 font-serif text-[2.4rem] md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.03em]">
+            Presidentes, CEOs y referentes que han construido lo que otros <span className="italic text-primary">estudian</span>.
+          </h2>
+          <p className="col-span-12 md:col-span-4 text-[11px] tracking-[0.26em] uppercase text-foreground/60 md:text-right">
             Presidentes · CEOs · Fundadores
           </p>
         </div>
       </div>
 
       <div className="relative overflow-hidden mask-fade-x">
-        <div className="marquee marquee-slow gap-3 sm:gap-4 md:gap-5">
+        <div className="marquee marquee-slow gap-6 sm:gap-8 md:gap-12 items-start">
           {loop.map((g, i) => (
-            <article
-              key={i}
-              className="group relative shrink-0 w-[200px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden bg-background border border-border"
-            >
-              <img
-                src={g.img}
-                alt={g.name}
-                width={512}
-                height={640}
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
-                <h3 className="font-serif text-base md:text-lg leading-tight text-foreground">{g.name}</h3>
-                <p className="mt-1.5 text-[10px] tracking-[0.16em] text-primary uppercase">{g.role}</p>
+            <article key={i} className="group shrink-0 w-[180px] sm:w-[220px] md:w-[260px]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+                <img
+                  src={g.img}
+                  alt={g.name}
+                  width={512}
+                  height={640}
+                  loading="lazy"
+                  className="photo-bw absolute inset-0 w-full h-full object-cover"
+                />
               </div>
+              <h3 className="mt-3 font-serif text-base md:text-lg leading-tight text-foreground">{g.name}</h3>
+              <p className="mt-1 text-[10px] tracking-[0.2em] uppercase text-foreground/60">{g.role}</p>
             </article>
           ))}
         </div>
       </div>
-
     </section>
   );
 }
