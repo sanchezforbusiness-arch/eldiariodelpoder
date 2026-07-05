@@ -92,6 +92,7 @@ const trustedBrands = [
   "UNOde50",
 ];
 
+function PatrocinadoresPage() {
   useReveal();
   return (
     <div className="bg-background text-foreground page-enter">
