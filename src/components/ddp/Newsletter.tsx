@@ -24,7 +24,7 @@ export function Newsletter() {
       <div className="container-ddp relative">
         <div className="max-w-2xl mx-auto">
           {/* Classified ad frame: double border */}
-          <div className="border-2 border-foreground p-6 md:p-10 relative" style={{ boxShadow: "inset 0 0 0 4px var(--color-background), inset 0 0 0 5px var(--color-foreground)" }}>
+          <div className="border-2 border-foreground p-6 md:p-10 relative paper-warm" style={{ boxShadow: "inset 0 0 0 4px var(--paper-warm), inset 0 0 0 5px var(--color-foreground)" }}>
             <div className="text-center">
               <p className="text-[10px] tracking-[0.32em] uppercase text-foreground/70 pb-3 mb-6 border-b border-foreground inline-block">
                 Anuncio · Newsletter

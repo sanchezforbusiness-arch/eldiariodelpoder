@@ -65,7 +65,7 @@ export function Hero() {
 
             <h1 className="font-serif text-[3rem] sm:text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-[-0.035em] font-light text-foreground headline-mask">
               <span><span>La voz</span></span>
-              <span><span>del <em className="italic text-primary not-italic" style={{ fontStyle: "italic" }}>legado</em>.</span></span>
+              <span><span>del <em className="italic not-italic text-duotone" style={{ fontStyle: "italic" }}>legado</em>.</span></span>
             </h1>
 
             <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-xl text-foreground/75 leading-relaxed">
@@ -122,89 +122,78 @@ export function Hero() {
               <Stamp className="w-16 h-16 opacity-80" />
             </div>
 
-            <div className="relative h-[520px] lg:h-[600px]">
+            <div className="relative h-[640px] lg:h-[720px]">
               {/* main — Aznar */}
               <figure
-                className="curtain absolute left-2 top-0 w-[62%] shadow-none"
-                style={{ transform: "rotate(-1.5deg)" }}
+                className="curtain absolute left-0 top-0 w-[70%] z-20"
+                style={{ transform: "rotate(-1.2deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/40 -z-10" />
+                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
                   <img
                     src={collage[0].src}
                     alt={collage[0].alt}
                     fetchPriority="high"
                     decoding="async"
-                    className="block w-full h-[300px] lg:h-[360px] object-cover"
-                    style={{ filter: "grayscale(0.7) contrast(1.03)" }}
+                    className="block w-full h-[340px] lg:h-[400px] object-cover photo-bw"
                   />
                 </div>
-                <figcaption className="mt-1.5 text-[10px] tracking-[0.24em] uppercase text-foreground/65">
-                  {collage[0].caption}
-                </figcaption>
+                <figcaption className="press-caption">{collage[0].caption}</figcaption>
               </figure>
 
               {/* Queen Letizia */}
               <figure
-                className="curtain absolute right-0 top-16 w-[46%]"
-                style={{ transform: "rotate(1.2deg)" }}
+                className="curtain absolute right-0 top-56 lg:top-64 w-[42%] z-30"
+                style={{ transform: "rotate(1.4deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/40 -z-10" />
+                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
                   <img
                     src={collage[1].src}
                     alt={collage[1].alt}
                     loading="lazy"
                     decoding="async"
-                    className="block w-full h-[220px] lg:h-[260px] object-cover"
-                    style={{ filter: "grayscale(1)" }}
+                    className="block w-full h-[190px] lg:h-[220px] object-cover photo-bw"
+                    style={{ objectPosition: "50% 25%" }}
                   />
                 </div>
-                <figcaption className="mt-1.5 text-[10px] tracking-[0.24em] uppercase text-foreground/65">
-                  {collage[1].caption}
-                </figcaption>
+                <figcaption className="press-caption">{collage[1].caption}</figcaption>
               </figure>
 
               {/* Lasso */}
               <figure
-                className="curtain absolute left-0 bottom-4 w-[44%]"
-                style={{ transform: "rotate(-0.8deg)" }}
+                className="curtain absolute left-6 bottom-0 w-[42%] z-10"
+                style={{ transform: "rotate(-0.6deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/40 -z-10" />
+                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
                   <img
                     src={collage[2].src}
                     alt={collage[2].alt}
                     loading="lazy"
                     decoding="async"
-                    className="block w-full h-[200px] lg:h-[220px] object-cover"
-                    style={{ filter: "grayscale(0.75) contrast(1.02)" }}
+                    className="block w-full h-[200px] lg:h-[220px] object-cover photo-bw"
                   />
                 </div>
-                <figcaption className="mt-1.5 text-[10px] tracking-[0.24em] uppercase text-foreground/65">
-                  {collage[2].caption}
-                </figcaption>
+                <figcaption className="press-caption">{collage[2].caption}</figcaption>
               </figure>
 
               {/* Hosts in set */}
               <figure
-                className="curtain absolute right-2 bottom-0 w-[42%]"
-                style={{ transform: "rotate(1.6deg)" }}
+                className="curtain absolute right-2 bottom-6 w-[38%] z-20"
+                style={{ transform: "rotate(1.8deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/40 -z-10" />
+                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
                   <img
                     src={collage[3].src}
                     alt={collage[3].alt}
                     loading="lazy"
                     decoding="async"
-                    className="block w-full h-[180px] lg:h-[200px] object-cover"
-                    style={{ filter: "grayscale(0.7) contrast(1.02)" }}
+                    className="block w-full h-[160px] lg:h-[180px] object-cover photo-bw"
                   />
                 </div>
-                <figcaption className="mt-1.5 text-[10px] tracking-[0.24em] uppercase text-foreground/65">
-                  {collage[3].caption}
-                </figcaption>
+                <figcaption className="press-caption">{collage[3].caption}</figcaption>
               </figure>
             </div>
           </div>
