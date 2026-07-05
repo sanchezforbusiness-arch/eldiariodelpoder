@@ -598,5 +598,123 @@
     .reveal { opacity: 1; transform: none; transition: none; }
     .split-word { opacity: 1; transform: none; animation: none; }
     .page-enter { animation: none; }
+    .eq-bar, .stamp-spin, .pulse-ring, .headline-mask > span, .curtain::after {
+      animation: none !important;
+    }
+    .curtain img { opacity: 1 !important; transform: none !important; }
+    .curtain::after { display: none !important; }
   }
+
+  /* ============ Editorial "podcast" motion kit ============ */
+
+  /* Audio equalizer: 3-4 thin vertical bars in burdeos, live indicator */
+  .eq {
+    display: inline-flex;
+    align-items: end;
+    gap: 2px;
+    height: 12px;
+  }
+  .eq-bar {
+    width: 2px;
+    background: currentColor;
+    animation: eq-jump 1s ease-in-out infinite;
+    transform-origin: bottom;
+  }
+  .eq-bar:nth-child(1) { animation-delay: -0.2s; }
+  .eq-bar:nth-child(2) { animation-delay: -0.6s; }
+  .eq-bar:nth-child(3) { animation-delay: -0.4s; }
+  .eq-bar:nth-child(4) { animation-delay: -0.8s; }
+  @keyframes eq-jump {
+    0%,100% { height: 20%; }
+    25%     { height: 90%; }
+    50%     { height: 40%; }
+    75%     { height: 100%; }
+  }
+
+  /* Pulse ring on circular play buttons */
+  .pulse-ring {
+    position: relative;
+  }
+  .pulse-ring::before,
+  .pulse-ring::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid var(--color-primary);
+    opacity: 0;
+    animation: pulse-ring 2.4s cubic-bezier(0.2,0.7,0.2,1) infinite;
+    pointer-events: none;
+  }
+  .pulse-ring::after { animation-delay: 1.2s; }
+  @keyframes pulse-ring {
+    0%   { transform: scale(1);   opacity: 0.75; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+
+  /* Headline mask reveal: line-by-line, once on load */
+  .headline-mask { display: block; }
+  .headline-mask > span {
+    display: block;
+    overflow: hidden;
+  }
+  .headline-mask > span > span {
+    display: block;
+    transform: translateY(102%);
+    animation: line-rise 900ms cubic-bezier(0.2,0.7,0.15,1) forwards;
+  }
+  .headline-mask > span:nth-child(1) > span { animation-delay: 60ms; }
+  .headline-mask > span:nth-child(2) > span { animation-delay: 220ms; }
+  .headline-mask > span:nth-child(3) > span { animation-delay: 380ms; }
+  @keyframes line-rise {
+    to { transform: translateY(0); }
+  }
+
+  /* Curtain reveal on images — panel slides once on entry */
+  .curtain {
+    position: relative;
+    overflow: hidden;
+  }
+  .curtain > img {
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 700ms 500ms ease, transform 1400ms 500ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .curtain.is-in > img { opacity: 1; transform: scale(1); }
+  .curtain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-foreground);
+    transform-origin: right;
+    transform: scaleX(1);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .curtain.curtain-burdeos::after { background: var(--color-primary); }
+  .curtain.is-in::after {
+    animation: curtain-wipe 900ms cubic-bezier(0.7,0,0.2,1) forwards;
+  }
+  @keyframes curtain-wipe {
+    0%   { transform: scaleX(1); transform-origin: right; }
+    49%  { transform: scaleX(0); transform-origin: right; }
+    50%  { transform: scaleX(0); transform-origin: left; }
+    100% { transform: scaleX(0); transform-origin: left; }
+  }
+
+  /* Rotating editorial stamp */
+  .stamp {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    color: var(--color-primary);
+  }
+  .stamp-spin { animation: stamp-spin 22s linear infinite; transform-origin: center; }
+  @keyframes stamp-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Parallax hint utility (used by JS, but declared to be scoped) */
+  .parallax-slow { will-change: transform; }
 }
