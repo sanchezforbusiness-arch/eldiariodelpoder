@@ -45,11 +45,12 @@ export function Navbar() {
               key={l.label}
               to={l.to}
               {...(("hash" in l && l.hash) ? { hash: l.hash } : {})}
-              className={
+              className={[
+                "relative pb-1 transition-colors",
                 pathname === l.to && !("hash" in l && l.hash)
-                  ? "text-primary"
-                  : "text-foreground/80 hover:text-foreground transition-colors"
-              }
+                  ? "text-foreground after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-foreground"
+                  : "text-foreground/60 hover:text-foreground",
+              ].join(" ")}
             >
               {l.label}
             </Link>
