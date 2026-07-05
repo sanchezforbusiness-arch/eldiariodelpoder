@@ -1,85 +1,90 @@
-import heroAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
-import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
-import { Play, Youtube } from "lucide-react";
-import { Stamp } from "@/components/ddp/Stamp";
+import { useEffect, useRef } from "react";
+import { Youtube, ChevronDown } from "lucide-react";
 import { Eq } from "@/components/ddp/Eq";
-import queenAsset from "@/assets/backstage-extra-2.jpeg.asset.json";
-import aznarImg from "@/assets/bts-aznar-dialogos.webp";
-import lassoImg from "@/assets/bts-guillermo-lasso.webp";
-import hostsImg from "@/assets/bts-hosts-palco.webp";
-
-// Real photos = credibility. Editorial newsprint collage.
-const collage = [
-  {
-    src: aznarImg,
-    alt: "José María Aznar en Diálogos",
-    caption: "Aznar · en Diálogos",
-    rotate: -1.5,
-    priority: true,
-  },
-  {
-    src: queenAsset.url,
-    alt: "Encuentro con S.M. la Reina Doña Letizia en la Universidad de Navarra",
-    caption: "S.M. la Reina · U. de Navarra",
-    rotate: 1.2,
-  },
-  {
-    src: lassoImg,
-    alt: "Guillermo Lasso en Diario del Poder",
-    caption: "Lasso · gobernar en crisis",
-    rotate: -0.8,
-  },
-  {
-    src: hostsImg,
-    alt: "Los hosts de Diario del Poder en set",
-    caption: "Redacción · en set",
-    rotate: 1.6,
-  },
-];
+import heroDesktop from "@/assets/hero-portada-nueva.jpg.asset.json";
+import heroMobile from "@/assets/hero-mobile.jpg.asset.json";
 
 export function Hero() {
+  const bgRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (bgRef.current) {
+        bgRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0) scale(1.05)`;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <section id="top" className="relative min-h-[86svh] flex items-center overflow-hidden bg-background pt-44 md:pt-56">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <section
+      id="top"
+      className="relative min-h-[100svh] flex items-center overflow-hidden bg-background"
+    >
+      {/* Cinematic background */}
+      <div ref={bgRef} className="absolute inset-0 will-change-transform">
         <picture>
-          <source media="(max-width: 639px)" srcSet={heroMobileAsset.url} />
+          <source media="(max-width: 639px)" srcSet={heroMobile.url} />
           <img
-            src={heroAsset.url}
-            alt="Diario del Poder — conversación con un referente"
-            width={1920}
-            height={1080}
+            src={heroDesktop.url}
+            alt=""
+            fetchPriority="high"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "50% 30%", opacity: 0.18, filter: "grayscale(0.85) contrast(1.02)" }}
+            style={{ objectPosition: "50% 35%", opacity: 0.38 }}
           />
         </picture>
-        {/* Paper overlay to keep light editorial feel */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(250,247,242,0.75) 0%, rgba(250,247,242,0.9) 55%, #FAF7F2 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(250,247,242,0.92) 0%, rgba(250,247,242,0.55) 45%, transparent 100%)" }} />
+        {/* Vignette / gradient layers */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(120% 80% at 50% 40%, rgba(12,12,14,0.35) 0%, rgba(12,12,14,0.75) 55%, rgba(12,12,14,0.98) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(12,12,14,0.55) 0%, rgba(12,12,14,0.15) 30%, rgba(12,12,14,0.85) 100%)",
+          }}
+        />
       </div>
 
-      <div className="container-ddp relative z-10 py-12 md:py-24">
-        <div className="grid grid-cols-12 gap-6 md:gap-10 items-end">
-          <div className="col-span-12 md:col-span-7">
-            <div className="kicker mb-8"><span className="kicker-num">Nº 24</span><span>Edición · Madrid · Podcast</span></div>
+      <div className="container-ddp relative z-10 pt-32 md:pt-44 pb-24 md:pb-32 w-full">
+        <div className="max-w-[1200px]">
+          <p className="eyebrow mb-6 md:mb-8">
+            <span className="inline-flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              El podcast — Nº 24 · Madrid
+            </span>
+          </p>
 
-            <h1 className="font-serif text-[3rem] sm:text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-[-0.035em] font-light text-foreground headline-mask">
-              <span><span>La voz</span></span>
-              <span><span>del <em className="italic not-italic text-duotone" style={{ fontStyle: "italic" }}>legado</em>.</span></span>
-            </h1>
+          <h1 className="display-xl text-foreground headline-mask">
+            <span><span>Diario</span></span>
+            <span><span>del Poder</span></span>
+          </h1>
 
-            <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-xl text-foreground/75 leading-relaxed">
-              Conversaciones donde los mayores referentes dejan su legado a la nueva generación.
+          <div className="mt-8 md:mt-10 grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+            <p className="md:col-span-7 font-display text-2xl md:text-4xl font-medium tracking-tight text-foreground/85 uppercase leading-tight">
+              La voz del <span className="italic font-serif font-normal text-primary normal-case">legado</span>.
             </p>
+            <p className="md:col-span-5 text-base md:text-lg text-foreground/70 leading-relaxed">
+              Conversaciones sin filtro con las personas que han definido la política, la empresa y la cultura.
+            </p>
+          </div>
 
-            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
               className="btn-primary items-center gap-3"
             >
-              <Eq className="text-primary-foreground" />
+              <Eq />
               Escuchar en Spotify
             </a>
             <a
@@ -88,116 +93,17 @@ export function Hero() {
               rel="noreferrer"
               className="btn-outline"
             >
-              <Youtube size={14} />
+              <Youtube size={16} strokeWidth={1.6} />
               Ver en YouTube
             </a>
-            </div>
-
-            {/* Mobile compact collage */}
-            <div className="mt-10 grid grid-cols-3 gap-2 md:hidden">
-              {collage.slice(0, 3).map((p, i) => (
-                <figure
-                  key={i}
-                  className="curtain relative border border-foreground/70 bg-background"
-                  style={{ transform: `rotate(${p.rotate}deg)` }}
-                >
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    loading={p.priority ? "eager" : "lazy"}
-                    fetchPriority={p.priority ? "high" : "auto"}
-                    decoding="async"
-                    className="block w-full h-28 object-cover"
-                    style={{ filter: "grayscale(0.7) contrast(1.02)" }}
-                  />
-                </figure>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop editorial collage */}
-          <div className="hidden md:block col-span-5 pl-8 col-rule-l">
-            <div className="flex items-center justify-between mb-6">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-foreground/60">Álbum · Redacción</p>
-              <Stamp className="w-16 h-16 opacity-80" />
-            </div>
-
-            <div className="relative h-[640px] lg:h-[720px]">
-              {/* main — Aznar */}
-              <figure
-                className="curtain absolute left-0 top-0 w-[70%] z-20"
-                style={{ transform: "rotate(-1.2deg)" }}
-              >
-                <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
-                  <img
-                    src={collage[0].src}
-                    alt={collage[0].alt}
-                    fetchPriority="high"
-                    decoding="async"
-                    className="block w-full h-[340px] lg:h-[400px] object-cover photo-bw"
-                  />
-                </div>
-                <figcaption className="press-caption">{collage[0].caption}</figcaption>
-              </figure>
-
-              {/* Queen Letizia */}
-              <figure
-                className="curtain absolute right-0 top-56 lg:top-64 w-[42%] z-30"
-                style={{ transform: "rotate(1.4deg)" }}
-              >
-                <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
-                  <img
-                    src={collage[1].src}
-                    alt={collage[1].alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="block w-full h-[190px] lg:h-[220px] object-cover photo-bw"
-                    style={{ objectPosition: "50% 25%" }}
-                  />
-                </div>
-                <figcaption className="press-caption">{collage[1].caption}</figcaption>
-              </figure>
-
-              {/* Lasso */}
-              <figure
-                className="curtain absolute left-6 bottom-0 w-[42%] z-10"
-                style={{ transform: "rotate(-0.6deg)" }}
-              >
-                <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
-                  <img
-                    src={collage[2].src}
-                    alt={collage[2].alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="block w-full h-[200px] lg:h-[220px] object-cover photo-bw"
-                  />
-                </div>
-                <figcaption className="press-caption">{collage[2].caption}</figcaption>
-              </figure>
-
-              {/* Hosts in set */}
-              <figure
-                className="curtain absolute right-2 bottom-6 w-[38%] z-20"
-                style={{ transform: "rotate(1.8deg)" }}
-              >
-                <div className="relative border border-foreground bg-background">
-                  <div className="absolute -right-2 -bottom-2 w-full h-full border border-foreground/45 -z-10" />
-                  <img
-                    src={collage[3].src}
-                    alt={collage[3].alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="block w-full h-[160px] lg:h-[180px] object-cover photo-bw"
-                  />
-                </div>
-                <figcaption className="press-caption">{collage[3].caption}</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-foreground/50">
+        <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+        <ChevronDown size={16} strokeWidth={1.5} className="animate-bounce" />
       </div>
     </section>
   );

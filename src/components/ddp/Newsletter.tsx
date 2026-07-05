@@ -20,71 +20,70 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-16 md:py-24 relative overflow-hidden filete bg-background">
-      <div className="container-ddp relative">
-        <div className="max-w-2xl mx-auto">
-          {/* Classified ad frame: double border */}
-          <div className="border-2 border-foreground p-6 md:p-10 relative paper-warm" style={{ boxShadow: "inset 0 0 0 4px var(--paper-warm), inset 0 0 0 5px var(--color-foreground)" }}>
-            <div className="text-center">
-              <p className="text-[10px] tracking-[0.32em] uppercase text-foreground/70 pb-3 mb-6 border-b border-foreground inline-block">
-                Anuncio · Newsletter
-              </p>
-              <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.025em] text-foreground">
-                Una conversación. Un email. <span className="italic text-primary">Sin ruido</span>.
-              </h2>
-              <p className="mt-4 text-sm md:text-base text-foreground/70">
-                La lectura corta que reciben quienes escuchan Diario del Poder.
-              </p>
-            </div>
+    <section id="newsletter" className="py-20 md:py-28 bg-background border-t border-white/5">
+      <div className="container-ddp">
+        <div className="max-w-4xl mx-auto bg-card border border-white/10 rounded-md p-8 md:p-14">
+          <div className="text-center">
+            <p className="eyebrow mb-5">Newsletter</p>
+            <h2 className="display-md text-foreground max-w-2xl mx-auto">
+              Una conversación.<br />
+              <span className="text-primary">Un email. Sin ruido.</span>
+            </h2>
+            <p className="mt-5 text-sm md:text-base text-foreground/65 max-w-lg mx-auto">
+              La lectura corta que reciben quienes escuchan Diario del Poder.
+            </p>
+          </div>
 
           {sent ? (
-            <div className="mt-8 flex items-center justify-center gap-3 border border-primary px-6 py-4 text-primary">
-              <Check size={18} />
-              <span className="text-sm">Gracias. Mira tu correo para confirmar — te esperamos dentro.</span>
+            <div className="mt-10 flex items-center justify-center gap-2 text-primary">
+              <Check size={18} strokeWidth={1.6} />
+              <span className="text-sm tracking-[0.14em] uppercase">Suscripción confirmada</span>
             </div>
           ) : (
-            <>
-            <iframe name="ddp-newsletter-frame" title="Newsletter" className="hidden" aria-hidden="true" />
             <form
               ref={formRef}
-              onSubmit={submit}
-              action="https://eldiariodelpoder.beehiiv.com/subscribe"
+              action="https://formsubmit.co/contactoeldiariodelpoder@gmail.com"
               method="POST"
               target="ddp-newsletter-frame"
-              className="mt-8"
+              onSubmit={submit}
+              className="mt-10 max-w-xl mx-auto"
             >
-              <div className="flex flex-col sm:flex-row gap-0">
+              <input type="hidden" name="_subject" value="Nuevo suscriptor · Diario del Poder" />
+              <input type="hidden" name="_captcha" value="false" />
+              <iframe name="ddp-newsletter-frame" title="Newsletter" className="hidden" aria-hidden="true" />
+
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   name="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="flex-1 px-4 py-3 text-sm outline-none bg-background text-foreground border border-foreground sm:border-r-0"
-                  required
+                  className="input-line flex-1"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] bg-primary text-primary-foreground border border-primary hover:opacity-90 transition-opacity"
+                  className="btn-primary inline-flex items-center gap-2"
                 >
-                  {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme <ArrowRight size={14} /></>}
+                  {loading ? <Loader2 size={14} className="animate-spin" /> : <ArrowRight size={14} strokeWidth={1.8} />}
+                  Suscribirme
                 </button>
               </div>
-              <label className="mt-4 flex items-start gap-3 text-left text-xs cursor-pointer text-foreground/70">
+
+              <label className="mt-4 flex items-start gap-2 text-xs text-foreground/60">
                 <input
                   type="checkbox"
                   checked={accept}
                   onChange={(e) => setAccept(e.target.checked)}
-                  className="mt-0.5"
+                  className="mt-0.5 accent-primary"
                 />
-                <span>Acepto la <a href="#" className="press-underline">política de privacidad</a>.</span>
+                Acepto la política de privacidad y recibir el newsletter.
               </label>
-              {err && <p className="mt-3 text-xs text-left text-primary">{err}</p>}
+              {err && <p className="mt-3 text-xs text-primary">{err}</p>}
             </form>
-            </>
           )}
-          </div>
         </div>
       </div>
     </section>
