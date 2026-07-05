@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, KeyRound, Check } from "lucide-react";
 import hosts from "@/assets/bts-hosts-palco.webp";
-import { SplitText } from "./SplitText";
+
 
 export function ClubTeaser() {
   return (
