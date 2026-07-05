@@ -56,12 +56,7 @@ export function Hero() {
 
       <div className="container-ddp relative z-10 pt-32 md:pt-44 pb-24 md:pb-32 w-full">
         <div className="max-w-[1200px]">
-          <p className="eyebrow mb-6 md:mb-8">
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-primary" />
-              El podcast — Nº 24 · Madrid
-            </span>
-          </p>
+          <p className="eyebrow mb-6 md:mb-8">El podcast — Madrid</p>
 
           <h1 className="display-xl text-foreground headline-mask">
             <span><span>Diario</span></span>
@@ -70,7 +65,7 @@ export function Hero() {
 
           <div className="mt-8 md:mt-10 grid md:grid-cols-12 gap-6 md:gap-10 items-end">
             <p className="md:col-span-7 font-display text-2xl md:text-4xl font-medium tracking-tight text-foreground/85 uppercase leading-tight">
-              La voz del <span className="italic font-serif font-normal text-legado normal-case">legado</span>.
+              La voz del <span className="italic font-serif font-normal normal-case">legado</span>.
             </p>
             <p className="md:col-span-5 text-base md:text-lg text-foreground/70 leading-relaxed">
               Conversaciones sin filtro con las personas que han definido la política, la empresa y la cultura.
