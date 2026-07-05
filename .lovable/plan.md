@@ -1,79 +1,80 @@
-# Rediseño Premium — Diario del Poder
+# Rediseño integral — Diario del Poder
 
-Aplico nueva paleta + tipografía serif premium en toda la web, rehago el home sección por sección, refino las páginas existentes y creo una nueva página /patrocinadores. Sin stats inventadas.
+Sustituimos el tema oscuro por una identidad editorial clara tipo prensa, con el podcast como protagonista. Sin tocar SEO ni enlaces existentes.
 
-## 1. Sistema visual (base para todo)
+## 1. Nuevo sistema visual (`src/styles.css`)
 
-**Tokens en `src/styles.css`** (todo lo demás los hereda):
-- `--background` → #0A0A0B (casi negro)
-- `--background-alt` → #1A1A1C (secciones enfatizadas)
-- `--foreground` → #F5F3F0 (blanco cálido)
-- `--gold` / `--primary` → #C4A77D (oro champagne, reemplaza el dorado actual)
-- `--gold-bright` → #D9BE92 (hover)
-- `--ember` / `--accent` → #FF6B35 (acento puntual: Club, separadores clave)
-- `--muted` → #2D2D2D
+Tokens (modo claro forzado en toda la web):
+- `--background: #FAF7F2` (papel cálido)
+- `--foreground: #141414` (tinta)
+- `--primary: #6E1423` (burdeos, único acento) + `--primary-foreground: #FAF7F2`
+- `--card: #FFFFFF`, `--border: #E8E2D6` (borde sutil papel)
+- `--muted: #F2ECE0`, `--muted-foreground: #5A5651`
+- Elimino `--gold`, glows dorados, grain oscuro, ken-burns pesado.
 
-**Tipografía** (vía `@fontsource`, instalado con bun):
-- Headlines: **Playfair Display** (serif premium, light/regular)
-- Body/UI: **Inter** (sans, ya en uso o lo añado)
-- Tracking generoso, line-height 1.6–1.8 en body, 0.9 en hero
+Tipografía:
+- Serif display para titulares: **Fraunces** (peso 300/400, ya editorial-prensa) vía `<link>` en `__root.tsx`.
+- Sans cuerpo: **Inter** (ya cargada) para UI y párrafos.
+- Escala grande y jerárquica (h1 ~72–96px desktop, h2 ~48px), tracking apretado.
 
-**Detalles globales**:
-- Líneas finas oro como separadores
-- Barra vertical naranja (3px) solo en sección Club
-- Grain sutil mantenido
-- Animaciones: fade-up en scroll, hover lift en cards, sin nada distractor
+Animaciones:
+- Solo `fade-up` sutil al entrar en viewport y `hover` discreto (elevación 1–2px, cambio de color).
+- Elimino `shimmer-gold`, `float-slow`, `bounce-down`, `ken-burns`, marquee múltiple. Un único marquee lento en invitados.
 
-## 2. Home — rehago sección por sección
+Botones (redefinidos):
+- `.btn-primary`: burdeos sólido, texto papel, radius 2px, tracking editorial, sin sombra pesada.
+- `.btn-outline`: borde tinta 1px, texto tinta, hover invierte a burdeos.
+- Aplicar en toda la web.
 
-Orden actual: Hero → Guests → Episodes → Backstage → AboutTeaser → ClubTeaser → Newsletter → Footer.
+## 2. Home — nuevo orden (`src/routes/index.tsx`)
 
-- **Hero**: copy a *"Donde quienes deciden / se sientan a contarlo."* + subhead. CTA primario "Escuchar último episodio" + secundario "Ver episodios". Quito el badge inferior con stats inventadas; lo cambio por badge sobrio del último invitado.
-- **Guests carousel**: título *"Voces que construyen"*. Mantengo el formato pero sin duplicar invitados en la misma vuelta.
-- **Episodes**: título *"Conversaciones recientes"*. Hover overlay con play icon en oro.
-- **Backstage**: título *"Fuera de guion"* / subtítulo *"Madrid · donde se graban las historias"*. Sigue como masonry/marquee actual con tinte sepia.
-- **AboutTeaser**: *"Donde la credibilidad tiene nombre"* + link al manifiesto.
-- **ClubTeaser**: barra vertical naranja izquierda, copy *"Una comunidad real. No una red de contactos."* + CTA *Solicitar acceso*. Sin número de miembros.
-- **Newsletter**: *"Ideas que importan. Una conversación. Un email. Sin ruido."* Sin "8,500+ líderes".
-- **Footer**: 3 columnas (brand / nav / social). Mantengo links existentes y añado *Patrocinadores*.
+```text
+Navbar (claro sticky, CTA "Escuchar" burdeos siempre)
+Hero (claro, 2 CTAs + badges plataformas)
+CredibilityStrip (nuevo, "En medios")
+FeaturedEpisode (nuevo, Jordi Juan — sección estrella)
+RecentEpisodes (4 cards horizontales limpias)
+GuestsCarousel (un único marquee lento, tema claro)
+Backstage (una fila / grid 4x2, sin duplicación)
+Team + Advisory (nuevo, "Quiénes somos")
+ClubTeaser (compacto)
+Newsletter (fondo burdeos, cierre editorial)
+Footer (tema claro)
+```
 
-**Omito** la sección "Social proof con números" del prompt porque pediste no usar stats.
+## 3. Cambios por componente
 
-## 3. Páginas existentes — refresh visual y de copy
+- **Navbar**: fondo papel + blur, sticky. Links: Episodios · Invitados · Quiénes somos · Club · Patrocinadores. Botón "Escuchar" burdeos. Manifiesto y Prensa se mueven al Footer.
+- **Hero**: mismo `hero-portada-nueva.jpg` con overlay claro (tono papel), sin vídeo YouTube de fondo (elimina peso). Titular "La voz del legado.", subtítulo nuevo. CTAs: "Escuchar en Spotify" (burdeos) y "Ver en YouTube" (outline). Badges de plataformas debajo.
+- **CredibilityStrip** (nuevo): una línea `text-xs uppercase` — "En medios" + La Vanguardia (destacada como media partner) · Antena 3 · La Sexta · El Mundo · Forbes España · El Español. Solo texto en gris, sobrio.
+- **FeaturedEpisode** (nuevo): grid 2 cols desktop. Izquierda: imagen Jordi Juan. Derecha: eyebrow "Último episodio", h2 "La teoría de los cajones para afrontar la crisis", nombre "Jordi Juan · Director de La Vanguardia", botón play burdeos → link a YouTube/La Vanguardia (mismo URL que ya usa Episodes).
+- **RecentEpisodes** (refactor de `Episodes.tsx`): 4 cards horizontales — nº ("02", "03"…), título, invitado, link. CTA final "Ver todos los episodios" → `/episodios`.
+- **GuestsCarousel**: fondo blanco, cards con borde `--border`, texto oscuro. Sin grayscale/hover cromático. Subtítulo corregido: "Presidentes, CEOs y referentes que han construido lo que otros estudian." Un único marquee lento.
+- **Backstage**: 8 imágenes (Aznar FAES, firma libro, Lasso, Andrés Rodríguez, hosts palco, Jordi Urbea, Reina Letizia (extra2), on set (setMonitors)). Móvil: `overflow-x-auto snap-x snap-mandatory` una fila. Desktop: grid 4x2. Sin duplicación de DOM. `loading="lazy"` en todas.
+- **Team+Advisory** (nuevo `TeamHome.tsx`): dos subbloques. Equipo (Alejandro, Víctor, Carla-placeholder). Advisory (Federica con foto existente, Iñigo-placeholder). Cards: foto cuadrada, nombre serif, cargo pequeño. Placeholder = iniciales en cuadrado burdeos/papel.
+- **ClubTeaser**: compactar padding/altura, mantener mensaje.
+- **Newsletter**: fondo burdeos, texto papel, h2 "Una conversación. Un email. Sin ruido.", input + botón papel.
+- **Footer**: fondo papel con borde superior, añadir links Manifiesto y Prensa.
 
-- `/episodios`: hero compacto *"Todos los episodios"*, grid con hover oro, copy revisado.
-- `/invitados`: hero *"Líderes que cambian historias"*, cards más completos.
-- `/club`: landing de conversión (beneficios, proceso de membresía 3 pasos, FAQ, CTA fuerte). Sin número de miembros.
-- `/manifiesto`: ya es long-form editorial; ajusto tipografía serif y pull-quotes en oro.
-- `/prensa`: ajuste visual a la nueva paleta.
+## 4. Copy
 
-## 4. Nueva página: `/patrocinadores`
+- Sustituir "Donde la credibilidad tiene nombre" → "Dos fundadores. Un compromiso: conversaciones con criterio, no ruido."
+- Revisar frases largas o grandilocuentes en Hero, About, Club, Newsletter → cortas y directas.
 
-Archivo `src/routes/patrocinadores.tsx` con head() propio (title + description + og:* + canonical). Estructura:
+## 5. Aplicación en otras páginas
 
-1. Hero: *"Sé parte de una conversación que importa"*
-2. *"Por qué DDP"* — 3 pilares de valor (audiencia de alto nivel, asociación con liderazgo, editorial rigurosa). Sin métricas inventadas.
-3. **Opciones de patrocinio**: 3 tarjetas (Plata / Oro / Platino) con beneficios listados, sin precios concretos hasta que me los pases — CTA por tarjeta a contacto.
-4. Sección de contacto: bloque grande con `partners@eldiariodelpoder.com` y CTA *"Hablar con nuestro equipo"* (mailto).
-5. Footer común.
+`/episodios`, `/invitados`, `/club`, `/manifiesto`, `/prensa`, `/patrocinadores`: heredan automáticamente los nuevos tokens (fondo, color, botones). Reviso cada uno para reemplazar clases hardcoded (`text-gold`, `bg-background` oscuro, `grayscale`) por tokens semánticos y ajustar contraste.
 
-Añado link a *Patrocinadores* en Navbar y Footer.
+## No tocar
 
-## Detalles técnicos
+- Meta tags, JSON-LD, `robots.txt`, `sitemap.xml`, `llms.txt`.
+- URLs de Spotify, YouTube, La Vanguardia.
+- Rutas existentes.
 
-- `@fontsource/playfair-display` y `@fontsource/inter` instalados con `bun add`, importados en `src/main.tsx`, declarados en `@theme` de `src/styles.css`.
-- Todo con tokens semánticos — cero `text-white`, `bg-black`, hex hardcoded en JSX.
-- Animaciones con clases CSS existentes (`fade-up`, `ken-burns`, `ring-pulse`) + Tailwind transitions.
-- Responsive mobile-first; respeto los breakpoints ya afinados de la pasada anterior.
-- SEO: cada página con su `head()` (title, description, og:title, og:description, canonical). Sin og:image inventada.
-- Sin tocar lógica de Beehiiv/newsletter ni backend.
+## Notas técnicas
 
-## Lo que NO hago (y por qué)
-
-- **Stats numéricas** (50M, 524 miembros, 8500+) → me pediste omitirlas.
-- **Video de fondo en hero** → no tengo archivo de vídeo; mantengo imagen actual con ken-burns.
-- **Precios concretos de patrocinio** → no me los pasaste; dejo CTAs a contacto.
-- **Lightbox de backstage, contador animado, modal de bios de fundadores** → fuera de scope inicial; los puedo añadir después si los quieres.
-- **Página `/prensa` rehecha desde cero** → solo refresh visual, no rediseño completo.
-
-¿Te lanzo con esto?
+- Fraunces vía `<link>` (no `@import` en CSS — Tailwind v4 Lightning CSS no lo resuelve).
+- Elimino iframe YouTube del Hero → gran mejora LCP/CLS.
+- Backstage sin duplicación → ~50% menos DOM en esa sección.
+- Todas las imágenes below-fold con `loading="lazy"` + `decoding="async"`.
+- Advisory/Team placeholder de Carla e Iñigo: div con iniciales, sin llamar a APIs.
