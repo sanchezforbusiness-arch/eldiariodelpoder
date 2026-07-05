@@ -255,6 +255,34 @@ function Tiers() {
   );
 }
 
+function TrustedBy() {
+  return (
+    <section className="py-20 md:py-28 border-t border-border">
+      <div className="container-ddp">
+        <div className="max-w-3xl mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em] pb-4 border-b border-border">
+            Han confiado en nosotros
+          </h2>
+          <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
+            Marcas que comparten nuestra visión de largo plazo.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-12">
+          {trustedBrands.map((brand) => (
+            <span
+              key={brand}
+              className="font-serif text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default"
+            >
+              {brand}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contacto" className="relative py-24 md:py-36 border-t border-border overflow-hidden">
