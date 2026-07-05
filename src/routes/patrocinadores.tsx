@@ -3,7 +3,7 @@ import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
-import { CalInlineEmbed, CAL_URL } from "@/components/ddp/CalEmbed";
+import { CAL_URL } from "@/components/ddp/CalEmbed";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
 export const Route = createFileRoute("/patrocinadores")({
@@ -142,7 +142,12 @@ function Hero() {
             que están dejando huella.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#agenda" className="btn-primary">
+            <a
+              href={CAL_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
               Reservar una llamada
               <ArrowUpRight size={14} />
             </a>
@@ -343,14 +348,50 @@ function BookCall() {
           </p>
         </div>
 
-        <div className="filete-double p-3 md:p-6 bg-background">
-          <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/60 flex items-center justify-between mb-4 px-2">
+        <div className="filete-double paper-warm p-8 md:p-14">
+          <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/60 flex items-center justify-between mb-10 pb-4 border-b border-foreground/25">
             <span>Anuncio · Reserva de llamada</span>
-            <a href={CAL_URL} target="_blank" rel="noreferrer" className="text-primary hover:underline">
-              Abrir en cal.com ↗
-            </a>
+            <span className="text-primary">§ Cal.com</span>
           </div>
-          <CalInlineEmbed />
+
+          <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+            <div className="md:col-span-7">
+              <p className="text-[11px] tracking-[0.32em] uppercase text-primary mb-5">
+                Reserva directa
+              </p>
+              <p className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.02em]">
+                Elija su hueco.<br />
+                <span className="italic text-duotone">Confirmado al instante.</span>
+              </p>
+              <ul className="mt-8 space-y-2 font-serif text-lg md:text-xl text-foreground/85 leading-snug">
+                <li className="flex items-baseline gap-3"><span className="text-primary">§</span> 30 minutos</li>
+                <li className="flex items-baseline gap-3"><span className="text-primary">§</span> Videollamada</li>
+                <li className="flex items-baseline gap-3"><span className="text-primary">§</span> Elija usted el horario</li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-5 md:border-l md:border-foreground/25 md:pl-14">
+              <a
+                href={CAL_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary w-full text-[13px] py-5 tracking-[0.18em]"
+              >
+                Reservar una llamada
+              </a>
+              <p className="mt-5 text-xs text-foreground/60 leading-relaxed">
+                Se abrirá el calendario de Diario del Poder en una nueva pestaña. Sin registros ni fricción.
+              </p>
+              <a
+                href={CAL_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-block text-[10px] tracking-[0.28em] uppercase text-primary press-underline"
+              >
+                Abrir cal.com/el-diario-del-poder ↗
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
