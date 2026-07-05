@@ -8,6 +8,7 @@ const links: NavLink[] = [
   { to: "/invitados", label: "Invitados" },
   { to: "/", label: "Quiénes somos", hash: "team" },
   { to: "/club", label: "Club" },
+  { to: "/prensa", label: "Prensa" },
   { to: "/patrocinadores", label: "Patrocinadores" },
 ];
 
