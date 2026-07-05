@@ -7,6 +7,7 @@ import { FeaturedEpisode } from "@/components/ddp/FeaturedEpisode";
 import { RecentEpisodes } from "@/components/ddp/RecentEpisodes";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { useReveal } from "@/hooks/use-reveal";
+import { useCurtain } from "@/hooks/use-curtain";
 import heroDesktop from "@/assets/hero-portada-nueva.jpg.asset.json";
 import heroMobile from "@/assets/hero-mobile.jpg.asset.json";
 
@@ -38,6 +39,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useReveal();
+  useCurtain();
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
