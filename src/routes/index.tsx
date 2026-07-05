@@ -6,9 +6,9 @@ import { Statement } from "@/components/ddp/Statement";
 import { MovingMosaic } from "@/components/ddp/MovingMosaic";
 import { TopEpisodes } from "@/components/ddp/TopEpisodes";
 import { SubscribePlatforms } from "@/components/ddp/SubscribePlatforms";
-import { PressStrip } from "@/components/ddp/PressStrip";
-import heroDesktop from "@/assets/hero-portada-nueva.jpg.asset.json";
-import heroMobile from "@/assets/hero-mobile.jpg.asset.json";
+import { NewsHome } from "@/components/ddp/NewsHome";
+import heroDesktop from "@/assets/hero-hosts-set.jpg.asset.json";
+import heroMobile from "@/assets/hero-hosts-set.jpg.asset.json";
 
 const TeamHome = lazy(() =>
   import("@/components/ddp/TeamHome").then((m) => ({ default: m.TeamHome })),
@@ -56,7 +56,7 @@ function Index() {
           <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
             <TeamHome />
           </Suspense>
-          <PressStrip />
+          <NewsHome />
           <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
             <ClubTeaser />
           </Suspense>
