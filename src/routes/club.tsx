@@ -90,7 +90,7 @@ function Hero() {
         <div className="md:col-span-7 fade-up">
           <span className="eyebrow block mb-6">El Club del Poder</span>
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
-            Una comunidad<br /> que <span className="italic shimmer-gold">se cuida</span>.
+            Una comunidad<br /> que se cuida.
           </h1>
           <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
             Acceso por invitación. Sin ruido, sin postureo. Solo gente con ganas de aportar.
