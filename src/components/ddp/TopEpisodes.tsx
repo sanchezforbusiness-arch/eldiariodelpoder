@@ -1,9 +1,7 @@
 import { Youtube, ArrowUpRight } from "lucide-react";
 import g1 from "@/assets/guest-1.webp";
-import g4 from "@/assets/guest-4.webp";
 import g5 from "@/assets/guest-5.webp";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
-import echavarrenImg from "@/assets/guest-echavarren.webp";
 
 const SPOTIFY_SHOW = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 const APPLE_SHOW = "https://podcasts.apple.com/es/podcast/diario-del-poder/id1741454034";
