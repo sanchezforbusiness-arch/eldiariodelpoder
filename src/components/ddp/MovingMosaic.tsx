@@ -18,21 +18,33 @@ import extra1 from "@/assets/backstage-extra-1.jpeg.asset.json";
 import extra2 from "@/assets/backstage-extra-2.jpeg.asset.json";
 import extra3 from "@/assets/backstage-extra-3.jpeg.asset.json";
 import extra4 from "@/assets/backstage-extra-4.jpeg.asset.json";
+import reinaLetizia from "@/assets/reina-letizia.jpeg.asset.json";
+import hostMic1 from "@/assets/host-mic-1.jpeg.asset.json";
+import setGuest1 from "@/assets/set-guest-1.jpeg.asset.json";
+import guestPortrait1 from "@/assets/guest-portrait-1.jpeg.asset.json";
+import hostsSet from "@/assets/hosts-set.jpeg.asset.json";
+import guestPortrait2 from "@/assets/guest-portrait-2.jpeg.asset.json";
+import hostsMentor from "@/assets/hosts-mentor.jpeg.asset.json";
+import hostsWithGuest from "@/assets/hosts-with-guest.jpeg.asset.json";
 
 type Shot = { src: string; alt: string };
 
 const row1: Shot[] = [
   { src: bts_aznarD, alt: "Aznar en Diálogos" },
+  { src: reinaLetizia.url, alt: "Saludo con S.M. la Reina Doña Letizia en la Universidad de Navarra" },
   { src: bts_lasso, alt: "Guillermo Lasso" },
+  { src: hostMic1.url, alt: "Host al micrófono" },
   { src: bts_andres, alt: "Andrés Rodríguez, Forbes" },
-  { src: extra2.url, alt: "Encuentro con S.M. la Reina Doña Letizia" },
+  { src: setGuest1.url, alt: "Grabación en el set con invitada" },
   { src: bts_hosts, alt: "Hosts en el palco" },
   { src: bts_urbea, alt: "Jordi Urbea" },
   { src: heroStudio, alt: "Estudio de grabación" },
 ];
 const row2: Shot[] = [
   { src: bts_aznarF, alt: "Aznar en FAES" },
+  { src: hostsWithGuest.url, alt: "Hosts con invitado" },
   { src: bts_signHands, alt: "Firma de libro" },
+  { src: guestPortrait1.url, alt: "Invitada al micrófono" },
   { src: bts_set, alt: "Set de grabación" },
   { src: bts_mikel, alt: "Mikel en el palco" },
   { src: extra1.url, alt: "Backstage" },
@@ -41,9 +53,12 @@ const row2: Shot[] = [
 ];
 const row3: Shot[] = [
   { src: bts_aznarSign, alt: "Aznar firmando" },
+  { src: hostsSet.url, alt: "Los hosts en el set" },
   { src: bts_metro, alt: "Metropolitano" },
+  { src: hostsMentor.url, alt: "Los hosts con un mentor" },
   { src: extra3.url, alt: "Backstage" },
   { src: bts_signPen, alt: "Detalle de firma" },
+  { src: guestPortrait2.url, alt: "Invitada al micrófono" },
   { src: bts_osasuna, alt: "Osasuna" },
   { src: extra4.url, alt: "Backstage" },
 ];
