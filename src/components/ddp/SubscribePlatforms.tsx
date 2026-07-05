@@ -32,34 +32,28 @@ const platforms = [
 
 export function SubscribePlatforms() {
   return (
-    <section className="py-20 md:py-28 bg-background border-t border-white/5">
+    <section className="py-28 md:py-40 bg-background border-t border-white/5">
       <div className="container-ddp text-center">
         <p className="eyebrow mb-6">Escúchalo donde quieras</p>
         <h2 className="display-lg text-foreground mx-auto max-w-4xl">
           Suscríbete en tu<br />plataforma favorita
         </h2>
-        <p className="mt-5 text-foreground/60 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
-          Nuevos episodios cada semana. Elige la app que ya usas y no te
-          pierdas ninguna conversación.
-        </p>
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
+        <div className="mt-16 md:mt-24 flex flex-col sm:flex-row items-center justify-center gap-14 sm:gap-20 md:gap-28">
           {platforms.map(({ name, href, Icon }) => (
             <a
               key={name}
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="group relative flex flex-col items-center justify-center gap-4 py-10 px-6 bg-card border border-white/10 rounded-sm hover:border-primary hover:bg-white/[0.02] transition-all duration-300"
+              aria-label={`Escuchar en ${name}`}
+              className="group flex flex-col items-center gap-5 text-foreground/70 hover:text-foreground transition-colors"
             >
-              <span className="text-foreground/85 group-hover:text-primary transition-colors">
-                <Icon size={44} />
+              <span className="transition-transform duration-500 group-hover:scale-105">
+                <Icon size={72} />
               </span>
-              <span className="font-display font-bold uppercase tracking-tight text-xl text-foreground">
+              <span className="font-display font-bold uppercase tracking-[0.15em] text-sm">
                 {name}
-              </span>
-              <span className="text-[10px] tracking-[0.28em] uppercase text-foreground/45 group-hover:text-foreground/70 transition-colors">
-                Escuchar →
               </span>
             </a>
           ))}

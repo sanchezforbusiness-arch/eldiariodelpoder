@@ -1,9 +1,7 @@
 import { Youtube, ArrowUpRight } from "lucide-react";
 import g1 from "@/assets/guest-1.webp";
-import g4 from "@/assets/guest-4.webp";
 import g5 from "@/assets/guest-5.webp";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
-import echavarrenImg from "@/assets/guest-echavarren.webp";
 
 const SPOTIFY_SHOW = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 const APPLE_SHOW = "https://podcasts.apple.com/es/podcast/diario-del-poder/id1741454034";
@@ -57,22 +55,6 @@ const episodes: Ep[] = [
     img: g5,
     yt: "https://youtu.be/2XZuIBfyBH0",
   },
-  {
-    guest: "Andrés Rodríguez",
-    role: "Presidente de Forbes España",
-    title: "Forbes, lujo y poder",
-    desc: "Un editor histórico sobre construir una marca de referencia y sentar a la élite en la mesa.",
-    img: g4,
-    yt: "https://youtu.be/nTtgtxG7UNs",
-  },
-  {
-    guest: "Mikel Echavarren",
-    role: "CEO Colliers España",
-    title: "Real estate, ciclos y dinero inteligente",
-    desc: "El mapa del capital que mueve las ciudades. Ciclos, oportunidades y decisiones bajo presión.",
-    img: echavarrenImg,
-    yt: "https://youtu.be/ARO5S1I5cg8",
-  },
 ];
 
 function Card({ e }: { e: Ep }) {
@@ -82,7 +64,7 @@ function Card({ e }: { e: Ep }) {
         href={e.yt}
         target="_blank"
         rel="noreferrer"
-        className="relative aspect-[4/5] overflow-hidden bg-muted block hover-cinema"
+        className="relative aspect-video overflow-hidden bg-muted block hover-cinema"
       >
         <img
           src={e.img}
@@ -95,24 +77,24 @@ function Card({ e }: { e: Ep }) {
           className="absolute inset-0 opacity-90"
           style={{
             background:
-              "linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.85) 100%)",
+              "linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.88) 100%)",
           }}
         />
-        <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 z-10">
-          <p className="text-[10px] tracking-[0.24em] uppercase text-primary mb-2">
-            Episodio · {e.role}
-          </p>
-          <h3 className="font-display font-black uppercase text-2xl md:text-[1.75rem] leading-[0.95] text-white">
+        <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 z-10">
+          <h3 className="font-display font-black uppercase text-2xl md:text-3xl leading-[0.95] text-white tracking-tight">
             {e.guest}
           </h3>
         </div>
       </a>
 
       <div className="flex-1 flex flex-col p-5 md:p-6">
+        <p className="text-[10px] tracking-[0.24em] uppercase text-foreground/55 mb-3">
+          {e.role}
+        </p>
         <h4 className="font-display font-bold uppercase text-lg md:text-xl leading-[1.05] text-foreground">
           {e.title}
         </h4>
-        <p className="mt-3 text-sm text-foreground/65 leading-relaxed line-clamp-3">
+        <p className="mt-3 text-sm text-foreground/65 leading-relaxed line-clamp-2">
           {e.desc}
         </p>
 
@@ -165,26 +147,27 @@ export function TopEpisodes() {
   return (
     <section id="episodes" className="py-20 md:py-28 bg-background border-t border-white/5">
       <div className="container-ddp">
-        <div className="flex items-end justify-between gap-6 mb-10 md:mb-14">
-          <div>
-            <p className="eyebrow mb-4">Los episodios</p>
-            <h2 className="display-lg text-foreground">
-              Los más<br />escuchados
-            </h2>
-          </div>
-          <a
-            href="/episodios"
-            className="hidden sm:inline-flex btn-outline btn-sm items-center gap-2"
-          >
-            Ver todos
-            <ArrowUpRight size={14} strokeWidth={1.8} />
-          </a>
+        <div className="mb-10 md:mb-14">
+          <p className="eyebrow mb-4">Los episodios</p>
+          <h2 className="display-lg text-foreground">
+            Los más<br />escuchados
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {episodes.map((e) => (
             <Card key={e.title} e={e} />
           ))}
+        </div>
+
+        <div className="mt-12 md:mt-16 flex justify-center">
+          <a
+            href="/episodios"
+            className="btn-primary items-center gap-2 min-h-[52px]"
+          >
+            Ver todos los episodios
+            <ArrowUpRight size={14} strokeWidth={1.8} />
+          </a>
         </div>
       </div>
     </section>

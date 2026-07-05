@@ -25,51 +25,102 @@ import guestPortrait1 from "@/assets/guest-portrait-1.jpeg.asset.json";
 import hostsSet from "@/assets/hosts-set.jpeg.asset.json";
 import hostsWithGuest from "@/assets/hosts-with-guest.jpeg.asset.json";
 
-type Shot = { src: string; alt: string };
+type Shot = { src: string; alt: string; name?: string; href?: string };
+
+const YT_CHANNEL = "https://www.youtube.com/@eldiariodelpoder";
+const EPISODIOS = "/episodios";
 
 const row1: Shot[] = [
-  { src: bts_aznarD, alt: "Aznar en Diálogos" },
-  { src: reinaLetizia.url, alt: "Saludo con S.M. la Reina Doña Letizia en la Universidad de Navarra" },
-  { src: bts_lasso, alt: "Guillermo Lasso" },
-  { src: hostMic1.url, alt: "Host al micrófono" },
-  { src: bts_andres, alt: "Andrés Rodríguez, Forbes" },
-  { src: setGuest1.url, alt: "Grabación en el set con invitada" },
-  { src: bts_hosts, alt: "Hosts en el palco" },
-  { src: bts_urbea, alt: "Jordi Urbea" },
-  { src: heroStudio, alt: "Estudio de grabación" },
+  { src: bts_aznarD, alt: "José María Aznar en Diálogos FAES", name: "Aznar", href: "https://youtu.be/ZydPM-xkYvA" },
+  { src: reinaLetizia.url, alt: "Saludo con S.M. la Reina Doña Letizia en la Universidad de Navarra", href: EPISODIOS },
+  { src: bts_lasso, alt: "Guillermo Lasso", name: "Lasso", href: "https://youtu.be/2XZuIBfyBH0" },
+  { src: hostMic1.url, alt: "Host al micrófono", href: EPISODIOS },
+  { src: bts_andres, alt: "Andrés Rodríguez", name: "A. Rodríguez", href: "https://youtu.be/nTtgtxG7UNs" },
+  { src: setGuest1.url, alt: "Grabación en el set", href: EPISODIOS },
+  { src: bts_hosts, alt: "Hosts en el palco", href: EPISODIOS },
+  { src: bts_urbea, alt: "Jordi Urbea", name: "J. Urbea", href: YT_CHANNEL },
+  { src: heroStudio, alt: "Estudio de grabación", href: EPISODIOS },
 ];
 const row2: Shot[] = [
-  { src: bts_aznarF, alt: "Aznar en FAES" },
-  { src: hostsWithGuest.url, alt: "Hosts con invitado" },
-  { src: bts_signHands, alt: "Firma de libro" },
-  { src: guestPortrait1.url, alt: "Invitada al micrófono" },
-  { src: bts_set, alt: "Set de grabación" },
-  { src: bts_mikel, alt: "Mikel en el palco" },
-  { src: extra1.url, alt: "Backstage" },
-  { src: bts_monitor, alt: "Aznar en monitor" },
-  { src: portraitHost, alt: "Retrato de host" },
+  { src: bts_aznarF, alt: "Aznar en FAES", name: "Aznar", href: "https://youtu.be/ZydPM-xkYvA" },
+  { src: hostsWithGuest.url, alt: "Hosts con invitado", href: EPISODIOS },
+  { src: bts_signHands, alt: "Firma de libro", href: EPISODIOS },
+  { src: guestPortrait1.url, alt: "Invitada al micrófono", href: EPISODIOS },
+  { src: bts_set, alt: "Set de grabación", href: EPISODIOS },
+  { src: bts_mikel, alt: "Mikel Echavarren", name: "M. Echavarren", href: "https://youtu.be/ARO5S1I5cg8" },
+  { src: extra1.url, alt: "Backstage", href: EPISODIOS },
+  { src: bts_monitor, alt: "Aznar en monitor", name: "Aznar", href: "https://youtu.be/ZydPM-xkYvA" },
+  { src: portraitHost, alt: "Retrato de host", href: EPISODIOS },
 ];
 const row3: Shot[] = [
-  { src: bts_aznarSign, alt: "Aznar firmando" },
-  { src: hostsSet.url, alt: "Los hosts en el set" },
-  { src: bts_metro, alt: "Metropolitano" },
-  { src: extra2.url, alt: "Backstage" },
-  { src: extra3.url, alt: "Backstage" },
-  { src: bts_signPen, alt: "Detalle de firma" },
-  { src: bts_osasuna, alt: "Osasuna" },
-  { src: extra4.url, alt: "Backstage" },
+  { src: bts_aznarSign, alt: "Aznar firmando", name: "Aznar", href: "https://youtu.be/ZydPM-xkYvA" },
+  { src: hostsSet.url, alt: "Los hosts en el set", href: EPISODIOS },
+  { src: bts_metro, alt: "Metropolitano", href: EPISODIOS },
+  { src: extra2.url, alt: "Backstage", href: EPISODIOS },
+  { src: extra3.url, alt: "Backstage", href: EPISODIOS },
+  { src: bts_signPen, alt: "Detalle de firma", href: EPISODIOS },
+  { src: bts_osasuna, alt: "Osasuna", href: EPISODIOS },
+  { src: extra4.url, alt: "Backstage", href: EPISODIOS },
 ];
+
+function Tile({ s }: { s: Shot }) {
+  const isExternal = s.href?.startsWith("http");
+  const inner = (
+    <>
+      <img
+        src={s.src}
+        alt={s.alt}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]"
+      />
+      {s.name && (
+        <>
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.75) 100%)",
+            }}
+          />
+          <span className="absolute left-3 bottom-2 md:left-4 md:bottom-3 font-display font-black uppercase leading-none text-white text-xl md:text-3xl tracking-tight">
+            {s.name}
+          </span>
+        </>
+      )}
+    </>
+  );
+  const cls =
+    "group relative shrink-0 block overflow-hidden bg-muted rounded-sm aspect-video";
+  const style = { width: "clamp(260px, 30vw, 440px)" } as const;
+  if (!s.href) {
+    return (
+      <figure className={cls} style={style}>
+        {inner}
+      </figure>
+    );
+  }
+  return (
+    <a
+      href={s.href}
+      {...(isExternal ? { target: "_blank", rel: "noreferrer" } : {})}
+      aria-label={s.name ? `Ver episodio con ${s.name}` : s.alt}
+      className={cls}
+      style={style}
+    >
+      {inner}
+    </a>
+  );
+}
 
 function Row({
   shots,
   direction = "left",
   speed = "normal",
-  height,
 }: {
   shots: Shot[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
-  height: string;
 }) {
   const dup = [...shots, ...shots];
   return (
@@ -82,19 +133,7 @@ function Row({
         ].join(" ")}
       >
         {dup.map((s, i) => (
-          <figure
-            key={i}
-            className={`relative shrink-0 overflow-hidden bg-muted rounded ${height}`}
-            style={{ width: "clamp(220px, 26vw, 380px)" }}
-          >
-            <img
-              src={s.src}
-              alt={s.alt}
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </figure>
+          <Tile key={i} s={s} />
         ))}
       </div>
     </div>
@@ -117,9 +156,9 @@ export function MovingMosaic() {
       </div>
 
       <div className="flex flex-col gap-3">
-        <Row shots={row1} direction="left" speed="normal" height="h-40 md:h-56" />
-        <Row shots={row2} direction="right" speed="slow" height="h-32 md:h-44" />
-        <Row shots={row3} direction="left" speed="fast" height="h-40 md:h-56" />
+        <Row shots={row1} direction="left" speed="normal" />
+        <Row shots={row2} direction="right" speed="slow" />
+        <Row shots={row3} direction="left" speed="fast" />
       </div>
     </section>
   );
