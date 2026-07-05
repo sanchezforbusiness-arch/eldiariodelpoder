@@ -1,24 +1,17 @@
 export function CredibilityStrip() {
   return (
-    <section aria-label="En medios" className="border-t border-b border-border bg-card">
-      <div className="container-ddp py-5 md:py-6">
-        <div className="flex flex-wrap items-center gap-x-6 md:gap-x-10 gap-y-3 text-[10px] md:text-[11px] tracking-[0.28em] uppercase text-muted-foreground">
-          <span className="text-foreground/60">En medios</span>
-          <span className="text-foreground font-medium tracking-[0.24em]">
-            La Vanguardia
-            <span className="ml-2 text-[9px] tracking-[0.2em] text-primary/80 normal-case">· media partner</span>
-          </span>
-          <span className="text-foreground/30">·</span>
-          <span>Antena 3</span>
-          <span className="text-foreground/30">·</span>
-          <span>La Sexta</span>
-          <span className="text-foreground/30">·</span>
-          <span>El Mundo</span>
-          <span className="text-foreground/30">·</span>
-          <span>Forbes España</span>
-          <span className="text-foreground/30">·</span>
-          <span>El Español</span>
-        </div>
+    <section aria-label="En medios" className="filete filete-b bg-background">
+      <div className="container-ddp py-4 md:py-5">
+        <p className="text-[10px] md:text-[11px] tracking-[0.26em] uppercase text-foreground/85 leading-relaxed">
+          <span className="text-foreground/55">Han hablado de nosotros:</span>{" "}
+          <span className="font-medium">La Vanguardia</span>{" "}
+          <span className="text-primary italic normal-case tracking-normal">— media partner</span>
+          <span className="text-foreground/30 mx-2">·</span>Antena 3
+          <span className="text-foreground/30 mx-2">·</span>La Sexta
+          <span className="text-foreground/30 mx-2">·</span>El Mundo
+          <span className="text-foreground/30 mx-2">·</span>Forbes España
+          <span className="text-foreground/30 mx-2">·</span>El Español
+        </p>
       </div>
     </section>
   );
