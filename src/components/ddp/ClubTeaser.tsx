@@ -5,15 +5,13 @@ import hosts from "@/assets/bts-hosts-palco.webp";
 
 export function ClubTeaser() {
   return (
-    <section id="club" className="relative border-t border-border overflow-hidden bg-card">
+    <section id="club" className="relative filete overflow-hidden bg-background">
       <div className="container-ddp py-16 md:py-24">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
-          <div className="md:col-span-7">
-            <span className="eyebrow inline-flex items-center gap-2 mb-5">
-              <KeyRound size={13} /> El Club del Poder
-            </span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.025em] text-foreground">
-              Una <span className="italic text-primary">comunidad</span> real.
+        <div className="kicker mb-10"><span className="kicker-num">Sección 06</span><span>El Club del Poder</span></div>
+        <div className="grid grid-cols-12 gap-10 md:gap-14 items-start">
+          <div className="col-span-12 md:col-span-7">
+            <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.03em] text-foreground">
+              Una <span className="italic text-primary">comunidad</span><br/>real.
             </h2>
             <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
               No una red de contactos. Una mesa común para quienes están cambiando lo que viene. Acceso por invitación.
@@ -37,10 +35,13 @@ export function ClubTeaser() {
               <ArrowUpRight size={14} />
             </Link>
           </div>
-          <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden border border-border bg-muted">
-              <img src={hosts} alt="Hosts en el palco del Metropolitano" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="col-span-12 md:col-span-5 md:pl-10 md:col-rule-l">
+            <div className="group relative aspect-[4/5] overflow-hidden bg-muted">
+              <img src={hosts} alt="Hosts en el palco del Metropolitano" loading="lazy" decoding="async" className="photo-bw absolute inset-0 w-full h-full object-cover" />
             </div>
+            <p className="mt-3 text-[10px] tracking-[0.24em] uppercase text-foreground/55">
+              Alejandro Sánchez y Víctor Gandarilla — palco del Metropolitano
+            </p>
           </div>
         </div>
       </div>
