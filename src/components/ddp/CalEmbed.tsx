@@ -22,6 +22,9 @@ export function CalInlineEmbed() {
             "cal-border-subtle": "rgba(20,20,20,0.15)",
             "cal-border-booker": "#141414",
           },
+          dark: {
+            "cal-brand": "#6E1423",
+          },
         },
         hideEventTypeDetails: false,
         layout: "month_view",
