@@ -142,7 +142,12 @@ function Hero() {
             que están dejando huella.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#agenda" className="btn-primary">
+            <a
+              href={CAL_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
               Reservar una llamada
               <ArrowUpRight size={14} />
             </a>
