@@ -65,7 +65,7 @@ export function Hero() {
 
             <h1 className="font-serif text-[3rem] sm:text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-[-0.035em] font-light text-foreground headline-mask">
               <span><span>La voz</span></span>
-              <span><span>del <em className="italic text-primary not-italic" style={{ fontStyle: "italic" }}>legado</em>.</span></span>
+              <span><span>del <em className="italic not-italic text-duotone" style={{ fontStyle: "italic" }}>legado</em>.</span></span>
             </h1>
 
             <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-xl text-foreground/75 leading-relaxed">
