@@ -235,6 +235,18 @@ function PrensaPage() {
                 contactoeldiariodelpoder@gmail.com
               </a>
             </p>
+            <p className="mt-6 text-base md:text-lg text-foreground/75 max-w-2xl mx-auto">
+              O si lo prefiere,{" "}
+              <a
+                href="https://cal.com/el-diario-del-poder-wwdlhf"
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary underline decoration-primary/40 underline-offset-[4px] hover:decoration-primary"
+              >
+                reserve directamente una llamada con nuestro equipo
+              </a>
+              .
+            </p>
           </div>
         </section>
 

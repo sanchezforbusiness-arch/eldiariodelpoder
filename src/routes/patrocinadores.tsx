@@ -3,6 +3,7 @@ import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
+import { CalInlineEmbed, CAL_URL } from "@/components/ddp/CalEmbed";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
 export const Route = createFileRoute("/patrocinadores")({
@@ -103,6 +104,7 @@ function PatrocinadoresPage() {
         <Tiers />
         <TrustedBy />
         <Contact />
+        <BookCall />
       </main>
       <Footer />
     </div>
@@ -140,9 +142,12 @@ function Hero() {
             que están dejando huella.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#contacto" className="btn-primary">
-              Hablar con el equipo
+            <a href="#agenda" className="btn-primary">
+              Reservar una llamada
               <ArrowUpRight size={14} />
+            </a>
+            <a href="#contacto" className="btn-outline">
+              Hablar con el equipo
             </a>
             <a href="#opciones" className="btn-outline">
               Ver opciones
@@ -316,6 +321,36 @@ function Contact() {
               contactoeldiariodelpoder@gmail.com
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BookCall() {
+  return (
+    <section id="agenda" className="py-20 md:py-28 border-t border-foreground">
+      <div className="container-ddp">
+        <div className="text-[10px] tracking-[0.36em] uppercase text-primary mb-6">
+          Agenda — Hablemos
+        </div>
+        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end mb-10 md:mb-14">
+          <h2 className="md:col-span-8 font-serif text-4xl md:text-6xl leading-[0.98] tracking-[-0.02em]">
+            Una llamada. <span className="italic">Sin compromiso.</span>
+          </h2>
+          <p className="md:col-span-4 text-foreground/75 leading-relaxed">
+            Elija el hueco que mejor le venga. Treinta minutos para conocerse y explorar cómo tiene sentido colaborar.
+          </p>
+        </div>
+
+        <div className="filete-double p-3 md:p-6 bg-background">
+          <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/60 flex items-center justify-between mb-4 px-2">
+            <span>Anuncio · Reserva de llamada</span>
+            <a href={CAL_URL} target="_blank" rel="noreferrer" className="text-primary hover:underline">
+              Abrir en cal.com ↗
+            </a>
+          </div>
+          <CalInlineEmbed />
         </div>
       </div>
     </section>

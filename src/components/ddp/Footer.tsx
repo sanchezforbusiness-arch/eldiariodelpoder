@@ -38,8 +38,16 @@ export function Footer() {
           </div>
           <div className="min-w-0">
             <h4 className="text-[10px] tracking-[0.28em] uppercase text-foreground/70 mb-4">Contacto</h4>
-            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground press-underline break-all">
+            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="block text-xs sm:text-sm text-foreground press-underline break-all">
               contactoeldiariodelpoder@gmail.com
+            </a>
+            <a
+              href="https://cal.com/el-diario-del-poder-wwdlhf"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-block text-xs sm:text-sm text-primary hover:underline"
+            >
+              Reservar una llamada
             </a>
           </div>
           <div>
