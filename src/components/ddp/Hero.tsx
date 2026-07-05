@@ -122,10 +122,10 @@ export function Hero() {
               <Stamp className="w-16 h-16 opacity-80" />
             </div>
 
-            <div className="relative h-[520px] lg:h-[600px]">
+            <div className="relative h-[640px] lg:h-[720px]">
               {/* main — Aznar */}
               <figure
-                className="curtain absolute left-0 top-0 w-[68%] z-20"
+                className="curtain absolute left-0 top-0 w-[70%] z-20"
                 style={{ transform: "rotate(-1.2deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
@@ -135,7 +135,7 @@ export function Hero() {
                     alt={collage[0].alt}
                     fetchPriority="high"
                     decoding="async"
-                    className="block w-full h-[320px] lg:h-[380px] object-cover photo-bw"
+                    className="block w-full h-[340px] lg:h-[400px] object-cover photo-bw"
                   />
                 </div>
                 <figcaption className="press-caption">{collage[0].caption}</figcaption>
@@ -143,7 +143,7 @@ export function Hero() {
 
               {/* Queen Letizia */}
               <figure
-                className="curtain absolute right-0 top-24 w-[44%] z-30"
+                className="curtain absolute right-0 top-56 lg:top-64 w-[42%] z-30"
                 style={{ transform: "rotate(1.4deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
@@ -153,7 +153,8 @@ export function Hero() {
                     alt={collage[1].alt}
                     loading="lazy"
                     decoding="async"
-                    className="block w-full h-[200px] lg:h-[230px] object-cover photo-bw"
+                    className="block w-full h-[190px] lg:h-[220px] object-cover photo-bw"
+                    style={{ objectPosition: "50% 25%" }}
                   />
                 </div>
                 <figcaption className="press-caption">{collage[1].caption}</figcaption>
@@ -161,7 +162,7 @@ export function Hero() {
 
               {/* Lasso */}
               <figure
-                className="curtain absolute left-4 bottom-4 w-[40%] z-10"
+                className="curtain absolute left-6 bottom-0 w-[42%] z-10"
                 style={{ transform: "rotate(-0.6deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
@@ -171,7 +172,7 @@ export function Hero() {
                     alt={collage[2].alt}
                     loading="lazy"
                     decoding="async"
-                    className="block w-full h-[190px] lg:h-[210px] object-cover photo-bw"
+                    className="block w-full h-[200px] lg:h-[220px] object-cover photo-bw"
                   />
                 </div>
                 <figcaption className="press-caption">{collage[2].caption}</figcaption>
@@ -179,7 +180,7 @@ export function Hero() {
 
               {/* Hosts in set */}
               <figure
-                className="curtain absolute right-6 bottom-0 w-[38%] z-20"
+                className="curtain absolute right-2 bottom-6 w-[38%] z-20"
                 style={{ transform: "rotate(1.8deg)" }}
               >
                 <div className="relative border border-foreground bg-background">
@@ -189,7 +190,7 @@ export function Hero() {
                     alt={collage[3].alt}
                     loading="lazy"
                     decoding="async"
-                    className="block w-full h-[170px] lg:h-[190px] object-cover photo-bw"
+                    className="block w-full h-[160px] lg:h-[180px] object-cover photo-bw"
                   />
                 </div>
                 <figcaption className="press-caption">{collage[3].caption}</figcaption>
