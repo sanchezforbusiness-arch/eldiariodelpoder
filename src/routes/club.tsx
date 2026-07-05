@@ -89,7 +89,7 @@ function Hero() {
       <div className="container-ddp relative grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-7 fade-up">
           <span className="eyebrow block mb-6">El Club del Poder</span>
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
+          <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
             Una comunidad<br /> que se cuida.
           </h1>
           <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
@@ -120,7 +120,7 @@ function Pillars() {
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-12 md:p-16 text-center">
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-4">{p.n}</p>
-              <h2 className="font-serif text-4xl md:text-5xl ">{p.t}</h2>
+              <h2 className="font-display text-4xl md:text-5xl ">{p.t}</h2>
             </div>
           ))}
         </div>
@@ -135,7 +135,7 @@ function Gallery() {
     <section className="py-20 md:py-28 border-t border-border overflow-hidden">
       <div className="container-ddp mb-10">
         <span className="eyebrow block mb-5">El Club por dentro</span>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl">
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl">
           Lo que <span className="">no se publica</span>.
         </h2>
       </div>
@@ -160,7 +160,7 @@ function Philosophy() {
         <span className="eyebrow block mb-8">Filosofía</span>
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 reveal-stagger">
           {philosophy.map((p, i) => (
-            <p key={i} className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.15] font-light border-l-2 border-gold/60 pl-6">
+            <p key={i} className="font-display text-2xl md:text-3xl lg:text-4xl leading-[1.15] font-light border-l-2 border-gold/60 pl-6">
               {p}
             </p>
           ))}
@@ -176,7 +176,7 @@ function Apply() {
     <section id="apply" className="py-24 md:py-36 border-t border-border">
       <div className="container-ddp max-w-3xl">
         <span className="eyebrow block mb-5">Solicita tu acceso</span>
-        <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light">
+        <h2 className="font-display text-5xl md:text-6xl leading-[0.98] font-light">
           Cuéntanos <span className="">quién eres</span>.
         </h2>
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl">
@@ -185,7 +185,7 @@ function Apply() {
 
         {submitted ? (
           <div className="mt-10 border border-gold/40 bg-card/40 p-8">
-            <p className="font-serif text-2xl">Gracias. Te hemos leído.</p>
+            <p className="font-display text-2xl">Gracias. Te hemos leído.</p>
             <p className="mt-2 text-sm text-muted-foreground">Te escribimos en 5–7 días, sin prisa.</p>
           </div>
         ) : (
@@ -233,7 +233,7 @@ function FAQ() {
               <div key={f.q} className="border-b border-border">
                 <button onClick={() => setOpen(active ? null : i)} aria-expanded={active}
                   className="w-full flex items-center justify-between gap-6 py-6 text-left group">
-                  <span className="font-serif text-xl md:text-2xl group-hover:text-gold transition-colors">{f.q}</span>
+                  <span className="font-display text-xl md:text-2xl group-hover:text-gold transition-colors">{f.q}</span>
                   {active ? <Minus size={18} className="text-gold shrink-0" /> : <Plus size={18} className="text-gold shrink-0" />}
                 </button>
                 {active && <p className="pb-6 pr-10 text-sm md:text-base text-muted-foreground leading-relaxed">{f.a}</p>}

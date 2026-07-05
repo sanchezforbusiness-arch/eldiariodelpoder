@@ -14,7 +14,7 @@ export function About() {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-stretch">
           <div className="md:col-span-6 reveal">
             <span className="eyebrow block mb-7">Quiénes somos</span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
+            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
               Donde quienes <span className="">deciden</span><br />
               se sientan a contarlo.
             </h2>
@@ -27,7 +27,7 @@ export function About() {
               {pillars.map((p) => (
                 <div key={p.n} className="border-t border-border pt-4">
                   <span className="text-[10px] tracking-[0.22em] uppercase text-gold/80">{p.n}</span>
-                  <h3 className="font-serif text-xl md:text-2xl mt-2">{p.t}</h3>
+                  <h3 className="font-display text-xl md:text-2xl mt-2">{p.t}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{p.d}</p>
                 </div>
               ))}
@@ -46,7 +46,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Fundador</p>
-                  <p className="font-serif text-xl mt-1">Alejandro</p>
+                  <p className="font-display text-xl mt-1">Alejandro</p>
                 </div>
               </div>
               <div className="relative aspect-[3/4] overflow-hidden hover-cinema">
@@ -59,7 +59,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">Fundador</p>
-                  <p className="font-serif text-xl mt-1">Víctor</p>
+                  <p className="font-display text-xl mt-1">Víctor</p>
                 </div>
               </div>
             </div>
