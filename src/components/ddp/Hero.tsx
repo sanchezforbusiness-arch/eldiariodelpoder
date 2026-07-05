@@ -4,11 +4,14 @@ import { Play, Youtube } from "lucide-react";
 import { Stamp } from "@/components/ddp/Stamp";
 import { Eq } from "@/components/ddp/Eq";
 import queenAsset from "@/assets/backstage-extra-2.jpeg.asset.json";
+import aznarImg from "@/assets/bts-aznar-dialogos.webp";
+import lassoImg from "@/assets/bts-guillermo-lasso.webp";
+import hostsImg from "@/assets/bts-hosts-palco.webp";
 
 // Real photos = credibility. Editorial newsprint collage.
 const collage = [
   {
-    src: "/src/assets/bts-aznar-dialogos.webp",
+    src: aznarImg,
     alt: "José María Aznar en Diálogos",
     caption: "Aznar · en Diálogos",
     rotate: -1.5,
@@ -21,13 +24,13 @@ const collage = [
     rotate: 1.2,
   },
   {
-    src: "/src/assets/bts-guillermo-lasso.webp",
+    src: lassoImg,
     alt: "Guillermo Lasso en Diario del Poder",
     caption: "Lasso · gobernar en crisis",
     rotate: -0.8,
   },
   {
-    src: "/src/assets/bts-hosts-palco.webp",
+    src: hostsImg,
     alt: "Los hosts de Diario del Poder en set",
     caption: "Redacción · en set",
     rotate: 1.6,
