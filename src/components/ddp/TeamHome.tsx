@@ -7,7 +7,6 @@ type Person = { name: string; role: string; img?: string; initials?: string };
 const team: Person[] = [
   { name: "Alejandro Sánchez Martínez", role: "Cofundador · Director editorial", img: founderAlejandro },
   { name: "Víctor Hugo Gandarilla de Andrés", role: "Cofundador · Operaciones", img: founderVictor },
-  { name: "Carla Palos de la Rosa", role: "Edición de contenido", initials: "CP" },
 ];
 
 const advisory: Person[] = [
