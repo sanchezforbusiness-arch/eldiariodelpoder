@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Youtube, ChevronDown } from "lucide-react";
-import { Eq } from "@/components/ddp/Eq";
+import { ChevronDown } from "lucide-react";
 import heroDesktop from "@/assets/hero-hosts-set.jpg.asset.json";
 import heroMobile from "@/assets/hero-hosts-set.jpg.asset.json";
 
@@ -22,7 +21,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] flex items-center overflow-hidden bg-background"
+      className="relative min-h-[100svh] flex items-end sm:items-center overflow-hidden bg-background"
     >
       {/* Cinematic background */}
       <div ref={bgRef} className="absolute inset-0 will-change-transform">
@@ -34,7 +33,7 @@ export function Hero() {
             fetchPriority="high"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "50% 40%", opacity: 0.5 }}
+            style={{ objectPosition: "50% 40%", opacity: 0.32 }}
           />
         </picture>
         {/* Vignette / gradient layers */}
@@ -42,57 +41,29 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 80% at 50% 40%, rgba(12,12,14,0.35) 0%, rgba(12,12,14,0.75) 55%, rgba(12,12,14,0.98) 100%)",
+              "radial-gradient(120% 80% at 50% 45%, rgba(12,12,14,0.55) 0%, rgba(12,12,14,0.85) 55%, rgba(12,12,14,1) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(12,12,14,0.55) 0%, rgba(12,12,14,0.15) 30%, rgba(12,12,14,0.85) 100%)",
+              "linear-gradient(180deg, rgba(12,12,14,0.7) 0%, rgba(12,12,14,0.35) 40%, rgba(12,12,14,0.95) 100%)",
           }}
         />
       </div>
 
-      <div className="container-ddp relative z-10 pt-32 md:pt-44 pb-24 md:pb-32 w-full">
-        <div className="max-w-[1200px]">
-          <p className="eyebrow mb-6 md:mb-8">El podcast — Madrid</p>
+      <div className="container-ddp relative z-10 pt-32 md:pt-40 pb-32 md:pb-40 w-full text-center">
+        <p className="eyebrow mb-8 md:mb-10">El podcast — Madrid</p>
 
-          <h1 className="display-xl text-foreground headline-mask">
-            <span><span>Diario</span></span>
-            <span><span>del Poder</span></span>
-          </h1>
+        <h1 className="headline-mask font-display font-black uppercase leading-[0.85] tracking-tight text-foreground text-[clamp(3.2rem,14vw,12rem)]">
+          <span><span>Diario</span></span>
+          <span><span>del Poder</span></span>
+        </h1>
 
-          <div className="mt-8 md:mt-10 grid md:grid-cols-12 gap-6 md:gap-10 items-end">
-            <p className="md:col-span-7 font-display text-2xl md:text-4xl font-medium tracking-tight text-foreground/85 uppercase leading-tight">
-              La voz del <span className="italic font-serif font-normal normal-case">legado</span>.
-            </p>
-            <p className="md:col-span-5 text-base md:text-lg text-foreground/70 leading-relaxed">
-              Conversaciones sin filtro con las personas que han definido la política, la empresa y la cultura.
-            </p>
-          </div>
-
-          <div className="mt-10 md:mt-12 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
-            <a
-              href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary items-center gap-3 w-full sm:w-auto min-h-[52px]"
-            >
-              <Eq />
-              Escuchar en Spotify
-            </a>
-            <a
-              href="https://www.youtube.com/@eldiariodelpoder"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-outline w-full sm:w-auto min-h-[52px]"
-            >
-              <Youtube size={16} strokeWidth={1.5} />
-              Ver en YouTube
-            </a>
-          </div>
-        </div>
+        <p className="mt-10 md:mt-12 font-display text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-foreground/85 uppercase">
+          La voz del <span className="italic font-serif font-normal normal-case">legado</span>.
+        </p>
       </div>
 
       {/* Scroll indicator */}
