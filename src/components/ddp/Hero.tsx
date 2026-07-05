@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Youtube, ChevronDown } from "lucide-react";
 import { Eq } from "@/components/ddp/Eq";
-import heroDesktop from "@/assets/hero-portada-nueva.jpg.asset.json";
-import heroMobile from "@/assets/hero-mobile.jpg.asset.json";
+import heroDesktop from "@/assets/hero-hosts-set.jpg.asset.json";
+import heroMobile from "@/assets/hero-hosts-set.jpg.asset.json";
 
 export function Hero() {
   const bgRef = useRef<HTMLDivElement | null>(null);
