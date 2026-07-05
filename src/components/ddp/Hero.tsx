@@ -1,6 +1,8 @@
 import heroAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
 import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
 import { Play, Youtube } from "lucide-react";
+import { Stamp } from "@/components/ddp/Stamp";
+import { Eq } from "@/components/ddp/Eq";
 
 export function Hero() {
   return (
@@ -29,8 +31,9 @@ export function Hero() {
           <div className="col-span-12 md:col-span-8">
             <div className="kicker mb-8"><span className="kicker-num">Nº 24</span><span>Edición · Madrid · Podcast</span></div>
 
-            <h1 className="font-serif text-[3rem] sm:text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-[-0.035em] font-light text-foreground">
-              La voz<br/>del <span className="italic text-primary">legado</span>.
+            <h1 className="font-serif text-[3rem] sm:text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-[-0.035em] font-light text-foreground headline-mask">
+              <span><span>La voz</span></span>
+              <span><span>del <em className="italic text-primary not-italic" style={{ fontStyle: "italic" }}>legado</em>.</span></span>
             </h1>
 
             <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-xl text-foreground/75 leading-relaxed">
@@ -42,9 +45,9 @@ export function Hero() {
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
-              className="btn-primary"
+              className="btn-primary items-center gap-3"
             >
-              <Play size={13} className="fill-current" />
+              <Eq className="text-primary-foreground" />
               Escuchar en Spotify
             </a>
             <a
@@ -59,7 +62,10 @@ export function Hero() {
             </div>
           </div>
           <div className="hidden md:block col-span-4 pl-8 col-rule-l">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-foreground/60 mb-3">Sumario</p>
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-foreground/60">Sumario</p>
+              <Stamp className="w-20 h-20 -mt-2 opacity-80" />
+            </div>
             <ul className="space-y-2 text-sm text-foreground/85 font-serif leading-snug">
               <li className="border-b border-foreground/15 pb-2">Jordi Juan — la teoría de los cajones</li>
               <li className="border-b border-foreground/15 pb-2">Andrés Rodríguez — Forbes y poder</li>
