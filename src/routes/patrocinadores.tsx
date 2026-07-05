@@ -334,43 +334,34 @@ function Contact() {
 
 function BookCall() {
   return (
-    <section id="agenda" className="py-20 md:py-28 border-t border-foreground">
+    <section id="agenda" className="py-20 md:py-28 border-t border-white/10">
       <div className="container-ddp">
-        <div className="text-[10px] tracking-[0.36em] uppercase text-primary mb-6">
-          Agenda — Hablemos
-        </div>
+        <p className="eyebrow mb-6">Agenda</p>
         <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end mb-10 md:mb-14">
-          <h2 className="md:col-span-8 font-serif text-4xl md:text-6xl leading-[0.98] tracking-[-0.02em]">
-            Una llamada. <span className="italic">Sin compromiso.</span>
+          <h2 className="md:col-span-8 display-lg text-foreground">
+            Una llamada.<br />Sin compromiso.
           </h2>
-          <p className="md:col-span-4 text-foreground/75 leading-relaxed">
-            Elija el hueco que mejor le venga. Treinta minutos para conocerse y explorar cómo tiene sentido colaborar.
+          <p className="md:col-span-4 text-foreground/70 leading-relaxed">
+            Treinta minutos para conocernos y explorar cómo tiene sentido colaborar.
           </p>
         </div>
 
-        <div className="filete-double paper-warm p-8 md:p-14">
-          <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/60 flex items-center justify-between mb-10 pb-4 border-b border-foreground/25">
-            <span>Anuncio · Reserva de llamada</span>
-            <span className="text-primary">§ Cal.com</span>
-          </div>
-
+        <div className="bg-card border border-white/10 rounded-md p-8 md:p-14">
           <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
             <div className="md:col-span-7">
-              <p className="text-[11px] tracking-[0.32em] uppercase text-primary mb-5">
-                Reserva directa
-              </p>
-              <p className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.02em]">
+              <p className="eyebrow mb-5">Reserva directa</p>
+              <h3 className="display-md text-foreground">
                 Elija su hueco.<br />
-                <span className="italic text-duotone">Confirmado al instante.</span>
-              </p>
-              <ul className="mt-8 space-y-2 font-serif text-lg md:text-xl text-foreground/85 leading-snug">
-                <li className="flex items-baseline gap-3"><span className="text-primary">§</span> 30 minutos</li>
-                <li className="flex items-baseline gap-3"><span className="text-primary">§</span> Videollamada</li>
-                <li className="flex items-baseline gap-3"><span className="text-primary">§</span> Elija usted el horario</li>
+                <span className="text-primary">Confirmado al instante.</span>
+              </h3>
+              <ul className="mt-8 space-y-3 text-base md:text-lg text-foreground/80">
+                <li className="flex items-baseline gap-3"><span className="w-1 h-1 rounded-full bg-primary translate-y-[-3px]" /> 30 minutos</li>
+                <li className="flex items-baseline gap-3"><span className="w-1 h-1 rounded-full bg-primary translate-y-[-3px]" /> Videollamada</li>
+                <li className="flex items-baseline gap-3"><span className="w-1 h-1 rounded-full bg-primary translate-y-[-3px]" /> Elige tú el horario</li>
               </ul>
             </div>
 
-            <div className="md:col-span-5 md:border-l md:border-foreground/25 md:pl-14">
+            <div className="md:col-span-5 md:border-l md:border-white/10 md:pl-14">
               <a
                 href={CAL_URL}
                 target="_blank"
@@ -379,17 +370,9 @@ function BookCall() {
               >
                 Reservar una llamada
               </a>
-              <p className="mt-5 text-xs text-foreground/60 leading-relaxed">
-                Se abrirá el calendario de Diario del Poder en una nueva pestaña. Sin registros ni fricción.
+              <p className="mt-5 text-xs text-foreground/55 leading-relaxed">
+                Se abrirá nuestro calendario en una nueva pestaña. Sin registros.
               </p>
-              <a
-                href={CAL_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-block text-[10px] tracking-[0.28em] uppercase text-primary press-underline"
-              >
-                Abrir cal.com/el-diario-del-poder ↗
-              </a>
             </div>
           </div>
         </div>
