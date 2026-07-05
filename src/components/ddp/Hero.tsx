@@ -70,19 +70,19 @@ export function Hero() {
 
           <div className="mt-8 md:mt-10 grid md:grid-cols-12 gap-6 md:gap-10 items-end">
             <p className="md:col-span-7 font-display text-2xl md:text-4xl font-medium tracking-tight text-foreground/85 uppercase leading-tight">
-              La voz del <span className="italic font-serif font-normal text-primary normal-case">legado</span>.
+              La voz del <span className="italic font-serif font-normal text-legado normal-case">legado</span>.
             </p>
             <p className="md:col-span-5 text-base md:text-lg text-foreground/70 leading-relaxed">
               Conversaciones sin filtro con las personas que han definido la política, la empresa y la cultura.
             </p>
           </div>
 
-          <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-10 md:mt-12 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
-              className="btn-primary items-center gap-3"
+              className="btn-primary items-center gap-3 w-full sm:w-auto min-h-[52px]"
             >
               <Eq />
               Escuchar en Spotify
@@ -91,9 +91,9 @@ export function Hero() {
               href="https://www.youtube.com/@eldiariodelpoder"
               target="_blank"
               rel="noreferrer"
-              className="btn-outline"
+              className="btn-outline w-full sm:w-auto min-h-[52px]"
             >
-              <Youtube size={16} strokeWidth={1.6} />
+              <Youtube size={16} strokeWidth={1.5} />
               Ver en YouTube
             </a>
           </div>
