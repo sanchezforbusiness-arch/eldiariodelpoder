@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Play } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import { Ticker } from "@/components/ddp/Ticker";
+import { Eq } from "@/components/ddp/Eq";
 
 type NavLink = { to: string; label: string; hash?: string };
 const links: NavLink[] = [
@@ -68,9 +70,9 @@ export function Navbar() {
               href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
               target="_blank"
               rel="noreferrer"
-              className="btn-primary btn-sm hidden sm:inline-flex"
+              className="btn-primary btn-sm hidden sm:inline-flex items-center gap-2"
             >
-              <Play size={12} className="fill-current" />
+              <Eq className="text-primary-foreground" />
               Escuchar
             </a>
             <button onClick={() => setOpen((v) => !v)} className="lg:hidden text-foreground p-2" aria-label="Menu">
@@ -79,6 +81,7 @@ export function Navbar() {
               <div className="w-3 h-px bg-current ml-auto" />
             </button>
           </div>
+          <Ticker />
         </div>
       ) : (
         <>
@@ -122,9 +125,9 @@ export function Navbar() {
                 href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-primary btn-sm hidden sm:inline-flex"
+                className="btn-primary btn-sm hidden sm:inline-flex items-center gap-2"
               >
-                <Play size={12} className="fill-current" />
+                <Eq className="text-primary-foreground" />
                 Escuchar
               </a>
               <button onClick={() => setOpen((v) => !v)} className="lg:hidden text-foreground p-2" aria-label="Menu">
@@ -135,6 +138,7 @@ export function Navbar() {
             </div>
             <div className="filete-b" />
           </div>
+          <Ticker />
         </>
       )}
 
