@@ -38,7 +38,7 @@
 }
 
 :root {
-  --radius: 0.125rem;
+  --radius: 0;
   /* Diario del Poder — editorial paper + burdeos ink */
   --background: #FAF7F2;
   --background-alt: #F2ECE0;
@@ -57,8 +57,8 @@
   --accent-foreground: #FAF7F2;
   --destructive: #B00020;
   --destructive-foreground: #FAF7F2;
-  --border: #E8E2D6;
-  --input: #E8E2D6;
+  --border: rgba(20,20,20,0.18);
+  --input: rgba(20,20,20,0.22);
   --ring: #6E1423;
   /* Legacy "gold/ember" tokens remapped to burdeos so existing class names keep working */
   --gold: #6E1423;
@@ -70,6 +70,10 @@
 
 @layer base {
   * { border-color: var(--color-border); }
+  /* Kill every rounded corner globally — editorial press has no chamfers */
+  *, *::before, *::after { border-radius: 0 !important; }
+  /* Kill diffuse shadows across the board */
+  * { box-shadow: none !important; }
 
   html { scroll-behavior: smooth; }
 
@@ -131,12 +135,74 @@
 
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.36em;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--color-gold-bright);
+    color: var(--color-foreground);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-foreground);
   }
+
+  /* ===== Editorial press utilities ===== */
+  .filete { border-top: 1px solid var(--color-foreground); }
+  .filete-b { border-bottom: 1px solid var(--color-foreground); }
+  .filete-double {
+    border-top: 1px solid var(--color-foreground);
+    box-shadow: 0 3px 0 -2px var(--color-foreground) !important;
+  }
+  .rule-strong { height: 3px; background: var(--color-foreground); }
+  .rule-hair { height: 1px; background: var(--color-foreground); }
+
+  /* Section kicker: "SECCIÓN 01 — TÍTULO" over a hairline */
+  .kicker {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+  }
+  .kicker-num { color: var(--color-primary); }
+
+  /* Drop cap for long-form intro paragraphs */
+  .drop-cap::first-letter {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: 5.2em;
+    line-height: 0.82;
+    float: left;
+    padding: 0.05em 0.12em 0 0;
+    color: var(--color-primary);
+  }
+
+  /* Press-style underline: hairline, offset, burdeos, text stays black */
+  .press-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  /* Photo treatment: b/w until hovered */
+  .photo-bw { filter: grayscale(1) contrast(1.02); transition: filter 0.5s ease; }
+  .group:hover .photo-bw, .photo-bw:hover { filter: grayscale(0) contrast(1); }
+
+  /* Masthead double rule (thick + hair) */
+  .masthead-rule {
+    border-top: 3px solid var(--color-foreground);
+    border-bottom: 1px solid var(--color-foreground);
+    height: 6px;
+  }
+
+  .col-rule-r { border-right: 1px solid var(--color-foreground); }
+  .col-rule-l { border-left: 1px solid var(--color-foreground); }
 
   .grain::before {
     content: "";
@@ -147,9 +213,8 @@
     mix-blend-mode: multiply;
   }
 
-  .fade-up {
-    animation: fade-up 0.9s ease-out both;
-  }
+  /* Fade-up disabled: editorial theme is static */
+  .fade-up { animation: none; }
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -275,16 +340,16 @@
   .shimmer-gold { color: var(--color-primary); }
   @keyframes shimmer { 0%,100% { background-position: 0 0; } }
 
-  /* Reveal-on-scroll */
+  /* Reveal-on-scroll — disabled in editorial theme (content is static) */
   .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
-    will-change: opacity, transform;
-  }
-  .reveal.is-visible {
     opacity: 1;
     transform: none;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-stagger, .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   /* Animated underline accent line */

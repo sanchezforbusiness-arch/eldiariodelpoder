@@ -7,50 +7,60 @@ const TikTok = (props: { size?: number }) => (
 
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-border bg-card">
-      <div className="container-ddp py-14 md:py-20">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-6">
-            <div className="font-serif text-3xl text-primary mb-5 font-medium">DDP</div>
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-snug max-w-md font-light text-foreground">
-              Conversamos con quienes están <span className="italic text-primary">dejando huella</span>.
-            </p>
-            <p className="mt-5 text-sm text-muted-foreground">Hecho en Madrid, con cuidado.</p>
-          </div>
+    <footer id="contact" className="bg-background">
+      <div className="masthead-rule" />
+      <div className="container-ddp py-12 md:py-16">
+        <div className="text-center mb-10 md:mb-14">
+          <p className="font-serif uppercase text-foreground tracking-[0.08em] text-2xl md:text-4xl font-medium">
+            Diario del Poder
+          </p>
+          <p className="mt-2 text-[10px] tracking-[0.32em] uppercase text-foreground/60">
+            Colofón · Edición digital
+          </p>
+        </div>
 
-          <div className="md:col-span-3">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-primary mb-5">Navegar</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link to="/episodios" className="hover:text-primary transition-colors">Episodios</Link></li>
-              <li><Link to="/invitados" className="hover:text-primary transition-colors">Invitados</Link></li>
-              <li><Link to="/club" className="hover:text-primary transition-colors">Club</Link></li>
-              <li><Link to="/patrocinadores" className="hover:text-primary transition-colors">Patrocinadores</Link></li>
-              <li><Link to="/manifiesto" className="hover:text-primary transition-colors">Manifiesto</Link></li>
-              <li><Link to="/prensa" className="hover:text-primary transition-colors">Prensa</Link></li>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 filete pt-10">
+          <div>
+            <h4 className="text-[10px] tracking-[0.28em] uppercase text-foreground/70 mb-4">Secciones</h4>
+            <ul className="space-y-2 text-sm text-foreground/85">
+              <li><Link to="/episodios" className="hover:press-underline hover:text-primary transition-colors">Episodios</Link></li>
+              <li><Link to="/invitados" className="hover:press-underline hover:text-primary transition-colors">Invitados</Link></li>
+              <li><Link to="/club" className="hover:press-underline hover:text-primary transition-colors">Club</Link></li>
+              <li><Link to="/patrocinadores" className="hover:press-underline hover:text-primary transition-colors">Patrocinadores</Link></li>
             </ul>
           </div>
-
-          <div className="md:col-span-3 min-w-0">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-primary mb-5">Contacto</h4>
-            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground hover:text-primary transition-colors break-all">
+          <div>
+            <h4 className="text-[10px] tracking-[0.28em] uppercase text-foreground/70 mb-4">La casa</h4>
+            <ul className="space-y-2 text-sm text-foreground/85">
+              <li><Link to="/manifiesto" className="hover:press-underline hover:text-primary transition-colors">Manifiesto</Link></li>
+              <li><Link to="/prensa" className="hover:press-underline hover:text-primary transition-colors">Prensa</Link></li>
+            </ul>
+          </div>
+          <div className="min-w-0">
+            <h4 className="text-[10px] tracking-[0.28em] uppercase text-foreground/70 mb-4">Contacto</h4>
+            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground press-underline break-all">
               contactoeldiariodelpoder@gmail.com
             </a>
-            <div className="mt-6 flex items-center gap-4 text-muted-foreground">
-              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram size={18} /></a>
-              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors"><Youtube size={18} /></a>
-              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin size={18} /></a>
-              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-primary transition-colors"><Music2 size={18} /></a>
-              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-primary transition-colors"><TikTok size={18} /></a>
+          </div>
+          <div>
+            <h4 className="text-[10px] tracking-[0.28em] uppercase text-foreground/70 mb-4">Seguir</h4>
+            <div className="flex items-center gap-4 text-foreground/80">
+              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram size={16} /></a>
+              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors"><Youtube size={16} /></a>
+              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin size={16} /></a>
+              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-primary transition-colors"><Music2 size={16} /></a>
+              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-primary transition-colors"><TikTok size={16} /></a>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-muted-foreground">
-          <p>© 2025 Diario del Poder</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground">Privacidad</a>
-            <a href="#" className="hover:text-foreground">Términos</a>
-          </div>
+        <div className="mt-12 pt-6 filete text-center">
+          <p className="text-[11px] tracking-[0.26em] uppercase text-foreground/70">
+            © Diario del Poder — Fundado en 2025 — Madrid
+          </p>
+          <p className="mt-2 text-[10px] tracking-[0.22em] uppercase text-foreground/45">
+            <a href="#" className="hover:text-primary">Privacidad</a> · <a href="#" className="hover:text-primary">Términos</a>
+          </p>
         </div>
       </div>
     </footer>

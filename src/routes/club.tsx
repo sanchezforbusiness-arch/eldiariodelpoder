@@ -81,7 +81,7 @@ function ClubPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
+    <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden grain">
       <img src={dialogos} alt="" aria-hidden fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="gold-glow w-[520px] h-[520px] -top-40 -left-40 float-slow" />

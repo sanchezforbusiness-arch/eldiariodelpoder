@@ -29,7 +29,7 @@ function ManifiestoPage() {
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-40 md:pt-44">
         <div className="container-ddp pt-6">
           <Link to="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-muted-foreground hover:text-gold transition-colors">
             <ArrowLeft size={14} /> Volver
