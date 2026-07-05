@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, KeyRound, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
 
