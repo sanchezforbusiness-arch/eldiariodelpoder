@@ -23,7 +23,7 @@ export function Episodes() {
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Conversaciones <span className="italic text-gold">recientes</span>.
+              Conversaciones <span className="">recientes</span>.
             </h2>
           </div>
           <Link
@@ -77,7 +77,7 @@ export function Episodes() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 reveal-stagger">
           {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift rounded-md">
+              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift rounded-sm">
                 <img
                   src={e.img}
                   alt={e.guest}

@@ -75,7 +75,7 @@ export function Team() {
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">Quiénes somos</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Las personas detrás de cada <span className="italic text-gold">conversación</span>.
+              Las personas detrás de cada <span className="">conversación</span>.
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">

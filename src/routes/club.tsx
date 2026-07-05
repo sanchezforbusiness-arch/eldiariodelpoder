@@ -120,7 +120,7 @@ function Pillars() {
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-12 md:p-16 text-center">
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-4">{p.n}</p>
-              <h2 className="font-serif text-4xl md:text-5xl italic text-gold">{p.t}</h2>
+              <h2 className="font-serif text-4xl md:text-5xl ">{p.t}</h2>
             </div>
           ))}
         </div>
@@ -136,7 +136,7 @@ function Gallery() {
       <div className="container-ddp mb-10">
         <span className="eyebrow block mb-5">El Club por dentro</span>
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl">
-          Lo que <span className="italic text-gold">no se publica</span>.
+          Lo que <span className="">no se publica</span>.
         </h2>
       </div>
       <div className="relative overflow-hidden mask-fade-x">
@@ -177,7 +177,7 @@ function Apply() {
       <div className="container-ddp max-w-3xl">
         <span className="eyebrow block mb-5">Solicita tu acceso</span>
         <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light">
-          Cuéntanos <span className="italic text-gold">quién eres</span>.
+          Cuéntanos <span className="">quién eres</span>.
         </h2>
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl">
           Leemos cada solicitud con calma. Si encajas, te escribimos para conocernos en persona.

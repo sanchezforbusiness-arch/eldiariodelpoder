@@ -134,7 +134,7 @@ function Hero() {
             </span>
           </div>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
-            Sé parte de una <span className="italic text-gold">conversación</span> que importa.
+            Sé parte de una <span className="">conversación</span> que importa.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
             Diario del Poder es el podcast premium en español sobre liderazgo, criterio
@@ -174,7 +174,7 @@ function Pillars() {
             Por qué DDP
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Una plataforma de <span className="italic text-gold">estatus editorial</span>.
+            Una plataforma de <span className="">estatus editorial</span>.
           </h2>
         </div>
 
@@ -206,7 +206,7 @@ function Tiers() {
             Opciones de patrocinio
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Tres formas de <span className="italic text-gold">conversar</span> con nuestra audiencia.
+            Tres formas de <span className="">conversar</span> con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
             Diseñamos cada acuerdo a medida. Estas son las tres formas en las que solemos trabajar.
@@ -304,7 +304,7 @@ function Contact() {
             Hablemos
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-[1.0] font-light tracking-[-0.02em]">
-            Tu marca, en conversaciones <span className="italic text-gold">que importan</span>.
+            Tu marca, en conversaciones <span className="">que importan</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             Cuéntanos tu compañía y tus objetivos. Te respondemos en menos de 48 horas con una propuesta a medida.
@@ -346,7 +346,7 @@ function BookCall() {
           </p>
         </div>
 
-        <div className="bg-card border border-white/10 rounded-md p-8 md:p-14">
+        <div className="bg-card border border-white/10 rounded-sm p-8 md:p-14">
           <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
             <div className="md:col-span-7">
               <p className="eyebrow mb-5">Reserva directa</p>

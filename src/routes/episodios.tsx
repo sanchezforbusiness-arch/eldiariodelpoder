@@ -26,7 +26,7 @@ function EpisodiosPage() {
       <main className="pt-40 md:pt-44">
         <header className="container-ddp pt-8 pb-4">
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
-            Todas las <span className="italic text-gold">conversaciones</span>
+            Todas las <span className="">conversaciones</span>
           </h1>
         </header>
         <Episodes />

@@ -50,7 +50,7 @@ export function SubscribePlatforms() {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="group relative flex flex-col items-center justify-center gap-4 py-10 px-6 bg-card border border-white/10 rounded-md hover:border-primary hover:bg-white/[0.02] transition-all duration-300"
+              className="group relative flex flex-col items-center justify-center gap-4 py-10 px-6 bg-card border border-white/10 rounded-sm hover:border-primary hover:bg-white/[0.02] transition-all duration-300"
             >
               <span className="text-foreground/85 group-hover:text-primary transition-colors">
                 <Icon size={44} />

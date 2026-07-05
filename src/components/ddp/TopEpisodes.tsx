@@ -77,7 +77,7 @@ const episodes: Ep[] = [
 
 function Card({ e }: { e: Ep }) {
   return (
-    <article className="group flex flex-col bg-card border border-white/8 rounded-md overflow-hidden hover:border-white/25 transition-colors duration-300">
+    <article className="group flex flex-col bg-card border border-white/8 rounded-sm overflow-hidden hover:border-white/25 transition-colors duration-300">
       <a
         href={e.yt}
         target="_blank"

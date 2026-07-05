@@ -15,7 +15,7 @@ export function About() {
           <div className="md:col-span-6 reveal">
             <span className="eyebrow block mb-7">Quiénes somos</span>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
-              Donde quienes <span className="italic text-gold">deciden</span><br />
+              Donde quienes <span className="">deciden</span><br />
               se sientan a contarlo.
             </h2>
 
