@@ -20,21 +20,20 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-32 relative overflow-hidden grain border-t border-border">
-      <div className="gold-glow float-slow w-[420px] h-[420px] -top-20 left-1/2 -translate-x-1/2 opacity-30" />
+    <section id="newsletter" className="py-20 md:py-32 relative overflow-hidden border-t border-border" style={{ backgroundColor: "var(--color-primary)" }}>
       <div className="container-ddp relative">
-        <div className="max-w-xl mx-auto text-center">
-          <span className="eyebrow block mb-5"><span className="dot-gold mr-2" />Newsletter</span>
-          <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.02em]">
-            Ideas que <span className="italic text-gold">importan</span>.
-          </h2>
-          <p className="mt-4 text-sm md:text-base text-muted-foreground">
+        <div className="max-w-xl mx-auto text-center" style={{ color: "var(--color-primary-foreground)" }}>
+          <span className="block mb-5 text-[11px] tracking-[0.32em] uppercase" style={{ color: "rgba(250,247,242,0.7)" }}>Newsletter</span>
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.025em]" style={{ color: "var(--color-primary-foreground)" }}>
             Una conversación. Un email. Sin ruido.
+          </h2>
+          <p className="mt-4 text-sm md:text-base" style={{ color: "rgba(250,247,242,0.75)" }}>
+            La lectura corta que reciben quienes escuchan Diario del Poder.
           </p>
 
           {sent ? (
-            <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
-              <Check size={18} className="text-gold" />
+            <div className="mt-10 inline-flex items-center gap-3 border px-6 py-4" style={{ borderColor: "rgba(250,247,242,0.4)", backgroundColor: "rgba(250,247,242,0.08)" }}>
+              <Check size={18} />
               <span className="text-sm">Gracias. Mira tu correo para confirmar — te esperamos dentro.</span>
             </div>
           ) : (
@@ -55,23 +54,29 @@ export function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="input-line flex-1 sm:rounded-none sm:border-r-0"
+                  className="flex-1 px-4 py-3 text-sm sm:border-r-0 outline-none"
+                  style={{ backgroundColor: "rgba(250,247,242,0.95)", color: "#141414", border: "1px solid rgba(250,247,242,0.4)" }}
                   required
                 />
-                <button type="submit" disabled={loading} className="btn-primary">
-                  {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.14em] transition-colors"
+                  style={{ backgroundColor: "#FAF7F2", color: "#6E1423" }}
+                >
+                  {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme <ArrowRight size={14} /></>}
                 </button>
               </div>
-              <label className="mt-5 flex items-start gap-3 text-left text-xs text-muted-foreground cursor-pointer">
+              <label className="mt-5 flex items-start gap-3 text-left text-xs cursor-pointer" style={{ color: "rgba(250,247,242,0.75)" }}>
                 <input
                   type="checkbox"
                   checked={accept}
                   onChange={(e) => setAccept(e.target.checked)}
-                  className="mt-0.5 accent-[var(--color-gold)]"
+                  className="mt-0.5"
                 />
-                <span>Acepto la <a href="#" className="underline hover:text-gold">política de privacidad</a>.</span>
+                <span>Acepto la <a href="#" className="underline">política de privacidad</a>.</span>
               </label>
-              {err && <p className="mt-3 text-xs text-destructive text-left">{err}</p>}
+              {err && <p className="mt-3 text-xs text-left" style={{ color: "#FFD9DE" }}>{err}</p>}
             </form>
             </>
           )}
