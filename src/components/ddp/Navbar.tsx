@@ -16,7 +16,7 @@ export function Navbar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className="fixed inset-x-0 top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container-ddp flex items-center justify-between py-4">
         <Link to="/" className="flex items-baseline gap-3 group">
           <span className="font-serif text-2xl tracking-tight text-primary font-medium">DDP</span>
