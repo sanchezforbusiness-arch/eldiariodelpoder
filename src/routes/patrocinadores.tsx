@@ -133,8 +133,8 @@ function Hero() {
               <span className="dot-gold" /> Patrocinadores
             </span>
           </div>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
-            Sé parte de una <span className="italic text-gold">conversación</span> que importa.
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
+            Sé parte de una <span className="">conversación</span> que importa.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
             Diario del Poder es el podcast premium en español sobre liderazgo, criterio
@@ -173,8 +173,8 @@ function Pillars() {
             <span className="dot-gold mr-2" />
             Por qué DDP
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Una plataforma de <span className="italic text-gold">estatus editorial</span>.
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+            Una plataforma de <span className="">estatus editorial</span>.
           </h2>
         </div>
 
@@ -182,7 +182,7 @@ function Pillars() {
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-8 md:p-10">
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-5">{p.n}</p>
-              <h3 className="font-serif text-2xl md:text-3xl font-light leading-tight mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light leading-tight mb-4">
                 {p.t}
               </h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -205,8 +205,8 @@ function Tiers() {
             <span className="dot-gold mr-2" />
             Opciones de patrocinio
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Tres formas de <span className="italic text-gold">conversar</span> con nuestra audiencia.
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+            Tres formas de <span className="">conversar</span> con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
             Diseñamos cada acuerdo a medida. Estas son las tres formas en las que solemos trabajar.
@@ -231,7 +231,7 @@ function Tiers() {
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-3">
                 {t.pitch}
               </p>
-              <h3 className="font-serif text-4xl md:text-5xl font-light mb-8">
+              <h3 className="font-display text-4xl md:text-5xl font-light mb-8">
                 {t.name}
               </h3>
               <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
@@ -270,7 +270,7 @@ function TrustedBy() {
     <section className="py-20 md:py-28 border-t border-border">
       <div className="container-ddp">
         <div className="max-w-3xl mb-12 md:mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em] pb-4 border-b border-border">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em] pb-4 border-b border-border">
             Han confiado en nosotros
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
@@ -282,7 +282,7 @@ function TrustedBy() {
           {trustedBrands.map((brand) => (
             <span
               key={brand}
-              className="font-serif text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default"
+              className="font-display text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default"
             >
               {brand}
             </span>
@@ -303,8 +303,8 @@ function Contact() {
             <span className="dot-gold mr-2" />
             Hablemos
           </span>
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.0] font-light tracking-[-0.02em]">
-            Tu marca, en conversaciones <span className="italic text-gold">que importan</span>.
+          <h2 className="font-display text-4xl md:text-6xl leading-[1.0] font-light tracking-[-0.02em]">
+            Tu marca, en conversaciones <span className="">que importan</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             Cuéntanos tu compañía y tus objetivos. Te respondemos en menos de 48 horas con una propuesta a medida.
@@ -346,7 +346,7 @@ function BookCall() {
           </p>
         </div>
 
-        <div className="bg-card border border-white/10 rounded-md p-8 md:p-14">
+        <div className="bg-card border border-white/10 rounded-sm p-8 md:p-14">
           <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
             <div className="md:col-span-7">
               <p className="eyebrow mb-5">Reserva directa</p>

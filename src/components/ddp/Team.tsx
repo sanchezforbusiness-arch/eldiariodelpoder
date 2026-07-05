@@ -55,7 +55,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
       </div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-serif text-2xl md:text-[1.7rem] leading-tight">{m.name}</h3>
+          <h3 className="font-display text-2xl md:text-[1.7rem] leading-tight">{m.name}</h3>
           <p className="mt-1.5 text-[11px] tracking-[0.22em] uppercase text-gold">{m.role}</p>
         </div>
         <a href={m.ln} target="_blank" rel="noreferrer" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-gold transition-colors mt-2">
@@ -74,8 +74,8 @@ export function Team() {
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">Quiénes somos</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Las personas detrás de cada <span className="italic text-gold">conversación</span>.
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+              Las personas detrás de cada <span className="">conversación</span>.
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">

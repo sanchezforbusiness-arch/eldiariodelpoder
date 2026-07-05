@@ -57,7 +57,7 @@ export function GuestsCarousel() {
                   className="photo-bw absolute inset-0 w-full h-full object-cover"
                 />
               </div>
-              <h3 className="mt-3 font-serif text-base md:text-lg leading-tight text-foreground">{g.name}</h3>
+              <h3 className="mt-3 font-display text-base md:text-lg leading-tight text-foreground">{g.name}</h3>
               <p className="mt-1 text-[10px] tracking-[0.2em] uppercase text-foreground/60">{g.role}</p>
             </article>
           ))}

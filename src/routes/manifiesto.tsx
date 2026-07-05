@@ -36,8 +36,8 @@ function ManifiestoPage() {
           </Link>
         </div>
         <header className="container-ddp pt-8 pb-2">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
-            Nuestro <span className="italic text-gold">manifiesto</span>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+            Nuestro <span className="">manifiesto</span>
           </h1>
         </header>
         <Manifesto />

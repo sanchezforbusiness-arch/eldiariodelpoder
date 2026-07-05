@@ -90,7 +90,7 @@ function PrensaPage() {
         <section className="border-t border-white/10">
           <div className="container-ddp py-16 md:py-24">
             <p className="eyebrow mb-8"><span className="text-primary">Media Partner oficial</span></p>
-            <div className="border border-white/15 bg-card rounded-md p-6 md:p-12">
+            <div className="border border-white/15 bg-card rounded-sm p-6 md:p-12">
               <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
                 <div className="md:col-span-5">
                   <div className="font-display font-black uppercase leading-[0.9] tracking-tight text-[clamp(2.2rem,6vw,4.5rem)] text-foreground">
@@ -197,7 +197,7 @@ function PrensaPage() {
           <div className="container-ddp py-16 md:py-24">
             <p className="eyebrow mb-8">Reconocimiento institucional</p>
             <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-              <figure className="md:col-span-8 overflow-hidden rounded-md">
+              <figure className="md:col-span-8 overflow-hidden rounded-sm">
                 <img
                   src={reinaLetizia.url}
                   alt="Encuentro con S.M. la Reina Doña Letizia en la Universidad de Navarra"

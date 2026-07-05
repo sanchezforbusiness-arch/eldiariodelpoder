@@ -29,8 +29,8 @@ export function Sponsors() {
         <div>
           <div className="text-center mb-12">
             <span className="eyebrow block mb-5">Sponsors</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Marcas que nos <span className="italic text-gold">acompañan en el camino</span>.
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+              Marcas que nos <span className="">acompañan en el camino</span>.
             </h2>
           </div>
 
@@ -40,7 +40,7 @@ export function Sponsors() {
                 key={s.name}
                 className="bg-background py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card transition-colors min-h-[140px]"
               >
-                <span className="font-serif text-lg md:text-xl text-foreground/85 group-hover:text-gold transition-colors leading-tight">
+                <span className="font-display text-lg md:text-xl text-foreground/85 group-hover:text-gold transition-colors leading-tight">
                   {s.name}
                 </span>
                 <span className="mt-2 text-[10px] tracking-[0.22em] uppercase text-muted-foreground">{s.tag}</span>
@@ -59,7 +59,7 @@ export function Sponsors() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                   <a
                     href={`mailto:${email}?subject=Media%20Kit%20—%20Diario%20del%20Poder`}
-                    className="group inline-flex items-center justify-center gap-2 font-serif text-lg md:text-xl text-foreground hover:text-gold transition-colors break-all"
+                    className="group inline-flex items-center justify-center gap-2 font-display text-lg md:text-xl text-foreground hover:text-gold transition-colors break-all"
                   >
                     <Mail size={16} className="text-gold shrink-0" />
                     {email}
@@ -83,7 +83,7 @@ export function Sponsors() {
           <p className="text-center text-[11px] tracking-[0.32em] uppercase text-gold/70 mb-8">MEDIA PARTNERS</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {partners.map((p) => (
-              <span key={p} className="font-serif text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors cursor-default">
+              <span key={p} className="font-display text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors cursor-default">
                 {p}
               </span>
             ))}

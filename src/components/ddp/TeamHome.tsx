@@ -18,7 +18,7 @@ const advisory: Person[] = [
 function Card({ p }: { p: Person }) {
   return (
     <article className="group">
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted rounded-md">
+      <div className="relative aspect-[4/5] overflow-hidden bg-muted rounded-sm">
         <img
           src={p.img}
           alt={p.name}

@@ -25,8 +25,8 @@ function InvitadosPage() {
       <Navbar />
       <main className="pt-40 md:pt-44">
         <header className="container-ddp pt-8 pb-4">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
-            Nuestros <span className="italic text-gold">invitados</span>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+            Nuestros <span className="">invitados</span>
           </h1>
         </header>
         <GuestsCarousel />

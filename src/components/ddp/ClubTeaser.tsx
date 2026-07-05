@@ -36,7 +36,7 @@ export function ClubTeaser() {
             </Link>
           </div>
           <div className="col-span-12 md:col-span-5 md:pl-10">
-            <div className="group relative aspect-[4/5] overflow-hidden bg-muted rounded-md">
+            <div className="group relative aspect-[4/5] overflow-hidden bg-muted rounded-sm">
               <img src={hosts} alt="Hosts en el palco del Metropolitano" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
             </div>
             <p className="mt-3 text-[10px] tracking-[0.24em] uppercase text-foreground/50">

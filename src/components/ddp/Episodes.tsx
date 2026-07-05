@@ -22,8 +22,8 @@ export function Episodes() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
-              Conversaciones <span className="italic text-gold">recientes</span>.
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+              Conversaciones <span className="">recientes</span>.
             </h2>
           </div>
           <Link
@@ -56,12 +56,12 @@ export function Episodes() {
               <span className="text-[9px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.28em] uppercase text-gold border border-gold/60 px-2.5 sm:px-3 py-1 sm:py-1.5">
                 Recién publicado
               </span>
-              <span className="font-serif text-2xl sm:text-3xl text-gold/80">{featured.n}</span>
+              <span className="font-display text-2xl sm:text-3xl text-gold/80">{featured.n}</span>
             </div>
 
             <div className="absolute inset-x-0 bottom-0 p-5 md:p-12">
               <p className="text-[10px] md:text-[12px] tracking-[0.24em] md:tracking-[0.28em] uppercase text-gold/90 mb-2 md:mb-3">{featured.guest}</p>
-              <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light max-w-3xl">
+              <h3 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light max-w-3xl">
                 {featured.title}
               </h3>
               <div className="mt-4 md:mt-6 inline-flex items-center gap-3 text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-foreground group-hover:text-gold transition-colors">
@@ -77,7 +77,7 @@ export function Episodes() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 reveal-stagger">
           {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift rounded-md">
+              <div className="relative aspect-[4/5] overflow-hidden bg-card hover-lift rounded-sm">
                 <img
                   src={e.img}
                   alt={e.guest}
@@ -88,7 +88,7 @@ export function Episodes() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <div className="absolute top-5 left-5 flex items-center gap-3">
-                  <span className="font-serif text-3xl text-gold/90">{e.n}</span>
+                  <span className="font-display text-3xl text-gold/90">{e.n}</span>
                   {e.isNew && (
                     <span className="text-[10px] tracking-[0.25em] uppercase text-gold border-l border-gold/50 pl-3">
                       Nuevo
@@ -100,7 +100,7 @@ export function Episodes() {
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 md:p-6">
                   <p className="text-[10px] sm:text-[11px] tracking-[0.2em] sm:tracking-[0.22em] uppercase text-gold/90 mb-1.5 sm:mb-2">{e.guest}</p>
-                  <h3 className="font-serif text-xl sm:text-2xl md:text-[1.7rem] leading-tight">
+                  <h3 className="font-display text-xl sm:text-2xl md:text-[1.7rem] leading-tight">
                     {e.title}
                   </h3>
                 </div>
