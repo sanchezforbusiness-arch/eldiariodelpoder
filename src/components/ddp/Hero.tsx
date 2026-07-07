@@ -55,13 +55,13 @@ export function Hero() {
           <div
             aria-hidden="true"
             className="absolute inset-0 overflow-hidden pointer-events-none"
-            style={{ opacity: videoReady ? 0.42 : 0, transition: "opacity 1000ms ease" }}
+            style={{ opacity: videoReady ? 0.9 : 0, transition: "opacity 1000ms ease" }}
           >
             <iframe
               title=""
               tabIndex={-1}
               onLoad={() => setVideoReady(true)}
-              src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_ID}&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&start=${YT_START}`}
+              src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_ID}&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&start=${YT_START}&enablejsapi=1`}
               allow="autoplay; encrypted-media; picture-in-picture"
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
               style={{
@@ -78,14 +78,14 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 80% at 50% 45%, rgba(12,12,14,0.55) 0%, rgba(12,12,14,0.85) 55%, rgba(12,12,14,1) 100%)",
+              "radial-gradient(120% 80% at 50% 45%, rgba(12,12,14,0.15) 0%, rgba(12,12,14,0.55) 65%, rgba(12,12,14,0.9) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(12,12,14,0.7) 0%, rgba(12,12,14,0.35) 40%, rgba(12,12,14,0.95) 100%)",
+              "linear-gradient(180deg, rgba(12,12,14,0.35) 0%, rgba(12,12,14,0.15) 40%, rgba(12,12,14,0.85) 100%)",
           }}
         />
       </div>
