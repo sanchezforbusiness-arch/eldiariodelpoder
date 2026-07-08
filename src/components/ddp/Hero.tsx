@@ -4,7 +4,7 @@ import heroDesktop from "@/assets/hero-hosts-set.jpg.asset.json";
 import heroMobile from "@/assets/hero-hosts-set.jpg.asset.json";
 
 const YT_ID = "nTtgtxG7UNs";
-const YT_START = 10;
+const YT_START = 20;
 
 export function Hero() {
   const bgRef = useRef<HTMLDivElement | null>(null);
