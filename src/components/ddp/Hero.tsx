@@ -8,13 +8,69 @@ const YT_START = 159;
 
 export function Hero() {
   const bgRef = useRef<HTMLDivElement | null>(null);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [allowVideo, setAllowVideo] = useState(true);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const coarse = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
     if (reduce || coarse) setAllowVideo(false);
   }, []);
+
+  // Preconnect to YouTube hosts for faster first frame
+  useEffect(() => {
+    if (!allowVideo) return;
+    const hosts = [
+      "https://www.youtube-nocookie.com",
+      "https://www.youtube.com",
+      "https://i.ytimg.com",
+      "https://s.ytimg.com",
+      "https://yt3.ggpht.com",
+    ];
+    const added: HTMLLinkElement[] = [];
+    hosts.forEach((href) => {
+      const l = document.createElement("link");
+      l.rel = "preconnect";
+      l.href = href;
+      l.crossOrigin = "";
+      document.head.appendChild(l);
+      added.push(l);
+    });
+    return () => { added.forEach((l) => l.remove()); };
+  }, [allowVideo]);
+
+  // Listen to YT IFrame API postMessages to detect actual PLAYING state.
+  // This lets us keep the poster image visible until the video truly starts,
+  // avoiding the YouTube spinner / black flash on initial load.
+  useEffect(() => {
+    if (!allowVideo) return;
+    const onMessage = (e: MessageEvent) => {
+      if (typeof e.data !== "string") return;
+      if (!e.origin.includes("youtube")) return;
+      try {
+        const data = JSON.parse(e.data);
+        // event: "onStateChange", info: 1 === PLAYING
+        if (data?.event === "onStateChange" && data?.info === 1) {
+          setVideoPlaying(true);
+        }
+        if (data?.event === "onReady") {
+          // subscribe to state change events
+          iframeRef.current?.contentWindow?.postMessage(
+            JSON.stringify({ event: "listening", id: YT_ID }),
+            "*"
+          );
+        }
+      } catch { /* not our message */ }
+    };
+    window.addEventListener("message", onMessage);
+    // Fallback: if postMessage never arrives (e.g. blocked), reveal after 1.2s.
+    const t = window.setTimeout(() => setVideoPlaying(true), 1400);
+    return () => {
+      window.removeEventListener("message", onMessage);
+      window.clearTimeout(t);
+    };
+  }, [allowVideo]);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -45,7 +101,8 @@ export function Hero() {
             className="absolute inset-0 w-full h-full object-cover"
             style={{
               objectPosition: "50% 40%",
-              opacity: 0.32,
+              opacity: videoPlaying ? 0 : 0.55,
+              transition: "opacity 700ms ease",
             }}
           />
         </picture>
@@ -53,8 +110,13 @@ export function Hero() {
           <div
             aria-hidden="true"
             className="absolute inset-0 overflow-hidden pointer-events-none"
+            style={{
+              opacity: videoPlaying ? 0.9 : 0,
+              transition: "opacity 700ms ease",
+            }}
           >
             <iframe
+              ref={iframeRef}
               title=""
               tabIndex={-1}
               src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_ID}&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&start=${YT_START}&enablejsapi=1`}
@@ -65,7 +127,6 @@ export function Hero() {
                 height: "max(100vh, calc(100vw * 9 / 16))",
                 border: 0,
                 pointerEvents: "none",
-                opacity: 0.9,
               }}
             />
           </div>
