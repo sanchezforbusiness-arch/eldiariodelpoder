@@ -8,7 +8,6 @@ const YT_START = 159;
 
 export function Hero() {
   const bgRef = useRef<HTMLDivElement | null>(null);
-  const [videoReady, setVideoReady] = useState(false);
   const [allowVideo, setAllowVideo] = useState(true);
 
   useEffect(() => {
@@ -46,8 +45,7 @@ export function Hero() {
             className="absolute inset-0 w-full h-full object-cover"
             style={{
               objectPosition: "50% 40%",
-              opacity: videoReady ? 0 : 0.32,
-              transition: "opacity 800ms ease",
+              opacity: 0.32,
             }}
           />
         </picture>
@@ -55,12 +53,10 @@ export function Hero() {
           <div
             aria-hidden="true"
             className="absolute inset-0 overflow-hidden pointer-events-none"
-            style={{ opacity: videoReady ? 0.9 : 0, transition: "opacity 1000ms ease" }}
           >
             <iframe
               title=""
               tabIndex={-1}
-              onLoad={() => setVideoReady(true)}
               src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_ID}&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&start=${YT_START}&enablejsapi=1`}
               allow="autoplay; encrypted-media; picture-in-picture"
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -69,6 +65,7 @@ export function Hero() {
                 height: "max(100vh, calc(100vw * 9 / 16))",
                 border: 0,
                 pointerEvents: "none",
+                opacity: 0.9,
               }}
             />
           </div>
