@@ -1,0 +1,84 @@
+import { useState, useRef } from "react";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
+
+export function Publications() {
+  const [email, setEmail] = useState("");
+  const [accept, setAccept] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setErr("");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setErr("Introduce un email válido.");
+    if (!accept) return setErr("Acepta la política de privacidad.");
+    setLoading(true);
+    formRef.current?.submit();
+    setTimeout(() => { setLoading(false); setSent(true); }, 900);
+  };
+
+  return (
+    <section
+      id="publicaciones"
+      className="py-28 md:py-40 relative overflow-hidden border-t border-border grain"
+    >
+      <div className="container-ddp relative">
+        <div className="max-w-2xl mx-auto text-center">
+            <span className="eyebrow block mb-6">Newsletter</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+              Newsletter.
+            </h2>
+            <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              Entrevistas cortas con quienes están dejando huella. En tu correo, cada semana.
+            </p>
+
+          {sent ? (
+            <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
+              <Check size={18} className="text-gold" />
+              <span className="text-sm">Gracias. Mira tu correo para confirmar — te esperamos dentro.</span>
+            </div>
+          ) : (
+            <>
+              <iframe name="ddp-pub-newsletter-frame" title="Newsletter" className="hidden" aria-hidden="true" />
+              <form
+                ref={formRef}
+                onSubmit={submit}
+                action="https://eldiariodelpoder.beehiiv.com/subscribe"
+                method="POST"
+                target="ddp-pub-newsletter-frame"
+                className="mt-10"
+              >
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="tu@email.com"
+                    className="input-line flex-1 sm:border-r-0"
+                    required
+                  />
+                  <button type="submit" disabled={loading} className="btn-primary">
+                    {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>}
+                  </button>
+                </div>
+                <label className="mt-5 flex items-start gap-3 text-left text-xs text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={accept}
+                    onChange={(e) => setAccept(e.target.checked)}
+                    className="mt-0.5 accent-[var(--color-gold)]"
+                  />
+                  <span>Acepto la <a href="#" className="underline hover:text-gold">política de privacidad</a>.</span>
+                </label>
+                {err && <p className="mt-3 text-xs text-destructive text-left">{err}</p>}
+              </form>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}

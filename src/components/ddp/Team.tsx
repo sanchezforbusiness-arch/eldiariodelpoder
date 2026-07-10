@@ -1,22 +1,21 @@
 import { Linkedin } from "lucide-react";
 import g8 from "@/assets/guest-8.webp";
-import inigoAsset from "@/assets/advisor-inigo-portrait.png.asset.json";
-const inigo = inigoAsset.url;
+import inigo from "@/assets/advisor-inigo.webp";
 import alejandro from "@/assets/founder-alejandro.webp";
 import victor from "@/assets/founder-victor.webp";
 
 const founders = [
   {
     name: "Alejandro Sánchez Martínez",
-    role: "Cofundador · Director editorial",
-    bio: "Host del podcast. Presidente de Kifaru Club. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez y Tomás Villén, entre otros.",
+    role: "Co-fundador · Host",
+    bio: "Host del podcast. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez (Forbes) o Tomás Villén (Porsche).",
     img: alejandro,
     ln: "https://www.linkedin.com/in/alejandrosanchezmartinez",
   },
   {
-    name: "Víctor Hugo Gandarilla de Andrés",
-    role: "Cofundador · Operaciones",
-    bio: "Host del podcast. Top 10 de España en Marketing y Comunicación (Nova 111). Estudia en la Universidad de Navarra.",
+    name: "Víctor Hugo Gandarilla",
+    role: "Co-fundador · Host",
+    bio: "Host del podcast. Top 10 de España en Marketing & Comunicación (Nova 111). Estudia en la Universidad de Navarra.",
     img: victor,
     ln: "https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres",
   },
@@ -24,15 +23,15 @@ const founders = [
 
 const advisors = [
   {
-    name: "Federica Ilaria Fornaciari",
-    role: "CEO SenYours · Forbes Top 100 · IE Business School",
-    bio: "CEO de SenYours y fundadora de NoBrainer Partners. Ex-Bain. Profesora en IE, IESE y Bocconi.",
+    name: "Federica Fornaciari",
+    role: "Advisor · Estrategia & Marca",
+    bio: "Founder de SenYours y NoBrainer Partners. Ex-Bain. Profesora en IE, IESE y Bocconi. Forbes Top 100.",
     img: g8,
     ln: "https://www.linkedin.com/in/federica-ilaria-fornaciari-mba",
   },
   {
-    name: "Iñigo Rivero Iruretagoyena",
-    role: "Managing Partner · Paterberg & Lejeune",
+    name: "Iñigo Rivero",
+    role: "Advisor · M&A & Patrimonios",
     bio: "Managing Partner de Paterberg y Lejeune. Asesora a family offices, consejos y grandes patrimonios.",
     img: inigo,
     ln: "https://www.linkedin.com/in/iñigo-rivero-iruretagoyena-88351b30",
@@ -55,7 +54,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
       </div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-display text-2xl md:text-[1.7rem] leading-tight">{m.name}</h3>
+          <h3 className="font-serif text-2xl md:text-[1.7rem] leading-tight">{m.name}</h3>
           <p className="mt-1.5 text-[11px] tracking-[0.22em] uppercase text-gold">{m.role}</p>
         </div>
         <a href={m.ln} target="_blank" rel="noreferrer" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-gold transition-colors mt-2">
@@ -74,8 +73,8 @@ export function Team() {
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">Quiénes somos</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Las personas detrás de cada <span className="">conversación</span>.
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+              Las personas detrás de cada <span className="italic text-gold">conversación</span>.
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">

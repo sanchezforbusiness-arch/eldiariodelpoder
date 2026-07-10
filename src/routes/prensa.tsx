@@ -1,10 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
+import { Press } from "@/components/ddp/Press";
 import { useReveal } from "@/hooks/use-reveal";
-import { useCurtain } from "@/hooks/use-curtain";
-import reinaLetizia from "@/assets/reina-letizia.jpeg.asset.json";
 
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
 
@@ -22,226 +21,23 @@ export const Route = createFileRoute("/prensa")({
   component: PrensaPage,
 });
 
-type Clip = { outlet: string; headline?: string; date?: string; url?: string };
-
-const vanguardiaLinks: Clip[] = [
-  {
-    outlet: "La Vanguardia",
-    headline: "Jordi Juan, director de La Vanguardia, en Diario del Poder",
-    date: "Mayo 2026",
-    url: "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html",
-  },
-];
-
-const clips: Clip[] = [
-  {
-    outlet: "Antena 3",
-    headline: "Espejo Público — Cobertura Reina Letizia / Universidad de Navarra",
-    url: "https://www.antena3.com/programas/espejo-publico/noticias/chascarrillo-reina-letizia-dos-jovenes-que-pedian-entrevista-antes-delante-camara-era-inviable_202605116a01daefb5b06629960c3679.html",
-  },
-  { outlet: "La Sexta", headline: "Zapeando — Clip en emisión" },
-  { outlet: "Univision", headline: "La voz del mañana" },
-  { outlet: "El Mundo" },
-  {
-    outlet: "El Español",
-    headline: "La anécdota de la Reina Letizia con los jóvenes del podcast",
-    url: "https://www.elespanol.com/mujer/royals/20260508/anecdota-reina-letizia-chicos-querian-hablara-podcast-entrevistada-entrevistadora/1003744238033_0.html",
-  },
-  { outlet: "Forbes España" },
-  { outlet: "¡Hola!" },
-  { outlet: "El Debate" },
-  {
-    outlet: "Infobae",
-    headline: "La elegante forma en la que la Reina Letizia responde a los jóvenes del podcast",
-    url: "https://www.infobae.com/espana/2026/05/08/la-elegante-forma-en-la-que-la-reina-letizia-evita-la-invitacion-al-podcast-de-unos-estudiantes-para-hacerles-ella-la-entrevista-sois-de-que-facultad/",
-  },
-  {
-    outlet: "Diario de Navarra",
-    headline: "La Reina Letizia vuelve a Pamplona",
-    url: "https://www.diariodenavarra.es/noticias/navarra/2026/05/07/reina-letizia-vuelve-pamplona-directo-acto-celebracion-dia-mundial-cruz-roja-819846-15.html",
-  },
-];
-
 function PrensaPage() {
   useReveal();
-  useCurtain();
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
-      <main className="pt-40 md:pt-44">
+      <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-muted-foreground hover:text-primary transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-muted-foreground hover:text-gold transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
-
-        {/* Cabecera */}
-        <header className="container-ddp pt-10 pb-16 md:pb-24">
-          <p className="eyebrow mb-6">Prensa</p>
-          <h1 className="display-xl text-foreground max-w-5xl">
-            En los medios.
+        <header className="container-ddp pt-8 pb-2">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+            Prensa & <span className="italic text-gold">medios</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-foreground/70 leading-relaxed">
-            Cobertura nacional e internacional del podcast.
-          </p>
         </header>
-
-        {/* Bloque destacado La Vanguardia */}
-        <section className="border-t border-white/10">
-          <div className="container-ddp py-16 md:py-24">
-            <p className="eyebrow mb-8"><span className="text-primary">Media Partner oficial</span></p>
-            <div className="border border-white/15 bg-card rounded-sm p-6 md:p-12">
-              <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
-                <div className="md:col-span-5">
-                  <div className="font-display font-black uppercase leading-[0.9] tracking-tight text-[clamp(2.2rem,6vw,4.5rem)] text-foreground">
-                    La Vanguardia
-                  </div>
-                  <div className="mt-4 text-[10px] tracking-[0.3em] uppercase text-foreground/55">
-                    Grupo Godó · Barcelona
-                  </div>
-                </div>
-                <div className="md:col-span-7">
-                  <p className="text-lg md:text-2xl leading-[1.3] text-foreground/85">
-                    Media Partner oficial de Diario del Poder. Cada episodio se amplifica en La Vanguardia.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-12 pt-8 border-t border-white/15">
-                <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/55 mb-4">
-                  Publicado en La Vanguardia
-                </div>
-                <ul className="divide-y divide-white/10">
-                  {vanguardiaLinks.map((c) => (
-                    <li key={c.url}>
-                      <a
-                        href={c.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="group flex items-baseline justify-between gap-6 py-4 hover:text-primary transition-colors"
-                      >
-                        <div className="min-w-0">
-                          <div className="text-base md:text-lg leading-snug text-foreground">{c.headline}</div>
-                          {c.date && (
-                            <div className="mt-1 text-[10px] tracking-[0.28em] uppercase text-foreground/50">{c.date}</div>
-                          )}
-                        </div>
-                        <span className="shrink-0 inline-flex items-center gap-1 text-[11px] tracking-[0.24em] uppercase text-primary">
-                          Leer <ArrowUpRight size={14} />
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Apariciones — recortes */}
-        <section className="border-t border-white/10">
-          <div className="container-ddp py-16 md:py-24">
-            <p className="eyebrow mb-6">Apariciones y entrevistas</p>
-            <h2 className="display-lg text-foreground max-w-3xl mb-14">
-              Recortes<br />de prensa.
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/15">
-              {clips.map((c, i) => {
-                const Tag = c.url ? "a" : "div";
-                // asimetría: filas alternas de altura
-                const tall = i % 5 === 0 || i % 7 === 0;
-                return (
-                  <Tag
-                    key={c.outlet + i}
-                    {...(c.url ? { href: c.url, target: "_blank", rel: "noreferrer" } : {})}
-                    className={`bg-background p-6 md:p-8 flex flex-col justify-between ${
-                      tall ? "min-h-[240px] md:min-h-[280px]" : "min-h-[180px] md:min-h-[220px]"
-                    } ${c.url ? "group hover:bg-card/40 transition-colors" : ""}`}
-                  >
-                    <div className="font-display font-black uppercase leading-[0.9] tracking-tight text-[clamp(1.6rem,3.2vw,2.6rem)] text-foreground">
-                      {c.outlet}
-                    </div>
-                    <div className="mt-6">
-                      {c.headline ? (
-                        <>
-                          <p className="text-sm md:text-base leading-snug text-foreground/80">
-                            {c.headline}
-                          </p>
-                          <div className="mt-4 flex items-center justify-between">
-                            {c.date ? (
-                              <span className="text-[10px] tracking-[0.28em] uppercase text-foreground/50">{c.date}</span>
-                            ) : <span />}
-                            {c.url && (
-                              <span className="inline-flex items-center gap-1 text-[11px] tracking-[0.24em] uppercase text-primary group-hover:translate-x-0.5 transition-transform">
-                                Leer <ArrowUpRight size={14} />
-                              </span>
-                            )}
-                          </div>
-                        </>
-                      ) : (
-                        <div className="text-[10px] tracking-[0.3em] uppercase text-foreground/50">
-                          Aparición en medios
-                        </div>
-                      )}
-                    </div>
-                  </Tag>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Reconocimiento institucional */}
-        <section className="border-t border-white/10">
-          <div className="container-ddp py-16 md:py-24">
-            <p className="eyebrow mb-8">Reconocimiento institucional</p>
-            <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-              <figure className="md:col-span-8 overflow-hidden rounded-sm">
-                <img
-                  src={reinaLetizia.url}
-                  alt="Encuentro con S.M. la Reina Doña Letizia en la Universidad de Navarra"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </figure>
-              <div className="md:col-span-4">
-                <p className="text-xl md:text-2xl leading-[1.3] text-foreground/85">
-                  Reconocimiento de S.M. la Reina Doña Letizia en la Universidad de Navarra.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Colofón — contacto prensa */}
-        <section className="border-t border-white/10">
-          <div className="container-ddp py-16 md:py-24 text-center">
-            <p className="eyebrow mb-6">Contacto de prensa</p>
-            <p className="text-xl sm:text-2xl md:text-4xl leading-[1.2] max-w-3xl mx-auto text-foreground break-words">
-              Para entrevistas, medios y colaboraciones editoriales:{" "}
-              <a
-                href="mailto:contactoeldiariodelpoder@gmail.com"
-                className="text-primary underline decoration-primary/40 underline-offset-[6px] hover:decoration-primary break-all"
-              >
-                contactoeldiariodelpoder@gmail.com
-              </a>
-            </p>
-            <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-              O si lo prefiere,{" "}
-              <a
-                href="https://cal.com/el-diario-del-poder-wwdlhf"
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary underline decoration-primary/40 underline-offset-[4px] hover:decoration-primary"
-              >
-                reserve una llamada con nuestro equipo
-              </a>
-              .
-            </p>
-          </div>
-        </section>
-
+        <Press />
         <Suspense fallback={null}>
           <Footer />
         </Suspense>

@@ -30,39 +30,49 @@ const guests = [
 export function GuestsCarousel() {
   const loop = [...guests, ...guests];
   return (
-    <section id="guests" className="relative py-16 md:py-24 border-t border-white/5 bg-background overflow-hidden">
+    <section id="guests" className="relative py-20 md:py-32 border-t border-border bg-card/20 overflow-hidden">
       <div className="container-ddp relative mb-10 md:mb-14">
-        <p className="eyebrow mb-6">Los invitados</p>
-        <div className="grid grid-cols-12 gap-6 items-end">
-          <h2 className="col-span-12 md:col-span-8 display-lg text-foreground">
-            Presidentes, CEOs<br />y referentes.
-          </h2>
-          <p className="col-span-12 md:col-span-4 text-[11px] tracking-[0.26em] uppercase text-foreground/60 md:text-right">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-3xl">
+            <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Invitados</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+              Voces que <span className="italic text-gold">construyen</span>.
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-lg">
+              Líderes que dan conversación a conversación.
+            </p>
+          </div>
+          <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-[14rem]">
             Presidentes · CEOs · Fundadores
           </p>
         </div>
       </div>
 
       <div className="relative overflow-hidden mask-fade-x">
-        <div className="marquee marquee-slow gap-6 sm:gap-8 md:gap-12 items-start">
+        <div className="marquee marquee-fast gap-3 sm:gap-4 md:gap-5">
           {loop.map((g, i) => (
-            <article key={i} className="group shrink-0 w-[180px] sm:w-[220px] md:w-[260px]">
-              <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-                <img
-                  src={g.img}
-                  alt={g.name}
-                  width={512}
-                  height={640}
-                  loading="lazy"
-                  className="photo-bw absolute inset-0 w-full h-full object-cover"
-                />
+            <article
+              key={i}
+              className="group relative shrink-0 w-[200px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden bg-background hover-cinema"
+            >
+              <img
+                src={g.img}
+                alt={g.name}
+                width={512}
+                height={640}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="font-serif text-lg md:text-xl leading-tight">{g.name}</h3>
+                <p className="mt-1.5 text-[10px] md:text-[11px] tracking-[0.18em] text-gold/80 uppercase">{g.role}</p>
               </div>
-              <h3 className="mt-3 font-display text-base md:text-lg leading-tight text-foreground">{g.name}</h3>
-              <p className="mt-1 text-[10px] tracking-[0.2em] uppercase text-foreground/60">{g.role}</p>
             </article>
           ))}
         </div>
       </div>
+
     </section>
   );
 }

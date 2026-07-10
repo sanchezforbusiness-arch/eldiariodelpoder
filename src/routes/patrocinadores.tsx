@@ -3,7 +3,6 @@ import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
-import { CAL_URL } from "@/components/ddp/CalEmbed";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
 export const Route = createFileRoute("/patrocinadores")({
@@ -80,19 +79,6 @@ const tiers = [
   },
 ];
 
-const trustedBrands = [
-  "Telefónica",
-  "SenYours Consulting",
-  "Paterberg",
-  "NoBrainer",
-  "Metlabs",
-  "IE Team",
-  "Contents.com",
-  "Fondo Alkemia",
-  "Campus Home",
-  "UNOde50",
-];
-
 function PatrocinadoresPage() {
   useReveal();
   return (
@@ -102,9 +88,7 @@ function PatrocinadoresPage() {
         <Hero />
         <Pillars />
         <Tiers />
-        <TrustedBy />
         <Contact />
-        <BookCall />
       </main>
       <Footer />
     </div>
@@ -113,7 +97,7 @@ function PatrocinadoresPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden grain">
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
       <img
         src={hosts}
         alt=""
@@ -133,8 +117,8 @@ function Hero() {
               <span className="dot-gold" /> Patrocinadores
             </span>
           </div>
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
-            Sé parte de una <span className="">conversación</span> que importa.
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
+            Sé parte de una <span className="italic text-gold">conversación</span> que importa.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
             Diario del Poder es el podcast premium en español sobre liderazgo, criterio
@@ -142,17 +126,9 @@ function Hero() {
             que están dejando huella.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href={CAL_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary"
-            >
-              Reservar una llamada
-              <ArrowUpRight size={14} />
-            </a>
-            <a href="#contacto" className="btn-outline">
+            <a href="#contacto" className="btn-primary">
               Hablar con el equipo
+              <ArrowUpRight size={14} />
             </a>
             <a href="#opciones" className="btn-outline">
               Ver opciones
@@ -173,8 +149,8 @@ function Pillars() {
             <span className="dot-gold mr-2" />
             Por qué DDP
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Una plataforma de <span className="">estatus editorial</span>.
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+            Una plataforma de <span className="italic text-gold">estatus editorial</span>.
           </h2>
         </div>
 
@@ -182,7 +158,7 @@ function Pillars() {
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-8 md:p-10">
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-5">{p.n}</p>
-              <h3 className="font-display text-2xl md:text-3xl font-light leading-tight mb-4">
+              <h3 className="font-serif text-2xl md:text-3xl font-light leading-tight mb-4">
                 {p.t}
               </h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -205,8 +181,8 @@ function Tiers() {
             <span className="dot-gold mr-2" />
             Opciones de patrocinio
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Tres formas de <span className="">conversar</span> con nuestra audiencia.
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+            Tres formas de <span className="italic text-gold">conversar</span> con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
             Diseñamos cada acuerdo a medida. Estas son las tres formas en las que solemos trabajar.
@@ -231,7 +207,7 @@ function Tiers() {
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-3">
                 {t.pitch}
               </p>
-              <h3 className="font-display text-4xl md:text-5xl font-light mb-8">
+              <h3 className="font-serif text-4xl md:text-5xl font-light mb-8">
                 {t.name}
               </h3>
               <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
@@ -265,34 +241,6 @@ function Tiers() {
   );
 }
 
-function TrustedBy() {
-  return (
-    <section className="py-20 md:py-28 border-t border-border">
-      <div className="container-ddp">
-        <div className="max-w-3xl mb-12 md:mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em] pb-4 border-b border-border">
-            Han confiado en nosotros
-          </h2>
-          <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
-            Marcas que comparten nuestra visión de largo plazo.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-12">
-          {trustedBrands.map((brand) => (
-            <span
-              key={brand}
-              className="font-display text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default"
-            >
-              {brand}
-            </span>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Contact() {
   return (
     <section id="contacto" className="relative py-24 md:py-36 border-t border-border overflow-hidden">
@@ -303,8 +251,8 @@ function Contact() {
             <span className="dot-gold mr-2" />
             Hablemos
           </span>
-          <h2 className="font-display text-4xl md:text-6xl leading-[1.0] font-light tracking-[-0.02em]">
-            Tu marca, en conversaciones <span className="">que importan</span>.
+          <h2 className="font-serif text-4xl md:text-6xl leading-[1.0] font-light tracking-[-0.02em]">
+            Tu marca, en conversaciones <span className="italic text-gold">que importan</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             Cuéntanos tu compañía y tus objetivos. Te respondemos en menos de 48 horas con una propuesta a medida.
@@ -325,55 +273,6 @@ function Contact() {
             >
               contactoeldiariodelpoder@gmail.com
             </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BookCall() {
-  return (
-    <section id="agenda" className="py-20 md:py-28 border-t border-white/10">
-      <div className="container-ddp">
-        <p className="eyebrow mb-6">Agenda</p>
-        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end mb-10 md:mb-14">
-          <h2 className="md:col-span-8 display-lg text-foreground">
-            Una llamada.<br />Sin compromiso.
-          </h2>
-          <p className="md:col-span-4 text-foreground/70 leading-relaxed">
-            Treinta minutos para conocernos y explorar cómo tiene sentido colaborar.
-          </p>
-        </div>
-
-        <div className="bg-card border border-white/10 rounded-sm p-8 md:p-14">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
-            <div className="md:col-span-7">
-              <p className="eyebrow mb-5">Reserva directa</p>
-              <h3 className="display-md text-foreground">
-                Elija su hueco.<br />
-                <span className="text-primary">Confirmado al instante.</span>
-              </h3>
-              <ul className="mt-8 space-y-3 text-base md:text-lg text-foreground/80">
-                <li className="flex items-baseline gap-3"><span className="w-1 h-1 rounded-full bg-primary translate-y-[-3px]" /> 30 minutos</li>
-                <li className="flex items-baseline gap-3"><span className="w-1 h-1 rounded-full bg-primary translate-y-[-3px]" /> Videollamada</li>
-                <li className="flex items-baseline gap-3"><span className="w-1 h-1 rounded-full bg-primary translate-y-[-3px]" /> Elige tú el horario</li>
-              </ul>
-            </div>
-
-            <div className="md:col-span-5 md:border-l md:border-white/10 md:pl-14">
-              <a
-                href={CAL_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary w-full text-[13px] py-5 tracking-[0.18em]"
-              >
-                Reservar una llamada
-              </a>
-              <p className="mt-5 text-xs text-foreground/55 leading-relaxed">
-                Se abrirá nuestro calendario en una nueva pestaña. Sin registros.
-              </p>
-            </div>
           </div>
         </div>
       </div>

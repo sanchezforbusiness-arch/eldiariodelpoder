@@ -1,47 +1,50 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, KeyRound, Check } from "lucide-react";
 import hosts from "@/assets/bts-hosts-palco.webp";
-
+import { SplitText } from "./SplitText";
 
 export function ClubTeaser() {
   return (
-    <section id="club" className="relative border-t border-white/5 overflow-hidden bg-background">
-      <div className="container-ddp py-16 md:py-24">
-        <p className="eyebrow mb-8">El Club del Poder</p>
-        <div className="grid grid-cols-12 gap-10 md:gap-14 items-start">
-          <div className="col-span-12 md:col-span-7">
-            <h2 className="display-lg text-foreground">
-              Una comunidad<br />real.
-            </h2>
-            <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-xl leading-relaxed">
-              Una mesa común para quienes están cambiando lo que viene. Acceso por invitación.
+    <section id="club" className="relative border-t border-border overflow-hidden">
+      <div className="relative min-h-[60vh] md:min-h-[70vh] flex items-center">
+        <img src={hosts} alt="" aria-hidden loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover ken-burns opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/30 to-transparent" />
+        <div className="gold-glow float-slow w-[520px] h-[520px] -bottom-32 -right-32 opacity-40" />
+
+        <div className="container-ddp relative z-10 py-16 md:py-28 w-full">
+          <div className="max-w-3xl reveal ember-bar pl-6 md:pl-8">
+            <span className="eyebrow block mb-5 text-gold flex items-center gap-2">
+              <KeyRound size={14} /> El Club del Poder
+            </span>
+            <SplitText
+              as="h2"
+              text="Una comunidad real."
+              goldWords={["comunidad", "real"]}
+              italicWords={["comunidad", "real"]}
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] md:leading-[0.95] font-light tracking-[-0.025em]"
+            />
+            <p className="mt-5 md:mt-6 text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
+              No una red de contactos. Una mesa común para quienes están cambiando lo que viene. Acceso por invitación.
             </p>
 
-            <ul className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-2 max-w-xl text-sm text-foreground/85">
+            <ul className="mt-7 md:mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-2.5 max-w-xl text-sm text-foreground/85">
               {[
                 "Acceso anticipado a episodios",
                 "Eventos privados en Madrid",
                 "Red de contactos verificada",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2.5">
-                  <Check size={14} className="text-primary mt-1 shrink-0" />
+                  <Check size={14} className="text-gold mt-0.5 shrink-0" />
                   <span>{b}</span>
                 </li>
               ))}
             </ul>
 
-            <Link to="/club" className="btn-primary mt-8">
+            <Link to="/club" className="btn-primary mt-8 md:mt-10">
               Solicitar acceso
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
-          </div>
-          <div className="col-span-12 md:col-span-5 md:pl-10">
-            <div className="group relative aspect-[4/5] overflow-hidden bg-muted rounded-sm">
-              <img src={hosts} alt="Hosts en el palco del Metropolitano" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            </div>
-            <p className="mt-3 text-[10px] tracking-[0.24em] uppercase text-foreground/50">
-              Alejandro Sánchez y Víctor Gandarilla
-            </p>
           </div>
         </div>
       </div>
