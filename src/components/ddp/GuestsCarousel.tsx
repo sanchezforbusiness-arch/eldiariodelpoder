@@ -25,6 +25,7 @@ const guests = [
   { name: "José Carlos González Hurtado", role: "Dueño de EWTN · Ex CEO P&G", img: jcghAsset.url },
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
   { name: "Miguel Anxo Bastos", role: "Economista y conferenciante", img: miguelAsset.url },
+  { name: "Daniela Macarena", role: "Co-fundadora de Ac2ality", img: danielaAsset.url },
 ];
 
 
