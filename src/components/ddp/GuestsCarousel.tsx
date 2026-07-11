@@ -10,6 +10,7 @@ import rosaAsset from "@/assets/guest-rosa-lagarrigue.png.asset.json";
 import jcghAsset from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 import aguirreAsset from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 import miguelAsset from "@/assets/guest-miguel-anxo-bastos.png.asset.json";
+import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
 
 const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
@@ -24,6 +25,7 @@ const guests = [
   { name: "José Carlos González Hurtado", role: "Dueño de EWTN · Ex CEO P&G", img: jcghAsset.url },
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
   { name: "Miguel Anxo Bastos", role: "Economista y conferenciante", img: miguelAsset.url },
+  { name: "Daniela Macarena", role: "Co-fundadora de Ac2ality", img: danielaAsset.url },
 ];
 
 
