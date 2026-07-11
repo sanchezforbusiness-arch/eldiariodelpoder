@@ -17,6 +17,7 @@ const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
   { name: "Guillermo Lasso", role: "Expresidente de Ecuador", img: g5 },
   { name: "Esperanza Aguirre", role: "Expresidenta de la Comunidad de Madrid", img: aguirreAsset.url },
+  { name: "Marcos de Quinto", role: "Exvicepresidente de Coca-Cola · Empresario", img: marcosAsset.url },
   { name: "Javier Tebas", role: "Presidente de La Liga", img: g3 },
   { name: "Andrés Rodríguez", role: "Presidente de Forbes", img: g4 },
   { name: "Arturo Coello", role: "Nº 1 del mundo de pádel", img: coelloAsset.url },
