@@ -11,6 +11,7 @@ import jcghAsset from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 import aguirreAsset from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 import miguelAsset from "@/assets/guest-miguel-anxo-bastos.png.asset.json";
 import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
+import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
 
 const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
