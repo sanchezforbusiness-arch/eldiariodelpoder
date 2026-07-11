@@ -12,6 +12,8 @@ import aguirreAsset from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 import miguelAsset from "@/assets/guest-miguel-anxo-bastos.png.asset.json";
 import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
 import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
+import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
+
 
 const guests = [
   { name: "José María Aznar", role: "Expresidente del Gobierno", img: g1 },
@@ -28,7 +30,9 @@ const guests = [
   { name: "Federica Fornaciari", role: "CEO SenYours · Estratega", img: g8 },
   { name: "Miguel Anxo Bastos", role: "Economista y conferenciante", img: miguelAsset.url },
   { name: "Daniela Macarena", role: "Co-fundadora de Ac2ality", img: danielaAsset.url },
+  { name: "Sonsoles Ónega", role: "Periodista y presentadora", img: sonsolesAsset.url },
 ];
+
 
 
 export function GuestsCarousel() {
