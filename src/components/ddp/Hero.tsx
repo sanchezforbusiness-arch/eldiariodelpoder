@@ -9,12 +9,11 @@ export function Hero() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Solo cargamos el iframe en desktop, respetando reduce-motion y save-data.
-    const mqDesktop = window.matchMedia("(min-width: 768px)");
+    // Cargamos el iframe en cualquier viewport, respetando reduce-motion y save-data.
     const mqReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
     const slow = conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType));
-    if (!mqDesktop.matches || mqReduced.matches || slow) return;
+    if (mqReduced.matches || slow) return;
 
     let handle: number | undefined;
     const schedule =
@@ -55,8 +54,13 @@ export function Hero() {
               title="Diario del Poder — fondo"
               allow="autoplay; encrypted-media; picture-in-picture"
               loading="lazy"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vh] opacity-70 pointer-events-none scale-125"
-              style={{ border: 0 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-70 pointer-events-none"
+              style={{
+                border: 0,
+                // Cobertura tipo object-cover: siempre llena el viewport sin bandas.
+                width: "max(100vw, 177.78vh)",
+                height: "max(100vh, 56.25vw)",
+              }}
             />
             <div className="absolute inset-0 pointer-events-auto" />
           </div>
