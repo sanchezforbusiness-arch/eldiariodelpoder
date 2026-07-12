@@ -25,14 +25,14 @@ export function ClubTeaser() {
               className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] md:leading-[0.95] font-light tracking-[-0.025em]"
             />
             <p className="mt-5 md:mt-6 text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              No una red de contactos. Una mesa común para quienes están cambiando lo que viene. Acceso por invitación.
+              No una red de contactos: una mesa común. Se entra por invitación.
             </p>
 
             <ul className="mt-7 md:mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-2.5 max-w-xl text-sm text-foreground/85">
               {[
-                "Acceso anticipado a episodios",
-                "Eventos privados en Madrid",
-                "Red de contactos verificada",
+                "Episodios antes que nadie",
+                "Cenas privadas en Madrid",
+                "Gente que suma, no que suma seguidores",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2.5">
                   <Check size={14} className="text-gold mt-0.5 shrink-0" />
