@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Diario del Poder" },
       { property: "og:locale", content: "es_ES" },
+      { property: "og:url", content: "https://eldiariodelpoder.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
