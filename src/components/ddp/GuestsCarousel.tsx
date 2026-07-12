@@ -61,7 +61,7 @@ export function GuestsCarousel() {
           {loop.map((g, i) => (
             <article
               key={i}
-              className="group relative shrink-0 w-[200px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden bg-background hover-cinema"
+              className="group relative shrink-0 w-[200px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden rounded-2xl bg-background hover-cinema"
             >
               <img
                 src={g.img}
