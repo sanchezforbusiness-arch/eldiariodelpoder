@@ -78,7 +78,7 @@ export function Team() {
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">
-            Dos fundadores y dos asesores que nos acompañan. Hecho en Madrid, con cuidado.
+            Dos fundadores. Dos asesores. Hecho en Madrid.
           </p>
         </div>
 

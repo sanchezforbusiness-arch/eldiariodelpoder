@@ -30,7 +30,7 @@ export function Sponsors() {
           <div className="text-center mb-12">
             <span className="eyebrow block mb-5">Sponsors</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
-              Marcas que nos <span className="italic text-gold">acompañan en el camino</span>.
+              Marcas que van <span className="italic text-gold">con nosotros</span>.
             </h2>
           </div>
 

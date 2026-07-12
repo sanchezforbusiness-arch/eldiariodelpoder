@@ -87,7 +87,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 md:mt-9 max-w-xl text-base md:text-lg text-foreground/75 leading-relaxed">
-            Donde los mayores referentes del mundo dejan su legado a la juventud.
+            Los referentes de hoy, hablando a los de mañana.
           </p>
 
           <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-3 sm:gap-5">

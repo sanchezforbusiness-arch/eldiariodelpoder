@@ -13,9 +13,9 @@ export function Footer() {
           <div className="md:col-span-6">
             <div className="font-serif text-3xl text-gold mb-5">DDP</div>
             <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-snug max-w-md font-light">
-              Conversamos con quienes están <span className="italic">dejando huella</span>.
+              Los referentes de hoy, <span className="italic">a los de mañana</span>.
             </p>
-            <p className="mt-5 text-sm text-muted-foreground">Hecho en Madrid, con cuidado.</p>
+            <p className="mt-5 text-sm text-muted-foreground">Grabado en Madrid.</p>
           </div>
 
           <div className="md:col-span-3">

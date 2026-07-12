@@ -58,7 +58,7 @@ export function Backstage() {
             </h2>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-xs">
-            Madrid · donde se graban las historias
+            Madrid · lo que pasa entre toma y toma
           </p>
         </div>
       </div>

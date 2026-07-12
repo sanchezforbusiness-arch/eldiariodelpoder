@@ -18,8 +18,8 @@ export function Manifesto() {
         <div className="max-w-5xl mx-auto text-center reveal">
           <span className="eyebrow block mb-8">Manifiesto</span>
           <p className="font-serif font-light text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-[-0.02em]">
-            Aprender de quienes <span className="italic shimmer-gold">dejan huella</span><br />
-            y compartirlo<br className="hidden md:block" /> con los que vienen.
+            Aprender de quienes <span className="italic shimmer-gold">dejan huella</span>.<br />
+            Contárselo a los que <br className="hidden md:block" />vienen detrás.
           </p>
         </div>
       </div>

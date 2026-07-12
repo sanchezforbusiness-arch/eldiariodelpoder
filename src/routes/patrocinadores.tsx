@@ -31,18 +31,18 @@ export const Route = createFileRoute("/patrocinadores")({
 const pillars = [
   {
     n: "01",
-    t: "Audiencia de decisores",
-    d: "Ejecutivos, fundadores, inversores y referentes institucionales. No volumen masivo: relevancia.",
+    t: "Audiencia que decide",
+    d: "Ejecutivos, fundadores e inversores. Menos volumen, más relevancia.",
   },
   {
     n: "02",
-    t: "Asociación con liderazgo",
-    d: "Tu marca conversa al lado de expresidentes, CEOs y voces que están dejando huella.",
+    t: "Al lado del liderazgo",
+    d: "Tu marca, junto a expresidentes, CEOs y referentes.",
   },
   {
     n: "03",
-    t: "Editorial rigurosa",
-    d: "Conversaciones con criterio, sin ruido. Un entorno cuidado para tu mensaje.",
+    t: "Editorial cuidada",
+    d: "Sin ruido. Un entorno serio para tu mensaje.",
   },
 ];
 
@@ -53,7 +53,7 @@ const tiers = [
     perks: [
       "Logo en web y newsletter",
       "1 mención por episodio",
-      "Materiales de prensa compartidos",
+      "Materiales de prensa",
     ],
   },
   {
@@ -61,9 +61,9 @@ const tiers = [
     pitch: "Asociación de marca",
     perks: [
       "Todo lo anterior",
-      "Lectura cuidada en cabecera de episodio",
-      "Co-creación de un episodio temático",
-      "Acceso a uno de nuestros eventos privados",
+      "Lectura al inicio de cada episodio",
+      "Un episodio temático hecho contigo",
+      "Acceso a un evento privado",
     ],
     featured: true,
   },
@@ -118,12 +118,10 @@ function Hero() {
             </span>
           </div>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
-            Sé parte de una <span className="italic text-gold">conversación</span> que importa.
+            Sé parte de la <span className="italic text-gold">conversación</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
-            Diario del Poder es el podcast premium en español sobre liderazgo, criterio
-            e influencia. Asocia tu marca a una audiencia de decisores y a las voces
-            que están dejando huella.
+            El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a href="#contacto" className="btn-primary">
@@ -150,7 +148,7 @@ function Pillars() {
             Por qué DDP
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
-            Una plataforma de <span className="italic text-gold">estatus editorial</span>.
+            Un entorno con <span className="italic text-gold">criterio</span>.
           </h2>
         </div>
 

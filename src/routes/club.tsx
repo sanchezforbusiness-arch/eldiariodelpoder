@@ -48,17 +48,17 @@ const pillars = [
 ];
 
 const philosophy = [
-  "El poder no es un fin. Es una forma de cuidar lo que importa.",
-  "El liderazgo de verdad casi nunca necesita parecerlo.",
-  "La influencia que deja huella nace de mirar despacio.",
-  "Nos juntamos alrededor de ideas, no de contactos.",
+  "El poder no es un fin. Es cuidar lo que importa.",
+  "El liderazgo de verdad no necesita parecerlo.",
+  "La huella se deja mirando despacio.",
+  "Nos juntamos por ideas, no por contactos.",
 ];
 
 const faqs = [
-  { q: "¿Quién puede unirse?", a: "Profesionales y emprendedores con ganas reales de aportar, aprender y rodearse bien." },
-  { q: "¿Cómo se entra?", a: "Nos cuentas quién eres. Leemos tu perfil con calma. Si encajas, te damos la bienvenida en persona." },
-  { q: "¿Hay cuota?", a: "Sí, anual. Te contamos los detalles cuando hablemos." },
-  { q: "¿Eventos?", a: "Dos al año en Madrid. Cenas cerradas y diálogos a puerta cerrada." },
+  { q: "¿Quién puede unirse?", a: "Fundadores y profesionales con ganas de aportar y aprender." },
+  { q: "¿Cómo se entra?", a: "Nos cuentas quién eres. Si encajas, te escribimos y nos vemos." },
+  { q: "¿Hay cuota?", a: "Sí, anual. Los detalles, cuando hablemos." },
+  { q: "¿Eventos?", a: "Dos al año en Madrid. A puerta cerrada." },
 ];
 
 function ClubPage() {
@@ -93,7 +93,7 @@ function Hero() {
             Una comunidad<br /> que <span className="italic shimmer-gold">se cuida</span>.
           </h1>
           <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
-            Acceso por invitación. Sin ruido, sin postureo. Solo gente con ganas de aportar.
+            Se entra por invitación. Gente que aporta, no que aparenta.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a href="#apply" className="btn-primary">
@@ -180,13 +180,13 @@ function Apply() {
           Cuéntanos <span className="italic text-gold">quién eres</span>.
         </h2>
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl">
-          Leemos cada solicitud con calma. Si encajas, te escribimos para conocernos en persona.
+          Leemos cada solicitud. Si encajas, te escribimos.
         </p>
 
         {submitted ? (
           <div className="mt-10 border border-gold/40 bg-card/40 p-8">
             <p className="font-serif text-2xl">Gracias. Te hemos leído.</p>
-            <p className="mt-2 text-sm text-muted-foreground">Te escribimos en 5–7 días, sin prisa.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Te escribimos en 5–7 días.</p>
           </div>
         ) : (
           <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="mt-10 grid gap-5">
