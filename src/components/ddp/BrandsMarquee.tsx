@@ -20,10 +20,10 @@ export function BrandsMarquee() {
   return (
     <section
       aria-label="Marcas que han colaborado con nosotros"
-      className="relative py-20 md:py-28 border-t border-border overflow-hidden"
+      className="relative py-20 md:py-28 overflow-hidden"
     >
       {/* Header */}
-      <div className="container-ddp mb-14 md:mb-20">
+      <div className="container-ddp mb-12 md:mb-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Colaboraciones</span>
@@ -40,18 +40,18 @@ export function BrandsMarquee() {
       {/* Marquee */}
       <div className="relative">
         <div className="mask-fade-x">
-          <div className="marquee items-center gap-14 md:gap-20">
+          <div className="marquee items-center gap-16 md:gap-24">
             {loop.map((b, i) => (
               <div
                 key={i}
-                className="group shrink-0 inline-flex items-center gap-3 h-10 md:h-12 opacity-70 hover:opacity-100 transition-opacity"
+                className="group shrink-0 inline-flex items-center gap-3 h-12 md:h-14"
                 title={b.name}
               >
                 {b.src ? (
                   <img
                     src={b.src}
                     alt={b.name}
-                    className="h-8 md:h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="h-9 md:h-11 w-auto object-contain brightness-100 contrast-100"
                     loading="lazy"
                     decoding="async"
                   />
@@ -60,18 +60,18 @@ export function BrandsMarquee() {
                     src={`https://unavatar.io/${b.domain}?fallback=false`}
                     alt=""
                     aria-hidden
-                    width={28}
-                    height={28}
+                    width={32}
+                    height={32}
                     loading="lazy"
                     decoding="async"
-                    className="h-7 w-7 md:h-8 md:w-8 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="h-8 w-8 md:h-9 md:w-9 object-contain opacity-90"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).style.display = "none";
                     }}
                   />
                 )}
                 {!b.src && (
-                  <span className="font-serif text-xl md:text-2xl text-foreground/70 group-hover:text-foreground transition-colors whitespace-nowrap tracking-[-0.01em]">
+                  <span className="font-serif text-xl md:text-2xl text-foreground whitespace-nowrap tracking-[-0.01em]">
                     {b.name}
                   </span>
                 )}
@@ -79,10 +79,6 @@ export function BrandsMarquee() {
             ))}
           </div>
         </div>
-
-        {/* Hairlines */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
     </section>
   );
