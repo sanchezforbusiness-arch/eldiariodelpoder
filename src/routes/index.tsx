@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
+import { StatsStrip } from "@/components/ddp/StatsStrip";
+import { Ticker } from "@/components/ddp/Ticker";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { Episodes } from "@/components/ddp/Episodes";
 import { useReveal } from "@/hooks/use-reveal";
@@ -42,6 +44,8 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <StatsStrip />
+        <Ticker />
         <GuestsCarousel />
         <Episodes />
         <div className="cv-auto">
