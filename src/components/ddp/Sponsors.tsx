@@ -28,7 +28,7 @@ export function Sponsors() {
       <div className="container-ddp space-y-20">
         <div>
           <div className="text-center mb-12">
-            <span className="eyebrow-bar mb-5">Sponsors</span>
+            <span className="eyebrow block mb-5">Sponsors</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
               Marcas que nos <span className="italic text-gold">acompañan en el camino</span>.
             </h2>
