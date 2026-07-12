@@ -72,7 +72,7 @@ export function Team() {
       <div className="container-ddp">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-7">
-            <span className="eyebrow block mb-5">Quiénes somos</span>
+            <span className="eyebrow-bar mb-5">Quiénes somos</span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
               Las personas detrás de cada <span className="italic text-gold">conversación</span>.
             </h2>

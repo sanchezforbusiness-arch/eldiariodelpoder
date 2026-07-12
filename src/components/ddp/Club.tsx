@@ -28,7 +28,7 @@ export function Club() {
 
         <div className="container-ddp relative z-10 py-24 md:py-32 w-full">
           <div className="max-w-4xl reveal">
-            <span className="eyebrow block mb-6 text-gold">El Club del Poder</span>
+            <span className="eyebrow-bar mb-6">El Club del Poder</span>
             <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.025em]">
               Una <span className="italic shimmer-gold">comunidad real</span>.<br />
               No una red de contactos.
