@@ -8,7 +8,7 @@ export const Route = createFileRoute("/invitados")({
   head: () => ({
     meta: [
       { title: "Invitados — Diario del Poder" },
-      { name: "description", content: "Presidentes, CEOs y referentes que se han sentado a conversar con nosotros, sin prisa y sin guion." },
+      { name: "description", content: "Presidentes, CEOs y referentes que se han sentado con nosotros. Sin prisa, sin guion." },
       { property: "og:title", content: "Invitados — Diario del Poder" },
       { property: "og:description", content: "Voces que están construyendo lo que viene." },
       { property: "og:url", content: "https://eldiariodelpoder.com/invitados" },
