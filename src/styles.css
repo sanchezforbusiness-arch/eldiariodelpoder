@@ -78,12 +78,30 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
     font-weight: 400;
     letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--color-gold-bright) 80%, transparent);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   ::selection {
