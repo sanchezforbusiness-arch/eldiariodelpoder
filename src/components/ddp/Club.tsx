@@ -31,11 +31,11 @@ export function Club() {
             <span className="eyebrow block mb-6 text-gold">El Club del Poder</span>
             <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.025em]">
               Una <span className="italic shimmer-gold">comunidad real</span>.<br />
-              No una red de contactos.
+              No una agenda de contactos.
             </h2>
 
             <p className="mt-8 text-lg md:text-xl text-foreground/80 max-w-xl leading-relaxed">
-              Un grupo de fundadores, ejecutivos y líderes que se encuentra en Madrid para conversar sin cámaras, sin prisa. Para aprender unos de otros — y a veces, simplemente compartir mesa.
+              Fundadores y líderes que se ven en Madrid. Sin cámaras. Sin prisa. A veces, solo para compartir mesa.
             </p>
 
             {/* Stats row */}
