@@ -123,7 +123,7 @@ export function Press() {
             href={featured.url}
             target="_blank"
             rel="noreferrer"
-            className="group relative block mb-20 md:mb-28 reveal overflow-hidden border border-border hover:border-gold/60 transition-colors"
+            className="group relative block mb-20 md:mb-28 reveal overflow-hidden rounded-[1.5rem] border border-border hover:border-gold/60 transition-colors"
           >
             <div className="grid md:grid-cols-5">
               {/* Left: pull-quote */}
@@ -180,7 +180,7 @@ export function Press() {
         </div>
 
         {/* Editorial grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border border border-border reveal">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 reveal">
           {rest.map((item) => {
             const Tag = item.url ? "a" : "div";
             const Icon = kindIcon[item.kind ?? "digital"];
@@ -188,8 +188,8 @@ export function Press() {
               <Tag
                 key={item.outlet}
                 {...(item.url ? { href: item.url, target: "_blank", rel: "noreferrer" } : {})}
-                className={`relative bg-background p-6 md:p-8 min-h-[180px] flex flex-col justify-between overflow-hidden ${
-                  item.url ? "group hover:bg-card/60 transition-colors cursor-pointer" : "opacity-60"
+                className={`relative bg-card/40 p-6 md:p-8 min-h-[180px] flex flex-col justify-between overflow-hidden rounded-2xl border border-border ${
+                  item.url ? "group hover:bg-card/70 hover:border-gold/50 transition-colors cursor-pointer" : "opacity-60"
                 }`}
               >
                 {/* Hover sweep */}
@@ -232,7 +232,7 @@ export function Press() {
           </div>
           <a
             href="mailto:contactoeldiariodelpoder@gmail.com"
-            className="group inline-flex items-center justify-between gap-6 border border-border hover:border-gold p-6 md:p-8 transition-colors"
+            className="group inline-flex items-center justify-between gap-6 border border-border hover:border-gold rounded-2xl p-6 md:p-8 transition-colors"
           >
             <div>
               <p className="text-[10px] tracking-[0.32em] uppercase text-muted-foreground mb-2">Email</p>
