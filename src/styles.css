@@ -462,7 +462,8 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     line-height: 1;
-    padding: 1rem 1.75rem;
+    padding: 1.05rem 2rem;
+    border-radius: 9999px;
     border: 1px solid transparent;
     cursor: pointer;
     white-space: nowrap;
@@ -521,7 +522,8 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     line-height: 1;
-    padding: 1rem 1.75rem;
+    padding: 1.05rem 2rem;
+    border-radius: 9999px;
     border: 1px solid color-mix(in oklab, var(--color-foreground) 22%, transparent);
     background-color: transparent;
     cursor: pointer;
@@ -553,7 +555,8 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     line-height: 1;
-    padding: 0.75rem 1.25rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 9999px;
     cursor: pointer;
     white-space: nowrap;
     transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
@@ -597,7 +600,8 @@
     background-color: transparent;
     color: var(--color-foreground);
     border: 1px solid var(--color-border);
-    padding: 0.875rem 1.125rem;
+    padding: 0.95rem 1.25rem;
+    border-radius: 9999px;
     font-size: 0.95rem;
     line-height: 1.4;
     transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
@@ -613,9 +617,33 @@
 
   /* Compact size modifier for buttons */
   @utility btn-sm {
-    padding: 0.625rem 1.125rem;
+    padding: 0.7rem 1.25rem;
     font-size: 10.5px;
     letter-spacing: 0.2em;
+  }
+
+  /* Clean card / media containers — soft radius, subtle border */
+  @utility card-clean {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background-color: color-mix(in oklab, var(--color-card) 60%, transparent);
+    transition: border-color 0.35s ease, transform 0.5s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+  }
+  @utility card-clean-hover {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.35s ease, transform 0.5s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+    &:hover {
+      border-color: color-mix(in oklab, var(--color-gold-bright) 55%, var(--color-border));
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -30px color-mix(in oklab, #000 90%, transparent);
+    }
+  }
+  @utility media-clean {
+    border-radius: 1.25rem;
+    overflow: hidden;
   }
 
   /* Soft hairline divider used between sections */
