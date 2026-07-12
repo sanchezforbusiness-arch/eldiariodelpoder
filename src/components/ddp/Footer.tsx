@@ -21,12 +21,12 @@ export function Footer() {
           <div className="md:col-span-3">
             <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link to="/episodios" className="hover:text-foreground transition-colors">Episodios</Link></li>
-              <li><Link to="/invitados" className="hover:text-foreground transition-colors">Invitados</Link></li>
-              <li><Link to="/club" className="hover:text-foreground transition-colors">Club</Link></li>
-              <li><Link to="/manifiesto" className="hover:text-foreground transition-colors">Manifiesto</Link></li>
-              <li><Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link></li>
-              <li><Link to="/patrocinadores" className="hover:text-foreground transition-colors">Patrocinadores</Link></li>
+              <li><Link to="/episodios" className="link-quiet">Episodios</Link></li>
+              <li><Link to="/invitados" className="link-quiet">Invitados</Link></li>
+              <li><Link to="/club" className="link-quiet">Club</Link></li>
+              <li><Link to="/manifiesto" className="link-quiet">Manifiesto</Link></li>
+              <li><Link to="/prensa" className="link-quiet">Prensa</Link></li>
+              <li><Link to="/patrocinadores" className="link-quiet">Patrocinadores</Link></li>
             </ul>
           </div>
 
