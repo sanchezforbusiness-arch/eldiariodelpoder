@@ -47,7 +47,7 @@ export function GuestsCarousel() {
               Voces que <span className="italic text-gold">construyen</span>.
             </h2>
             <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-lg">
-              Líderes que dan conversación a conversación.
+              Gente que ha estado ahí. Y se sienta a contarlo.
             </p>
           </div>
           <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-[14rem]">
