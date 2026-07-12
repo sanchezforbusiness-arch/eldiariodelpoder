@@ -19,7 +19,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h4>
+            <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link to="/episodios" className="hover:text-foreground transition-colors">Episodios</Link></li>
               <li><Link to="/invitados" className="hover:text-foreground transition-colors">Invitados</Link></li>
@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3 min-w-0">
-            <h4 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h4>
+            <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h3>
             <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
               contactoeldiariodelpoder@gmail.com
             </a>
