@@ -6,7 +6,7 @@ const SITE_URL = "https://eldiariodelpoder.com";
 const SITE_NAME = "Diario del Poder";
 const SITE_TITLE = "Diario del Poder — Podcast de éxito con expresidentes y CEOs";
 const SITE_DESCRIPTION =
-  "Diario del Poder: el podcast en español donde expresidentes, CEOs y grandes referentes dejan su legado. Conversaciones con criterio, sin ruido. Escúchalo en Spotify y YouTube.";
+  "Diario del Poder: el podcast donde expresidentes, CEOs y referentes dejan su legado. Conversaciones con criterio y sin ruido. Escúchalo en Spotify y YouTube.";
 const SITE_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
 
@@ -148,7 +148,6 @@ export const Route = createRootRoute({
       { name: "keywords", content: "Diario del Poder, eldiariodelpoder, podcast de éxito, mejores podcast España, podcast en español, podcast política, podcast empresarial, podcast liderazgo, CEOs, expresidentes, podcast premium" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: "es_ES" },
-      { property: "og:url", content: SITE_URL },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
