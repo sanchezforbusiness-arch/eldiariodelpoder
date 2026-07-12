@@ -97,7 +97,7 @@ export function Press() {
             </h2>
           </div>
           <p className="md:col-span-4 text-muted-foreground text-base md:text-[15px] leading-relaxed">
-            Cobertura editorial, apariciones en televisión y referencias digitales que están situando a Diario del Poder en la conversación nacional.
+            Prensa, televisión y digitales. Lo que dicen fuera del podcast.
           </p>
         </div>
 
@@ -227,7 +227,7 @@ export function Press() {
           <div>
             <span className="eyebrow block mb-4">Contacto prensa</span>
             <h3 className="font-serif text-3xl md:text-4xl font-light leading-[1.1] tracking-[-0.015em]">
-              ¿Vas a escribir <span className="italic text-gold">sobre nosotros</span>?
+              ¿Escribes <span className="italic text-gold">sobre nosotros</span>?
             </h3>
           </div>
           <a
