@@ -32,7 +32,7 @@ export function BrandsMarquee() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground leading-relaxed">
-            Marcas y medios que han caminado con Diario del Poder.
+            Marcas y medios que ya se sentaron con nosotros.
           </p>
         </div>
       </div>
