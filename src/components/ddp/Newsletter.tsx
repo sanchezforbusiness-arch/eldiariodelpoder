@@ -48,7 +48,7 @@ export function Newsletter() {
               target="ddp-newsletter-frame"
               className="mt-10"
             >
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:shadow-[0_20px_40px_-30px_color-mix(in_oklab,var(--color-gold-bright)_50%,transparent)]">
                 <input
                   type="email"
                   name="email"
@@ -58,7 +58,7 @@ export function Newsletter() {
                   className="input-line flex-1 sm:rounded-none sm:border-r-0"
                   required
                 />
-                <button type="submit" disabled={loading} className="btn-primary">
+                <button type="submit" disabled={loading} className="btn-primary group sm:min-w-[190px]">
                   {loading ? <Loader2 size={14} className="animate-spin" /> : <>Suscribirme<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></>}
                 </button>
               </div>

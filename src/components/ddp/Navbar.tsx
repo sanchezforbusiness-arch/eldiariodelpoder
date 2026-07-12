@@ -57,12 +57,16 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`relative text-[13px] tracking-wide transition-colors ${
+                className={`group relative text-[13px] tracking-wide transition-colors ${
                   active ? "text-gold" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.label}
-                {active && <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />}
+                {active ? (
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />
+                ) : (
+                  <span className="pointer-events-none absolute -bottom-1.5 left-0 right-full h-px bg-gold/70 transition-[right] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:right-0" />
+                )}
               </Link>
             );
           })}
