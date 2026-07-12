@@ -34,11 +34,11 @@ export function Sponsors() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border border-border">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {sponsors.map((s) => (
               <div
                 key={s.name}
-                className="bg-background py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card transition-colors min-h-[140px]"
+                className="bg-card/40 rounded-2xl border border-border py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card hover:border-gold/40 transition-colors min-h-[140px]"
               >
                 <span className="font-serif text-lg md:text-xl text-foreground/85 group-hover:text-gold transition-colors leading-tight">
                   {s.name}
@@ -54,7 +54,7 @@ export function Sponsors() {
                 Quiero el media kit
               </button>
             ) : (
-              <div className="w-full max-w-xl border border-gold/50 bg-card/40 px-6 py-6 text-center">
+              <div className="w-full max-w-xl border border-gold/50 rounded-2xl bg-card/40 px-6 py-6 text-center">
                 <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Hablemos</p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                   <a
