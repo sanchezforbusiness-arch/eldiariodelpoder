@@ -4,6 +4,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Hero } from "@/components/ddp/Hero";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { Episodes } from "@/components/ddp/Episodes";
+import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
 import { useReveal } from "@/hooks/use-reveal";
 import heroDesktop from "@/assets/hero-portada-nueva.jpg.asset.json";
 import heroMobile from "@/assets/hero-mobile.jpg.asset.json";
@@ -43,6 +44,7 @@ function Index() {
       <main>
         <Hero />
         <GuestsCarousel />
+        <BrandsMarquee />
         <Episodes />
         <div className="cv-auto">
           <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
