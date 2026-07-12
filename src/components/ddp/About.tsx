@@ -2,9 +2,9 @@ import founderAlejandro from "@/assets/founder-alejandro.webp";
 import founderVictor from "@/assets/founder-victor.webp";
 
 const pillars = [
-  { n: "01", t: "Conversaciones", d: "Sin prisa, sin guion, sin titulares." },
-  { n: "02", t: "Invitados", d: "Personas que están marcando el paso." },
-  { n: "03", t: "Producción", d: "Cuidamos cada detalle como cuidamos cada palabra." },
+  { n: "01", t: "Conversación", d: "Sin guion. Sin prisa." },
+  { n: "02", t: "Invitados", d: "Los que marcan el paso." },
+  { n: "03", t: "Producción", d: "Cuidada, palabra a palabra." },
 ];
 
 export function About() {
@@ -15,12 +15,12 @@ export function About() {
           <div className="md:col-span-6 reveal">
             <span className="eyebrow block mb-7">Quiénes somos</span>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
-              Donde quienes <span className="italic text-gold">deciden</span><br />
-              se sientan a contarlo.
+              Quienes <span className="italic text-gold">deciden</span>,<br />
+              hablando en primera persona.
             </h2>
 
             <p className="mt-10 text-base md:text-[1.05rem] text-muted-foreground max-w-xl leading-[1.75]">
-              Diario del Poder nació para hablar con quienes están construyendo lo que viene: presidentes, fundadores y líderes que rara vez se sientan a contar su versión. Sin prisa, sin guion. Solo conversación honesta.
+              Presidentes, fundadores y líderes que casi nunca se sientan a contar su versión. Aquí lo hacen. Sin guion.
             </p>
 
             <div className="mt-12 grid grid-cols-3 gap-6 reveal-stagger">
