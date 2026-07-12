@@ -425,6 +425,26 @@
     content-visibility: auto;
     contain-intrinsic-size: 800px;
   }
+
+  /* Quiet underlined link — animated underline in gold */
+  .link-quiet {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s ease;
+  }
+  .link-quiet::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: -3px;
+    height: 1px;
+    background: var(--color-gold-bright);
+    transition: right 0.4s cubic-bezier(.2,.7,.2,1);
+  }
+  .link-quiet:hover { color: var(--color-gold-bright); }
+  .link-quiet:hover::after { right: 0; }
 }
 
 /* === Button system — clean, editorial, gold-forward === */
