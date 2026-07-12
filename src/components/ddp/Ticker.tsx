@@ -12,15 +12,15 @@ export function Ticker() {
   return (
     <section
       aria-hidden
-      className="relative py-8 md:py-10 border-y border-border bg-card/30 overflow-hidden"
+      className="relative py-8 md:py-10 border-y border-border bg-card/30 overflow-hidden mask-fade-x"
     >
       <div className="ticker">
         {loop.map((p, i) => (
           <span key={i} className="inline-flex items-center gap-10">
-            <span className="font-serif italic text-3xl md:text-5xl lg:text-6xl leading-none font-light text-foreground/85 whitespace-nowrap">
+            <span className="font-display italic text-4xl md:text-6xl lg:text-7xl leading-none font-light text-foreground/85 whitespace-nowrap">
               {p}
             </span>
-            <span className="dot-gold" />
+            <span className={i % 2 === 0 ? "dot-gold" : "dot-gold"} style={i % 3 === 0 ? { background: "var(--color-ice)", boxShadow: "0 0 0 4px color-mix(in oklab, var(--color-ice) 18%, transparent)" } : undefined} />
           </span>
         ))}
       </div>

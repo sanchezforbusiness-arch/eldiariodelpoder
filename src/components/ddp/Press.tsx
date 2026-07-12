@@ -225,7 +225,7 @@ export function Press() {
         {/* Press contact */}
         <div className="mt-20 md:mt-28 grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
           <div>
-            <span className="eyebrow block mb-4">Contacto prensa</span>
+            <span className="eyebrow-bar mb-4">Contacto prensa</span>
             <h3 className="font-serif text-3xl md:text-4xl font-light leading-[1.1] tracking-[-0.015em]">
               ¿Vas a escribir <span className="italic text-gold">sobre nosotros</span>?
             </h3>

@@ -13,7 +13,7 @@ export function About() {
       <div className="container-ddp relative">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-stretch">
           <div className="md:col-span-6 reveal">
-            <span className="eyebrow block mb-7">Quiénes somos</span>
+            <span className="eyebrow-bar mb-7">Quiénes somos</span>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-[-0.025em]">
               Donde quienes <span className="italic text-gold">deciden</span><br />
               se sientan a contarlo.
