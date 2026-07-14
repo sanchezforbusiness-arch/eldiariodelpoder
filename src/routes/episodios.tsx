@@ -37,8 +37,8 @@ function EpisodiosPage() {
     <div className="bg-background text-foreground">
       <Navbar />
       <main className="pt-24">
-        <header className="container-ddp pt-8 pb-4">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+        <header className="container-ddp pt-6 sm:pt-8 pb-4">
+          <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
             Todas las <span className="italic text-gold">conversaciones</span>
           </h1>
         </header>
