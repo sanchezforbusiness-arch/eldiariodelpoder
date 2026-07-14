@@ -36,6 +36,17 @@ export const Route = createFileRoute("/club")({
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eldiariodelpoder.com/" },
+            { "@type": "ListItem", position: 2, name: "Club", item: "https://eldiariodelpoder.com/club" },
+          ],
+        }),
+      },
     ],
   }),
   component: ClubPage,
