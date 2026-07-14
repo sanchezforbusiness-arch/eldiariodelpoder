@@ -24,6 +24,19 @@ export const Route = createFileRoute("/patrocinadores")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/patrocinadores" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eldiariodelpoder.com/" },
+            { "@type": "ListItem", position: 2, name: "Patrocinadores", item: "https://eldiariodelpoder.com/patrocinadores" },
+          ],
+        }),
+      },
+    ],
   }),
   component: PatrocinadoresPage,
 });
