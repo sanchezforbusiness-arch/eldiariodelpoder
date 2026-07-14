@@ -17,6 +17,19 @@ export const Route = createFileRoute("/prensa")({
       { property: "og:url", content: "https://eldiariodelpoder.com/prensa" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/prensa" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eldiariodelpoder.com/" },
+            { "@type": "ListItem", position: 2, name: "Prensa", item: "https://eldiariodelpoder.com/prensa" },
+          ],
+        }),
+      },
+    ],
   }),
   component: PrensaPage,
 });

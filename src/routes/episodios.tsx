@@ -14,6 +14,19 @@ export const Route = createFileRoute("/episodios")({
       { property: "og:url", content: "https://eldiariodelpoder.com/episodios" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/episodios" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eldiariodelpoder.com/" },
+            { "@type": "ListItem", position: 2, name: "Episodios", item: "https://eldiariodelpoder.com/episodios" },
+          ],
+        }),
+      },
+    ],
   }),
   component: EpisodiosPage,
 });
