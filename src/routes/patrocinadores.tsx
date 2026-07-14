@@ -110,7 +110,7 @@ function PatrocinadoresPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
+    <section className="relative pt-28 pb-16 md:pt-44 md:pb-32 overflow-hidden grain">
       <img
         src={hosts}
         alt=""
@@ -130,7 +130,7 @@ function Hero() {
               <span className="dot-gold" /> Patrocinadores
             </span>
           </div>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
+          <h1 className="font-serif text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
             Sé parte de la <span className="italic text-gold">conversación</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
