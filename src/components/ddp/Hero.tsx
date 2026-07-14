@@ -19,10 +19,12 @@ export function Hero() {
     const schedule =
       (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number })
         .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
-    // Esperamos a que termine la pintura inicial y el LCP antes de pedir YouTube.
+    // Móvil: arrancamos antes para no dejar tanto tiempo la foto estática.
+    const isMobile = window.matchMedia("(max-width: 639px)").matches;
+    const delay = isMobile ? 350 : 900;
     const t = window.setTimeout(() => {
-      handle = schedule(() => setLoadVideo(true), { timeout: 3000 });
-    }, 1200);
+      handle = schedule(() => setLoadVideo(true), { timeout: 2000 });
+    }, delay);
     return () => {
       window.clearTimeout(t);
       const cancel = (window as unknown as { cancelIdleCallback?: (h: number) => void }).cancelIdleCallback;
