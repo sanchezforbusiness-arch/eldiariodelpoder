@@ -92,7 +92,7 @@ function ClubPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grain">
+    <section className="relative pt-28 pb-16 md:pt-44 md:pb-32 overflow-hidden grain">
       <img src={dialogos} alt="" aria-hidden fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-25 ken-burns" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="gold-glow w-[520px] h-[520px] -top-40 -left-40 float-slow" />
@@ -100,7 +100,7 @@ function Hero() {
       <div className="container-ddp relative grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-7 fade-up">
           <span className="eyebrow block mb-6">El Club del Poder</span>
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.92] font-light tracking-[-0.03em]">
+          <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] sm:leading-[0.92] font-light tracking-[-0.03em]">
             Una comunidad<br /> que <span className="italic shimmer-gold">se cuida</span>.
           </h1>
           <p className="mt-8 max-w-md text-base md:text-lg text-foreground/80">
