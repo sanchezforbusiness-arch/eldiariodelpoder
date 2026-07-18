@@ -40,7 +40,7 @@ const advisors = [
 
 function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string } }) {
   return (
-    <article className="group">
+    <article className="group" itemScope itemType="https://schema.org/Person">
       <div className="relative aspect-[4/5] overflow-hidden bg-card mb-5">
         <img
           src={m.img}
@@ -49,19 +49,20 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
           height={640}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-[1.03]"
+          itemProp="image"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
       </div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-serif text-2xl md:text-[1.7rem] leading-tight">{m.name}</h3>
-          <p className="mt-1.5 text-[11px] tracking-[0.22em] uppercase text-gold">{m.role}</p>
+          <h3 className="font-serif text-2xl md:text-[1.7rem] leading-tight" itemProp="name">{m.name}</h3>
+          <p className="mt-1.5 text-[11px] tracking-[0.22em] uppercase text-gold" itemProp="jobTitle">{m.role}</p>
         </div>
-        <a href={m.ln} target="_blank" rel="noreferrer" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-gold transition-colors mt-2">
+        <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-gold transition-colors mt-2" itemProp="sameAs">
           <Linkedin size={18} />
         </a>
       </div>
-      <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-md">{m.bio}</p>
+      <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-md" itemProp="description">{m.bio}</p>
     </article>
   );
 }
