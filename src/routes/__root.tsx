@@ -19,6 +19,22 @@ const structuredData = {
       name: SITE_NAME,
       url: SITE_URL,
       logo: SITE_IMAGE,
+      founders: [
+        {
+          "@type": "Person",
+          name: "Alejandro Sánchez Martínez",
+          jobTitle: "Co-fundador y host",
+          url: "https://eldiariodelpoder.com/manifiesto#alejandro-sanchez-martinez",
+          sameAs: ["https://www.linkedin.com/in/alejandrosanchezmartinez"],
+        },
+        {
+          "@type": "Person",
+          name: "Víctor Hugo Gandarilla de Andrés",
+          jobTitle: "Co-fundador y host",
+          url: "https://eldiariodelpoder.com/manifiesto#victor-hugo-gandarilla-de-andres",
+          sameAs: ["https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres"],
+        },
+      ],
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
