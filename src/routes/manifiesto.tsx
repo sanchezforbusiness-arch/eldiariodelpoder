@@ -32,6 +32,56 @@ export const Route = createFileRoute("/manifiesto")({
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://eldiariodelpoder.com/manifiesto#alejandro-sanchez-martinez",
+              name: "Alejandro Sánchez Martínez",
+              alternateName: ["Alejandro Sánchez", "Alejandro Sanchez Martinez"],
+              jobTitle: "Co-fundador y host de Diario del Poder",
+              description:
+                "Co-fundador y host del podcast Diario del Poder. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a José María Aznar, Guillermo Lasso, Andrés Rodríguez (Forbes) y Tomás Villén (Porsche).",
+              gender: "Male",
+              nationality: "ES",
+              worksFor: { "@id": "https://eldiariodelpoder.com/#organization" },
+              affiliation: [
+                { "@type": "Organization", name: "Kifaru Club" },
+                { "@type": "Organization", name: "Nova 111" },
+              ],
+              url: "https://eldiariodelpoder.com/manifiesto",
+              sameAs: [
+                "https://www.linkedin.com/in/alejandrosanchezmartinez",
+              ],
+            },
+            {
+              "@type": "Person",
+              "@id": "https://eldiariodelpoder.com/manifiesto#victor-hugo-gandarilla-de-andres",
+              name: "Víctor Hugo Gandarilla de Andrés",
+              alternateName: [
+                "Víctor Hugo Gandarilla",
+                "Victor Hugo Gandarilla de Andres",
+                "Víctor Gandarilla",
+              ],
+              jobTitle: "Co-fundador y host de Diario del Poder",
+              description:
+                "Co-fundador y host del podcast Diario del Poder. Top 10 de España en Marketing y Comunicación (Nova 111). Estudiante en la Universidad de Navarra.",
+              gender: "Male",
+              nationality: "ES",
+              worksFor: { "@id": "https://eldiariodelpoder.com/#organization" },
+              alumniOf: { "@type": "CollegeOrUniversity", name: "Universidad de Navarra" },
+              affiliation: [{ "@type": "Organization", name: "Nova 111" }],
+              url: "https://eldiariodelpoder.com/manifiesto",
+              sameAs: [
+                "https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres",
+              ],
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: ManifiestoPage,
