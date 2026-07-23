@@ -42,38 +42,38 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-ddp flex items-center justify-between py-6 md:py-7">
-        <Link to="/" hash="top" className="flex items-baseline gap-2.5 group shrink-0">
-          <span className="font-serif text-xl md:text-[1.4rem] tracking-tight text-foreground">DDP</span>
-          <span className="hidden sm:inline text-[9px] tracking-[0.42em] uppercase text-foreground/45 group-hover:text-foreground/80 transition-colors font-light">
+      <div className="container-ddp flex items-center justify-between py-5">
+        <Link to="/" hash="top" className="flex items-baseline gap-2 group">
+          <span className="font-serif text-2xl tracking-tight text-gold">DDP</span>
+          <span className="hidden sm:inline text-[10px] tracking-[0.32em] uppercase text-muted-foreground group-hover:text-foreground transition-colors">
             Diario del Poder
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+        <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => {
             const active = pathname === l.to;
             return (
               <Link
                 key={l.to}
                 to={l.to}
-                className={`group relative text-[10px] uppercase tracking-[0.32em] font-light transition-colors duration-500 ${
-                  active ? "text-foreground" : "text-foreground/50 hover:text-foreground"
+                className={`group relative text-[13px] tracking-wide transition-colors ${
+                  active ? "text-gold" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.label}
                 {active ? (
-                  <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold/80" />
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold" />
                 ) : (
-                  <span className="pointer-events-none absolute -bottom-1.5 left-0 right-full h-px bg-foreground/60 transition-[right] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:right-0" />
+                  <span className="pointer-events-none absolute -bottom-1.5 left-0 right-full h-px bg-gold/70 transition-[right] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:right-0" />
                 )}
               </Link>
             );
           })}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-3.5 mr-1 text-foreground/40">
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 mr-2 text-muted-foreground">
             <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold transition-colors"><Instagram size={16} /></a>
             <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-gold transition-colors"><Youtube size={16} /></a>
             <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-gold transition-colors"><Linkedin size={16} /></a>

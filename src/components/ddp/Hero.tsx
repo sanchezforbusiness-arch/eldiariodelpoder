@@ -45,7 +45,7 @@ export function Hero() {
             height={1080}
             fetchPriority="high"
             decoding="async"
-            className="absolute inset-0 w-full h-full object-cover object-center sm:object-center opacity-55 ken-burns"
+            className="absolute inset-0 w-full h-full object-cover object-center sm:object-center opacity-70 ken-burns"
             style={{ objectPosition: "50% 35%" }}
           />
         </picture>
@@ -56,7 +56,7 @@ export function Hero() {
               title="Diario del Poder — fondo"
               allow="autoplay; encrypted-media; picture-in-picture"
               loading="lazy"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-55 pointer-events-none"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-70 pointer-events-none"
               style={{
                 border: 0,
                 // Cobertura tipo object-cover: siempre llena el viewport sin bandas.
@@ -68,61 +68,63 @@ export function Hero() {
           </div>
         )}
       </div>
-      {/* Cinematic overlays — darker top and bottom for cleaner text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/20 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
 
-      <div className="gold-glow float-slower w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+      <div className="gold-glow float-slow w-[520px] h-[520px] -top-32 -left-24 opacity-60" />
+      <div className="gold-glow float-slower w-[600px] h-[600px] top-1/3 -right-40 opacity-40" />
 
-      {/* Centered editorial content */}
-      <div className="container-ddp relative z-10 flex-1 flex flex-col items-center justify-center text-center pt-32 pb-32 sm:pt-36 sm:pb-40 fade-up w-full">
-        <div className="flex items-center gap-4 mb-8 md:mb-10 opacity-70">
-          <span className="h-px w-8 bg-foreground/30" />
-          <span className="text-[10px] md:text-[11px] tracking-[0.5em] font-light uppercase text-foreground/70">
-            Podcast · Madrid
-          </span>
-          <span className="h-px w-8 bg-foreground/30" />
-        </div>
+      <div className="container-ddp relative z-10 pt-28 sm:pt-32 pb-28 sm:pb-36 md:pb-52 fade-up">
+        <div className="max-w-5xl">
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
+            <span className="h-px w-14 bg-gold/70" />
+            <span className="eyebrow flex items-center gap-2">
+              <span className="dot-gold" /> Podcast · Madrid
+            </span>
+          </div>
 
-        <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[7rem] leading-[1.02] sm:leading-[1.02] tracking-[-0.025em] font-light max-w-5xl">
-          <SplitText text="La voz del legado." italicWords={["legado"]} />
-        </h1>
 
-        <p className="mt-8 md:mt-10 max-w-md text-[11px] md:text-[12px] tracking-[0.28em] uppercase text-foreground/50 leading-relaxed">
-          Los referentes de hoy, hablando a los de mañana
-        </p>
+          <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
+            <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
+          </h1>
 
-        <div className="mt-12 md:mt-14 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <a
-            href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary"
-          >
-            <Play size={12} className="fill-current" />
-            Escuchar último episodio
-          </a>
-          <a href="#episodes" className="btn-outline">
-            Ver episodios
-          </a>
+          <p className="mt-7 md:mt-9 max-w-xl text-base md:text-lg text-foreground/75 leading-relaxed">
+            Los referentes de hoy, hablando a los de mañana.
+          </p>
+
+          <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-3 sm:gap-5">
+            <a
+              href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
+              <Play size={14} className="fill-current" />
+              Escuchar último episodio
+            </a>
+            <a href="#episodes" className="btn-outline">
+              Ver episodios
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Bottom editorial strip */}
-      <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/30 backdrop-blur-md">
-        <div className="container-ddp py-4 sm:py-6 flex items-center justify-between gap-4 sm:gap-6 text-[9px] sm:text-[10px] tracking-[0.32em] sm:tracking-[0.4em] uppercase font-light">
-          <div className="flex min-w-0 items-center gap-3 sm:gap-5 md:gap-7 overflow-hidden">
-            <span className="text-foreground/40 hidden sm:inline">En este episodio —</span>
+      {/* Bottom proof strip */}
+      <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/50 backdrop-blur-md">
+        <div className="container-ddp py-3.5 sm:py-5 flex items-center justify-between gap-4 sm:gap-6">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-6 md:gap-10 text-[10px] md:text-[11px] tracking-[0.2em] sm:tracking-[0.24em] uppercase text-muted-foreground overflow-hidden">
+            <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
             <span className="text-foreground/85 truncate">Andrés Rodríguez</span>
-            <span className="font-serif italic text-base tracking-normal text-foreground/25 hidden sm:inline normal-case">/</span>
-            <span className="hidden md:inline text-foreground/60">Presidente Forbes</span>
+            <span className="text-gold/40 hidden sm:inline">·</span>
+            <span className="hidden md:inline text-muted-foreground">Presidente Forbes</span>
           </div>
           <a
             href="#guests"
             aria-label="Bajar"
-            className="flex items-center gap-2.5 shrink-0 text-foreground/50 hover:text-foreground transition-colors duration-500 group"
+            className="flex items-center gap-2 shrink-0 text-[10px] tracking-[0.24em] sm:tracking-[0.28em] uppercase text-gold/80 hover:text-gold transition-colors"
           >
             Scroll
-            <ArrowDown size={12} className="transition-transform duration-500 group-hover:translate-y-0.5" />
+            <ArrowDown size={14} className="bounce-down" />
           </a>
         </div>
       </div>
