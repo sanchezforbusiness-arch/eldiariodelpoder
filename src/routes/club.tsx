@@ -208,8 +208,8 @@ function Apply() {
               <Field label="Teléfono" name="phone" />
             </div>
             <div>
-              <label className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">Cuéntanos un poco sobre ti</label>
-              <textarea required rows={3} maxLength={500} className="input-line" />
+              <label htmlFor="club-about" className="block text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">Cuéntanos un poco sobre ti</label>
+              <textarea id="club-about" name="about" required rows={3} maxLength={500} className="input-line" />
             </div>
             <button type="submit" className="btn-primary justify-self-start">
               Solicitar acceso
