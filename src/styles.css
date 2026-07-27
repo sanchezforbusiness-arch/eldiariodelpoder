@@ -4,9 +4,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Fallback metrics matched to Playfair Display / Inter to minimize
+   font-swap layout shift (mobile CLS). */
+@font-face {
+  font-family: "Playfair Fallback";
+  src: local("Georgia");
+  size-adjust: 112%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 @theme inline {
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Playfair Fallback", ui-serif, Georgia, serif;
+  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 4px);
