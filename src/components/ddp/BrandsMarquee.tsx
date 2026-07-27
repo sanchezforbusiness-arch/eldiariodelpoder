@@ -44,13 +44,16 @@ export function BrandsMarquee() {
             {loop.map((b, i) => (
               <div
                 key={i}
-                className="group shrink-0 inline-flex items-center gap-3 h-12 md:h-14"
+                className="group shrink-0 inline-flex items-center justify-center gap-3 h-12 md:h-14 w-40 md:w-52"
+                style={{ contain: "layout paint" }}
                 title={b.name}
               >
                 {b.src ? (
                   <img
                     src={b.src}
                     alt={b.name}
+                    width={160}
+                    height={44}
                     className="h-9 md:h-11 w-auto object-contain brightness-100 contrast-100"
                     loading="lazy"
                     decoding="async"
@@ -66,7 +69,7 @@ export function BrandsMarquee() {
                     decoding="async"
                     className="h-8 w-8 md:h-9 md:w-9 object-contain opacity-90"
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                      (e.currentTarget as HTMLImageElement).style.visibility = "hidden";
                     }}
                   />
                 )}
