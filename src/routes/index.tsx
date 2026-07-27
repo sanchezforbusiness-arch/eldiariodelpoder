@@ -47,16 +47,16 @@ function Index() {
         <BrandsMarquee />
         <Episodes />
         <div className="cv-auto">
-          <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+          <Suspense fallback={<div aria-hidden style={{ minHeight: 900, contain: "layout paint" }} />}>
             <Backstage />
           </Suspense>
-          <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
+          <Suspense fallback={<div aria-hidden style={{ minHeight: 720, contain: "layout paint" }} />}>
             <AboutTeaser />
           </Suspense>
-          <Suspense fallback={<div style={{ minHeight: "40vh" }} />}>
+          <Suspense fallback={<div aria-hidden style={{ minHeight: 720, contain: "layout paint" }} />}>
             <ClubTeaser />
           </Suspense>
-          <Suspense fallback={<div style={{ minHeight: "30vh" }} />}>
+          <Suspense fallback={<div aria-hidden style={{ minHeight: 520, contain: "layout paint" }} />}>
             <Newsletter />
           </Suspense>
         </div>
