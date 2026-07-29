@@ -3,14 +3,17 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Episodes } from "@/components/ddp/Episodes";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
+import { episodeList } from "@/data/podcast";
 
 export const Route = createFileRoute("/episodios")({
   head: () => ({
     meta: [
-      { title: "Episodios — Diario del Poder" },
-      { name: "description", content: "Todos los episodios. Conversaciones sin prisa con presidentes, CEOs y referentes." },
-      { property: "og:title", content: "Episodios — Diario del Poder" },
-      { property: "og:description", content: "Conversaciones sin guion. Referentes contando lo que de verdad les ha movido." },
+      { title: "Episodios del podcast Diario del Poder | Aznar, Lasso, Forbes" },
+      { name: "description", content: "Todos los episodios del podcast Diario del Poder: entrevistas largas con expresidentes, CEOs y referentes. Escúchalos en YouTube y Spotify." },
+      { property: "og:title", content: "Episodios del podcast Diario del Poder" },
+      { property: "og:description", content: "Entrevistas completas con José María Aznar, Guillermo Lasso, Andrés Rodríguez (Forbes), Jordi Juan y más." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://eldiariodelpoder.com/episodios" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/episodios" }],
@@ -24,6 +27,32 @@ export const Route = createFileRoute("/episodios")({
             { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eldiariodelpoder.com/" },
             { "@type": "ListItem", position: 2, name: "Episodios", item: "https://eldiariodelpoder.com/episodios" },
           ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Episodios de Diario del Poder",
+          itemListElement: episodeList.map((e, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "PodcastEpisode",
+              name: `${e.guest} — ${e.title}`,
+              description: e.description,
+              url: e.url,
+              inLanguage: "es-ES",
+              episodeNumber: Number(e.n),
+              partOfSeries: {
+                "@type": "PodcastSeries",
+                name: "Diario del Poder",
+                url: "https://eldiariodelpoder.com/",
+              },
+              actor: { "@type": "Person", name: e.guest },
+            },
+          })),
         }),
       },
     ],
@@ -41,8 +70,33 @@ function EpisodiosPage() {
           <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
             Todas las <span className="italic text-gold">conversaciones</span>
           </h1>
+          <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
+            Diario del Poder es un podcast en español de entrevistas largas con expresidentes,
+            CEOs y referentes. Cada episodio es una conversación sin guion sobre liderazgo,
+            decisiones difíciles y legado. Disponible en YouTube y Spotify.
+          </p>
         </header>
         <Episodes />
+        <section className="container-ddp py-16 md:py-24 border-t border-border">
+          <h2 className="font-serif text-3xl md:text-4xl font-light mb-10">
+            Todos los <span className="italic text-gold">episodios</span>
+          </h2>
+          <ul className="space-y-10 max-w-3xl">
+            {episodeList.map((e) => (
+              <li key={e.n}>
+                <p className="text-[11px] tracking-[0.24em] uppercase text-gold/90 mb-2">
+                  Episodio {e.n} · {e.guest}
+                </p>
+                <h3 className="font-serif text-2xl md:text-3xl leading-tight">
+                  <a href={e.url} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
+                    {e.title}
+                  </a>
+                </h3>
+                <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{e.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
       <Footer />
     </div>
