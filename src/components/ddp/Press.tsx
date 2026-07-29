@@ -1,61 +1,7 @@
 import { ArrowUpRight, Quote, Radio, Tv, Newspaper, Globe2 } from "lucide-react";
+import { pressItems } from "@/data/press";
 
-type PressItem = {
-  outlet: string;
-  context?: string;
-  url?: string;
-  featured?: boolean;
-  kind?: "print" | "tv" | "radio" | "digital";
-  quote?: string;
-};
-
-const items: PressItem[] = [
-  {
-    outlet: "La Vanguardia",
-    context: "Media Partner — entrevista a Jordi Juan",
-    url: "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html",
-    featured: true,
-    kind: "print",
-    quote: "Una nueva entrega del podcast 'El diario del poder' entrevista al director del diario del Grupo Godó.",
-  },
-  {
-    outlet: "Antena 3 — Espejo Público",
-    context: "Cobertura Reina Letizia / Universidad de Navarra",
-    url: "https://www.antena3.com/programas/espejo-publico/noticias/chascarrillo-reina-letizia-dos-jovenes-que-pedian-entrevista-antes-delante-camara-era-inviable_202605116a01daefb5b06629960c3679.html",
-    kind: "tv",
-  },
-  { outlet: "La Sexta — Zapeando", context: "Clip en emisión", kind: "tv" },
-  {
-    outlet: "El Español",
-    url: "https://www.elespanol.com/mujer/royals/20260508/anecdota-reina-letizia-chicos-querian-hablara-podcast-entrevistada-entrevistadora/1003744238033_0.html",
-    kind: "digital",
-  },
-  {
-    outlet: "Infobae",
-    url: "https://www.infobae.com/espana/2026/05/08/la-elegante-forma-en-la-que-la-reina-letizia-evita-la-invitacion-al-podcast-de-unos-estudiantes-para-hacerles-ella-la-entrevista-sois-de-que-facultad/",
-    kind: "digital",
-  },
-  {
-    outlet: "Voz Pópuli",
-    url: "https://www.vozpopuli.com/dolcevita/la-reina-letizia-se-hace-viral-por-lo-que-le-dijo-a-unos-jovenes-que-querian-entrevistarla-en-su-podcast.html",
-    kind: "digital",
-  },
-  {
-    outlet: "Diario de Navarra",
-    url: "https://www.diariodenavarra.es/noticias/navarra/2026/05/07/reina-letizia-vuelve-pamplona-directo-acto-celebracion-dia-mundial-cruz-roja-819846-15.html",
-    kind: "print",
-  },
-  { outlet: "El Mundo", kind: "print" },
-  { outlet: "El Periódico", kind: "print" },
-  { outlet: "El Debate", kind: "digital" },
-  {
-    outlet: "Huffpost",
-    url: "https://www.huffingtonpost.es/virales/le-piden-letizia-salir-podcast-respuesta-reina-esperan-nadie-f202605.html",
-    kind: "digital",
-  },
-  { outlet: "Navarra TV", kind: "tv" },
-  { outlet: "Univision", context: "La voz del mañana", kind: "tv" },
-];
+const items = pressItems;
 
 const kindIcon = {
   print: Newspaper,
