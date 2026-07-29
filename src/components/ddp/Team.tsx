@@ -1,4 +1,5 @@
 import { Linkedin } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import g8 from "@/assets/guest-8.webp";
 import inigo from "@/assets/advisor-inigo.webp";
 import alejandro from "@/assets/founder-alejandro.webp";
@@ -11,6 +12,7 @@ const founders = [
     bio: "Host del podcast. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez (Forbes) o Tomás Villén (Porsche).",
     img: alejandro,
     ln: "https://www.linkedin.com/in/alejandrosanchezmartinez",
+    to: "/alejandro-sanchez-martinez",
   },
   {
     name: "Víctor Hugo Gandarilla",
@@ -18,6 +20,7 @@ const founders = [
     bio: "Host del podcast. Top 10 de España en Marketing & Comunicación (Nova 111). Estudia en la Universidad de Navarra.",
     img: victor,
     ln: "https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres",
+    to: "/victor-hugo-gandarilla-de-andres",
   },
 ];
 
@@ -38,7 +41,7 @@ const advisors = [
   },
 ];
 
-function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string } }) {
+function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string; to?: string } }) {
   return (
     <article className="group" itemScope itemType="https://schema.org/Person">
       <div className="relative aspect-[4/5] overflow-hidden bg-card mb-5">
@@ -63,6 +66,15 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
         </a>
       </div>
       <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-md" itemProp="description">{m.bio}</p>
+      {m.to && (
+        <Link
+          to={m.to}
+          className="mt-4 inline-block text-[11px] tracking-[0.24em] uppercase text-gold hover:underline"
+          itemProp="url"
+        >
+          Ver perfil
+        </Link>
+      )}
     </article>
   );
 }

@@ -9,14 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as InvitadosRouteImport } from './routes/invitados'
 import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ClubRouteImport } from './routes/club'
+import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VictorHugoGandarillaDeAndresRoute =
+  VictorHugoGandarillaDeAndresRouteImport.update({
+    id: '/victor-hugo-gandarilla-de-andres',
+    path: '/victor-hugo-gandarilla-de-andres',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrensaRoute = PrensaRouteImport.update({
   id: '/prensa',
   path: '/prensa',
@@ -47,6 +55,12 @@ const ClubRoute = ClubRouteImport.update({
   path: '/club',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlejandroSanchezMartinezRoute =
+  AlejandroSanchezMartinezRouteImport.update({
+    id: '/alejandro-sanchez-martinez',
+    path: '/alejandro-sanchez-martinez',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,74 +69,95 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
   '/manifiesto': typeof ManifiestoRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
+  '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
   '/manifiesto': typeof ManifiestoRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
+  '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
   '/manifiesto': typeof ManifiestoRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
+  '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/alejandro-sanchez-martinez'
     | '/club'
     | '/episodios'
     | '/invitados'
     | '/manifiesto'
     | '/patrocinadores'
     | '/prensa'
+    | '/victor-hugo-gandarilla-de-andres'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/alejandro-sanchez-martinez'
     | '/club'
     | '/episodios'
     | '/invitados'
     | '/manifiesto'
     | '/patrocinadores'
     | '/prensa'
+    | '/victor-hugo-gandarilla-de-andres'
   id:
     | '__root__'
     | '/'
+    | '/alejandro-sanchez-martinez'
     | '/club'
     | '/episodios'
     | '/invitados'
     | '/manifiesto'
     | '/patrocinadores'
     | '/prensa'
+    | '/victor-hugo-gandarilla-de-andres'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
   ClubRoute: typeof ClubRoute
   EpisodiosRoute: typeof EpisodiosRoute
   InvitadosRoute: typeof InvitadosRoute
   ManifiestoRoute: typeof ManifiestoRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PrensaRoute: typeof PrensaRoute
+  VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/victor-hugo-gandarilla-de-andres': {
+      id: '/victor-hugo-gandarilla-de-andres'
+      path: '/victor-hugo-gandarilla-de-andres'
+      fullPath: '/victor-hugo-gandarilla-de-andres'
+      preLoaderRoute: typeof VictorHugoGandarillaDeAndresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/prensa': {
       id: '/prensa'
       path: '/prensa'
@@ -165,6 +200,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClubRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alejandro-sanchez-martinez': {
+      id: '/alejandro-sanchez-martinez'
+      path: '/alejandro-sanchez-martinez'
+      fullPath: '/alejandro-sanchez-martinez'
+      preLoaderRoute: typeof AlejandroSanchezMartinezRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,12 +219,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
   ClubRoute: ClubRoute,
   EpisodiosRoute: EpisodiosRoute,
   InvitadosRoute: InvitadosRoute,
   ManifiestoRoute: ManifiestoRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PrensaRoute: PrensaRoute,
+  VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
