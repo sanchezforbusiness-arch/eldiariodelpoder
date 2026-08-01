@@ -68,9 +68,26 @@ export function FooterGrid() {
 
       {/* Oversized typographic wordmark, cropped by the bottom edge */}
       <div aria-hidden className="select-none overflow-hidden">
-        <p className="-mb-[0.2em] w-full whitespace-nowrap text-center text-[8.8vw] font-medium leading-[0.8] tracking-[-0.05em] text-foreground/10">
-          DIARIO DEL PODER
-        </p>
+        <svg
+          viewBox="0 0 1000 120"
+          preserveAspectRatio="xMidYMin meet"
+          className="block h-auto w-full translate-y-[14%]"
+          role="presentation"
+        >
+          <text
+            x="500"
+            y="100"
+            textAnchor="middle"
+            fontFamily="var(--font-sans)"
+            fontSize="128"
+            fontWeight="500"
+            letterSpacing="-6"
+            fill="currentColor"
+            className="text-foreground/10"
+          >
+            DIARIO DEL PODER
+          </text>
+        </svg>
       </div>
     </footer>
   );
