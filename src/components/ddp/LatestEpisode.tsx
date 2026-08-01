@@ -23,7 +23,7 @@ export function LatestEpisode() {
               alt={`${ep.guest} — ${ep.title}`}
               loading="lazy"
               decoding="async"
-              className="absolute inset-0 h-[124%] w-full -translate-y-[12%] object-cover grayscale transition-[filter] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:grayscale-0"
+              className="absolute inset-0 h-[124%] w-full -translate-y-[12%] object-cover object-top grayscale transition-[filter] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:grayscale-0"
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,10,10,0.9),rgba(10,10,10,0.15)_55%,transparent)]" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-12">
