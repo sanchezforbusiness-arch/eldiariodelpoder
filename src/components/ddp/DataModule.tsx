@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 type Metric = { label: string; value: number; suffix?: string; note: string };
 
 const METRICS: Metric[] = [
-  { label: "Reproducciones acumuladas", value: 420, suffix: "K", note: "YouTube + Spotify" },
-  { label: "Países con audiencia", value: 38, note: "Origen de escucha" },
-  { label: "Audiencia 25–44", value: 61, suffix: "%", note: "Perfil directivo y fundador" },
+  { label: "Reproducciones", value: 420, suffix: "K", note: "YouTube + Spotify" },
+  { label: "Países", value: 38, note: "Origen de escucha" },
+  { label: "Audiencia 25–44", value: 61, suffix: "%", note: "Del total" },
   { label: "Escucha completa", value: 74, suffix: "%", note: "Media por episodio" },
 ];
 
