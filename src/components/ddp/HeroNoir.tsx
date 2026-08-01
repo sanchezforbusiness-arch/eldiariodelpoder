@@ -52,7 +52,7 @@ export function HeroNoir() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
       <div className="container-ddp relative z-10 flex min-h-[92svh] flex-col justify-end pb-16 pt-40 md:pb-24">
-        <div className="max-w-[16ch]">
+        <div className="w-full">
           <div>
             <h1 className="font-sans text-[16vw] font-medium leading-[0.88] tracking-[-0.04em] sm:text-[13vw] lg:text-[9vw]">
               {LINES.map((l, i) => (

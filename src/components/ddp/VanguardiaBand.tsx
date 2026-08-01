@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const FIGURES = [
   { value: 18, suffix: " M", label: "Usuarios únicos al mes", note: "Fuente: La Vanguardia, 2025" },
-  { value: 141, suffix: " años", label: "De historia editorial", note: "Fundada en 1881, Barcelona" },
+  { value: 145, suffix: " años", label: "De historia editorial", note: "Fundada en 1881, Barcelona" },
   { value: 1, prefix: "Nº ", label: "Diario de referencia en Cataluña", note: "Fuente: La Vanguardia, 2025" },
 ];
 
@@ -44,7 +44,7 @@ export function VanguardiaBand() {
       <div className="container-ddp">
         <div className="flex gap-8">
           <span className="section-index pt-2">03</span>
-          <div className="max-w-[22ch]">
+          <div className="max-w-[24ch]">
             <h2 className="text-[10vw] font-medium leading-[0.92] tracking-[-0.035em] sm:text-[6vw] lg:text-[4vw]">
               La Vanguardia es nuestro media partner oficial.
             </h2>
