@@ -63,7 +63,7 @@ export function NewsletterMinimal() {
                 </button>
               </form>
               <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-                {err ? <span className="text-signal">{err}</span> : "Un envío por episodio. Baja cuando quieras."}
+                {err ? <span className="text-signal">{err}</span> : "Un envío por episodio."}
               </p>
             </>
           )}
