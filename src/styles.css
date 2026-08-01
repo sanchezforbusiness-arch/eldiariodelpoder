@@ -269,7 +269,7 @@
   .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 300ms; }
 
   /* Line-by-line clip reveal */
-  .line-mask { display: block; overflow: hidden; }
+  .line-mask { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
   .line-inner {
     display: block;
     transform: translateY(105%);
