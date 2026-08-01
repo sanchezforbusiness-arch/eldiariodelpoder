@@ -19,6 +19,7 @@ export function HeroNoir() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     let ticking = false;
     const onScroll = () => {
       if (ticking) return;
@@ -33,7 +34,7 @@ export function HeroNoir() {
   }, []);
 
   return (
-    <section id="top" className="relative min-h-[92svh] border-b border-border grain">
+    <section id="top" className="relative min-h-[100dvh] border-b border-border grain">
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         style={{ transform: `scale(${1 + scrolled * 0.05})`, opacity: 1 - scrolled * 0.7 }}
@@ -45,16 +46,35 @@ export function HeroNoir() {
             allow="autoplay; encrypted-media; picture-in-picture"
             loading="lazy"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80 grayscale contrast-110"
-            style={{ border: 0, width: "max(100vw, 177.78vh)", height: "max(92svh, 56.25vw)" }}
+            style={{ border: 0, width: "max(100vw, 177.78dvh)", height: "max(100dvh, 56.25vw)" }}
           />
         )}
         <div className="absolute inset-0 bg-background/45" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
-      <div className="container-ddp relative z-10 flex min-h-[92svh] flex-col justify-end pb-16 pt-40 md:pb-24">
+
+      {/* Technical HUD overlay */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-[2]">
+        <div className="dot-grid absolute inset-0" />
+        <div className="absolute inset-x-5 inset-y-20 md:inset-x-12">
+          {[
+            "left-0 top-0 border-l border-t",
+            "right-0 top-0 border-r border-t",
+            "left-0 bottom-0 border-l border-b",
+            "right-0 bottom-0 border-r border-b",
+          ].map((c) => (
+            <span key={c} className={`absolute h-3 w-3 border-foreground/45 ${c}`} />
+          ))}
+        </div>
+        <span className="absolute bottom-6 right-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground md:right-12">
+          40.4168 N — 3.7038 W
+        </span>
+      </div>
+
+      <div className="container-ddp relative z-10 flex min-h-[100dvh] flex-col justify-end pb-16 pt-40 md:pb-24">
         <div className="w-full">
           <div>
-            <h1 className="font-sans text-[16vw] font-medium leading-[0.88] tracking-[-0.04em] sm:text-[13vw] lg:text-[9vw]">
+            <h1 className="type-hero font-sans font-medium">
               {LINES.map((l, i) => (
                 <span key={l} className="line-mask">
                   <span className="line-inner" style={{ "--i": i } as React.CSSProperties}>
