@@ -17,11 +17,11 @@ export function BrandsMarquee() {
       <div className="container-ddp">
         <p className="mono-label">Colaboradores</p>
       </div>
-      <div className="mask-fade-x mt-10 overflow-hidden">
-        <div className="marquee items-center">
+      <div className="mask-fade-x mt-8 overflow-hidden md:mt-10">
+        <div className="marquee marquee-fast items-center md:animate-none md:[animation:marquee_38s_linear_infinite]">
           {[...BRANDS, ...BRANDS].map((b, i) => (
-            <span key={i} className="flex items-center gap-8 whitespace-nowrap px-8">
-              <span className="text-[clamp(1.05rem,2vw,1.6rem)] font-medium tracking-[-0.03em] opacity-60 transition-opacity duration-300 hover:opacity-100">
+            <span key={i} className="flex h-8 items-center gap-6 whitespace-nowrap px-6 md:gap-8 md:px-8">
+              <span className="text-[clamp(1rem,2vw,1.6rem)] font-medium tracking-[-0.03em] opacity-60 transition-opacity duration-300 hover:opacity-100">
                 {b}
               </span>
               <span className="h-4 w-px bg-border" />

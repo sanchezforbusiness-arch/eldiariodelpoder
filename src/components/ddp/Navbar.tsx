@@ -22,6 +22,13 @@ export function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
     let last = window.scrollY;
     let ticking = false;
     const update = () => {
@@ -48,14 +55,19 @@ export function Navbar() {
         hidden && !open ? "-translate-y-full" : "translate-y-0"
       } ${solid || open ? "border-b border-border bg-background" : "border-b border-transparent bg-transparent"}`}
     >
-      <div className="container-ddp grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-        <Link
-          to="/"
-          hash="top"
-          className="min-w-0 truncate font-mono text-[11px] uppercase tracking-[0.24em] text-foreground"
-        >
-          Diario del Poder
-        </Link>
+      <div className="container-ddp grid h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:h-16 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6">
+        <div className="min-w-0">
+          <Link
+            to="/"
+            hash="top"
+            className="block min-w-0 truncate font-mono text-[10px] uppercase tracking-[0.24em] text-foreground lg:text-[11px]"
+          >
+            Diario del Poder
+          </Link>
+          <span className="mt-0.5 block truncate font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground lg:hidden">
+            Media partner — La Vanguardia
+          </span>
+        </div>
 
         <nav className="hidden items-center gap-10 lg:flex">
           {links.map((l) => {
@@ -91,7 +103,7 @@ export function Navbar() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="ml-auto flex h-10 w-10 flex-col items-end justify-center gap-[6px] lg:hidden"
+          className="-mr-2 ml-auto flex h-12 w-12 flex-col items-end justify-center gap-[6px] pr-2 lg:hidden"
           aria-expanded={open}
           aria-label="Menú"
         >
@@ -101,14 +113,19 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 top-16 z-40 bg-background lg:hidden">
-          <nav className="container-ddp flex flex-col pt-8">
-            {[...links, ...secondary].map((l) => (
-              <Link key={l.to} to={l.to} className="border-b border-border py-5 text-[9vw] font-medium leading-none tracking-[-0.03em]">
+        <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-background lg:hidden">
+          <nav className="container-ddp safe-b flex flex-col pt-8">
+            {[...links, ...secondary].map((l, i) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                style={{ animationDelay: `${i * 50}ms` }}
+                className="animate-fade-in border-b border-border py-5 text-[clamp(1.75rem,9vw,3rem)] font-medium leading-none tracking-[-0.03em] active:text-signal"
+              >
                 {l.label}
               </Link>
             ))}
-            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
               Media partner — La Vanguardia
             </p>
           </nav>
