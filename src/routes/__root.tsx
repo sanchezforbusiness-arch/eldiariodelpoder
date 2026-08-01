@@ -15,11 +15,22 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "NewsMediaOrganization"],
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
       logo: SITE_IMAGE,
+      foundingDate: "2025",
+      foundingLocation: "Madrid, España",
+      email: "contactoeldiariodelpoder@gmail.com",
+      description:
+        "Diario del Poder es un medio español de entrevistas de liderazgo fundado en 2025 por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con La Vanguardia como media partner oficial.",
+      affiliation: {
+        "@type": "NewsMediaOrganization",
+        name: "La Vanguardia",
+        url: "https://www.lavanguardia.com",
+        description: "Media partner oficial de Diario del Poder.",
+      },
       founders: [
         {
           "@type": "Person",

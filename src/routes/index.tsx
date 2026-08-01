@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { HeroNoir } from "@/components/ddp/HeroNoir";
-import { GuestMarquee } from "@/components/ddp/GuestMarquee";
 import { GuestSlider } from "@/components/ddp/GuestSlider";
+import { VanguardiaBand } from "@/components/ddp/VanguardiaBand";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
 import { EpisodeIndex } from "@/components/ddp/EpisodeIndex";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
 import { useReveal } from "@/hooks/use-reveal";
 
 const ManifestoBand = lazy(() => import("@/components/ddp/ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
-const DataModule = lazy(() => import("@/components/ddp/DataModule").then((m) => ({ default: m.DataModule })));
 const NewsletterMinimal = lazy(() => import("@/components/ddp/NewsletterMinimal").then((m) => ({ default: m.NewsletterMinimal })));
+const FaqBand = lazy(() => import("@/components/ddp/FaqBand").then((m) => ({ default: m.FaqBand })));
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 export const Route = createFileRoute("/")({
@@ -41,20 +41,20 @@ function Index() {
       <Navbar />
       <main>
         <HeroNoir />
-        <GuestMarquee />
-        <GuestSlider />
+        <BrandsMarquee />
+        <VanguardiaBand />
         <LatestEpisode />
         <EpisodeIndex />
-        <BrandsMarquee />
+        <GuestSlider />
         <div className="cv-auto">
           <Suspense fallback={<div aria-hidden style={{ minHeight: 560, contain: "layout paint" }} />}>
             <ManifestoBand />
           </Suspense>
-          <Suspense fallback={<div aria-hidden style={{ minHeight: 720, contain: "layout paint" }} />}>
-            <DataModule />
-          </Suspense>
           <Suspense fallback={<div aria-hidden style={{ minHeight: 360, contain: "layout paint" }} />}>
             <NewsletterMinimal />
+          </Suspense>
+          <Suspense fallback={<div aria-hidden style={{ minHeight: 420, contain: "layout paint" }} />}>
+            <FaqBand />
           </Suspense>
         </div>
       </main>
