@@ -41,7 +41,7 @@ export function NewsletterMinimal() {
                 action="https://eldiariodelpoder.beehiiv.com/subscribe"
                 method="POST"
                 target="ddp-newsletter-frame"
-                className="flex items-end gap-6"
+                className="flex flex-col gap-6 sm:flex-row sm:items-end"
               >
                 <div className="flex-1">
                   <label htmlFor="ddp-email" className="mono-label">

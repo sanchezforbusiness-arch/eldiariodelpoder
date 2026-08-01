@@ -68,7 +68,7 @@ export function FooterGrid() {
 
       {/* Oversized typographic wordmark, cropped by the bottom edge */}
       <div aria-hidden className="select-none overflow-hidden">
-        <p className="-mb-[0.2em] w-full whitespace-nowrap text-center text-[10.6vw] font-medium leading-[0.8] tracking-[-0.05em] text-foreground/10">
+        <p className="-mb-[0.2em] w-full whitespace-nowrap text-center text-[8.8vw] font-medium leading-[0.8] tracking-[-0.05em] text-foreground/10">
           DIARIO DEL PODER
         </p>
       </div>
