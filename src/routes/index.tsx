@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { HeroNoir } from "@/components/ddp/HeroNoir";
 import { GuestMarquee } from "@/components/ddp/GuestMarquee";
+import { GuestSlider } from "@/components/ddp/GuestSlider";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
 import { EpisodeIndex } from "@/components/ddp/EpisodeIndex";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
@@ -41,6 +42,7 @@ function Index() {
       <main>
         <HeroNoir />
         <GuestMarquee />
+        <GuestSlider />
         <LatestEpisode />
         <EpisodeIndex />
         <BrandsMarquee />

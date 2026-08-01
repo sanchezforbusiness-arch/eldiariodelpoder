@@ -48,11 +48,10 @@ export function HeroNoir() {
             <div className="mt-12 max-w-[52ch]">
               <p className="prose-editorial">
                 Entrevistas largas con jefes de Estado, presidentes de compañías y
-                referentes que rara vez hablan sin guion. Grabadas en Madrid, publicadas
-                sin recortes.
+                referentes. Grabadas en Madrid, publicadas sin recortes.
               </p>
               <a href="#episodios" className="link-rule mt-8 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]">
-                Ver el índice de episodios
+                Ver episodios
               </a>
             </div>
           </div>
