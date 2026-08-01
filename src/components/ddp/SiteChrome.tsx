@@ -41,6 +41,7 @@ export function SiteChrome({ routeKey }: { routeKey: string }) {
 
   return (
     <>
+      <ReadingProgress />
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[70] bg-background transition-opacity duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -48,6 +49,33 @@ export function SiteChrome({ routeKey }: { routeKey: string }) {
       />
       <Cursor />
     </>
+  );
+}
+
+function ReadingProgress() {
+  const [p, setP] = useState(0);
+  useEffect(() => {
+    let ticking = false;
+    const update = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      setP(h > 0 ? Math.min(1, window.scrollY / h) : 0);
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <div
+      aria-hidden
+      className="fixed inset-x-0 top-0 z-[90] h-[2px] origin-left bg-signal"
+      style={{ transform: `scaleX(${p})` }}
+    />
   );
 }
 
