@@ -4,12 +4,18 @@ export type EpisodeEntry = {
   title: string;
   url: string;
   description: string;
+  role?: string;
+  date?: string;
+  duration?: string;
 };
 
 export const episodeList: EpisodeEntry[] = [
   {
     n: "01",
     guest: "Jordi Juan",
+    role: "Director de La Vanguardia",
+    date: "2026-05-27",
+    duration: "1h 04m",
     title: "La teoría de los cajones para afrontar la crisis",
     url: "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html",
     description:
@@ -18,6 +24,9 @@ export const episodeList: EpisodeEntry[] = [
   {
     n: "02",
     guest: "Andrés Rodríguez",
+    role: "Presidente de Forbes España",
+    date: "2026-04-18",
+    duration: "1h 12m",
     title: "Forbes, lujo y poder desde la Forbes House",
     url: "https://youtu.be/nTtgtxG7UNs",
     description:
@@ -26,6 +35,9 @@ export const episodeList: EpisodeEntry[] = [
   {
     n: "03",
     guest: "Guillermo Lasso",
+    role: "Expresidente de Ecuador",
+    date: "2026-03-06",
+    duration: "58m",
     title: "Gobernar en plena crisis",
     url: "https://youtu.be/2XZuIBfyBH0",
     description:
@@ -34,6 +46,9 @@ export const episodeList: EpisodeEntry[] = [
   {
     n: "04",
     guest: "José María Aznar",
+    role: "Expresidente del Gobierno de España",
+    date: "2026-02-11",
+    duration: "1h 21m",
     title: "Liderar un país",
     url: "https://youtu.be/ZydPM-xkYvA",
     description:
@@ -42,6 +57,9 @@ export const episodeList: EpisodeEntry[] = [
   {
     n: "05",
     guest: "Mikel Echavarren",
+    role: "CEO de Colliers España",
+    date: "2026-01-22",
+    duration: "1h 05m",
     title: "Real estate, ciclos y dinero inteligente",
     url: "https://youtu.be/ARO5S1I5cg8",
     description:
