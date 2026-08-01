@@ -21,7 +21,7 @@ export function HeroNoir() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {loadVideo && (
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0`}
+            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=91`}
             title="Diario del Poder — fondo"
             allow="autoplay; encrypted-media; picture-in-picture"
             loading="lazy"
