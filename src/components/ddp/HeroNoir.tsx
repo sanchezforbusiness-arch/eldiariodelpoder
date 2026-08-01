@@ -25,12 +25,12 @@ export function HeroNoir() {
             title="Diario del Poder — fondo"
             allow="autoplay; encrypted-media; picture-in-picture"
             loading="lazy"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 grayscale"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80 grayscale contrast-110"
             style={{ border: 0, width: "max(100vw, 177.78vh)", height: "max(92svh, 56.25vw)" }}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-background/40" />
       </div>
       <div className="container-ddp relative z-10 flex min-h-[92svh] flex-col justify-end pb-16 pt-40 md:pb-24">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
