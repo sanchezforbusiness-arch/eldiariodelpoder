@@ -1,4 +1,5 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
+import { SiteChrome } from "@/components/ddp/SiteChrome";
 
 import appCss from "../styles.css?url";
 
@@ -227,5 +228,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  return (
+    <>
+      <SiteChrome routeKey={pathname} />
+      <Outlet />
+    </>
+  );
 }
