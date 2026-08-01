@@ -4,16 +4,14 @@ const LINES = ["La voz", "del legado."];
 const VIDEO_ID = "ZydPM-xkYvA";
 
 export function HeroNoir() {
-  const [loadVideo, setLoadVideo] = useState(false);
+  const [loadVideo, setLoadVideo] = useState(true);
   const [scrolled, setScrolled] = useState(0);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return setLoadVideo(false);
     const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
-    if (conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType))) return;
-    const t = window.setTimeout(() => setLoadVideo(true), 600);
-    return () => window.clearTimeout(t);
+    if (conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType))) setLoadVideo(false);
   }, []);
 
   useEffect(() => {
@@ -40,14 +38,20 @@ export function HeroNoir() {
         style={{ transform: `scale(${1 + scrolled * 0.05})`, opacity: 1 - scrolled * 0.7 }}
       >
         {loadVideo && (
+          <div className="absolute inset-0 overflow-hidden">
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=91`}
             title="Diario del Poder — fondo"
             allow="autoplay; encrypted-media; picture-in-picture"
-            loading="lazy"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80 grayscale contrast-110"
-            style={{ border: 0, width: "max(100vw, 177.78dvh)", height: "max(100dvh, 56.25vw)" }}
+            style={{
+              border: 0,
+              // 1.45x sobrescala: recorta el título y los controles de YouTube fuera del encuadre.
+              width: "max(145vw, 257.8dvh)",
+              height: "max(145dvh, 81.6vw)",
+            }}
           />
+          </div>
         )}
         <div className="absolute inset-0 bg-background/45" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
