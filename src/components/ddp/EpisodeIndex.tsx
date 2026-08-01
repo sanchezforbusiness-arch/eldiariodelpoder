@@ -12,7 +12,7 @@ export function EpisodeIndex() {
               Índice de episodios
             </h2>
           </div>
-          <Link to="/episodios" className="link-rule font-mono text-[11px] uppercase tracking-[0.12em]">
+          <Link to="/episodios" className="link-rule self-start font-mono text-[11px] uppercase tracking-[0.12em]">
             Archivo completo
           </Link>
         </header>
