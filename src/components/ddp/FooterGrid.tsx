@@ -78,6 +78,8 @@ export function FooterGrid() {
             x="500"
             y="100"
             textAnchor="middle"
+            textLength="980"
+            lengthAdjust="spacingAndGlyphs"
             fontFamily="var(--font-sans)"
             fontSize="128"
             fontWeight="500"
