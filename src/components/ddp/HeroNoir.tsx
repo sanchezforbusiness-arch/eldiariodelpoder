@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LINES = ["La voz", "del legado."];
 const VIDEO_ID = "ZydPM-xkYvA";
@@ -6,6 +6,27 @@ const VIDEO_ID = "ZydPM-xkYvA";
 export function HeroNoir() {
   const [loadVideo, setLoadVideo] = useState(true);
   const [scrolled, setScrolled] = useState(0);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  // Fuerza la reproducción vía IFrame API para que no aparezca el overlay de pausa.
+  useEffect(() => {
+    if (!loadVideo) return;
+    const post = (func: string) => {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func, args: [] }),
+        "*"
+      );
+    };
+    const id = window.setInterval(() => {
+      post("mute");
+      post("playVideo");
+    }, 600);
+    const stop = window.setTimeout(() => window.clearInterval(id), 6000);
+    return () => {
+      window.clearInterval(id);
+      window.clearTimeout(stop);
+    };
+  }, [loadVideo]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -40,7 +61,8 @@ export function HeroNoir() {
         {loadVideo && (
           <div className="absolute inset-0 overflow-hidden">
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=91`}
+            ref={iframeRef}
+            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=91&enablejsapi=1&origin=${typeof window !== "undefined" ? encodeURIComponent(window.location.origin) : ""}`}
             title="Diario del Poder — fondo"
             allow="autoplay; encrypted-media; picture-in-picture"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80 grayscale contrast-110"
