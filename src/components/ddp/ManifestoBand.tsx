@@ -6,12 +6,8 @@ const LEAD =
   "Las decisiones que cambian un país no se explican en un titular. Grabamos la conversación entera y la publicamos sin recortes.";
 
 const BLOCKS = [
-  "Preguntamos lo que se pregunta en privado, cuando se apagan las cámaras y ya no hay nada que defender.",
-  "Sin cuestionario previo, sin titulares fabricados, sin favores. Una conversación dura lo que tiene que durar.",
-  "Nos interesa cómo se decide bajo presión, qué se rompe por el camino y qué queda cuando el cargo termina.",
-  "Creemos que el poder se entiende escuchando despacio a quien lo ha tenido en las manos.",
-  "Por eso no editamos el silencio, ni la duda, ni la respuesta incómoda.",
-  "Esto es un archivo del presente para quien venga después: la voz del legado.",
+  "Preguntamos lo que se pregunta en privado y no editamos la respuesta incómoda.",
+  "Nos interesa cómo se decide bajo presión y qué queda cuando el cargo termina.",
 ];
 
 function Word({
@@ -88,22 +84,17 @@ export function ManifestoBand() {
               })}
         </p>
 
-        <div className="mt-16 max-w-[26ch] space-y-10 sm:max-w-[30ch] md:mt-24 md:space-y-16">
+        <div className="mt-12 space-y-12 md:mt-16 md:space-y-16">
           {BLOCKS.map((text, i) => (
             <AnimatedParagraph
               key={i}
               text={text}
-              className="text-[6.2vw] font-medium leading-[1.12] tracking-[-0.03em] sm:text-[3.6vw] lg:text-[2.2vw]"
+              className="text-[7vw] font-medium leading-[1.08] tracking-[-0.03em] sm:text-[4.4vw] lg:text-[2.8vw]"
             />
           ))}
         </div>
 
-        <AnimatedParagraph
-          text="Madrid. Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés."
-          className="mono-label mt-16 md:mt-24"
-        />
-
-        <Link to="/manifiesto" className="link-rule mt-8 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]">
+        <Link to="/manifiesto" className="link-rule mt-14 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]">
           Leer el manifiesto
         </Link>
       </div>
