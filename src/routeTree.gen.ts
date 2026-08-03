@@ -16,6 +16,7 @@ import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as InvitadosRouteImport } from './routes/invitados'
 import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ClubRouteImport } from './routes/club'
+import { Route as CartaRouteImport } from './routes/carta'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -55,6 +56,11 @@ const ClubRoute = ClubRouteImport.update({
   path: '/club',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CartaRoute = CartaRouteImport.update({
+  id: '/carta',
+  path: '/carta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AlejandroSanchezMartinezRoute =
   AlejandroSanchezMartinezRouteImport.update({
     id: '/alejandro-sanchez-martinez',
@@ -70,6 +76,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
@@ -81,6 +88,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
   '/invitados': typeof InvitadosRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/alejandro-sanchez-martinez'
+    | '/carta'
     | '/club'
     | '/episodios'
     | '/invitados'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/alejandro-sanchez-martinez'
+    | '/carta'
     | '/club'
     | '/episodios'
     | '/invitados'
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/alejandro-sanchez-martinez'
+    | '/carta'
     | '/club'
     | '/episodios'
     | '/invitados'
@@ -140,6 +152,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
+  CartaRoute: typeof CartaRoute
   ClubRoute: typeof ClubRoute
   EpisodiosRoute: typeof EpisodiosRoute
   InvitadosRoute: typeof InvitadosRoute
@@ -200,6 +213,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClubRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carta': {
+      id: '/carta'
+      path: '/carta'
+      fullPath: '/carta'
+      preLoaderRoute: typeof CartaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/alejandro-sanchez-martinez': {
       id: '/alejandro-sanchez-martinez'
       path: '/alejandro-sanchez-martinez'
@@ -220,6 +240,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
+  CartaRoute: CartaRoute,
   ClubRoute: ClubRoute,
   EpisodiosRoute: EpisodiosRoute,
   InvitadosRoute: InvitadosRoute,
@@ -231,3 +252,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
