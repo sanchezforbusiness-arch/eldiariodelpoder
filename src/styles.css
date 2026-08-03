@@ -288,7 +288,9 @@
   }
   .marquee-slow { animation-duration: 70s; }
   .marquee-fast { animation-duration: 26s; }
-  .marquee:hover { animation-duration: 140s; }
+  @media (hover: hover) and (pointer: fine) {
+    .marquee:hover { animation-play-state: paused; }
+  }
   .ticker {
     display: flex;
     width: max-content;
@@ -296,7 +298,9 @@
     gap: 40px;
     animation: marquee 60s linear infinite;
   }
-  .ticker:hover { animation-duration: 160s; }
+  @media (hover: hover) and (pointer: fine) {
+    .ticker:hover { animation-play-state: paused; }
+  }
   @media (prefers-reduced-motion: reduce) {
     .marquee, .ticker { animation: none; }
   }
