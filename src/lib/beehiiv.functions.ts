@@ -1,5 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 
+function normalizePubId(id: string) {
+  return id.startsWith("pub_") ? id : `pub_${id}`;
+}
+
 export type SubscribeResult = { ok: boolean; message: string };
 
 export const subscribeToNewsletter = createServerFn({ method: "POST" })
@@ -18,7 +22,7 @@ export const subscribeToNewsletter = createServerFn({ method: "POST" })
     }
     try {
       const res = await fetch(
-        `https://api.beehiiv.com/v2/publications/${pubId}/subscriptions`,
+        `https://api.beehiiv.com/v2/publications/${normalizePubId(pubId)}/subscriptions`,
         {
           method: "POST",
           headers: {
@@ -66,7 +70,7 @@ export const getBeehiivPosts = createServerFn({ method: "GET" }).handler(
       return { posts: [], error: "Beehiiv no configurado." };
     }
     try {
-      const url = `https://api.beehiiv.com/v2/publications/${pubId}/posts?status=confirmed&limit=12&order_by=publish_date&direction=desc&audience=free&platform=web&hidden_from_feed=false`;
+      const url = `https://api.beehiiv.com/v2/publications/${normalizePubId(pubId)}/posts?status=confirmed&limit=12&order_by=publish_date&direction=desc&audience=free&platform=web&hidden_from_feed=false`;
       const res = await fetch(url, {
         headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json" },
       });
