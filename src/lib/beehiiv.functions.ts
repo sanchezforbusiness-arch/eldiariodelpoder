@@ -1,5 +1,52 @@
 import { createServerFn } from "@tanstack/react-start";
 
+export type SubscribeResult = { ok: boolean; message: string };
+
+export const subscribeToNewsletter = createServerFn({ method: "POST" })
+  .inputValidator((input: { email: string }) => {
+    const email = String(input?.email ?? "").trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
+      throw new Error("Email no válido");
+    }
+    return { email };
+  })
+  .handler(async ({ data }): Promise<SubscribeResult> => {
+    const apiKey = process.env["BEEHIIV_API_KEY"];
+    const pubId = process.env["BEEHIIV_PUBLICATION_ID"];
+    if (!apiKey || !pubId) {
+      return { ok: false, message: "Newsletter no configurada." };
+    }
+    try {
+      const res = await fetch(
+        `https://api.beehiiv.com/v2/publications/${pubId}/subscriptions`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            email: data.email,
+            reactivate_existing: true,
+            send_welcome_email: true,
+            utm_source: "eldiariodelpoder.com",
+            utm_medium: "web",
+          }),
+        },
+      );
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        console.error("Beehiiv subscribe error", res.status, body);
+        return { ok: false, message: "No hemos podido suscribirte. Inténtalo de nuevo." };
+      }
+      return { ok: true, message: "Hecho. Revisa tu correo para confirmar." };
+    } catch (e) {
+      console.error("Beehiiv subscribe failed", e);
+      return { ok: false, message: "No hemos podido suscribirte. Inténtalo de nuevo." };
+    }
+  });
+
 export type BeehiivPost = {
   id: string;
   title: string;
