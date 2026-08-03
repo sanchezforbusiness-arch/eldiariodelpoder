@@ -1,5 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 
+function normalizePubId(id: string) {
+  return id.startsWith("pub_") ? id : `pub_${id}`;
+}
+
 export type SubscribeResult = { ok: boolean; message: string };
 
 export const subscribeToNewsletter = createServerFn({ method: "POST" })
@@ -18,7 +22,7 @@ export const subscribeToNewsletter = createServerFn({ method: "POST" })
     }
     try {
       const res = await fetch(
-        `https://api.beehiiv.com/v2/publications/${pubId}/subscriptions`,
+        `https://api.beehiiv.com/v2/publications/${normalizePubId(pubId)}/subscriptions`,
         {
           method: "POST",
           headers: {
