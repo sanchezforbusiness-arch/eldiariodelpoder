@@ -70,7 +70,7 @@ export const getBeehiivPosts = createServerFn({ method: "GET" }).handler(
       return { posts: [], error: "Beehiiv no configurado." };
     }
     try {
-      const url = `https://api.beehiiv.com/v2/publications/${pubId}/posts?status=confirmed&limit=12&order_by=publish_date&direction=desc&audience=free&platform=web&hidden_from_feed=false`;
+      const url = `https://api.beehiiv.com/v2/publications/${normalizePubId(pubId)}/posts?status=confirmed&limit=12&order_by=publish_date&direction=desc&audience=free&platform=web&hidden_from_feed=false`;
       const res = await fetch(url, {
         headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json" },
       });
