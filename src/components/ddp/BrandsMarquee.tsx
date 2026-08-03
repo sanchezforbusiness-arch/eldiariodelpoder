@@ -13,7 +13,7 @@ const BRANDS = [
 
 export function BrandsMarquee() {
   return (
-    <section aria-label="Marcas colaboradoras" className="border-b border-border py-10 md:py-14">
+    <section aria-label="Marcas colaboradoras" className="border-b border-border py-8 md:py-10">
       <div className="container-ddp">
         <p className="mono-label">Colaboradores</p>
       </div>
