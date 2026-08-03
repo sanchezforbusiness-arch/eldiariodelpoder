@@ -145,7 +145,20 @@
     line-height: 1;
     letter-spacing: -0.03em;
   }
-  .tap { min-height: 48px; display: inline-flex; align-items: center; }
+  .tap {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 200ms var(--ease), opacity 200ms var(--ease);
+  }
+  .tap:active { transform: scale(0.96); }
+
+  /* Visible keyboard focus everywhere (WCAG AA) */
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
   .safe-b { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
   .tabular { font-variant-numeric: tabular-nums; }
 

@@ -23,7 +23,7 @@ const GUESTS = [
 export function GuestSlider() {
   const loop = [...GUESTS, ...GUESTS];
   return (
-    <section id="invitados" aria-label="Invitados" className="border-b border-border py-14 md:py-20">
+    <section id="invitados" aria-label="Invitados" className="border-b border-border py-12 md:py-16">
       <div className="container-ddp flex items-baseline justify-between gap-6">
         <p className="mono-label">Invitados</p>
         <p className="mono-label text-muted-foreground">Presidentes · CEOs · Fundadores</p>

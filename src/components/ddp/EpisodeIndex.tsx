@@ -3,9 +3,9 @@ import { episodeList } from "@/data/podcast";
 
 export function EpisodeIndex() {
   return (
-    <section id="episodios" className="border-b border-border py-20 md:py-32">
+    <section id="episodios" className="border-b border-border py-16 md:py-24">
       <div className="container-ddp">
-        <header className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+        <header className="reveal-stagger mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div className="flex gap-5 md:gap-8">
             <span className="section-index pt-2">04</span>
             <h2 className="type-section font-medium">
@@ -34,7 +34,7 @@ export function EpisodeIndex() {
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="view"
-                className="row-index grid-cols-1 md:grid-cols-[64px_1.1fr_1.1fr_120px_100px]"
+                className="row-index tap grid-cols-1 md:grid-cols-[64px_1.1fr_1.1fr_120px_100px]"
               >
                 <span className="flex items-baseline gap-3 md:block">
                   <span className="font-mono text-[11px] tracking-[0.12em] opacity-70">{e.n}</span>
