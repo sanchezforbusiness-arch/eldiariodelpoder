@@ -5,9 +5,7 @@ import { HeroNoir } from "@/components/ddp/HeroNoir";
 import { GuestSlider } from "@/components/ddp/GuestSlider";
 import { PartnerStrip } from "@/components/ddp/PartnerStrip";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
-import { EpisodeIndex } from "@/components/ddp/EpisodeIndex";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
-import { ScrollReveal } from "@/components/ddp/ScrollReveal";
 import { useReveal } from "@/hooks/use-reveal";
 
 const ManifestoBand = lazy(() => import("@/components/ddp/ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
@@ -45,12 +43,7 @@ function Index() {
         <BrandsMarquee />
         <PartnerStrip />
         <LatestEpisode />
-        <EpisodeIndex />
         <GuestSlider />
-        <ScrollReveal
-          label="Por qué existimos"
-          text="Las decisiones que cambian un país no se explican en un titular. Nosotros grabamos la conversación entera y la publicamos sin recortes."
-        />
         <div className="cv-auto">
           <Suspense fallback={<div aria-hidden style={{ minHeight: 560, contain: "layout paint" }} />}>
             <ManifestoBand />
