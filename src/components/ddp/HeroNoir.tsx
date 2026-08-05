@@ -79,27 +79,13 @@ export function HeroNoir() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      {/* Technical HUD overlay */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 z-[2]">
-        <div className="dot-grid absolute inset-0" />
-        <div className="absolute inset-x-5 inset-y-20 md:inset-x-12">
-          {[
-            "left-0 top-0 border-l border-t",
-            "right-0 top-0 border-r border-t",
-            "left-0 bottom-0 border-l border-b",
-            "right-0 bottom-0 border-r border-b",
-          ].map((c) => (
-            <span key={c} className={`absolute h-3 w-3 border-foreground/45 ${c}`} />
-          ))}
-        </div>
-        <span className="absolute bottom-6 right-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground md:right-12">
-          40.4168 N — 3.7038 W
-        </span>
-      </div>
-
-      <div className="container-ddp relative z-10 flex min-h-[100dvh] flex-col justify-end pb-16 pt-40 md:pb-24">
+      <div className="container-ddp safe-b relative z-10 flex min-h-[100dvh] flex-col justify-end pb-12 pt-32 md:pb-20 md:pt-40">
         <div className="w-full">
           <div>
+            <span className="chip mb-6 inline-flex md:mb-8">
+              <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+              Podcast · Madrid
+            </span>
             <h1 className="type-hero font-sans font-medium">
               {LINES.map((l, i) => (
                 <span key={l} className="line-mask">
@@ -110,13 +96,18 @@ export function HeroNoir() {
               ))}
             </h1>
 
-            <div className="mt-10 max-w-[52ch]">
+            <div className="mt-7 max-w-[46ch] md:mt-9">
               <p className="prose-editorial">
-                Entrevistas con jefes de Estado, CEOs y referentes. La Vanguardia es nuestro media partner oficial.
+                Nos sentamos con presidentes, CEOs y referentes, y publicamos la conversación entera.
               </p>
-              <a href="#episodios" className="link-rule mt-8 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]">
-                Ver episodios
-              </a>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a href="#ultimo" className="btn-primary w-full sm:w-auto">
+                  Ver el último episodio
+                </a>
+                <a href="#newsletter" className="btn-outline w-full sm:w-auto">
+                  Recibir la carta
+                </a>
+              </div>
             </div>
           </div>
         </div>
