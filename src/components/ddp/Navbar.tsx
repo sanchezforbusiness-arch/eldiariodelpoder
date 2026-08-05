@@ -64,8 +64,8 @@ export function Navbar() {
           >
             Diario del Poder
           </Link>
-          <span className="mt-0.5 block truncate font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground lg:hidden">
-            Media partner — La Vanguardia
+          <span className="mt-0.5 block truncate font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground lg:text-[10px]">
+            Media partner · La Vanguardia
           </span>
         </div>
 
@@ -86,19 +86,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center justify-end gap-4 lg:flex">
-          <span className="h-6 w-px bg-border" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
-            Media partner
-          </span>
-          <a
-            href="https://www.lavanguardia.com"
-            target="_blank"
-            rel="noopener"
-            className="font-serif text-[15px] leading-none text-foreground transition-colors duration-300 hover:text-signal"
-            aria-label="La Vanguardia, media partner oficial"
-          >
-            La Vanguardia
-          </a>
+          <Link to="/carta" className="btn-outline btn-sm">
+            La carta
+          </Link>
         </div>
 
         <button
@@ -125,8 +115,11 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-              Media partner — La Vanguardia
+            <Link to="/carta" className="btn-primary mt-8 w-full">
+              Suscribirse a la carta
+            </Link>
+            <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+              Media partner · La Vanguardia
             </p>
           </nav>
         </div>

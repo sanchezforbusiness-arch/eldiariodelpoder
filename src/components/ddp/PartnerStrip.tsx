@@ -1,7 +1,7 @@
 const FIGURES = [
-  { v: "18 M", l: "Usuarios únicos / mes" },
-  { v: "1881", l: "Fundada en Barcelona" },
-  { v: "Nº 1", l: "Referencia en Cataluña" },
+  { v: "40+", l: "Conversaciones" },
+  { v: "18 M", l: "Lectores de La Vanguardia" },
+  { v: "2025", l: "Desde Madrid" },
 ];
 
 /**
@@ -15,17 +15,22 @@ export function PartnerStrip() {
       className="border-b border-border py-7 md:py-9"
     >
       <div className="container-ddp reveal-stagger flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <p className="mono-label">
+        <a
+          href="https://www.lavanguardia.com"
+          target="_blank"
+          rel="noreferrer"
+          className="chip tap self-start"
+        >
           <span className="text-signal">Media partner</span>
-          <span className="mx-3 opacity-40">/</span>
+          <span className="opacity-40">/</span>
           <span className="text-foreground">La Vanguardia</span>
-        </p>
+        </a>
 
-        <dl className="flex flex-wrap items-baseline gap-x-8 gap-y-3 md:gap-x-12">
+        <dl className="grid grid-cols-3 gap-x-4 gap-y-2 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-10 md:gap-x-12">
           {FIGURES.map((f) => (
-            <div key={f.l} className="flex items-baseline gap-3">
+            <div key={f.l} className="min-w-0 sm:flex sm:items-baseline sm:gap-3">
               <dd className="tabular font-mono text-[15px] tracking-[-0.01em] md:text-base">{f.v}</dd>
-              <dt className="mono-label text-muted-foreground">{f.l}</dt>
+              <dt className="mono-label mt-1 text-muted-foreground sm:mt-0">{f.l}</dt>
             </div>
           ))}
         </dl>
