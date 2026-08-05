@@ -115,6 +115,10 @@ export function HeroNoir() {
       <div className="container-ddp safe-b relative z-10 flex min-h-[100dvh] flex-col justify-end pb-12 pt-32 md:pb-20 md:pt-40">
         <div className="w-full">
           <div>
+            <span className="chip mb-6 inline-flex md:mb-8">
+              <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+              Podcast · Madrid
+            </span>
             <h1 className="type-hero font-sans font-medium">
               {LINES.map((l, i) => (
                 <span key={l} className="line-mask">
