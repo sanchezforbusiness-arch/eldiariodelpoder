@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import coelloAsset from "@/assets/guest-coello.png.asset.json";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAsset from "@/assets/guest-rosa-lagarrigue.png.asset.json";
@@ -49,9 +50,9 @@ export function GuestSlider() {
     <section id="invitados" aria-label="Invitados" className="border-b border-border py-12 md:py-16">
       <div className="container-ddp flex items-center justify-between gap-4">
         <p className="mono-label">Han pasado por aquí</p>
-        <a href="/invitados" className="link-rule tap font-mono text-[10px] uppercase tracking-[0.12em] md:text-[11px]">
+        <Link to="/invitados" className="link-rule tap font-mono text-[10px] uppercase tracking-[0.12em] md:text-[11px]">
           Ver todos
-        </a>
+        </Link>
       </div>
 
       <div className="mask-fade-x mt-8 overflow-hidden">

@@ -21,6 +21,18 @@ export function FooterGrid() {
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-border">
       <div className="container-ddp pt-16 md:pt-24">
+        <div className="panel mb-14 flex flex-col gap-6 p-6 md:mb-20 md:flex-row md:items-center md:justify-between md:p-10">
+          <div>
+            <p className="mono-label">¿Hablamos?</p>
+            <p className="mt-3 max-w-[24ch] text-[22px] font-medium leading-[1.1] tracking-[-0.03em] md:text-[30px]">
+              Propuestas, prensa y patrocinios.
+            </p>
+          </div>
+          <a href="mailto:contactoeldiariodelpoder@gmail.com" className="btn-primary w-full md:w-auto">
+            Escríbenos
+          </a>
+        </div>
+
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <p className="mono-label">Contacto</p>
