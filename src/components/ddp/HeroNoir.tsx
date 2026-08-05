@@ -6,30 +6,8 @@ const VIDEO_ID = "ZydPM-xkYvA";
 
 export function HeroNoir() {
   const [loadVideo, setLoadVideo] = useState(true);
-  const [playing, setPlaying] = useState(false);
   const [scrolled, setScrolled] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  // El iframe solo se muestra cuando el vídeo está realmente reproduciéndose:
-  // así nunca se ven los controles de pausa de YouTube.
-  useEffect(() => {
-    if (!loadVideo) return;
-    const onMessage = (e: MessageEvent) => {
-      if (typeof e.data !== "string") return;
-      if (!/youtube/.test(e.origin)) return;
-      try {
-        const data = JSON.parse(e.data);
-        const state = data?.info?.playerState ?? data?.info;
-        if (data?.event === "infoDelivery" && typeof state === "number") {
-          setPlaying(state === 1);
-        }
-      } catch {
-        /* ignora mensajes no JSON */
-      }
-    };
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, [loadVideo]);
 
   // Fuerza la reproducción vía IFrame API para que no aparezca el overlay de pausa.
   useEffect(() => {
@@ -96,9 +74,7 @@ export function HeroNoir() {
             src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&start=91&enablejsapi=1&origin=${typeof window !== "undefined" ? encodeURIComponent(window.location.origin) : ""}`}
             title="Diario del Poder — fondo"
             allow="autoplay; encrypted-media; picture-in-picture"
-            className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grayscale contrast-110 transition-opacity duration-700 ${
-              playing ? "opacity-80" : "opacity-0"
-            }`}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grayscale contrast-110 opacity-80"
             style={{
               border: 0,
               // 1.45x sobrescala: recorta el título y los controles de YouTube fuera del encuadre.
