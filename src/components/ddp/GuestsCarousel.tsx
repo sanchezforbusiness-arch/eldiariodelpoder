@@ -13,6 +13,10 @@ import miguelAsset from "@/assets/guest-miguel-anxo-bastos.png.asset.json";
 import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
 import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
 import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
+import { Link } from "@tanstack/react-router";
+import { guestList } from "@/data/podcast";
+
+const slugByName = new Map(guestList.map((g) => [g.name, g.slug]));
 
 
 const guests = [
@@ -59,9 +63,13 @@ export function GuestsCarousel() {
       <div className="relative overflow-hidden mask-fade-x">
         <div className="marquee marquee-fast gap-3 sm:gap-4 md:gap-5">
           {loop.map((g, i) => (
-            <article
+            <Link
               key={i}
-              className="group relative shrink-0 w-[200px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden rounded-2xl bg-background hover-cinema"
+              to="/invitados/$slug"
+              params={{ slug: slugByName.get(g.name) ?? "" }}
+              disabled={!slugByName.get(g.name)}
+              className="group relative block shrink-0 w-[200px] sm:w-[260px] md:w-[300px] aspect-[4/5] overflow-hidden rounded-2xl bg-background hover-cinema"
+              aria-label={`Ver la entrevista con ${g.name}`}
             >
               <img
                 src={g.img}
@@ -75,8 +83,9 @@ export function GuestsCarousel() {
               <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
                 <h3 className="font-serif text-lg md:text-xl leading-tight">{g.name}</h3>
                 <p className="mt-1.5 text-[10px] md:text-[11px] tracking-[0.18em] text-gold/80 uppercase">{g.role}</p>
+                <span className="mt-2 inline-block text-[10px] tracking-[0.18em] uppercase text-gold/70 opacity-0 group-hover:opacity-100 transition-opacity">Ver entrevista →</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

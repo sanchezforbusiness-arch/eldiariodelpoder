@@ -8,6 +8,9 @@ import miguelAsset from "@/assets/guest-miguel-anxo-bastos.png.asset.json";
 import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
 import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
 import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
+import { guestList } from "@/data/podcast";
+
+const slugByName = new Map(guestList.map((g) => [g.name, g.slug]));
 
 const GUESTS = [
   { name: "Esperanza Aguirre", role: "Expresidenta de la Comunidad de Madrid", img: aguirreAsset.url },
@@ -25,7 +28,14 @@ function Track() {
   return (
     <div className="flex shrink-0">
       {GUESTS.map((g) => (
-        <article key={g.name} className="group relative w-[220px] shrink-0 px-2 sm:w-[300px] sm:px-3">
+        <Link
+          key={g.name}
+          to="/invitados/$slug"
+          params={{ slug: slugByName.get(g.name) ?? "" }}
+          disabled={!slugByName.get(g.name)}
+          aria-label={`Ver la entrevista con ${g.name}`}
+          className="group relative block w-[220px] shrink-0 px-2 sm:w-[300px] sm:px-3"
+        >
           <div className="relative aspect-[4/5] overflow-hidden border border-border">
             <img
               src={g.img}
@@ -39,7 +49,7 @@ function Track() {
           </div>
           <h3 className="mt-3 text-[15px] font-medium tracking-[-0.02em]">{g.name}</h3>
           <p className="mono-label mt-1 text-muted-foreground">{g.role}</p>
-        </article>
+        </Link>
       ))}
     </div>
   );
