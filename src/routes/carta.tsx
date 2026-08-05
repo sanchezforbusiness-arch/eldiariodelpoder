@@ -4,7 +4,7 @@ import { SubscribeForm } from "@/components/ddp/SubscribeForm";
 
 const TITLE = "La carta — Diario del Poder";
 const DESCRIPTION =
-  "Una carta semanal de Diario del Poder: lo que los referentes cuentan con el micro apagado, en tu correo cada domingo.";
+  "La carta de Diario del Poder: cada domingo, lo que los referentes cuentan cuando se apaga el micro. Un correo, sin ruido.";
 
 export const Route = createFileRoute("/carta")({
   head: () => ({
@@ -26,50 +26,77 @@ function CartaPage() {
   return (
     <div className="bg-background text-foreground">
       <Navbar />
-      <main className="flex min-h-[100dvh] flex-col justify-center pt-28 pb-20 md:pt-40 md:pb-32">
-        <div className="container-ddp">
-          <span className="mono-label text-muted-foreground">La carta — semanal</span>
+      <main className="pb-20 pt-28 md:pb-28 md:pt-36">
+        <div className="container-ddp grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <span className="chip">
+              <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+              Cada domingo
+            </span>
 
-          <h1 className="mt-8 max-w-[16ch] text-[13vw] font-medium leading-[0.88] tracking-[-0.04em] sm:text-[9vw] lg:text-[5.6vw]">
-            ¿Nunca has sentido que nadie decide como tú?
-          </h1>
+            <h1 className="mt-7 max-w-[15ch] text-[12vw] font-medium leading-[0.9] tracking-[-0.04em] sm:text-[8vw] lg:text-[4.6vw]">
+              La carta
+            </h1>
 
-          <p className="mt-10 max-w-[62ch] font-serif text-[18px] leading-[1.65] text-muted-foreground md:text-[19px]">
-            Una vez por semana escribimos una carta. Lo que un expresidente nos contó cuando
-            se apagó el micro, la decisión que aún le quita el sueño, lo que aprendimos
-            grabando. Sin resumen, sin titular.
-          </p>
+            <p className="mt-6 max-w-[54ch] font-serif text-[18px] leading-[1.65] text-muted-foreground md:text-[19px]">
+              Lo que nos cuentan cuando se apaga el micro. Una carta corta, escrita a mano
+              por nosotros, sin promociones ni relleno.
+            </p>
 
-          <div className="mt-14 max-w-2xl border-t border-border pt-10">
-            <SubscribeForm
-              id="carta-email"
-              size="large"
-              hint="Un correo por semana. Cancela cuando quieras."
-            />
+            <div className="panel mt-10 p-6 md:p-8">
+              <SubscribeForm
+                id="carta-email"
+                size="large"
+                hint="Un correo por semana. Te das de baja en un clic."
+              />
+            </div>
+
+            <ul className="mt-10 flex flex-wrap gap-2">
+              {["Sin spam", "Lectura de 3 minutos", "Cancela cuando quieras"].map((t) => (
+                <li key={t} className="chip">
+                  {t}
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              to="/"
+              className="link-rule tap mt-12 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]"
+            >
+              Volver al inicio
+            </Link>
           </div>
 
-          <div className="mt-20 grid gap-8 border-t border-border pt-10 sm:grid-cols-3">
-            {[
-              ["01", "Cada domingo", "Un correo, nada más."],
-              ["02", "Sin recortes", "Lo que no entra en el episodio."],
-              ["03", "Sin ruido", "Ni promociones ni relleno."],
-            ].map(([n, t, d]) => (
-              <div key={n}>
-                <span className="section-index">{n}</span>
-                <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.12em]">{t}</p>
-                <p className="mt-2 font-serif text-[17px] leading-[1.6] text-muted-foreground">
-                  {d}
+          {/* Graphic: a letter rendered in hairlines */}
+          <aside className="lg:col-span-5">
+            <div className="panel relative overflow-hidden p-6 md:p-8">
+              <div aria-hidden className="dot-grid pointer-events-none absolute inset-0" />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <span className="mono-label">Diario del Poder</span>
+                  <span className="mono-label text-signal">Nº 12</span>
+                </div>
+                <div className="hairline my-6" />
+                <p className="font-serif text-[22px] leading-[1.3] md:text-[26px]">
+                  “Lo difícil no fue decidir. Fue sostenerlo al día siguiente.”
                 </p>
+                <p className="mono-label mt-4">Un expresidente, con el micro apagado</p>
+                <div className="hairline my-6" />
+                <ul className="space-y-4">
+                  {[
+                    ["01", "Una idea de la semana"],
+                    ["02", "Lo que no entró en el episodio"],
+                    ["03", "Una recomendación corta"],
+                  ].map(([n, t]) => (
+                    <li key={n} className="flex items-center gap-4">
+                      <span className="badge-num">{n}</span>
+                      <span className="text-[15px] tracking-[-0.01em]">{t}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
-
-          <Link
-            to="/"
-            className="mt-16 inline-block font-mono text-[11px] uppercase tracking-[0.12em] underline underline-offset-4 hover:text-signal"
-          >
-            Volver al inicio
-          </Link>
+            </div>
+          </aside>
         </div>
       </main>
     </div>
