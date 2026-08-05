@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import posterAsset from "@/assets/hero-portada-nueva.jpg.asset.json";
 
 const LINES = ["La voz", "del legado."];
 const VIDEO_ID = "ZydPM-xkYvA";
@@ -59,14 +58,7 @@ export function HeroNoir() {
         className="pointer-events-none absolute inset-0 overflow-hidden"
         style={{ transform: `scale(${1 + scrolled * 0.05})`, opacity: 1 - scrolled * 0.7 }}
       >
-        <img
-          src={posterAsset.url}
-          alt=""
-          aria-hidden
-          fetchPriority="high"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center grayscale contrast-110"
-        />
+        <div className="absolute inset-0 bg-background" />
         {loadVideo && (
           <div className="absolute inset-0 overflow-hidden">
           <iframe
