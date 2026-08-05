@@ -58,8 +58,8 @@ export function ManifestoBand() {
   return (
     <section ref={ref} className="invert-section border-b border-border py-16 md:py-24">
       <div className="container-ddp">
-        <div className="flex gap-8">
-          <span className="section-index pt-2">05</span>
+        <div className="flex gap-4 sm:gap-6">
+          <span className="badge-num mt-2">05</span>
           <h2 className="text-[9vw] font-medium leading-[0.9] tracking-[-0.035em] sm:text-[5.5vw] lg:text-[3.6vw]">
             Manifiesto
           </h2>

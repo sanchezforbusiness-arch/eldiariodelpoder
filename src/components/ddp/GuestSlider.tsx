@@ -47,9 +47,11 @@ function Track() {
 export function GuestSlider() {
   return (
     <section id="invitados" aria-label="Invitados" className="border-b border-border py-12 md:py-16">
-      <div className="container-ddp flex items-baseline justify-between gap-6">
-        <p className="mono-label">Invitados</p>
-        <p className="mono-label text-muted-foreground">Presidentes · CEOs · Fundadores</p>
+      <div className="container-ddp flex items-center justify-between gap-4">
+        <p className="mono-label">Han pasado por aquí</p>
+        <a href="/invitados" className="link-rule tap font-mono text-[10px] uppercase tracking-[0.12em] md:text-[11px]">
+          Ver todos
+        </a>
       </div>
 
       <div className="mask-fade-x mt-8 overflow-hidden">
