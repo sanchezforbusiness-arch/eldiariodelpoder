@@ -67,22 +67,197 @@ export const episodeList: EpisodeEntry[] = [
   },
 ];
 
-export type GuestEntry = { name: string; role: string; bio: string };
+export type GuestEntry = {
+  /** URL slug: /invitados/<slug> */
+  slug: string;
+  name: string;
+  role: string;
+  bio: string;
+  /** ID del vídeo de YouTube de la entrevista, si está publicada */
+  youtubeId?: string;
+  /** Enlace alternativo a la entrevista (medio externo) */
+  externalUrl?: string;
+  /** Resumen largo de la conversación, en párrafos */
+  summary: string[];
+  /** Temas tratados (también usados como keywords) */
+  topics: string[];
+};
 
 export const guestList: GuestEntry[] = [
-  { name: "José María Aznar", role: "Expresidente del Gobierno de España", bio: "Presidente del Gobierno entre 1996 y 2004. Habla de liderazgo político, reformas y legado." },
-  { name: "Guillermo Lasso", role: "Expresidente de Ecuador", bio: "Banquero y presidente de Ecuador (2021-2023). Gobernar en crisis y decisiones de Estado." },
-  { name: "Esperanza Aguirre", role: "Expresidenta de la Comunidad de Madrid", bio: "Referente político español. Poder, prensa y convicciones." },
-  { name: "Marcos de Quinto", role: "Exvicepresidente mundial de Coca-Cola", bio: "Directivo y empresario. Marca, marketing global y liderazgo corporativo." },
-  { name: "Javier Tebas", role: "Presidente de LaLiga", bio: "El negocio del fútbol español, derechos audiovisuales y gestión deportiva." },
-  { name: "Andrés Rodríguez", role: "Presidente y editor de Forbes España", bio: "Medios, lujo y la construcción de una marca de prestigio." },
-  { name: "Arturo Coello", role: "Número 1 del mundo de pádel", bio: "Alto rendimiento, presión y mentalidad de campeón desde muy joven." },
-  { name: "Martín Sellés", role: "Presidente de Farmaindustria · ex CEO Johnson & Johnson España", bio: "Industria farmacéutica, innovación y salud." },
-  { name: "Jordi Juan", role: "Director de La Vanguardia", bio: "Periodismo, poder y el futuro de los medios en español." },
-  { name: "Rosa Lagarrigue", role: "Fundadora de RLM · Manager de artistas", bio: "La manager más influyente de la música en España." },
-  { name: "José Carlos González Hurtado", role: "Presidente de EWTN · ex CEO en P&G", bio: "Autor de 'Nuevas evidencias científicas de la existencia de Dios'. Fe, ciencia y empresa." },
-  { name: "Federica Fornaciari", role: "Founder de SenYours y NoBrainer Partners", bio: "Ex-Bain, profesora en IE, IESE y Bocconi. Estrategia y marca." },
-  { name: "Miguel Anxo Bastos", role: "Economista y profesor", bio: "Escuela austriaca, libertad económica y análisis del poder." },
-  { name: "Daniela Macarena", role: "Co-fundadora de Ac2ality", bio: "Nueva generación de medios y comunicación para jóvenes." },
-  { name: "Sonsoles Ónega", role: "Periodista, presentadora y escritora", bio: "Premio Planeta. Televisión, literatura y oficio periodístico." },
+  {
+    slug: "jose-maria-aznar",
+    name: "José María Aznar",
+    role: "Expresidente del Gobierno de España",
+    bio: "Presidente del Gobierno entre 1996 y 2004. Habla de liderazgo político, reformas y legado.",
+    youtubeId: "ZydPM-xkYvA",
+    topics: ["liderazgo político", "España", "Europa", "reformas económicas", "legado"],
+    summary: [
+      "José María Aznar fue presidente del Gobierno de España entre 1996 y 2004. En esta conversación con Diario del Poder repasa cómo se toman las decisiones cuando no hay margen de error y qué cambia en una persona cuando pasa por La Moncloa.",
+      "Hablamos del papel de España en Europa y en su relación con Estados Unidos, de la disciplina que exige gobernar y de la diferencia entre gestionar el día a día y dejar algo detrás.",
+      "Cierra con lo que le diría hoy a una generación que empieza: formarse, tener criterio propio y no confundir ruido con influencia.",
+    ],
+  },
+  {
+    slug: "guillermo-lasso",
+    name: "Guillermo Lasso",
+    role: "Expresidente de Ecuador",
+    bio: "Banquero y presidente de Ecuador (2021-2023). Gobernar en crisis y decisiones de Estado.",
+    youtubeId: "2XZuIBfyBH0",
+    topics: ["Ecuador", "gobernar en crisis", "banca", "decisiones de Estado", "América Latina"],
+    summary: [
+      "Guillermo Lasso llegó a la presidencia de Ecuador en 2021 después de una carrera en la banca. Nos cuenta cómo se gobierna un país en plena crisis y qué se siente al firmar decisiones que afectan a millones de personas.",
+      "Repasa la reforma económica de su gobierno, la seguridad, y lo que aprendió pasando del sector privado a la primera línea política.",
+      "También habla del precio personal del poder: la familia, el desgaste y la vida después de dejar el cargo.",
+    ],
+  },
+  {
+    slug: "esperanza-aguirre",
+    name: "Esperanza Aguirre",
+    role: "Expresidenta de la Comunidad de Madrid",
+    bio: "Referente político español. Poder, prensa y convicciones.",
+    topics: ["Madrid", "política española", "libertad", "prensa", "liderazgo"],
+    summary: [
+      "Esperanza Aguirre fue presidenta de la Comunidad de Madrid y una de las voces más reconocibles de la política española. En Diario del Poder habla sin rodeos de convicciones, de prensa y de lo que cuesta sostener una posición impopular.",
+      "Repasa su forma de entender la libertad, la gestión de Madrid y cómo ha cambiado la conversación pública en España.",
+    ],
+  },
+  {
+    slug: "marcos-de-quinto",
+    name: "Marcos de Quinto",
+    role: "Exvicepresidente mundial de Coca-Cola",
+    bio: "Directivo y empresario. Marca, marketing global y liderazgo corporativo.",
+    topics: ["marketing", "Coca-Cola", "marca", "liderazgo corporativo", "empresa"],
+    summary: [
+      "Marcos de Quinto llegó a ser vicepresidente mundial y director de marketing de Coca-Cola. Nos explica cómo se construye y se protege una de las marcas más conocidas del planeta.",
+      "Hablamos de publicidad, de la diferencia entre vender y construir marca, y de cómo se dirige a equipos en decenas de países a la vez.",
+      "También de su salto a la política y de por qué el criterio empresarial y el político casi nunca se parecen.",
+    ],
+  },
+  {
+    slug: "javier-tebas",
+    name: "Javier Tebas",
+    role: "Presidente de LaLiga",
+    bio: "El negocio del fútbol español, derechos audiovisuales y gestión deportiva.",
+    topics: ["LaLiga", "fútbol", "derechos audiovisuales", "negocio del deporte"],
+    summary: [
+      "Javier Tebas preside LaLiga y ha transformado el negocio del fútbol español. En esta conversación explica cómo se venden los derechos audiovisuales y por qué el control económico de los clubes cambió la industria.",
+      "Hablamos de la competencia con la Premier League, de la internacionalización del producto y de dirigir una organización con intereses enfrentados dentro.",
+    ],
+  },
+  {
+    slug: "andres-rodriguez",
+    name: "Andrés Rodríguez",
+    role: "Presidente y editor de Forbes España",
+    bio: "Medios, lujo y la construcción de una marca de prestigio.",
+    youtubeId: "nTtgtxG7UNs",
+    topics: ["Forbes", "medios", "lujo", "revistas", "marca personal"],
+    summary: [
+      "Andrés Rodríguez es presidente y editor de Forbes España y fundador de Spainmedia. Desde la Forbes House nos cuenta cómo se levanta un grupo editorial en un sector que llevaba años en caída.",
+      "Hablamos del negocio del lujo, de por qué el papel sigue teniendo sentido y de qué separa a quien tiene dinero de quien tiene influencia.",
+    ],
+  },
+  {
+    slug: "arturo-coello",
+    name: "Arturo Coello",
+    role: "Número 1 del mundo de pádel",
+    bio: "Alto rendimiento, presión y mentalidad de campeón desde muy joven.",
+    topics: ["pádel", "alto rendimiento", "mentalidad", "deporte de élite"],
+    summary: [
+      "Arturo Coello llegó al número 1 del mundo de pádel siendo muy joven. Nos cuenta cómo se convive con esa presión y qué rutina hay detrás de cada torneo.",
+      "Hablamos de la cabeza más que del físico: derrotas, expectativas y sostener el nivel cuando todo el circuito te estudia.",
+    ],
+  },
+  {
+    slug: "martin-selles",
+    name: "Martín Sellés",
+    role: "Presidente de Farmaindustria · ex CEO Johnson & Johnson España",
+    bio: "Industria farmacéutica, innovación y salud.",
+    topics: ["farmacéutica", "innovación", "salud", "Farmaindustria"],
+    summary: [
+      "Martín Sellés preside Farmaindustria tras dirigir Johnson & Johnson en España. Explica cómo funciona de verdad la investigación de un medicamento: los años, el dinero y los fracasos que no se ven.",
+      "Hablamos de la relación entre industria y sistema público de salud y de qué haría falta para que España atraiga más ensayos clínicos.",
+    ],
+  },
+  {
+    slug: "jordi-juan",
+    name: "Jordi Juan",
+    role: "Director de La Vanguardia",
+    bio: "Periodismo, poder y el futuro de los medios en español.",
+    youtubeId: "onHImjPIYJI",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html",
+    topics: ["periodismo", "La Vanguardia", "medios", "poder"],
+    summary: [
+      "Jordi Juan dirige La Vanguardia. Nos cuenta cómo se dirige un periódico centenario en plena crisis del sector y explica su método de los cajones para tomar decisiones sin bloquearse.",
+      "Hablamos de la relación entre prensa y poder, de suscripciones frente a publicidad y de qué será del periodismo en español en la próxima década.",
+    ],
+  },
+  {
+    slug: "rosa-lagarrigue",
+    name: "Rosa Lagarrigue",
+    role: "Fundadora de RLM · Manager de artistas",
+    bio: "La manager más influyente de la música en España.",
+    topics: ["música", "management", "industria musical", "giras"],
+    summary: [
+      "Rosa Lagarrigue fundó RLM y ha representado a algunos de los artistas más grandes en español. Nos explica en qué consiste realmente el trabajo de una manager y dónde está el negocio de la música hoy.",
+      "Hablamos de carreras largas frente a éxitos rápidos, de giras y de cómo se protege a un artista cuando todo se acelera.",
+    ],
+  },
+  {
+    slug: "jose-carlos-gonzalez-hurtado",
+    name: "José Carlos González Hurtado",
+    role: "Presidente de EWTN · ex CEO en P&G",
+    bio: "Autor de 'Nuevas evidencias científicas de la existencia de Dios'. Fe, ciencia y empresa.",
+    topics: ["EWTN", "fe y ciencia", "empresa", "P&G", "medios religiosos"],
+    summary: [
+      "José Carlos González Hurtado dirigió negocios en Procter & Gamble antes de presidir EWTN, la mayor red de medios católicos del mundo. Es autor de 'Nuevas evidencias científicas de la existencia de Dios'.",
+      "Conversamos sobre ciencia y fe sin caricaturas, sobre cómo se gestiona un grupo de medios global y sobre qué le hizo cambiar de vida a mitad de carrera.",
+    ],
+  },
+  {
+    slug: "federica-fornaciari",
+    name: "Federica Fornaciari",
+    role: "Founder de SenYours y NoBrainer Partners",
+    bio: "Ex-Bain, profesora en IE, IESE y Bocconi. Estrategia y marca.",
+    topics: ["estrategia", "consultoría", "marca", "emprendimiento"],
+    summary: [
+      "Federica Fornaciari pasó por Bain y hoy dirige SenYours y NoBrainer Partners, además de dar clase en IE, IESE y Bocconi.",
+      "Hablamos de estrategia aplicada, de cómo se construye una marca desde cero y de la diferencia entre asesorar y decidir.",
+    ],
+  },
+  {
+    slug: "miguel-anxo-bastos",
+    name: "Miguel Anxo Bastos",
+    role: "Economista y profesor",
+    bio: "Escuela austriaca, libertad económica y análisis del poder.",
+    topics: ["escuela austriaca", "economía", "libertad", "análisis del poder"],
+    summary: [
+      "Miguel Anxo Bastos es profesor y una de las voces más singulares de la escuela austriaca en español. Analiza el poder desde la teoría, sin consignas.",
+      "Hablamos de Estado, incentivos, burocracia y de por qué muchas políticas producen justo lo contrario de lo que prometen.",
+    ],
+  },
+  {
+    slug: "daniela-macarena",
+    name: "Daniela Macarena",
+    role: "Co-fundadora de Ac2ality",
+    bio: "Nueva generación de medios y comunicación para jóvenes.",
+    topics: ["medios digitales", "Ac2ality", "TikTok", "comunicación", "emprendimiento joven"],
+    summary: [
+      "Daniela Macarena co-fundó Ac2ality, el medio que explica la actualidad a millones de jóvenes en vertical.",
+      "Nos cuenta cómo se monta un medio desde una habitación, qué funciona de verdad en redes y cómo se sostiene un negocio informativo con audiencia joven.",
+    ],
+  },
+  {
+    slug: "sonsoles-onega",
+    name: "Sonsoles Ónega",
+    role: "Periodista, presentadora y escritora",
+    bio: "Premio Planeta. Televisión, literatura y oficio periodístico.",
+    topics: ["periodismo", "televisión", "literatura", "Premio Planeta"],
+    summary: [
+      "Sonsoles Ónega compagina la televisión en directo con la escritura, y ganó el Premio Planeta. Nos habla del oficio: escuchar, preguntar y contar.",
+      "Hablamos de cómo se prepara un directo, de la disciplina de escribir novelas en paralelo y de lo que la exposición pública te quita.",
+    ],
+  },
 ];
+
+export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);

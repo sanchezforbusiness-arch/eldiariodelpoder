@@ -19,6 +19,7 @@ import { Route as ClubRouteImport } from './routes/club'
 import { Route as CartaRouteImport } from './routes/carta'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
 
 const VictorHugoGandarillaDeAndresRoute =
   VictorHugoGandarillaDeAndresRouteImport.update({
@@ -72,6 +73,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InvitadosSlugRoute = InvitadosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => InvitadosRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -79,11 +85,12 @@ export interface FileRoutesByFullPath {
   '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
-  '/invitados': typeof InvitadosRoute
+  '/invitados': typeof InvitadosRouteWithChildren
   '/manifiesto': typeof ManifiestoRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
+  '/invitados/$slug': typeof InvitadosSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -91,11 +98,12 @@ export interface FileRoutesByTo {
   '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
-  '/invitados': typeof InvitadosRoute
+  '/invitados': typeof InvitadosRouteWithChildren
   '/manifiesto': typeof ManifiestoRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
+  '/invitados/$slug': typeof InvitadosSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -104,11 +112,12 @@ export interface FileRoutesById {
   '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
-  '/invitados': typeof InvitadosRoute
+  '/invitados': typeof InvitadosRouteWithChildren
   '/manifiesto': typeof ManifiestoRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
+  '/invitados/$slug': typeof InvitadosSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/patrocinadores'
     | '/prensa'
     | '/victor-hugo-gandarilla-de-andres'
+    | '/invitados/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
     | '/patrocinadores'
     | '/prensa'
     | '/victor-hugo-gandarilla-de-andres'
+    | '/invitados/$slug'
   id:
     | '__root__'
     | '/'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
     | '/patrocinadores'
     | '/prensa'
     | '/victor-hugo-gandarilla-de-andres'
+    | '/invitados/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -155,7 +167,7 @@ export interface RootRouteChildren {
   CartaRoute: typeof CartaRoute
   ClubRoute: typeof ClubRoute
   EpisodiosRoute: typeof EpisodiosRoute
-  InvitadosRoute: typeof InvitadosRoute
+  InvitadosRoute: typeof InvitadosRouteWithChildren
   ManifiestoRoute: typeof ManifiestoRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PrensaRoute: typeof PrensaRoute
@@ -234,8 +246,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/invitados/$slug': {
+      id: '/invitados/$slug'
+      path: '/$slug'
+      fullPath: '/invitados/$slug'
+      preLoaderRoute: typeof InvitadosSlugRouteImport
+      parentRoute: typeof InvitadosRoute
+    }
   }
 }
+
+interface InvitadosRouteChildren {
+  InvitadosSlugRoute: typeof InvitadosSlugRoute
+}
+
+const InvitadosRouteChildren: InvitadosRouteChildren = {
+  InvitadosSlugRoute: InvitadosSlugRoute,
+}
+
+const InvitadosRouteWithChildren = InvitadosRoute._addFileChildren(
+  InvitadosRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -243,7 +274,7 @@ const rootRouteChildren: RootRouteChildren = {
   CartaRoute: CartaRoute,
   ClubRoute: ClubRoute,
   EpisodiosRoute: EpisodiosRoute,
-  InvitadosRoute: InvitadosRoute,
+  InvitadosRoute: InvitadosRouteWithChildren,
   ManifiestoRoute: ManifiestoRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PrensaRoute: PrensaRoute,

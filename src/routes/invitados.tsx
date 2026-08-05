@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { Footer } from "@/components/ddp/Footer";
@@ -43,6 +43,7 @@ export const Route = createFileRoute("/invitados")({
               name: g.name,
               jobTitle: g.role,
               description: g.bio,
+              url: `https://eldiariodelpoder.com/invitados/${g.slug}`,
               subjectOf: {
                 "@type": "PodcastSeries",
                 name: "Diario del Poder",
@@ -79,10 +80,13 @@ function InvitadosPage() {
           </h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9">
             {guestList.map((g) => (
-              <li key={g.name}>
-                <h3 className="font-serif text-xl md:text-2xl leading-tight">{g.name}</h3>
-                <p className="mt-1.5 text-[10px] tracking-[0.2em] uppercase text-gold/80">{g.role}</p>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{g.bio}</p>
+              <li key={g.slug}>
+                <Link to="/invitados/$slug" params={{ slug: g.slug }} className="group block">
+                  <h3 className="font-serif text-xl md:text-2xl leading-tight group-hover:text-gold transition-colors">{g.name}</h3>
+                  <p className="mt-1.5 text-[10px] tracking-[0.2em] uppercase text-gold/80">{g.role}</p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{g.bio}</p>
+                  <span className="mt-3 inline-block text-[11px] tracking-[0.18em] uppercase text-gold/70">Ver entrevista →</span>
+                </Link>
               </li>
             ))}
           </ul>
