@@ -6,30 +6,8 @@ const VIDEO_ID = "ZydPM-xkYvA";
 
 export function HeroNoir() {
   const [loadVideo, setLoadVideo] = useState(true);
-  const [playing, setPlaying] = useState(false);
   const [scrolled, setScrolled] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  // El iframe solo se muestra cuando el vídeo está realmente reproduciéndose:
-  // así nunca se ven los controles de pausa de YouTube.
-  useEffect(() => {
-    if (!loadVideo) return;
-    const onMessage = (e: MessageEvent) => {
-      if (typeof e.data !== "string") return;
-      if (!/youtube/.test(e.origin)) return;
-      try {
-        const data = JSON.parse(e.data);
-        const state = data?.info?.playerState ?? data?.info;
-        if (data?.event === "infoDelivery" && typeof state === "number") {
-          setPlaying(state === 1);
-        }
-      } catch {
-        /* ignora mensajes no JSON */
-      }
-    };
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, [loadVideo]);
 
   // Fuerza la reproducción vía IFrame API para que no aparezca el overlay de pausa.
   useEffect(() => {
