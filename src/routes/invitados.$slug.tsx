@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
-import { getGuestBySlug, guestList } from "@/data/podcast";
+import { getGuestBySlug, guestList, type GuestEntry } from "@/data/podcast";
 import { guestImageBySlug } from "@/data/guestImages";
 
 const SITE = "https://eldiariodelpoder.com";
@@ -134,7 +134,7 @@ function GuestNotFound() {
 }
 
 function GuestPage() {
-  const { guest } = Route.useLoaderData();
+  const { guest } = Route.useLoaderData() as { guest: GuestEntry };
   const img = guestImageBySlug[guest.slug];
   const others = guestList.filter((g) => g.slug !== guest.slug).slice(0, 6);
 
