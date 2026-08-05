@@ -3,21 +3,25 @@ import { lazy, Suspense } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Press } from "@/components/ddp/Press";
+import { TvAppearances } from "@/components/ddp/TvAppearances";
 import { useReveal } from "@/hooks/use-reveal";
 import { pressArticles } from "@/data/press";
+import { tvAppearances, SITE_URL } from "@/data/tv";
 
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
 
 export const Route = createFileRoute("/prensa")({
   head: () => ({
     meta: [
-      { title: "Prensa: Diario del Poder en los medios | Noticias y cobertura" },
-      { name: "description", content: "Todas las noticias sobre Diario del Poder y sus fundadores Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés en La Vanguardia, Antena 3, La Sexta, El Español, Infobae y HuffPost." },
-      { property: "og:title", content: "Diario del Poder en los medios — Prensa" },
-      { property: "og:description", content: "Cobertura en La Vanguardia, Antena 3, La Sexta, El Español, Infobae, Voz Pópuli y HuffPost." },
+      { title: "Prensa y TV: Diario del Poder en La Sexta, Antena 3 y Univision" },
+      { name: "description", content: "Entrevistas en directo de Diario del Poder en Zapeando (La Sexta), Espejo Público con Susanna Griso (Antena 3) y Univision, más la cobertura en La Vanguardia, El Español, Infobae y HuffPost." },
+      { property: "og:title", content: "Diario del Poder en TV: La Sexta, Antena 3 y Univision" },
+      { property: "og:description", content: "Entrevistas en directo en Zapeando, Espejo Público y Univision, y cobertura en La Vanguardia, El Español, Infobae y HuffPost." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://eldiariodelpoder.com/prensa" },
+      { property: "og:image", content: `${SITE_URL}${tvAppearances[0].image}` },
+      { name: "twitter:image", content: `${SITE_URL}${tvAppearances[0].image}` },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/prensa" }],
     scripts: [
@@ -58,6 +62,39 @@ export const Route = createFileRoute("/prensa")({
           })),
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Diario del Poder en televisión",
+          itemListElement: tvAppearances.map((t, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "TVClip",
+              name: t.title,
+              description: t.caption,
+              inLanguage: "es",
+              datePublished: t.date,
+              thumbnailUrl: `${SITE_URL}${t.image}`,
+              image: `${SITE_URL}${t.image}`,
+              partOfSeries: { "@type": "TVSeries", name: t.program },
+              publication: {
+                "@type": "BroadcastEvent",
+                isLiveBroadcast: true,
+                startDate: t.date,
+                publishedOn: { "@type": "BroadcastService", name: `${t.channel} — ${t.program}`, broadcastDisplayName: t.channel },
+              },
+              about: { "@id": "https://eldiariodelpoder.com/#organization" },
+              actor: [
+                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez" },
+                { "@type": "Person", name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
+              ],
+            },
+          })),
+        }),
+      },
     ],
   }),
   component: PrensaPage,
@@ -80,6 +117,7 @@ function PrensaPage() {
           </h1>
         </header>
         <Press />
+        <TvAppearances />
         <section className="container-ddp py-16 md:py-24 border-t border-border">
           <h2 className="font-serif text-3xl md:text-4xl font-light mb-4">
             Noticias publicadas sobre <span className="italic text-gold">Diario del Poder</span>

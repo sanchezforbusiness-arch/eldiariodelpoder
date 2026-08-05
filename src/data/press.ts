@@ -35,7 +35,7 @@ export const pressItems: PressItem[] = [
   },
   {
     outlet: "La Sexta — Zapeando",
-    context: "Clip en emisión",
+    context: "En emisión · plató",
     kind: "tv",
     headline: "Zapeando comenta el momento viral de la Reina Letizia con Diario del Poder",
     date: "2026-05-11",
@@ -86,7 +86,7 @@ export const pressItems: PressItem[] = [
     summary: "HuffPost España recoge el momento entre la Reina Letizia y Diario del Poder.",
   },
   { outlet: "Navarra TV", kind: "tv" },
-  { outlet: "Univision", context: "La voz del mañana", kind: "tv" },
+  { outlet: "Univision", context: "Entrevista en directo · EE. UU.", kind: "tv" },
 ];
 
 export const pressArticles = pressItems.filter((i) => i.url && i.headline);
