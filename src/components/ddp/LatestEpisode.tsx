@@ -1,8 +1,8 @@
 import { episodeList } from "@/data/podcast";
-import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
+import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import { useParallax } from "@/hooks/use-parallax";
 
-const ep = episodeList[0];
+const ep = episodeList[1];
 
 export function LatestEpisode() {
   const ref = useParallax(0.12);
@@ -19,7 +19,7 @@ export function LatestEpisode() {
           <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[80svh]">
             <img
               ref={ref}
-              src={jordiAsset.url}
+              src={andresImg}
               alt={`${ep.guest} — ${ep.title}`}
               loading="lazy"
               decoding="async"
