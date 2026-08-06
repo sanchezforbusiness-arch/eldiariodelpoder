@@ -1,8 +1,8 @@
 import { episodeList } from "@/data/podcast";
-import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
+import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import { useParallax } from "@/hooks/use-parallax";
 
-const ep = episodeList[0];
+const ep = episodeList[1];
 
 export function LatestEpisode() {
   const ref = useParallax(0.12);
