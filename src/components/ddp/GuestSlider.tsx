@@ -66,7 +66,7 @@ export function GuestSlider() {
       </div>
 
       <div className="mask-fade-x mt-8 overflow-hidden">
-        <div className="marquee marquee-slow">
+        <div className="marquee marquee-fast">
           <Track />
           <Track />
         </div>
