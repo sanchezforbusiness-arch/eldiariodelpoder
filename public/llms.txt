@@ -89,6 +89,8 @@ Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#telev
 - [Inicio](https://eldiariodelpoder.com/): Presentación del podcast, últimos episodios e invitados destacados.
 - [Episodios](https://eldiariodelpoder.com/episodios): Catálogo completo de conversaciones.
 - [Invitados](https://eldiariodelpoder.com/invitados): Personalidades que han pasado por el podcast.
+- [Nosotros](https://eldiariodelpoder.com/nosotros): Fundadores, hosts y advisors del proyecto.
+- [La carta](https://eldiariodelpoder.com/carta): Newsletter semanal de Diario del Poder.
 - [Manifiesto](https://eldiariodelpoder.com/manifiesto): Principios editoriales del proyecto.
 - [Prensa y TV](https://eldiariodelpoder.com/prensa): Noticias en medios y apariciones en directo en La Sexta, Antena 3 y Univision.
 - [Alejandro Sánchez Martínez](https://eldiariodelpoder.com/alejandro-sanchez-martinez): Perfil del co-fundador y host.
