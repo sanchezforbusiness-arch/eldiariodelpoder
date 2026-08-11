@@ -4,6 +4,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 const links = [
   { to: "/episodios", label: "Episodios" },
   { to: "/invitados", label: "Invitados" },
+  { to: "/nosotros", label: "Nosotros" },
   { to: "/manifiesto", label: "Manifiesto" },
   { to: "/prensa", label: "Prensa" },
 ] as const;

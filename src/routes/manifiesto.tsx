@@ -3,10 +3,8 @@ import { lazy, Suspense } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Manifesto } from "@/components/ddp/Manifesto";
-import { About } from "@/components/ddp/About";
 import { useReveal } from "@/hooks/use-reveal";
 
-const Team = lazy(() => import("@/components/ddp/Team").then((m) => ({ default: m.Team })));
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
 const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
 
@@ -104,9 +102,7 @@ function ManifiestoPage() {
           </h1>
         </header>
         <Manifesto />
-        <About />
         <Suspense fallback={null}>
-          <Team />
           <Sponsors />
           <Footer />
         </Suspense>
