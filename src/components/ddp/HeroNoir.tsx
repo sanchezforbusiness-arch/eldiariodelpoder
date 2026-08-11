@@ -4,7 +4,7 @@ const LINES = ["La voz", "del legado."];
 const VIDEO_ID = "ZydPM-xkYvA";
 
 export function HeroNoir() {
-  const [loadVideo, setLoadVideo] = useState(true);
+  const [loadVideo, setLoadVideo] = useState(false);
   const [scrolled, setScrolled] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -20,8 +20,8 @@ export function HeroNoir() {
     const id = window.setInterval(() => {
       post("mute");
       post("playVideo");
-    }, 600);
-    const stop = window.setTimeout(() => window.clearInterval(id), 10000);
+    }, 800);
+    const stop = window.setTimeout(() => window.clearInterval(id), 6000);
     return () => {
       window.clearInterval(id);
       window.clearTimeout(stop);
@@ -30,9 +30,19 @@ export function HeroNoir() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return setLoadVideo(false);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
-    if (conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType))) setLoadVideo(false);
+    if (conn?.saveData || (conn?.effectiveType && /2g/.test(conn.effectiveType))) return;
+    // Monta el iframe justo después de la primera pintura: el titular marca el LCP,
+    // el vídeo entra sin competir por el ancho de banda inicial.
+    const idle = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number })
+      .requestIdleCallback;
+    if (idle) {
+      idle(() => setLoadVideo(true), { timeout: 1200 });
+      return;
+    }
+    const t = window.setTimeout(() => setLoadVideo(true), 300);
+    return () => window.clearTimeout(t);
   }, []);
 
   useEffect(() => {

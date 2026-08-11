@@ -8,6 +8,7 @@ const LEAD =
 const BLOCKS = [
   "Preguntamos lo que se pregunta en privado y no editamos la respuesta incómoda.",
   "Nos interesa cómo se decide bajo presión y qué queda cuando el cargo termina.",
+  "Sin guion, sin recortes, sin favores.",
 ];
 
 function Word({
