@@ -12,7 +12,7 @@ export function NewsletterMinimal() {
               La carta
             </h2>
             <p className="mt-5 max-w-[34ch] font-serif text-[18px] leading-[1.65] text-muted-foreground">
-              Cada domingo, lo que no cabe en el episodio. Tres minutos de lectura.
+              Cada domingo, lo que no cabe en el episodio.
             </p>
             <Link to="/carta" className="link-rule tap mt-6 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]">
               Ver de qué va

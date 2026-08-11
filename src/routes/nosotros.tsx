@@ -81,8 +81,7 @@ function NosotrosPage() {
             Las personas detrás de cada <span className="italic text-gold">conversación</span>.
           </h1>
           <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            Dos fundadores al micrófono. Dos asesores atrás. Un proyecto hecho en Madrid, sin
-            guion y sin prisa.
+            Dos al micrófono, dos detrás. Todo se hace en Madrid.
           </p>
         </header>
 

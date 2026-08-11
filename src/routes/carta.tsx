@@ -39,8 +39,7 @@ function CartaPage() {
             </h1>
 
             <p className="mt-6 max-w-[54ch] font-serif text-[18px] leading-[1.65] text-muted-foreground md:text-[19px]">
-              Lo que nos cuentan cuando se apaga el micro. Una carta corta, escrita a mano
-              por nosotros, sin promociones ni relleno.
+              Lo que nos cuentan cuando se apaga el micro. Corta, y sin promociones.
             </p>
 
             <div className="panel mt-10 p-6 md:p-8">
