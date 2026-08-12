@@ -75,14 +75,19 @@ function NosotrosPage() {
           </Link>
         </div>
 
-        <header className="container-ddp pt-6 sm:pt-8 pb-2">
-          <span className="eyebrow block mb-5">Quiénes somos</span>
-          <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
-            Las personas detrás de cada <span className="italic text-gold">conversación</span>.
-          </h1>
-          <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            Dos al micrófono, dos detrás. Todo se hace en Madrid.
-          </p>
+        <header className="container-ddp pt-6 sm:pt-8 pb-12 md:pb-16 border-b border-border">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
+            <div className="md:col-span-8">
+              <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+                Quiénes <span className="italic text-gold">somos</span>.
+              </h1>
+            </div>
+            <div className="md:col-span-4">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                Dos fundadores, dos advisors. Un podcast hecho en Madrid.
+              </p>
+            </div>
+          </div>
         </header>
 
         <Team />
