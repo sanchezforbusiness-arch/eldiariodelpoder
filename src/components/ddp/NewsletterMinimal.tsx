@@ -12,7 +12,7 @@ export function NewsletterMinimal() {
               Cada domingo, lo que no cabe en el episodio.
             </p>
             <Link to="/carta" className="link-rule tap mt-6 inline-flex font-mono text-2xs uppercase tracking-label">
-              Ver de qué va
+              Qué se cuenta
             </Link>
           </div>
         </div>
