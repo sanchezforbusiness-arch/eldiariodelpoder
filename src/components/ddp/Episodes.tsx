@@ -84,7 +84,7 @@ export function Episodes() {
                   width={512}
                   height={640}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover contrast-110 group-hover:scale-105 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <div className="absolute top-5 left-5 flex items-center gap-3">
