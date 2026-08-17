@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
+import { Masthead } from "@/components/ddp/Masthead";
 import { formatDateEs } from "@/lib/utils";
 import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podcast";
 
@@ -112,11 +113,12 @@ function EpisodePage() {
           </nav>
 
           <header className="mt-6 max-w-3xl">
-            <p className="text-2xs tracking-label uppercase text-muted-foreground">
-              {ep.date ? formatDateEs(ep.date) : ""}
-              {ep.date && ep.duration ? " · " : ""}
-              {ep.duration ?? ""}
-            </p>
+            <Masthead edition={`Nº ${ep.n}`} date={ep.date ? formatDateEs(ep.date) : undefined} />
+            {ep.duration && (
+              <p className="mt-3 font-mono text-2xs uppercase tracking-label tabular-nums text-muted-foreground">
+                {ep.duration}
+              </p>
+            )}
             <h1 className="mt-4 text-2xl sm:text-display md:text-display leading-[0.98] font-medium tracking-tight">
               {ep.title}
             </h1>
