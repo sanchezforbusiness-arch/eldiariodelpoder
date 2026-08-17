@@ -81,18 +81,34 @@ function EpisodiosPage() {
           <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-10">
             Todos los episodios
           </h2>
-          <ul className="space-y-10 max-w-3xl">
+          <div className="hairline" />
+          <div className="mono-label hidden grid-cols-[64px_1.4fr_1fr_110px] gap-4 px-3 py-4 md:grid">
+            <span>Nº</span>
+            <span>Título</span>
+            <span>Invitado</span>
+            <span className="text-right">Duración</span>
+          </div>
+          <ul>
             {episodeList.map((e) => (
               <li key={e.n}>
-                <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">
-                  Episodio {e.n} · {e.guest}
-                </p>
-                <h3 className="tracking-tight text-2xl md:text-2xl leading-tight">
-                  <Link to="/episodios/$slug" params={{ slug: e.slug }} className="hover:text-signal transition-colors">
-                    {e.title}
-                  </Link>
-                </h3>
-                <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{e.description}</p>
+                <Link
+                  to="/episodios/$slug"
+                  params={{ slug: e.slug }}
+                  className="row-index tap grid-cols-1 md:grid-cols-[64px_1.4fr_1fr_110px]"
+                >
+                  <span className="flex items-baseline gap-3 md:block">
+                    <span className="font-mono text-2xs tracking-label tabular-nums opacity-70">{e.n}</span>
+                    <span className="text-lg font-medium tracking-tight md:hidden">{e.title}</span>
+                  </span>
+                  <span className="hidden text-lg font-medium tracking-tight md:block md:text-xl">{e.title}</span>
+                  <span className="hidden font-mono text-2xs uppercase tracking-label opacity-80 md:block">{e.guest}</span>
+                  <span className="mt-1 font-mono text-2xs uppercase tracking-label tabular-nums opacity-60 md:hidden">
+                    {e.guest}{e.duration ? ` — ${e.duration}` : ""}
+                  </span>
+                  <span className="hidden font-mono text-2xs tracking-label tabular-nums opacity-70 md:block md:text-right">
+                    {e.duration ?? ""}
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>
