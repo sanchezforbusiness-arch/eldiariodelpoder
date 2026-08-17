@@ -235,12 +235,12 @@
 
   /* Fluid editorial type scale */
   .type-hero {
-    font-size: clamp(2.75rem, 13vw, 9rem);
+    font-size: var(--text-display);
     line-height: 0.95;
     letter-spacing: -0.03em;
   }
   .type-section {
-    font-size: clamp(1.75rem, 7vw, 3.25rem);
+    font-size: clamp(var(--text-xl), 7vw, var(--text-2xl));
     line-height: 1;
     letter-spacing: -0.03em;
   }
@@ -283,29 +283,29 @@
   /* Monospaced editorial label */
   .eyebrow, .mono-label {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-2xs);
     font-weight: 400;
-    letter-spacing: 0.14em;
+    letter-spacing: var(--tracking-label);
     text-transform: uppercase;
     color: var(--color-muted-foreground);
   }
-  @media (min-width: 768px) { .eyebrow, .mono-label { font-size: 12px; letter-spacing: 0.12em; } }
 
   /* Editorial serif body copy */
   .prose-editorial {
     font-family: var(--font-serif);
-    font-size: 17px;
+    font-weight: 300;
+    font-size: var(--text-sm);
     line-height: 1.7;
     max-width: 68ch;
     color: color-mix(in srgb, var(--color-foreground) 82%, transparent);
   }
-  @media (min-width: 768px) { .prose-editorial { font-size: 19px; line-height: 1.65; } }
+  @media (min-width: 768px) { .prose-editorial { font-size: var(--text-base); line-height: 1.65; } }
 
   /* Section number in the margin */
   .section-index {
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-label);
     color: var(--color-muted-foreground);
   }
 
@@ -404,8 +404,8 @@
     .marquee, .ticker { animation: none; }
   }
   .mask-fade-x {
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
   }
 
   /* Reveals */
@@ -420,6 +420,10 @@
   .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 180ms; }
   .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 240ms; }
   .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 300ms; }
+
+  /* A hairline that draws itself in when revealed */
+  .rule-draw.reveal { opacity: 1; transform: scaleX(0); }
+  .rule-draw.reveal.is-visible { transform: scaleX(1); }
 
   /* Line-by-line clip reveal */
   .line-mask { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
