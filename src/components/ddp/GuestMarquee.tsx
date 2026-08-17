@@ -4,7 +4,7 @@ export function GuestMarquee() {
   const names = guestList.map((g) => g.name);
   const loop = [...names, ...names];
   return (
-    <section aria-label="Invitados destacados" className="overflow-hidden border-b border-border py-8">
+ <section aria-label="Invitados destacados" className="overflow-hidden border-b border-border py-16 md:py-24">
       <div className="mask-fade-x">
         <div className="marquee marquee-slow items-center">
           {loop.map((n, i) => (

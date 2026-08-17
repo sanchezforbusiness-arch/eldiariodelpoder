@@ -8,7 +8,7 @@ export function TextBand() {
   return (
     <section
       aria-hidden
-      className="relative py-10 md:py-14 border-y border-border bg-card/30 overflow-hidden"
+ className="relative py-16 md:py-24 border-y border-border bg-card/30 overflow-hidden"
     >
       <div className="mask-fade-x">
         <div className="ticker">

@@ -93,7 +93,7 @@ function NosotrosPage() {
         <Team />
 
         {/* Manifiesto pull-quote — enlace, no duplicación */}
-        <section className="border-t border-border py-24 md:py-36">
+ <section className="border-t border-border py-24 md:py-32">
           <div className="container-ddp">
             <div className="grid md:grid-cols-12 gap-10 items-center">
               <div className="md:col-span-8 reveal">
@@ -120,7 +120,7 @@ function NosotrosPage() {
         </section>
 
         {/* Firma geográfica */}
-        <section className="border-t border-border py-16 md:py-20">
+ <section className="border-t border-border py-16 md:py-24">
           <div className="container-ddp flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <p className="font-serif text-2xl md:text-3xl font-light tracking-tight">
               Hecho en <span className="italic text-gold">Madrid</span>.

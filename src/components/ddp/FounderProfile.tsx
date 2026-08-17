@@ -55,7 +55,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
           </div>
         </header>
 
-        <section className="container-ddp py-16 md:py-24">
+ <section className="container-ddp py-16 md:py-24">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-7 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground">
               <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground">
@@ -78,7 +78,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
           </div>
         </section>
 
-        <section className="container-ddp py-14 md:py-20 border-t border-border">
+ <section className="container-ddp py-16 md:py-24 border-t border-border">
           <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
             A quién ha <span className="italic text-gold">entrevistado</span>
           </h2>
@@ -92,7 +92,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
           </ul>
         </section>
 
-        <section className="container-ddp py-14 md:py-20 border-t border-border">
+ <section className="container-ddp py-16 md:py-24 border-t border-border">
           <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
             En los <span className="italic text-gold">medios</span>
           </h2>

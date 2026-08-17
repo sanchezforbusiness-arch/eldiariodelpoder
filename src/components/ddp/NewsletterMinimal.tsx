@@ -3,7 +3,7 @@ import { SubscribeForm } from "@/components/ddp/SubscribeForm";
 
 export function NewsletterMinimal() {
   return (
-    <section id="newsletter" className="border-b border-border py-24 md:py-32">
+ <section id="newsletter" className="border-b border-border py-24 md:py-32">
       <div className="container-ddp grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-6">
           <div className="min-w-0">

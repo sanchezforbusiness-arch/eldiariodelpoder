@@ -18,7 +18,7 @@ const PROFILE = [
 
 export function DataModule() {
   return (
-    <section className="border-b border-border py-20 md:py-32">
+ <section className="border-b border-border py-24 md:py-32">
       <div className="container-ddp">
         <div className="flex gap-8">
           <span className="section-index pt-2">06</span>

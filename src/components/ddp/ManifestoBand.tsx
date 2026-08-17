@@ -11,7 +11,7 @@ const BLOCKS = [
 
 export function ManifestoBand() {
   return (
-    <section className="invert-section border-b border-border py-32 md:py-40">
+ <section className="invert-section border-b border-border py-32 md:py-40">
       <div className="container-ddp">
         <h2 className="reveal text-2xl leading-[0.95] tracking-tight">Manifiesto</h2>
 

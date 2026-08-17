@@ -30,7 +30,7 @@ export function GuestsCarousel() {
   );
 
   return (
-    <section id="guests" className="relative overflow-hidden border-t border-border bg-card/20 py-24 md:py-32">
+ <section id="guests" className="relative overflow-hidden border-t border-border bg-card/20 py-24 md:py-32">
       <div className="container-ddp relative mb-10 md:mb-14">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">

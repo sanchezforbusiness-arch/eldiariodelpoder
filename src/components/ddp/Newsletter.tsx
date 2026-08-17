@@ -20,7 +20,7 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-32 relative overflow-hidden grain border-t border-border">
+ <section id="newsletter" className="py-24 md:py-32 relative overflow-hidden grain border-t border-border">
       <div className="gold-glow float-slow w-[420px] h-[420px] -top-20 left-1/2 -translate-x-1/2 opacity-30" />
       <div className="container-ddp relative">
         <div className="max-w-xl mx-auto text-center">

@@ -125,7 +125,7 @@ function Hero() {
 
 function Pillars() {
   return (
-    <section className="py-20 md:py-28 border-t border-border">
+ <section className="py-24 md:py-32 border-t border-border">
       <div className="container-ddp">
         <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
           {pillars.map((p) => (
@@ -143,7 +143,7 @@ function Pillars() {
 function Gallery() {
   const shots = [signingHands, setMonitors, hosts, signing, metropolitano, dialogos];
   return (
-    <section className="py-20 md:py-28 border-t border-border overflow-hidden">
+ <section className="py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="container-ddp mb-10">
         <span className="eyebrow block mb-5">El Club por dentro</span>
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.0] font-light max-w-3xl">
@@ -166,7 +166,7 @@ function Gallery() {
 
 function Philosophy() {
   return (
-    <section className="py-24 md:py-36 border-t border-border bg-card/20">
+ <section className="py-24 md:py-32 border-t border-border bg-card/20">
       <div className="container-ddp">
         <span className="eyebrow block mb-8">Filosofía</span>
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 reveal-stagger">
@@ -184,7 +184,7 @@ function Philosophy() {
 function Apply() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="apply" className="py-24 md:py-36 border-t border-border">
+ <section id="apply" className="py-24 md:py-32 border-t border-border">
       <div className="container-ddp max-w-3xl">
         <span className="eyebrow block mb-5">Solicita tu acceso</span>
         <h2 className="font-serif text-5xl md:text-6xl leading-[0.98] font-light">
@@ -234,7 +234,7 @@ function Field({ label, name, type = "text", required }: { label: string; name: 
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 md:py-36 border-t border-border">
+ <section className="py-24 md:py-32 border-t border-border">
       <div className="container-ddp max-w-3xl">
         <span className="eyebrow block mb-5">FAQ</span>
         <div className="border-t border-border mt-10">

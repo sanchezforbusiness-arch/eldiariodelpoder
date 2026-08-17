@@ -77,7 +77,7 @@ function EpisodiosPage() {
           </p>
         </header>
         <Episodes />
-        <section className="container-ddp py-16 md:py-24 border-t border-border">
+ <section className="container-ddp py-16 md:py-24 border-t border-border">
           <h2 className="font-serif text-3xl md:text-4xl font-light mb-10">
             Todos los <span className="italic text-gold">episodios</span>
           </h2>

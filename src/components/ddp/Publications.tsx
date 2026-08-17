@@ -22,7 +22,7 @@ export function Publications() {
   return (
     <section
       id="publicaciones"
-      className="py-28 md:py-40 relative overflow-hidden border-t border-border grain"
+ className="py-24 md:py-32 relative overflow-hidden border-t border-border grain"
     >
       <div className="container-ddp relative">
         <div className="max-w-2xl mx-auto text-center">

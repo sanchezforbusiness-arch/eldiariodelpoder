@@ -19,7 +19,7 @@ const FAQ = [
 
 export function FaqBand() {
   return (
-    <section className="border-b border-border py-24 md:py-32">
+ <section className="border-b border-border py-24 md:py-32">
       <div className="container-ddp">
         <h2 className="text-2xl leading-[0.95] tracking-tight">Preguntas</h2>
         <dl className="mt-10 border-t border-border">

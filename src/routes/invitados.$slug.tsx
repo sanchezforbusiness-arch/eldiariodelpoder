@@ -224,7 +224,7 @@ function GuestPage() {
             </aside>
           </section>
 
-          <section className="mt-16 md:mt-24 py-12 border-t border-border">
+ <section className="mt-16 md:mt-24 py-16 md:py-24 border-t border-border">
             <h2 className="font-serif text-2xl md:text-3xl font-light">Más invitados</h2>
             <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
               {others.map((g) => (

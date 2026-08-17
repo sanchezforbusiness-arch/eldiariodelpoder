@@ -118,7 +118,7 @@ function PrensaPage() {
         </header>
         <Press />
         <TvAppearances />
-        <section className="container-ddp py-16 md:py-24 border-t border-border">
+ <section className="container-ddp py-16 md:py-24 border-t border-border">
           <h2 className="font-serif text-3xl md:text-4xl font-light mb-4">
             Noticias publicadas sobre <span className="italic text-gold">Diario del Poder</span>
           </h2>

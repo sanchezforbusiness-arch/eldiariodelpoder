@@ -2,7 +2,7 @@ import signing from "@/assets/bts-signing-pen.webp";
 
 export function Manifesto() {
   return (
-    <section id="manifesto" className="relative py-32 md:py-48 border-t border-border overflow-hidden">
+ <section id="manifesto" className="relative py-32 md:py-40 border-t border-border overflow-hidden">
       <img
         src={signing}
         alt=""

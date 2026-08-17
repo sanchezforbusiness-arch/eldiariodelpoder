@@ -31,7 +31,7 @@ export function ScrollReveal({
   const words = text.split(" ");
 
   return (
-    <section ref={ref} className={`border-b border-border py-24 md:py-36 ${className}`}>
+ <section ref={ref} className={`border-b border-border py-24 md:py-32 ${className}`}>
       <div className="container-ddp">
         <div className="flex items-baseline gap-6">
           {index ? <span className="section-index">{index}</span> : null}

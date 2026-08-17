@@ -23,7 +23,7 @@ export function Press() {
   
 
   return (
-    <section id="prensa" className="relative py-24 md:py-36 border-t border-border overflow-hidden">
+ <section id="prensa" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
       {/* Ambient glow */}
       <div
         aria-hidden
