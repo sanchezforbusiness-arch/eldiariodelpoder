@@ -177,13 +177,13 @@ export function Press() {
             </h3>
           </div>
           <a
-            href="mailto:contactoeldiariodelpoder@gmail.com"
+            href="mailto:prensa@eldiariodelpoder.com"
             className="group inline-flex items-center justify-between gap-6 border border-border hover:border-gold rounded-2xl p-6 md:p-8 transition-colors"
           >
             <div>
               <p className="text-[10px] tracking-[0.32em] uppercase text-muted-foreground mb-2">Email</p>
               <p className="font-serif text-xl md:text-2xl text-foreground group-hover:text-gold transition-colors">
-                contactoeldiariodelpoder@gmail.com
+                prensa@eldiariodelpoder.com
               </p>
             </div>
             <ArrowUpRight size={28} className="text-muted-foreground group-hover:text-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0" />

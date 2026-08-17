@@ -125,7 +125,7 @@ function Page() {
         { label: "Base", value: "Madrid, España" },
         { label: "Cargos", value: "Presidente de Kifaru Club · Nova 111" },
         { label: "Temas", value: "Liderazgo, poder, empresa, legado" },
-        { label: "Contacto", value: "contactoeldiariodelpoder@gmail.com" },
+        { label: "Contacto", value: "redaccion@eldiariodelpoder.com" },
       ]}
     />
   );

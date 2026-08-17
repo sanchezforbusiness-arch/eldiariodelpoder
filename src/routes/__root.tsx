@@ -22,7 +22,7 @@ const structuredData = {
       logo: SITE_IMAGE,
       foundingDate: "2025",
       foundingLocation: "Madrid, España",
-      email: "contactoeldiariodelpoder@gmail.com",
+      email: "redaccion@eldiariodelpoder.com",
       description:
         "Diario del Poder es un medio español de entrevistas de liderazgo fundado en 2025 por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con La Vanguardia como media partner oficial.",
       affiliation: {
@@ -124,7 +124,7 @@ const structuredData = {
           name: "¿Cómo puedo contactar con Diario del Poder para prensa o patrocinios?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Escribiendo a contactoeldiariodelpoder@gmail.com.",
+            text: "Escribiendo a redaccion@eldiariodelpoder.com.",
           },
         },
         {

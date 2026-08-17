@@ -33,8 +33,8 @@ export function Footer() {
 
           <div className="md:col-span-3 min-w-0">
             <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h3>
-            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
-              contactoeldiariodelpoder@gmail.com
+            <a href="mailto:redaccion@eldiariodelpoder.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
+              redaccion@eldiariodelpoder.com
             </a>
             <div className="mt-6 flex items-center gap-4 text-muted-foreground">
               <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold"><Instagram size={18} /></a>

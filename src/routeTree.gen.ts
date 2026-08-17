@@ -14,13 +14,13 @@ import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
-import { Route as InvitadosRouteImport } from './routes/invitados'
 import { Route as EpisodiosRouteImport } from './routes/episodios'
 import { Route as ClubRouteImport } from './routes/club'
 import { Route as CartaRouteImport } from './routes/carta'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
 import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
 
 const VictorHugoGandarillaDeAndresRoute =
@@ -47,11 +47,6 @@ const NosotrosRoute = NosotrosRouteImport.update({
 const ManifiestoRoute = ManifiestoRouteImport.update({
   id: '/manifiesto',
   path: '/manifiesto',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InvitadosRoute = InvitadosRouteImport.update({
-  id: '/invitados',
-  path: '/invitados',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EpisodiosRoute = EpisodiosRouteImport.update({
@@ -85,10 +80,15 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InvitadosIndexRoute = InvitadosIndexRouteImport.update({
+  id: '/invitados/',
+  path: '/invitados/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InvitadosSlugRoute = InvitadosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => InvitadosRoute,
+  id: '/invitados/$slug',
+  path: '/invitados/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -98,13 +98,13 @@ export interface FileRoutesByFullPath {
   '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
-  '/invitados': typeof InvitadosRouteWithChildren
   '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
+  '/invitados/': typeof InvitadosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -113,13 +113,13 @@ export interface FileRoutesByTo {
   '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
-  '/invitados': typeof InvitadosRouteWithChildren
   '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
+  '/invitados': typeof InvitadosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -129,13 +129,13 @@ export interface FileRoutesById {
   '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/episodios': typeof EpisodiosRoute
-  '/invitados': typeof InvitadosRouteWithChildren
   '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
+  '/invitados/': typeof InvitadosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -146,13 +146,13 @@ export interface FileRouteTypes {
     | '/carta'
     | '/club'
     | '/episodios'
-    | '/invitados'
     | '/manifiesto'
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
     | '/victor-hugo-gandarilla-de-andres'
     | '/invitados/$slug'
+    | '/invitados/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -161,13 +161,13 @@ export interface FileRouteTypes {
     | '/carta'
     | '/club'
     | '/episodios'
-    | '/invitados'
     | '/manifiesto'
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
     | '/victor-hugo-gandarilla-de-andres'
     | '/invitados/$slug'
+    | '/invitados'
   id:
     | '__root__'
     | '/'
@@ -176,13 +176,13 @@ export interface FileRouteTypes {
     | '/carta'
     | '/club'
     | '/episodios'
-    | '/invitados'
     | '/manifiesto'
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
     | '/victor-hugo-gandarilla-de-andres'
     | '/invitados/$slug'
+    | '/invitados/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -192,12 +192,13 @@ export interface RootRouteChildren {
   CartaRoute: typeof CartaRoute
   ClubRoute: typeof ClubRoute
   EpisodiosRoute: typeof EpisodiosRoute
-  InvitadosRoute: typeof InvitadosRouteWithChildren
   ManifiestoRoute: typeof ManifiestoRoute
   NosotrosRoute: typeof NosotrosRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PrensaRoute: typeof PrensaRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
+  InvitadosSlugRoute: typeof InvitadosSlugRoute
+  InvitadosIndexRoute: typeof InvitadosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -235,13 +236,6 @@ declare module '@tanstack/react-router' {
       path: '/manifiesto'
       fullPath: '/manifiesto'
       preLoaderRoute: typeof ManifiestoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/invitados': {
-      id: '/invitados'
-      path: '/invitados'
-      fullPath: '/invitados'
-      preLoaderRoute: typeof InvitadosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/episodios': {
@@ -286,27 +280,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/invitados/': {
+      id: '/invitados/'
+      path: '/invitados'
+      fullPath: '/invitados/'
+      preLoaderRoute: typeof InvitadosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/invitados/$slug': {
       id: '/invitados/$slug'
-      path: '/$slug'
+      path: '/invitados/$slug'
       fullPath: '/invitados/$slug'
       preLoaderRoute: typeof InvitadosSlugRouteImport
-      parentRoute: typeof InvitadosRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface InvitadosRouteChildren {
-  InvitadosSlugRoute: typeof InvitadosSlugRoute
-}
-
-const InvitadosRouteChildren: InvitadosRouteChildren = {
-  InvitadosSlugRoute: InvitadosSlugRoute,
-}
-
-const InvitadosRouteWithChildren = InvitadosRoute._addFileChildren(
-  InvitadosRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -315,12 +304,13 @@ const rootRouteChildren: RootRouteChildren = {
   CartaRoute: CartaRoute,
   ClubRoute: ClubRoute,
   EpisodiosRoute: EpisodiosRoute,
-  InvitadosRoute: InvitadosRouteWithChildren,
   ManifiestoRoute: ManifiestoRoute,
   NosotrosRoute: NosotrosRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PrensaRoute: PrensaRoute,
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
+  InvitadosSlugRoute: InvitadosSlugRoute,
+  InvitadosIndexRoute: InvitadosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
