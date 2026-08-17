@@ -12,6 +12,7 @@ const links = [
 const secondary = [
   { to: "/club", label: "Club" },
   { to: "/patrocinadores", label: "Patrocinadores" },
+  { to: "/agenda", label: "Agenda" },
 ] as const;
 
 export function Navbar() {
@@ -87,6 +88,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center justify-end gap-4 lg:flex">
+          <Link to="/agenda" className="font-mono text-[12px] uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground">
+            Agenda
+          </Link>
           <Link to="/carta" className="btn-outline btn-sm">
             La carta
           </Link>

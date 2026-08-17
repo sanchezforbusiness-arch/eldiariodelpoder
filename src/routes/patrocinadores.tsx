@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Footer } from "@/components/ddp/Footer";
@@ -270,9 +270,13 @@ function Contact() {
           </p>
 
           <div className="mt-10 inline-flex flex-col items-center gap-5">
+            <Link to="/agenda" className="btn-primary">
+              Agendar una llamada
+              <ArrowUpRight size={14} />
+            </Link>
             <a
               href="mailto:contactoeldiariodelpoder@gmail.com?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder"
-              className="btn-primary"
+              className="btn-outline"
             >
               <Mail size={14} />
               Hablar con nuestro equipo
