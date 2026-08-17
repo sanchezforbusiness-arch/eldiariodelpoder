@@ -1,5 +1,13 @@
 export type EpisodeEntry = {
   n: string;
+  /** URL slug: /episodios/<slug> */
+  slug: string;
+  /** ID del vídeo de YouTube del episodio, si está en el canal */
+  youtubeId?: string;
+  /** Slug del invitado en /invitados/<guestSlug> */
+  guestSlug?: string;
+  /** Transcripción en párrafos (pendiente de rellenar) */
+  transcript?: string[];
   guest: string;
   title: string;
   url: string;
@@ -12,6 +20,10 @@ export type EpisodeEntry = {
 export const episodeList: EpisodeEntry[] = [
   {
     n: "01",
+    slug: "jordi-juan-la-teoria-de-los-cajones",
+    youtubeId: "onHImjPIYJI",
+    guestSlug: "jordi-juan",
+    transcript: [],
     guest: "Jordi Juan",
     role: "Director de La Vanguardia",
     date: "2026-05-27",
@@ -23,6 +35,10 @@ export const episodeList: EpisodeEntry[] = [
   },
   {
     n: "02",
+    slug: "andres-rodriguez-forbes-lujo-y-poder",
+    youtubeId: "nTtgtxG7UNs",
+    guestSlug: "andres-rodriguez",
+    transcript: [],
     guest: "Andrés Rodríguez",
     role: "Presidente de Forbes España",
     date: "2026-04-18",
@@ -34,6 +50,10 @@ export const episodeList: EpisodeEntry[] = [
   },
   {
     n: "03",
+    slug: "guillermo-lasso-gobernar-en-crisis",
+    youtubeId: "2XZuIBfyBH0",
+    guestSlug: "guillermo-lasso",
+    transcript: [],
     guest: "Guillermo Lasso",
     role: "Expresidente de Ecuador",
     date: "2026-03-06",
@@ -45,6 +65,10 @@ export const episodeList: EpisodeEntry[] = [
   },
   {
     n: "04",
+    slug: "jose-maria-aznar-liderar-un-pais",
+    youtubeId: "ZydPM-xkYvA",
+    guestSlug: "jose-maria-aznar",
+    transcript: [],
     guest: "José María Aznar",
     role: "Expresidente del Gobierno de España",
     date: "2026-02-11",
@@ -56,6 +80,9 @@ export const episodeList: EpisodeEntry[] = [
   },
   {
     n: "05",
+    slug: "mikel-echavarren-real-estate-ciclos",
+    youtubeId: "ARO5S1I5cg8",
+    transcript: [],
     guest: "Mikel Echavarren",
     role: "CEO de Colliers España",
     date: "2026-01-22",

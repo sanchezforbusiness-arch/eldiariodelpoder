@@ -5,7 +5,7 @@ import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 import { episodeList } from "@/data/podcast";
 
-export const Route = createFileRoute("/episodios")({
+export const Route = createFileRoute("/episodios/")({
   head: () => ({
     meta: [
       { title: "Episodios del podcast Diario del Poder | Aznar, Lasso, Forbes" },
