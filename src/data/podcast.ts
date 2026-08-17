@@ -288,3 +288,5 @@ export const guestList: GuestEntry[] = [
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
+
+export const getEpisodeBySlug = (slug: string) => episodeList.find((e) => e.slug === slug);
