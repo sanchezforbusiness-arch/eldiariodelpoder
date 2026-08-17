@@ -45,7 +45,7 @@ export function HeroNoir() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      <div className="container-ddp safe-b relative z-10 flex min-h-[100dvh] flex-col justify-end pb-12 pt-32 md:pb-20 md:pt-40">
+      <div className="container-ddp safe-b relative z-10 flex min-h-[100dvh] flex-col justify-end pb-16 pt-32 md:pb-20 md:pt-40">
         <div className="w-full">
           <div>
             <h1 className="type-hero font-sans font-medium">
