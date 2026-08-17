@@ -90,6 +90,23 @@
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Newsreader", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale — eight steps, nothing else */
+  --text-*: initial;
+  --text-2xs: 0.75rem;   /* 12px — etiquetas mono, chips */
+  --text-xs: 0.875rem;   /* 14px — pies, metadatos */
+  --text-sm: 1rem;       /* 16px — texto secundario */
+  --text-base: 1.125rem; /* 18px — cuerpo */
+  --text-lg: 1.375rem;   /* 22px — entradillas */
+  --text-xl: 1.75rem;    /* 28px — títulos de tarjeta */
+  --text-2xl: 2.5rem;    /* 40px — títulos de sección */
+  --text-display: clamp(3rem, 9vw, 8.5rem);
+
+  /* Tracking — two values only */
+  --tracking-*: initial;
+  --tracking-tight: -0.03em;
+  --tracking-label: 0.12em;
+
   --radius-sm: 2px;
   --radius-md: 2px;
   --radius-lg: 2px;
@@ -124,25 +141,25 @@
 
 :root {
   --radius: 2px;
-  --background: #0A0A0A;
-  --background-alt: #111111;
+  --background: #121212;
+  --background-alt: #1A1A1A;
   --foreground: #FAFAFA;
-  --card: #0F0F0F;
+  --card: #171717;
   --card-foreground: #FAFAFA;
-  --popover: #0F0F0F;
+  --popover: #171717;
   --popover-foreground: #FAFAFA;
   --primary: #FAFAFA;
-  --primary-foreground: #0A0A0A;
-  --secondary: #171717;
+  --primary-foreground: #121212;
+  --secondary: #1F1F1F;
   --secondary-foreground: #FAFAFA;
-  --muted: #171717;
-  --muted-foreground: #8A8A8A;
-  --accent: #171717;
+  --muted: #1F1F1F;
+  --muted-foreground: #909090;
+  --accent: #1F1F1F;
   --accent-foreground: #FAFAFA;
   --destructive: #E5342A;
   --destructive-foreground: #FAFAFA;
-  --border: #262626;
-  --input: #262626;
+  --border: #2B2B2B;
+  --input: #2B2B2B;
   --ring: #737373;
   --signal: #E5342A;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -151,7 +168,6 @@
 @layer base {
   * { border-color: var(--color-border); }
 
-  html { scroll-behavior: smooth; }
   html.lenis, html.lenis body { height: auto; }
   .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
@@ -168,11 +184,12 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-sans);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 0.95;
     text-wrap: balance;
   }
+  h3, h4 { font-weight: 500; }
 
   p { text-wrap: pretty; }
   a, button { -webkit-tap-highlight-color: transparent; }
