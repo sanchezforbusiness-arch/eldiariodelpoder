@@ -92,13 +92,13 @@ function ManifiestoPage() {
       <Navbar />
       <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-gold transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
         <header className="container-ddp pt-6 sm:pt-8 pb-2">
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-            Nuestro <span className="italic text-gold">manifiesto</span>
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+            Nuestro manifiesto
           </h1>
         </header>
         <Manifesto />

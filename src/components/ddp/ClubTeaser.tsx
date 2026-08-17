@@ -14,7 +14,7 @@ export function ClubTeaser() {
 
         <div className="container-ddp relative z-10 py-16 md:py-28 w-full">
           <div className="max-w-3xl reveal ember-bar pl-6 md:pl-8">
-            <span className="eyebrow block mb-5 text-gold flex items-center gap-2">
+            <span className="eyebrow block mb-5 text-foreground flex items-center gap-2">
               <KeyRound size={14} /> El Club del Poder
             </span>
             <SplitText
@@ -35,7 +35,7 @@ export function ClubTeaser() {
                 "Gente que suma, no que suma seguidores",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2.5">
-                  <Check size={14} className="text-gold mt-0.5 shrink-0" />
+                  <Check size={14} className="text-foreground mt-0.5 shrink-0" />
                   <span>{b}</span>
                 </li>
               ))}

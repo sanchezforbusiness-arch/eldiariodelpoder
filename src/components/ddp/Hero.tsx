@@ -77,14 +77,14 @@ export function Hero() {
       <div className="container-ddp relative z-10 pt-28 sm:pt-32 pb-28 sm:pb-36 md:pb-52 fade-up">
         <div className="max-w-5xl">
           <div className="flex items-center gap-4 mb-8 md:mb-10">
-            <span className="h-px w-14 bg-gold/70" />
+            <span className="h-px w-14 bg-border" />
             <span className="eyebrow flex items-center gap-2">
               <span className="dot-gold" /> Podcast · Madrid
             </span>
           </div>
 
 
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] sm:leading-[0.92] tracking-tight font-light">
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] sm:leading-[0.92] tracking-tight font-medium">
             <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
           </h1>
 
@@ -113,15 +113,15 @@ export function Hero() {
       <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/50 backdrop-blur-md">
         <div className="container-ddp py-3.5 sm:py-5 flex items-center justify-between gap-4 sm:gap-6">
           <div className="flex min-w-0 items-center gap-3 sm:gap-6 md:gap-10 text-2xs md:text-2xs tracking-label sm:tracking-label uppercase text-muted-foreground overflow-hidden">
-            <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
+            <span className="text-muted-foreground hidden sm:inline">En este episodio →</span>
             <span className="text-foreground/85 truncate">Andrés Rodríguez</span>
-            <span className="text-gold/40 hidden sm:inline">·</span>
+            <span className="text-muted-foreground hidden sm:inline">·</span>
             <span className="hidden md:inline text-muted-foreground">Presidente Forbes</span>
           </div>
           <a
             href="#guests"
             aria-label="Bajar"
-            className="flex items-center gap-2 shrink-0 text-2xs tracking-label sm:tracking-label uppercase text-gold/80 hover:text-gold transition-colors"
+            className="flex items-center gap-2 shrink-0 text-2xs tracking-label sm:tracking-label uppercase text-muted-foreground hover:text-signal transition-colors"
           >
             Scroll
             <ArrowDown size={14} className="bounce-down" />

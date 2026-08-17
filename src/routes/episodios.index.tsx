@@ -67,8 +67,8 @@ function EpisodiosPage() {
       <Navbar />
       <main className="pt-24">
         <header className="container-ddp pt-6 sm:pt-8 pb-4">
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-            Todas las <span className="italic text-gold">conversaciones</span>
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+            Todas las conversaciones
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
             Diario del Poder es un podcast en español de entrevistas largas con expresidentes,
@@ -78,17 +78,17 @@ function EpisodiosPage() {
         </header>
         <Episodes />
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-2xl md:text-2xl font-light mb-10">
-            Todos los <span className="italic text-gold">episodios</span>
+          <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-10">
+            Todos los episodios
           </h2>
           <ul className="space-y-10 max-w-3xl">
             {episodeList.map((e) => (
               <li key={e.n}>
-                <p className="text-2xs tracking-label uppercase text-gold/90 mb-2">
+                <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">
                   Episodio {e.n} · {e.guest}
                 </p>
-                <h3 className="font-serif text-2xl md:text-2xl leading-tight">
-                  <Link to="/episodios/$slug" params={{ slug: e.slug }} className="hover:text-gold transition-colors">
+                <h3 className="tracking-tight text-2xl md:text-2xl leading-tight">
+                  <Link to="/episodios/$slug" params={{ slug: e.slug }} className="hover:text-signal transition-colors">
                     {e.title}
                   </Link>
                 </h3>

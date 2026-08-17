@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container-ddp py-14 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-6">
-            <div className="font-serif text-2xl text-gold mb-5">DDP</div>
+            <div className="font-serif text-2xl text-foreground mb-5">DDP</div>
             <p className="font-serif text-2xl sm:text-2xl md:text-2xl leading-snug max-w-md font-light">
               Los referentes de hoy, <span className="italic">a los de mañana</span>.
             </p>
@@ -19,7 +19,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h3 className="text-2xs tracking-label uppercase text-gold mb-5">Navegar</h3>
+            <h3 className="text-2xs tracking-label uppercase text-foreground mb-5">Navegar</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link to="/episodios" className="link-quiet">Episodios</Link></li>
               <li><Link to="/invitados" className="link-quiet">Invitados</Link></li>
@@ -32,16 +32,16 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3 min-w-0">
-            <h3 className="text-2xs tracking-label uppercase text-gold mb-5">Contacto</h3>
-            <a href="mailto:redaccion@eldiariodelpoder.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
+            <h3 className="text-2xs tracking-label uppercase text-foreground mb-5">Contacto</h3>
+            <a href="mailto:redaccion@eldiariodelpoder.com" className="text-xs sm:text-sm text-foreground hover:text-signal transition-colors break-all">
               redaccion@eldiariodelpoder.com
             </a>
             <div className="mt-6 flex items-center gap-4 text-muted-foreground">
-              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold"><Instagram size={18} /></a>
-              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-gold"><Youtube size={18} /></a>
-              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-gold"><Linkedin size={18} /></a>
-              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-gold"><Music2 size={18} /></a>
-              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-gold"><TikTok size={18} /></a>
+              <a href="https://www.instagram.com/eldiariodelpoder/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-signal"><Instagram size={18} /></a>
+              <a href="https://www.youtube.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:text-signal"><Youtube size={18} /></a>
+              <a href="https://www.linkedin.com/company/eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-signal"><Linkedin size={18} /></a>
+              <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-signal"><Music2 size={18} /></a>
+              <a href="https://www.tiktok.com/@eldiariodelpoder" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:text-signal"><TikTok size={18} /></a>
             </div>
           </div>
         </div>

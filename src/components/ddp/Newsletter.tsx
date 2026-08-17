@@ -25,16 +25,16 @@ export function Newsletter() {
       <div className="container-ddp relative">
         <div className="max-w-xl mx-auto text-center">
           <span className="eyebrow block mb-5"><span className="dot-gold mr-2" />Newsletter</span>
-          <h2 className="font-serif text-2xl md:text-display leading-[1.02] font-light tracking-tight">
-            Un email. Cero <span className="italic text-gold">ruido</span>.
+          <h2 className="text-2xl md:text-display leading-[1.02] font-medium tracking-tight">
+            Un email. Cero ruido.
           </h2>
           <p className="mt-4 text-sm md:text-base text-muted-foreground">
             Lo mejor de cada conversación, en tu bandeja.
           </p>
 
           {sent ? (
-            <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
-              <Check size={18} className="text-gold" />
+            <div className="mt-10 inline-flex items-center gap-3 border border-border bg-card/40 px-6 py-4">
+              <Check size={18} className="text-foreground" />
               <span className="text-sm">Gracias. Confirma en tu correo y te vemos dentro.</span>
             </div>
           ) : (
@@ -69,7 +69,7 @@ export function Newsletter() {
                   onChange={(e) => setAccept(e.target.checked)}
                   className="mt-0.5 accent-[var(--color-gold)]"
                 />
-                <span>Acepto la <a href="#" className="underline hover:text-gold">política de privacidad</a>.</span>
+                <span>Acepto la <a href="#" className="underline hover:text-signal">política de privacidad</a>.</span>
               </label>
               {err && <p className="mt-3 text-xs text-destructive text-left">{err}</p>}
             </form>

@@ -23,7 +23,7 @@ export function SplitText({ text, as: Tag = "span", className, start = 0, goldWo
             <span
               className={[
                 "split-word",
-                isGold ? "text-gold shimmer-gold" : "",
+                isGold ? "text-foreground shimmer-gold" : "",
                 isItalic ? "italic" : "",
               ].filter(Boolean).join(" ")}
               style={{ ["--i" as any]: start + idx }}

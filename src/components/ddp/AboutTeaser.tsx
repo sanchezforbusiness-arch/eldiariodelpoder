@@ -23,7 +23,7 @@ export function AboutTeaser() {
             </p>
             <Link
               to="/manifiesto"
-              className="group inline-flex items-center gap-3 mt-8 md:mt-10 text-2xs tracking-label uppercase text-gold border-b border-gold/40 pb-2 hover:border-gold transition-colors"
+              className="group inline-flex items-center gap-3 mt-8 md:mt-10 text-2xs tracking-label uppercase text-foreground border-b border-border pb-2 hover:border-foreground/40 transition-colors"
             >
               Leer el manifiesto
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
