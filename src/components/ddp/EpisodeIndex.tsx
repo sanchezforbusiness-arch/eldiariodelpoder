@@ -7,7 +7,6 @@ export function EpisodeIndex() {
       <div className="container-ddp">
         <header className="reveal-stagger mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div className="flex gap-5 md:gap-8">
-            <span className="section-index pt-2">04</span>
             <h2 className="type-section font-medium">
               Índice de episodios
             </h2>

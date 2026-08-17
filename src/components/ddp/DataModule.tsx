@@ -21,7 +21,6 @@ export function DataModule() {
  <section className="border-b border-border py-24 md:py-32">
       <div className="container-ddp">
         <div className="flex gap-8">
-          <span className="section-index pt-2">06</span>
           <h2 className="text-xl font-medium leading-[0.9] tracking-tight sm:text-2xl lg:text-2xl">
             Audiencia
           </h2>

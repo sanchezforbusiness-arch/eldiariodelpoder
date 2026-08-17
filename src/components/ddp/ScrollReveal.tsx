@@ -34,7 +34,7 @@ export function ScrollReveal({
  <section ref={ref} className={`border-b border-border py-24 md:py-32 ${className}`}>
       <div className="container-ddp">
         <div className="flex items-baseline gap-6">
-          {index ? <span className="section-index">{index}</span> : null}
+          
           {label ? (
             <span className="font-mono text-2xs uppercase tracking-label text-muted-foreground">{label}</span>
           ) : null}
