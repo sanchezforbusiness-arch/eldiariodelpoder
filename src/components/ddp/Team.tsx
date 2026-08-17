@@ -51,7 +51,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
           width={512}
           height={640}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-[1.03]"
+          className="absolute inset-0 w-full h-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.03]"
           itemProp="image"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />

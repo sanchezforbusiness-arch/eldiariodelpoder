@@ -163,7 +163,7 @@ function GuestPage() {
                 alt={`${guest.name}, ${guest.role}, en el podcast Diario del Poder`}
                 width={512}
                 height={640}
-                className="w-full max-w-[320px] aspect-[4/5] object-cover rounded-sm grayscale"
+                className="w-full max-w-[320px] aspect-[4/5] object-cover rounded-sm contrast-110"
               />
             )}
           </header>
