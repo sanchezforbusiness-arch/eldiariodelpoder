@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, Linkedin } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { pressArticles } from "@/data/press";
 import { guestList } from "@/data/podcast";
 
@@ -114,7 +114,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
           </ul>
         </section>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }
