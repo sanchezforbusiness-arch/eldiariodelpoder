@@ -193,9 +193,6 @@ export const Route = createRootRoute({
         href: "/fonts/inter-tight-500-latin.woff2",
         crossOrigin: "anonymous",
       },
-      { rel: "preconnect", href: "https://www.youtube-nocookie.com" },
-      { rel: "preconnect", href: "https://i.ytimg.com" },
-      { rel: "dns-prefetch", href: "https://www.youtube.com" },
       {
         rel: "stylesheet",
         href: appCss,

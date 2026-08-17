@@ -135,4 +135,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://eldiariodelpoder.com/episodios/jordi-juan-la-teoria-de-los-cajones</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eldiariodelpoder.com/episodios/andres-rodriguez-forbes-lujo-y-poder</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eldiariodelpoder.com/episodios/guillermo-lasso-gobernar-en-crisis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eldiariodelpoder.com/episodios/jose-maria-aznar-liderar-un-pais</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eldiariodelpoder.com/episodios/mikel-echavarren-real-estate-ciclos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
