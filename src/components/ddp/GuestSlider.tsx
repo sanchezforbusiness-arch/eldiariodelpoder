@@ -25,7 +25,7 @@ function Track() {
               className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 transition-[filter] duration-700 group-hover:grayscale-0"
             />
           </div>
-          <h3 className="mt-3 text-[15px] font-medium tracking-[-0.02em]">{g.name}</h3>
+          <h3 className="mt-3 text-xs font-medium tracking-tight">{g.name}</h3>
           <p className="mono-label mt-1 text-muted-foreground">{g.role}</p>
         </Link>
       ))}
@@ -38,7 +38,7 @@ export function GuestSlider() {
     <section id="invitados" aria-label="Invitados" className="border-b border-border py-12 md:py-16">
       <div className="container-ddp flex items-center justify-between gap-4">
         <p className="mono-label">Han pasado por aquí</p>
-        <Link to="/invitados" className="link-rule tap font-mono text-[10px] uppercase tracking-[0.12em] md:text-[11px]">
+        <Link to="/invitados" className="link-rule tap font-mono text-2xs uppercase tracking-label md:text-2xs">
           Ver todos
         </Link>
       </div>

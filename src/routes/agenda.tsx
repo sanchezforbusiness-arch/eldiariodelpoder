@@ -42,7 +42,7 @@ function AgendaPage() {
           <div className="grid gap-10 md:grid-cols-12 md:gap-12">
             <div className="md:col-span-5">
               <p className="mono-label">Agenda</p>
-              <h1 className="mt-4 text-[clamp(2.25rem,8vw,4rem)] font-medium leading-[0.95] tracking-[-0.04em]">
+              <h1 className="mt-4 text-2xl font-medium leading-[0.95] tracking-tight">
                 Reserva 30 minutos.
               </h1>
               <p className="mt-6 max-w-[42ch] text-base leading-relaxed text-muted-foreground">
@@ -51,13 +51,13 @@ function AgendaPage() {
               </p>
               <ul className="mt-8 space-y-3">
                 {POINTS.map((p) => (
-                  <li key={p} className="flex items-start gap-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+                  <li key={p} className="flex items-start gap-3 font-mono text-2xs uppercase tracking-label text-muted-foreground">
                     <span className="mt-[6px] h-px w-4 shrink-0 bg-signal" />
                     {p}
                   </li>
                 ))}
               </ul>
-              <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              <p className="mt-10 font-mono text-2xs uppercase tracking-label text-muted-foreground">
                 ¿Prefieres escribir?{" "}
                 <a href={`mailto:${BOOKING_EMAIL}`} className="link-rule text-foreground">
                   {BOOKING_EMAIL}
@@ -84,7 +84,7 @@ function BookingEmbed() {
     return (
       <div className="panel flex min-h-[420px] flex-col justify-center gap-5 p-8 text-center md:p-12">
         <p className="mono-label">Calendario</p>
-        <p className="mx-auto max-w-[34ch] text-[20px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[26px]">
+        <p className="mx-auto max-w-[34ch] text-lg font-medium leading-[1.15] tracking-tight md:text-xl">
           El calendario público se activa en cuanto conectemos el enlace de reservas.
         </p>
         <a href={`mailto:${BOOKING_EMAIL}?subject=Agendar%20una%20llamada`} className="btn-primary mx-auto">

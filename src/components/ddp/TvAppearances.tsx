@@ -8,7 +8,7 @@ export function TvAppearances() {
           <span className="eyebrow block mb-5">
             <span className="dot-gold mr-2" />En directo en televisión
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-light leading-[1.05] tracking-[-0.02em]">
+          <h2 className="font-serif text-3xl md:text-5xl font-light leading-[1.05] tracking-tight">
             Diario del Poder en <span className="italic text-gold">La Sexta, Antena 3 y Univision</span>
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
@@ -35,7 +35,7 @@ export function TvAppearances() {
                   className="aspect-video w-full object-cover"
                 />
                 <figcaption className="p-6 md:p-7">
-                  <p className="text-[10px] tracking-[0.28em] uppercase text-gold/90">
+                  <p className="text-2xs tracking-label uppercase text-gold/90">
                     {t.channel} · {t.program} · {t.country}
                   </p>
                   <h3 className="mt-3 font-serif text-xl md:text-2xl leading-tight">{t.title}</h3>

@@ -104,22 +104,22 @@ function EpisodePage() {
       <Navbar />
       <main className="pt-28 md:pt-32">
         <article className="container-ddp">
-          <nav aria-label="Migas de pan" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+          <nav aria-label="Migas de pan" className="text-2xs tracking-label uppercase text-muted-foreground">
             <Link to="/episodios" className="hover:text-foreground">Episodios</Link>
             <span className="mx-2 text-gold/60">/</span>
             <span className="text-gold/80">Episodio {ep.n}</span>
           </nav>
 
           <header className="mt-6 max-w-3xl">
-            <p className="text-[11px] tracking-[0.24em] uppercase text-gold/90">
+            <p className="text-2xs tracking-label uppercase text-gold/90">
               Episodio {ep.n}
               {ep.date ? ` · ${ep.date}` : ""}
               {ep.duration ? ` · ${ep.duration}` : ""}
             </p>
-            <h1 className="mt-4 font-serif text-[2.4rem] sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-[-0.03em]">
+            <h1 className="mt-4 font-serif text-2xl sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-tight">
               {ep.title}
             </h1>
-            <p className="mt-5 text-[11px] tracking-[0.22em] uppercase text-gold/80">
+            <p className="mt-5 text-2xs tracking-label uppercase text-gold/80">
               {guest ? (
                 <Link to="/invitados/$slug" params={{ slug: guest.slug }} className="hover:text-foreground">
                   {ep.guest}

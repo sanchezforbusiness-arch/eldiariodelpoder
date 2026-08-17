@@ -22,7 +22,7 @@ export function DataModule() {
       <div className="container-ddp">
         <div className="flex gap-8">
           <span className="section-index pt-2">06</span>
-          <h2 className="text-[9vw] font-medium leading-[0.9] tracking-[-0.035em] sm:text-[5.5vw] lg:text-[3.6vw]">
+          <h2 className="text-xl font-medium leading-[0.9] tracking-tight sm:text-2xl lg:text-2xl">
             Audiencia
           </h2>
         </div>
@@ -32,7 +32,7 @@ export function DataModule() {
             <div key={m.label} className="border-b border-border px-0 py-8 sm:px-6 lg:border-l lg:first:border-l-0">
               <Counter to={m.value} suffix={m.suffix} />
               <p className="mono-label mt-4">{m.label}</p>
-              <p className="mt-1 font-mono text-[11px] tracking-[0.12em] text-muted-foreground/70">{m.note}</p>
+              <p className="mt-1 font-mono text-2xs tracking-label text-muted-foreground/70">{m.note}</p>
             </div>
           ))}
         </div>
@@ -44,12 +44,12 @@ export function DataModule() {
               {PROFILE.map(([label, pct]) => (
                 <li key={label} className="grid grid-cols-[1fr_48px] items-center gap-4 border-b border-border py-4">
                   <div>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.12em]">{label}</span>
+                    <span className="font-mono text-2xs uppercase tracking-label">{label}</span>
                     <div className="mt-3 h-px w-full bg-border">
                       <div className="h-px bg-foreground" style={{ width: `${pct}%` }} />
                     </div>
                   </div>
-                  <span className="text-right font-mono text-[11px] tracking-[0.12em] text-muted-foreground">{pct}%</span>
+                  <span className="text-right font-mono text-2xs tracking-label text-muted-foreground">{pct}%</span>
                 </li>
               ))}
             </ul>
@@ -62,8 +62,8 @@ export function DataModule() {
                 ["US", "5%"], ["EC", "4%"], ["CL", "3%"], ["Otros", "5%"],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-baseline justify-between border-b border-border py-4">
-                  <dt className="font-mono text-[11px] uppercase tracking-[0.12em]">{k}</dt>
-                  <dd className="font-mono text-[11px] tracking-[0.12em] text-muted-foreground">{v}</dd>
+                  <dt className="font-mono text-2xs uppercase tracking-label">{k}</dt>
+                  <dd className="font-mono text-2xs tracking-label text-muted-foreground">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -106,7 +106,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   }, [to]);
 
   return (
-    <p ref={ref} className="font-mono text-4xl tracking-[-0.02em] tabular-nums md:text-5xl">
+    <p ref={ref} className="font-mono text-4xl tracking-tight tabular-nums md:text-5xl">
       {n}
       {suffix}
     </p>

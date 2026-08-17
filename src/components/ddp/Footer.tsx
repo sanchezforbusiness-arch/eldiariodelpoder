@@ -19,7 +19,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h3>
+            <h3 className="text-2xs tracking-label uppercase text-gold mb-5">Navegar</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link to="/episodios" className="link-quiet">Episodios</Link></li>
               <li><Link to="/invitados" className="link-quiet">Invitados</Link></li>
@@ -32,7 +32,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3 min-w-0">
-            <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h3>
+            <h3 className="text-2xs tracking-label uppercase text-gold mb-5">Contacto</h3>
             <a href="mailto:redaccion@eldiariodelpoder.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
               redaccion@eldiariodelpoder.com
             </a>

@@ -22,7 +22,7 @@ export function ClubTeaser() {
               text="Una comunidad real."
               goldWords={["comunidad", "real"]}
               italicWords={["comunidad", "real"]}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] md:leading-[0.95] font-light tracking-[-0.025em]"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] md:leading-[0.95] font-light tracking-tight"
             />
             <p className="mt-5 md:mt-6 text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               No una red de contactos: una mesa común. Se entra por invitación.

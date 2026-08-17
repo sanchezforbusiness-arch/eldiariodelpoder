@@ -34,11 +34,11 @@ function CartaPage() {
               Cada domingo
             </span>
 
-            <h1 className="mt-7 max-w-[15ch] text-[12vw] font-medium leading-[0.9] tracking-[-0.04em] sm:text-[8vw] lg:text-[4.6vw]">
+            <h1 className="mt-7 max-w-[15ch] text-display font-medium leading-[0.9] tracking-tight sm:text-xl lg:text-2xl">
               La carta
             </h1>
 
-            <p className="mt-6 max-w-[54ch] font-serif text-[18px] leading-[1.65] text-muted-foreground md:text-[19px]">
+            <p className="mt-6 max-w-[54ch] font-serif text-base leading-[1.65] text-muted-foreground md:text-base">
               Lo que nos cuentan cuando se apaga el micro. Corta, y sin promociones.
             </p>
 
@@ -60,7 +60,7 @@ function CartaPage() {
 
             <Link
               to="/"
-              className="link-rule tap mt-12 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]"
+              className="link-rule tap mt-12 inline-flex font-mono text-2xs uppercase tracking-label"
             >
               Volver al inicio
             </Link>
@@ -76,7 +76,7 @@ function CartaPage() {
                   <span className="mono-label text-signal">Nº 12</span>
                 </div>
                 <div className="hairline my-6" />
-                <p className="font-serif text-[22px] leading-[1.3] md:text-[26px]">
+                <p className="font-serif text-lg leading-[1.3] md:text-xl">
                   “Lo difícil no fue decidir. Fue sostenerlo al día siguiente.”
                 </p>
                 <p className="mono-label mt-4">Un expresidente, con el micro apagado</p>
@@ -89,7 +89,7 @@ function CartaPage() {
                   ].map(([n, t]) => (
                     <li key={n} className="flex items-center gap-4">
                       <span className="badge-num">{n}</span>
-                      <span className="text-[15px] tracking-[-0.01em]">{t}</span>
+                      <span className="text-xs tracking-tight">{t}</span>
                     </li>
                   ))}
                 </ul>

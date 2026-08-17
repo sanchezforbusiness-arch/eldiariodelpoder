@@ -62,11 +62,11 @@ export function Navbar() {
           <Link
             to="/"
             hash="top"
-            className="block min-w-0 truncate font-mono text-[10px] uppercase tracking-[0.24em] text-foreground lg:text-[11px]"
+            className="block min-w-0 truncate font-mono text-2xs uppercase tracking-label text-foreground lg:text-2xs"
           >
             Diario del Poder
           </Link>
-          <span className="mt-0.5 block truncate font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground lg:text-[10px]">
+          <span className="mt-0.5 block truncate font-mono text-2xs uppercase tracking-label text-muted-foreground lg:text-2xs">
             Media partner · La Vanguardia
           </span>
         </div>
@@ -75,7 +75,7 @@ export function Navbar() {
           {links.map((l) => {
             const active = pathname === l.to;
             return (
-              <Link key={l.to} to={l.to} className="group relative font-mono text-[12px] uppercase tracking-[0.12em] text-muted-foreground transition-colors duration-300 hover:text-foreground">
+              <Link key={l.to} to={l.to} className="group relative font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors duration-300 hover:text-foreground">
                 {l.label}
                 <span
                   className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-signal transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -88,7 +88,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center justify-end gap-4 lg:flex">
-          <Link to="/patrocinadores" className="font-mono text-[12px] uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground">
+          <Link to="/patrocinadores" className="font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors hover:text-foreground">
             Patrocinadores
           </Link>
           <Link to="/carta" className="btn-outline btn-sm">
@@ -115,7 +115,7 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 style={{ animationDelay: `${i * 50}ms` }}
-                className="animate-fade-in border-b border-border py-5 text-[clamp(1.75rem,9vw,3rem)] font-medium leading-none tracking-[-0.03em] active:text-signal"
+                className="animate-fade-in border-b border-border py-5 text-2xl font-medium leading-none tracking-tight active:text-signal"
               >
                 {l.label}
               </Link>
@@ -123,7 +123,7 @@ export function Navbar() {
             <Link to="/carta" className="btn-primary mt-8 w-full">
               Suscribirse a la carta
             </Link>
-            <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+            <p className="mt-8 font-mono text-2xs uppercase tracking-label text-muted-foreground">
               Media partner · La Vanguardia
             </p>
           </nav>

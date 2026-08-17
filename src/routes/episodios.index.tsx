@@ -67,7 +67,7 @@ function EpisodiosPage() {
       <Navbar />
       <main className="pt-24">
         <header className="container-ddp pt-6 sm:pt-8 pb-4">
-          <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+          <h1 className="font-serif text-2xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-tight">
             Todas las <span className="italic text-gold">conversaciones</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -84,7 +84,7 @@ function EpisodiosPage() {
           <ul className="space-y-10 max-w-3xl">
             {episodeList.map((e) => (
               <li key={e.n}>
-                <p className="text-[11px] tracking-[0.24em] uppercase text-gold/90 mb-2">
+                <p className="text-2xs tracking-label uppercase text-gold/90 mb-2">
                   Episodio {e.n} · {e.guest}
                 </p>
                 <h3 className="font-serif text-2xl md:text-3xl leading-tight">

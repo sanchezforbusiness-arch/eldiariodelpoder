@@ -28,7 +28,7 @@ export function LatestEpisode() {
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,10,10,0.9),rgba(10,10,10,0.15)_55%,transparent)]" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-12">
               <p className="mono-label text-signal">Último episodio</p>
-              <h2 className="mt-4 max-w-3xl text-[8vw] font-medium leading-[0.94] tracking-[-0.035em] sm:text-[5vw] lg:text-[3.4vw]">
+              <h2 className="mt-4 max-w-3xl text-xl font-medium leading-[0.94] tracking-tight sm:text-2xl lg:text-2xl">
                 {ep.title}
               </h2>
             </div>
@@ -38,9 +38,9 @@ export function LatestEpisode() {
         <aside className="flex flex-col justify-between gap-10 border-t border-border p-6 md:p-12 lg:col-span-4 lg:border-l lg:border-t-0">
           <div>
             <p className="section-index">{ep.n}</p>
-            <p className="mt-6 text-2xl font-medium tracking-[-0.03em]">{ep.guest}</p>
+            <p className="mt-6 text-2xl font-medium tracking-tight">{ep.guest}</p>
             <p className="mono-label mt-2">{ep.role}</p>
-            <p className="prose-editorial mt-8 text-[17px]">{ep.description}</p>
+            <p className="prose-editorial mt-8 text-sm">{ep.description}</p>
           </div>
           <div>
             <dl className="grid grid-cols-2 gap-6 border-t border-border pt-6">
@@ -53,7 +53,7 @@ export function LatestEpisode() {
                 <dd className="mt-1 font-mono text-sm">{ep.duration}</dd>
               </div>
             </dl>
-            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule mt-8 inline-flex font-mono text-[11px] uppercase tracking-[0.12em]">
+            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule mt-8 inline-flex font-mono text-2xs uppercase tracking-label">
               Escuchar la conversación
             </a>
           </div>

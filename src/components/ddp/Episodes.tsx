@@ -22,13 +22,13 @@ export function Episodes() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-tight">
               Conversaciones <span className="italic text-gold">recientes</span>.
             </h2>
           </div>
           <Link
             to="/episodios"
-            className="group inline-flex items-center gap-2 text-[12px] tracking-[0.22em] uppercase text-foreground/70 hover:text-gold transition-colors self-start md:self-end"
+            className="group inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground/70 hover:text-gold transition-colors self-start md:self-end"
           >
             Ver todos
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -53,18 +53,18 @@ export function Episodes() {
             <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
 
             <div className="absolute top-5 left-5 md:top-8 md:left-8 flex items-center gap-3">
-              <span className="text-[9px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.28em] uppercase text-gold border border-gold/60 px-2.5 sm:px-3 py-1 sm:py-1.5">
+              <span className="text-2xs sm:text-2xs tracking-label sm:tracking-label uppercase text-gold border border-gold/60 px-2.5 sm:px-3 py-1 sm:py-1.5">
                 Recién publicado
               </span>
               <span className="font-serif text-2xl sm:text-3xl text-gold/80">{featured.n}</span>
             </div>
 
             <div className="absolute inset-x-0 bottom-0 p-5 md:p-12">
-              <p className="text-[10px] md:text-[12px] tracking-[0.24em] md:tracking-[0.28em] uppercase text-gold/90 mb-2 md:mb-3">{featured.guest}</p>
+              <p className="text-2xs md:text-2xs tracking-label md:tracking-label uppercase text-gold/90 mb-2 md:mb-3">{featured.guest}</p>
               <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light max-w-3xl">
                 {featured.title}
               </h3>
-              <div className="mt-4 md:mt-6 inline-flex items-center gap-3 text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-foreground group-hover:text-gold transition-colors">
+              <div className="mt-4 md:mt-6 inline-flex items-center gap-3 text-2xs md:text-2xs tracking-label md:tracking-label uppercase text-foreground group-hover:text-gold transition-colors">
                 <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold text-gold-foreground flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Play size={14} className="fill-current ml-0.5" />
                 </span>
@@ -90,7 +90,7 @@ export function Episodes() {
                 <div className="absolute top-5 left-5 flex items-center gap-3">
                   <span className="font-serif text-3xl text-gold/90">{e.n}</span>
                   {e.isNew && (
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-gold border-l border-gold/50 pl-3">
+                    <span className="text-2xs tracking-label uppercase text-gold border-l border-gold/50 pl-3">
                       Nuevo
                     </span>
                   )}
@@ -99,8 +99,8 @@ export function Episodes() {
                   <Play size={14} className="fill-current ml-0.5" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 md:p-6">
-                  <p className="text-[10px] sm:text-[11px] tracking-[0.2em] sm:tracking-[0.22em] uppercase text-gold/90 mb-1.5 sm:mb-2">{e.guest}</p>
-                  <h3 className="font-serif text-xl sm:text-2xl md:text-[1.7rem] leading-tight">
+                  <p className="text-2xs sm:text-2xs tracking-label sm:tracking-label uppercase text-gold/90 mb-1.5 sm:mb-2">{e.guest}</p>
+                  <h3 className="font-serif text-xl sm:text-2xl md:text-lg leading-tight">
                     {e.title}
                   </h3>
                 </div>

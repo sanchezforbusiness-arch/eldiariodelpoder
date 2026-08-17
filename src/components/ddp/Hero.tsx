@@ -84,7 +84,7 @@ export function Hero() {
           </div>
 
 
-          <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.75rem] leading-[0.95] sm:leading-[0.92] tracking-[-0.03em] font-light">
+          <h1 className="font-serif text-2xl sm:text-6xl md:text-7xl lg:text-display leading-[0.95] sm:leading-[0.92] tracking-tight font-light">
             <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
           </h1>
 
@@ -112,7 +112,7 @@ export function Hero() {
       {/* Bottom proof strip */}
       <div className="absolute bottom-0 inset-x-0 z-10 border-t border-foreground/10 bg-background/50 backdrop-blur-md">
         <div className="container-ddp py-3.5 sm:py-5 flex items-center justify-between gap-4 sm:gap-6">
-          <div className="flex min-w-0 items-center gap-3 sm:gap-6 md:gap-10 text-[10px] md:text-[11px] tracking-[0.2em] sm:tracking-[0.24em] uppercase text-muted-foreground overflow-hidden">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-6 md:gap-10 text-2xs md:text-2xs tracking-label sm:tracking-label uppercase text-muted-foreground overflow-hidden">
             <span className="text-gold/90 hidden sm:inline">En este episodio →</span>
             <span className="text-foreground/85 truncate">Andrés Rodríguez</span>
             <span className="text-gold/40 hidden sm:inline">·</span>
@@ -121,7 +121,7 @@ export function Hero() {
           <a
             href="#guests"
             aria-label="Bajar"
-            className="flex items-center gap-2 shrink-0 text-[10px] tracking-[0.24em] sm:tracking-[0.28em] uppercase text-gold/80 hover:text-gold transition-colors"
+            className="flex items-center gap-2 shrink-0 text-2xs tracking-label sm:tracking-label uppercase text-gold/80 hover:text-gold transition-colors"
           >
             Scroll
             <ArrowDown size={14} className="bounce-down" />

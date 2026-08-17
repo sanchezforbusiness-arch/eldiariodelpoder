@@ -16,14 +16,14 @@ export function AboutTeaser() {
               text="Dos hosts. Una conversación."
               goldWords={["conversación"]}
               italicWords={["conversación"]}
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light tracking-[-0.025em]"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light tracking-tight"
             />
             <p className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
               Sin guion, sin prisas. Con quienes están dejando huella.
             </p>
             <Link
               to="/manifiesto"
-              className="group inline-flex items-center gap-3 mt-8 md:mt-10 text-[12px] tracking-[0.24em] uppercase text-gold border-b border-gold/40 pb-2 hover:border-gold transition-colors"
+              className="group inline-flex items-center gap-3 mt-8 md:mt-10 text-2xs tracking-label uppercase text-gold border-b border-gold/40 pb-2 hover:border-gold transition-colors"
             >
               Leer el manifiesto
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

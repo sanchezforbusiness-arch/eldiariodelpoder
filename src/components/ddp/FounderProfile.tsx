@@ -21,7 +21,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
       <Navbar />
       <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-muted-foreground hover:text-gold transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-gold transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
@@ -29,7 +29,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
         <header className="container-ddp pt-8 grid md:grid-cols-12 gap-10 md:gap-14 items-end">
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">{role}</span>
-            <h1 className="font-serif text-[2.4rem] sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-[-0.03em]">
+            <h1 className="font-serif text-2xl sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-tight">
               {name}
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">{lead}</p>
@@ -37,7 +37,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
               href={linkedin}
               target="_blank"
               rel="noreferrer me"
-              className="mt-8 inline-flex items-center gap-2 text-[11px] tracking-[0.24em] uppercase text-foreground hover:text-gold transition-colors"
+              className="mt-8 inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-gold transition-colors"
             >
               <Linkedin size={16} /> LinkedIn
             </a>
@@ -69,7 +69,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
               <dl className="border-t border-border">
                 {facts.map((f) => (
                   <div key={f.label} className="grid grid-cols-3 gap-4 py-4 border-b border-border">
-                    <dt className="text-[10px] tracking-[0.28em] uppercase text-gold/80">{f.label}</dt>
+                    <dt className="text-2xs tracking-label uppercase text-gold/80">{f.label}</dt>
                     <dd className="col-span-2 text-sm text-muted-foreground">{f.value}</dd>
                   </div>
                 ))}
@@ -86,7 +86,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
             {guestList.slice(0, 12).map((g) => (
               <li key={g.name}>
                 <p className="font-serif text-lg">{g.name}</p>
-                <p className="mt-1 text-[10px] tracking-[0.2em] uppercase text-muted-foreground">{g.role}</p>
+                <p className="mt-1 text-2xs tracking-label uppercase text-muted-foreground">{g.role}</p>
               </li>
             ))}
           </ul>
@@ -99,7 +99,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
           <ul className="space-y-6 max-w-3xl">
             {pressArticles.map((a) => (
               <li key={a.url}>
-                <p className="text-[10px] tracking-[0.24em] uppercase text-gold/80 mb-1">{a.outlet}</p>
+                <p className="text-2xs tracking-label uppercase text-gold/80 mb-1">{a.outlet}</p>
                 <a
                   href={a.url}
                   target="_blank"

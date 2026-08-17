@@ -37,7 +37,7 @@ export function SubscribeForm({ id = "ddp-email", size = "default", hint }: Prop
 
   if (status === "ok") {
     return (
-      <p className="font-mono text-[11px] uppercase tracking-[0.12em]">{message}</p>
+      <p className="font-mono text-2xs uppercase tracking-label">{message}</p>
     );
   }
 
@@ -71,7 +71,7 @@ export function SubscribeForm({ id = "ddp-email", size = "default", hint }: Prop
           {status === "loading" ? "Enviando…" : "Suscribirse"}
         </button>
       </form>
-      <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+      <p className="mt-4 font-mono text-2xs uppercase tracking-label text-muted-foreground">
         {status === "error" ? (
           <span className="text-signal">{message}</span>
         ) : (

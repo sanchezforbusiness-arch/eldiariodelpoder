@@ -27,7 +27,7 @@ export function Publications() {
       <div className="container-ddp relative">
         <div className="max-w-2xl mx-auto text-center">
             <span className="eyebrow block mb-6">Newsletter</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-[-0.02em]">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-tight">
               Newsletter.
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">

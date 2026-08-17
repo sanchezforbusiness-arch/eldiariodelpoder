@@ -125,7 +125,7 @@ function Cursor() {
       }}
     >
       {state === "view" && (
-        <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground">Ver</span>
+        <span className="font-mono text-2xs uppercase tracking-label text-foreground">Ver</span>
       )}
     </div>
   );
