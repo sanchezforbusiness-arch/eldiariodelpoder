@@ -454,10 +454,10 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
   line-height: 1;
   padding: 16px 24px;
   border-radius: 2px;
@@ -476,10 +476,10 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
   line-height: 1;
   padding: 16px 24px;
   border-radius: 2px;
@@ -497,8 +497,8 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   padding: 10px 16px;
   border-radius: 2px;
@@ -513,8 +513,8 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--color-foreground);
   padding-bottom: 4px;
@@ -525,7 +525,10 @@
 
 @utility btn-sm {
   padding: 10px 16px;
-  font-size: 10px;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-tight);
+  text-transform: none;
 }
 
 /* Small mono pill — used for tags, partners, statuses */
@@ -534,13 +537,13 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   line-height: 1;
   padding: 8px 12px;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 2px;
   color: var(--color-muted-foreground);
   white-space: nowrap;
 }
@@ -555,8 +558,8 @@
   border: 1px solid var(--color-border);
   border-radius: 999px;
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
   color: var(--color-muted-foreground);
   flex: none;
 }
@@ -564,7 +567,7 @@
 /* Soft framed panel with a hairline border */
 @utility panel {
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: color-mix(in srgb, var(--color-foreground) 3%, transparent);
 }
 
@@ -577,10 +580,10 @@
   border-radius: 0;
   padding: 14px 0;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-xs);
   letter-spacing: 0.02em;
   transition: border-color 400ms var(--ease);
-  &::placeholder { color: var(--color-muted-foreground); text-transform: uppercase; font-size: 11px; letter-spacing: 0.12em; }
+  &::placeholder { color: var(--color-muted-foreground); text-transform: uppercase; font-size: var(--text-2xs); letter-spacing: var(--tracking-label); }
   &:focus, &:focus-visible { outline: none; border-color: var(--color-foreground); }
 }
 
