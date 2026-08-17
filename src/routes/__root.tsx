@@ -187,26 +187,15 @@ export const Route = createRootRoute({
     ],
     links: [
       {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "/fonts/inter-tight-500-latin.woff2",
         crossOrigin: "anonymous",
       },
       { rel: "preconnect", href: "https://www.youtube-nocookie.com" },
       { rel: "preconnect", href: "https://i.ytimg.com" },
       { rel: "dns-prefetch", href: "https://www.youtube.com" },
-      {
-        rel: "preload",
-        as: "style",
-        href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=JetBrains+Mono:wght@400&display=swap",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=JetBrains+Mono:wght@400&display=swap",
-      },
       {
         rel: "stylesheet",
         href: appCss,
