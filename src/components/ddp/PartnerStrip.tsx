@@ -1,6 +1,7 @@
 const FIGURES = [
-  { v: "40+", l: "Conversaciones" },
-  { v: "18 M", l: "Lectores de La Vanguardia" },
+  { v: "+500K", l: "Alcance mensual" },
+  { v: "4.000", l: "Suscriptores de La carta" },
+  { v: "+40", l: "Conversaciones grabadas" },
   { v: "2025", l: "Desde Madrid" },
 ];
 
@@ -26,7 +27,7 @@ export function PartnerStrip() {
           <span className="text-foreground">La Vanguardia</span>
         </a>
 
-        <dl className="grid grid-cols-3 gap-x-4 gap-y-2 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-10 md:gap-x-12">
+        <dl className="grid grid-cols-2 gap-x-4 gap-y-2 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-10 md:gap-x-12">
           {FIGURES.map((f) => (
             <div key={f.l} className="min-w-0 sm:flex sm:items-baseline sm:gap-3">
               <dd className="tabular font-mono text-[15px] tracking-[-0.01em] md:text-base">{f.v}</dd>
