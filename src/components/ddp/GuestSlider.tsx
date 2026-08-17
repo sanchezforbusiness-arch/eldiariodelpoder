@@ -1,44 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import coelloAsset from "@/assets/guest-coello.png.asset.json";
-import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
-import rosaAsset from "@/assets/guest-rosa-lagarrigue.png.asset.json";
-import jcghAsset from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
-import aguirreAsset from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
-import miguelAsset from "@/assets/guest-miguel-anxo-bastos.png.asset.json";
-import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
-import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
-import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
 import { guestList } from "@/data/podcast";
+import { guestCardImageBySlug } from "@/data/guestImages";
 
-const slugByName = new Map(guestList.map((g) => [g.name, g.slug]));
-
-const GUESTS = [
-  { name: "Esperanza Aguirre", role: "Expresidenta de la Comunidad de Madrid", img: aguirreAsset.url },
-  { name: "Marcos de Quinto", role: "Exvicepresidente de Coca-Cola", img: marcosAsset.url },
-  { name: "Jordi Juan", role: "Director de La Vanguardia", img: jordiAsset.url },
-  { name: "Rosa Lagarrigue", role: "Manager, RLM Music", img: rosaAsset.url },
-  { name: "José Carlos González Hurtado", role: "Presidente de EWTN", img: jcghAsset.url },
-  { name: "Arturo Coello", role: "Nº 1 del mundo de pádel", img: coelloAsset.url },
-  { name: "Miguel Anxo Bastos", role: "Economista", img: miguelAsset.url },
-  { name: "Daniela Macarena", role: "Cofundadora de Ac2ality", img: danielaAsset.url },
-  { name: "Sonsoles Ónega", role: "Periodista", img: sonsolesAsset.url },
-];
+const GUESTS = guestList.filter((g) => guestCardImageBySlug[g.slug]);
 
 function Track() {
   return (
     <div className="flex shrink-0">
       {GUESTS.map((g) => (
         <Link
-          key={g.name}
+          key={g.slug}
           to="/invitados/$slug"
-          params={{ slug: slugByName.get(g.name) ?? "" }}
-          disabled={!slugByName.get(g.name)}
-          aria-label={`Ver la entrevista con ${g.name}`}
+          params={{ slug: g.slug }}
           className="group relative block w-[220px] shrink-0 px-2 sm:w-[300px] sm:px-3"
         >
           <div className="relative aspect-[4/5] overflow-hidden border border-border">
             <img
-              src={g.img}
+              src={guestCardImageBySlug[g.slug]}
               alt={g.name}
               width={560}
               height={700}
