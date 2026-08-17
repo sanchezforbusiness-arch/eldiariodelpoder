@@ -39,7 +39,7 @@ export function LatestEpisode() {
           <div>
             <p className="section-index">{ep.n}</p>
             <p className="mt-6 text-2xl font-medium tracking-tight">{ep.guest}</p>
-            <p className="mono-label mt-2">{ep.role}</p>
+            <p className="mt-2 font-serif text-sm font-light text-muted-foreground">{ep.role}</p>
             <p className="prose-editorial mt-8 text-sm">{ep.description}</p>
           </div>
           <div>
