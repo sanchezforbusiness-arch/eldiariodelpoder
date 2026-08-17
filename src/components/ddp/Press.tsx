@@ -69,7 +69,7 @@ export function Press() {
             href={featured.url}
             target="_blank"
             rel="noreferrer"
-            className="group relative block mb-20 md:mb-28 reveal overflow-hidden rounded-[1.5rem] border border-border hover:border-gold/60 transition-colors"
+            className="group relative block mb-20 md:mb-28 reveal overflow-hidden rounded-sm border border-border hover:border-gold/60 transition-colors"
           >
             <div className="grid md:grid-cols-5">
               {/* Left: pull-quote */}
@@ -134,7 +134,7 @@ export function Press() {
               <Tag
                 key={item.outlet}
                 {...(item.url ? { href: item.url, target: "_blank", rel: "noreferrer" } : {})}
-                className={`relative bg-card/40 p-6 md:p-8 min-h-[180px] flex flex-col justify-between overflow-hidden rounded-2xl border border-border ${
+                className={`relative bg-card/40 p-6 md:p-8 min-h-[180px] flex flex-col justify-between overflow-hidden rounded-sm border border-border ${
                   item.url ? "group hover:bg-card/70 hover:border-gold/50 transition-colors cursor-pointer" : "opacity-60"
                 }`}
               >
@@ -178,7 +178,7 @@ export function Press() {
           </div>
           <a
             href="mailto:prensa@eldiariodelpoder.com"
-            className="group inline-flex items-center justify-between gap-6 border border-border hover:border-gold rounded-2xl p-6 md:p-8 transition-colors"
+            className="group inline-flex items-center justify-between gap-6 border border-border hover:border-gold rounded-sm p-6 md:p-8 transition-colors"
           >
             <div>
               <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">Email</p>

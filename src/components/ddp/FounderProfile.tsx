@@ -43,7 +43,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
             </a>
           </div>
           <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-card">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-card">
               <img
                 src={img}
                 alt={`${name}, ${role.toLowerCase()} de Diario del Poder`}

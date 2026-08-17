@@ -133,7 +133,7 @@ function EpisodePage() {
 
           {ep.youtubeId && (
             <section className="mt-12 md:mt-16" aria-label="Episodio en vídeo">
-              <div className="relative w-full aspect-video overflow-hidden rounded-2xl border border-border bg-card/30">
+              <div className="relative w-full aspect-video overflow-hidden rounded-sm border border-border bg-card/30">
                 <iframe
                   src={`https://www.youtube-nocookie.com/embed/${ep.youtubeId}`}
                   title={`${ep.guest} — ${ep.title}`}

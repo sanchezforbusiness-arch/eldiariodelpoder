@@ -22,7 +22,7 @@ export function TvAppearances() {
           {tvAppearances.map((t) => (
             <li
               key={t.id}
-              className="overflow-hidden rounded-2xl border border-border bg-card/30 hover:border-gold/50 transition-colors"
+              className="overflow-hidden rounded-sm border border-border bg-card/30 hover:border-gold/50 transition-colors"
             >
               <figure>
                 <img

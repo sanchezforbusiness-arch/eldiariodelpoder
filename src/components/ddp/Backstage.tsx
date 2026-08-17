@@ -73,7 +73,7 @@ export function Backstage() {
               {row.items.map((s, i) => (
                 <figure
                   key={ri + "-" + i}
-                  className="group relative shrink-0 w-[220px] sm:w-[320px] md:w-[400px] aspect-[4/3] overflow-hidden rounded-2xl bg-card hover-cinema"
+                  className="group relative shrink-0 w-[220px] sm:w-[320px] md:w-[400px] aspect-[4/3] overflow-hidden rounded-sm bg-card hover-cinema"
                 >
                   <img
                     src={s.src}

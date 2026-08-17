@@ -40,9 +40,9 @@ export function Episodes() {
           href={featured.url}
           target="_blank"
           rel="noreferrer"
-          className="group block relative overflow-hidden rounded-[1.5rem] mb-10 md:mb-12 reveal"
+          className="group block relative overflow-hidden rounded-sm mb-10 md:mb-12 reveal"
         >
-          <div className="relative aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[1.5rem] bg-card">
+          <div className="relative aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm bg-card">
             <img
               src={featured.img}
               alt={featured.guest}
@@ -77,7 +77,7 @@ export function Episodes() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 reveal-stagger">
           {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-card hover-lift">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-card hover-lift">
                 <img
                   src={e.img}
                   alt={e.guest}
