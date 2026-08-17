@@ -4,7 +4,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { Masthead } from "@/components/ddp/Masthead";
 import { getGuestBySlug, guestList, episodeList, type GuestEntry } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
-import { guestImageBySlug } from "@/data/guestImages";
+import { guestCardImageBySlug } from "@/data/guestImages";
 
 const SITE = "https://eldiariodelpoder.com";
 
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/invitados/$slug")({
     const url = `${SITE}/invitados/${guest.slug}`;
     const title = `${guest.name} en Diario del Poder | Entrevista completa`;
     const description = `${guest.name}, ${guest.role}. Resumen y entrevista completa en el podcast Diario del Poder: ${guest.topics.slice(0, 4).join(", ")}.`;
-    const img = guestImageBySlug[guest.slug];
+    const img = guestCardImageBySlug[guest.slug];
     const absImg = img ? (img.startsWith("http") ? img : `${SITE}${img}`) : undefined;
 
     return {
@@ -137,7 +137,7 @@ function GuestNotFound() {
 
 function GuestPage() {
   const { guest } = Route.useLoaderData() as { guest: GuestEntry };
-  const img = guestImageBySlug[guest.slug];
+  const img = guestCardImageBySlug[guest.slug];
   const others = guestList.filter((g) => g.slug !== guest.slug).slice(0, 6);
   const episode = episodeList.find((e) => e.guestSlug === guest.slug);
   const hasVideo = Boolean(guest.youtubeId);
@@ -193,18 +193,18 @@ function GuestPage() {
             </section>
           )}
 
-          <section className={`mt-12 md:mt-16 ${hasVideo ? "grid gap-10 md:grid-cols-[1.5fr_1fr]" : "max-w-[68ch]"}`}>
-            <div>
-              <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
-                Resumen de la conversación
-              </h2>
-              <div className="mt-6 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-                {guest.summary.map((p) => (
-                  <p key={p.slice(0, 24)}>{p}</p>
-                ))}
-              </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {guest.youtubeId && (
+          {hasVideo ? (
+            <section className="mt-12 md:mt-16 grid gap-10 md:grid-cols-[1.5fr_1fr]">
+              <div>
+                <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
+                  Resumen de la conversación
+                </h2>
+                <div className="mt-6 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  {guest.summary.map((p) => (
+                    <p key={p.slice(0, 24)}>{p}</p>
+                  ))}
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3">
                   <a
                     className="btn-primary"
                     href={`https://www.youtube.com/watch?v=${guest.youtubeId}`}
@@ -213,30 +213,65 @@ function GuestPage() {
                   >
                     Ver en YouTube
                   </a>
-                )}
-                {episode && (
-                  <Link to="/episodios/$slug" params={{ slug: episode.slug }} className={guest.youtubeId ? "btn-outline" : "btn-primary"}>
-                    Ver el episodio
-                  </Link>
-                )}
-                {guest.externalUrl && (
-                  <a className="btn-outline" href={guest.externalUrl} target="_blank" rel="noopener noreferrer">
-                    Leer la entrevista
-                  </a>
-                )}
-                <Link to="/carta" className="btn-outline">Recibir la carta</Link>
+                  {episode && (
+                    <Link to="/episodios/$slug" params={{ slug: episode.slug }} className="btn-outline">
+                      Ver el episodio
+                    </Link>
+                  )}
+                  {guest.externalUrl && (
+                    <a className="btn-outline" href={guest.externalUrl} target="_blank" rel="noopener noreferrer">
+                      Leer la entrevista
+                    </a>
+                  )}
+                  <Link to="/carta" className="btn-outline">Recibir la carta</Link>
+                </div>
               </div>
-            </div>
 
-            <aside className={`panel rounded-sm p-6 h-fit ${hasVideo ? "" : "mt-10"}`}>
-              <h2 className="text-2xs tracking-label uppercase text-muted-foreground">Temas</h2>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {guest.topics.map((t) => (
-                  <li key={t} className="rounded-sm border border-border px-3 py-1.5 font-serif text-xs font-light text-muted-foreground">{t}</li>
-                ))}
-              </ul>
-            </aside>
-          </section>
+              <aside className="panel rounded-sm p-6 h-fit">
+                <h2 className="text-2xs tracking-label uppercase text-muted-foreground">Temas</h2>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {guest.topics.map((t) => (
+                    <li key={t} className="rounded-sm border border-border px-3 py-1.5 font-serif text-xs font-light text-muted-foreground">{t}</li>
+                  ))}
+                </ul>
+              </aside>
+            </section>
+          ) : (
+            <section className="mt-12 md:mt-16 max-w-[68ch] mx-auto">
+              <div>
+                <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
+                  Resumen de la conversación
+                </h2>
+                <div className="mt-6 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  {guest.summary.map((p) => (
+                    <p key={p.slice(0, 24)}>{p}</p>
+                  ))}
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {episode && (
+                    <Link to="/episodios/$slug" params={{ slug: episode.slug }} className="btn-primary">
+                      Ver el episodio
+                    </Link>
+                  )}
+                  {guest.externalUrl && (
+                    <a className="btn-outline" href={guest.externalUrl} target="_blank" rel="noopener noreferrer">
+                      Leer la entrevista
+                    </a>
+                  )}
+                  <Link to="/carta" className="btn-outline">Recibir la carta</Link>
+                </div>
+              </div>
+
+              <aside className="panel rounded-sm p-6 h-fit mt-10">
+                <h2 className="text-2xs tracking-label uppercase text-muted-foreground">Temas</h2>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {guest.topics.map((t) => (
+                    <li key={t} className="rounded-sm border border-border px-3 py-1.5 font-serif text-xs font-light text-muted-foreground">{t}</li>
+                  ))}
+                </ul>
+              </aside>
+            </section>
+          )}
 
  <section className="mt-16 md:mt-24 py-16 md:py-24 border-t border-border">
             <h2 className="tracking-tight text-2xl md:text-2xl font-medium">Más invitados</h2>
