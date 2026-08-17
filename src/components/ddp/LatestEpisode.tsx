@@ -68,7 +68,7 @@ export function LatestEpisode() {
                 <dd className="mt-1 font-mono text-sm">{ep.duration}</dd>
               </div>
             </dl>
-            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule mt-8 inline-flex font-mono text-2xs uppercase tracking-label">
+            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule tap mt-6 inline-flex items-center font-mono text-2xs uppercase tracking-label">
               Ver el episodio
             </a>
           </div>
