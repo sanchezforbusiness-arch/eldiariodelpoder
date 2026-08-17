@@ -19,18 +19,13 @@ const FAQ = [
 
 export function FaqBand() {
   return (
-    <section className="border-b border-border py-16 md:py-24">
+    <section className="border-b border-border py-24 md:py-32">
       <div className="container-ddp">
-        <div className="flex gap-4 sm:gap-6">
-          <span className="badge-num mt-2">09</span>
-          <h2 className="text-[9vw] font-medium leading-[0.92] tracking-[-0.035em] sm:text-[5.5vw] lg:text-[3.6vw]">
-            Preguntas
-          </h2>
-        </div>
+        <h2 className="text-2xl leading-[0.95] tracking-tight">Preguntas</h2>
         <dl className="mt-10 border-t border-border">
           {FAQ.map((f) => (
             <div key={f.q} className="grid gap-3 border-b border-border py-7 md:grid-cols-12 md:gap-8">
-              <dt className="text-[17px] font-medium tracking-[-0.02em] md:col-span-4 md:text-[19px]">{f.q}</dt>
+              <dt className="text-sm font-medium tracking-tight md:col-span-4 md:text-base">{f.q}</dt>
               <dd className="prose-editorial md:col-span-8">{f.a}</dd>
             </div>
           ))}
