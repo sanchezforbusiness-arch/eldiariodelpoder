@@ -275,7 +275,7 @@ function Contact() {
               <ArrowUpRight size={14} />
             </Link>
             <a
-              href="mailto:contactoeldiariodelpoder@gmail.com?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder"
+              href="mailto:patrocinios@eldiariodelpoder.com?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder"
               className="btn-outline"
             >
               <Mail size={14} />
@@ -283,10 +283,10 @@ function Contact() {
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
             <a
-              href="mailto:contactoeldiariodelpoder@gmail.com"
+              href="mailto:patrocinios@eldiariodelpoder.com"
               className="text-sm text-muted-foreground hover:text-gold transition-colors"
             >
-              contactoeldiariodelpoder@gmail.com
+              patrocinios@eldiariodelpoder.com
             </a>
           </div>
         </div>

@@ -11,7 +11,7 @@ const sponsors = [
 const partners = ["La Vanguardia"];
 
 export function Sponsors() {
-  const email = "contactoeldiariodelpoder@gmail.com";
+  const email = "patrocinios@eldiariodelpoder.com";
   const [revealed, setRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
 

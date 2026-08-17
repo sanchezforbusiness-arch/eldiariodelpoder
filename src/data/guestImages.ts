@@ -1,3 +1,9 @@
+import g1 from "@/assets/guest-1.webp";
+import g3 from "@/assets/guest-3.webp";
+import g4 from "@/assets/guest-4.webp";
+import g5 from "@/assets/guest-5.webp";
+import g6 from "@/assets/guest-6.webp";
+import g8 from "@/assets/guest-8.webp";
 import coelloAsset from "@/assets/guest-coello.png.asset.json";
 import jordiAsset from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAsset from "@/assets/guest-rosa-lagarrigue.png.asset.json";
@@ -19,4 +25,15 @@ export const guestImageBySlug: Record<string, string> = {
   "daniela-macarena": danielaAsset.url,
   "marcos-de-quinto": marcosAsset.url,
   "sonsoles-onega": sonsolesAsset.url,
+};
+
+/** Retratos para las tarjetas de los carruseles (incluye los locales). */
+export const guestCardImageBySlug: Record<string, string> = {
+  ...guestImageBySlug,
+  "jose-maria-aznar": g1,
+  "guillermo-lasso": g5,
+  "javier-tebas": g3,
+  "andres-rodriguez": g4,
+  "martin-selles": g6,
+  "federica-fornaciari": g8,
 };

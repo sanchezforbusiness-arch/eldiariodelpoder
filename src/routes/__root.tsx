@@ -22,7 +22,7 @@ const structuredData = {
       logo: SITE_IMAGE,
       foundingDate: "2025",
       foundingLocation: "Madrid, España",
-      email: "contactoeldiariodelpoder@gmail.com",
+      email: "redaccion@eldiariodelpoder.com",
       description:
         "Diario del Poder es un medio español de entrevistas de liderazgo fundado en 2025 por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con La Vanguardia como media partner oficial.",
       affiliation: {
@@ -124,7 +124,7 @@ const structuredData = {
           name: "¿Cómo puedo contactar con Diario del Poder para prensa o patrocinios?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Escribiendo a contactoeldiariodelpoder@gmail.com.",
+            text: "Escribiendo a redaccion@eldiariodelpoder.com.",
           },
         },
         {
@@ -187,25 +187,11 @@ export const Route = createRootRoute({
     ],
     links: [
       {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossOrigin: "anonymous",
-      },
-      { rel: "preconnect", href: "https://www.youtube-nocookie.com" },
-      { rel: "preconnect", href: "https://i.ytimg.com" },
-      { rel: "dns-prefetch", href: "https://www.youtube.com" },
-      {
         rel: "preload",
-        as: "style",
-        href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=JetBrains+Mono:wght@400&display=swap",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=JetBrains+Mono:wght@400&display=swap",
+        as: "font",
+        type: "font/woff2",
+        href: "/fonts/inter-tight-500-latin.woff2",
+        crossOrigin: "anonymous",
       },
       {
         rel: "stylesheet",

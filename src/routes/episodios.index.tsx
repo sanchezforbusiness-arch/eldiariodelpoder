@@ -1,11 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Episodes } from "@/components/ddp/Episodes";
 import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 import { episodeList } from "@/data/podcast";
 
-export const Route = createFileRoute("/episodios")({
+export const Route = createFileRoute("/episodios/")({
   head: () => ({
     meta: [
       { title: "Episodios del podcast Diario del Poder | Aznar, Lasso, Forbes" },
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/episodios")({
               "@type": "PodcastEpisode",
               name: `${e.guest} — ${e.title}`,
               description: e.description,
-              url: e.url,
+              url: `https://eldiariodelpoder.com/episodios/${e.slug}`,
               inLanguage: "es-ES",
               episodeNumber: Number(e.n),
               partOfSeries: {
@@ -88,9 +88,9 @@ function EpisodiosPage() {
                   Episodio {e.n} · {e.guest}
                 </p>
                 <h3 className="font-serif text-2xl md:text-3xl leading-tight">
-                  <a href={e.url} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
+                  <Link to="/episodios/$slug" params={{ slug: e.slug }} className="hover:text-gold transition-colors">
                     {e.title}
-                  </a>
+                  </Link>
                 </h3>
                 <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{e.description}</p>
               </li>

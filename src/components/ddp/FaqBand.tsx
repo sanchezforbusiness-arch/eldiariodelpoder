@@ -13,7 +13,7 @@ const FAQ = [
   },
   {
     q: "¿Cómo os escribo?",
-    a: "A contactoeldiariodelpoder@gmail.com: prensa, patrocinios o propuestas de invitados. Leemos todo.",
+    a: "A redaccion@eldiariodelpoder.com: prensa, patrocinios o propuestas de invitados. Leemos todo.",
   },
 ];
 

@@ -5,7 +5,7 @@ import { Footer } from "@/components/ddp/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 import { guestList } from "@/data/podcast";
 
-export const Route = createFileRoute("/invitados")({
+export const Route = createFileRoute("/invitados/")({
   head: () => ({
     meta: [
       { title: "Invitados del podcast Diario del Poder | Presidentes y CEOs" },
