@@ -4,30 +4,37 @@ import { guestCardImageBySlug } from "@/data/guestImages";
 
 const GUESTS = guestList.filter((g) => guestCardImageBySlug[g.slug]);
 
+type Guest = (typeof GUESTS)[number];
+
+function GuestCard({ guest, className }: { guest: Guest; className: string }) {
+  return (
+    <Link
+      to="/invitados/$slug"
+      params={{ slug: guest.slug }}
+      className={`group relative block shrink-0 ${className}`}
+    >
+      <div className="relative aspect-[4/5] overflow-hidden border border-border">
+        <img
+          src={guestCardImageBySlug[guest.slug]}
+          alt={guest.name}
+          width={560}
+          height={700}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 transition-[filter] duration-700 group-hover:grayscale-0"
+        />
+      </div>
+      <h3 className="mt-3 text-sm font-medium tracking-tight">{guest.name}</h3>
+      <p className="mt-1 font-serif text-xs font-light text-muted-foreground">{guest.role}</p>
+    </Link>
+  );
+}
+
 function Track() {
   return (
     <div className="flex shrink-0">
       {GUESTS.map((g) => (
-        <Link
-          key={g.slug}
-          to="/invitados/$slug"
-          params={{ slug: g.slug }}
-          className="group relative block w-[220px] shrink-0 px-2 sm:w-[300px] sm:px-3"
-        >
-          <div className="relative aspect-[4/5] overflow-hidden border border-border">
-            <img
-              src={guestCardImageBySlug[g.slug]}
-              alt={g.name}
-              width={560}
-              height={700}
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 transition-[filter] duration-700 group-hover:grayscale-0"
-            />
-          </div>
-          <h3 className="mt-3 text-xs font-medium tracking-tight">{g.name}</h3>
-          <p className="mt-1 font-serif text-xs font-light text-muted-foreground">{g.role}</p>
-        </Link>
+        <GuestCard key={g.slug} guest={g} className="w-[220px] px-2 sm:w-[300px] sm:px-3" />
       ))}
     </div>
   );
@@ -35,7 +42,7 @@ function Track() {
 
 export function GuestSlider() {
   return (
- <section id="invitados" aria-label="Invitados" className="border-b border-border py-16 md:py-24">
+ <section id="invitados" aria-label="Invitados" className="border-b border-border py-24 md:py-32">
       <div className="container-ddp flex items-center justify-between gap-4">
         <p className="mono-label">Quién se ha sentado</p>
         <Link to="/invitados" className="link-rule tap font-mono text-2xs uppercase tracking-label md:text-2xs">
@@ -43,7 +50,15 @@ export function GuestSlider() {
         </Link>
       </div>
 
-      <div className="mask-fade-x mt-8 overflow-hidden">
+      {/* Móvil: carrusel con anclaje, sin movimiento automático */}
+      <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">
+        {GUESTS.map((g) => (
+          <GuestCard key={g.slug} guest={g} className="w-[78vw] snap-center" />
+        ))}
+      </div>
+
+      {/* Escritorio: cinta continua */}
+      <div className="mask-fade-x mt-8 hidden overflow-hidden md:block">
         <div className="marquee marquee-fast">
           <Track />
           <Track />
