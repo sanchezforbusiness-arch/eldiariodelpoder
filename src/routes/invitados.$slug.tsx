@@ -237,7 +237,7 @@ function GuestPage() {
               </aside>
             </section>
           ) : (
-            <section className="mt-12 md:mt-16 max-w-[68ch] mx-auto">
+            <section className="mt-12 md:mt-16 max-w-[68ch]">
               <div>
                 <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
                   Resumen de la conversación
