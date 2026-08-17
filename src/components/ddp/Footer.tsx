@@ -27,6 +27,7 @@ export function Footer() {
               <li><Link to="/manifiesto" className="link-quiet">Manifiesto</Link></li>
               <li><Link to="/prensa" className="link-quiet">Prensa</Link></li>
               <li><Link to="/patrocinadores" className="link-quiet">Patrocinadores</Link></li>
+              <li><Link to="/agenda" className="link-quiet">Agenda</Link></li>
             </ul>
           </div>
 
@@ -46,11 +47,8 @@ export function Footer() {
         </div>
 
         <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-muted-foreground">
-          <p>© 2025 Diario del Poder</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground">Privacidad</a>
-            <a href="#" className="hover:text-foreground">Términos</a>
-          </div>
+          <p>© {new Date().getFullYear()} Diario del Poder</p>
+          <p>Madrid, España</p>
         </div>
       </div>
     </footer>

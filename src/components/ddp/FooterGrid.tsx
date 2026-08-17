@@ -8,6 +8,7 @@ const NAV = [
   { to: "/manifiesto", label: "Manifiesto" },
   { to: "/prensa", label: "Prensa" },
   { to: "/patrocinadores", label: "Patrocinadores" },
+  { to: "/agenda", label: "Agenda" },
 ] as const;
 
 const SOCIAL = [
@@ -29,9 +30,14 @@ export function FooterGrid() {
               Propuestas, prensa y patrocinios.
             </p>
           </div>
-          <a href="mailto:contactoeldiariodelpoder@gmail.com" className="btn-primary w-full md:w-auto">
-            Escríbenos
-          </a>
+          <div className="flex flex-col gap-3 sm:flex-row md:items-center">
+            <Link to="/agenda" className="btn-primary w-full md:w-auto">
+              Agendar una llamada
+            </Link>
+            <a href="mailto:contactoeldiariodelpoder@gmail.com" className="btn-outline w-full md:w-auto">
+              Escríbenos
+            </a>
+          </div>
         </div>
 
         <div className="grid gap-12 md:grid-cols-12">
