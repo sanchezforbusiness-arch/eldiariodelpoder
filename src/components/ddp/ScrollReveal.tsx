@@ -31,12 +31,12 @@ export function ScrollReveal({
   const words = text.split(" ");
 
   return (
-    <section ref={ref} className={`border-b border-border py-24 md:py-36 ${className}`}>
+ <section ref={ref} className={`border-b border-border py-24 md:py-32 ${className}`}>
       <div className="container-ddp">
         <div className="flex items-baseline gap-6">
-          {index ? <span className="section-index">{index}</span> : null}
+          
           {label ? (
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">{label}</span>
+            <span className="font-mono text-2xs uppercase tracking-label text-muted-foreground">{label}</span>
           ) : null}
         </div>
 
@@ -46,7 +46,7 @@ export function ScrollReveal({
           style={{ width: reduced ? "100%" : lineWidth }}
         />
 
-        <p className="mt-10 text-[7vw] font-medium leading-[1.05] tracking-[-0.03em] sm:text-[4.4vw] lg:text-[3vw]">
+        <p className="mt-10 text-xl font-medium leading-[1.05] tracking-tight sm:text-2xl lg:text-2xl">
           {reduced
             ? text
             : words.map((word, i) => {

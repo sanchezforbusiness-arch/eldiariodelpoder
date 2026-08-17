@@ -48,16 +48,16 @@ export function Backstage() {
   const rowA = loop;
   const rowB = [...shots].reverse().concat([...shots].reverse());
   return (
-    <section id="backstage" className="py-20 md:py-36 border-t border-border overflow-hidden">
+ <section id="backstage" className="py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="container-ddp mb-8 md:mb-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Detrás de cámara</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[0.98] font-light">
+            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[0.98] font-light">
               <span className="italic text-gold">Fuera de guion</span>.
             </h2>
           </div>
-          <p className="text-[11px] tracking-[0.28em] uppercase text-gold/70 max-w-xs">
+          <p className="text-2xs tracking-label uppercase text-gold/70 max-w-xs">
             Madrid · lo que pasa entre toma y toma
           </p>
         </div>
@@ -73,7 +73,7 @@ export function Backstage() {
               {row.items.map((s, i) => (
                 <figure
                   key={ri + "-" + i}
-                  className="group relative shrink-0 w-[220px] sm:w-[320px] md:w-[400px] aspect-[4/3] overflow-hidden rounded-2xl bg-card hover-cinema"
+                  className="group relative shrink-0 w-[220px] sm:w-[320px] md:w-[400px] aspect-[4/3] overflow-hidden rounded-sm bg-card hover-cinema"
                 >
                   <img
                     src={s.src}
@@ -82,7 +82,7 @@ export function Backstage() {
                     className={`absolute inset-0 w-full h-full object-cover ${s.pos ?? "object-center"} grayscale-[0.2] transition-all duration-700`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                  <figcaption className="absolute inset-x-0 bottom-0 p-4 text-[10px] md:text-[11px] tracking-[0.22em] uppercase text-gold/90">
+                  <figcaption className="absolute inset-x-0 bottom-0 p-4 text-2xs md:text-2xs tracking-label uppercase text-gold/90">
                     {s.caption}
                   </figcaption>
                 </figure>

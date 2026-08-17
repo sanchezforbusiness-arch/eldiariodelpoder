@@ -130,7 +130,7 @@ function Hero() {
               <span className="dot-gold" /> Patrocinadores
             </span>
           </div>
-          <h1 className="font-serif text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-[-0.03em]">
+          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
             Sé parte de la <span className="italic text-gold">conversación</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
@@ -153,14 +153,14 @@ function Hero() {
 
 function Pillars() {
   return (
-    <section className="py-20 md:py-28 border-t border-border">
+ <section className="py-24 md:py-32 border-t border-border">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
           <span className="eyebrow block mb-4">
             <span className="dot-gold mr-2" />
             Por qué DDP
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+          <h2 className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
             Un entorno con <span className="italic text-gold">criterio</span>.
           </h2>
         </div>
@@ -168,8 +168,8 @@ function Pillars() {
         <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-8 md:p-10">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-5">{p.n}</p>
-              <h3 className="font-serif text-2xl md:text-3xl font-light leading-tight mb-4">
+              <p className="text-2xs tracking-label uppercase text-gold/80 mb-5">{p.n}</p>
+              <h3 className="font-serif text-2xl md:text-2xl font-light leading-tight mb-4">
                 {p.t}
               </h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -185,14 +185,14 @@ function Pillars() {
 
 function Tiers() {
   return (
-    <section id="opciones" className="py-20 md:py-28 border-t border-border bg-background-alt">
+ <section id="opciones" className="py-24 md:py-32 border-t border-border bg-background-alt">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
           <span className="eyebrow block mb-4">
             <span className="dot-gold mr-2" />
             Opciones de patrocinio
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-[-0.02em]">
+          <h2 className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
             Tres formas de <span className="italic text-gold">conversar</span> con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
@@ -211,14 +211,14 @@ function Tiers() {
               }`}
             >
               {t.featured && (
-                <span className="absolute top-0 right-0 -translate-y-1/2 bg-gold text-gold-foreground text-[10px] tracking-[0.22em] uppercase px-3 py-1">
+                <span className="absolute top-0 right-0 -translate-y-1/2 bg-gold text-gold-foreground text-2xs tracking-label uppercase px-3 py-1">
                   Más solicitado
                 </span>
               )}
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gold/80 mb-3">
+              <p className="text-2xs tracking-label uppercase text-gold/80 mb-3">
                 {t.pitch}
               </p>
-              <h3 className="font-serif text-4xl md:text-5xl font-light mb-8">
+              <h3 className="font-serif text-2xl md:text-display font-light mb-8">
                 {t.name}
               </h3>
               <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
@@ -231,7 +231,7 @@ function Tiers() {
               </ul>
               <a
                 href="#contacto"
-                className={`group inline-flex items-center justify-between gap-3 w-full px-5 py-3.5 text-[11px] tracking-[0.24em] uppercase border transition-colors ${
+                className={`group inline-flex items-center justify-between gap-3 w-full px-5 py-3.5 text-2xs tracking-label uppercase border transition-colors ${
                   t.featured
                     ? "bg-gold text-gold-foreground border-gold hover:bg-gold-bright"
                     : "border-foreground/25 text-foreground hover:border-gold hover:text-gold"
@@ -244,7 +244,7 @@ function Tiers() {
           ))}
         </div>
 
-        <p className="mt-10 text-xs tracking-[0.2em] uppercase text-muted-foreground text-center">
+        <p className="mt-10 text-xs tracking-label uppercase text-muted-foreground text-center">
           Acuerdos anuales o por temporada · cerramos detalles en una llamada
         </p>
       </div>
@@ -254,7 +254,7 @@ function Tiers() {
 
 function Contact() {
   return (
-    <section id="contacto" className="relative py-24 md:py-36 border-t border-border overflow-hidden">
+ <section id="contacto" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="gold-glow float-slow w-[460px] h-[460px] -bottom-40 left-1/2 -translate-x-1/2 opacity-30" />
       <div className="container-ddp relative">
         <div className="max-w-3xl mx-auto text-center reveal">
@@ -262,7 +262,7 @@ function Contact() {
             <span className="dot-gold mr-2" />
             Hablemos
           </span>
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.0] font-light tracking-[-0.02em]">
+          <h2 className="font-serif text-2xl md:text-display leading-[1.0] font-light tracking-tight">
             Tu marca, en conversaciones <span className="italic text-gold">que importan</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">

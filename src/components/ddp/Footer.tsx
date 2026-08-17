@@ -11,15 +11,15 @@ export function Footer() {
       <div className="container-ddp py-14 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-6">
-            <div className="font-serif text-3xl text-gold mb-5">DDP</div>
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-snug max-w-md font-light">
+            <div className="font-serif text-2xl text-gold mb-5">DDP</div>
+            <p className="font-serif text-2xl sm:text-2xl md:text-2xl leading-snug max-w-md font-light">
               Los referentes de hoy, <span className="italic">a los de mañana</span>.
             </p>
             <p className="mt-5 text-sm text-muted-foreground">Grabado en Madrid.</p>
           </div>
 
           <div className="md:col-span-3">
-            <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Navegar</h3>
+            <h3 className="text-2xs tracking-label uppercase text-gold mb-5">Navegar</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link to="/episodios" className="link-quiet">Episodios</Link></li>
               <li><Link to="/invitados" className="link-quiet">Invitados</Link></li>
@@ -32,7 +32,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3 min-w-0">
-            <h3 className="text-[11px] tracking-[0.3em] uppercase text-gold mb-5">Contacto</h3>
+            <h3 className="text-2xs tracking-label uppercase text-gold mb-5">Contacto</h3>
             <a href="mailto:redaccion@eldiariodelpoder.com" className="text-xs sm:text-sm text-foreground hover:text-gold transition-colors break-all">
               redaccion@eldiariodelpoder.com
             </a>

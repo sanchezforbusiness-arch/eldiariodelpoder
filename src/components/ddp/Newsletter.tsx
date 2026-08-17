@@ -20,12 +20,12 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-32 relative overflow-hidden grain border-t border-border">
+ <section id="newsletter" className="py-24 md:py-32 relative overflow-hidden grain border-t border-border">
       <div className="gold-glow float-slow w-[420px] h-[420px] -top-20 left-1/2 -translate-x-1/2 opacity-30" />
       <div className="container-ddp relative">
         <div className="max-w-xl mx-auto text-center">
           <span className="eyebrow block mb-5"><span className="dot-gold mr-2" />Newsletter</span>
-          <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-[-0.02em]">
+          <h2 className="font-serif text-2xl md:text-display leading-[1.02] font-light tracking-tight">
             Un email. Cero <span className="italic text-gold">ruido</span>.
           </h2>
           <p className="mt-4 text-sm md:text-base text-muted-foreground">

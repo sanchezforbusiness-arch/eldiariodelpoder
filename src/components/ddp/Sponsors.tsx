@@ -24,12 +24,12 @@ export function Sponsors() {
   };
 
   return (
-    <section id="sponsors" className="py-24 md:py-36 border-t border-border">
+ <section id="sponsors" className="py-24 md:py-32 border-t border-border">
       <div className="container-ddp space-y-20">
         <div>
           <div className="text-center mb-12">
             <span className="eyebrow block mb-5">Sponsors</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[1.02] font-light">
               Marcas que van <span className="italic text-gold">con nosotros</span>.
             </h2>
           </div>
@@ -38,12 +38,12 @@ export function Sponsors() {
             {sponsors.map((s) => (
               <div
                 key={s.name}
-                className="bg-card/40 rounded-2xl border border-border py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card hover:border-gold/40 transition-colors min-h-[140px]"
+                className="bg-card/40 rounded-sm border border-border py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card hover:border-gold/40 transition-colors min-h-[140px]"
               >
                 <span className="font-serif text-lg md:text-xl text-foreground/85 group-hover:text-gold transition-colors leading-tight">
                   {s.name}
                 </span>
-                <span className="mt-2 text-[10px] tracking-[0.22em] uppercase text-muted-foreground">{s.tag}</span>
+                <span className="mt-2 text-2xs tracking-label uppercase text-muted-foreground">{s.tag}</span>
               </div>
             ))}
           </div>
@@ -54,8 +54,8 @@ export function Sponsors() {
                 Quiero el media kit
               </button>
             ) : (
-              <div className="w-full max-w-xl border border-gold/50 rounded-2xl bg-card/40 px-6 py-6 text-center">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Hablemos</p>
+              <div className="w-full max-w-xl border border-gold/50 rounded-sm bg-card/40 px-6 py-6 text-center">
+                <p className="text-2xs tracking-label uppercase text-gold mb-3">Hablemos</p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                   <a
                     href={`mailto:${email}?subject=Media%20Kit%20—%20Diario%20del%20Poder`}
@@ -68,7 +68,7 @@ export function Sponsors() {
                     type="button"
                     onClick={handleCopy}
                     aria-label="Copiar correo"
-                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-[10px] tracking-[0.22em] uppercase border border-border text-muted-foreground hover:border-gold hover:text-gold transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-2xs tracking-label uppercase border border-border text-muted-foreground hover:border-gold hover:text-gold transition-colors"
                   >
                     {copied ? <Check size={12} /> : <Copy size={12} />}
                     {copied ? "Copiado" : "Copiar"}
@@ -80,10 +80,10 @@ export function Sponsors() {
         </div>
 
         <div>
-          <p className="text-center text-[11px] tracking-[0.32em] uppercase text-gold/70 mb-8">MEDIA PARTNERS</p>
+          <p className="text-center text-2xs tracking-label uppercase text-gold/70 mb-8">MEDIA PARTNERS</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {partners.map((p) => (
-              <span key={p} className="font-serif text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors cursor-default">
+              <span key={p} className="font-serif text-2xl md:text-2xl text-muted-foreground hover:text-gold transition-colors cursor-default">
                 {p}
               </span>
             ))}

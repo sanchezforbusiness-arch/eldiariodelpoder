@@ -107,19 +107,19 @@ function PrensaPage() {
       <Navbar />
       <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-muted-foreground hover:text-gold transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-gold transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
         <header className="container-ddp pt-6 sm:pt-8 pb-2">
-          <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-[-0.03em]">
+          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
             Prensa & <span className="italic text-gold">medios</span>
           </h1>
         </header>
         <Press />
         <TvAppearances />
-        <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-3xl md:text-4xl font-light mb-4">
+ <section className="container-ddp py-16 md:py-24 border-t border-border">
+          <h2 className="font-serif text-2xl md:text-2xl font-light mb-4">
             Noticias publicadas sobre <span className="italic text-gold">Diario del Poder</span>
           </h2>
           <p className="max-w-2xl text-muted-foreground leading-relaxed mb-10">
@@ -131,8 +131,8 @@ function PrensaPage() {
           <ul className="space-y-8 max-w-3xl">
             {pressArticles.map((a) => (
               <li key={a.url}>
-                <p className="text-[11px] tracking-[0.24em] uppercase text-gold/90 mb-2">{a.outlet}</p>
-                <h3 className="font-serif text-2xl md:text-3xl leading-tight">
+                <p className="text-2xs tracking-label uppercase text-gold/90 mb-2">{a.outlet}</p>
+                <h3 className="font-serif text-2xl md:text-2xl leading-tight">
                   <a href={a.url} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
                     {a.headline}
                   </a>

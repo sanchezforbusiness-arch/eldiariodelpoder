@@ -87,7 +87,7 @@ function EpisodeNotFound() {
     <div className="bg-background text-foreground min-h-screen">
       <Navbar />
       <main className="container-ddp pt-40 pb-24">
-        <h1 className="font-serif text-4xl font-light">No encontramos ese episodio</h1>
+        <h1 className="font-serif text-2xl font-light">No encontramos ese episodio</h1>
         <Link to="/episodios" className="btn-outline mt-8 inline-flex">Ver todos los episodios</Link>
       </main>
       <Footer />
@@ -104,22 +104,22 @@ function EpisodePage() {
       <Navbar />
       <main className="pt-28 md:pt-32">
         <article className="container-ddp">
-          <nav aria-label="Migas de pan" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+          <nav aria-label="Migas de pan" className="text-2xs tracking-label uppercase text-muted-foreground">
             <Link to="/episodios" className="hover:text-foreground">Episodios</Link>
             <span className="mx-2 text-gold/60">/</span>
             <span className="text-gold/80">Episodio {ep.n}</span>
           </nav>
 
           <header className="mt-6 max-w-3xl">
-            <p className="text-[11px] tracking-[0.24em] uppercase text-gold/90">
+            <p className="text-2xs tracking-label uppercase text-gold/90">
               Episodio {ep.n}
               {ep.date ? ` · ${ep.date}` : ""}
               {ep.duration ? ` · ${ep.duration}` : ""}
             </p>
-            <h1 className="mt-4 font-serif text-[2.4rem] sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-[-0.03em]">
+            <h1 className="mt-4 font-serif text-2xl sm:text-display md:text-display leading-[0.98] font-light tracking-tight">
               {ep.title}
             </h1>
-            <p className="mt-5 text-[11px] tracking-[0.22em] uppercase text-gold/80">
+            <p className="mt-5 text-2xs tracking-label uppercase text-gold/80">
               {guest ? (
                 <Link to="/invitados/$slug" params={{ slug: guest.slug }} className="hover:text-foreground">
                   {ep.guest}
@@ -133,7 +133,7 @@ function EpisodePage() {
 
           {ep.youtubeId && (
             <section className="mt-12 md:mt-16" aria-label="Episodio en vídeo">
-              <div className="relative w-full aspect-video overflow-hidden rounded-2xl border border-border bg-card/30">
+              <div className="relative w-full aspect-video overflow-hidden rounded-sm border border-border bg-card/30">
                 <iframe
                   src={`https://www.youtube-nocookie.com/embed/${ep.youtubeId}`}
                   title={`${ep.guest} — ${ep.title}`}
@@ -148,14 +148,14 @@ function EpisodePage() {
           )}
 
           <section className="mt-12 md:mt-16 max-w-3xl">
-            <h2 className="font-serif text-2xl md:text-3xl font-light">
+            <h2 className="font-serif text-2xl md:text-2xl font-light">
               De qué va la <span className="italic text-gold">conversación</span>
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">{ep.description}</p>
 
             {ep.transcript && ep.transcript.length > 0 && (
               <div className="mt-10">
-                <h2 className="font-serif text-2xl md:text-3xl font-light">Transcripción</h2>
+                <h2 className="font-serif text-2xl md:text-2xl font-light">Transcripción</h2>
                 <div className="mt-6 space-y-5 text-base text-muted-foreground leading-relaxed">
                   {ep.transcript.map((p) => (
                     <p key={p.slice(0, 24)}>{p}</p>

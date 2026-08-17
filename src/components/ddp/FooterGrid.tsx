@@ -21,12 +21,12 @@ const SOCIAL = [
 
 export function FooterGrid() {
   return (
-    <footer id="contact" className="relative overflow-hidden border-t border-border">
+    <footer id="contact" className="relative border-t border-border">
       <div className="container-ddp pt-16 md:pt-24">
         <div className="panel mb-14 flex flex-col gap-6 p-6 md:mb-20 md:flex-row md:items-center md:justify-between md:p-10">
           <div>
             <p className="mono-label">¿Hablamos?</p>
-            <p className="mt-3 max-w-[24ch] text-[22px] font-medium leading-[1.1] tracking-[-0.03em] md:text-[30px]">
+            <p className="mt-3 max-w-[24ch] text-lg font-medium leading-[1.1] tracking-tight md:text-xl">
               Propuestas, prensa y patrocinios.
             </p>
           </div>
@@ -45,7 +45,7 @@ export function FooterGrid() {
             <p className="mono-label">Contacto</p>
             <a
               href="mailto:redaccion@eldiariodelpoder.com"
-              className="link-rule mt-4 block break-all font-mono text-[12px] tracking-[0.02em]"
+              className="link-rule mt-4 block break-all font-mono text-2xs"
             >
               redaccion@eldiariodelpoder.com
             </a>
@@ -57,7 +57,7 @@ export function FooterGrid() {
             <ul className="mt-4 grid grid-cols-2 gap-y-3">
               {NAV.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="font-mono text-[11px] uppercase tracking-[0.12em] transition-colors hover:text-signal">
+                  <Link to={l.to} className="text-sm tracking-tight transition-colors hover:text-signal">
                     {l.label}
                   </Link>
                 </li>
@@ -70,7 +70,7 @@ export function FooterGrid() {
             <ul className="mt-4 grid grid-cols-2 gap-y-3">
               {SOCIAL.map(([label, href]) => (
                 <li key={label}>
-                  <a href={href} target="_blank" rel="noreferrer" className="font-mono text-[11px] uppercase tracking-[0.12em] transition-colors hover:text-signal">
+                  <a href={href} target="_blank" rel="noreferrer" className="text-sm tracking-tight transition-colors hover:text-signal">
                     {label}
                   </a>
                 </li>
@@ -83,32 +83,6 @@ export function FooterGrid() {
           <p className="mono-label">© {new Date().getFullYear()} Diario del Poder</p>
           <p className="mono-label">Alejandro Sánchez Martínez · Víctor Hugo Gandarilla de Andrés</p>
         </div>
-      </div>
-
-      {/* Oversized typographic wordmark, cropped by the bottom edge */}
-      <div aria-hidden className="select-none overflow-hidden">
-        <svg
-          viewBox="0 0 1000 120"
-          preserveAspectRatio="xMidYMin meet"
-          className="block h-auto w-full translate-y-[14%]"
-          role="presentation"
-        >
-          <text
-            x="500"
-            y="100"
-            textAnchor="middle"
-            textLength="980"
-            lengthAdjust="spacingAndGlyphs"
-            fontFamily="var(--font-sans)"
-            fontSize="128"
-            fontWeight="500"
-            letterSpacing="-6"
-            fill="currentColor"
-            className="text-foreground/10"
-          >
-            DIARIO DEL PODER
-          </text>
-        </svg>
       </div>
     </footer>
   );
