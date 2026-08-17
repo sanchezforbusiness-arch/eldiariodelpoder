@@ -190,7 +190,7 @@ export const Route = createRootRoute({
         rel: "preload",
         as: "font",
         type: "font/woff2",
-        href: "/fonts/inter-tight-500-latin.woff2",
+        href: "/fonts/inter-tight-var-latin.woff2",
         crossOrigin: "anonymous",
       },
       {
