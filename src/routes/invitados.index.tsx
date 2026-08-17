@@ -65,7 +65,7 @@ function InvitadosPage() {
       <Navbar />
       <main className="pt-24">
         <header className="container-ddp pt-6 sm:pt-8 pb-4">
-          <h1 className="font-serif text-2xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-tight">
+          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
             Nuestros <span className="italic text-gold">invitados</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -75,7 +75,7 @@ function InvitadosPage() {
         </header>
         <GuestsCarousel />
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-3xl md:text-4xl font-light mb-10">
+          <h2 className="font-serif text-2xl md:text-2xl font-light mb-10">
             Quién ha pasado por el <span className="italic text-gold">micrófono</span>
           </h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9">

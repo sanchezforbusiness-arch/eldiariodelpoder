@@ -14,7 +14,7 @@ export function About() {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-stretch">
           <div className="md:col-span-6 reveal">
             <span className="eyebrow block mb-7">Quiénes somos</span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] font-light tracking-tight">
+            <h2 className="font-serif text-display md:text-display lg:text-display leading-[0.98] font-light tracking-tight">
               Quienes <span className="italic text-gold">deciden</span>,<br />
               hablando en primera persona.
             </h2>

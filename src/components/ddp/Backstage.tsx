@@ -53,7 +53,7 @@ export function Backstage() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Detrás de cámara</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[0.98] font-light">
+            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[0.98] font-light">
               <span className="italic text-gold">Fuera de guion</span>.
             </h2>
           </div>

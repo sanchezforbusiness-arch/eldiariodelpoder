@@ -36,7 +36,7 @@ export function Press() {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-16 md:mb-24 reveal">
           <div className="md:col-span-8">
             <span className="eyebrow block mb-6"><span className="dot-gold mr-2" />Prensa & Media</span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.98] tracking-tight font-light">
+            <h2 className="font-serif text-display md:text-display lg:text-display leading-[0.98] tracking-tight font-light">
               Lo que cuentan
               <br />
               <span className="italic shimmer-gold">de nosotros</span>.
@@ -54,7 +54,7 @@ export function Press() {
               key={s.label}
               className={`group py-8 md:py-10 px-6 ${i !== 0 ? "md:border-l border-border" : ""} ${i === 1 ? "border-l border-border" : ""} hover:bg-card/40 transition-colors`}
             >
-              <div className="font-serif text-5xl md:text-6xl font-light text-gold leading-none">
+              <div className="font-serif text-display md:text-display font-light text-gold leading-none">
                 {s.value}
               </div>
               <div className="mt-4 text-2xs tracking-label uppercase text-muted-foreground">
@@ -81,12 +81,12 @@ export function Press() {
                   </span>
                 </div>
                 <Quote className="text-gold/40 mb-4" size={36} />
-                <p className="font-serif text-2xl md:text-3xl lg:text-2xl leading-[1.2] font-light tracking-tight text-foreground/90">
+                <p className="font-serif text-2xl md:text-2xl lg:text-2xl leading-[1.2] font-light tracking-tight text-foreground/90">
                   {featured.quote}
                 </p>
                 <div className="mt-10 flex items-end justify-between gap-6">
                   <div>
-                    <div className="font-serif text-3xl md:text-4xl text-foreground group-hover:text-gold transition-colors">
+                    <div className="font-serif text-2xl md:text-2xl text-foreground group-hover:text-gold transition-colors">
                       {featured.outlet}
                     </div>
                     <p className="mt-1 text-2xs tracking-label uppercase text-muted-foreground">
@@ -172,7 +172,7 @@ export function Press() {
         <div className="mt-20 md:mt-28 grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
           <div>
             <span className="eyebrow block mb-4">Contacto prensa</span>
-            <h3 className="font-serif text-3xl md:text-4xl font-light leading-[1.1] tracking-tight">
+            <h3 className="font-serif text-2xl md:text-2xl font-light leading-[1.1] tracking-tight">
               ¿Escribes <span className="italic text-gold">sobre nosotros</span>?
             </h3>
           </div>

@@ -112,14 +112,14 @@ function PrensaPage() {
           </Link>
         </div>
         <header className="container-ddp pt-6 sm:pt-8 pb-2">
-          <h1 className="font-serif text-2xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light tracking-tight">
+          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
             Prensa & <span className="italic text-gold">medios</span>
           </h1>
         </header>
         <Press />
         <TvAppearances />
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-3xl md:text-4xl font-light mb-4">
+          <h2 className="font-serif text-2xl md:text-2xl font-light mb-4">
             Noticias publicadas sobre <span className="italic text-gold">Diario del Poder</span>
           </h2>
           <p className="max-w-2xl text-muted-foreground leading-relaxed mb-10">
@@ -132,7 +132,7 @@ function PrensaPage() {
             {pressArticles.map((a) => (
               <li key={a.url}>
                 <p className="text-2xs tracking-label uppercase text-gold/90 mb-2">{a.outlet}</p>
-                <h3 className="font-serif text-2xl md:text-3xl leading-tight">
+                <h3 className="font-serif text-2xl md:text-2xl leading-tight">
                   <a href={a.url} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
                     {a.headline}
                   </a>

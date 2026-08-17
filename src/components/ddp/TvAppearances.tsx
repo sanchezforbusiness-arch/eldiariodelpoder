@@ -8,7 +8,7 @@ export function TvAppearances() {
           <span className="eyebrow block mb-5">
             <span className="dot-gold mr-2" />En directo en televisión
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-light leading-[1.05] tracking-tight">
+          <h2 className="font-serif text-2xl md:text-display font-light leading-[1.05] tracking-tight">
             Diario del Poder en <span className="italic text-gold">La Sexta, Antena 3 y Univision</span>
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">

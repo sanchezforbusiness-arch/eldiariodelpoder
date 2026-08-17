@@ -106,7 +106,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   }, [to]);
 
   return (
-    <p ref={ref} className="font-mono text-4xl tracking-tight tabular-nums md:text-5xl">
+    <p ref={ref} className="font-mono text-2xl tracking-tight tabular-nums md:text-display">
       {n}
       {suffix}
     </p>

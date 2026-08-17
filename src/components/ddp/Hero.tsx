@@ -84,7 +84,7 @@ export function Hero() {
           </div>
 
 
-          <h1 className="font-serif text-2xl sm:text-6xl md:text-7xl lg:text-display leading-[0.95] sm:leading-[0.92] tracking-tight font-light">
+          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] sm:leading-[0.92] tracking-tight font-light">
             <SplitText text="La voz del legado." goldWords={["legado"]} italicWords={["legado"]} />
           </h1>
 

@@ -130,7 +130,7 @@ function Hero() {
               <span className="dot-gold" /> Patrocinadores
             </span>
           </div>
-          <h1 className="font-serif text-2xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light tracking-tight">
+          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
             Sé parte de la <span className="italic text-gold">conversación</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
@@ -160,7 +160,7 @@ function Pillars() {
             <span className="dot-gold mr-2" />
             Por qué DDP
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
             Un entorno con <span className="italic text-gold">criterio</span>.
           </h2>
         </div>
@@ -169,7 +169,7 @@ function Pillars() {
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-8 md:p-10">
               <p className="text-2xs tracking-label uppercase text-gold/80 mb-5">{p.n}</p>
-              <h3 className="font-serif text-2xl md:text-3xl font-light leading-tight mb-4">
+              <h3 className="font-serif text-2xl md:text-2xl font-light leading-tight mb-4">
                 {p.t}
               </h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -192,7 +192,7 @@ function Tiers() {
             <span className="dot-gold mr-2" />
             Opciones de patrocinio
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-light tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
             Tres formas de <span className="italic text-gold">conversar</span> con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
@@ -218,7 +218,7 @@ function Tiers() {
               <p className="text-2xs tracking-label uppercase text-gold/80 mb-3">
                 {t.pitch}
               </p>
-              <h3 className="font-serif text-4xl md:text-5xl font-light mb-8">
+              <h3 className="font-serif text-2xl md:text-display font-light mb-8">
                 {t.name}
               </h3>
               <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
@@ -262,7 +262,7 @@ function Contact() {
             <span className="dot-gold mr-2" />
             Hablemos
           </span>
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.0] font-light tracking-tight">
+          <h2 className="font-serif text-2xl md:text-display leading-[1.0] font-light tracking-tight">
             Tu marca, en conversaciones <span className="italic text-gold">que importan</span>.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">

@@ -86,7 +86,7 @@ export function Team() {
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">El equipo</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[1.02] font-light">
               El <span className="italic text-gold">equipo</span>.
             </h2>
           </div>

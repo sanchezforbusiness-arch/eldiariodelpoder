@@ -29,7 +29,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
         <header className="container-ddp pt-8 grid md:grid-cols-12 gap-10 md:gap-14 items-end">
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">{role}</span>
-            <h1 className="font-serif text-2xl sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-tight">
+            <h1 className="font-serif text-2xl sm:text-display md:text-display leading-[0.98] font-light tracking-tight">
               {name}
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">{lead}</p>
@@ -58,7 +58,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
  <section className="container-ddp py-16 md:py-24">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-7 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground">
-              <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground">
+              <h2 className="font-serif text-2xl md:text-2xl font-light text-foreground">
                 Quién es <span className="italic text-gold">{name.split(" ")[0]}</span>
               </h2>
               {paragraphs.map((p) => (
@@ -79,7 +79,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
         </section>
 
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
+          <h2 className="font-serif text-2xl md:text-2xl font-light mb-8">
             A quién ha <span className="italic text-gold">entrevistado</span>
           </h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6">
@@ -93,7 +93,7 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
         </section>
 
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
+          <h2 className="font-serif text-2xl md:text-2xl font-light mb-8">
             En los <span className="italic text-gold">medios</span>
           </h2>
           <ul className="space-y-6 max-w-3xl">

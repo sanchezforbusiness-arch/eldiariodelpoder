@@ -87,7 +87,7 @@ function EpisodeNotFound() {
     <div className="bg-background text-foreground min-h-screen">
       <Navbar />
       <main className="container-ddp pt-40 pb-24">
-        <h1 className="font-serif text-4xl font-light">No encontramos ese episodio</h1>
+        <h1 className="font-serif text-2xl font-light">No encontramos ese episodio</h1>
         <Link to="/episodios" className="btn-outline mt-8 inline-flex">Ver todos los episodios</Link>
       </main>
       <Footer />
@@ -116,7 +116,7 @@ function EpisodePage() {
               {ep.date ? ` · ${ep.date}` : ""}
               {ep.duration ? ` · ${ep.duration}` : ""}
             </p>
-            <h1 className="mt-4 font-serif text-2xl sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-tight">
+            <h1 className="mt-4 font-serif text-2xl sm:text-display md:text-display leading-[0.98] font-light tracking-tight">
               {ep.title}
             </h1>
             <p className="mt-5 text-2xs tracking-label uppercase text-gold/80">
@@ -148,14 +148,14 @@ function EpisodePage() {
           )}
 
           <section className="mt-12 md:mt-16 max-w-3xl">
-            <h2 className="font-serif text-2xl md:text-3xl font-light">
+            <h2 className="font-serif text-2xl md:text-2xl font-light">
               De qué va la <span className="italic text-gold">conversación</span>
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">{ep.description}</p>
 
             {ep.transcript && ep.transcript.length > 0 && (
               <div className="mt-10">
-                <h2 className="font-serif text-2xl md:text-3xl font-light">Transcripción</h2>
+                <h2 className="font-serif text-2xl md:text-2xl font-light">Transcripción</h2>
                 <div className="mt-6 space-y-5 text-base text-muted-foreground leading-relaxed">
                   {ep.transcript.map((p) => (
                     <p key={p.slice(0, 24)}>{p}</p>

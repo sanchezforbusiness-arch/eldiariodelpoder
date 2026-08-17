@@ -125,7 +125,7 @@ function GuestNotFound() {
     <div className="bg-background text-foreground min-h-screen">
       <Navbar />
       <main className="container-ddp pt-40 pb-24">
-        <h1 className="font-serif text-4xl font-light">No encontramos a ese invitado</h1>
+        <h1 className="font-serif text-2xl font-light">No encontramos a ese invitado</h1>
         <Link to="/invitados" className="btn-outline mt-8 inline-flex">Ver todos los invitados</Link>
       </main>
       <Footer />
@@ -151,7 +151,7 @@ function GuestPage() {
 
           <header className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end">
             <div>
-              <h1 className="font-serif text-2xl sm:text-5xl md:text-6xl leading-[0.98] font-light tracking-tight">
+              <h1 className="font-serif text-2xl sm:text-display md:text-display leading-[0.98] font-light tracking-tight">
                 {guest.name}
               </h1>
               <p className="mt-4 font-serif text-base font-light text-muted-foreground">{guest.role}</p>
@@ -186,7 +186,7 @@ function GuestPage() {
 
           <section className="mt-12 md:mt-16 grid gap-10 md:grid-cols-[1.5fr_1fr]">
             <div>
-              <h2 className="font-serif text-2xl md:text-3xl font-light">
+              <h2 className="font-serif text-2xl md:text-2xl font-light">
                 Resumen de la <span className="italic text-gold">conversación</span>
               </h2>
               <div className="mt-6 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -225,7 +225,7 @@ function GuestPage() {
           </section>
 
  <section className="mt-16 md:mt-24 py-16 md:py-24 border-t border-border">
-            <h2 className="font-serif text-2xl md:text-3xl font-light">Más invitados</h2>
+            <h2 className="font-serif text-2xl md:text-2xl font-light">Más invitados</h2>
             <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
               {others.map((g) => (
                 <li key={g.slug}>

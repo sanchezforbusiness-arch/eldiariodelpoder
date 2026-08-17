@@ -29,7 +29,7 @@ export function Sponsors() {
         <div>
           <div className="text-center mb-12">
             <span className="eyebrow block mb-5">Sponsors</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light">
+            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[1.02] font-light">
               Marcas que van <span className="italic text-gold">con nosotros</span>.
             </h2>
           </div>
@@ -83,7 +83,7 @@ export function Sponsors() {
           <p className="text-center text-2xs tracking-label uppercase text-gold/70 mb-8">MEDIA PARTNERS</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {partners.map((p) => (
-              <span key={p} className="font-serif text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors cursor-default">
+              <span key={p} className="font-serif text-2xl md:text-2xl text-muted-foreground hover:text-gold transition-colors cursor-default">
                 {p}
               </span>
             ))}

@@ -22,7 +22,7 @@ export function Episodes() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] font-light tracking-tight">
+            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[1.02] font-light tracking-tight">
               Conversaciones <span className="italic text-gold">recientes</span>.
             </h2>
           </div>
@@ -56,12 +56,12 @@ export function Episodes() {
               <span className="text-2xs sm:text-2xs tracking-label sm:tracking-label uppercase text-gold border border-gold/60 px-2.5 sm:px-3 py-1 sm:py-1.5">
                 Recién publicado
               </span>
-              <span className="font-serif text-2xl sm:text-3xl text-gold/80">{featured.n}</span>
+              <span className="font-serif text-2xl sm:text-2xl text-gold/80">{featured.n}</span>
             </div>
 
             <div className="absolute inset-x-0 bottom-0 p-5 md:p-12">
               <p className="text-2xs md:text-2xs tracking-label md:tracking-label uppercase text-gold/90 mb-2 md:mb-3">{featured.guest}</p>
-              <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light max-w-3xl">
+              <h3 className="font-serif text-2xl sm:text-2xl md:text-display lg:text-display leading-[1.05] md:leading-[1.02] font-light max-w-3xl">
                 {featured.title}
               </h3>
               <div className="mt-4 md:mt-6 inline-flex items-center gap-3 text-2xs md:text-2xs tracking-label md:tracking-label uppercase text-foreground group-hover:text-gold transition-colors">
@@ -88,7 +88,7 @@ export function Episodes() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <div className="absolute top-5 left-5 flex items-center gap-3">
-                  <span className="font-serif text-3xl text-gold/90">{e.n}</span>
+                  <span className="font-serif text-2xl text-gold/90">{e.n}</span>
                   {e.isNew && (
                     <span className="text-2xs tracking-label uppercase text-gold border-l border-gold/50 pl-3">
                       Nuevo

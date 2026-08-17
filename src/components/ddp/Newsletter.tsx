@@ -25,7 +25,7 @@ export function Newsletter() {
       <div className="container-ddp relative">
         <div className="max-w-xl mx-auto text-center">
           <span className="eyebrow block mb-5"><span className="dot-gold mr-2" />Newsletter</span>
-          <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] font-light tracking-tight">
+          <h2 className="font-serif text-2xl md:text-display leading-[1.02] font-light tracking-tight">
             Un email. Cero <span className="italic text-gold">ruido</span>.
           </h2>
           <p className="mt-4 text-sm md:text-base text-muted-foreground">

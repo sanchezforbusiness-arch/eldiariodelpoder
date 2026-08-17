@@ -16,7 +16,7 @@ export function AboutTeaser() {
               text="Dos hosts. Una conversación."
               goldWords={["conversación"]}
               italicWords={["conversación"]}
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] md:leading-[1.02] font-light tracking-tight"
+              className="font-serif text-2xl sm:text-2xl md:text-display lg:text-display leading-[1.05] md:leading-[1.02] font-light tracking-tight"
             />
             <p className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
               Sin guion, sin prisas. Con quienes están dejando huella.
