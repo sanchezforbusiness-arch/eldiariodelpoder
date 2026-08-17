@@ -27,7 +27,7 @@ export function Publications() {
       <div className="container-ddp relative">
         <div className="max-w-2xl mx-auto text-center">
             <span className="eyebrow block mb-6">Newsletter</span>
-            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[1.02] font-light tracking-tight">
+            <h2 className="text-2xl md:text-display lg:text-display leading-[1.02] font-medium tracking-tight">
               Newsletter.
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -35,8 +35,8 @@ export function Publications() {
             </p>
 
           {sent ? (
-            <div className="mt-10 inline-flex items-center gap-3 border border-gold/50 bg-card/40 px-6 py-4">
-              <Check size={18} className="text-gold" />
+            <div className="mt-10 inline-flex items-center gap-3 border border-border bg-card/40 px-6 py-4">
+              <Check size={18} className="text-foreground" />
               <span className="text-sm">Gracias. Confirma en tu correo y te vemos dentro.</span>
             </div>
           ) : (
@@ -69,9 +69,9 @@ export function Publications() {
                     type="checkbox"
                     checked={accept}
                     onChange={(e) => setAccept(e.target.checked)}
-                    className="mt-0.5 accent-[var(--color-gold)]"
+                    className="mt-0.5 accent-[var(--color-foreground)]"
                   />
-                  <span>Acepto la <a href="#" className="underline hover:text-gold">política de privacidad</a>.</span>
+                  <span>Acepto la <a href="#" className="underline hover:text-signal">política de privacidad</a>.</span>
                 </label>
                 {err && <p className="mt-3 text-xs text-destructive text-left">{err}</p>}
               </form>

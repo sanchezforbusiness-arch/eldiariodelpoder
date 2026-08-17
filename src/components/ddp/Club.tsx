@@ -28,8 +28,8 @@ export function Club() {
 
         <div className="container-ddp relative z-10 py-24 md:py-32 w-full">
           <div className="max-w-4xl reveal">
-            <span className="eyebrow block mb-6 text-gold">El Club del Poder</span>
-            <h2 className="font-serif text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
+            <span className="eyebrow block mb-6 text-foreground">El Club del Poder</span>
+            <h2 className="text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
               Una <span className="italic shimmer-gold">comunidad real</span>.<br />
               No una agenda de contactos.
             </h2>
@@ -41,8 +41,8 @@ export function Club() {
             {/* Stats row */}
             <div className="mt-12 grid grid-cols-3 gap-4 md:gap-10 max-w-2xl reveal-stagger">
               {stats.map((s) => (
-                <div key={s.l} className="border-t border-gold/40 pt-4">
-                  <div className="font-serif text-2xl md:text-2xl text-gold">{s.k}</div>
+                <div key={s.l} className="border-t border-border pt-4">
+                  <div className="font-serif text-2xl md:text-2xl text-foreground">{s.k}</div>
                   <div className="mt-1 text-2xs tracking-label uppercase text-muted-foreground">{s.l}</div>
                 </div>
               ))}
@@ -64,11 +64,11 @@ export function Club() {
         <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-10 space-y-4 reveal">
           <div className="relative w-44 h-56 overflow-hidden hover-cinema drift-y">
             <img src={dialogos} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 ring-1 ring-gold/30" />
+            <div className="absolute inset-0 ring-1 ring-foreground/20" />
           </div>
           <div className="relative w-44 h-56 overflow-hidden hover-cinema ml-10">
             <img src={signing} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 ring-1 ring-gold/30" />
+            <div className="absolute inset-0 ring-1 ring-foreground/20" />
           </div>
         </div>
       </div>

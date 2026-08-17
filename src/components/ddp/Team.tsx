@@ -58,10 +58,10 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
       </div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-serif text-2xl md:text-lg leading-tight" itemProp="name">{m.name}</h3>
-          <p className="mt-1.5 text-2xs tracking-label uppercase text-gold" itemProp="jobTitle">{m.role}</p>
+          <h3 className="tracking-tight text-2xl md:text-lg leading-tight" itemProp="name">{m.name}</h3>
+          <p className="mt-1.5 text-2xs tracking-label uppercase text-foreground" itemProp="jobTitle">{m.role}</p>
         </div>
-        <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-gold transition-colors mt-2" itemProp="sameAs">
+        <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-signal transition-colors mt-2" itemProp="sameAs">
           <Linkedin size={18} />
         </a>
       </div>
@@ -69,7 +69,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
       {m.to && (
         <Link
           to={m.to}
-          className="mt-4 inline-block text-2xs tracking-label uppercase text-gold hover:underline"
+          className="mt-4 inline-block text-2xs tracking-label uppercase text-foreground hover:underline"
           itemProp="url"
         >
           Ver perfil
@@ -86,8 +86,8 @@ export function Team() {
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-7">
             <span className="eyebrow block mb-5">El equipo</span>
-            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[1.02] font-light">
-              El <span className="italic text-gold">equipo</span>.
+            <h2 className="tracking-tight text-2xl md:text-display lg:text-display leading-[1.02] font-medium">
+              El equipo.
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -95,12 +95,12 @@ export function Team() {
           </p>
         </div>
 
-        <div className="mb-8 text-2xs tracking-label uppercase text-gold/80">Fundadores</div>
+        <div className="mb-8 text-2xs tracking-label uppercase text-muted-foreground">Fundadores</div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {founders.map((m) => <Person key={m.name} m={m} />)}
         </div>
 
-        <div className="mt-20 mb-8 text-2xs tracking-label uppercase text-gold/80">Quienes nos guían</div>
+        <div className="mt-20 mb-8 text-2xs tracking-label uppercase text-muted-foreground">Quienes nos guían</div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {advisors.map((m) => <Person key={m.name} m={m} />)}
         </div>

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
@@ -103,7 +103,7 @@ function PatrocinadoresPage() {
         <Tiers />
         <Contact />
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }
@@ -125,13 +125,13 @@ function Hero() {
       <div className="container-ddp relative">
         <div className="max-w-4xl fade-up">
           <div className="flex items-center gap-4 mb-8">
-            <span className="h-px w-14 bg-gold/70" />
+            <span className="h-px w-14 bg-border" />
             <span className="eyebrow flex items-center gap-2">
               <span className="dot-gold" /> Patrocinadores
             </span>
           </div>
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-            Sé parte de la <span className="italic text-gold">conversación</span>.
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+            Sé parte de la conversación.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
             El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
@@ -160,16 +160,16 @@ function Pillars() {
             <span className="dot-gold mr-2" />
             Por qué DDP
           </span>
-          <h2 className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
-            Un entorno con <span className="italic text-gold">criterio</span>.
+          <h2 className="text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
+            Un entorno con criterio.
           </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
           {pillars.map((p) => (
             <div key={p.n} className="bg-background p-8 md:p-10">
-              <p className="text-2xs tracking-label uppercase text-gold/80 mb-5">{p.n}</p>
-              <h3 className="font-serif text-2xl md:text-2xl font-light leading-tight mb-4">
+              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-5">{p.n}</p>
+              <h3 className="tracking-tight text-2xl md:text-2xl font-medium leading-tight mb-4">
                 {p.t}
               </h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -192,8 +192,8 @@ function Tiers() {
             <span className="dot-gold mr-2" />
             Opciones de patrocinio
           </span>
-          <h2 className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
-            Tres formas de <span className="italic text-gold">conversar</span> con nuestra audiencia.
+          <h2 className="text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
+            Tres formas de conversar con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
             Diseñamos cada acuerdo a medida. Estas son las tres formas en las que solemos trabajar.
@@ -206,25 +206,25 @@ function Tiers() {
               key={t.name}
               className={`relative flex flex-col bg-background border p-8 md:p-10 hover-lift transition-colors ${
                 t.featured
-                  ? "border-gold/60"
-                  : "border-border hover:border-gold/40"
+                  ? "border-border"
+                  : "border-border hover:border-foreground/40"
               }`}
             >
               {t.featured && (
-                <span className="absolute top-0 right-0 -translate-y-1/2 bg-gold text-gold-foreground text-2xs tracking-label uppercase px-3 py-1">
+                <span className="absolute top-0 right-0 -translate-y-1/2 bg-foreground text-background text-2xs tracking-label uppercase px-3 py-1">
                   Más solicitado
                 </span>
               )}
-              <p className="text-2xs tracking-label uppercase text-gold/80 mb-3">
+              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-3">
                 {t.pitch}
               </p>
-              <h3 className="font-serif text-2xl md:text-display font-light mb-8">
+              <h3 className="tracking-tight text-2xl md:text-display font-medium mb-8">
                 {t.name}
               </h3>
               <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
                 {t.perks.map((p) => (
                   <li key={p} className="flex items-start gap-3">
-                    <Check size={14} className="text-gold mt-1 shrink-0" />
+                    <Check size={14} className="text-foreground mt-1 shrink-0" />
                     <span>{p}</span>
                   </li>
                 ))}
@@ -233,8 +233,8 @@ function Tiers() {
                 href="#contacto"
                 className={`group inline-flex items-center justify-between gap-3 w-full px-5 py-3.5 text-2xs tracking-label uppercase border transition-colors ${
                   t.featured
-                    ? "bg-gold text-gold-foreground border-gold hover:bg-gold-bright"
-                    : "border-foreground/25 text-foreground hover:border-gold hover:text-gold"
+                    ? "bg-foreground text-background border-foreground hover:bg-foreground/90"
+                    : "border-foreground/25 text-foreground hover:border-foreground/40 hover:text-signal"
                 }`}
               >
                 Solicitar info
@@ -262,8 +262,8 @@ function Contact() {
             <span className="dot-gold mr-2" />
             Hablemos
           </span>
-          <h2 className="font-serif text-2xl md:text-display leading-[1.0] font-light tracking-tight">
-            Tu marca, en conversaciones <span className="italic text-gold">que importan</span>.
+          <h2 className="text-2xl md:text-display leading-[1.0] font-medium tracking-tight">
+            Tu marca, en conversaciones que importan.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             Cuéntanos tu compañía y tus objetivos. Te respondemos en menos de 48 horas con una propuesta a medida.
@@ -284,7 +284,7 @@ function Contact() {
             </a>
             <a
               href="mailto:patrocinios@eldiariodelpoder.com"
-              className="text-sm text-muted-foreground hover:text-gold transition-colors"
+              className="text-sm text-muted-foreground hover:text-signal transition-colors"
             >
               patrocinios@eldiariodelpoder.com
             </a>

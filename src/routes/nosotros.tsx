@@ -6,7 +6,7 @@ import { Team } from "@/components/ddp/Team";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 const URL = "https://eldiariodelpoder.com/nosotros";
 
@@ -69,7 +69,7 @@ function NosotrosPage() {
         <div className="container-ddp pt-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-gold transition-colors"
+            className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors"
           >
             <ArrowLeft size={14} /> Volver
           </Link>
@@ -78,8 +78,8 @@ function NosotrosPage() {
         <header className="container-ddp pt-6 sm:pt-8 pb-12 md:pb-16 border-b border-border">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <div className="md:col-span-8">
-              <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-                Quiénes <span className="italic text-gold">somos</span>.
+              <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+                Quiénes somos.
               </h1>
             </div>
             <div className="md:col-span-4">
@@ -100,13 +100,13 @@ function NosotrosPage() {
                 <span className="eyebrow block mb-6">El porqué</span>
                 <p className="font-serif text-2xl sm:text-2xl md:text-display leading-[1.05] font-light tracking-tight">
                   Grabamos la conversación entera y la publicamos{" "}
-                  <span className="italic text-gold">sin recortes</span>.
+                  sin recortes.
                 </p>
               </div>
               <div className="md:col-span-4 md:justify-self-end reveal">
                 <Link
                   to="/manifiesto"
-                  className="group inline-flex items-center gap-3 text-2xs tracking-label uppercase text-gold border-b border-gold/40 pb-2 hover:border-gold transition-colors"
+                  className="group inline-flex items-center gap-3 text-2xs tracking-label uppercase text-foreground border-b border-border pb-2 hover:border-foreground/40 transition-colors"
                 >
                   Leer el manifiesto
                   <ArrowUpRight
@@ -123,7 +123,7 @@ function NosotrosPage() {
  <section className="border-t border-border py-16 md:py-24">
           <div className="container-ddp flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <p className="font-serif text-2xl md:text-2xl font-light tracking-tight">
-              Hecho en <span className="italic text-gold">Madrid</span>.
+              Hecho en Madrid.
             </p>
             <p className="mono-label">Diario del Poder · 2026</p>
           </div>
@@ -131,7 +131,7 @@ function NosotrosPage() {
 
         <Suspense fallback={null}>
           <Sponsors />
-          <Footer />
+          <FooterGrid />
         </Suspense>
       </main>
     </div>

@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { getGuestBySlug, guestList, type GuestEntry } from "@/data/podcast";
 import { guestImageBySlug } from "@/data/guestImages";
 
@@ -125,10 +125,10 @@ function GuestNotFound() {
     <div className="bg-background text-foreground min-h-screen">
       <Navbar />
       <main className="container-ddp pt-40 pb-24">
-        <h1 className="font-serif text-2xl font-light">No encontramos a ese invitado</h1>
+        <h1 className="tracking-tight text-2xl font-medium">No encontramos a ese invitado</h1>
         <Link to="/invitados" className="btn-outline mt-8 inline-flex">Ver todos los invitados</Link>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }
@@ -145,13 +145,13 @@ function GuestPage() {
         <article className="container-ddp">
           <nav aria-label="Migas de pan" className="text-2xs tracking-label uppercase text-muted-foreground">
             <Link to="/invitados" className="hover:text-foreground">Invitados</Link>
-            <span className="mx-2 text-gold/60">/</span>
-            <span className="text-gold/80">{guest.name}</span>
+            <span className="mx-2 text-muted-foreground">/</span>
+            <span className="text-muted-foreground">{guest.name}</span>
           </nav>
 
           <header className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end">
             <div>
-              <h1 className="font-serif text-2xl sm:text-display md:text-display leading-[0.98] font-light tracking-tight">
+              <h1 className="text-2xl sm:text-display md:text-display leading-[0.98] font-medium tracking-tight">
                 {guest.name}
               </h1>
               <p className="mt-4 font-serif text-base font-light text-muted-foreground">{guest.role}</p>
@@ -186,8 +186,8 @@ function GuestPage() {
 
           <section className="mt-12 md:mt-16 grid gap-10 md:grid-cols-[1.5fr_1fr]">
             <div>
-              <h2 className="font-serif text-2xl md:text-2xl font-light">
-                Resumen de la <span className="italic text-gold">conversación</span>
+              <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
+                Resumen de la conversación
               </h2>
               <div className="mt-6 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
                 {guest.summary.map((p) => (
@@ -215,7 +215,7 @@ function GuestPage() {
             </div>
 
             <aside className="panel rounded-sm p-6 h-fit">
-              <h2 className="text-2xs tracking-label uppercase text-gold/80">Temas</h2>
+              <h2 className="text-2xs tracking-label uppercase text-muted-foreground">Temas</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {guest.topics.map((t) => (
                   <li key={t} className="rounded-sm border border-border px-3 py-1.5 font-serif text-xs font-light text-muted-foreground">{t}</li>
@@ -225,12 +225,12 @@ function GuestPage() {
           </section>
 
  <section className="mt-16 md:mt-24 py-16 md:py-24 border-t border-border">
-            <h2 className="font-serif text-2xl md:text-2xl font-light">Más invitados</h2>
+            <h2 className="tracking-tight text-2xl md:text-2xl font-medium">Más invitados</h2>
             <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
               {others.map((g) => (
                 <li key={g.slug}>
                   <Link to="/invitados/$slug" params={{ slug: g.slug }} className="group block">
-                    <h3 className="font-serif text-xl leading-tight group-hover:text-gold transition-colors">{g.name}</h3>
+                    <h3 className="tracking-tight text-xl leading-tight group-hover:text-signal transition-colors">{g.name}</h3>
                     <p className="mt-1.5 font-serif text-xs font-light text-muted-foreground">{g.role}</p>
                   </Link>
                 </li>
@@ -239,7 +239,7 @@ function GuestPage() {
           </section>
         </article>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

@@ -15,7 +15,7 @@ export function TextBand() {
           {loop.map((w, i) => (
             <span key={i} className="flex items-center gap-10 text-band-item">
               <span>{w}</span>
-              <Star size={20} className="text-gold shrink-0" strokeWidth={1.25} />
+              <Star size={20} className="text-foreground shrink-0" strokeWidth={1.25} />
             </span>
           ))}
         </div>

@@ -6,7 +6,7 @@ import { Manifesto } from "@/components/ddp/Manifesto";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 export const Route = createFileRoute("/manifiesto")({
   head: () => ({
@@ -92,19 +92,19 @@ function ManifiestoPage() {
       <Navbar />
       <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-gold transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
         <header className="container-ddp pt-6 sm:pt-8 pb-2">
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-            Nuestro <span className="italic text-gold">manifiesto</span>
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+            Nuestro manifiesto
           </h1>
         </header>
         <Manifesto />
         <Suspense fallback={null}>
           <Sponsors />
-          <Footer />
+          <FooterGrid />
         </Suspense>
       </main>
     </div>

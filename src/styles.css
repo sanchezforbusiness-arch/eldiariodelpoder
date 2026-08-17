@@ -97,10 +97,6 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-signal: var(--signal);
-  /* Legacy aliases kept so existing pages keep compiling — now neutral. */
-  --color-gold: var(--foreground);
-  --color-gold-bright: var(--foreground);
-  --color-gold-foreground: var(--background);
   --color-ember: var(--signal);
   --color-ember-foreground: var(--foreground);
   --color-background-alt: var(--background-alt);
@@ -185,7 +181,6 @@
 
   .text-signal { color: var(--color-signal); }
   .bg-signal { background-color: var(--color-signal); }
-  .text-gold { color: var(--color-foreground); }
   .text-ember { color: var(--color-signal); }
   .bg-ember { background-color: var(--color-signal); }
   .border-ember { border-color: var(--color-signal); }
@@ -460,22 +455,6 @@
   white-space: nowrap;
   transition: border-color 400ms var(--ease), color 400ms var(--ease);
   &:hover { border-color: var(--color-foreground); }
-}
-
-@utility btn-gold-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: var(--text-2xs);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  padding: 10px 16px;
-  border-radius: 2px;
-  border: 1px solid var(--color-border);
-  color: var(--color-foreground);
-  transition: border-color 400ms var(--ease), color 400ms var(--ease);
-  &:hover { border-color: var(--color-signal); color: var(--color-signal); }
 }
 
 @utility btn-link {

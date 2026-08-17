@@ -53,11 +53,11 @@ export function Backstage() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Detrás de cámara</span>
-            <h2 className="font-serif text-2xl md:text-display lg:text-display leading-[0.98] font-light">
-              <span className="italic text-gold">Fuera de guion</span>.
+            <h2 className="tracking-tight text-2xl md:text-display lg:text-display leading-[0.98] font-medium">
+              Fuera de guion.
             </h2>
           </div>
-          <p className="text-2xs tracking-label uppercase text-gold/70 max-w-xs">
+          <p className="text-2xs tracking-label uppercase text-muted-foreground max-w-xs">
             Madrid · lo que pasa entre toma y toma
           </p>
         </div>
@@ -82,7 +82,7 @@ export function Backstage() {
                     className={`absolute inset-0 w-full h-full object-cover ${s.pos ?? "object-center"} grayscale-[0.2] transition-all duration-700`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                  <figcaption className="absolute inset-x-0 bottom-0 p-4 text-2xs md:text-2xs tracking-label uppercase text-gold/90">
+                  <figcaption className="absolute inset-x-0 bottom-0 p-4 text-2xs md:text-2xs tracking-label uppercase text-muted-foreground">
                     {s.caption}
                   </figcaption>
                 </figure>

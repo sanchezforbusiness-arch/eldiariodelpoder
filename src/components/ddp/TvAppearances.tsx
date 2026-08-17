@@ -8,8 +8,8 @@ export function TvAppearances() {
           <span className="eyebrow block mb-5">
             <span className="dot-gold mr-2" />En directo en televisión
           </span>
-          <h2 className="font-serif text-2xl md:text-display font-light leading-[1.05] tracking-tight">
-            Diario del Poder en <span className="italic text-gold">La Sexta, Antena 3 y Univision</span>
+          <h2 className="text-2xl md:text-display font-medium leading-[1.05] tracking-tight">
+            Diario del Poder en La Sexta, Antena 3 y Univision
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
             Nuestras entrevistas y apariciones en directo en algunos de los medios más vistos de
@@ -22,7 +22,7 @@ export function TvAppearances() {
           {tvAppearances.map((t) => (
             <li
               key={t.id}
-              className="overflow-hidden rounded-sm border border-border bg-card/30 hover:border-gold/50 transition-colors"
+              className="overflow-hidden rounded-sm border border-border bg-card/30 hover:border-foreground/40 transition-colors"
             >
               <figure>
                 <img
@@ -35,10 +35,10 @@ export function TvAppearances() {
                   className="aspect-video w-full object-cover"
                 />
                 <figcaption className="p-6 md:p-7">
-                  <p className="text-2xs tracking-label uppercase text-gold/90">
+                  <p className="text-2xs tracking-label uppercase text-muted-foreground">
                     {t.channel} · {t.program} · {t.country}
                   </p>
-                  <h3 className="mt-3 font-serif text-xl md:text-2xl leading-tight">{t.title}</h3>
+                  <h3 className="tracking-tight mt-3 text-xl md:text-2xl leading-tight">{t.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{t.caption}</p>
                 </figcaption>
               </figure>

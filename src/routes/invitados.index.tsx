@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import { guestList } from "@/data/podcast";
 
@@ -65,8 +65,8 @@ function InvitadosPage() {
       <Navbar />
       <main className="pt-24">
         <header className="container-ddp pt-6 sm:pt-8 pb-4">
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-            Nuestros <span className="italic text-gold">invitados</span>
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+            Nuestros invitados
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
             Expresidentes, CEOs, deportistas y periodistas que se han sentado en Diario del Poder
@@ -75,24 +75,24 @@ function InvitadosPage() {
         </header>
         <GuestsCarousel />
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-2xl md:text-2xl font-light mb-10">
-            Quién ha pasado por el <span className="italic text-gold">micrófono</span>
+          <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-10">
+            Quién ha pasado por el micrófono
           </h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9">
             {guestList.map((g) => (
               <li key={g.slug}>
                 <Link to="/invitados/$slug" params={{ slug: g.slug }} className="group block">
-                  <h3 className="font-serif text-xl md:text-2xl leading-tight group-hover:text-gold transition-colors">{g.name}</h3>
-                  <p className="mt-1.5 text-2xs tracking-label uppercase text-gold/80">{g.role}</p>
+                  <h3 className="tracking-tight text-xl md:text-2xl leading-tight group-hover:text-signal transition-colors">{g.name}</h3>
+                  <p className="mt-1.5 text-2xs tracking-label uppercase text-muted-foreground">{g.role}</p>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{g.bio}</p>
-                  <span className="mt-3 inline-block text-2xs tracking-label uppercase text-gold/70">Ver entrevista →</span>
+                  <span className="mt-3 inline-block text-2xs tracking-label uppercase text-muted-foreground">Ver entrevista →</span>
                 </Link>
               </li>
             ))}
           </ul>
         </section>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

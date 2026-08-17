@@ -8,7 +8,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { pressArticles } from "@/data/press";
 import { tvAppearances, SITE_URL } from "@/data/tv";
 
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 export const Route = createFileRoute("/prensa")({
   head: () => ({
@@ -107,33 +107,33 @@ function PrensaPage() {
       <Navbar />
       <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-gold transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
         <header className="container-ddp pt-6 sm:pt-8 pb-2">
-          <h1 className="font-serif text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-light tracking-tight">
-            Prensa & <span className="italic text-gold">medios</span>
+          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
+            Prensa & medios
           </h1>
         </header>
         <Press />
         <TvAppearances />
  <section className="container-ddp py-16 md:py-24 border-t border-border">
-          <h2 className="font-serif text-2xl md:text-2xl font-light mb-4">
-            Noticias publicadas sobre <span className="italic text-gold">Diario del Poder</span>
+          <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-4">
+            Noticias publicadas sobre Diario del Poder
           </h2>
           <p className="max-w-2xl text-muted-foreground leading-relaxed mb-10">
             Cobertura en medios españoles sobre el podcast y sus fundadores,{" "}
-            <Link to="/alejandro-sanchez-martinez" className="text-gold hover:underline">Alejandro Sánchez Martínez</Link>{" "}
+            <Link to="/alejandro-sanchez-martinez" className="text-foreground hover:underline">Alejandro Sánchez Martínez</Link>{" "}
             y{" "}
-            <Link to="/victor-hugo-gandarilla-de-andres" className="text-gold hover:underline">Víctor Hugo Gandarilla de Andrés</Link>.
+            <Link to="/victor-hugo-gandarilla-de-andres" className="text-foreground hover:underline">Víctor Hugo Gandarilla de Andrés</Link>.
           </p>
           <ul className="space-y-8 max-w-3xl">
             {pressArticles.map((a) => (
               <li key={a.url}>
-                <p className="text-2xs tracking-label uppercase text-gold/90 mb-2">{a.outlet}</p>
-                <h3 className="font-serif text-2xl md:text-2xl leading-tight">
-                  <a href={a.url} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
+                <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">{a.outlet}</p>
+                <h3 className="tracking-tight text-2xl md:text-2xl leading-tight">
+                  <a href={a.url} target="_blank" rel="noreferrer" className="hover:text-signal transition-colors">
                     {a.headline}
                   </a>
                 </h3>
@@ -143,7 +143,7 @@ function PrensaPage() {
           </ul>
         </section>
         <Suspense fallback={null}>
-          <Footer />
+          <FooterGrid />
         </Suspense>
       </main>
     </div>
