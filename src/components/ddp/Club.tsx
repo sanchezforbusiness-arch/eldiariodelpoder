@@ -64,11 +64,11 @@ export function Club() {
         <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-10 space-y-4 reveal">
           <div className="relative w-44 h-56 overflow-hidden hover-cinema drift-y">
             <img src={dialogos} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 ring-1 ring-gold/30" />
+            <div className="absolute inset-0 ring-1 ring-foreground/20" />
           </div>
           <div className="relative w-44 h-56 overflow-hidden hover-cinema ml-10">
             <img src={signing} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 ring-1 ring-gold/30" />
+            <div className="absolute inset-0 ring-1 ring-foreground/20" />
           </div>
         </div>
       </div>

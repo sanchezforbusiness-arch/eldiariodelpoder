@@ -28,7 +28,7 @@ export function Press() {
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full opacity-[0.08] blur-3xl"
-        style={{ background: "radial-gradient(circle, var(--color-gold) 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(circle, var(--color-foreground) 0%, transparent 60%)" }}
       />
 
       <div className="container-ddp">

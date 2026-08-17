@@ -48,7 +48,7 @@ export function Newsletter() {
               target="ddp-newsletter-frame"
               className="mt-10"
             >
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:shadow-[0_20px_40px_-30px_color-mix(in_oklab,var(--color-gold-bright)_50%,transparent)]">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:shadow-[0_20px_40px_-30px_color-mix(in_oklab,var(--color-foreground)_50%,transparent)]">
                 <input
                   type="email"
                   name="email"
@@ -67,7 +67,7 @@ export function Newsletter() {
                   type="checkbox"
                   checked={accept}
                   onChange={(e) => setAccept(e.target.checked)}
-                  className="mt-0.5 accent-[var(--color-gold)]"
+                  className="mt-0.5 accent-[var(--color-foreground)]"
                 />
                 <span>Acepto la <a href="#" className="underline hover:text-signal">política de privacidad</a>.</span>
               </label>

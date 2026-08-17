@@ -69,7 +69,7 @@ export function Publications() {
                     type="checkbox"
                     checked={accept}
                     onChange={(e) => setAccept(e.target.checked)}
-                    className="mt-0.5 accent-[var(--color-gold)]"
+                    className="mt-0.5 accent-[var(--color-foreground)]"
                   />
                   <span>Acepto la <a href="#" className="underline hover:text-signal">política de privacidad</a>.</span>
                 </label>

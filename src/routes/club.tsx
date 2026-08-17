@@ -115,7 +115,7 @@ function Hero() {
         <div className="hidden md:block md:col-span-5">
           <div className="relative aspect-[3/4] max-w-[360px] ml-auto overflow-hidden drift-y">
             <img src={portrait} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover ken-burns" />
-            <div className="absolute inset-0 ring-1 ring-gold/30" />
+            <div className="absolute inset-0 ring-1 ring-foreground/20" />
           </div>
         </div>
       </div>
