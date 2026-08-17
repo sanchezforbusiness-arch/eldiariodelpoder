@@ -437,6 +437,9 @@
 
   .split-word { display: inline-block; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
   .cv-auto { content-visibility: auto; contain-intrinsic-size: 800px; }
 
   /* Legacy no-ops from previous gold design */
