@@ -21,7 +21,7 @@ export function BrandsMarquee() {
   return (
  <section aria-label="Marcas colaboradoras" className="border-b border-border py-16 md:py-24">
       <div className="container-ddp">
-        <p className="mono-label">Colaboradores</p>
+        <p className="mono-label">Con quien trabajamos</p>
       </div>
       <div className="mask-fade-x mt-8 overflow-hidden md:mt-10">
         <div className="marquee items-center">

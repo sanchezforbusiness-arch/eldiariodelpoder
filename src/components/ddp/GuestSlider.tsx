@@ -37,9 +37,9 @@ export function GuestSlider() {
   return (
  <section id="invitados" aria-label="Invitados" className="border-b border-border py-16 md:py-24">
       <div className="container-ddp flex items-center justify-between gap-4">
-        <p className="mono-label">Han pasado por aquí</p>
+        <p className="mono-label">Quién se ha sentado</p>
         <Link to="/invitados" className="link-rule tap font-mono text-2xs uppercase tracking-label md:text-2xs">
-          Ver todos
+          Todos los invitados
         </Link>
       </div>
 

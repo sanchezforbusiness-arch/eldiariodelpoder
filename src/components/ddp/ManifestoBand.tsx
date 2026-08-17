@@ -34,7 +34,7 @@ export function ManifestoBand() {
 
         <Link
           to="/manifiesto"
-          className="link-rule reveal mt-14 inline-flex font-mono text-2xs uppercase tracking-label"
+          className="link-rule tap reveal mt-12 inline-flex items-center font-mono text-2xs uppercase tracking-label"
         >
           Leer el manifiesto
         </Link>

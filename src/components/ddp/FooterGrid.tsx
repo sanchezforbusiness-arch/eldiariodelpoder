@@ -45,7 +45,7 @@ export function FooterGrid() {
             <p className="mono-label">Contacto</p>
             <a
               href="mailto:redaccion@eldiariodelpoder.com"
-              className="link-rule mt-4 block break-all font-mono text-2xs"
+              className="link-rule tap mt-4 flex items-center break-all font-mono text-2xs"
             >
               redaccion@eldiariodelpoder.com
             </a>
@@ -54,10 +54,10 @@ export function FooterGrid() {
 
           <nav className="md:col-span-4">
             <p className="mono-label">Navegar</p>
-            <ul className="mt-4 grid grid-cols-2 gap-y-3">
+            <ul className="mt-2 grid grid-cols-2">
               {NAV.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-sm tracking-tight transition-colors hover:text-signal">
+                  <Link to={l.to} className="tap flex items-center text-sm tracking-tight transition-colors hover:text-signal">
                     {l.label}
                   </Link>
                 </li>
@@ -67,10 +67,10 @@ export function FooterGrid() {
 
           <div className="md:col-span-4">
             <p className="mono-label">Escuchar</p>
-            <ul className="mt-4 grid grid-cols-2 gap-y-3">
+            <ul className="mt-2 grid grid-cols-2">
               {SOCIAL.map(([label, href]) => (
                 <li key={label}>
-                  <a href={href} target="_blank" rel="noreferrer" className="text-sm tracking-tight transition-colors hover:text-signal">
+                  <a href={href} target="_blank" rel="noreferrer" className="tap flex items-center text-sm tracking-tight transition-colors hover:text-signal">
                     {label}
                   </a>
                 </li>

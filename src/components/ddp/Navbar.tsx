@@ -66,9 +66,6 @@ export function Navbar() {
           >
             Diario del Poder
           </Link>
-          <span className="mt-0.5 block truncate font-mono text-2xs uppercase tracking-label text-muted-foreground lg:text-2xs">
-            Media partner · La Vanguardia
-          </span>
         </div>
 
         <nav className="hidden items-center gap-10 lg:flex">
@@ -123,9 +120,6 @@ export function Navbar() {
             <Link to="/carta" className="btn-primary mt-8 w-full">
               Suscribirse a la carta
             </Link>
-            <p className="mt-8 font-mono text-2xs uppercase tracking-label text-muted-foreground">
-              Media partner · La Vanguardia
-            </p>
           </nav>
         </div>
       )}

@@ -4,6 +4,18 @@ import { useParallax } from "@/hooks/use-parallax";
 
 const ep = episodeList[1];
 
+const MONTHS = [
+  "enero", "febrero", "marzo", "abril", "mayo", "junio",
+  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+];
+
+function formatDateEs(iso?: string) {
+  const m = iso ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso) : null;
+  if (!m) return iso ?? "";
+  const [, y, mo, d] = m as unknown as [string, string, string, string];
+  return `${Number(d)} de ${MONTHS[Number(mo) - 1]} de ${y}`;
+}
+
 export function LatestEpisode() {
   const ref = useParallax(0.12);
   return (
@@ -28,7 +40,7 @@ export function LatestEpisode() {
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,10,10,0.9),rgba(10,10,10,0.15)_55%,transparent)]" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-12">
               <p className="mono-label text-signal">Último episodio</p>
-              <h2 className="mt-4 max-w-3xl text-xl font-medium leading-[0.94] tracking-tight sm:text-2xl lg:text-2xl">
+              <h2 className="mt-4 max-w-3xl text-xl font-medium leading-[0.94] tracking-tight sm:text-2xl md:hidden lg:block lg:text-2xl">
                 {ep.title}
               </h2>
             </div>
@@ -38,6 +50,9 @@ export function LatestEpisode() {
         <aside className="flex flex-col justify-between gap-10 border-t border-border p-6 md:p-12 lg:col-span-4 lg:border-l lg:border-t-0">
           <div>
             <p className="section-index">{ep.n}</p>
+            <h2 className="mt-4 hidden text-xl font-medium leading-[0.94] tracking-tight md:block lg:hidden">
+              {ep.title}
+            </h2>
             <p className="mt-6 text-2xl font-medium tracking-tight">{ep.guest}</p>
             <p className="mt-2 font-serif text-sm font-light text-muted-foreground">{ep.role}</p>
             <p className="prose-editorial mt-8 text-sm">{ep.description}</p>
@@ -46,15 +61,15 @@ export function LatestEpisode() {
             <dl className="grid grid-cols-2 gap-6 border-t border-border pt-6">
               <div>
                 <dt className="mono-label">Fecha</dt>
-                <dd className="mt-1 font-mono text-sm">{ep.date}</dd>
+                <dd className="mt-1 font-mono text-sm">{formatDateEs(ep.date)}</dd>
               </div>
               <div>
                 <dt className="mono-label">Duración</dt>
                 <dd className="mt-1 font-mono text-sm">{ep.duration}</dd>
               </div>
             </dl>
-            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule mt-8 inline-flex font-mono text-2xs uppercase tracking-label">
-              Escuchar la conversación
+            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule tap mt-6 inline-flex items-center font-mono text-2xs uppercase tracking-label">
+              Ver el episodio
             </a>
           </div>
         </aside>
