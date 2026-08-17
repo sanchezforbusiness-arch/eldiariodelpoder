@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
-import { getGuestBySlug, guestList, type GuestEntry } from "@/data/podcast";
+import { Masthead } from "@/components/ddp/Masthead";
+import { getGuestBySlug, guestList, episodeList, type GuestEntry } from "@/data/podcast";
+import { formatDateEs } from "@/lib/utils";
 import { guestImageBySlug } from "@/data/guestImages";
 
 const SITE = "https://eldiariodelpoder.com";
@@ -137,13 +139,20 @@ function GuestPage() {
   const { guest } = Route.useLoaderData() as { guest: GuestEntry };
   const img = guestImageBySlug[guest.slug];
   const others = guestList.filter((g) => g.slug !== guest.slug).slice(0, 6);
+  const episode = episodeList.find((e) => e.guestSlug === guest.slug);
+  const hasVideo = Boolean(guest.youtubeId);
 
   return (
     <div className="bg-background text-foreground">
       <Navbar />
       <main className="pt-28 md:pt-32">
         <article className="container-ddp">
-          <nav aria-label="Migas de pan" className="text-2xs tracking-label uppercase text-muted-foreground">
+          <Masthead
+            edition={episode ? `Nº ${episode.n}` : undefined}
+            date={episode?.date ? formatDateEs(episode.date) : undefined}
+          />
+
+          <nav aria-label="Migas de pan" className="mt-6 text-2xs tracking-label uppercase text-muted-foreground">
             <Link to="/invitados" className="hover:text-foreground">Invitados</Link>
             <span className="mx-2 text-muted-foreground">/</span>
             <span className="text-muted-foreground">{guest.name}</span>
@@ -163,7 +172,7 @@ function GuestPage() {
                 alt={`${guest.name}, ${guest.role}, en el podcast Diario del Poder`}
                 width={512}
                 height={640}
-                className="w-full max-w-[320px] aspect-[4/5] object-cover rounded-sm grayscale"
+                className="w-full max-w-[320px] aspect-[4/5] object-cover rounded-sm contrast-110"
               />
             )}
           </header>
@@ -184,7 +193,7 @@ function GuestPage() {
             </section>
           )}
 
-          <section className="mt-12 md:mt-16 grid gap-10 md:grid-cols-[1.5fr_1fr]">
+          <section className={`mt-12 md:mt-16 ${hasVideo ? "grid gap-10 md:grid-cols-[1.5fr_1fr]" : "max-w-[68ch]"}`}>
             <div>
               <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
                 Resumen de la conversación
@@ -205,6 +214,11 @@ function GuestPage() {
                     Ver en YouTube
                   </a>
                 )}
+                {episode && (
+                  <Link to="/episodios/$slug" params={{ slug: episode.slug }} className={guest.youtubeId ? "btn-outline" : "btn-primary"}>
+                    Ver el episodio
+                  </Link>
+                )}
                 {guest.externalUrl && (
                   <a className="btn-outline" href={guest.externalUrl} target="_blank" rel="noopener noreferrer">
                     Leer la entrevista
@@ -214,7 +228,7 @@ function GuestPage() {
               </div>
             </div>
 
-            <aside className="panel rounded-sm p-6 h-fit">
+            <aside className={`panel rounded-sm p-6 h-fit ${hasVideo ? "" : "mt-10"}`}>
               <h2 className="text-2xs tracking-label uppercase text-muted-foreground">Temas</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {guest.topics.map((t) => (

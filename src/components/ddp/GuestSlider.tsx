@@ -21,7 +21,7 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
           height={700}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 transition-[filter] duration-700 group-hover:grayscale-0"
+          className="absolute inset-0 h-full w-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.02]"
         />
       </div>
       <h3 className="mt-3 text-sm font-medium tracking-tight">{guest.name}</h3>

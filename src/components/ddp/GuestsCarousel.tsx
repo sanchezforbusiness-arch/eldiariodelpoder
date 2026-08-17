@@ -19,7 +19,7 @@ export function GuestsCarousel() {
         width={512}
         height={640}
         loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+        className="absolute inset-0 h-full w-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.02]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
