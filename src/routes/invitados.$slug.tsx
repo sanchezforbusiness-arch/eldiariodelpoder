@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { getGuestBySlug, guestList, type GuestEntry } from "@/data/podcast";
 import { guestImageBySlug } from "@/data/guestImages";
 
@@ -128,7 +128,7 @@ function GuestNotFound() {
         <h1 className="tracking-tight text-2xl font-medium">No encontramos a ese invitado</h1>
         <Link to="/invitados" className="btn-outline mt-8 inline-flex">Ver todos los invitados</Link>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }
@@ -239,7 +239,7 @@ function GuestPage() {
           </section>
         </article>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

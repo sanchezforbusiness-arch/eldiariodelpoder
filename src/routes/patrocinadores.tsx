@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
@@ -103,7 +103,7 @@ function PatrocinadoresPage() {
         <Tiers />
         <Contact />
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

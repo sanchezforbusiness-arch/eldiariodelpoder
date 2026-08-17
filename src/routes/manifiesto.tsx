@@ -6,7 +6,7 @@ import { Manifesto } from "@/components/ddp/Manifesto";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 export const Route = createFileRoute("/manifiesto")({
   head: () => ({
@@ -104,7 +104,7 @@ function ManifiestoPage() {
         <Manifesto />
         <Suspense fallback={null}>
           <Sponsors />
-          <Footer />
+          <FooterGrid />
         </Suspense>
       </main>
     </div>

@@ -6,7 +6,7 @@ import { Team } from "@/components/ddp/Team";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 const URL = "https://eldiariodelpoder.com/nosotros";
 
@@ -131,7 +131,7 @@ function NosotrosPage() {
 
         <Suspense fallback={null}>
           <Sponsors />
-          <Footer />
+          <FooterGrid />
         </Suspense>
       </main>
     </div>

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import { guestList } from "@/data/podcast";
 
@@ -92,7 +92,7 @@ function InvitadosPage() {
           </ul>
         </section>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

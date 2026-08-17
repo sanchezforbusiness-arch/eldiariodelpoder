@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podcast";
 
 const SITE = "https://eldiariodelpoder.com";
@@ -90,7 +90,7 @@ function EpisodeNotFound() {
         <h1 className="tracking-tight text-2xl font-medium">No encontramos ese episodio</h1>
         <Link to="/episodios" className="btn-outline mt-8 inline-flex">Ver todos los episodios</Link>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }
@@ -186,7 +186,7 @@ function EpisodePage() {
           </div>
         </article>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

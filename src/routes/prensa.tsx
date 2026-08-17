@@ -8,7 +8,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { pressArticles } from "@/data/press";
 import { tvAppearances, SITE_URL } from "@/data/tv";
 
-const Footer = lazy(() => import("@/components/ddp/Footer").then((m) => ({ default: m.Footer })));
+const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 export const Route = createFileRoute("/prensa")({
   head: () => ({
@@ -143,7 +143,7 @@ function PrensaPage() {
           </ul>
         </section>
         <Suspense fallback={null}>
-          <Footer />
+          <FooterGrid />
         </Suspense>
       </main>
     </div>

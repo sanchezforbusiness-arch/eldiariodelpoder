@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Plus, Minus, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import dialogos from "@/assets/bts-aznar-dialogos.webp";
 import signing from "@/assets/bts-signing-pen.webp";
@@ -85,7 +85,7 @@ function ClubPage() {
         <Apply />
         <FAQ />
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }

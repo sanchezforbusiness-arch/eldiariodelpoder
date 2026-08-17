@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Episodes } from "@/components/ddp/Episodes";
-import { Footer } from "@/components/ddp/Footer";
+import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import { episodeList } from "@/data/podcast";
 
@@ -98,7 +98,7 @@ function EpisodiosPage() {
           </ul>
         </section>
       </main>
-      <Footer />
+      <FooterGrid />
     </div>
   );
 }
