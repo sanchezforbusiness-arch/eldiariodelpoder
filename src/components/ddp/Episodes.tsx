@@ -74,7 +74,7 @@ export function Episodes() {
           </div>
         </a>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 reveal-stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 reveal-stagger">
           {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
               <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-card hover-lift">

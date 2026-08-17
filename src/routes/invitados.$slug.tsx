@@ -4,7 +4,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { Masthead } from "@/components/ddp/Masthead";
 import { getGuestBySlug, guestList, episodeList, type GuestEntry } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
-import { guestImageBySlug } from "@/data/guestImages";
+import { guestCardImageBySlug } from "@/data/guestImages";
 
 const SITE = "https://eldiariodelpoder.com";
 
