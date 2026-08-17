@@ -12,7 +12,8 @@ const MONTHS = [
 function formatDateEs(iso: string) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
   if (!m) return iso;
-  return `${Number(m[3])} de ${MONTHS[Number(m[2]) - 1]} de ${m[1]}`;
+  const [, y, mo, d] = m as unknown as [string, string, string, string];
+  return `${Number(d)} de ${MONTHS[Number(mo) - 1]} de ${y}`;
 }
 
 export function LatestEpisode() {
