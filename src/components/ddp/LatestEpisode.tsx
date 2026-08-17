@@ -1,20 +1,9 @@
 import { episodeList } from "@/data/podcast";
 import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import { useParallax } from "@/hooks/use-parallax";
+import { formatDateEs } from "@/lib/utils";
 
 const ep = episodeList[1];
-
-const MONTHS = [
-  "enero", "febrero", "marzo", "abril", "mayo", "junio",
-  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
-];
-
-function formatDateEs(iso?: string) {
-  const m = iso ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso) : null;
-  if (!m) return iso ?? "";
-  const [, y, mo, d] = m as unknown as [string, string, string, string];
-  return `${Number(d)} de ${MONTHS[Number(mo) - 1]} de ${y}`;
-}
 
 export function LatestEpisode() {
   const ref = useParallax(0.12);

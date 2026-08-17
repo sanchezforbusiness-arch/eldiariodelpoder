@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
+import { formatDateEs } from "@/lib/utils";
 import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podcast";
 
 const SITE = "https://eldiariodelpoder.com";
@@ -112,9 +113,9 @@ function EpisodePage() {
 
           <header className="mt-6 max-w-3xl">
             <p className="text-2xs tracking-label uppercase text-muted-foreground">
-              Episodio {ep.n}
-              {ep.date ? ` · ${ep.date}` : ""}
-              {ep.duration ? ` · ${ep.duration}` : ""}
+              {ep.date ? formatDateEs(ep.date) : ""}
+              {ep.date && ep.duration ? " · " : ""}
+              {ep.duration ?? ""}
             </p>
             <h1 className="mt-4 text-2xl sm:text-display md:text-display leading-[0.98] font-medium tracking-tight">
               {ep.title}
@@ -147,7 +148,7 @@ function EpisodePage() {
             </section>
           )}
 
-          <section className="mt-12 md:mt-16 max-w-3xl">
+          <section className="mt-12 md:mt-16 max-w-[68ch]">
             <h2 className="tracking-tight text-2xl md:text-2xl font-medium">
               De qué va la conversación
             </h2>
@@ -182,7 +183,7 @@ function EpisodePage() {
           </section>
 
           <div className="mt-16 md:mt-24 py-12 border-t border-border">
-            <Link to="/episodios" className="btn-outline inline-flex">Todos los episodios</Link>
+            <Link to="/episodios" className="link-rule tap inline-flex font-mono text-2xs uppercase tracking-label">Todos los episodios</Link>
           </div>
         </article>
       </main>
