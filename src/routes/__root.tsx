@@ -194,6 +194,13 @@ export const Route = createRootRoute({
         crossOrigin: "anonymous",
       },
       {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "/fonts/newsreader-var-latin.woff2",
+        crossOrigin: "anonymous",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
