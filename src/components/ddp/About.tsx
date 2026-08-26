@@ -9,7 +9,7 @@ const pillars = [
 
 export function About() {
   return (
- <section id="about" className="relative py-24 md:py-32 overflow-hidden border-t border-border">
+ <section id="about" className="relative py-16 md:py-32 overflow-hidden border-t border-border">
       <div className="container-ddp relative">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-stretch">
           <div className="md:col-span-6 reveal">

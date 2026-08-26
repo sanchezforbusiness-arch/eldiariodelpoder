@@ -89,7 +89,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
 
 export function Team() {
   return (
- <section id="team" className="py-24 md:py-32 border-t border-border">
+ <section id="team" className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-7">

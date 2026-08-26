@@ -26,7 +26,7 @@ export function Club() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
         <div className="gold-glow float-slow w-[600px] h-[600px] -bottom-40 -right-40 opacity-40" />
 
-        <div className="container-ddp relative z-10 py-24 md:py-32 w-full">
+        <div className="container-ddp relative z-10 py-16 md:py-32 w-full">
           <div className="max-w-4xl reveal">
             <span className="eyebrow block mb-6 text-foreground">El Club del Poder</span>
             <h2 className="text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">

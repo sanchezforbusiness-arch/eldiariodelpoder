@@ -153,7 +153,7 @@ function Hero() {
 
 function Pillars() {
   return (
- <section className="py-24 md:py-32 border-t border-border">
+ <section className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
           <span className="eyebrow block mb-4">
@@ -185,7 +185,7 @@ function Pillars() {
 
 function Tiers() {
   return (
- <section id="opciones" className="py-24 md:py-32 border-t border-border bg-background-alt">
+ <section id="opciones" className="py-16 md:py-32 border-t border-border bg-background-alt">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
           <span className="eyebrow block mb-4">
@@ -254,7 +254,7 @@ function Tiers() {
 
 function Contact() {
   return (
- <section id="contacto" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
+ <section id="contacto" className="relative py-16 md:py-32 border-t border-border overflow-hidden">
       <div className="gold-glow float-slow w-[460px] h-[460px] -bottom-40 left-1/2 -translate-x-1/2 opacity-30" />
       <div className="container-ddp relative">
         <div className="max-w-3xl mx-auto text-center reveal">

@@ -13,7 +13,7 @@ export function PartnerStrip() {
   return (
     <section
       aria-label="Media partner"
- className="border-b border-border py-16 md:py-24"
+ className="border-b border-border py-12 md:py-24"
     >
       <div className="container-ddp reveal-stagger flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <a
@@ -27,14 +27,15 @@ export function PartnerStrip() {
           <span className="text-foreground">La Vanguardia</span>
         </a>
 
-        <dl className="grid grid-cols-2 gap-x-8 gap-y-4 lg:flex lg:flex-wrap lg:items-baseline lg:gap-x-12">
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 lg:flex lg:flex-wrap lg:items-baseline lg:gap-x-12">
           {FIGURES.map((f) => (
-            <div key={f.l} className="flex min-w-0 items-baseline gap-3">
-              <dd className="tabular w-[4.5rem] shrink-0 font-mono text-xs tracking-tight md:text-base">{f.v}</dd>
-              <dt className="mono-label min-w-0 text-muted-foreground">{f.l}</dt>
+            <div key={f.l} className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
+              <dd className="tabular shrink-0 font-mono text-base tracking-tight sm:w-[4.5rem] md:text-base">{f.v}</dd>
+              <dt className="mono-label min-w-0 text-balance text-muted-foreground">{f.l}</dt>
             </div>
           ))}
         </dl>
+
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import { tvAppearances } from "@/data/tv";
 
 export function TvAppearances() {
   return (
- <section id="television" className="border-t border-border py-16 md:py-24">
+ <section id="television" className="border-t border-border py-12 md:py-24">
       <div className="container-ddp">
         <header className="reveal mb-10 md:mb-14 max-w-3xl">
           <span className="eyebrow block mb-5">

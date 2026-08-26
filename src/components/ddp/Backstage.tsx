@@ -48,7 +48,7 @@ export function Backstage() {
   const rowA = loop;
   const rowB = [...shots].reverse().concat([...shots].reverse());
   return (
- <section id="backstage" className="py-24 md:py-32 border-t border-border overflow-hidden">
+ <section id="backstage" className="py-16 md:py-32 border-t border-border overflow-hidden">
       <div className="container-ddp mb-8 md:mb-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
