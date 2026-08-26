@@ -74,7 +74,7 @@ function InvitadosPage() {
           </p>
         </header>
         <GuestsCarousel />
- <section className="container-ddp py-16 md:py-24 border-t border-border">
+ <section className="container-ddp py-12 md:py-24 border-t border-border">
           <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-10">
             Quién ha pasado por el micrófono
           </h2>

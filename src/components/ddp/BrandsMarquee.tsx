@@ -19,7 +19,7 @@ const BRANDS: Brand[] = [
 
 export function BrandsMarquee() {
   return (
- <section aria-label="Marcas colaboradoras" className="border-b border-border py-16 md:py-24">
+ <section aria-label="Marcas colaboradoras" className="border-b border-border py-12 md:py-24">
       <div className="container-ddp">
         <p className="mono-label">Con quien trabajamos</p>
       </div>

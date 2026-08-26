@@ -24,7 +24,7 @@ export function Sponsors() {
   };
 
   return (
- <section id="sponsors" className="py-24 md:py-32 border-t border-border">
+ <section id="sponsors" className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp space-y-20">
         <div>
           <div className="text-center mb-12">

@@ -3,7 +3,7 @@ import { episodeList } from "@/data/podcast";
 
 export function EpisodeIndex() {
   return (
- <section id="episodios" className="border-b border-border py-16 md:py-24">
+ <section id="episodios" className="border-b border-border py-12 md:py-24">
       <div className="container-ddp">
         <header className="reveal-stagger mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div className="flex gap-5 md:gap-8">

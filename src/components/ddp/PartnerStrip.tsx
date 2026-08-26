@@ -13,7 +13,7 @@ export function PartnerStrip() {
   return (
     <section
       aria-label="Media partner"
- className="border-b border-border py-16 md:py-24"
+ className="border-b border-border py-12 md:py-24"
     >
       <div className="container-ddp reveal-stagger flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <a
