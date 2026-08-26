@@ -2,6 +2,7 @@ import { Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import g8 from "@/assets/guest-8.webp";
 import inigo from "@/assets/advisor-inigo.webp";
+import jordiUrbea from "@/assets/jordi-urbea.png.asset.json";
 import alejandro from "@/assets/founder-alejandro.webp";
 import victor from "@/assets/founder-victor.webp";
 
@@ -38,6 +39,13 @@ const advisors = [
     bio: "Managing Partner de Paterberg y Lejeune. Asesora a family offices, consejos y grandes patrimonios.",
     img: inigo,
     ln: "https://www.linkedin.com/in/iñigo-rivero-iruretagoyena-88351b30",
+  },
+  {
+    name: "Jordi Urbea",
+    role: "Advisor · Comunicación & CEO de Ogilvy Spain",
+    bio: "CEO de Ogilvy Spain. Asesor en estrategia de marca, reputación y narrativa institucional para líderes globales.",
+    img: jordiUrbea.url,
+    ln: "https://www.linkedin.com/in/jordiurbea/",
   },
 ];
 
@@ -91,7 +99,7 @@ export function Team() {
             </h2>
           </div>
           <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">
-            Dos fundadores. Dos asesores. Hecho en Madrid.
+            Dos fundadores. Tres asesores. Hecho en Madrid.
           </p>
         </div>
 
@@ -101,7 +109,7 @@ export function Team() {
         </div>
 
         <div className="mt-20 mb-8 text-2xs tracking-label uppercase text-muted-foreground">Quienes nos guían</div>
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-10">
           {advisors.map((m) => <Person key={m.name} m={m} />)}
         </div>
       </div>
