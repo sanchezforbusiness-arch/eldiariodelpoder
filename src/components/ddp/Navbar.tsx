@@ -88,9 +88,6 @@ export function Navbar() {
           <Link to="/patrocinadores" className="font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors hover:text-foreground">
             Patrocinadores
           </Link>
-          <Link to="/carta" className="btn-outline btn-sm">
-            La carta
-          </Link>
         </div>
 
         <button
@@ -117,9 +114,6 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <Link to="/carta" className="btn-primary mt-8 w-full">
-              Suscribirse a la carta
-            </Link>
           </nav>
         </div>
       )}

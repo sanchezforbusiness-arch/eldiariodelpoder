@@ -9,7 +9,6 @@ import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
 import { useReveal } from "@/hooks/use-reveal";
 
 const ManifestoBand = lazy(() => import("@/components/ddp/ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
-const NewsletterMinimal = lazy(() => import("@/components/ddp/NewsletterMinimal").then((m) => ({ default: m.NewsletterMinimal })));
 const FaqBand = lazy(() => import("@/components/ddp/FaqBand").then((m) => ({ default: m.FaqBand })));
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
@@ -47,9 +46,6 @@ function Index() {
         <div className="cv-auto">
           <Suspense fallback={<div aria-hidden style={{ minHeight: 560, contain: "layout paint" }} />}>
             <ManifestoBand />
-          </Suspense>
-          <Suspense fallback={<div aria-hidden style={{ minHeight: 360, contain: "layout paint" }} />}>
-            <NewsletterMinimal />
           </Suspense>
           <Suspense fallback={<div aria-hidden style={{ minHeight: 420, contain: "layout paint" }} />}>
             <FaqBand />
