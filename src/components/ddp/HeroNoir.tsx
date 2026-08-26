@@ -66,9 +66,6 @@ export function HeroNoir() {
                 <a href="#ultimo" className="btn-primary w-full sm:w-auto">
                   Ver el episodio
                 </a>
-                <a href="#newsletter" className="btn-outline w-full sm:w-auto">
-                  Recibir la carta
-                </a>
               </div>
             </div>
           </div>
