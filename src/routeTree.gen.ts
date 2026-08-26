@@ -15,7 +15,6 @@ import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as ClubRouteImport } from './routes/club'
-import { Route as CartaRouteImport } from './routes/carta'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as IndexRouteImport } from './routes/index'
@@ -53,11 +52,6 @@ const ManifiestoRoute = ManifiestoRouteImport.update({
 const ClubRoute = ClubRouteImport.update({
   id: '/club',
   path: '/club',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CartaRoute = CartaRouteImport.update({
-  id: '/carta',
-  path: '/carta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlejandroSanchezMartinezRoute =
@@ -101,7 +95,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
-  '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
@@ -117,7 +110,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
-  '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
@@ -134,7 +126,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
-  '/carta': typeof CartaRoute
   '/club': typeof ClubRoute
   '/manifiesto': typeof ManifiestoRoute
   '/nosotros': typeof NosotrosRoute
@@ -152,7 +143,6 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
-    | '/carta'
     | '/club'
     | '/manifiesto'
     | '/nosotros'
@@ -168,7 +158,6 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
-    | '/carta'
     | '/club'
     | '/manifiesto'
     | '/nosotros'
@@ -184,7 +173,6 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
-    | '/carta'
     | '/club'
     | '/manifiesto'
     | '/nosotros'
@@ -201,7 +189,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgendaRoute: typeof AgendaRoute
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
-  CartaRoute: typeof CartaRoute
   ClubRoute: typeof ClubRoute
   ManifiestoRoute: typeof ManifiestoRoute
   NosotrosRoute: typeof NosotrosRoute
@@ -256,13 +243,6 @@ declare module '@tanstack/react-router' {
       path: '/club'
       fullPath: '/club'
       preLoaderRoute: typeof ClubRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/carta': {
-      id: '/carta'
-      path: '/carta'
-      fullPath: '/carta'
-      preLoaderRoute: typeof CartaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/alejandro-sanchez-martinez': {
@@ -321,7 +301,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgendaRoute: AgendaRoute,
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
-  CartaRoute: CartaRoute,
   ClubRoute: ClubRoute,
   ManifiestoRoute: ManifiestoRoute,
   NosotrosRoute: NosotrosRoute,

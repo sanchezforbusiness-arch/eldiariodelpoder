@@ -223,7 +223,6 @@ function GuestPage() {
                       Leer la entrevista
                     </a>
                   )}
-                  <Link to="/carta" className="btn-outline">Recibir la carta</Link>
                 </div>
               </div>
 
@@ -258,7 +257,6 @@ function GuestPage() {
                       Leer la entrevista
                     </a>
                   )}
-                  <Link to="/carta" className="btn-outline">Recibir la carta</Link>
                 </div>
               </div>
 
