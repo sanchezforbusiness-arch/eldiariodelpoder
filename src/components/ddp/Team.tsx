@@ -109,7 +109,7 @@ export function Team() {
         </div>
 
         <div className="mt-20 mb-8 text-2xs tracking-label uppercase text-muted-foreground">Quienes nos guían</div>
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-10">
           {advisors.map((m) => <Person key={m.name} m={m} />)}
         </div>
       </div>
