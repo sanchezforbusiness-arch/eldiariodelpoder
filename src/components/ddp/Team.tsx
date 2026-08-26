@@ -40,6 +40,13 @@ const advisors = [
     img: inigo,
     ln: "https://www.linkedin.com/in/iñigo-rivero-iruretagoyena-88351b30",
   },
+  {
+    name: "Jordi Urbea",
+    role: "Advisor · Comunicación & CEO de Ogilvy Spain",
+    bio: "CEO de Ogilvy Spain. Asesor en estrategia de marca, reputación y narrativa institucional para líderes globales.",
+    img: jordiUrbea.url,
+    ln: "https://www.linkedin.com/in/jordiurbea/",
+  },
 ];
 
 function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string; to?: string } }) {
