@@ -2,6 +2,7 @@ import { Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import g8 from "@/assets/guest-8.webp";
 import inigo from "@/assets/advisor-inigo.webp";
+import jordiUrbea from "@/assets/jordi-urbea.png.asset.json";
 import alejandro from "@/assets/founder-alejandro.webp";
 import victor from "@/assets/founder-victor.webp";
 
