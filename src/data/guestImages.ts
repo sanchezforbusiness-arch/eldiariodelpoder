@@ -26,6 +26,7 @@ export const guestImageBySlug: Record<string, string> = {
   "daniela-macarena": danielaAsset.url,
   "marcos-de-quinto": marcosAsset.url,
   "sonsoles-onega": sonsolesAsset.url,
+  "massimiliano-squillace": massimilianoAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
