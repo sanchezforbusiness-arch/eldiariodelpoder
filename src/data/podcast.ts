@@ -285,6 +285,17 @@ export const guestList: GuestEntry[] = [
       "Hablamos de cómo se prepara un directo, de la disciplina de escribir novelas en paralelo y de lo que la exposición pública te quita.",
     ],
   },
+  {
+    slug: "massimiliano-squillace",
+    name: "Massimiliano Squillace",
+    role: "CEO y fundador de Contents.com",
+    bio: "Emprendedor, inversor y mentor de startups. Construye la próxima ola de la IA.",
+    topics: ["IA", "Contents.com", "emprendimiento", "inversión", "startups"],
+    summary: [
+      "Massimiliano Squillace fundó Contents.com, la plataforma de generación de contenidos multilingüe impulsada por inteligencia artificial.",
+      "Con más de 50 inversiones a sus espaldas y una trayectoria de exited founder, hablamos de cómo se construye una startup escalable, qué aprendió vendiendo una compañía y por qué cree que la IA va a redefinir cómo se produce el conocimiento.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
