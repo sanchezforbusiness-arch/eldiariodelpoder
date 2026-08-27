@@ -102,7 +102,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-background lg:hidden">
+        <div className="fixed inset-x-0 top-14 z-40 h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain bg-background lg:hidden">
           <nav className="container-ddp safe-b flex flex-col pt-8">
             {[...links, ...secondary].map((l, i) => (
               <Link
