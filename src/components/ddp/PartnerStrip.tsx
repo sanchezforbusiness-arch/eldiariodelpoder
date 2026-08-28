@@ -27,10 +27,10 @@ export function PartnerStrip() {
           <span className="text-foreground">La Vanguardia</span>
         </a>
 
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 lg:flex lg:flex-wrap lg:items-baseline lg:gap-x-12">
+        <dl className="grid grid-cols-1 gap-x-8 gap-y-5 min-[480px]:grid-cols-2 md:flex md:flex-wrap md:items-baseline md:gap-x-10 lg:gap-x-12">
           {FIGURES.map((f) => (
-            <div key={f.l} className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-              <dd className="tabular shrink-0 font-mono text-base tracking-tight sm:w-[4.5rem] md:text-base">{f.v}</dd>
+            <div key={f.l} className="flex min-w-0 flex-col gap-1 md:flex-row md:items-baseline md:gap-3">
+              <dd className="tabular font-mono text-base tracking-tight">{f.v}</dd>
               <dt className="mono-label min-w-0 text-balance text-muted-foreground">{f.l}</dt>
             </div>
           ))}
