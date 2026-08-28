@@ -1,26 +1,26 @@
+import { Link } from "@tanstack/react-router";
 import { episodeList } from "@/data/podcast";
-import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import { useParallax } from "@/hooks/use-parallax";
 import { formatDateEs } from "@/lib/utils";
 
-const ep = episodeList[1];
+/** episodeList ya viene ordenada por fecha descendente. */
+const ep = episodeList[0];
 
 export function LatestEpisode() {
   const ref = useParallax(0.12);
   return (
     <section id="ultimo" className="relative border-b border-border">
       <div className="grid lg:grid-cols-12">
-        <a
-          href={ep.url}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to="/episodios/$slug"
+          params={{ slug: ep.slug }}
           data-cursor="view"
           className="group relative block overflow-hidden lg:col-span-8"
         >
           <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[80svh]">
             <img
               ref={ref}
-              src={andresImg}
+              src={ep.image}
               alt={`${ep.guest} — ${ep.title}`}
               loading="lazy"
               decoding="async"
@@ -34,7 +34,7 @@ export function LatestEpisode() {
               </h2>
             </div>
           </div>
-        </a>
+        </Link>
 
         <aside className="flex flex-col justify-between gap-10 border-t border-border p-6 md:p-12 lg:col-span-4 lg:border-l lg:border-t-0">
           <div>
@@ -57,9 +57,9 @@ export function LatestEpisode() {
                 <dd className="mt-1 font-mono text-sm">{ep.duration}</dd>
               </div>
             </dl>
-            <a href={ep.url} target="_blank" rel="noreferrer" className="link-rule tap mt-6 inline-flex items-center font-mono text-2xs uppercase tracking-label">
+            <Link to="/episodios/$slug" params={{ slug: ep.slug }} className="link-rule tap mt-6 inline-flex items-center font-mono text-2xs uppercase tracking-label">
               Ver el episodio
-            </a>
+            </Link>
           </div>
         </aside>
       </div>

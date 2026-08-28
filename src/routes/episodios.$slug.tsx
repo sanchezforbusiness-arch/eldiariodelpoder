@@ -58,7 +58,7 @@ export const Route = createFileRoute("/episodios/$slug")({
             description,
             url,
             inLanguage: "es-ES",
-            episodeNumber: Number(ep.n),
+            episodeNumber: ep.episodeNumber,
             ...(ep.date ? { datePublished: ep.date } : {}),
             partOfSeries: { "@type": "PodcastSeries", name: "Diario del Poder", url: `${SITE}/` },
             actor: { "@type": "Person", name: ep.guest, ...(ep.role ? { jobTitle: ep.role } : {}) },

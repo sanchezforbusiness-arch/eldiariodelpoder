@@ -1,5 +1,18 @@
+import jordiJuanAssetEp from "@/assets/guest-jordi-juan.png.asset.json";
+import andresImg from "@/assets/bts-andres-rodriguez.webp";
+import lassoImg from "@/assets/bts-guillermo-lasso.webp";
+import aznarImg from "@/assets/bts-aznar-dialogos.webp";
+import echavarrenImg from "@/assets/guest-echavarren.webp";
+
+const jordiJuanImg = jordiJuanAssetEp.url;
+
 export type EpisodeEntry = {
+  /** Número de orden mostrado en la interfaz (calculado por fecha, 01 = más reciente) */
   n: string;
+  /** Número real y permanente del episodio en la serie (1 = el primero grabado) */
+  episodeNumber: number;
+  /** Imagen de portada del episodio */
+  image: string;
   /** URL slug: /episodios/<slug> */
   slug: string;
   /** ID del vídeo de YouTube del episodio, si está en el canal */
@@ -17,9 +30,10 @@ export type EpisodeEntry = {
   duration?: string;
 };
 
-export const episodeList: EpisodeEntry[] = [
+const episodesRaw: Omit<EpisodeEntry, "n">[] = [
   {
-    n: "01",
+    episodeNumber: 5,
+    image: jordiJuanImg,
     slug: "jordi-juan-la-teoria-de-los-cajones",
     youtubeId: "onHImjPIYJI",
     guestSlug: "jordi-juan",
@@ -34,7 +48,8 @@ export const episodeList: EpisodeEntry[] = [
       "El director de La Vanguardia explica cómo se dirige un periódico centenario en plena crisis de los medios, su método de los cajones para tomar decisiones y el futuro del periodismo en español.",
   },
   {
-    n: "02",
+    episodeNumber: 4,
+    image: andresImg,
     slug: "andres-rodriguez-forbes-lujo-y-poder",
     youtubeId: "nTtgtxG7UNs",
     guestSlug: "andres-rodriguez",
@@ -49,7 +64,8 @@ export const episodeList: EpisodeEntry[] = [
       "El presidente de Forbes España habla de construir un imperio editorial, del negocio del lujo y de qué separa a quien tiene dinero de quien tiene influencia.",
   },
   {
-    n: "03",
+    episodeNumber: 3,
+    image: lassoImg,
     slug: "guillermo-lasso-gobernar-en-crisis",
     youtubeId: "2XZuIBfyBH0",
     guestSlug: "guillermo-lasso",
@@ -64,7 +80,8 @@ export const episodeList: EpisodeEntry[] = [
       "El expresidente de Ecuador relata cómo se toman decisiones de Estado bajo presión, la reforma económica de su gobierno y el precio personal del poder.",
   },
   {
-    n: "04",
+    episodeNumber: 2,
+    image: aznarImg,
     slug: "jose-maria-aznar-liderar-un-pais",
     youtubeId: "ZydPM-xkYvA",
     guestSlug: "jose-maria-aznar",
@@ -79,7 +96,8 @@ export const episodeList: EpisodeEntry[] = [
       "El expresidente del Gobierno de España repasa el liderazgo político, la relación con Europa y Estados Unidos y los consejos que daría a la nueva generación.",
   },
   {
-    n: "05",
+    episodeNumber: 1,
+    image: echavarrenImg,
     slug: "mikel-echavarren-real-estate-ciclos",
     youtubeId: "ARO5S1I5cg8",
     transcript: [],
@@ -93,6 +111,11 @@ export const episodeList: EpisodeEntry[] = [
       "El CEO de Colliers España analiza los ciclos inmobiliarios, dónde está hoy el dinero inteligente y cómo leer el mercado antes de que gire.",
   },
 ];
+
+/** Ordenados por fecha descendente; el número visible se calcula, no se mantiene a mano. */
+export const episodeList: EpisodeEntry[] = [...episodesRaw]
+  .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
+  .map((e, i) => ({ ...e, n: String(i + 1).padStart(2, "0") }));
 
 export type GuestEntry = {
   /** URL slug: /invitados/<slug> */
