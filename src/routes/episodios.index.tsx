@@ -44,7 +44,7 @@ export const Route = createFileRoute("/episodios/")({
               description: e.description,
               url: `https://eldiariodelpoder.com/episodios/${e.slug}`,
               inLanguage: "es-ES",
-              episodeNumber: Number(e.n),
+              episodeNumber: e.episodeNumber,
               partOfSeries: {
                 "@type": "PodcastSeries",
                 name: "Diario del Poder",
