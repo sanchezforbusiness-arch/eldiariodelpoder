@@ -183,6 +183,34 @@ function Philosophy() {
 
 function Apply() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const send = useServerFn(submitClubApplication);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    setSending(true);
+    setError(null);
+    try {
+      await send({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          email: String(fd.get("email") ?? ""),
+          role: String(fd.get("role") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          about: String(fd.get("about") ?? ""),
+        },
+      });
+      setSubmitted(true);
+    } catch {
+      setError("No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a redaccion@eldiariodelpoder.com.");
+    } finally {
+      setSending(false);
+    }
+  }
+
   return (
  <section id="apply" className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp max-w-3xl">
@@ -195,24 +223,43 @@ function Apply() {
         </p>
 
         {submitted ? (
-          <div className="mt-10 border border-border bg-card/40 p-8">
+          <div className="mt-10 border border-border bg-card p-8">
             <p className="font-serif text-2xl">Gracias. Te hemos leído.</p>
             <p className="mt-2 text-sm text-muted-foreground">Te escribimos en 5–7 días.</p>
           </div>
         ) : (
-          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="mt-10 grid gap-5">
+          <form onSubmit={handleSubmit} className="mt-10 grid gap-5">
             <div className="grid md:grid-cols-2 gap-5">
-              <Field label="Nombre" name="name" required />
-              <Field label="Email" name="email" type="email" required />
-              <Field label="Empresa / cargo" name="role" required />
-              <Field label="Teléfono" name="phone" />
+              <Field label="Nombre" name="name" required autoComplete="name" />
+              <Field label="Email" name="email" type="email" required autoComplete="email" />
+              <Field label="Empresa / cargo" name="role" required autoComplete="organization-title" />
+              <Field label="Teléfono" name="phone" type="tel" autoComplete="tel" />
             </div>
             <div>
               <label htmlFor="club-about" className="block text-2xs tracking-label uppercase text-muted-foreground mb-2">Cuéntanos un poco sobre ti</label>
-              <textarea id="club-about" name="about" required rows={3} maxLength={500} className="input-line" />
+              <textarea id="club-about" name="about" required rows={3} minLength={10} maxLength={500} className="input-line" />
             </div>
-            <button type="submit" className="btn-primary justify-self-start">
-              Solicitar acceso
+
+            <label htmlFor="club-consent" className="flex items-start gap-3 text-sm text-muted-foreground">
+              <input
+                id="club-consent"
+                name="consent"
+                type="checkbox"
+                required
+                className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-signal)]"
+              />
+              <span>
+                He leído y acepto la{" "}
+                <a href="/privacidad" className="link-rule text-foreground">política de privacidad</a>.
+              </span>
+            </label>
+
+            {error && (
+              <p role="alert" className="text-sm text-signal">{error}</p>
+            )}
+
+            <button type="submit" disabled={sending} className="btn-primary justify-self-start disabled:opacity-60">
+              {sending ? "Enviando…" : "Solicitar acceso"}
               <ArrowUpRight size={14} />
             </button>
           </form>
