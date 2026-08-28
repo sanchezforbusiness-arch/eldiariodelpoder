@@ -1,6 +1,6 @@
 const FIGURES = [
   { v: "+500K", l: "Alcance mensual" },
-  { v: "4.000", l: "Comunidad" },
+  { v: "4.000", l: "Suscriptores de la carta" },
   { v: "+40", l: "Conversaciones grabadas" },
   { v: "2025", l: "Desde Madrid" },
 ];
