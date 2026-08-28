@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { submitClubApplication } from "@/lib/club.functions";
 import { Plus, Minus, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
@@ -269,11 +271,11 @@ function Apply() {
   );
 }
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+function Field({ label, name, type = "text", required, autoComplete }: { label: string; name: string; type?: string; required?: boolean; autoComplete?: string }) {
   return (
     <div>
       <label htmlFor={name} className="block text-2xs tracking-label uppercase text-muted-foreground mb-2">{label}</label>
-      <input id={name} name={name} type={type} required={required} maxLength={150} className="input-line" />
+      <input id={name} name={name} type={type} required={required} autoComplete={autoComplete} maxLength={150} className="input-line" />
     </div>
   );
 }
