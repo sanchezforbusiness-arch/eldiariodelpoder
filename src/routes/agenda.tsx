@@ -103,13 +103,26 @@ function BookingEmbed() {
     : BOOKING_URL;
 
   return (
-    <div className="panel overflow-hidden">
-      <iframe
-        src={src}
-        title="Reserva una llamada con Diario del Poder"
-        loading="lazy"
-        className="h-[680px] w-full border-0 md:h-[760px]"
-      />
-    </div>
+    <>
+      {/* Móvil: el embebido blanco rompe el diseño y va estrecho; mejor abrir la reserva directamente */}
+      <div className="panel flex flex-col items-start gap-6 p-8 md:hidden">
+        <p className="mono-label">Calendario</p>
+        <p className="text-lg font-medium leading-[1.15] tracking-tight">
+          El calendario se abre en una pestaña nueva, a pantalla completa.
+        </p>
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="btn-primary w-full justify-center">
+          Elegir día y hora
+        </a>
+      </div>
+
+      <div className="panel hidden overflow-hidden md:block">
+        <iframe
+          src={src}
+          title="Reserva una llamada con Diario del Poder"
+          loading="lazy"
+          className="h-[760px] w-full border-0"
+        />
+      </div>
+    </>
   );
 }
