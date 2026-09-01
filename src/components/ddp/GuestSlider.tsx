@@ -53,6 +53,21 @@ export function GuestSlider() {
         </Link>
       </div>
 
+      <div className="mt-6 overflow-hidden border-y border-border py-3 md:mt-8">
+        <div className="ticker" aria-hidden>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span
+              key={i}
+              className="font-serif text-xl font-light italic text-muted-foreground md:text-2xl"
+            >
+              Nuestros invitados
+              <span className="ml-10 text-signal not-italic">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+
       {/* Móvil: carrusel con anclaje, sin movimiento automático */}
       <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">
         {GUESTS.map((g) => (
