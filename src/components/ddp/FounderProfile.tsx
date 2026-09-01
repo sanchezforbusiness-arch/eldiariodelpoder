@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, Linkedin } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Globe, Linkedin } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { pressArticles } from "@/data/press";
@@ -10,12 +10,13 @@ export type FounderProfileProps = {
   role: string;
   img: string;
   linkedin: string;
+  website?: string;
   lead: string;
   paragraphs: string[];
   facts: { label: string; value: string }[];
 };
 
-export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, facts }: FounderProfileProps) {
+export function FounderProfile({ name, role, img, linkedin, website, lead, paragraphs, facts }: FounderProfileProps) {
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
@@ -33,14 +34,26 @@ export function FounderProfile({ name, role, img, linkedin, lead, paragraphs, fa
               {name}
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">{lead}</p>
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noreferrer me"
-              className="mt-8 inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
-            >
-              <Linkedin size={16} /> LinkedIn
-            </a>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noreferrer me"
+                className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
+              >
+                <Linkedin size={16} /> LinkedIn
+              </a>
+              {website && (
+                <a
+                  href={website}
+                  target="_blank"
+                  rel="me noreferrer"
+                  className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
+                >
+                  <Globe size={16} /> Web personal
+                </a>
+              )}
+            </div>
           </div>
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-card">

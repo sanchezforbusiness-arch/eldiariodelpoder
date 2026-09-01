@@ -50,6 +50,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
             url: URL,
             image: "https://eldiariodelpoder.com/og-alejandro.jpg",
             sameAs: [
+              "https://alejandrosanchezmartinez.com",
               "https://www.linkedin.com/in/alejandrosanchezmartinez",
               "https://www.youtube.com/@eldiariodelpoder",
               "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
@@ -113,18 +114,21 @@ function Page() {
       role="Co-fundador · Host"
       img={alejandro}
       linkedin="https://www.linkedin.com/in/alejandrosanchezmartinez"
+      website="https://alejandrosanchezmartinez.com"
       lead="Co-fundador y host de Diario del Poder. Entrevista a quienes toman las decisiones que nos afectan: expresidentes, CEOs y referentes internacionales."
       paragraphs={[
         "Alejandro Sánchez Martínez (Madrid, España) es co-fundador y host del podcast Diario del Poder, un formato de entrevistas largas en español con expresidentes de Gobierno, CEOs y grandes referentes empresariales y culturales.",
         "Es presidente de Kifaru Club y miembro de Nova 111, el ranking de jóvenes con mayor proyección de España. Su trabajo se centra en trasladar el criterio y el legado de quienes ya han llegado a la próxima generación.",
         "Ha entrevistado, entre otros, a José María Aznar, Guillermo Lasso, Esperanza Aguirre, Javier Tebas, Andrés Rodríguez (Forbes España), Jordi Juan (La Vanguardia) y Tomás Villén (Porsche España).",
         "Su trabajo con Diario del Poder ha tenido cobertura en La Vanguardia, Antena 3, La Sexta, El Español, Infobae, HuffPost, Voz Pópuli y Diario de Navarra.",
+        "Su trabajo, su trayectoria y su dosier de prensa completo están en su web personal, alejandrosanchezmartinez.com.",
       ]}
       facts={[
         { label: "Rol", value: "Co-fundador y host de Diario del Poder" },
         { label: "Base", value: "Madrid, España" },
         { label: "Cargos", value: "Presidente de Kifaru Club · Nova 111" },
         { label: "Temas", value: "Liderazgo, poder, empresa, legado" },
+        { label: "Web", value: "alejandrosanchezmartinez.com" },
         { label: "Contacto", value: "redaccion@eldiariodelpoder.com" },
       ]}
     />
