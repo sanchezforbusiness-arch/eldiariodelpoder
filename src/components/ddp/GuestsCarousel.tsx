@@ -31,18 +31,6 @@ export function GuestsCarousel() {
 
   return (
  <section id="guests" className="relative overflow-hidden border-t border-border bg-card/20 py-16 md:py-32">
-      <div className="container-ddp relative mb-10 md:mb-14">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
-            <span className="eyebrow mb-4 block">Invitados</span>
-            <h2 className="text-2xl leading-[0.95] tracking-tight">Voces que construyen.</h2>
-            <p className="mt-5 max-w-lg text-sm text-muted-foreground">
-              Gente que ha estado ahí. Y se sienta a contarlo.
-            </p>
-          </div>
-          <p className="mono-label max-w-[14rem]">Presidentes · CEOs · Fundadores</p>
-        </div>
-      </div>
 
       {/* Móvil: carrusel con anclaje, sin movimiento automático */}
       <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">

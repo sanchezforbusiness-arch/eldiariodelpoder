@@ -19,21 +19,6 @@ export function Episodes() {
   return (
  <section id="episodes" className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
-          <div>
-            <span className="eyebrow block mb-4"><span className="dot-gold mr-2" />Episodios</span>
-            <h2 className="text-2xl md:text-display lg:text-display leading-[1.02] font-medium tracking-tight">
-              Conversaciones recientes.
-            </h2>
-          </div>
-          <Link
-            to="/episodios"
-            className="group inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground/70 hover:text-signal transition-colors self-start md:self-end"
-          >
-            Ver todos
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </Link>
-        </div>
 
         {/* Featured episode */}
         <a
