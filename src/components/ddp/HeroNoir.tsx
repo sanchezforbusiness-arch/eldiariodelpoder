@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import heroStudio from "@/assets/hero-studio.webp";
+import { guestCardImageBySlug } from "@/data/guestImages";
 
 const LINES = ["La voz", "del legado."];
+
+const FACES = [
+  { slug: "jose-maria-aznar", name: "José María Aznar" },
+  { slug: "guillermo-lasso", name: "Guillermo Lasso" },
+  { slug: "marcos-de-quinto", name: "Marcos de Quinto" },
+  { slug: "sonsoles-onega", name: "Sonsoles Ónega" },
+];
 
 export function HeroNoir() {
   const [scrolled, setScrolled] = useState(0);
@@ -24,38 +33,59 @@ export function HeroNoir() {
   }, []);
 
   return (
-    <section id="top" className="relative min-h-[100dvh] border-b border-border grain">
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        style={{ transform: `scale(${1 + scrolled * 0.05})`, opacity: 1 - scrolled * 0.7 }}
-      >
-        <div className="absolute inset-0 bg-background" />
-        <img
-          src={heroStudio}
-          alt="Grabación de Diario del Poder en estudio"
-          width={1920}
-          height={1083}
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          className="absolute inset-0 h-full w-full grayscale contrast-110 opacity-80"
-          style={{ objectFit: "cover", objectPosition: "center" }}
-        />
-        <div className="absolute inset-0 bg-background/45" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
-      </div>
+    <section id="top" className="relative bg-background p-2 md:p-3">
+      <div className="relative min-h-[calc(100dvh-16px)] overflow-hidden rounded-sm border border-border grain md:min-h-[calc(100dvh-24px)]">
+        <div
+          className="pointer-events-none absolute inset-0 overflow-hidden"
+          style={{ transform: `scale(${1 + scrolled * 0.05})`, opacity: 1 - scrolled * 0.7 }}
+        >
+          <div className="absolute inset-0 bg-background" />
+          <img
+            src={heroStudio}
+            alt="Grabación de Diario del Poder en estudio"
+            width={1920}
+            height={1083}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 h-full w-full grayscale contrast-110 opacity-80"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+          <div className="absolute inset-0 bg-background/45" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        </div>
 
-      <div className="container-ddp safe-b relative z-10 flex min-h-[100dvh] flex-col justify-end pb-16 pt-32 md:pb-20 md:pt-40">
-        <div className="w-full">
-          <div>
+        <div className="container-ddp safe-b relative z-10 flex min-h-[calc(100dvh-16px)] flex-col justify-end pb-16 pt-32 md:min-h-[calc(100dvh-24px)] md:pb-20 md:pt-40">
+          <div className="w-full">
             <h1 className="type-hero font-sans font-medium">
-              {LINES.map((l, i) => (
-                <span key={l} className="line-mask">
-                  <span className="line-inner" style={{ "--i": i } as React.CSSProperties}>
-                    {l}
-                  </span>
+              <span className="line-mask">
+                <span className="line-inner" style={{ "--i": 0 } as React.CSSProperties}>
+                  {LINES[0]}
                 </span>
-              ))}
+              </span>
+              <span className="line-mask">
+                <span
+                  className="line-inner flex flex-wrap items-center gap-x-4"
+                  style={{ "--i": 1 } as React.CSSProperties}
+                >
+                  <span className="flex shrink-0 items-center">
+                    {FACES.map((f, i) => (
+                      <img
+                        key={f.slug}
+                        src={guestCardImageBySlug[f.slug]}
+                        alt={f.name}
+                        loading="lazy"
+                        decoding="async"
+                        width={96}
+                        height={96}
+                        className="h-[0.62em] w-[0.62em] rounded-sm border border-border object-cover"
+                        style={{ marginLeft: i === 0 ? 0 : "-0.18em", zIndex: FACES.length - i }}
+                      />
+                    ))}
+                  </span>
+                  {LINES[1]}
+                </span>
+              </span>
             </h1>
 
             <div className="mt-7 max-w-[46ch] md:mt-9">
@@ -66,6 +96,9 @@ export function HeroNoir() {
                 <a href="#ultimo" className="btn-primary w-full sm:w-auto">
                   Ver el episodio
                 </a>
+                <Link to="/invitados" className="btn-outline w-full sm:w-auto">
+                  Quién se ha sentado
+                </Link>
               </div>
             </div>
           </div>
