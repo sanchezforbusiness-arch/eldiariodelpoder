@@ -55,6 +55,7 @@ function Index() {
       <Suspense fallback={null}>
         <FooterGrid />
       </Suspense>
+      <FloatingCta />
     </div>
   );
 }
