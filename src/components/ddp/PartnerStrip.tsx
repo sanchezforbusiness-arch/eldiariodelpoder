@@ -11,31 +11,44 @@ const FIGURES = [
  */
 export function PartnerStrip() {
   return (
-    <section
-      aria-label="Media partner"
- className="border-b border-border py-12 md:py-24"
-    >
-      <div className="container-ddp reveal-stagger flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <a
-          href="https://www.lavanguardia.com"
-          target="_blank"
-          rel="noreferrer"
-          className="chip tap self-start"
-        >
-          <span className="text-signal">Media partner</span>
-          <span className="opacity-40">/</span>
-          <span className="text-foreground">La Vanguardia</span>
-        </a>
+    <section aria-label="Media partner" className="border-b border-border">
+      <div className="container-ddp reveal-stagger py-14 md:py-20">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-3">
+            <span className="mono-label">Media partner</span>
+            <a
+              href="https://www.lavanguardia.com"
+              target="_blank"
+              rel="noreferrer"
+              className="link-rule tap self-start font-serif text-lg tracking-tight md:text-xl"
+            >
+              La Vanguardia
+              <span aria-hidden className="text-signal">↗</span>
+            </a>
+          </div>
+          <p className="prose-editorial max-w-[38ch] text-sm text-muted-foreground md:text-right">
+            Conversaciones grabadas en Madrid y distribuidas sin recortes.
+          </p>
+        </div>
 
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-5 min-[480px]:grid-cols-2 md:flex md:flex-wrap md:items-baseline md:gap-x-10 lg:gap-x-12">
-          {FIGURES.map((f) => (
-            <div key={f.l} className="flex min-w-0 flex-col gap-1 md:flex-row md:items-baseline md:gap-3">
-              <dd className="tabular font-mono text-base tracking-tight">{f.v}</dd>
-              <dt className="mono-label min-w-0 text-balance text-muted-foreground">{f.l}</dt>
+        <dl className="mt-12 grid grid-cols-2 border-t border-border md:mt-16 md:grid-cols-4">
+          {FIGURES.map((f, i) => (
+            <div
+              key={f.l}
+              className={[
+                "flex flex-col gap-2 border-b border-border py-6 pr-4 md:border-b-0 md:py-8",
+                i % 2 === 1 ? "border-l pl-4 md:pl-6" : "",
+                "md:border-l md:pl-6",
+                i === 0 ? "md:border-l-0 md:pl-0" : "",
+              ].join(" ")}
+            >
+              <dd className="tabular font-sans text-xl font-medium leading-none tracking-tight md:text-2xl">
+                {f.v}
+              </dd>
+              <dt className="mono-label text-balance">{f.l}</dt>
             </div>
           ))}
         </dl>
-
       </div>
     </section>
   );
