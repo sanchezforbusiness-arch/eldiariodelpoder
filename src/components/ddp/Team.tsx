@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Globe, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import g8 from "@/assets/guest-8.webp";
 import inigo from "@/assets/advisor-inigo.webp";
@@ -13,6 +13,7 @@ const founders = [
     bio: "Host del podcast. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez (Forbes) o Tomás Villén (Porsche).",
     img: alejandro,
     ln: "https://www.linkedin.com/in/alejandrosanchezmartinez",
+    web: "https://alejandrosanchezmartinez.com",
     to: "/alejandro-sanchez-martinez",
   },
   {
@@ -49,7 +50,7 @@ const advisors = [
   },
 ];
 
-function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string; to?: string } }) {
+function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string; web?: string; to?: string } }) {
   return (
     <article className="group" itemScope itemType="https://schema.org/Person">
       <div className="relative aspect-[4/5] overflow-hidden bg-card mb-5">
@@ -69,9 +70,16 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
           <h3 className="tracking-tight text-2xl md:text-lg leading-tight" itemProp="name">{m.name}</h3>
           <p className="mt-1.5 text-2xs tracking-label uppercase text-foreground" itemProp="jobTitle">{m.role}</p>
         </div>
-        <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-signal transition-colors mt-2" itemProp="sameAs">
-          <Linkedin size={18} />
-        </a>
+        <div className="flex items-center gap-3 mt-2">
+          <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-signal transition-colors" itemProp="sameAs">
+            <Linkedin size={18} />
+          </a>
+          {m.web && (
+            <a href={m.web} target="_blank" rel="me noreferrer" aria-label={`Web personal de ${m.name}`} className="text-muted-foreground hover:text-signal transition-colors" itemProp="sameAs">
+              <Globe size={18} />
+            </a>
+          )}
+        </div>
       </div>
       <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-md" itemProp="description">{m.bio}</p>
       {m.to && (
