@@ -1,5 +1,4 @@
-import { Play, ArrowUpRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Play } from "lucide-react";
 import g1 from "@/assets/guest-1.webp";
 import g5 from "@/assets/guest-5.webp";
 import gEchavarren from "@/assets/guest-echavarren.webp";
