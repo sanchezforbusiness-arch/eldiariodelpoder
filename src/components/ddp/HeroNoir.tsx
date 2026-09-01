@@ -64,29 +64,31 @@ export function HeroNoir() {
                 </span>
               </span>
               <span className="line-mask">
-                <span
-                  className="line-inner flex flex-wrap items-center gap-x-4"
-                  style={{ "--i": 1 } as React.CSSProperties}
-                >
-                  <span className="flex shrink-0 items-center">
-                    {FACES.map((f, i) => (
-                      <img
-                        key={f.slug}
-                        src={guestCardImageBySlug[f.slug]}
-                        alt={f.name}
-                        loading="lazy"
-                        decoding="async"
-                        width={96}
-                        height={96}
-                        className="h-[0.62em] w-[0.62em] rounded-sm border border-border object-cover"
-                        style={{ marginLeft: i === 0 ? 0 : "-0.18em", zIndex: FACES.length - i }}
-                      />
-                    ))}
-                  </span>
+                <span className="line-inner" style={{ "--i": 1 } as React.CSSProperties}>
                   {LINES[1]}
                 </span>
               </span>
             </h1>
+
+            <div className="mt-6 flex items-center gap-3">
+              <span className="flex shrink-0 items-center">
+                {FACES.map((f, i) => (
+                  <img
+                    key={f.slug}
+                    src={guestCardImageBySlug[f.slug]}
+                    alt={f.name}
+                    loading="lazy"
+                    decoding="async"
+                    width={96}
+                    height={96}
+                    className="h-9 w-9 rounded-full border border-border object-cover md:h-10 md:w-10"
+                    style={{ marginLeft: i === 0 ? 0 : "-10px", zIndex: FACES.length - i }}
+                  />
+                ))}
+              </span>
+              <span className="mono-label">15 conversaciones publicadas</span>
+            </div>
+
 
             <div className="mt-7 max-w-[46ch] md:mt-9">
               <p className="prose-editorial">
