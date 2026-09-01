@@ -10,7 +10,6 @@ const links = [
 ] as const;
 
 const secondary = [
-  { to: "/club", label: "Club" },
   { to: "/patrocinadores", label: "Patrocinadores" },
   { to: "/agenda", label: "Agenda" },
 ] as const;
@@ -87,12 +86,6 @@ export function Navbar() {
         <div className="hidden items-center justify-end gap-6 lg:flex">
           <Link to="/patrocinadores" className="font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors hover:text-foreground">
             Patrocinadores
-          </Link>
-          <Link
-            to="/club"
-            className="rounded-sm border border-border px-4 py-2 font-mono text-2xs uppercase tracking-label text-foreground transition-colors duration-300 hover:border-foreground hover:bg-foreground hover:text-background"
-          >
-            Únete al club
           </Link>
         </div>
 

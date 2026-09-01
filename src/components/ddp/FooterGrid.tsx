@@ -4,7 +4,7 @@ const NAV = [
   { to: "/episodios", label: "Episodios" },
   { to: "/invitados", label: "Invitados" },
   { to: "/nosotros", label: "Nosotros" },
-  { to: "/club", label: "Club" },
+  
   { to: "/manifiesto", label: "Manifiesto" },
   { to: "/prensa", label: "Prensa" },
   { to: "/patrocinadores", label: "Patrocinadores" },
