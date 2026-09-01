@@ -1,6 +1,5 @@
 const FIGURES = [
   { v: "+500K", l: "Alcance mensual" },
-  { v: "4.000", l: "Suscriptores de la carta" },
   { v: "+40", l: "Conversaciones grabadas" },
   { v: "2025", l: "Desde Madrid" },
 ];
@@ -31,7 +30,7 @@ export function PartnerStrip() {
           </p>
         </div>
 
-        <dl className="mt-12 grid grid-cols-2 border-t border-border md:mt-16 md:grid-cols-4">
+        <dl className="mt-12 grid grid-cols-2 border-t border-border md:mt-16 md:grid-cols-3">
           {FIGURES.map((f, i) => (
             <div
               key={f.l}
