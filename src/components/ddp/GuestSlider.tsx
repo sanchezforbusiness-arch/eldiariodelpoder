@@ -25,7 +25,10 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
         />
       </div>
       <h3 className="mt-3 text-sm font-medium tracking-tight">{guest.name}</h3>
-      <p className="mt-1 font-serif text-xs font-light text-muted-foreground">{guest.role}</p>
+      <p className="mt-1 font-serif text-xs font-light italic text-muted-foreground">
+        «{guest.role}»
+      </p>
+
     </Link>
   );
 }
