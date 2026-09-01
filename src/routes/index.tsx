@@ -6,6 +6,7 @@ import { GuestSlider } from "@/components/ddp/GuestSlider";
 import { PartnerStrip } from "@/components/ddp/PartnerStrip";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
+import { FloatingCta } from "@/components/ddp/FloatingCta";
 import { useReveal } from "@/hooks/use-reveal";
 
 const ManifestoBand = lazy(() => import("@/components/ddp/ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
@@ -55,6 +56,7 @@ function Index() {
       <Suspense fallback={null}>
         <FooterGrid />
       </Suspense>
+      <FloatingCta />
     </div>
   );
 }
