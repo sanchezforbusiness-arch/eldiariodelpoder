@@ -66,7 +66,7 @@ export function HeroNoir() {
               </span>
               <span className="line-mask">
                 <span
-                  className="line-inner font-serif font-light italic"
+                  className="line-inner font-serif font-light"
                   style={{ "--i": 1 } as React.CSSProperties}
                 >
                   {LINES[1]}

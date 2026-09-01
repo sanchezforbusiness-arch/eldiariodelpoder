@@ -25,7 +25,7 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
         />
       </div>
       <h3 className="mt-3 text-sm font-medium tracking-tight">{guest.name}</h3>
-      <p className="mt-1 font-serif text-xs font-light italic text-muted-foreground">
+      <p className="mt-1 font-serif text-xs font-light text-muted-foreground">
         «{guest.role}»
       </p>
 
@@ -58,7 +58,7 @@ export function GuestSlider() {
           {Array.from({ length: 8 }).map((_, i) => (
             <span
               key={i}
-              className="font-serif text-xl font-light italic text-muted-foreground md:text-2xl"
+              className="font-serif text-xl font-light text-muted-foreground md:text-2xl"
             >
               Nuestros invitados
               <span className="ml-10 text-signal not-italic">·</span>
