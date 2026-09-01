@@ -25,7 +25,10 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
         />
       </div>
       <h3 className="mt-3 text-sm font-medium tracking-tight">{guest.name}</h3>
-      <p className="mt-1 font-serif text-xs font-light text-muted-foreground">{guest.role}</p>
+      <p className="mt-1 font-serif text-xs font-light text-muted-foreground">
+        «{guest.role}»
+      </p>
+
     </Link>
   );
 }
@@ -49,6 +52,21 @@ export function GuestSlider() {
           Todos los invitados
         </Link>
       </div>
+
+      <div className="mt-6 overflow-hidden border-y border-border py-3 md:mt-8">
+        <div className="ticker" aria-hidden>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span
+              key={i}
+              className="font-serif text-xl font-light text-muted-foreground md:text-2xl"
+            >
+              Nuestros invitados
+              <span className="ml-10 text-signal">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
 
       {/* Móvil: carrusel con anclaje, sin movimiento automático */}
       <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">

@@ -21,7 +21,7 @@ export function FaqBand() {
   return (
  <section className="border-b border-border py-16 md:py-32">
       <div className="container-ddp">
-        <h2 className="text-2xl leading-[0.95] tracking-tight">Preguntas frecuentes</h2>
+        <h2 className="font-serif text-2xl font-light leading-[0.95] tracking-tight">Preguntas frecuentes</h2>
         <dl className="mt-10 border-t border-border">
           {FAQ.map((f) => (
             <div key={f.q} className="grid gap-3 border-b border-border py-7 md:grid-cols-12 md:gap-8">
