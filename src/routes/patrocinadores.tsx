@@ -64,7 +64,7 @@ const tiers = [
     name: "Plata",
     pitch: "Presencia continuada",
     perks: [
-      "Logo en web y newsletter",
+      "Logo en web",
       "1 mención por episodio",
       "Materiales de prensa",
     ],
