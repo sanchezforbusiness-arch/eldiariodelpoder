@@ -22,7 +22,7 @@ export const Route = createFileRoute("/nosotros")({
       { property: "og:title", content: "Nosotros — Diario del Poder" },
       {
         property: "og:description",
-        content: "Dos fundadores, dos asesores y una conversación. Hecho en Madrid.",
+        content: "Dos fundadores, tres asesores y una conversación. Hecho en Madrid.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
@@ -84,7 +84,7 @@ function NosotrosPage() {
             </div>
             <div className="md:col-span-4">
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Dos fundadores, dos advisors. Un podcast hecho en Madrid.
+                Dos fundadores. Tres asesores. Hecho en Madrid.
               </p>
             </div>
           </div>

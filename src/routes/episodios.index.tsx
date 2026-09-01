@@ -79,7 +79,7 @@ function EpisodiosPage() {
         <Episodes />
  <section className="container-ddp py-12 md:py-24 border-t border-border">
           <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-10">
-            Todos los episodios
+            Archivo completo
           </h2>
           <div className="hairline" />
           <div className="mono-label hidden grid-cols-[64px_1.4fr_1fr_110px] gap-4 px-3 py-4 md:grid">

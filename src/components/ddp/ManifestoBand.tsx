@@ -11,11 +11,11 @@ const BLOCKS = [
 
 export function ManifestoBand() {
   return (
- <section className="invert-section border-b border-border py-20 md:py-40">
+ <section className="border-b border-border py-20 md:py-40">
       <div className="container-ddp">
         <h2 className="reveal font-serif text-2xl font-light leading-[0.95] tracking-tight">Manifiesto</h2>
 
-        <div aria-hidden className="rule-draw reveal mt-10 bg-[#E5342A]" />
+        <div aria-hidden className="rule-draw reveal mt-10 bg-signal" />
 
         <p className="reveal mt-10 max-w-[24ch] text-xl font-semibold leading-[1.1] tracking-tight md:text-2xl">
           {LEAD}

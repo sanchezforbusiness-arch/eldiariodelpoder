@@ -91,17 +91,7 @@ export function Team() {
   return (
  <section id="team" className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp">
-        <div className="grid md:grid-cols-12 gap-10 mb-16">
-          <div className="md:col-span-7">
-            <span className="eyebrow block mb-5">El equipo</span>
-            <h2 className="tracking-tight text-2xl md:text-display lg:text-display leading-[1.02] font-medium">
-              El equipo.
-            </h2>
-          </div>
-          <p className="md:col-span-5 self-end text-base md:text-lg text-muted-foreground leading-relaxed">
-            Dos fundadores. Tres asesores. Hecho en Madrid.
-          </p>
-        </div>
+
 
         <div className="mb-8 text-2xs tracking-label uppercase text-muted-foreground">Fundadores</div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
