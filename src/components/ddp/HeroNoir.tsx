@@ -86,7 +86,7 @@ export function HeroNoir() {
                   />
                 ))}
               </span>
-              <span className="mono-label">15 conversaciones publicadas</span>
+              <span className="mono-label">{guestList.length} invitados en la mesa</span>
             </div>
 
 
