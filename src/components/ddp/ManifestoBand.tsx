@@ -13,7 +13,7 @@ export function ManifestoBand() {
   return (
  <section className="invert-section border-b border-border py-20 md:py-40">
       <div className="container-ddp">
-        <h2 className="reveal text-2xl leading-[0.95] tracking-tight">Manifiesto</h2>
+        <h2 className="reveal font-serif text-2xl font-light italic leading-[0.95] tracking-tight">Manifiesto</h2>
 
         <div aria-hidden className="rule-draw reveal mt-10 bg-[#E5342A]" />
 
