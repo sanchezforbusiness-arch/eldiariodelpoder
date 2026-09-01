@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import heroStudio from "@/assets/hero-studio.webp";
 import { guestCardImageBySlug } from "@/data/guestImages";
+import { guestList } from "@/data/podcast";
 
 const LINES = ["La voz", "del legado."];
 
