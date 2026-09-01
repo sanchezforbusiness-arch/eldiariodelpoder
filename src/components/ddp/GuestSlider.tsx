@@ -61,7 +61,7 @@ export function GuestSlider() {
               className="font-serif text-xl font-light text-muted-foreground md:text-2xl"
             >
               Nuestros invitados
-              <span className="ml-10 text-signal not-italic">·</span>
+              <span className="ml-10 text-signal">·</span>
             </span>
           ))}
         </div>
