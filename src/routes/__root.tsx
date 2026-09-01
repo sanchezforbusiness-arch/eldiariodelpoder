@@ -127,14 +127,6 @@ const structuredData = {
             text: "Escribiendo a redaccion@eldiariodelpoder.com.",
           },
         },
-        {
-          "@type": "Question",
-          name: "¿Qué es el Club del Poder?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "El Club del Poder es una comunidad privada de jóvenes líderes vinculada al podcast Diario del Poder. El acceso es por invitación y candidatura.",
-          },
-        },
       ],
     },
   ],

@@ -87,7 +87,7 @@ const tiers = [
       "Todo lo anterior",
       "Presentación in-line en cada episodio",
       "Branded content de larga forma",
-      "Hospitalidad de marca en eventos del Club",
+      
     ],
   },
 ];
