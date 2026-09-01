@@ -65,11 +65,15 @@ export function HeroNoir() {
                 </span>
               </span>
               <span className="line-mask">
-                <span className="line-inner" style={{ "--i": 1 } as React.CSSProperties}>
+                <span
+                  className="line-inner font-serif font-light italic"
+                  style={{ "--i": 1 } as React.CSSProperties}
+                >
                   {LINES[1]}
                 </span>
               </span>
             </h1>
+
 
             <div className="mt-6 flex items-center gap-3">
               <span className="flex shrink-0 items-center">
