@@ -107,9 +107,7 @@ export function QuoteWall() {
         <div className="quote-wall mt-12 grid gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           <Column items={cols[0]} duration={52} />
           <Column items={cols[1]} reverse duration={64} />
-          <div className="hidden lg:block">
-            <Column items={cols[2]} duration={58} />
-          </div>
+          <Column items={cols[2]} duration={58} />
         </div>
       </div>
     </section>
