@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
-import { BrandMark } from "@/components/ddp/BrandsMarquee";
+import { BrandMark, BRANDS } from "@/components/ddp/BrandsMarquee";
 
-const sponsors: { name: string; tag: string; domain?: string }[] = [
-  { name: "NoBrainer Partners", tag: "M&A · Advisory" },
-  { name: "Le Jeune Asesores", tag: "Legal · Patrimonios" },
-  { name: "Pateberg", tag: "Capital privado" },
-  { name: "SenYours Consulting", tag: "Estrategia · Marca" },
-  { name: "Metalabs", tag: "Tecnología", domain: "metlabs.io" },
-];
+const sponsors = BRANDS;
 const partners = ["La Vanguardia"];
 
 export function Sponsors() {
