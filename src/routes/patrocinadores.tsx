@@ -152,19 +152,16 @@ function Pillars() {
  <section className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
-          <span className="eyebrow block mb-4">
-            <span className="dot-gold mr-2" />
-            Por qué DDP
-          </span>
-          <h2 className="text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
+          <span className="mono-label">Por qué DDP</span>
+          <h2 className="mt-4 text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
             Un entorno con criterio.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6 reveal-stagger">
           {pillars.map((p) => (
-            <div key={p.n} className="bg-background p-8 md:p-10">
-              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-5">{p.n}</p>
+            <div key={p.n} className="card-clean p-8 md:p-10">
+              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-5 tabular-nums">{p.n}</p>
               <h3 className="tracking-tight text-2xl md:text-2xl font-medium leading-tight mb-4">
                 {p.t}
               </h3>
