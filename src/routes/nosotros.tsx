@@ -5,7 +5,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Team } from "@/components/ddp/Team";
 import { useReveal } from "@/hooks/use-reveal";
 
-import { FortiusBand } from "@/components/ddp/FortiusBand";
+
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
@@ -94,7 +94,7 @@ function NosotrosPage() {
 
         <Team />
 
-        <FortiusBand />
+        
 
         {/* Manifiesto pull-quote — enlace, no duplicación */}
  <section className="border-t border-border py-16 md:py-32">

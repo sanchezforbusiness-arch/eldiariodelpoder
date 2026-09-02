@@ -6,7 +6,7 @@ import { GuestSlider } from "@/components/ddp/GuestSlider";
 import { PartnerStrip } from "@/components/ddp/PartnerStrip";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
-import { FortiusBand } from "@/components/ddp/FortiusBand";
+
 import { FloatingCta } from "@/components/ddp/FloatingCta";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -43,7 +43,7 @@ function Index() {
         <HeroNoir />
         <BrandsMarquee />
         <PartnerStrip />
-        <FortiusBand />
+        
         <LatestEpisode />
         <GuestSlider />
         <div className="cv-auto">
