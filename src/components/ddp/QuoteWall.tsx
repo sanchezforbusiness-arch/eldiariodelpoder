@@ -75,7 +75,7 @@ function split(items: Item[], n: number): Item[][] {
 function QuoteCardBody({ item }: { item: Item }) {
   return (
     <>
-      <p className="text-sm leading-relaxed text-foreground">
+      <p className="min-w-0 break-words text-sm leading-relaxed text-foreground">
         <em className="italic">“{item.line}”</em>
       </p>
       <div className="mt-5 flex items-center gap-3">
