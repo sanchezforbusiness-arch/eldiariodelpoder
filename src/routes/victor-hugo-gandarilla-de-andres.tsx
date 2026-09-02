@@ -126,7 +126,7 @@ function Page() {
         { label: "Base", value: "España" },
         { label: "Reconocimiento", value: "Top 10 España en Marketing y Comunicación (Nova 111)" },
         { label: "Formación", value: "Universidad de Navarra" },
-        { label: "Contacto", value: "redaccion@eldiariodelpoder.com" },
+        { label: "Contacto", value: "contacto@eldiariodelpoder.com" },
       ]}
     />
   );

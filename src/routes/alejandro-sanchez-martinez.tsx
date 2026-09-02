@@ -130,7 +130,7 @@ function Page() {
         { label: "Cargos", value: "Presidente de Kifaru Club · Nova 111" },
         { label: "Temas", value: "Liderazgo, poder, empresa, legado" },
         { label: "Web", value: "alejandrosanchezmartinez.com" },
-        { label: "Contacto", value: "redaccion@eldiariodelpoder.com" },
+        { label: "Contacto", value: "contacto@eldiariodelpoder.com" },
       ]}
     />
   );
