@@ -753,6 +753,7 @@ body {
       -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 92%, transparent);
               mask-image: linear-gradient(180deg, #000 0%, #000 92%, transparent);
     }
+    .quote-track { padding-top: 24px; }
   }
   .quote-track {
     display: flex;
