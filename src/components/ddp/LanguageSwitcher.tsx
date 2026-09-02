@@ -134,7 +134,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
               role="option"
               aria-selected={l.code === current}
               onClick={() => choose(l.code)}
-              className="flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left text-sm text-card-foreground transition-colors hover:bg-muted hover:text-card-foreground"
+              className="flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left text-sm text-foreground transition-colors hover:bg-background"
             >
               {l.label}
               {l.code === current && <Check size={14} className="text-signal" aria-hidden />}
