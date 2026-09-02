@@ -42,7 +42,7 @@ export function Sponsors() {
                 <span key={i} className="flex h-10 items-center gap-8 whitespace-nowrap px-8 md:gap-10 md:px-10">
                   <span className="flex items-center gap-3 opacity-70 transition-opacity duration-300 hover:opacity-100">
                     <BrandMark domain={s.domain} name={s.name} />
-                    <span className="text-lg font-medium tracking-tight">{s.name}</span>
+                    <span className="notranslate text-lg font-medium tracking-tight" translate="no">{s.name}</span>
                     <span className="text-2xs uppercase tracking-label text-muted-foreground">{s.tag}</span>
                   </span>
                   <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
@@ -86,7 +86,7 @@ export function Sponsors() {
           <p className="text-center text-2xs tracking-label uppercase text-muted-foreground mb-8">MEDIA PARTNERS</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {partners.map((p) => (
-              <span key={p} className="font-serif text-2xl md:text-2xl text-muted-foreground hover:text-signal transition-colors cursor-default">
+              <span key={p} className="notranslate font-serif text-2xl md:text-2xl text-muted-foreground hover:text-signal transition-colors cursor-default" translate="no">
                 {p}
               </span>
             ))}
