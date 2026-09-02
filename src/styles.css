@@ -654,7 +654,9 @@
     color: var(--color-background);
     transition-duration: 120ms;
   }
+}
 
+@layer utilities {
   /* --- Movimiento tipo Clay --- */
   .reveal, .reveal-stagger > * {
     opacity: 0;
@@ -667,9 +669,6 @@
   }
   .reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 360ms; }
   .reveal-stagger.is-visible > *:nth-child(8) { transition-delay: 420ms; }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal, .reveal-stagger > * { opacity: 1; transform: none; filter: none; transition: none; }
-  }
 
   /* Ritmo vertical Clay: tres valores, sin reglas divisorias */
   .section-pad { padding-block: 72px; }
@@ -688,7 +687,32 @@
   .media-zoom img { transition: transform 900ms var(--ease); will-change: transform; }
   .media-zoom:hover img { transform: scale(1.04); }
 
+  /* Respuesta táctil: todo lo pulsable se hunde un poco */
+  a:active, button:active, [role="button"]:active { transform: scale(0.985); }
+  a, button, [role="button"] { transition-property: transform, color, background-color, border-color, opacity, box-shadow; transition-duration: 300ms; transition-timing-function: var(--ease); }
+
+  /* Parallax y aparición ligados al scroll (progresivo, se ignora si no hay soporte) */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+      .media-zoom img, .parallax-scroll img {
+        animation: media-drift linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+    }
+  }
+  @keyframes media-drift {
+    from { transform: scale(1.06) translate3d(0, -1.8%, 0); }
+    to { transform: scale(1.06) translate3d(0, 1.8%, 0); }
+  }
+  .media-zoom:hover img { animation-play-state: paused; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-stagger > * { opacity: 1; transform: none; filter: none; transition: none; }
+    a:active, button:active, [role="button"]:active { transform: none; }
+  }
 }
+
 
 /* Google Translate: ocultar barra superior y tooltips del widget */
 .skiptranslate iframe,
