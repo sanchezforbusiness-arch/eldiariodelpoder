@@ -689,3 +689,18 @@
   .media-zoom:hover img { transform: scale(1.04); }
 
 }
+
+/* Google Translate: ocultar barra superior y tooltips del widget */
+.skiptranslate iframe,
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
