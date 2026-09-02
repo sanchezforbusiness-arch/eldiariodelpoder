@@ -31,7 +31,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "¿Cómo os escribo?",
-    a: "A redaccion@eldiariodelpoder.com: prensa, patrocinios o propuestas de invitados. Leemos todo y contestamos.",
+    a: "A contacto@eldiariodelpoder.com: prensa, patrocinios o propuestas de invitados. Leemos todo y contestamos.",
   },
 ];
 
