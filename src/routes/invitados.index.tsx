@@ -4,6 +4,7 @@ import { GuestsCarousel } from "@/components/ddp/GuestsCarousel";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import { guestList } from "@/data/podcast";
+import { guestCardImageBySlug, guestImageBySlug } from "@/data/guestImages";
 
 export const Route = createFileRoute("/invitados/")({
   head: () => ({
