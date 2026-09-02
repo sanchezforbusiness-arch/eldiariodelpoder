@@ -101,7 +101,7 @@ function InvitadosPage() {
                       </div>
                     )}
                     <div className="flex flex-1 flex-col p-6 md:p-7">
-                      <h3 className="text-xl leading-tight tracking-tight transition-colors group-hover:text-signal md:text-2xl">
+                      <h3 className="notranslate text-xl leading-tight tracking-tight transition-colors group-hover:text-signal md:text-2xl" translate="no">
                         {g.name}
                       </h3>
                       <p className="mt-1.5 text-2xs uppercase tracking-label text-muted-foreground">{g.role}</p>

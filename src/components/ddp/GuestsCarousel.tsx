@@ -23,7 +23,7 @@ export function GuestsCarousel() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-        <h3 className="tracking-tight text-lg leading-tight">{g.name}</h3>
+        <h3 className="notranslate tracking-tight text-lg leading-tight" translate="no">{g.name}</h3>
         <p className="mt-1.5 font-serif text-sm font-light text-muted-foreground">{g.role}</p>
       </div>
     </Link>

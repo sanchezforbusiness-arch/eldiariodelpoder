@@ -24,7 +24,7 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
           className="absolute inset-0 h-full w-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.02]"
         />
       </div>
-      <h3 className="mt-3 text-sm font-medium tracking-tight">{guest.name}</h3>
+      <h3 className="notranslate mt-3 text-sm font-medium tracking-tight" translate="no">{guest.name}</h3>
       <p className="mt-1 font-serif text-xs font-light text-muted-foreground">
         «{guest.role}»
       </p>
