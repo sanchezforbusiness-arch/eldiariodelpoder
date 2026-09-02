@@ -39,18 +39,15 @@ export function FaqBand() {
   return (
     <section className="section-pad">
       <div className="container-ddp">
-        <div className="flex items-baseline gap-6">
-          <h2 className="font-serif text-2xl font-light leading-[0.95] tracking-tight">
-            Preguntas frecuentes
-          </h2>
-          <span aria-hidden className="h-px flex-1 bg-border" />
-        </div>
+        <h2 className="reveal font-serif text-2xl font-light leading-[0.95] tracking-tight">
+          Preguntas frecuentes
+        </h2>
 
-        <dl className="mt-10 border-t border-border">
+        <dl className="reveal-stagger mt-10 grid gap-3 md:mt-12 md:gap-4">
           {FAQ.map((f, i) => (
             <div
               key={f.q}
-              className="group grid gap-3 border-b border-border py-7 transition-colors duration-300 md:grid-cols-12 md:gap-8"
+              className="card-clean group grid gap-3 rounded-[20px] bg-card px-6 py-7 md:grid-cols-12 md:gap-8 md:px-8 md:py-8"
             >
               <dt className="flex items-start gap-4 md:col-span-4">
                 <span className="mono-label mt-1 shrink-0 transition-colors duration-300 group-hover:text-signal">
@@ -62,6 +59,7 @@ export function FaqBand() {
             </div>
           ))}
         </dl>
+
       </div>
     </section>
   );
