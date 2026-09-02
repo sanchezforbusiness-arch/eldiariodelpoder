@@ -17,7 +17,7 @@ export function LatestEpisode() {
           data-cursor="view"
           className="group relative block overflow-hidden lg:col-span-8"
         >
-          <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[80svh]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[560px]">
             <img
               ref={ref}
               src={ep.image}
