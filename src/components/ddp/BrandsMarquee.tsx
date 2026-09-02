@@ -4,7 +4,7 @@ type Brand = { name: string; domain?: string };
  * Marcas que han pasado por la mesa. El logotipo se resuelve por dominio;
  * si no carga, se queda el nombre (siempre visible).
  */
-const BRANDS: Brand[] = [
+export const BRANDS: Brand[] = [
   { name: "Forbes", domain: "forbes.es" },
   { name: "La Vanguardia", domain: "lavanguardia.com" },
   { name: "Telefónica", domain: "telefonica.com" },
