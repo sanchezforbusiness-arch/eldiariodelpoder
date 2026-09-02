@@ -130,13 +130,13 @@ function QuoteCard({ item }: { item: Item }) {
 
 function Column({ items, reverse, duration }: { items: Item[]; reverse?: boolean; duration: number }) {
   return (
-    <div className="quote-col">
+    <div className="quote-col min-w-0">
       <div
-        className={`quote-track ${reverse ? "quote-track-reverse" : ""}`}
+        className={`quote-track min-w-0 ${reverse ? "quote-track-reverse" : ""}`}
         style={{ animationDuration: `${duration}s` }}
       >
         {[0, 1].map((dup) => (
-          <div key={dup} className="flex flex-col gap-5" aria-hidden={dup === 1}>
+          <div key={dup} className="flex min-w-0 flex-col gap-5" aria-hidden={dup === 1}>
             {items.map((it) => (
               <QuoteCard key={`${dup}-${it.slug}`} item={it} />
             ))}
