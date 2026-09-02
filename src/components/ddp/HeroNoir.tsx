@@ -92,7 +92,7 @@ export function HeroNoir() {
                   />
                 ))}
               </span>
-              <span className="mono-label">{guestList.length} invitados se han sentado</span>
+              <span className="mono-label">+77 invitados confirmados</span>
             </div>
 
 
