@@ -747,6 +747,13 @@ body {
     -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
             mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
   }
+  @media (max-width: 767px) {
+    .quote-col {
+      height: 520px;
+      -webkit-mask-image: linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+              mask-image: linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+    }
+  }
   .quote-track {
     display: flex;
     flex-direction: column;
