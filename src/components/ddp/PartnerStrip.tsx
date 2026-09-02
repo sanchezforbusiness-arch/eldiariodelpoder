@@ -18,6 +18,9 @@ export function PartnerStrip() {
               La Vanguardia
               <span aria-hidden className="text-signal">↗</span>
             </a>
+            <p className="max-w-[40ch] text-xs text-muted-foreground">
+              Diario fundado en 1881 en Barcelona. Uno de los referentes históricos de la prensa en castellano.
+            </p>
           </div>
           <p className="prose-editorial max-w-[38ch] text-sm text-muted-foreground md:text-right">
             Grabamos en Madrid, publicamos íntegro y lo distribuimos con La Vanguardia. Sin recortes y sin contrapartidas editoriales.
