@@ -30,6 +30,7 @@ export const guestImageBySlug: Record<string, string> = {
   "sonsoles-onega": sonsolesAsset.url,
   "massimiliano-squillace": massimilianoAsset.url,
   "mikel-echavarren": echavarrenImg,
+  "rocio-monasterio": rocioAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
