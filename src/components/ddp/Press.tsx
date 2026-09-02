@@ -178,11 +178,11 @@ export function Press() {
           </div>
           <a
             href="mailto:prensa@eldiariodelpoder.com"
-            className="group inline-flex items-center justify-between gap-6 border border-border hover:border-foreground/40 rounded-sm p-6 md:p-8 transition-colors"
+            className="group flex w-full items-center justify-between gap-4 border border-border hover:border-foreground/40 rounded-sm p-5 md:gap-6 md:p-8 transition-colors"
           >
-            <div>
+            <div className="min-w-0">
               <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">Email</p>
-              <p className="font-serif text-xl md:text-2xl text-foreground group-hover:text-signal transition-colors">
+              <p className="font-serif text-base leading-tight break-all text-foreground group-hover:text-signal transition-colors sm:text-xl md:text-2xl">
                 prensa@eldiariodelpoder.com
               </p>
             </div>
