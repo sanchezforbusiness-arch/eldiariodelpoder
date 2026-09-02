@@ -98,15 +98,16 @@ export function Navbar() {
 
         <div className="ml-auto flex items-center gap-1 lg:hidden">
         <LanguageSwitcher />
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="-mr-2 ml-auto flex h-12 w-12 flex-col items-end justify-center gap-[6px] pr-2 lg:hidden"
-          aria-expanded={open}
-          aria-label="Menú"
-        >
-          <span className={`block h-px w-6 bg-foreground transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
-          <span className={`block h-px w-6 bg-foreground transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
-        </button>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="-mr-2 flex h-12 w-12 flex-col items-end justify-center gap-[6px] pr-2"
+            aria-expanded={open}
+            aria-label="Menú"
+          >
+            <span className={`block h-px w-6 bg-foreground transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`block h-px w-6 bg-foreground transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {open && (
