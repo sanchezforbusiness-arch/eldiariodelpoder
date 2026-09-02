@@ -319,6 +319,17 @@ export const guestList: GuestEntry[] = [
     ],
   },
   {
+    slug: "mikel-echavarren",
+    name: "Mikel Echavarren",
+    role: "CEO de Colliers España",
+    bio: "Muy buena entrevista con unos jóvenes muy simpáticos y preparados",
+    youtubeId: "ARO5S1I5cg8",
+    topics: ["real estate", "inversión inmobiliaria", "ciclos económicos", "mercado inmobiliario"],
+    summary: [
+      "Mikel Echavarren es CEO de Colliers España. En este episodio habla de ciclos inmobiliarios, dónde está el dinero inteligente y cómo leer el mercado antes de que gire.",
+    ],
+  },
+  {
     slug: "sonsoles-onega",
     name: "Sonsoles Ónega",
     role: "Periodista, presentadora y escritora",
