@@ -99,11 +99,11 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img?: str
           <p className="mt-1.5 text-2xs tracking-label uppercase text-foreground" itemProp="jobTitle">{m.role}</p>
         </div>
         <div className="flex items-center gap-3 mt-2">
-          <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="text-muted-foreground hover:text-signal transition-colors" itemProp="sameAs">
+          <a href={m.ln} target="_blank" rel="noreferrer me" aria-label={`LinkedIn ${m.name}`} className="tap -m-2 justify-center p-2 text-muted-foreground hover:text-signal transition-colors" itemProp="sameAs">
             <Linkedin size={18} />
           </a>
           {m.web && (
-            <a href={m.web} target="_blank" rel="me noreferrer" aria-label={`Web personal de ${m.name}`} className="text-muted-foreground hover:text-signal transition-colors" itemProp="sameAs">
+            <a href={m.web} target="_blank" rel="me noreferrer" aria-label={`Web personal de ${m.name}`} className="tap -m-2 justify-center p-2 text-muted-foreground hover:text-signal transition-colors" itemProp="sameAs">
               <Globe size={18} />
             </a>
           )}
