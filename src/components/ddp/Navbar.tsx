@@ -93,8 +93,11 @@ export function Navbar() {
           <Link to="/patrocinadores" className="font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors hover:text-foreground">
             Patrocinadores
           </Link>
+          <LanguageSwitcher />
         </div>
 
+        <div className="ml-auto flex items-center gap-1 lg:hidden">
+        <LanguageSwitcher />
         <button
           onClick={() => setOpen((v) => !v)}
           className="-mr-2 ml-auto flex h-12 w-12 flex-col items-end justify-center gap-[6px] pr-2 lg:hidden"
