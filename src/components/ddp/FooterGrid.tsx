@@ -27,7 +27,7 @@ export function FooterGrid() {
           <div>
             <p className="mono-label">¿Hablamos?</p>
             <p className="mt-3 max-w-[24ch] text-lg font-medium leading-[1.1] tracking-tight md:text-xl">
-              Propuestas, prensa y patrocinios.
+              Propuestas de invitado, prensa y patrocinios.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row md:items-center">

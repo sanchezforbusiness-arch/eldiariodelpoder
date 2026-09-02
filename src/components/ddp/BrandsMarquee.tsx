@@ -21,7 +21,10 @@ export function BrandsMarquee() {
   return (
  <section aria-label="Marcas colaboradoras" className="border-b border-border py-12 md:py-24">
       <div className="container-ddp">
-        <p className="mono-label">Con quien trabajamos</p>
+        <div className="flex items-baseline gap-6">
+          <p className="mono-label">Han pasado por la mesa</p>
+          <span aria-hidden className="h-px flex-1 bg-border" />
+        </div>
       </div>
       <div className="mask-fade-x mt-8 overflow-hidden md:mt-10">
         <div className="marquee items-center">
@@ -40,7 +43,7 @@ export function BrandsMarquee() {
                   {b.name}
                 </span>
               )}
-              <span className="h-4 w-px bg-border" />
+              <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
             </span>
           ))}
         </div>
