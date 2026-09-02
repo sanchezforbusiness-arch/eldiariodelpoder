@@ -41,10 +41,10 @@ export function PartnerStrip() {
               Partners
             </span>
             <h2 className="type-section mt-6 font-medium">
-              Con quién caminamos
+              Nuestro aliados
             </h2>
             <p className="mt-4 max-w-[44ch] text-sm text-muted-foreground">
-              Un medio histórico que distribuye las conversaciones y una fundación que nos respalda.
+              La Vanguardia amplifica nuestro alcance. Fundación Fortius nos permite funcionar como institución de impacto social.
             </p>
           </div>
 
