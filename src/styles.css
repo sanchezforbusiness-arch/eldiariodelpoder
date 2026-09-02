@@ -727,3 +727,53 @@ body {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* ── Muro de frases en movimiento ───────────────────────────── */
+@layer components {
+  .quote-col {
+    position: relative;
+    height: 620px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+            mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .quote-track {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: quote-scroll 56s linear infinite;
+    will-change: transform;
+  }
+  .quote-track-reverse { animation-direction: reverse; }
+  @keyframes quote-scroll {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-50% - 10px)); }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .quote-wall:hover .quote-track { animation-play-state: paused; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .quote-track { animation: none; }
+    .quote-col { height: auto; -webkit-mask-image: none; mask-image: none; }
+  }
+
+  /* Tarjetas "pinchadas" tipo tablón */
+  .pin-card {
+    position: relative;
+    transition: transform 500ms var(--ease), box-shadow 500ms var(--ease);
+    box-shadow: var(--shadow-soft);
+  }
+  .pin-card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow-lift); }
+  .pin-card::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    background: var(--color-signal, #F04438);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.25);
+  }
+}
