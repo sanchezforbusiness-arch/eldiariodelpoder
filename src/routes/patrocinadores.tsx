@@ -110,40 +110,36 @@ function PatrocinadoresPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-28 pb-16 md:pt-44 md:pb-32 overflow-hidden grain">
-      <img
-        src={hosts}
-        alt=""
-        aria-hidden
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 ken-burns"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background" />
-      <div className="gold-glow w-[520px] h-[520px] -top-40 -right-40 float-slow" />
+    <section className="p-2 pt-16 md:p-3 md:pt-20">
+      <div className="surface-dark relative overflow-hidden rounded-[28px] border border-border shadow-lift grain md:rounded-[36px]">
+        <img
+          src={hosts}
+          alt=""
+          aria-hidden
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(7,21,15,0.94),rgba(7,21,15,0.55)_60%,rgba(7,21,15,0.35))]" />
 
-      <div className="container-ddp relative">
-        <div className="max-w-4xl fade-up">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="h-px w-14 bg-border" />
-            <span className="eyebrow flex items-center gap-2">
-              <span className="dot-gold" /> Patrocinadores
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
-            Sé parte de la conversación.
-          </h1>
-          <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
-            El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#contacto" className="btn-primary">
-              Hablar con el equipo
-              <ArrowUpRight size={14} />
-            </a>
-            <a href="#opciones" className="btn-outline">
-              Ver opciones
-            </a>
+        <div className="container-ddp relative flex min-h-[62dvh] flex-col justify-end py-16 md:min-h-[70dvh] md:py-24">
+          <div className="max-w-4xl fade-up">
+            <span className="mono-label">Patrocinadores</span>
+            <h1 className="mt-5 text-2xl font-medium leading-[0.95] tracking-tight sm:text-display md:text-display lg:text-display">
+              Sé parte de la conversación.
+            </h1>
+            <p className="mt-7 max-w-[46ch] text-base leading-relaxed text-foreground/80 md:text-lg">
+              El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <a href="#contacto" className="btn-primary w-full sm:w-auto">
+                Hablar con el equipo
+                <ArrowUpRight size={14} />
+              </a>
+              <a href="#opciones" className="btn-outline w-full sm:w-auto">
+                Ver opciones
+              </a>
+            </div>
           </div>
         </div>
       </div>
