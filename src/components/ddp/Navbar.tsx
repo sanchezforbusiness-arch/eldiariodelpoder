@@ -56,7 +56,11 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         hidden && !open ? "-translate-y-full" : "translate-y-0"
-      } ${solid || open ? "border-b border-border bg-background/85 backdrop-blur-xl" : "text-on-image border-b border-transparent bg-transparent"}`}
+      } ${
+        solid || open
+          ? "border-b border-border bg-background/85 backdrop-blur-xl"
+          : `border-b border-transparent bg-transparent ${overHero ? "text-on-image" : ""}`
+      }`}
     >
       <div className="container-ddp grid h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:h-16 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6">
         <div className="min-w-0">
