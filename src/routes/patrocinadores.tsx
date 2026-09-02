@@ -181,11 +181,8 @@ function Tiers() {
  <section id="opciones" className="py-16 md:py-32 border-t border-border bg-background-alt">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
-          <span className="eyebrow block mb-4">
-            <span className="dot-gold mr-2" />
-            Opciones de patrocinio
-          </span>
-          <h2 className="text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
+          <span className="mono-label">Opciones de patrocinio</span>
+          <h2 className="mt-4 text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
             Tres formas de conversar con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
@@ -197,14 +194,12 @@ function Tiers() {
           {tiers.map((t) => (
             <article
               key={t.name}
-              className={`relative flex flex-col bg-background border p-8 md:p-10 hover-lift transition-colors ${
-                t.featured
-                  ? "border-border"
-                  : "border-border hover:border-foreground/40"
+              className={`card-clean relative flex flex-col p-8 md:p-10 ${
+                t.featured ? "ring-1 ring-signal/40" : ""
               }`}
             >
               {t.featured && (
-                <span className="absolute top-0 right-0 -translate-y-1/2 bg-foreground text-background text-2xs tracking-label uppercase px-3 py-1">
+                <span className="absolute right-6 top-6 rounded-full bg-signal px-3 py-1 text-2xs uppercase tracking-label text-white">
                   Más solicitado
                 </span>
               )}
