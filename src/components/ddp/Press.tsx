@@ -14,7 +14,7 @@ const stats = [
   { value: "13+", label: "Medios" },
   { value: "4", label: "Cadenas TV" },
   { value: "1", label: "Media Partner" },
-  { value: "M+", label: "Alcance" },
+  { value: "1M+", label: "Alcance" },
 ];
 
 export function Press() {
