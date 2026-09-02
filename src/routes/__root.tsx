@@ -11,6 +11,26 @@ const SITE_DESCRIPTION =
 const SITE_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
 
+const founderAlejandro = {
+  "@type": "Person",
+  name: "Alejandro Sánchez Martínez",
+  url: "https://alejandrosanchezmartinez.com",
+  jobTitle: "Co-fundador y host",
+  sameAs: [
+    "https://alejandrosanchezmartinez.com",
+    "https://eldiariodelpoder.com/alejandro-sanchez-martinez",
+    "https://www.linkedin.com/in/alejandrosanchezmartinez",
+  ],
+};
+
+const founderVictor = {
+  "@type": "Person",
+  name: "Víctor Hugo Gandarilla de Andrés",
+  url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres",
+  jobTitle: "Co-fundador y host",
+  sameAs: ["https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres"],
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -47,6 +67,7 @@ const structuredData = {
           sameAs: ["https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres"],
         },
       ],
+      founder: [founderAlejandro, founderVictor],
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
@@ -72,6 +93,7 @@ const structuredData = {
       image: SITE_IMAGE,
       webFeed: "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
       publisher: { "@id": `${SITE_URL}/#organization` },
+      founder: [founderAlejandro, founderVictor],
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
