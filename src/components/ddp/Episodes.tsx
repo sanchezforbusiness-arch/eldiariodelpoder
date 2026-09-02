@@ -26,7 +26,7 @@ export function Episodes() {
           rel="noreferrer"
           className="group block relative overflow-hidden rounded-sm mb-10 md:mb-12 reveal"
         >
-          <div className="text-on-image relative aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[24px] bg-card md:rounded-[32px]">
+          <div className="text-on-image relative aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/9] overflow-hidden rounded-[24px] bg-card md:rounded-[32px]">
             <img
               src={featured.img}
               alt={featured.guest}
