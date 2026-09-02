@@ -112,7 +112,7 @@ function QuoteCard({ item }: { item: Item }) {
   const isExternal = item.slug === "club-osasuna";
   if (isExternal) {
     return (
-      <div className="card-clean block p-5 md:p-6">
+      <div className="card-clean block p-4 md:p-6">
         <QuoteCardBody item={item} />
       </div>
     );
@@ -121,7 +121,7 @@ function QuoteCard({ item }: { item: Item }) {
     <Link
       to="/invitados/$slug"
       params={{ slug: item.slug }}
-      className="card-clean block p-5 md:p-6"
+      className="card-clean block p-4 md:p-6"
     >
       <QuoteCardBody item={item} />
     </Link>
