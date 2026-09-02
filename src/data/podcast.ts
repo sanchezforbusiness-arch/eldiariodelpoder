@@ -131,7 +131,27 @@ export type GuestEntry = {
   summary: string[];
   /** Temas tratados (también usados como keywords) */
   topics: string[];
+  /** Ideas clave extraídas de la conversación (contenido real, no inventado) */
+  keyIdeas?: string[];
+  /** Capítulos del vídeo: marca de tiempo en segundos + título */
+  chapters?: { seconds: number; title: string }[];
+  /** Preguntas y respuestas reales de la conversación */
+  qa?: { q: string; a: string }[];
+  /** Transcripción en párrafos */
+  transcript?: string[];
+  /** Slugs de invitados relacionados (enlazado interno) */
+  relatedSlugs?: string[];
 };
+
+/** Formatea segundos como 12:34 o 1:02:03 */
+export const formatTimecode = (s: number) => {
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return h > 0 ? `${h}:${pad(m)}:${pad(sec)}` : `${m}:${pad(sec)}`;
+};
+
 
 export const guestList: GuestEntry[] = [
   {
