@@ -164,9 +164,19 @@ export function QuoteWall() {
         </div>
 
         <div className="quote-wall mt-12 grid gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
-          <Column items={cols[0]} duration={52} />
-          <Column items={cols[1]} reverse duration={64} />
-          <Column items={cols[2]} duration={58} />
+          {/* Mobile: una sola hilera; tablet+: tres columnas */}
+          <div className="md:hidden">
+            <Column items={ITEMS} duration={64} />
+          </div>
+          <div className="hidden md:block">
+            <Column items={cols[0]} duration={52} />
+          </div>
+          <div className="hidden md:block">
+            <Column items={cols[1]} reverse duration={64} />
+          </div>
+          <div className="hidden md:block">
+            <Column items={cols[2]} duration={58} />
+          </div>
         </div>
       </div>
     </section>
