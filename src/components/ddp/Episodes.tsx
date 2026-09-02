@@ -45,7 +45,7 @@ export function Episodes() {
 
             <div className="absolute inset-x-0 bottom-0 p-5 md:p-12">
               <p className="text-2xs md:text-2xs tracking-label md:tracking-label uppercase text-muted-foreground mb-2 md:mb-3">{featured.guest}</p>
-              <h3 className="tracking-tight text-2xl sm:text-2xl md:text-2xl leading-[1.05] md:leading-[1.02] font-medium max-w-3xl">
+              <h3 className="tracking-tight text-xl sm:text-2xl md:text-[3.25rem] leading-[1.05] md:leading-[1.02] font-medium max-w-3xl">
                 {featured.title}
               </h3>
               <div className="mt-4 md:mt-6 inline-flex items-center gap-3 text-2xs md:text-2xs tracking-label md:tracking-label uppercase text-foreground group-hover:text-signal transition-colors">
