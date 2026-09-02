@@ -26,15 +26,15 @@ export function Episodes() {
           rel="noreferrer"
           className="group block relative overflow-hidden rounded-sm mb-10 md:mb-12 reveal"
         >
-          <div className="relative aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm bg-card">
+          <div className="text-on-image relative aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[24px] bg-card md:rounded-[32px]">
             <img
               src={featured.img}
               alt={featured.guest}
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-[1100ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,26,26,0.92),rgba(10,26,26,0.25)_60%,transparent)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,26,26,0.55),transparent_60%)]" />
 
             <div className="absolute top-5 left-5 md:top-8 md:left-8 flex items-center gap-3">
               <span className="text-2xs sm:text-2xs tracking-label sm:tracking-label uppercase text-foreground border border-border px-2.5 sm:px-3 py-1 sm:py-1.5">
@@ -61,7 +61,7 @@ export function Episodes() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 reveal-stagger">
           {rest.map((e) => (
             <a key={e.n} href={e.url} target="_blank" rel="noreferrer" className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-card hover-lift">
+              <div className="text-on-image relative aspect-[4/5] overflow-hidden rounded-[20px] bg-card hover-lift">
                 <img
                   src={e.img}
                   alt={e.guest}
@@ -70,7 +70,7 @@ export function Episodes() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover contrast-110 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,26,26,0.9),rgba(10,26,26,0.15)_55%,transparent)]" />
                 <div className="absolute top-5 left-5 flex items-center gap-3">
                   <span className="font-serif text-2xl text-muted-foreground">{e.n}</span>
                   {e.isNew && (
