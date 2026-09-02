@@ -128,16 +128,25 @@ function PrensaPage() {
             y{" "}
             <Link to="/victor-hugo-gandarilla-de-andres" className="text-foreground hover:underline">Víctor Hugo Gandarilla de Andrés</Link>.
           </p>
-          <ul className="space-y-8 max-w-3xl">
+          <ul className="grid gap-5 md:grid-cols-2 md:gap-6 reveal-stagger">
             {pressArticles.map((a) => (
               <li key={a.url}>
-                <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">{a.outlet}</p>
-                <h3 className="tracking-tight text-2xl md:text-2xl leading-tight">
-                  <a href={a.url} target="_blank" rel="noreferrer" className="hover:text-signal transition-colors">
+                <a
+                  href={a.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="card-clean group flex h-full flex-col p-6 md:p-8"
+                >
+                  <p className="mb-3 text-2xs uppercase tracking-label text-muted-foreground">{a.outlet}</p>
+                  <h3 className="text-xl leading-tight tracking-tight transition-colors group-hover:text-signal md:text-2xl">
                     {a.headline}
-                  </a>
-                </h3>
-                <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{a.summary}</p>
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">{a.summary}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-2xs uppercase tracking-label text-muted-foreground transition-colors group-hover:text-foreground">
+                    Leer en {a.outlet}
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </span>
+                </a>
               </li>
             ))}
           </ul>
