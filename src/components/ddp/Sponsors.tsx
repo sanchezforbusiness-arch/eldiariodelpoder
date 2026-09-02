@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
 
 const sponsors = [
-  { name: "NoBrainer Partners", tag: "M&A · Advisory" },
-  { name: "Le Jeune Asesores", tag: "Legal · Patrimonios" },
-  { name: "Pateberg", tag: "Capital privado" },
-  { name: "SenYours Consulting", tag: "Estrategia · Marca" },
-  { name: "Metalabs", tag: "Tecnología" },
+  { name: "NoBrainer Partners", tag: "M&A · Advisory", domain: "nobrainer.partners" },
+  { name: "Le Jeune Asesores", tag: "Legal · Patrimonios", domain: "lejeune.es" },
+  { name: "Pateberg", tag: "Capital privado", domain: "pateberg.com" },
+  { name: "SenYours Consulting", tag: "Estrategia · Marca", domain: "senyours.com" },
+  { name: "Metalabs", tag: "Tecnología", domain: "metlabs.io" },
 ];
 const partners = ["La Vanguardia"];
 
