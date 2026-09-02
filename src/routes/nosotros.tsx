@@ -71,7 +71,7 @@ function NosotrosPage() {
         <div className="container-ddp pt-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors"
+            className="tap gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors"
           >
             <ArrowLeft size={14} /> Volver
           </Link>

@@ -107,7 +107,7 @@ function PrensaPage() {
       <Navbar />
       <main className="pt-24">
         <div className="container-ddp pt-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors">
+          <Link to="/" className="tap gap-2 text-2xs tracking-label uppercase text-muted-foreground hover:text-signal transition-colors">
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>

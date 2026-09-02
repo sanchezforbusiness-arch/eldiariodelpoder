@@ -155,6 +155,11 @@
   .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
   html, body { overflow-x: clip; max-width: 100%; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  @media (pointer: coarse) {
+    a, button, [role="button"], input, select, textarea { touch-action: manipulation; }
+  }
 
   body {
     background-color: var(--color-background);
