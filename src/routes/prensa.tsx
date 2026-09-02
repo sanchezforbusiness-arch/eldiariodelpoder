@@ -111,7 +111,7 @@ function PrensaPage() {
             <ArrowLeft size={14} /> Volver
           </Link>
         </div>
-        <header className="container-ddp pt-6 sm:pt-8 pb-2">
+        <header className="container-ddp pt-6 sm:pt-8 pb-2 reveal">
           <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
             Prensa & medios
           </h1>

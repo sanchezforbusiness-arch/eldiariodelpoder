@@ -65,7 +65,7 @@ function InvitadosPage() {
     <div className="bg-background text-foreground">
       <Navbar />
       <main className="pt-24">
-        <header className="container-ddp pt-6 sm:pt-8 pb-4">
+        <header className="container-ddp pt-6 sm:pt-8 pb-4 reveal">
           <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
             Nuestros invitados
           </h1>
