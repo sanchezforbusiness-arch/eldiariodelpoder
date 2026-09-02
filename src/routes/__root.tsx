@@ -65,9 +65,15 @@ const structuredData = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
+      alternateName: ["DDP", "El Diario del Poder"],
       description: SITE_DESCRIPTION,
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "es-ES",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${SITE_URL}/episodios?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "PodcastSeries",
@@ -88,15 +94,6 @@ const structuredData = {
       ],
       keywords:
         "podcast de éxito, podcast en español, expresidentes, CEOs, liderazgo, entrevistas, Diario del Poder",
-    },
-    {
-      "@type": "WebSite",
-      url: SITE_URL,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${SITE_URL}/episodios?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "FAQPage",
