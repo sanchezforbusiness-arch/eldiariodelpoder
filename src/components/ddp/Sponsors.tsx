@@ -11,34 +11,6 @@ const sponsors = [
 ];
 const partners = ["La Vanguardia"];
 
-type Sponsor = (typeof sponsors)[number];
-
-function SponsorCard({ sponsor, className = "" }: { sponsor: Sponsor; className?: string }) {
-  return (
-    <div
-      className={`card-clean group flex min-h-[128px] shrink-0 flex-col justify-center gap-3 rounded-[20px] bg-card px-7 py-8 transition-colors ${className}`}
-    >
-      <div className="flex items-center gap-3">
-        <BrandMark domain={sponsor.domain} name={sponsor.name} />
-        <span className="whitespace-nowrap font-serif text-lg leading-tight text-foreground/90 transition-colors group-hover:text-signal md:text-xl">
-          {sponsor.name}
-        </span>
-      </div>
-      <span className="text-2xs uppercase tracking-label text-muted-foreground">{sponsor.tag}</span>
-    </div>
-  );
-}
-
-function SponsorTrack() {
-  return (
-    <div className="flex shrink-0 gap-6 pr-6">
-      {sponsors.map((s) => (
-        <SponsorCard key={s.name} sponsor={s} className="w-[320px]" />
-      ))}
-    </div>
-  );
-}
-
 export function Sponsors() {
   const email = "patrocinios@eldiariodelpoder.com";
   const [revealed, setRevealed] = useState(false);
@@ -63,18 +35,19 @@ export function Sponsors() {
             </h2>
           </div>
 
-          {/* Móvil: carrusel con anclaje */}
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">
-            {sponsors.map((s) => (
-              <SponsorCard key={s.name} sponsor={s} className="w-[78vw] snap-center" />
-            ))}
-          </div>
-
-          {/* Escritorio: cinta continua */}
-          <div className="mask-fade-x hidden overflow-hidden md:-mx-6 md:block">
-            <div className="marquee marquee-fast">
-              <SponsorTrack />
-              <SponsorTrack />
+          {/* Cinta continua, igual que la portada */}
+          <div className="mask-fade-x -mx-4 overflow-hidden md:-mx-6">
+            <div className="marquee items-center">
+              {[...sponsors, ...sponsors].map((s, i) => (
+                <span key={i} className="flex h-10 items-center gap-8 whitespace-nowrap px-8 md:gap-10 md:px-10">
+                  <span className="flex items-center gap-3 opacity-70 transition-opacity duration-300 hover:opacity-100">
+                    <BrandMark domain={s.domain} name={s.name} />
+                    <span className="text-lg font-medium tracking-tight">{s.name}</span>
+                    <span className="text-2xs uppercase tracking-label text-muted-foreground">{s.tag}</span>
+                  </span>
+                  <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
+                </span>
+              ))}
             </div>
           </div>
 
