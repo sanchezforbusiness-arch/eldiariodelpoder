@@ -7,6 +7,8 @@ import {
   setStoredLang,
   startTranslation,
   stopTranslation,
+  subscribeLang,
+  broadcastLang,
 } from "@/lib/translator";
 
 export function LanguageSwitcher({ className = "" }: { className?: string }) {
@@ -30,6 +32,8 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
     return () => stopTranslation();
   }, []);
 
+  useEffect(() => subscribeLang(setCurrent), []);
+
   useEffect(() => {
     if (!open) return;
     const onDown = (e: MouseEvent) => {
@@ -43,7 +47,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
     setOpen(false);
     setStoredLang(code);
     if (code === current) return;
-    setCurrent(code);
+    broadcastLang(code);
     if (code === SOURCE_LANG) {
       // Volver al original: recargamos para restaurar los textos en español.
       stopTranslation();
