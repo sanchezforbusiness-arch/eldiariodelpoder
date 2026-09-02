@@ -38,7 +38,7 @@ function QuoteCard({ item }: { item: Item }) {
       params={{ slug: item.slug }}
       className="card-clean block p-5 md:p-6"
     >
-      <p className="text-sm leading-relaxed text-foreground md:text-base">{item.line}</p>
+      <p className="text-sm leading-relaxed text-foreground">{item.line}</p>
       <div className="mt-5 flex items-center gap-3">
         {item.image ? (
           <img
@@ -96,10 +96,10 @@ export function QuoteWall() {
       <div className="container-ddp py-20 md:py-28">
         <div className="reveal-stagger max-w-[46ch]">
           <span className="mono-label">Voces</span>
-          <h2 className="mt-4 text-3xl font-medium tracking-tight md:text-5xl">
+          <h2 className="type-section mt-4 font-medium">
             Lo que se cuenta en la mesa
           </h2>
-          <p className="mt-4 text-sm text-muted-foreground md:text-base">
+          <p className="mt-4 text-sm text-muted-foreground">
             Una idea de cada conversación. Entra en la ficha para escucharla entera.
           </p>
         </div>

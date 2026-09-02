@@ -40,10 +40,10 @@ export function PartnerStrip() {
             <span className="inline-flex rounded-full bg-foreground px-3 py-1 font-mono text-2xs uppercase tracking-[0.14em] text-background">
               Partners
             </span>
-            <h2 className="mt-6 text-3xl font-medium tracking-tight md:text-5xl">
+            <h2 className="type-section mt-6 font-medium">
               Con quién caminamos
             </h2>
-            <p className="mt-4 max-w-[44ch] text-sm text-muted-foreground md:text-base">
+            <p className="mt-4 max-w-[44ch] text-sm text-muted-foreground">
               Un medio histórico que distribuye las conversaciones y una fundación que nos respalda.
             </p>
           </div>
@@ -61,12 +61,12 @@ export function PartnerStrip() {
                 <p className="font-mono text-2xs uppercase tracking-[0.14em] text-muted-foreground">
                   {p.label}
                 </p>
-                <p className="mt-4 font-serif text-sm leading-relaxed text-foreground md:text-base">
+                <p className="mt-4 font-serif text-sm leading-relaxed text-foreground">
                   {p.line}
                 </p>
                 <div className="mx-auto mt-5 h-px w-full border-t border-dotted border-border" />
                 <p
-                  className="notranslate mt-5 text-base font-medium tracking-tight md:text-lg"
+                  className="notranslate mt-5 text-lg font-medium tracking-tight"
                   translate="no"
                 >
                   {p.name}
