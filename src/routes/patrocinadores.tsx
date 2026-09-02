@@ -242,14 +242,10 @@ function Tiers() {
 
 function Contact() {
   return (
- <section id="contacto" className="relative py-16 md:py-32 border-t border-border overflow-hidden">
-      <div className="gold-glow float-slow w-[460px] h-[460px] -bottom-40 left-1/2 -translate-x-1/2 opacity-30" />
+ <section id="contacto" className="relative overflow-hidden border-t border-border py-16 md:py-32">
       <div className="container-ddp relative">
-        <div className="max-w-3xl mx-auto text-center reveal">
-          <span className="eyebrow block mb-5">
-            <span className="dot-gold mr-2" />
-            Hablemos
-          </span>
+        <div className="panel mx-auto max-w-3xl px-6 py-14 text-center reveal md:px-12 md:py-20">
+          <span className="mono-label block mb-5">Hablemos</span>
           <h2 className="text-2xl md:text-display leading-[1.0] font-medium tracking-tight">
             Tu marca, en conversaciones que importan.
           </h2>
