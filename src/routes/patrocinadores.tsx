@@ -219,10 +219,10 @@ function Tiers() {
               </ul>
               <a
                 href="#contacto"
-                className={`group inline-flex items-center justify-between gap-3 w-full px-5 py-3.5 text-2xs tracking-label uppercase border transition-colors ${
+                className={`group inline-flex w-full items-center justify-between gap-3 rounded-full border px-5 py-3.5 text-2xs uppercase tracking-label transition-colors ${
                   t.featured
-                    ? "bg-foreground text-background border-foreground hover:bg-foreground/90"
-                    : "border-foreground/25 text-foreground hover:border-foreground/40 hover:text-signal"
+                    ? "border-foreground bg-foreground text-background hover:bg-foreground/90"
+                    : "border-foreground/25 text-foreground hover:border-foreground/45 hover:text-signal"
                 }`}
               >
                 Solicitar info
