@@ -11,6 +11,34 @@ const sponsors = [
 ];
 const partners = ["La Vanguardia"];
 
+type Sponsor = (typeof sponsors)[number];
+
+function SponsorCard({ sponsor, className = "" }: { sponsor: Sponsor; className?: string }) {
+  return (
+    <div
+      className={`card-clean group flex min-h-[128px] shrink-0 flex-col justify-center gap-3 rounded-[20px] bg-card px-7 py-8 transition-colors ${className}`}
+    >
+      <div className="flex items-center gap-3">
+        <BrandMark domain={sponsor.domain} name={sponsor.name} />
+        <span className="whitespace-nowrap font-serif text-lg leading-tight text-foreground/90 transition-colors group-hover:text-signal md:text-xl">
+          {sponsor.name}
+        </span>
+      </div>
+      <span className="text-2xs uppercase tracking-label text-muted-foreground">{sponsor.tag}</span>
+    </div>
+  );
+}
+
+function SponsorTrack() {
+  return (
+    <div className="flex shrink-0 gap-6 pr-6">
+      {sponsors.map((s) => (
+        <SponsorCard key={s.name} sponsor={s} className="w-[320px]" />
+      ))}
+    </div>
+  );
+}
+
 export function Sponsors() {
   const email = "patrocinios@eldiariodelpoder.com";
   const [revealed, setRevealed] = useState(false);
@@ -35,21 +63,19 @@ export function Sponsors() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          {/* Móvil: carrusel con anclaje */}
+          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">
             {sponsors.map((s) => (
-              <div
-                key={s.name}
-                className="card-clean group flex min-h-[128px] flex-col justify-center gap-3 rounded-[20px] bg-card px-7 py-8 transition-colors"
-              >
-                <div className="flex items-center gap-3">
-                  <BrandMark domain={s.domain} name={s.name} />
-                  <span className="font-serif text-lg leading-tight text-foreground/90 transition-colors group-hover:text-signal md:text-xl">
-                    {s.name}
-                  </span>
-                </div>
-                <span className="text-2xs uppercase tracking-label text-muted-foreground">{s.tag}</span>
-              </div>
+              <SponsorCard key={s.name} sponsor={s} className="w-[78vw] snap-center" />
             ))}
+          </div>
+
+          {/* Escritorio: cinta continua */}
+          <div className="mask-fade-x hidden overflow-hidden md:-mx-6 md:block">
+            <div className="marquee marquee-fast">
+              <SponsorTrack />
+              <SponsorTrack />
+            </div>
           </div>
 
           <div className="mt-12 flex flex-col items-center gap-4">
