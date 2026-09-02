@@ -37,7 +37,7 @@ export function FooterGrid() {
             <Link to="/agenda" className="btn-primary w-full md:w-auto">
               Agendar una llamada
             </Link>
-            <a href="mailto:redaccion@eldiariodelpoder.com" className="btn-outline w-full md:w-auto">
+            <a href="mailto:contacto@eldiariodelpoder.com" className="btn-outline w-full md:w-auto">
               Escríbenos
             </a>
           </div>
@@ -47,10 +47,10 @@ export function FooterGrid() {
           <div className="md:col-span-4">
             <p className="mono-label">Contacto</p>
             <a
-              href="mailto:redaccion@eldiariodelpoder.com"
+              href="mailto:contacto@eldiariodelpoder.com"
               className="link-rule tap mt-4 flex items-center break-all font-mono text-2xs"
             >
-              redaccion@eldiariodelpoder.com
+              contacto@eldiariodelpoder.com
             </a>
             <p className="mono-label mt-8">Madrid, España</p>
           </div>
