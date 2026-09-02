@@ -1,45 +1,56 @@
-type Brand = { name: string; logo?: string; url?: string };
+type Brand = { name: string; domain?: string };
 
 /**
- * Añade la ruta del SVG/PNG en `logo` cuando se suban los archivos
- * (por ejemplo: logo: "/logos/forbes.svg"). Sin `logo`, se pinta el nombre.
+ * Marcas que han pasado por la mesa. El logotipo se resuelve por dominio;
+ * si no carga, se queda el nombre (siempre visible).
  */
 const BRANDS: Brand[] = [
-  { name: "Forbes", logo: undefined },
-  { name: "La Vanguardia", logo: undefined },
-  { name: "Telefónica", logo: undefined },
-  { name: "Atlético de Madrid", logo: undefined },
-  { name: "Osasuna", logo: undefined },
-  { name: "EWTN", logo: undefined },
-  { name: "Contents.com", logo: undefined },
-  { name: "NoBrainer Partners", logo: undefined },
-  { name: "SenYours", logo: undefined },
-  { name: "Metlabs", logo: undefined },
+  { name: "Forbes", domain: "forbes.es" },
+  { name: "La Vanguardia", domain: "lavanguardia.com" },
+  { name: "Telefónica", domain: "telefonica.com" },
+  { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
+  { name: "Osasuna", domain: "osasuna.es" },
+  { name: "EWTN", domain: "ewtn.com" },
+  { name: "Contents.com", domain: "contents.com" },
+  { name: "NoBrainer Partners", domain: "nobrainer.partners" },
+  { name: "SenYours", domain: "senyours.com" },
+  { name: "Metlabs", domain: "metlabs.io" },
 ];
+
+export function BrandMark({ domain, name, className = "" }: { domain?: string; name: string; className?: string }) {
+  if (!domain) return null;
+  return (
+    <img
+      src={`https://www.google.com/s2/favicons?sz=128&domain=${domain}`}
+      alt=""
+      aria-hidden
+      loading="lazy"
+      decoding="async"
+      width={24}
+      height={24}
+      onError={(e) => {
+        (e.currentTarget as HTMLImageElement).style.display = "none";
+      }}
+      className={`h-6 w-6 shrink-0 rounded-[6px] object-contain ${className}`}
+      title={name}
+    />
+  );
+}
 
 export function BrandsMarquee() {
   return (
- <section aria-label="Marcas colaboradoras" className="section-pad">
+    <section aria-label="Marcas colaboradoras" className="section-pad">
       <div className="container-ddp">
         <p className="mono-label reveal">Han pasado por la mesa</p>
       </div>
       <div className="mask-fade-x mt-8 overflow-hidden md:mt-10">
         <div className="marquee items-center">
           {[...BRANDS, ...BRANDS].map((b, i) => (
-            <span key={i} className="flex h-8 items-center gap-6 whitespace-nowrap px-6 md:gap-8 md:px-8">
-              {b.logo ? (
-                <img
-                  src={b.logo}
-                  alt={b.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-7 w-auto object-contain opacity-70 brightness-0 invert transition-opacity duration-300 hover:opacity-100 md:h-8"
-                />
-              ) : (
-                <span className="text-lg font-medium tracking-tight opacity-60 transition-opacity duration-300 hover:opacity-100">
-                  {b.name}
-                </span>
-              )}
+            <span key={i} className="flex h-10 items-center gap-8 whitespace-nowrap px-8 md:gap-10 md:px-10">
+              <span className="flex items-center gap-3 opacity-70 transition-opacity duration-300 hover:opacity-100">
+                <BrandMark domain={b.domain} name={b.name} />
+                <span className="text-lg font-medium tracking-tight">{b.name}</span>
+              </span>
               <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
             </span>
           ))}
