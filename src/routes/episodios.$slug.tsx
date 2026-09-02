@@ -8,6 +8,15 @@ import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podc
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 
+/** "1h 04m" → "PT1H4M" (ISO 8601), o undefined si no hay duración legible */
+function isoDuration(raw?: string) {
+  if (!raw) return undefined;
+  const h = raw.match(/(\d+)\s*h/i);
+  const m = raw.match(/(\d+)\s*m/i);
+  if (!h && !m) return undefined;
+  return `PT${h ? `${Number(h[1])}H` : ""}${m ? `${Number(m[1])}M` : ""}`;
+}
+
 export const Route = createFileRoute("/episodios/$slug")({
   loader: ({ params }) => {
     const episode = getEpisodeBySlug(params.slug);
@@ -60,8 +69,14 @@ export const Route = createFileRoute("/episodios/$slug")({
             inLanguage: "es-ES",
             episodeNumber: ep.episodeNumber,
             ...(ep.date ? { datePublished: ep.date } : {}),
+            ...(isoDuration(ep.duration) ? { timeRequired: isoDuration(ep.duration) } : {}),
             partOfSeries: { "@type": "PodcastSeries", name: "Diario del Poder", url: `${SITE}/` },
-            actor: { "@type": "Person", name: ep.guest, ...(ep.role ? { jobTitle: ep.role } : {}) },
+            actor: {
+              "@type": "Person",
+              name: ep.guest,
+              ...(ep.role ? { jobTitle: ep.role } : {}),
+              ...(ep.guestSlug ? { url: `${SITE}/invitados/${ep.guestSlug}` } : {}),
+            },
             ...(ep.youtubeId
               ? {
                   associatedMedia: {
@@ -71,7 +86,8 @@ export const Route = createFileRoute("/episodios/$slug")({
                     embedUrl: `https://www.youtube.com/embed/${ep.youtubeId}`,
                     contentUrl: `https://www.youtube.com/watch?v=${ep.youtubeId}`,
                     thumbnailUrl: `https://i.ytimg.com/vi/${ep.youtubeId}/maxresdefault.jpg`,
-                    uploadDate: ep.date ?? "2026-01-01",
+                    ...(isoDuration(ep.duration) ? { duration: isoDuration(ep.duration) } : {}),
+                    ...(ep.date ? { uploadDate: ep.date } : {}),
                   },
                 }
               : {}),

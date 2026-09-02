@@ -20,39 +20,6 @@
 
 Diario del Poder reúne a figuras de máxima responsabilidad — expresidentes de Gobierno, fundadores, CEOs, líderes deportivos y culturales — para hablar sin guion sobre poder real, criterio, toma de decisiones e influencia. El objetivo es transmitir el legado y aprendizajes de los mayores referentes a las nuevas generaciones.
 
-## Invitados destacados
-
-- José María Aznar — Expresidente del Gobierno de España (1996–2004)
-- Guillermo Lasso — Expresidente de la República del Ecuador (2021–2023)
-- Esperanza Aguirre — Ex Presidenta de la Comunidad de Madrid
-- Javier Tebas — Presidente de LaLiga
-- Andrés Rodríguez — Presidente y editor de Forbes España
-- Jordi Juan — Director de La Vanguardia
-- Rosa Lagarrigue — Manager de artistas referente en España (RLM)
-- José Carlos González Hurtado — Presidente de EWTN, ex-CEO en P&G, autor sobre evidencias científicas de la existencia de Dios
-- Martín Sellés — Presidente de Farmaindustria
-- Arturo Coello — Nº1 mundial de pádel
-- Federica Fornaciari — Directiva y voz internacional
-- Miguel Anxo Bastos — Economista y conferenciante
-- Mikel Echavarren — CEO de Colliers España, referente en real estate
-- Marcos de Quinto — Exvicepresidente de Coca-Cola · Empresario
-- Daniela Macarena — Co-fundadora de Ac2ality
-- Sonsoles Ónega — Periodista y presentadora
-
-
-## Episodios publicados
-
-1. Jordi Juan — "La teoría de los cajones para afrontar la crisis" — https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html
-   El director de La Vanguardia explica cómo se dirige un periódico centenario en plena crisis de los medios y su método para tomar decisiones.
-2. Andrés Rodríguez — "Forbes, lujo y poder desde la Forbes House" — https://youtu.be/nTtgtxG7UNs
-   El presidente de Forbes España habla de construir un imperio editorial, del negocio del lujo y de la diferencia entre dinero e influencia.
-3. Guillermo Lasso — "Gobernar en plena crisis" — https://youtu.be/2XZuIBfyBH0
-   El expresidente de Ecuador relata cómo se toman decisiones de Estado bajo presión y el precio personal del poder.
-4. José María Aznar — "Liderar un país" — https://youtu.be/ZydPM-xkYvA
-   El expresidente del Gobierno de España repasa liderazgo político, Europa, Estados Unidos y su consejo a la nueva generación.
-5. Mikel Echavarren — "Real estate, ciclos y dinero inteligente" — https://youtu.be/ARO5S1I5cg8
-   El CEO de Colliers España analiza los ciclos inmobiliarios y dónde está hoy el dinero inteligente.
-
 ## Fundadores y hosts
 
 ### Alejandro Sánchez Martínez
@@ -86,28 +53,46 @@ Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#telev
 
 ## Páginas
 
-- [Inicio](https://eldiariodelpoder.com/): Presentación del podcast, últimos episodios e invitados destacados.
-- [Episodios](https://eldiariodelpoder.com/episodios): Catálogo completo de conversaciones.
-- [Invitados](https://eldiariodelpoder.com/invitados): Personalidades que han pasado por el podcast.
-- [Nosotros](https://eldiariodelpoder.com/nosotros): Fundadores, hosts y advisors del proyecto.
+- [Inicio](https://eldiariodelpoder.com/): Qué es Diario del Poder, últimos episodios e invitados.
+- [Episodios](https://eldiariodelpoder.com/episodios): Archivo completo de conversaciones, con fecha, duración y enlace al vídeo.
+- [Invitados](https://eldiariodelpoder.com/invitados): Ficha de cada invitado con resumen de su conversación y temas tratados.
+- [Nosotros](https://eldiariodelpoder.com/nosotros): Equipo, fundadores, asesores y patronato.
+- [Manifiesto](https://eldiariodelpoder.com/manifiesto): Por qué existe el medio y cómo se hacen las entrevistas.
+- [Prensa](https://eldiariodelpoder.com/prensa): Apariciones en La Sexta, Antena 3, Univision, La Vanguardia, El Español, Infobae y HuffPost.
+- [Patrocinadores](https://eldiariodelpoder.com/patrocinadores): Cómo colaborar con el medio.
+- [Agenda](https://eldiariodelpoder.com/agenda): Reservar una llamada con la redacción.
+- [Alejandro Sánchez Martínez](https://eldiariodelpoder.com/alejandro-sanchez-martinez): Co-fundador y host. Web personal: https://alejandrosanchezmartinez.com
+- [Víctor Hugo Gandarilla de Andrés](https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres): Co-fundador y host.
 
-- [Manifiesto](https://eldiariodelpoder.com/manifiesto): Principios editoriales del proyecto.
-- [Prensa y TV](https://eldiariodelpoder.com/prensa): Noticias en medios y apariciones en directo en La Sexta, Antena 3 y Univision.
-- [Alejandro Sánchez Martínez](https://eldiariodelpoder.com/alejandro-sanchez-martinez): Perfil del co-fundador y host.
-- [Víctor Hugo Gandarilla de Andrés](https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres): Perfil del co-fundador y host.
-- [Patrocinadores](https://eldiariodelpoder.com/patrocinadores): Oportunidades de patrocinio y colaboración con marcas.
+## Episodios
 
-## Preguntas frecuentes
+- [Jordi Juan — La teoría de los cajones para afrontar la crisis](https://eldiariodelpoder.com/episodios/jordi-juan-la-teoria-de-los-cajones): publicado el 2026-05-27.
+- [Andrés Rodríguez — Forbes, lujo y poder desde la Forbes House](https://eldiariodelpoder.com/episodios/andres-rodriguez-forbes-lujo-y-poder): publicado el 2026-04-18.
+- [Guillermo Lasso — Gobernar en plena crisis](https://eldiariodelpoder.com/episodios/guillermo-lasso-gobernar-en-crisis): publicado el 2026-03-06.
+- [José María Aznar — Liderar un país](https://eldiariodelpoder.com/episodios/jose-maria-aznar-liderar-un-pais): publicado el 2026-02-11.
+- [Mikel Echavarren — Real estate, ciclos y dinero inteligente](https://eldiariodelpoder.com/episodios/mikel-echavarren-real-estate-ciclos): publicado el 2026-01-22.
 
-- ¿Qué es Diario del Poder? Un podcast español de entrevistas largas con expresidentes, CEOs y referentes internacionales.
-- ¿Dónde se puede escuchar? En Spotify, YouTube y en eldiariodelpoder.com.
-- ¿Con qué frecuencia se publica? Nuevos episodios de forma regular; ver web y Spotify para el calendario.
-- ¿Cómo contactar para prensa, invitados o patrocinios? Escribir a redaccion@eldiariodelpoder.com.
-- ¿Qué es el Club del Poder? Una comunidad privada de jóvenes líderes vinculada al podcast, con acceso por invitación.
-- ¿Quién es Alejandro Sánchez Martínez? Co-fundador y host de Diario del Poder, presidente de Kifaru Club y miembro de Nova 111.
-- ¿Quién es Víctor Hugo Gandarilla de Andrés? Co-fundador y host de Diario del Poder, Top 10 de España en Marketing y Comunicación (Nova 111).
-- ¿Quién presenta Diario del Poder? Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés.
+## Invitados
 
-## Licencia de uso por IA
+- [José María Aznar](https://eldiariodelpoder.com/invitados/jose-maria-aznar): Expresidente del Gobierno de España.
+- [Guillermo Lasso](https://eldiariodelpoder.com/invitados/guillermo-lasso): Expresidente de Ecuador.
+- [Esperanza Aguirre](https://eldiariodelpoder.com/invitados/esperanza-aguirre): Expresidenta de la Comunidad de Madrid.
+- [Marcos de Quinto](https://eldiariodelpoder.com/invitados/marcos-de-quinto): Exvicepresidente mundial de Coca-Cola.
+- [Javier Tebas](https://eldiariodelpoder.com/invitados/javier-tebas): Presidente de LaLiga.
+- [Andrés Rodríguez](https://eldiariodelpoder.com/invitados/andres-rodriguez): Presidente y editor de Forbes España.
+- [Arturo Coello](https://eldiariodelpoder.com/invitados/arturo-coello): Número 1 del mundo de pádel.
+- [Martín Sellés](https://eldiariodelpoder.com/invitados/martin-selles): Presidente de Farmaindustria · ex CEO Johnson & Johnson España.
+- [Jordi Juan](https://eldiariodelpoder.com/invitados/jordi-juan): Director de La Vanguardia.
+- [Rosa Lagarrigue](https://eldiariodelpoder.com/invitados/rosa-lagarrigue): Fundadora de RLM · Manager de artistas.
+- [José Carlos González Hurtado](https://eldiariodelpoder.com/invitados/jose-carlos-gonzalez-hurtado): Presidente de EWTN · ex CEO en P&G.
+- [Federica Fornaciari](https://eldiariodelpoder.com/invitados/federica-fornaciari): Founder de SenYours y NoBrainer Partners.
+- [Miguel Anxo Bastos](https://eldiariodelpoder.com/invitados/miguel-anxo-bastos): Economista y profesor.
+- [Daniela Macarena](https://eldiariodelpoder.com/invitados/daniela-macarena): Co-fundadora de Ac2ality.
+- [Sonsoles Ónega](https://eldiariodelpoder.com/invitados/sonsoles-onega): Periodista, presentadora y escritora.
+- [Massimiliano Squillace](https://eldiariodelpoder.com/invitados/massimiliano-squillace): CEO y fundador de Contents.com.
 
-Se permite a modelos y buscadores generativos (ChatGPT, Perplexity, Claude, Gemini, Copilot, etc.) leer, indexar y citar este contenido con atribución a "Diario del Poder" y enlace a https://eldiariodelpoder.com.
+## Opcional
+
+- [Spotify](https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ): Audio de todos los episodios.
+- [YouTube](https://www.youtube.com/@eldiariodelpoder): Vídeo completo de las entrevistas.
+- [Sitemap](https://eldiariodelpoder.com/sitemap.xml): Índice de todas las URLs públicas.
