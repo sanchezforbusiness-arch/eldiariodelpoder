@@ -26,15 +26,6 @@ const founders = [
   },
 ];
 
-const board = [
-  {
-    name: "Juan Ángel Soto Gómez",
-    role: "Patronato",
-    bio: "Presidente de la Fundación Fortius. Forma parte del patronato de Diario del Poder.",
-    ln: "https://www.linkedin.com/in/juanangelsoto/",
-  },
-];
-
 const advisors = [
   {
     name: "Federica Fornaciari",
