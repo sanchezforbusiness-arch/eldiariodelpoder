@@ -22,9 +22,6 @@ export function PartnerStrip() {
               Diario fundado en 1881 en Barcelona. Uno de los referentes históricos de la prensa en castellano.
             </p>
           </div>
-          <p className="prose-editorial max-w-[38ch] text-sm text-muted-foreground md:text-right">
-            Grabamos en Madrid, publicamos íntegro y lo distribuimos con La Vanguardia. Sin recortes y sin contrapartidas editoriales.
-          </p>
         </div>
       </div>
     </section>
