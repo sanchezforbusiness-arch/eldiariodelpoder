@@ -16,6 +16,7 @@ import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
 import massimilianoAsset from "@/assets/guest-massimiliano-squillace.png.asset.json";
 import echavarrenImg from "@/assets/guest-echavarren.webp";
 import rocioAsset from "@/assets/guest-rocio-monasterio.png.asset.json";
+import arturoHerasAsset from "@/assets/guest-arturo-de-las-heras.png.asset.json";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
@@ -31,6 +32,7 @@ export const guestImageBySlug: Record<string, string> = {
   "massimiliano-squillace": massimilianoAsset.url,
   "mikel-echavarren": echavarrenImg,
   "rocio-monasterio": rocioAsset.url,
+  "arturo-de-las-heras": arturoHerasAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
