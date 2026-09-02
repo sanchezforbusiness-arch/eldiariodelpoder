@@ -1,9 +1,3 @@
-const FIGURES = [
-  { v: "+500K", l: "Alcance mensual" },
-  { v: "+40", l: "Conversaciones grabadas" },
-  { v: "2025", l: "Desde Madrid" },
-];
-
 /**
  * Compact media-partner strip. Replaces the old full-height Vanguardia band:
  * one hairline row, no dead space, figures inline in mono.
