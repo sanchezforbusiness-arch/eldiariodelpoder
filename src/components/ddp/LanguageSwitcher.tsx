@@ -126,7 +126,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
       {open && (
         <div
           role="listbox"
-          className="notranslate absolute right-0 top-full z-50 mt-1 min-w-44 overflow-hidden rounded-xl border border-border bg-card py-1 shadow-lg"
+          className="notranslate absolute right-0 top-full z-50 mt-1 max-h-[70dvh] min-w-44 overflow-y-auto rounded-xl border border-border bg-card py-1 text-card-foreground shadow-lg"
         >
           {LANGS.map((l) => (
             <button
@@ -134,7 +134,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
               role="option"
               aria-selected={l.code === current}
               onClick={() => choose(l.code)}
-              className="flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left text-sm text-foreground transition-colors hover:bg-muted"
+              className="flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left text-sm text-card-foreground transition-colors hover:bg-muted hover:text-card-foreground"
             >
               {l.label}
               {l.code === current && <Check size={14} className="text-signal" aria-hidden />}
@@ -142,6 +142,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
           ))}
         </div>
       )}
+
 
       <div id="google_translate_element" className="hidden" />
     </div>
