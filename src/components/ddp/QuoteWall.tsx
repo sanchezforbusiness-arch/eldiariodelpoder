@@ -156,10 +156,10 @@ export function QuoteWall() {
         <div className="reveal-stagger max-w-[46ch]">
           <span className="mono-label">Voces</span>
           <h2 className="type-section mt-4 font-medium">
-            Lo que se cuenta en la mesa
+            Reflexiones
           </h2>
           <p className="mt-4 text-sm text-muted-foreground">
-            Una idea de cada conversación. Entra en la ficha para escucharla entera.
+            Lo que han dicho quienes han pasado por el programa. Y el impacto que estas conversaciones están teniendo.
           </p>
         </div>
 
