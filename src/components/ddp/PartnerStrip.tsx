@@ -30,16 +30,11 @@ export function PartnerStrip() {
           </p>
         </div>
 
-        <dl className="mt-12 grid grid-cols-2 border-t border-border md:mt-16 md:grid-cols-3">
-          {FIGURES.map((f, i) => (
+        <dl className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3 md:mt-16 md:gap-4">
+          {FIGURES.map((f) => (
             <div
               key={f.l}
-              className={[
-                "flex flex-col gap-2 border-b border-border py-6 pr-4 md:border-b-0 md:py-8",
-                i % 2 === 1 ? "border-l pl-4 md:pl-6" : "",
-                "md:border-l md:pl-6",
-                i === 0 ? "md:border-l-0 md:pl-0" : "",
-              ].join(" ")}
+              className="card-clean flex flex-col gap-2 rounded-[20px] bg-card px-6 py-7 md:py-9"
             >
               <dd className="tabular font-sans text-xl font-medium leading-none tracking-tight md:text-2xl">
                 {f.v}
@@ -48,6 +43,7 @@ export function PartnerStrip() {
             </div>
           ))}
         </dl>
+
       </div>
     </section>
   );
