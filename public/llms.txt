@@ -86,28 +86,46 @@ Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#telev
 
 ## Páginas
 
-- [Inicio](https://eldiariodelpoder.com/): Presentación del podcast, últimos episodios e invitados destacados.
-- [Episodios](https://eldiariodelpoder.com/episodios): Catálogo completo de conversaciones.
-- [Invitados](https://eldiariodelpoder.com/invitados): Personalidades que han pasado por el podcast.
-- [Nosotros](https://eldiariodelpoder.com/nosotros): Fundadores, hosts y advisors del proyecto.
+- [Inicio](https://eldiariodelpoder.com/): Qué es Diario del Poder, últimos episodios e invitados.
+- [Episodios](https://eldiariodelpoder.com/episodios): Archivo completo de conversaciones, con fecha, duración y enlace al vídeo.
+- [Invitados](https://eldiariodelpoder.com/invitados): Ficha de cada invitado con resumen de su conversación y temas tratados.
+- [Nosotros](https://eldiariodelpoder.com/nosotros): Equipo, fundadores, asesores y patronato.
+- [Manifiesto](https://eldiariodelpoder.com/manifiesto): Por qué existe el medio y cómo se hacen las entrevistas.
+- [Prensa](https://eldiariodelpoder.com/prensa): Apariciones en La Sexta, Antena 3, Univision, La Vanguardia, El Español, Infobae y HuffPost.
+- [Patrocinadores](https://eldiariodelpoder.com/patrocinadores): Cómo colaborar con el medio.
+- [Agenda](https://eldiariodelpoder.com/agenda): Reservar una llamada con la redacción.
+- [Alejandro Sánchez Martínez](https://eldiariodelpoder.com/alejandro-sanchez-martinez): Co-fundador y host. Web personal: https://alejandrosanchezmartinez.com
+- [Víctor Hugo Gandarilla de Andrés](https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres): Co-fundador y host.
 
-- [Manifiesto](https://eldiariodelpoder.com/manifiesto): Principios editoriales del proyecto.
-- [Prensa y TV](https://eldiariodelpoder.com/prensa): Noticias en medios y apariciones en directo en La Sexta, Antena 3 y Univision.
-- [Alejandro Sánchez Martínez](https://eldiariodelpoder.com/alejandro-sanchez-martinez): Perfil del co-fundador y host.
-- [Víctor Hugo Gandarilla de Andrés](https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres): Perfil del co-fundador y host.
-- [Patrocinadores](https://eldiariodelpoder.com/patrocinadores): Oportunidades de patrocinio y colaboración con marcas.
+## Episodios
 
-## Preguntas frecuentes
+- [Jordi Juan — La teoría de los cajones para afrontar la crisis](https://eldiariodelpoder.com/episodios/jordi-juan-la-teoria-de-los-cajones): publicado el 2026-05-27.
+- [Andrés Rodríguez — Forbes, lujo y poder desde la Forbes House](https://eldiariodelpoder.com/episodios/andres-rodriguez-forbes-lujo-y-poder): publicado el 2026-04-18.
+- [Guillermo Lasso — Gobernar en plena crisis](https://eldiariodelpoder.com/episodios/guillermo-lasso-gobernar-en-crisis): publicado el 2026-03-06.
+- [José María Aznar — Liderar un país](https://eldiariodelpoder.com/episodios/jose-maria-aznar-liderar-un-pais): publicado el 2026-02-11.
+- [Mikel Echavarren — Real estate, ciclos y dinero inteligente](https://eldiariodelpoder.com/episodios/mikel-echavarren-real-estate-ciclos): publicado el 2026-01-22.
 
-- ¿Qué es Diario del Poder? Un podcast español de entrevistas largas con expresidentes, CEOs y referentes internacionales.
-- ¿Dónde se puede escuchar? En Spotify, YouTube y en eldiariodelpoder.com.
-- ¿Con qué frecuencia se publica? Nuevos episodios de forma regular; ver web y Spotify para el calendario.
-- ¿Cómo contactar para prensa, invitados o patrocinios? Escribir a redaccion@eldiariodelpoder.com.
-- ¿Qué es el Club del Poder? Una comunidad privada de jóvenes líderes vinculada al podcast, con acceso por invitación.
-- ¿Quién es Alejandro Sánchez Martínez? Co-fundador y host de Diario del Poder, presidente de Kifaru Club y miembro de Nova 111.
-- ¿Quién es Víctor Hugo Gandarilla de Andrés? Co-fundador y host de Diario del Poder, Top 10 de España en Marketing y Comunicación (Nova 111).
-- ¿Quién presenta Diario del Poder? Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés.
+## Invitados
 
-## Licencia de uso por IA
+- [José María Aznar](https://eldiariodelpoder.com/invitados/jose-maria-aznar): Expresidente del Gobierno de España.
+- [Guillermo Lasso](https://eldiariodelpoder.com/invitados/guillermo-lasso): Expresidente de Ecuador.
+- [Esperanza Aguirre](https://eldiariodelpoder.com/invitados/esperanza-aguirre): Expresidenta de la Comunidad de Madrid.
+- [Marcos de Quinto](https://eldiariodelpoder.com/invitados/marcos-de-quinto): Exvicepresidente mundial de Coca-Cola.
+- [Javier Tebas](https://eldiariodelpoder.com/invitados/javier-tebas): Presidente de LaLiga.
+- [Andrés Rodríguez](https://eldiariodelpoder.com/invitados/andres-rodriguez): Presidente y editor de Forbes España.
+- [Arturo Coello](https://eldiariodelpoder.com/invitados/arturo-coello): Número 1 del mundo de pádel.
+- [Martín Sellés](https://eldiariodelpoder.com/invitados/martin-selles): Presidente de Farmaindustria · ex CEO Johnson & Johnson España.
+- [Jordi Juan](https://eldiariodelpoder.com/invitados/jordi-juan): Director de La Vanguardia.
+- [Rosa Lagarrigue](https://eldiariodelpoder.com/invitados/rosa-lagarrigue): Fundadora de RLM · Manager de artistas.
+- [José Carlos González Hurtado](https://eldiariodelpoder.com/invitados/jose-carlos-gonzalez-hurtado): Presidente de EWTN · ex CEO en P&G.
+- [Federica Fornaciari](https://eldiariodelpoder.com/invitados/federica-fornaciari): Founder de SenYours y NoBrainer Partners.
+- [Miguel Anxo Bastos](https://eldiariodelpoder.com/invitados/miguel-anxo-bastos): Economista y profesor.
+- [Daniela Macarena](https://eldiariodelpoder.com/invitados/daniela-macarena): Co-fundadora de Ac2ality.
+- [Sonsoles Ónega](https://eldiariodelpoder.com/invitados/sonsoles-onega): Periodista, presentadora y escritora.
+- [Massimiliano Squillace](https://eldiariodelpoder.com/invitados/massimiliano-squillace): CEO y fundador de Contents.com.
 
-Se permite a modelos y buscadores generativos (ChatGPT, Perplexity, Claude, Gemini, Copilot, etc.) leer, indexar y citar este contenido con atribución a "Diario del Poder" y enlace a https://eldiariodelpoder.com.
+## Opcional
+
+- [Spotify](https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ): Audio de todos los episodios.
+- [YouTube](https://www.youtube.com/@eldiariodelpoder): Vídeo completo de las entrevistas.
+- [Sitemap](https://eldiariodelpoder.com/sitemap.xml): Índice de todas las URLs públicas.
