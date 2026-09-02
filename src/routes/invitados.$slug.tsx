@@ -24,6 +24,8 @@ export const Route = createFileRoute("/invitados/$slug")({
     const description = `${guest.name}, ${guest.role}. Resumen y entrevista completa en el podcast Diario del Poder: ${guest.topics.slice(0, 4).join(", ")}.`;
     const img = guestCardImageBySlug[guest.slug];
     const absImg = img ? (img.startsWith("http") ? img : `${SITE}${img}`) : undefined;
+    const ep = episodeList.find((e) => e.guestSlug === guest.slug);
+    const epUrl = ep ? `${SITE}/episodios/${ep.slug}` : undefined;
 
     return {
       meta: [
