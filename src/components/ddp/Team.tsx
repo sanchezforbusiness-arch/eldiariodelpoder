@@ -113,7 +113,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img?: str
       {m.to && (
         <Link
           to={m.to}
-          className="mt-4 inline-block text-2xs tracking-label uppercase text-foreground hover:underline"
+          className="tap mt-2 text-2xs tracking-label uppercase text-foreground hover:underline"
           itemProp="url"
         >
           Ver perfil

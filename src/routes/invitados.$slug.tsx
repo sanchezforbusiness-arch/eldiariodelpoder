@@ -157,7 +157,7 @@ function GuestPage() {
           />
 
           <nav aria-label="Migas de pan" className="mt-6 text-2xs tracking-label uppercase text-muted-foreground">
-            <Link to="/invitados" className="hover:text-foreground">Invitados</Link>
+            <Link to="/invitados" className="tap hover:text-foreground">Invitados</Link>
             <span className="mx-2 text-muted-foreground">/</span>
             <span className="text-muted-foreground">{guest.name}</span>
           </nav>
