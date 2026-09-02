@@ -56,7 +56,7 @@ export function PartnerStrip() {
                 target="_blank"
                 rel="noreferrer"
                 style={{ transform: `rotate(${p.tilt})` }}
-                className="pin-card tap block rounded-[20px] border border-border bg-card px-6 pb-6 pt-8 text-center"
+                className="pin-card block rounded-[20px] border border-border bg-card px-6 pb-6 pt-8 text-center"
               >
                 <p className="font-mono text-2xs uppercase tracking-[0.14em] text-muted-foreground">
                   {p.label}

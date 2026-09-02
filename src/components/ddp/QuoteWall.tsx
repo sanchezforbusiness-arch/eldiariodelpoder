@@ -36,7 +36,7 @@ function QuoteCard({ item }: { item: Item }) {
     <Link
       to="/invitados/$slug"
       params={{ slug: item.slug }}
-      className="card-clean tap block p-5 md:p-6"
+      className="card-clean block p-5 md:p-6"
     >
       <p className="text-sm leading-relaxed text-foreground md:text-base">{item.line}</p>
       <div className="mt-5 flex items-center gap-3">
