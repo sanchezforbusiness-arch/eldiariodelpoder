@@ -75,7 +75,7 @@ function split(items: Item[], n: number): Item[][] {
 function QuoteCardBody({ item }: { item: Item }) {
   return (
     <>
-      <p className="text-sm leading-relaxed text-foreground">
+      <p className="min-w-0 break-words text-sm leading-relaxed text-foreground">
         <em className="italic">“{item.line}”</em>
       </p>
       <div className="mt-5 flex items-center gap-3">
@@ -112,7 +112,7 @@ function QuoteCard({ item }: { item: Item }) {
   const isExternal = item.slug === "club-osasuna";
   if (isExternal) {
     return (
-      <div className="card-clean block p-5 md:p-6">
+      <div className="card-clean block w-full max-w-full p-4 md:p-6">
         <QuoteCardBody item={item} />
       </div>
     );
@@ -121,7 +121,7 @@ function QuoteCard({ item }: { item: Item }) {
     <Link
       to="/invitados/$slug"
       params={{ slug: item.slug }}
-      className="card-clean block p-5 md:p-6"
+      className="card-clean block w-full max-w-full p-4 md:p-6"
     >
       <QuoteCardBody item={item} />
     </Link>
@@ -130,13 +130,13 @@ function QuoteCard({ item }: { item: Item }) {
 
 function Column({ items, reverse, duration }: { items: Item[]; reverse?: boolean; duration: number }) {
   return (
-    <div className="quote-col">
+    <div className="quote-col min-w-0">
       <div
-        className={`quote-track ${reverse ? "quote-track-reverse" : ""}`}
+        className={`quote-track min-w-0 ${reverse ? "quote-track-reverse" : ""}`}
         style={{ animationDuration: `${duration}s` }}
       >
         {[0, 1].map((dup) => (
-          <div key={dup} className="flex flex-col gap-5" aria-hidden={dup === 1}>
+          <div key={dup} className="flex min-w-0 flex-col gap-5" aria-hidden={dup === 1}>
             {items.map((it) => (
               <QuoteCard key={`${dup}-${it.slug}`} item={it} />
             ))}
@@ -163,18 +163,18 @@ export function QuoteWall() {
           </p>
         </div>
 
-        <div className="quote-wall mt-12 grid gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+        <div className="quote-wall mt-12 grid min-w-0 gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {/* Mobile: una sola hilera; tablet+: tres columnas */}
-          <div className="md:hidden">
+          <div className="min-w-0 md:hidden">
             <Column items={ITEMS} duration={64} />
           </div>
-          <div className="hidden md:block">
+          <div className="hidden min-w-0 md:block">
             <Column items={cols[0]} duration={52} />
           </div>
-          <div className="hidden md:block">
+          <div className="hidden min-w-0 md:block">
             <Column items={cols[1]} reverse duration={64} />
           </div>
-          <div className="hidden md:block">
+          <div className="hidden min-w-0 md:block">
             <Column items={cols[2]} duration={58} />
           </div>
         </div>
