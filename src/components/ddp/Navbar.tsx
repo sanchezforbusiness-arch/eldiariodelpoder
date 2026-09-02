@@ -67,7 +67,7 @@ export function Navbar() {
           <Link
             to="/"
             hash="top"
-            className="block min-w-0 truncate font-mono text-2xs uppercase tracking-label text-foreground lg:text-2xs"
+            className="tap min-w-0 max-w-full truncate font-mono text-2xs uppercase tracking-label text-foreground lg:text-2xs"
           >
             Diario del Poder
           </Link>
