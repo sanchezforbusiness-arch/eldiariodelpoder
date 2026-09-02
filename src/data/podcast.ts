@@ -363,6 +363,18 @@ export const guestList: GuestEntry[] = [
       "Cierra con una reflexión sobre el papel de las nuevas generaciones en la política y la empresa.",
     ],
   },
+  {
+    slug: "arturo-de-las-heras",
+    name: "Arturo de las Heras",
+    role: "Presidente del Grupo Educativo CEF.- UDIMA",
+    bio: "Educación superior, emprendimiento y formación de las nuevas generaciones.",
+    topics: ["educación", "universidad", "emprendimiento", "talento joven", "gestión empresarial"],
+    summary: [
+      "Arturo de las Heras dirige uno de los grupos educativos privados de referencia en España, con miles de estudiantes formándose cada año.",
+      "En Diario del Poder analiza cómo ha cambiado la educación superior, el peso real de la formación online y qué competencias marcan hoy la diferencia al entrar en el mercado laboral.",
+      "Comparte además su visión sobre el emprendimiento y el papel de las instituciones educativas en la creación de talento.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
