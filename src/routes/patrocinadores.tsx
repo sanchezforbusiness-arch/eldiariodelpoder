@@ -253,7 +253,7 @@ function Contact() {
             Cuéntanos tu compañía y tus objetivos. Te respondemos en menos de 48 horas con una propuesta a medida.
           </p>
 
-          <div className="mt-10 inline-flex flex-col items-center gap-5">
+          <div className="mt-10 flex w-full max-w-full flex-col items-center gap-5">
             <Link to="/agenda" className="btn-primary">
               Agendar una llamada
               <ArrowUpRight size={14} />

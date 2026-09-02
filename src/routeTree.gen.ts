@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
@@ -28,6 +29,11 @@ const VictorHugoGandarillaDeAndresRoute =
     path: '/victor-hugo-gandarilla-de-andres',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrensaRoute = PrensaRouteImport.update({
   id: '/prensa',
   path: '/prensa',
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
+    | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
     | '/episodios/$slug'
     | '/invitados/$slug'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
+    | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
     | '/episodios/$slug'
     | '/invitados/$slug'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
+    | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
     | '/episodios/$slug'
     | '/invitados/$slug'
@@ -181,6 +193,7 @@ export interface RootRouteChildren {
   NosotrosRoute: typeof NosotrosRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PrensaRoute: typeof PrensaRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
   EpisodiosSlugRoute: typeof EpisodiosSlugRoute
   InvitadosSlugRoute: typeof InvitadosSlugRoute
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/victor-hugo-gandarilla-de-andres'
       fullPath: '/victor-hugo-gandarilla-de-andres'
       preLoaderRoute: typeof VictorHugoGandarillaDeAndresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prensa': {
@@ -285,6 +305,7 @@ const rootRouteChildren: RootRouteChildren = {
   NosotrosRoute: NosotrosRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PrensaRoute: PrensaRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
   EpisodiosSlugRoute: EpisodiosSlugRoute,
   InvitadosSlugRoute: InvitadosSlugRoute,

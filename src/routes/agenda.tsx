@@ -23,6 +23,30 @@ export const Route = createFileRoute("/agenda")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/agenda" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "@id": "https://eldiariodelpoder.com/agenda#contactpage",
+          url: "https://eldiariodelpoder.com/agenda",
+          name: "Agenda una llamada — Diario del Poder",
+          inLanguage: "es-ES",
+          description:
+            "Reserva 30 minutos con el equipo de Diario del Poder: patrocinios, colaboraciones, prensa o propuestas de entrevista.",
+          isPartOf: { "@id": "https://eldiariodelpoder.com/#website" },
+          about: { "@id": "https://eldiariodelpoder.com/#organization" },
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eldiariodelpoder.com/" },
+              { "@type": "ListItem", position: 2, name: "Agenda", item: "https://eldiariodelpoder.com/agenda" },
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: AgendaPage,
 });
