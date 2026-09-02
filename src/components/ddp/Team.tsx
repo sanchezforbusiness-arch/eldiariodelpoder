@@ -141,9 +141,37 @@ export function Team() {
           <span>Patronato</span>
           <span aria-hidden className="h-px flex-1 bg-border" />
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-10">
-          {board.map((m) => <Person key={m.name} m={m} />)}
+        <div className="border-t border-border">
+          {board.map((m) => (
+            <article
+              key={m.name}
+              className="group grid gap-4 border-b border-border py-8 md:grid-cols-12 md:gap-10"
+              itemScope
+              itemType="https://schema.org/Person"
+            >
+              <div className="md:col-span-4">
+                <h3 className="text-xl tracking-tight md:text-lg" itemProp="name">{m.name}</h3>
+                <p className="mt-2 text-2xs uppercase tracking-label text-muted-foreground" itemProp="jobTitle">
+                  {m.role}
+                </p>
+              </div>
+              <p className="prose-editorial md:col-span-6" itemProp="description">{m.bio}</p>
+              <div className="md:col-span-2 md:justify-self-end">
+                <a
+                  href={m.ln}
+                  target="_blank"
+                  rel="noreferrer me"
+                  aria-label={`LinkedIn ${m.name}`}
+                  className="tap text-muted-foreground transition-colors hover:text-signal"
+                  itemProp="sameAs"
+                >
+                  <Linkedin size={18} />
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
+
 
         <div className="mt-20 mb-8 flex items-baseline gap-4 text-2xs tracking-label uppercase text-muted-foreground">
           <span>Quienes nos guían</span>
