@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
+import { BrandMark } from "@/components/ddp/BrandsMarquee";
 
 const sponsors = [
-  { name: "NoBrainer Partners", tag: "M&A · Advisory" },
-  { name: "Le Jeune Asesores", tag: "Legal · Patrimonios" },
-  { name: "Pateberg", tag: "Capital privado" },
-  { name: "SenYours Consulting", tag: "Estrategia · Marca" },
-  { name: "Metalabs", tag: "Tecnología" },
+  { name: "NoBrainer Partners", tag: "M&A · Advisory", domain: "nobrainer.partners" },
+  { name: "Le Jeune Asesores", tag: "Legal · Patrimonios", domain: "lejeune.es" },
+  { name: "Pateberg", tag: "Capital privado", domain: "pateberg.com" },
+  { name: "SenYours Consulting", tag: "Estrategia · Marca", domain: "senyours.com" },
+  { name: "Metalabs", tag: "Tecnología", domain: "metlabs.io" },
 ];
 const partners = ["La Vanguardia"];
 
@@ -34,16 +35,19 @@ export function Sponsors() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {sponsors.map((s) => (
               <div
                 key={s.name}
-                className="bg-card/40 rounded-sm border border-border py-10 px-5 flex flex-col items-center justify-center text-center group hover:bg-card hover:border-foreground/40 transition-colors min-h-[140px]"
+                className="card-clean group flex min-h-[128px] flex-col justify-center gap-3 rounded-[20px] bg-card px-7 py-8 transition-colors"
               >
-                <span className="font-serif text-lg md:text-xl text-foreground/85 group-hover:text-signal transition-colors leading-tight">
-                  {s.name}
-                </span>
-                <span className="mt-2 text-2xs tracking-label uppercase text-muted-foreground">{s.tag}</span>
+                <div className="flex items-center gap-3">
+                  <BrandMark domain={s.domain} name={s.name} />
+                  <span className="font-serif text-lg leading-tight text-foreground/90 transition-colors group-hover:text-signal md:text-xl">
+                    {s.name}
+                  </span>
+                </div>
+                <span className="text-2xs uppercase tracking-label text-muted-foreground">{s.tag}</span>
               </div>
             ))}
           </div>
