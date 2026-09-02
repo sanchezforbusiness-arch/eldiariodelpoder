@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#0A0A0A" },
+      { name: "theme-color", content: "#FFFAF0" },
       { title: "Diario del Poder — Entrevistas con jefes de Estado y CEOs" },
       { name: "description", content: "Entrevistas largas con jefes de Estado, CEOs y altos directivos. Conversaciones sin guion, grabadas en Madrid y publicadas sin recortes." },
       { property: "og:title", content: "Diario del Poder — Entrevistas con jefes de Estado y CEOs" },

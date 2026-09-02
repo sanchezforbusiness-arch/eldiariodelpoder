@@ -21,9 +21,12 @@ const SOCIAL = [
 
 export function FooterGrid() {
   return (
-    <footer id="contact" className="relative border-t border-border">
+    <footer
+      id="contact"
+      className="surface-dark relative mx-2 mb-2 overflow-hidden rounded-[28px] md:mx-3 md:mb-3 md:rounded-[36px]"
+    >
       <div className="container-ddp pt-16 md:pt-24">
-        <div className="panel mb-14 flex flex-col gap-6 p-6 md:mb-20 md:flex-row md:items-center md:justify-between md:p-10">
+        <div className="panel surface-light mb-14 flex flex-col gap-6 p-6 md:mb-20 md:flex-row md:items-center md:justify-between md:p-10">
           <div>
             <p className="mono-label">¿Hablamos?</p>
             <p className="mt-3 max-w-[24ch] text-lg font-medium leading-[1.1] tracking-tight md:text-xl">
