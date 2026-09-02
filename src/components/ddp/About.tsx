@@ -47,6 +47,14 @@ export function About() {
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-2xs tracking-label uppercase text-muted-foreground">Fundador</p>
                   <p className="font-serif text-xl mt-1">Alejandro</p>
+                  <a
+                    href="https://alejandrosanchezmartinez.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-2xs text-muted-foreground underline-offset-2 hover:text-signal hover:underline"
+                  >
+                    alejandrosanchezmartinez.com
+                  </a>
                 </div>
               </div>
               <div className="relative aspect-[3/4] overflow-hidden hover-cinema">
