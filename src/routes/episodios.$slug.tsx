@@ -8,6 +8,15 @@ import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podc
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 
+/** "1h 04m" → "PT1H4M" (ISO 8601), o undefined si no hay duración legible */
+function isoDuration(raw?: string) {
+  if (!raw) return undefined;
+  const h = raw.match(/(\d+)\s*h/i);
+  const m = raw.match(/(\d+)\s*m/i);
+  if (!h && !m) return undefined;
+  return `PT${h ? `${Number(h[1])}H` : ""}${m ? `${Number(m[1])}M` : ""}`;
+}
+
 export const Route = createFileRoute("/episodios/$slug")({
   loader: ({ params }) => {
     const episode = getEpisodeBySlug(params.slug);
