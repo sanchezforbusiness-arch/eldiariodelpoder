@@ -222,12 +222,12 @@ function GuestPage() {
           <nav aria-label="Migas de pan" className="mt-6 text-2xs tracking-label uppercase text-muted-foreground">
             <Link to="/invitados" className="tap hover:text-foreground">Invitados</Link>
             <span className="mx-2 text-muted-foreground">/</span>
-            <span className="text-muted-foreground">{guest.name}</span>
+            <span className="notranslate text-muted-foreground" translate="no">{guest.name}</span>
           </nav>
 
           <header className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end">
             <div>
-              <h1 className="text-2xl sm:text-display md:text-display leading-[0.98] font-medium tracking-tight">
+              <h1 className="notranslate text-2xl sm:text-display md:text-display leading-[0.98] font-medium tracking-tight" translate="no">
                 {guest.name}
               </h1>
               <p className="mt-4 font-serif text-base font-light text-muted-foreground">{guest.role}</p>
@@ -402,7 +402,7 @@ function GuestPage() {
               {others.map((g) => (
                 <li key={g.slug}>
                   <Link to="/invitados/$slug" params={{ slug: g.slug }} className="group block">
-                    <h3 className="tracking-tight text-xl leading-tight group-hover:text-signal transition-colors">{g.name}</h3>
+                    <h3 className="notranslate tracking-tight text-xl leading-tight group-hover:text-signal transition-colors" translate="no">{g.name}</h3>
                     <p className="mt-1.5 font-serif text-xs font-light text-muted-foreground">{g.role}</p>
                   </Link>
                 </li>

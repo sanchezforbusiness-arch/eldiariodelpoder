@@ -95,7 +95,7 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img?: str
       </div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="tracking-tight text-2xl md:text-lg leading-tight" itemProp="name">{m.name}</h3>
+          <h3 className="notranslate tracking-tight text-2xl md:text-lg leading-tight" translate="no" itemProp="name">{m.name}</h3>
           <p className="mt-1.5 text-2xs tracking-label uppercase text-foreground" itemProp="jobTitle">{m.role}</p>
         </div>
         <div className="flex items-center gap-3 mt-2">
@@ -150,7 +150,7 @@ export function Team() {
               itemType="https://schema.org/Person"
             >
               <div className="md:col-span-4">
-                <h3 className="text-xl tracking-tight md:text-lg" itemProp="name">{m.name}</h3>
+                <h3 className="notranslate text-xl tracking-tight md:text-lg" translate="no" itemProp="name">{m.name}</h3>
                 <p className="mt-2 text-2xs uppercase tracking-label text-muted-foreground" itemProp="jobTitle">
                   {m.role}
                 </p>
