@@ -96,9 +96,9 @@ export function HeroNoir() {
             </div>
 
 
-            <div className="mt-7 max-w-[46ch] md:mt-9">
+            <div className="mt-7 max-w-[48ch] md:mt-9">
               <p className="prose-editorial">
-                Nos sentamos con jefes de Estado, presidentes y CEOs para preguntarles lo que se pregunta en privado. Publicamos la conversación entera.
+                Nos sentamos con los mayores referentes del mundo para que dejen su legado a la juventud.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#ultimo" className="btn-primary w-full sm:w-auto">
