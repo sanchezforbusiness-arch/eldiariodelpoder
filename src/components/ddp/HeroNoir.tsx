@@ -35,7 +35,7 @@ export function HeroNoir() {
 
   return (
     <section id="top" className="relative bg-background p-2 md:p-3">
-      <div className="relative min-h-[calc(100dvh-16px)] overflow-hidden rounded-sm border border-border grain md:min-h-[calc(100dvh-24px)]">
+      <div className="surface-dark relative min-h-[calc(100dvh-16px)] overflow-hidden rounded-[28px] border border-border shadow-lift grain md:min-h-[calc(100dvh-24px)] md:rounded-[36px]">
         <div
           className="pointer-events-none absolute inset-0 overflow-hidden"
           style={{ transform: `scale(${1 + scrolled * 0.05})`, opacity: 1 - scrolled * 0.7 }}
@@ -49,11 +49,11 @@ export function HeroNoir() {
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="absolute inset-0 h-full w-full grayscale contrast-110 opacity-80"
+            className="absolute inset-0 h-full w-full contrast-105 saturate-[0.9] opacity-75"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
-          <div className="absolute inset-0 bg-background/45" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-0 bg-background/55" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent" />
         </div>
 
         <div className="container-ddp safe-b relative z-10 flex min-h-[calc(100dvh-16px)] flex-col justify-end pb-16 pt-32 md:min-h-[calc(100dvh-24px)] md:pb-20 md:pt-40">

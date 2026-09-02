@@ -9,8 +9,8 @@ const ep = episodeList[0];
 export function LatestEpisode() {
   const ref = useParallax(0.12);
   return (
-    <section id="ultimo" className="relative border-b border-border">
-      <div className="grid lg:grid-cols-12">
+    <section id="ultimo" className="relative px-4 py-10 md:px-6 md:py-16">
+      <div className="mx-auto grid w-full max-w-[1440px] overflow-hidden rounded-[24px] border border-border bg-card shadow-soft md:rounded-[32px] lg:grid-cols-12">
         <Link
           to="/episodios/$slug"
           params={{ slug: ep.slug }}
@@ -27,7 +27,7 @@ export function LatestEpisode() {
               className="absolute inset-0 h-[124%] w-full -translate-y-[12%] object-cover object-top contrast-110 transition-[filter] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,10,10,0.9),rgba(10,10,10,0.15)_55%,transparent)]" />
-            <div className="absolute inset-x-0 bottom-0 p-6 md:p-12">
+            <div className="text-on-image absolute inset-x-0 bottom-0 p-6 md:p-12">
               <p className="mono-label text-signal">Último episodio</p>
               <h2 className="mt-4 max-w-3xl text-xl font-medium leading-[0.94] tracking-tight sm:text-2xl md:hidden lg:block lg:text-2xl">
                 {ep.title}
