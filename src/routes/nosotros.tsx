@@ -5,6 +5,8 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Team } from "@/components/ddp/Team";
 import { useReveal } from "@/hooks/use-reveal";
 
+import { FortiusBand } from "@/components/ddp/FortiusBand";
+
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
@@ -22,7 +24,7 @@ export const Route = createFileRoute("/nosotros")({
       { property: "og:title", content: "Nosotros — Diario del Poder" },
       {
         property: "og:description",
-        content: "Dos fundadores, tres asesores y una conversación. Hecho en Madrid.",
+        content: "Quién firma Diario del Poder: fundadores, patronato y asesores. Respaldo institucional de la Fundación Fortius.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
@@ -84,13 +86,15 @@ function NosotrosPage() {
             </div>
             <div className="md:col-span-4">
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Dos fundadores. Tres asesores. Hecho en Madrid.
+                Dos fundadores, un patronato y tres asesores. Una redacción en Madrid, respaldada por la Fundación Fortius.
               </p>
             </div>
           </div>
         </header>
 
         <Team />
+
+        <FortiusBand />
 
         {/* Manifiesto pull-quote — enlace, no duplicación */}
  <section className="border-t border-border py-16 md:py-32">

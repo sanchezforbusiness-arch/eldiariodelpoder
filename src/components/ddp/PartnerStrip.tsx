@@ -26,7 +26,7 @@ export function PartnerStrip() {
             </a>
           </div>
           <p className="prose-editorial max-w-[38ch] text-sm text-muted-foreground md:text-right">
-            Conversaciones grabadas en Madrid y distribuidas sin recortes.
+            Grabamos en Madrid, publicamos íntegro y lo distribuimos con La Vanguardia. Sin recortes y sin contrapartidas editoriales.
           </p>
         </div>
 

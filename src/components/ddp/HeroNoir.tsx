@@ -91,13 +91,13 @@ export function HeroNoir() {
                   />
                 ))}
               </span>
-              <span className="mono-label">{guestList.length} invitados en la mesa</span>
+              <span className="mono-label">{guestList.length} invitados se han sentado</span>
             </div>
 
 
             <div className="mt-7 max-w-[46ch] md:mt-9">
               <p className="prose-editorial">
-                Nos sentamos con presidentes, CEOs y referentes, y publicamos la conversación entera.
+                Nos sentamos con jefes de Estado, presidentes y CEOs para preguntarles lo que se pregunta en privado. Publicamos la conversación entera.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#ultimo" className="btn-primary w-full sm:w-auto">
