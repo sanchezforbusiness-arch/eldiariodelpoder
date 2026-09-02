@@ -115,7 +115,7 @@ const structuredData = {
           name: "¿Quién está detrás de Diario del Poder?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con respaldo institucional de la Fundación Fortius, cuyo presidente, Juan Ángel Soto Gómez, forma parte del patronato. La Vanguardia es media partner.",
+            text: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con un patronato de apoyo y La Vanguardia como media partner.",
           },
         },
         {
