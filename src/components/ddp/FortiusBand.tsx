@@ -35,8 +35,7 @@ export function FortiusBand() {
 
           <div className="reveal md:col-span-7">
             <p className="text-lg font-medium leading-[1.15] tracking-tight md:text-xl">
-              Diario del Poder nace bajo el paraguas de una fundación. Detrás de cada
-              conversación hay un objeto fundacional, no un algoritmo.
+              Tenemos una alianza con la Fundación Fortius.
             </p>
             <p className="prose-editorial mt-6">
               La Fundación Fortius es una <em>grant-making foundation</em> e incubadora
