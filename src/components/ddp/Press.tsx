@@ -134,7 +134,7 @@ export function Press() {
               <Tag
                 key={item.outlet}
                 {...(item.url ? { href: item.url, target: "_blank", rel: "noreferrer" } : {})}
-                className={`relative bg-card/40 p-6 md:p-8 min-h-[180px] flex flex-col justify-between overflow-hidden rounded-sm border border-border ${
+                className={`relative bg-card/40 p-5 md:p-8 min-h-[164px] md:min-h-[180px] flex flex-col justify-between overflow-hidden rounded-sm border border-border ${
                   item.url ? "group hover:bg-card/70 hover:border-foreground/40 transition-colors cursor-pointer" : "opacity-60"
                 }`}
               >
@@ -155,10 +155,10 @@ export function Press() {
                   )}
                 </div>
                 <div>
-                  <div className="font-serif text-xl md:text-2xl leading-[1.1] group-hover:text-signal transition-colors">
+                  <div className="font-serif text-lg leading-[1.15] hyphens-auto break-words sm:text-xl md:text-2xl group-hover:text-signal transition-colors">
                     {item.outlet}
                   </div>
-                  <div className="mt-3 text-2xs tracking-label uppercase text-muted-foreground">
+                  <div className="mt-3 text-2xs leading-snug tracking-label uppercase text-muted-foreground">
                     {item.context ?? (item.url ? "Leer pieza" : "Próximamente")}
                   </div>
                 </div>
