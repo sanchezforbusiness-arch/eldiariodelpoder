@@ -1,7 +1,21 @@
-const FAQ = [
+import type { ReactNode } from "react";
+
+const FAQ: { q: string; a: ReactNode }[] = [
   {
     q: "¿Qué es Diario del Poder?",
-    a: "Un podcast de entrevistas largas, fundado en 2025 en Madrid por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.",
+    a: (
+      <>
+        Un podcast de entrevistas largas, fundado en 2025 en Madrid por{" "}
+        <a
+          href="https://alejandrosanchezmartinez.com"
+          rel="me noreferrer"
+          className="transition-colors hover:text-signal"
+        >
+          Alejandro Sánchez Martínez
+        </a>{" "}
+        y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.
+      </>
+    ),
   },
   {
     q: "¿A quién entrevistáis?",

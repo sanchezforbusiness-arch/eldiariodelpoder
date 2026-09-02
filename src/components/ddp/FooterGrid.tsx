@@ -81,7 +81,16 @@ export function FooterGrid() {
 
         <div className="mt-16 flex flex-col gap-3 border-t border-border py-6 md:flex-row md:items-center md:justify-between">
           <p className="mono-label">© {new Date().getFullYear()} Diario del Poder</p>
-          <p className="mono-label">Alejandro Sánchez Martínez · Víctor Hugo Gandarilla de Andrés</p>
+          <p className="mono-label">
+            <a
+              href="https://alejandrosanchezmartinez.com"
+              rel="me noreferrer"
+              className="transition-colors hover:text-signal"
+            >
+              Alejandro Sánchez Martínez
+            </a>
+            {" · "}Víctor Hugo Gandarilla de Andrés
+          </p>
         </div>
       </div>
     </footer>
