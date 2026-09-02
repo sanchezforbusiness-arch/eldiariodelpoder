@@ -31,14 +31,6 @@ const founderVictor = {
   sameAs: ["https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres"],
 };
 
-const fortius = {
-  "@type": "Foundation",
-  "@id": "https://fortiusfoundation.org/#organization",
-  name: "Fundación Fortius",
-  url: "https://fortiusfoundation.org",
-  description:
-    "Grant-making foundation e incubadora constituida en Madrid en 2023, con entidad propia en Washington DC. Respalda institucionalmente a Diario del Poder.",
-};
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -61,19 +53,6 @@ const structuredData = {
         description: "Media partner oficial de Diario del Poder.",
       },
       founder: [founderAlejandro, founderVictor],
-      funder: fortius,
-      sponsor: fortius,
-      member: {
-        "@type": "OrganizationRole",
-        roleName: "Patronato",
-        member: {
-          "@type": "Person",
-          name: "Juan Ángel Soto Gómez",
-          jobTitle: "Presidente de la Fundación Fortius",
-          sameAs: ["https://www.linkedin.com/in/juanangelsoto/"],
-          affiliation: fortius,
-        },
-      },
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
@@ -100,19 +79,6 @@ const structuredData = {
       webFeed: "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
       publisher: { "@id": `${SITE_URL}/#organization` },
       founder: [founderAlejandro, founderVictor],
-      funder: fortius,
-      sponsor: fortius,
-      member: {
-        "@type": "OrganizationRole",
-        roleName: "Patronato",
-        member: {
-          "@type": "Person",
-          name: "Juan Ángel Soto Gómez",
-          jobTitle: "Presidente de la Fundación Fortius",
-          sameAs: ["https://www.linkedin.com/in/juanangelsoto/"],
-          affiliation: fortius,
-        },
-      },
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
@@ -149,7 +115,7 @@ const structuredData = {
           name: "¿Quién está detrás de Diario del Poder?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con respaldo institucional de la Fundación Fortius, cuyo presidente, Juan Ángel Soto Gómez, forma parte del patronato. La Vanguardia es media partner.",
+            text: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con un patronato de apoyo y La Vanguardia como media partner.",
           },
         },
         {

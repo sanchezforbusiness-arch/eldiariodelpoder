@@ -19,21 +19,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "¿Quién está detrás?",
-    a: (
-      <>
-        Una redacción independiente con respaldo institucional de la{" "}
-        <a
-          href="https://fortiusfoundation.org"
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-signal"
-        >
-          Fundación Fortius
-        </a>
-        , cuyo presidente, Juan Ángel Soto, forma parte de nuestro patronato. Eso nos
-        permite trabajar con horizonte largo y sin depender del clic.
-      </>
-    ),
+    a: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con un patronato de apoyo y La Vanguardia como media partner.",
   },
   {
     q: "¿A quién entrevistáis?",
