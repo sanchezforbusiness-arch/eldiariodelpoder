@@ -100,6 +100,7 @@ const episodesRaw: Omit<EpisodeEntry, "n">[] = [
     image: echavarrenImg,
     slug: "mikel-echavarren-real-estate-ciclos",
     youtubeId: "ARO5S1I5cg8",
+    guestSlug: "mikel-echavarren",
     transcript: [],
     guest: "Mikel Echavarren",
     role: "CEO de Colliers España",
@@ -315,6 +316,17 @@ export const guestList: GuestEntry[] = [
     summary: [
       "Daniela Macarena co-fundó Ac2ality, el medio que explica la actualidad a millones de jóvenes en vertical.",
       "Nos cuenta cómo se monta un medio desde una habitación, qué funciona de verdad en redes y cómo se sostiene un negocio informativo con audiencia joven.",
+    ],
+  },
+  {
+    slug: "mikel-echavarren",
+    name: "Mikel Echavarren",
+    role: "CEO de Colliers España",
+    bio: "Muy buena entrevista con unos jóvenes muy simpáticos y preparados",
+    youtubeId: "ARO5S1I5cg8",
+    topics: ["real estate", "inversión inmobiliaria", "ciclos económicos", "mercado inmobiliario"],
+    summary: [
+      "Mikel Echavarren es CEO de Colliers España. En este episodio habla de ciclos inmobiliarios, dónde está el dinero inteligente y cómo leer el mercado antes de que gire.",
     ],
   },
   {

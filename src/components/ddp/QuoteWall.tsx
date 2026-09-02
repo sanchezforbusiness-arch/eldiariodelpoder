@@ -16,13 +16,54 @@ type Item = {
   image?: string;
 };
 
-const ITEMS: Item[] = guestList.map((g) => ({
-  slug: g.slug,
-  name: g.name,
-  role: g.role,
-  line: g.bio,
-  image: guestCardImageBySlug[g.slug],
-}));
+/** Citas textuales de los invitados. Se muestran en cursiva en el muro. */
+const QUOTES: Record<string, string> = {
+  "jose-maria-aznar": "El poder nunca debe ser un fin en sí mismo.",
+  "guillermo-lasso":
+    "Tenéis que aspirar a más invitados de nivel para vuestro podcast. Hace mucha falta dejar un legado a las futuras generaciones.",
+  "esperanza-aguirre": "Los jóvenes tenéis que cambiar el país.",
+  "marcos-de-quinto":
+    "Para aportar a la sociedad tienes que trabajar para generar un cambio.",
+  "jordi-juan":
+    "Cuando tengáis el podcast, pasádmelo que se lo quiero enseñar a mis hijos.",
+  "rosa-lagarrigue":
+    "Me ha encantado la entrevista y sobre todo hacerla con jóvenes que representan a su generación.",
+  "jose-carlos-gonzalez-hurtado":
+    "La fe es esencial para encontrar tu propósito en la vida.",
+  "federica-fornaciari":
+    "Los jóvenes son la clave para el futuro y estos chicos son una muestra de ello.",
+  "miguel-anxo-bastos":
+    "Capitalismo, ahorro y trabajo duro. La energía que tenéis siendo jóvenes no la volveréis a tener.",
+  "daniela-macarena":
+    "Para ser una persona con poder tienes que manifestarlo.",
+  "andres-rodriguez":
+    "Me gustaría ilusionar a los jóvenes para que se den cuenta de que son capaces de hacer lo que se propongan.",
+  "martin-selles":
+    "Yo veo a muchos jóvenes con un proyecto de vida claro, agradecidos por su primera oportunidad y dispuestos a esforzarse. Los jóvenes reales no son la caricatura desganada que a veces nos quieren vender.",
+  "mikel-echavarren":
+    "Muy buena entrevista con unos jóvenes muy simpáticos y preparados",
+};
+
+const CLUB_OSASUNA: Item = {
+  slug: "club-osasuna",
+  name: "Club Osasuna",
+  role: "Patrocinador oficial",
+  line: "Increíble experiencia organizando junto con estos jóvenes el primer evento entre empresarios y jóvenes.",
+  image: undefined,
+};
+
+const ITEMS: Item[] = [
+  ...guestList
+    .filter((g) => QUOTES[g.slug])
+    .map((g) => ({
+      slug: g.slug,
+      name: g.name,
+      role: g.role,
+      line: QUOTES[g.slug]!,
+      image: guestCardImageBySlug[g.slug],
+    })),
+  CLUB_OSASUNA,
+];
 
 /** Reparte en n columnas manteniendo variedad */
 function split(items: Item[], n: number): Item[][] {
@@ -31,14 +72,12 @@ function split(items: Item[], n: number): Item[][] {
   return cols;
 }
 
-function QuoteCard({ item }: { item: Item }) {
+function QuoteCardBody({ item }: { item: Item }) {
   return (
-    <Link
-      to="/invitados/$slug"
-      params={{ slug: item.slug }}
-      className="card-clean block p-5 md:p-6"
-    >
-      <p className="text-sm leading-relaxed text-foreground">{item.line}</p>
+    <>
+      <p className="text-sm leading-relaxed text-foreground">
+        <em className="italic">“{item.line}”</em>
+      </p>
       <div className="mt-5 flex items-center gap-3">
         {item.image ? (
           <img
@@ -65,6 +104,26 @@ function QuoteCard({ item }: { item: Item }) {
           <p className="truncate text-xs text-muted-foreground">{item.role}</p>
         </div>
       </div>
+    </>
+  );
+}
+
+function QuoteCard({ item }: { item: Item }) {
+  const isExternal = item.slug === "club-osasuna";
+  if (isExternal) {
+    return (
+      <div className="card-clean block p-5 md:p-6">
+        <QuoteCardBody item={item} />
+      </div>
+    );
+  }
+  return (
+    <Link
+      to="/invitados/$slug"
+      params={{ slug: item.slug }}
+      className="card-clean block p-5 md:p-6"
+    >
+      <QuoteCardBody item={item} />
     </Link>
   );
 }

@@ -14,6 +14,7 @@ import danielaAsset from "@/assets/guest-daniela-macarena.png.asset.json";
 import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
 import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
 import massimilianoAsset from "@/assets/guest-massimiliano-squillace.png.asset.json";
+import echavarrenImg from "@/assets/guest-echavarren.webp";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
@@ -27,6 +28,7 @@ export const guestImageBySlug: Record<string, string> = {
   "marcos-de-quinto": marcosAsset.url,
   "sonsoles-onega": sonsolesAsset.url,
   "massimiliano-squillace": massimilianoAsset.url,
+  "mikel-echavarren": echavarrenImg,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
