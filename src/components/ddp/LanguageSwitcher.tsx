@@ -126,7 +126,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
       {open && (
         <div
           role="listbox"
-          className="notranslate absolute right-0 top-full z-50 mt-1 max-h-[70dvh] min-w-44 overflow-y-auto rounded-xl border border-border bg-card py-1 text-card-foreground shadow-lg"
+          className="notranslate surface-light absolute right-0 top-full z-50 mt-1 max-h-[70dvh] min-w-44 overflow-y-auto rounded-xl border border-border bg-card py-1 text-foreground shadow-lg"
         >
           {LANGS.map((l) => (
             <button
