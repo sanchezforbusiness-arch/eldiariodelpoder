@@ -78,17 +78,42 @@ function InvitadosPage() {
           <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-10">
             Quién ha pasado por el micrófono
           </h2>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9">
-            {guestList.map((g) => (
-              <li key={g.slug}>
-                <Link to="/invitados/$slug" params={{ slug: g.slug }} className="group block">
-                  <h3 className="tracking-tight text-xl md:text-2xl leading-tight group-hover:text-signal transition-colors">{g.name}</h3>
-                  <p className="mt-1.5 text-2xs tracking-label uppercase text-muted-foreground">{g.role}</p>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{g.bio}</p>
-                  <span className="mt-3 inline-block text-2xs tracking-label uppercase text-muted-foreground">Ver entrevista →</span>
-                </Link>
-              </li>
-            ))}
+          <ul className="grid gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 reveal-stagger">
+            {guestList.map((g) => {
+              const img = guestCardImageBySlug[g.slug] ?? guestImageBySlug[g.slug];
+              return (
+                <li key={g.slug}>
+                  <Link
+                    to="/invitados/$slug"
+                    params={{ slug: g.slug }}
+                    className="card-clean group flex h-full flex-col"
+                  >
+                    {img && (
+                      <div className="aspect-[4/3] overflow-hidden bg-background-alt">
+                        <img
+                          src={img}
+                          alt={`${g.name}, invitado de Diario del Poder`}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-1 flex-col p-6 md:p-7">
+                      <h3 className="text-xl leading-tight tracking-tight transition-colors group-hover:text-signal md:text-2xl">
+                        {g.name}
+                      </h3>
+                      <p className="mt-1.5 text-2xs uppercase tracking-label text-muted-foreground">{g.role}</p>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{g.bio}</p>
+                      <span className="mt-5 inline-flex items-center gap-2 text-2xs uppercase tracking-label text-muted-foreground transition-colors group-hover:text-foreground">
+                        Ver entrevista
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </section>
       </main>
