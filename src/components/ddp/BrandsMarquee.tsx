@@ -49,7 +49,7 @@ export function BrandsMarquee() {
             <span key={i} className="flex h-10 items-center gap-8 whitespace-nowrap px-8 md:gap-10 md:px-10">
               <span className="flex items-center gap-3 opacity-70 transition-opacity duration-300 hover:opacity-100">
                 <BrandMark domain={b.domain} name={b.name} />
-                <span className="text-lg font-medium tracking-tight">{b.name}</span>
+                <span className="notranslate text-lg font-medium tracking-tight" translate="no">{b.name}</span>
               </span>
               <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
             </span>
