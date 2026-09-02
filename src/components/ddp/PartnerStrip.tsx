@@ -10,7 +10,7 @@ const FIGURES = [
  */
 export function PartnerStrip() {
   return (
-    <section aria-label="Media partner" className="border-b border-border">
+    <section aria-label="Media partner">
       <div className="container-ddp reveal-stagger py-14 md:py-20">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="flex flex-col gap-3">

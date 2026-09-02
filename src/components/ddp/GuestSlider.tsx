@@ -13,7 +13,7 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
       params={{ slug: guest.slug }}
       className={`group relative block shrink-0 ${className}`}
     >
-      <div className="relative aspect-[4/5] overflow-hidden border border-border">
+      <div className="media-zoom relative aspect-[4/5] overflow-hidden rounded-[18px] bg-card shadow-soft">
         <img
           src={guestCardImageBySlug[guest.slug]}
           alt={guest.name}
@@ -45,7 +45,7 @@ function Track() {
 
 export function GuestSlider() {
   return (
- <section id="invitados" aria-label="Invitados" className="border-b border-border py-16 md:py-32">
+ <section id="invitados" aria-label="Invitados" className="section-pad">
       <div className="container-ddp flex items-center justify-between gap-4">
         <p className="mono-label">Quién se ha sentado</p>
         <Link to="/invitados" className="link-rule tap font-mono text-2xs uppercase tracking-label md:text-2xs">
@@ -53,7 +53,7 @@ export function GuestSlider() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden border-y border-border py-3 md:mt-8">
+      <div className="mt-6 overflow-hidden py-3 md:mt-8">
         <div className="ticker" aria-hidden>
           {Array.from({ length: 8 }).map((_, i) => (
             <span

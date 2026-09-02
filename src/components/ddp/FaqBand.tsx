@@ -37,7 +37,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
 
 export function FaqBand() {
   return (
-    <section className="border-b border-border py-16 md:py-32">
+    <section className="section-pad">
       <div className="container-ddp">
         <div className="flex items-baseline gap-6">
           <h2 className="font-serif text-2xl font-light leading-[0.95] tracking-tight">
