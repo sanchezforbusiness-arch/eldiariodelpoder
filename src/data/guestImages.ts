@@ -15,6 +15,7 @@ import marcosAsset from "@/assets/guest-marcos-de-quinto.png.asset.json";
 import sonsolesAsset from "@/assets/guest-sonsoles-onega.png.asset.json";
 import massimilianoAsset from "@/assets/guest-massimiliano-squillace.png.asset.json";
 import echavarrenImg from "@/assets/guest-echavarren.webp";
+import rocioAsset from "@/assets/guest-rocio-monasterio.png.asset.json";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
