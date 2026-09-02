@@ -26,6 +26,15 @@ const founders = [
   },
 ];
 
+const board = [
+  {
+    name: "Juan Ángel Soto Gómez",
+    role: "Presidente de la Fundación Fortius",
+    bio: "Preside la Fundación Fortius en España y Estados Unidos, la grant-making foundation e incubadora que respalda institucionalmente a Diario del Poder desde Madrid y Washington DC.",
+    ln: "https://www.linkedin.com/in/juanangelsoto/",
+  },
+];
+
 const advisors = [
   {
     name: "Federica Fornaciari",
@@ -50,10 +59,20 @@ const advisors = [
   },
 ];
 
-function Person({ m }: { m: { name: string; role: string; bio: string; img: string; ln: string; web?: string; to?: string } }) {
+function initials(name: string) {
+  return name
+    .split(" ")
+    .filter((w) => w.length > 2)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("");
+}
+
+function Person({ m }: { m: { name: string; role: string; bio: string; img?: string; ln: string; web?: string; to?: string } }) {
   return (
     <article className="group" itemScope itemType="https://schema.org/Person">
       <div className="relative aspect-[4/5] overflow-hidden bg-card mb-5">
+        {m.img ? (
         <img
           src={m.img}
           alt={m.name}
@@ -63,6 +82,15 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img: stri
           className="absolute inset-0 w-full h-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.03]"
           itemProp="image"
         />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div aria-hidden className="dot-grid absolute inset-0" />
+            <span className="relative font-serif text-2xl font-light tracking-tight text-muted-foreground">
+              {initials(m.name)}
+            </span>
+            <span aria-hidden className="absolute bottom-4 left-4 h-px w-10 bg-signal" />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
       </div>
       <div className="flex items-start justify-between gap-4">
@@ -101,12 +129,54 @@ export function Team() {
       <div className="container-ddp">
 
 
-        <div className="mb-8 text-2xs tracking-label uppercase text-muted-foreground">Fundadores</div>
+        <div className="mb-8 flex items-baseline gap-4 text-2xs tracking-label uppercase text-muted-foreground">
+          <span>Fundadores</span>
+          <span aria-hidden className="h-px flex-1 bg-border" />
+        </div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {founders.map((m) => <Person key={m.name} m={m} />)}
         </div>
 
-        <div className="mt-20 mb-8 text-2xs tracking-label uppercase text-muted-foreground">Quienes nos guían</div>
+        <div className="mt-20 mb-8 flex items-baseline gap-4 text-2xs tracking-label uppercase text-muted-foreground">
+          <span>Patronato</span>
+          <span aria-hidden className="h-px flex-1 bg-border" />
+        </div>
+        <div className="border-t border-border">
+          {board.map((m) => (
+            <article
+              key={m.name}
+              className="group grid gap-4 border-b border-border py-8 md:grid-cols-12 md:gap-10"
+              itemScope
+              itemType="https://schema.org/Person"
+            >
+              <div className="md:col-span-4">
+                <h3 className="text-xl tracking-tight md:text-lg" itemProp="name">{m.name}</h3>
+                <p className="mt-2 text-2xs uppercase tracking-label text-muted-foreground" itemProp="jobTitle">
+                  {m.role}
+                </p>
+              </div>
+              <p className="prose-editorial md:col-span-6" itemProp="description">{m.bio}</p>
+              <div className="md:col-span-2 md:justify-self-end">
+                <a
+                  href={m.ln}
+                  target="_blank"
+                  rel="noreferrer me"
+                  aria-label={`LinkedIn ${m.name}`}
+                  className="tap text-muted-foreground transition-colors hover:text-signal"
+                  itemProp="sameAs"
+                >
+                  <Linkedin size={18} />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+
+        <div className="mt-20 mb-8 flex items-baseline gap-4 text-2xs tracking-label uppercase text-muted-foreground">
+          <span>Quienes nos guían</span>
+          <span aria-hidden className="h-px flex-1 bg-border" />
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-10">
           {advisors.map((m) => <Person key={m.name} m={m} />)}
         </div>
