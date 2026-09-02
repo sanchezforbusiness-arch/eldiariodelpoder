@@ -71,10 +71,12 @@ export const Route = createFileRoute("/invitados/$slug")({
               knowsAbout: guest.topics,
               subjectOf: {
                 "@type": "PodcastEpisode",
-                name: `${guest.name} — Diario del Poder`,
-                url,
-                description: guest.summary[0],
+                name: ep ? `${guest.name} — ${ep.title}` : `${guest.name} — Diario del Poder`,
+                url: epUrl ?? url,
+                description: ep?.description ?? guest.summary[0],
                 inLanguage: "es-ES",
+                ...(ep?.date ? { datePublished: ep.date } : {}),
+                ...(ep?.episodeNumber ? { episodeNumber: ep.episodeNumber } : {}),
                 partOfSeries: { "@type": "PodcastSeries", name: "Diario del Poder", url: `${SITE}/` },
                 ...(guest.youtubeId
                   ? {
@@ -85,7 +87,7 @@ export const Route = createFileRoute("/invitados/$slug")({
                         embedUrl: `https://www.youtube.com/embed/${guest.youtubeId}`,
                         contentUrl: `https://www.youtube.com/watch?v=${guest.youtubeId}`,
                         thumbnailUrl: `https://i.ytimg.com/vi/${guest.youtubeId}/maxresdefault.jpg`,
-                        uploadDate: "2026-01-01",
+                        ...(ep?.date ? { uploadDate: ep.date } : {}),
                       },
                     }
                   : {}),
