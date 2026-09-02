@@ -351,6 +351,18 @@ export const guestList: GuestEntry[] = [
       "Con más de 50 inversiones a sus espaldas y una trayectoria de exited founder, hablamos de cómo se construye una startup escalable, qué aprendió vendiendo una compañía y por qué cree que la IA va a redefinir cómo se produce el conocimiento.",
     ],
   },
+  {
+    slug: "rocio-monasterio",
+    name: "Rocío Monasterio",
+    role: "Arquitecta y exdiputada autonómica",
+    bio: "Política, empresaria y arquitecta. Liderazgo con convicción y gestión pública.",
+    topics: ["política española", "liderazgo", "gestión pública", "arquitectura", "empresa"],
+    summary: [
+      "Rocío Monasterio combina una trayectoria en arquitectura y empresa con años de responsabilidad política en la Asamblea de Madrid.",
+      "En Diario del Poder habla de cómo se toman decisiones bajo presión mediática, de la relación entre convicción y gestión, y de lo que aprendió dirigiendo equipos en sectores tan distintos.",
+      "Cierra con una reflexión sobre el papel de las nuevas generaciones en la política y la empresa.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
