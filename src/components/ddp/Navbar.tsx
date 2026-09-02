@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const links = [
   { to: "/episodios", label: "Episodios" },
