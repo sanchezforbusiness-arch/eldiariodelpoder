@@ -105,7 +105,7 @@ export function HeroNoir() {
                   Ver el episodio
                 </a>
                 <Link to="/invitados" className="btn-outline w-full sm:w-auto">
-                  Quién se ha sentado
+                  Nuestros invitados
                 </Link>
               </div>
             </div>
