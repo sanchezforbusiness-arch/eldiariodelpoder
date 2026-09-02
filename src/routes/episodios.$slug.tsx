@@ -60,8 +60,14 @@ export const Route = createFileRoute("/episodios/$slug")({
             inLanguage: "es-ES",
             episodeNumber: ep.episodeNumber,
             ...(ep.date ? { datePublished: ep.date } : {}),
+            ...(isoDuration(ep.duration) ? { timeRequired: isoDuration(ep.duration) } : {}),
             partOfSeries: { "@type": "PodcastSeries", name: "Diario del Poder", url: `${SITE}/` },
-            actor: { "@type": "Person", name: ep.guest, ...(ep.role ? { jobTitle: ep.role } : {}) },
+            actor: {
+              "@type": "Person",
+              name: ep.guest,
+              ...(ep.role ? { jobTitle: ep.role } : {}),
+              ...(ep.guestSlug ? { url: `${SITE}/invitados/${ep.guestSlug}` } : {}),
+            },
             ...(ep.youtubeId
               ? {
                   associatedMedia: {
@@ -71,7 +77,8 @@ export const Route = createFileRoute("/episodios/$slug")({
                     embedUrl: `https://www.youtube.com/embed/${ep.youtubeId}`,
                     contentUrl: `https://www.youtube.com/watch?v=${ep.youtubeId}`,
                     thumbnailUrl: `https://i.ytimg.com/vi/${ep.youtubeId}/maxresdefault.jpg`,
-                    uploadDate: ep.date ?? "2026-01-01",
+                    ...(isoDuration(ep.duration) ? { duration: isoDuration(ep.duration) } : {}),
+                    ...(ep.date ? { uploadDate: ep.date } : {}),
                   },
                 }
               : {}),
