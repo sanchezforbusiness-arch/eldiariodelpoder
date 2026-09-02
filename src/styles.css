@@ -279,7 +279,7 @@
     font-size: var(--text-sm);
     line-height: 1.7;
     max-width: 68ch;
-    color: color-mix(in srgb, var(--color-foreground) 82%, transparent);
+    color: color-mix(in srgb, var(--color-foreground) 88%, transparent);
   }
   @media (min-width: 768px) { .prose-editorial { font-size: var(--text-base); line-height: 1.65; } }
 
@@ -336,6 +336,18 @@
     --card-foreground: #FFFFFF;
     --primary: #FFFFFF;
     --primary-foreground: #10291F;
+    --color-foreground: #F6F2E8;
+    --color-background: #10291F;
+    --color-background-alt: #17362A;
+    --color-card: #17362A;
+    --color-card-foreground: #F6F2E8;
+    --color-border: rgba(246,242,232,0.16);
+    --color-input: rgba(246,242,232,0.16);
+    --color-muted: #17362A;
+    --color-muted-foreground: #A9BCB1;
+    --color-primary: #F6F2E8;
+    --color-primary-foreground: #10291F;
+    --color-accent: #17362A;
   }
 
 
@@ -458,6 +470,13 @@
     --background: #FFFAF0;
     --primary: #0A0A0A;
     --primary-foreground: #FFFFFF;
+    --color-foreground: #0A0A0A;
+    --color-muted-foreground: #6A6A6A;
+    --color-border: #E3DCC9;
+    --color-background: #FFFAF0;
+    --color-card: #F5F0E0;
+    --color-primary: #0A0A0A;
+    --color-primary-foreground: #FFFFFF;
   }
 
   .text-on-image {
@@ -465,6 +484,9 @@
     --foreground: #FFFFFF;
     --muted-foreground: rgba(255,255,255,0.72);
     --border: rgba(255,255,255,0.18);
+    --color-foreground: #FFFFFF;
+    --color-muted-foreground: rgba(255,255,255,0.78);
+    --color-border: rgba(255,255,255,0.22);
   }
 
 
