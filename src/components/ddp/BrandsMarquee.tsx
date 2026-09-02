@@ -10,10 +10,10 @@ const BRANDS: Brand[] = [
   { name: "Telefónica", domain: "telefonica.com" },
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
-  { name: "EWTN", domain: "ewtn.com" },
+  { name: "EWTN" },
   { name: "Contents.com", domain: "contents.com" },
-  { name: "NoBrainer Partners", domain: "nobrainer.partners" },
-  { name: "SenYours", domain: "senyours.com" },
+  { name: "NoBrainer Partners" },
+  { name: "SenYours" },
   { name: "Metlabs", domain: "metlabs.io" },
 ];
 
@@ -21,7 +21,7 @@ export function BrandMark({ domain, name, className = "" }: { domain?: string; n
   if (!domain) return null;
   return (
     <img
-      src={`https://www.google.com/s2/favicons?sz=128&domain=${domain}`}
+      src={`https://icons.duckduckgo.com/ip3/${domain}.ico`}
       alt=""
       aria-hidden
       loading="lazy"
