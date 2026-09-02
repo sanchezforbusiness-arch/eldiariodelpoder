@@ -48,7 +48,8 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
               { "@type": "Organization", name: "Nova 111" },
             ],
             url: URL,
-            image: "https://eldiariodelpoder.com/og-alejandro.jpg",
+            image: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp",
+            mainEntityOfPage: "https://alejandrosanchezmartinez.com",
             sameAs: [
               "https://alejandrosanchezmartinez.com",
               "https://www.linkedin.com/in/alejandrosanchezmartinez",
