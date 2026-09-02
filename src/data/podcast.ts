@@ -100,6 +100,7 @@ const episodesRaw: Omit<EpisodeEntry, "n">[] = [
     image: echavarrenImg,
     slug: "mikel-echavarren-real-estate-ciclos",
     youtubeId: "ARO5S1I5cg8",
+    guestSlug: "mikel-echavarren",
     transcript: [],
     guest: "Mikel Echavarren",
     role: "CEO de Colliers España",
