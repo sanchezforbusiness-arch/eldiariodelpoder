@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
+import { BrandMark } from "@/components/ddp/BrandsMarquee";
 
 const sponsors = [
   { name: "NoBrainer Partners", tag: "M&A · Advisory", domain: "nobrainer.partners" },
