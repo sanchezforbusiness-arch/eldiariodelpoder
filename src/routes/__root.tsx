@@ -51,22 +51,6 @@ const structuredData = {
         url: "https://www.lavanguardia.com",
         description: "Media partner oficial de Diario del Poder.",
       },
-      founders: [
-        {
-          "@type": "Person",
-          name: "Alejandro Sánchez Martínez",
-          jobTitle: "Co-fundador y host",
-          url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez",
-          sameAs: ["https://www.linkedin.com/in/alejandrosanchezmartinez"],
-        },
-        {
-          "@type": "Person",
-          name: "Víctor Hugo Gandarilla de Andrés",
-          jobTitle: "Co-fundador y host",
-          url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres",
-          sameAs: ["https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres"],
-        },
-      ],
       founder: [founderAlejandro, founderVictor],
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
