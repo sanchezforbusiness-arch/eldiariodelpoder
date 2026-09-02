@@ -53,8 +53,8 @@ export function FortiusBand() {
                   className={[
                     "flex flex-col gap-2 border-b border-border py-5 pr-4",
                     i % 2 === 1 ? "border-l pl-4" : "",
-                    "md:border-l md:pl-5 md:border-b-0 md:py-6",
-                    i === 0 ? "md:border-l-0 md:pl-0" : "",
+                    "md:border-b-0 md:py-6",
+                    i === 0 ? "md:border-l-0 md:pl-0" : "md:border-l md:pl-5",
                   ].join(" ")}
                 >
                   <dt className="mono-label">{f.k}</dt>
