@@ -29,7 +29,7 @@ const founders = [
 const board = [
   {
     name: "Juan Ángel Soto Gómez",
-    role: "Patrocinio institucional · Presidente de la Fundación Fortius",
+    role: "Presidente de la Fundación Fortius",
     bio: "Preside la Fundación Fortius en España y Estados Unidos, la grant-making foundation e incubadora que respalda institucionalmente a Diario del Poder desde Madrid y Washington DC.",
     ln: "https://www.linkedin.com/in/juanangelsoto/",
   },
