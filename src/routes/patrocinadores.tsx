@@ -110,40 +110,36 @@ function PatrocinadoresPage() {
 
 function Hero() {
   return (
-    <section className="relative pt-28 pb-16 md:pt-44 md:pb-32 overflow-hidden grain">
-      <img
-        src={hosts}
-        alt=""
-        aria-hidden
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 ken-burns"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background" />
-      <div className="gold-glow w-[520px] h-[520px] -top-40 -right-40 float-slow" />
+    <section className="p-2 pt-16 md:p-3 md:pt-20">
+      <div className="surface-dark relative overflow-hidden rounded-[28px] border border-border shadow-lift grain md:rounded-[36px]">
+        <img
+          src={hosts}
+          alt=""
+          aria-hidden
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(7,21,15,0.94),rgba(7,21,15,0.55)_60%,rgba(7,21,15,0.35))]" />
 
-      <div className="container-ddp relative">
-        <div className="max-w-4xl fade-up">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="h-px w-14 bg-border" />
-            <span className="eyebrow flex items-center gap-2">
-              <span className="dot-gold" /> Patrocinadores
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-display md:text-display lg:text-display leading-[0.95] font-medium tracking-tight">
-            Sé parte de la conversación.
-          </h1>
-          <p className="mt-8 max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
-            El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#contacto" className="btn-primary">
-              Hablar con el equipo
-              <ArrowUpRight size={14} />
-            </a>
-            <a href="#opciones" className="btn-outline">
-              Ver opciones
-            </a>
+        <div className="container-ddp relative flex min-h-[62dvh] flex-col justify-end py-16 md:min-h-[70dvh] md:py-24">
+          <div className="max-w-4xl fade-up">
+            <span className="mono-label">Patrocinadores</span>
+            <h1 className="mt-5 text-2xl font-medium leading-[0.95] tracking-tight sm:text-display md:text-display lg:text-display">
+              Sé parte de la conversación.
+            </h1>
+            <p className="mt-7 max-w-[46ch] text-base leading-relaxed text-foreground/80 md:text-lg">
+              El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <a href="#contacto" className="btn-primary w-full sm:w-auto">
+                Hablar con el equipo
+                <ArrowUpRight size={14} />
+              </a>
+              <a href="#opciones" className="btn-outline w-full sm:w-auto">
+                Ver opciones
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -156,19 +152,16 @@ function Pillars() {
  <section className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
-          <span className="eyebrow block mb-4">
-            <span className="dot-gold mr-2" />
-            Por qué DDP
-          </span>
-          <h2 className="text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
+          <span className="mono-label">Por qué DDP</span>
+          <h2 className="mt-4 text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
             Un entorno con criterio.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border border border-border reveal-stagger">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6 reveal-stagger">
           {pillars.map((p) => (
-            <div key={p.n} className="bg-background p-8 md:p-10">
-              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-5">{p.n}</p>
+            <div key={p.n} className="card-clean p-8 md:p-10">
+              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-5 tabular-nums">{p.n}</p>
               <h3 className="tracking-tight text-2xl md:text-2xl font-medium leading-tight mb-4">
                 {p.t}
               </h3>
@@ -188,11 +181,8 @@ function Tiers() {
  <section id="opciones" className="py-16 md:py-32 border-t border-border bg-background-alt">
       <div className="container-ddp">
         <div className="max-w-2xl mb-12 md:mb-16 reveal">
-          <span className="eyebrow block mb-4">
-            <span className="dot-gold mr-2" />
-            Opciones de patrocinio
-          </span>
-          <h2 className="text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
+          <span className="mono-label">Opciones de patrocinio</span>
+          <h2 className="mt-4 text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
             Tres formas de conversar con nuestra audiencia.
           </h2>
           <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
@@ -204,14 +194,12 @@ function Tiers() {
           {tiers.map((t) => (
             <article
               key={t.name}
-              className={`relative flex flex-col bg-background border p-8 md:p-10 hover-lift transition-colors ${
-                t.featured
-                  ? "border-border"
-                  : "border-border hover:border-foreground/40"
+              className={`card-clean relative flex flex-col p-8 md:p-10 ${
+                t.featured ? "ring-1 ring-signal/40" : ""
               }`}
             >
               {t.featured && (
-                <span className="absolute top-0 right-0 -translate-y-1/2 bg-foreground text-background text-2xs tracking-label uppercase px-3 py-1">
+                <span className="absolute right-6 top-6 rounded-full bg-signal px-3 py-1 text-2xs uppercase tracking-label text-white">
                   Más solicitado
                 </span>
               )}
@@ -231,10 +219,10 @@ function Tiers() {
               </ul>
               <a
                 href="#contacto"
-                className={`group inline-flex items-center justify-between gap-3 w-full px-5 py-3.5 text-2xs tracking-label uppercase border transition-colors ${
+                className={`group inline-flex w-full items-center justify-between gap-3 rounded-full border px-5 py-3.5 text-2xs uppercase tracking-label transition-colors ${
                   t.featured
-                    ? "bg-foreground text-background border-foreground hover:bg-foreground/90"
-                    : "border-foreground/25 text-foreground hover:border-foreground/40 hover:text-signal"
+                    ? "border-foreground bg-foreground text-background hover:bg-foreground/90"
+                    : "border-foreground/25 text-foreground hover:border-foreground/45 hover:text-signal"
                 }`}
               >
                 Solicitar info
@@ -254,14 +242,10 @@ function Tiers() {
 
 function Contact() {
   return (
- <section id="contacto" className="relative py-16 md:py-32 border-t border-border overflow-hidden">
-      <div className="gold-glow float-slow w-[460px] h-[460px] -bottom-40 left-1/2 -translate-x-1/2 opacity-30" />
+ <section id="contacto" className="relative overflow-hidden border-t border-border py-16 md:py-32">
       <div className="container-ddp relative">
-        <div className="max-w-3xl mx-auto text-center reveal">
-          <span className="eyebrow block mb-5">
-            <span className="dot-gold mr-2" />
-            Hablemos
-          </span>
+        <div className="panel mx-auto max-w-3xl px-6 py-14 text-center reveal md:px-12 md:py-20">
+          <span className="mono-label block mb-5">Hablemos</span>
           <h2 className="text-2xl md:text-display leading-[1.0] font-medium tracking-tight">
             Tu marca, en conversaciones que importan.
           </h2>
