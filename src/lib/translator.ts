@@ -204,3 +204,15 @@ export function setStoredLang(code: string) {
     /* almacenamiento bloqueado */
   }
 }
+
+/** Sincroniza el idioma entre todos los selectores montados. */
+const listeners = new Set<(lang: string) => void>();
+
+export function subscribeLang(fn: (lang: string) => void) {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
+
+export function broadcastLang(lang: string) {
+  for (const fn of listeners) fn(lang);
+}
