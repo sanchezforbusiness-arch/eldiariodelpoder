@@ -72,14 +72,12 @@ function split(items: Item[], n: number): Item[][] {
   return cols;
 }
 
-function QuoteCard({ item }: { item: Item }) {
+function QuoteCardBody({ item }: { item: Item }) {
   return (
-    <Link
-      to="/invitados/$slug"
-      params={{ slug: item.slug }}
-      className="card-clean block p-5 md:p-6"
-    >
-      <p className="text-sm leading-relaxed text-foreground">{item.line}</p>
+    <>
+      <p className="text-sm leading-relaxed text-foreground">
+        <em className="italic">“{item.line}”</em>
+      </p>
       <div className="mt-5 flex items-center gap-3">
         {item.image ? (
           <img
@@ -106,6 +104,26 @@ function QuoteCard({ item }: { item: Item }) {
           <p className="truncate text-xs text-muted-foreground">{item.role}</p>
         </div>
       </div>
+    </>
+  );
+}
+
+function QuoteCard({ item }: { item: Item }) {
+  const isExternal = item.slug === "club-osasuna";
+  if (isExternal) {
+    return (
+      <div className="card-clean block p-5 md:p-6">
+        <QuoteCardBody item={item} />
+      </div>
+    );
+  }
+  return (
+    <Link
+      to="/invitados/$slug"
+      params={{ slug: item.slug }}
+      className="card-clean block p-5 md:p-6"
+    >
+      <QuoteCardBody item={item} />
     </Link>
   );
 }
