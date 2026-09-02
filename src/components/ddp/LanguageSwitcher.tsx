@@ -32,7 +32,12 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
     return () => stopTranslation();
   }, []);
 
-  useEffect(() => subscribeLang(setCurrent), []);
+  useEffect(() => {
+    const unsubscribe = subscribeLang(setCurrent);
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) return;
