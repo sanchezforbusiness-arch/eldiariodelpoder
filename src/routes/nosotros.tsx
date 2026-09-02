@@ -24,7 +24,7 @@ export const Route = createFileRoute("/nosotros")({
       { property: "og:title", content: "Nosotros — Diario del Poder" },
       {
         property: "og:description",
-        content: "Quién firma Diario del Poder: fundadores, patronato y asesores. Respaldo institucional de la Fundación Fortius.",
+        content: "Quién firma Diario del Poder: fundadores, patronato y asesores. Hecho en Madrid.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
@@ -86,7 +86,7 @@ function NosotrosPage() {
             </div>
             <div className="md:col-span-4">
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Dos fundadores, un patronato y tres asesores. Una redacción en Madrid, respaldada por la Fundación Fortius.
+                Dos fundadores, un patronato y tres asesores. Una redacción en Madrid.
               </p>
             </div>
           </div>
