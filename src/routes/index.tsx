@@ -7,6 +7,7 @@ import { PartnerStrip } from "@/components/ddp/PartnerStrip";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
 import { VideoReel } from "@/components/ddp/VideoReel";
+import { QuoteWall } from "@/components/ddp/QuoteWall";
 
 import { FloatingCta } from "@/components/ddp/FloatingCta";
 import { useReveal } from "@/hooks/use-reveal";
@@ -48,6 +49,7 @@ function Index() {
         <LatestEpisode />
         <VideoReel />
         <GuestSlider />
+        <QuoteWall />
         <div className="cv-auto">
           <Suspense fallback={<div aria-hidden style={{ minHeight: 560, contain: "layout paint" }} />}>
             <ManifestoBand />
