@@ -49,11 +49,12 @@ export function HeroNoir() {
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="absolute inset-0 h-full w-full contrast-105 saturate-[0.9] opacity-75"
+            className="absolute inset-0 h-full w-full contrast-105 saturate-[0.55] opacity-40"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
-          <div className="absolute inset-0 bg-background/55" />
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-[#10291F] mix-blend-color" />
+          <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_75%_10%,rgba(23,54,42,0.55),rgba(11,30,23,0.94)_70%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0B1E17] via-[#0B1E17]/80 to-transparent" />
         </div>
 
         <div className="container-ddp safe-b relative z-10 flex min-h-[calc(100dvh-16px)] flex-col justify-end pb-16 pt-32 md:min-h-[calc(100dvh-24px)] md:pb-20 md:pt-40">

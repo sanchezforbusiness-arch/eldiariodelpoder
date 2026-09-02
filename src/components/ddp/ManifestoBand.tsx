@@ -1,23 +1,20 @@
 import { Link } from "@tanstack/react-router";
 
 const LEAD =
-  "Las decisiones que cambian un país no se explican en un titular. Grabamos la conversación entera y la publicamos sin recortes.";
+  "Somos el medio donde los mayores referentes del mundo dejan su legado a las futuras generaciones.";
 
 const BLOCKS = [
-  "Preguntamos lo que se pregunta en privado y no editamos la respuesta incómoda.",
-  "Nos interesa cómo se decide bajo presión y qué queda cuando el cargo termina.",
-  "Sin guion, sin recortes, sin favores.",
+  "Queremos comprender quién es la persona detrás del personaje que todos conocen.",
+  "Reivindicamos el sentido del poder: no como fuerza, sino como la capacidad de influir positivamente en la sociedad.",
 ];
 
 export function ManifestoBand() {
   return (
- <section className="border-b border-border py-20 md:py-40">
+    <section className="section-pad-lg">
       <div className="container-ddp">
         <h2 className="reveal font-serif text-2xl font-light leading-[0.95] tracking-tight">Manifiesto</h2>
 
-        <div aria-hidden className="rule-draw reveal mt-10 bg-signal" />
-
-        <p className="reveal mt-10 max-w-[24ch] text-xl font-semibold leading-[1.1] tracking-tight md:text-2xl">
+        <p className="reveal mt-10 max-w-[26ch] text-xl font-semibold leading-[1.1] tracking-tight md:mt-14 md:text-2xl">
           {LEAD}
         </p>
 
@@ -25,7 +22,7 @@ export function ManifestoBand() {
           {BLOCKS.map((text) => (
             <p
               key={text}
-              className="reveal max-w-[24ch] text-xl font-semibold leading-[1.1] tracking-tight md:text-2xl"
+              className="reveal max-w-[26ch] text-xl font-semibold leading-[1.1] tracking-tight md:text-2xl"
             >
               {text}
             </p>
