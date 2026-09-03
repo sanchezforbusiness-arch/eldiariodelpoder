@@ -46,8 +46,7 @@ function Track() {
 export function GuestSlider() {
   return (
  <section id="invitados" aria-label="Invitados" className="section-pad">
-      <div className="container-ddp flex items-center justify-between gap-4">
-        <p className="mono-label">Nuestros invitados</p>
+      <div className="container-ddp flex items-center justify-end gap-4">
         <Link to="/invitados" className="link-rule tap font-mono text-2xs uppercase tracking-label md:text-2xs">
           Todos los invitados
         </Link>
