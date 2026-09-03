@@ -19,9 +19,11 @@ export const BRANDS: Brand[] = [
 
 export function BrandMark({ domain, name, className = "" }: { domain?: string; name: string; className?: string }) {
   if (!domain) return null;
+  // PNG (no .ico) para que los logos también se vean en móvil (Safari/iOS no pinta .ico en <img>)
   return (
     <img
-      src={`https://icons.duckduckgo.com/ip3/${domain}.ico`}
+      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`}
+      srcSet={`https://www.google.com/s2/favicons?domain=${domain}&sz=128 2x, https://www.google.com/s2/favicons?domain=${domain}&sz=64 1x`}
       alt=""
       aria-hidden
       loading="lazy"
