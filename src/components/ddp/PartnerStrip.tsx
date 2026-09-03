@@ -37,7 +37,7 @@ export function PartnerStrip() {
       <div className="container-ddp py-16 md:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="reveal-stagger">
-            <span className="inline-flex rounded-full bg-foreground px-3 py-1 font-mono text-2xs uppercase tracking-[0.14em] text-background">
+            <span className="inline-flex rounded-full bg-foreground px-3 py-1 font-mono text-2xs uppercase tracking-label text-background">
               Partners
             </span>
             <h2 className="type-section mt-6 font-medium">
@@ -58,7 +58,7 @@ export function PartnerStrip() {
                 style={{ transform: `rotate(${p.tilt})` }}
                 className="pin-card block rounded-[20px] border border-border bg-card px-6 pb-6 pt-8 text-center"
               >
-                <p className="font-mono text-2xs uppercase tracking-[0.14em] text-muted-foreground">
+                <p className="font-mono text-2xs uppercase tracking-label text-muted-foreground">
                   {p.label}
                 </p>
                 <p className="mt-4 font-serif text-sm leading-relaxed text-foreground">

@@ -72,7 +72,7 @@
   /* Tracking — two values only */
   --tracking-*: initial;
   --tracking-tight: -0.03em;
-  --tracking-label: 0.12em;
+  --tracking-label: 0.06em;
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -212,7 +212,7 @@
 @layer utilities {
   .font-sans { font-family: var(--font-sans); }
   .font-serif { font-family: var(--font-serif); }
-  .font-mono { font-family: var(--font-mono); }
+  .font-mono { font-family: var(--font-sans); }
 
   .text-signal { color: var(--color-signal); }
   .bg-signal { background-color: var(--color-signal); }
@@ -279,7 +279,7 @@
 
   /* Monospaced editorial label */
   .eyebrow, .mono-label {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: var(--text-2xs);
     font-weight: 400;
     letter-spacing: var(--tracking-label);
@@ -300,7 +300,7 @@
 
   /* Section number in the margin */
   .section-index {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: var(--text-2xs);
     letter-spacing: var(--tracking-label);
     color: var(--color-muted-foreground);
@@ -559,7 +559,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-2xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
@@ -583,7 +583,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-2xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
@@ -605,7 +605,7 @@
   height: 30px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-2xs);
   letter-spacing: var(--tracking-label);
   color: var(--color-muted-foreground);
@@ -627,7 +627,7 @@
   border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 14px 20px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-xs);
   letter-spacing: 0.02em;
   transition: border-color 300ms var(--ease), box-shadow 300ms var(--ease);
