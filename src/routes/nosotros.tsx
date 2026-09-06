@@ -28,6 +28,8 @@ export const Route = createFileRoute("/nosotros")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],

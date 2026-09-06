@@ -16,6 +16,8 @@ export const Route = createFileRoute("/invitados/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://eldiariodelpoder.com/invitados" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/invitados" }],
     scripts: [

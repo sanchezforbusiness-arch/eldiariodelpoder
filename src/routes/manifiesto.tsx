@@ -16,6 +16,9 @@ export const Route = createFileRoute("/manifiesto")({
       { property: "og:title", content: "Manifiesto — Diario del Poder" },
       { property: "og:description", content: "Conversaciones con quienes dejan huella. Sin guion." },
       { property: "og:url", content: "https://eldiariodelpoder.com/manifiesto" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/manifiesto" }],
     scripts: [

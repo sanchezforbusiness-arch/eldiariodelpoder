@@ -29,6 +29,8 @@ export const Route = createFileRoute("/")({
       { property: "og:site_name", content: "Diario del Poder" },
       { property: "og:locale", content: "es_ES" },
       { property: "og:url", content: "https://eldiariodelpoder.com/" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/" }],
