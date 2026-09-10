@@ -7,6 +7,7 @@ type Brand = { name: string; domain?: string };
 export const BRANDS: Brand[] = [
   { name: "Forbes", domain: "forbes.es" },
   { name: "La Vanguardia", domain: "lavanguardia.com" },
+  { name: "Fundación La Caixa", domain: "fundacionlacaixa.org" },
   { name: "Telefónica", domain: "telefonica.com" },
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
