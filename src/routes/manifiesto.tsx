@@ -45,13 +45,27 @@ export const Route = createFileRoute("/manifiesto")({
               alternateName: ["Alejandro Sánchez", "Alejandro Sanchez Martinez"],
               jobTitle: "Co-fundador y host de Diario del Poder",
               description:
-                "Co-fundador y host del podcast Diario del Poder. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a José María Aznar, Guillermo Lasso, Andrés Rodríguez (Forbes) y Tomás Villén (Porsche).",
+                "Co-fundador y host del podcast Diario del Poder. Presidente de Kifaru Club, Talent Agent en Nova Talent y responsable de embajadores de la 111 List. Ha entrevistado a José María Aznar, Guillermo Lasso, Andrés Rodríguez (Forbes) y Tomás Villén (Porsche).",
               gender: "Male",
               nationality: "ES",
+              birthPlace: {
+                "@type": "Place",
+                name: "A Coruña, Galicia, España",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "A Coruña",
+                  addressRegion: "Galicia",
+                  addressCountry: "ES",
+                },
+              },
+              workLocation: {
+                "@type": "Place",
+                name: "Madrid, España",
+              },
               worksFor: { "@id": "https://eldiariodelpoder.com/#organization" },
               affiliation: [
                 { "@type": "Organization", name: "Kifaru Club" },
-                { "@type": "Organization", name: "Nova 111" },
+                { "@type": "Organization", name: "Nova Talent" },
               ],
               url: "https://eldiariodelpoder.com/manifiesto",
               sameAs: [
