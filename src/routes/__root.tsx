@@ -16,6 +16,21 @@ const founderAlejandro = {
   name: "Alejandro Sánchez Martínez",
   url: "https://alejandrosanchezmartinez.com",
   jobTitle: "Co-fundador y host",
+  birthPlace: {
+    "@type": "Place",
+    name: "A Coruña, Galicia, España",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "A Coruña",
+      addressRegion: "Galicia",
+      addressCountry: "ES",
+    },
+  },
+  workLocation: {
+    "@type": "Place",
+    name: "Madrid, España",
+  },
+  affiliation: { "@type": "Organization", name: "Nova Talent" },
   sameAs: [
     "https://alejandrosanchezmartinez.com",
     "https://eldiariodelpoder.com/alejandro-sanchez-martinez",

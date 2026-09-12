@@ -10,7 +10,7 @@ const founders = [
   {
     name: "Alejandro Sánchez Martínez",
     role: "Co-fundador · Host",
-    bio: "Host del podcast. Presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez (Forbes) o Tomás Villén (Porsche).",
+    bio: "Host del podcast. Presidente de Kifaru Club, Talent Agent en Nova Talent y responsable de embajadores de la 111 List. Ha entrevistado a Aznar, Lasso, Andrés Rodríguez (Forbes) o Tomás Villén (Porsche).",
     img: alejandro,
     ln: "https://www.linkedin.com/in/alejandrosanchezmartinez",
     web: "https://alejandrosanchezmartinez.com",

@@ -7,7 +7,7 @@ import alejandro from "@/assets/founder-alejandro.webp";
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
 const NAME = "Alejandro Sánchez Martínez";
 const DESC =
-  "Alejandro Sánchez Martínez es co-fundador y host del podcast Diario del Poder, presidente de Kifaru Club y miembro de Nova 111. Ha entrevistado a José María Aznar, Guillermo Lasso y Andrés Rodríguez (Forbes).";
+  "Alejandro Sánchez Martínez es co-fundador y host del podcast Diario del Poder, presidente de Kifaru Club y Talent Agent en Nova Talent. Ha entrevistado a José María Aznar, Guillermo Lasso y Andrés Rodríguez (Forbes).";
 
 export const Route = createFileRoute("/alejandro-sanchez-martinez")({
   head: () => ({
@@ -42,12 +42,31 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
             description: DESC,
             gender: "Male",
             nationality: "ES",
+            birthPlace: {
+              "@type": "Place",
+              name: "A Coruña, Galicia, España",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "A Coruña",
+                addressRegion: "Galicia",
+                addressCountry: "ES",
+              },
+            },
+            workLocation: {
+              "@type": "Place",
+              name: "Madrid, España",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Madrid",
+                addressCountry: "ES",
+              },
+            },
             knowsLanguage: ["es", "en"],
             knowsAbout: ["Podcasting", "Liderazgo", "Entrevistas", "Comunicación", "Poder", "Empresa"],
             worksFor: { "@id": "https://eldiariodelpoder.com/#organization" },
             affiliation: [
               { "@type": "Organization", name: "Kifaru Club" },
-              { "@type": "Organization", name: "Nova 111" },
+              { "@type": "Organization", name: "Nova Talent" },
             ],
             url: URL,
             image: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp",
@@ -90,7 +109,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
               name: "¿Quién es Alejandro Sánchez Martínez?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Alejandro Sánchez Martínez es co-fundador y host del podcast español Diario del Poder, presidente de Kifaru Club y miembro de Nova 111. Entrevista a expresidentes, CEOs y referentes internacionales.",
+                text: "Alejandro Sánchez Martínez es co-fundador y host del podcast español Diario del Poder, presidente de Kifaru Club y Talent Agent en Nova Talent, donde es responsable de embajadores de la 111 List. Entrevista a expresidentes, CEOs y referentes internacionales.",
               },
             },
             {
@@ -120,8 +139,8 @@ function Page() {
       website="https://alejandrosanchezmartinez.com"
       lead="Co-fundador y host de Diario del Poder. Entrevista a quienes toman las decisiones que nos afectan: expresidentes, CEOs y referentes internacionales."
       paragraphs={[
-        "Alejandro Sánchez Martínez (Madrid, España) es co-fundador y host del podcast Diario del Poder, un formato de entrevistas largas en español con expresidentes de Gobierno, CEOs y grandes referentes empresariales y culturales.",
-        "Es presidente de Kifaru Club y miembro de Nova 111, el ranking de jóvenes con mayor proyección de España. Su trabajo se centra en trasladar el criterio y el legado de quienes ya han llegado a la próxima generación.",
+        "Alejandro Sánchez Martínez (A Coruña, España) es co-fundador y host del podcast Diario del Poder, un formato de entrevistas largas en español con expresidentes de Gobierno, CEOs y grandes referentes empresariales y culturales.",
+        "Es presidente de Kifaru Club, Talent Agent en Nova Talent y responsable de embajadores de la 111 List, el listado del talento joven europeo. Su trabajo se centra en trasladar el criterio y el legado de quienes ya han llegado a la próxima generación.",
         "Ha entrevistado, entre otros, a José María Aznar, Guillermo Lasso, Esperanza Aguirre, Javier Tebas, Andrés Rodríguez (Forbes España), Jordi Juan (La Vanguardia) y Tomás Villén (Porsche España).",
         "Su trabajo con Diario del Poder ha tenido cobertura en La Vanguardia, Antena 3, La Sexta, El Español, Infobae, HuffPost, Voz Pópuli y Diario de Navarra.",
         "Su trabajo, su trayectoria y su dosier de prensa completo están en su web personal, alejandrosanchezmartinez.com.",
@@ -129,7 +148,8 @@ function Page() {
       facts={[
         { label: "Rol", value: "Co-fundador y host de Diario del Poder" },
         { label: "Base", value: "Madrid, España" },
-        { label: "Cargos", value: "Presidente de Kifaru Club · Nova 111" },
+        { label: "Origen", value: "A Coruña, Galicia" },
+        { label: "Cargos", value: "Presidente de Kifaru Club · Talent Agent en Nova Talent · Responsable de embajadores de la 111 List" },
         { label: "Temas", value: "Liderazgo, poder, empresa, legado" },
         { label: "Web", value: "alejandrosanchezmartinez.com" },
         { label: "Contacto", value: "contacto@eldiariodelpoder.com" },
