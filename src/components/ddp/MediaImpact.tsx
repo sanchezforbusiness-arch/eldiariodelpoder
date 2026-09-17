@@ -43,14 +43,14 @@ export function MediaImpact() {
             </Link>
           </div>
 
-          <ol className="reveal-stagger grid grid-cols-2 border-l border-t border-primary-foreground/20 md:grid-cols-3" aria-label="Medios destacados">
+          <ol className="reveal-stagger grid grid-cols-2 border-l border-t border-primary-foreground/20 md:grid-cols-4" aria-label="Medios destacados">
             {media.map((item, index) => {
               const isInternational = item.outlet === "Univision";
               return (
                 <li
                   key={item.outlet}
                   className={`relative flex min-h-36 flex-col justify-between border-b border-r border-primary-foreground/20 p-5 md:min-h-44 md:p-6 ${
-                    isInternational ? "bg-signal" : "transition-colors hover:bg-primary-foreground/5"
+                    isInternational ? "col-span-2 bg-signal md:col-span-1" : "transition-colors hover:bg-primary-foreground/5"
                   }`}
                 >
                   <span className="tabular text-xs text-primary-foreground/50">0{index + 1}</span>
