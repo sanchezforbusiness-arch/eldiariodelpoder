@@ -6,6 +6,7 @@ import { GuestSlider } from "@/components/ddp/GuestSlider";
 import { PartnerStrip } from "@/components/ddp/PartnerStrip";
 import { LatestEpisode } from "@/components/ddp/LatestEpisode";
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
+import { MediaImpact } from "@/components/ddp/MediaImpact";
 import { VideoReel } from "@/components/ddp/VideoReel";
 import { QuoteWall } from "@/components/ddp/QuoteWall";
 
@@ -46,6 +47,7 @@ function Index() {
       <main>
         <HeroNoir />
         <BrandsMarquee />
+        <MediaImpact />
         <PartnerStrip />
         
         <LatestEpisode />
