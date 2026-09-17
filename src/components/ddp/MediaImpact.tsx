@@ -16,7 +16,7 @@ const FEATURED_APPEARANCES = [
   tvAppearances.find((item) => item.id === "espejo-publico-plato"),
   tvAppearances.find((item) => item.id === "univision-aznar"),
   tvAppearances.find((item) => item.id === "espejo-publico-protocolo"),
-  tvAppearances.find((item) => item.id === "univision-entrevista"),
+  tvAppearances.find((item) => item.id === "univision-faes"),
 ].filter((item): item is NonNullable<typeof item> => Boolean(item));
 
 export function MediaImpact() {
@@ -44,13 +44,9 @@ export function MediaImpact() {
       <div className="container-ddp py-16 md:py-24">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] lg:gap-20">
           <div className="reveal">
-            <p className="text-xs uppercase tracking-label text-muted-foreground">Impacto</p>
             <h2 id="media-impact-title" className="type-section mt-5 max-w-[11ch]">
-              Han hablado de nosotros
+              Apariciones en medios
             </h2>
-            <p className="mt-5 max-w-[37ch] text-sm leading-relaxed text-muted-foreground">
-              Conversaciones que han cruzado la mesa del podcast para llegar a la prensa y la televisión nacional e internacional.
-            </p>
             <Link
               to="/prensa"
               className="tap mt-7 inline-flex items-center gap-2 border-b border-foreground/40 text-sm font-medium transition-colors hover:border-foreground"
