@@ -1,26 +1,43 @@
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
-import { pressItems } from "@/data/press";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { tvAppearances } from "@/data/tv";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  type CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
-const FEATURED_MEDIA = [
-  "La Vanguardia",
-  "Antena 3 — Espejo Público",
-  "La Sexta — Zapeando",
-  "El Español",
-  "Infobae",
-  "Huffpost",
-  "Univision",
-];
-
-const SHORT_NAMES: Record<string, string> = {
-  "Antena 3 — Espejo Público": "Antena 3",
-  "La Sexta — Zapeando": "La Sexta",
-};
+const FEATURED_APPEARANCES = [
+  tvAppearances.find((item) => item.id === "univision-directo"),
+  tvAppearances.find((item) => item.id === "zapeando"),
+  tvAppearances.find((item) => item.id === "espejo-publico-plato"),
+  tvAppearances.find((item) => item.id === "univision-aznar"),
+  tvAppearances.find((item) => item.id === "espejo-publico-protocolo"),
+  tvAppearances.find((item) => item.id === "univision-entrevista"),
+].filter((item): item is NonNullable<typeof item> => Boolean(item));
 
 export function MediaImpact() {
-  const media = FEATURED_MEDIA.map((name) => pressItems.find((item) => item.outlet === name)).filter(
-    (item): item is NonNullable<typeof item> => Boolean(item),
-  );
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const updateCurrent = () => setCurrent(api.selectedScrollSnap());
+    updateCurrent();
+    api.on("select", updateCurrent);
+    return () => {
+      api.off("select", updateCurrent);
+    };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => api.scrollNext(), 5000);
+    return () => window.clearInterval(timer);
+  }, [api]);
 
   return (
     <section aria-labelledby="media-impact-title" className="overflow-hidden bg-teal text-primary-foreground">
@@ -43,32 +60,61 @@ export function MediaImpact() {
             </Link>
           </div>
 
-          <ol className="reveal-stagger grid grid-cols-2 border-l border-t border-primary-foreground/20 md:grid-cols-4" aria-label="Medios destacados">
-            {media.map((item, index) => {
-              const isInternational = item.outlet === "Univision";
-              return (
-                <li
-                  key={item.outlet}
-                  className={`relative flex min-h-36 flex-col justify-between border-b border-r border-primary-foreground/20 p-5 md:min-h-44 md:p-6 ${
-                    isInternational ? "col-span-2 bg-signal md:col-span-1" : "transition-colors hover:bg-primary-foreground/5"
-                  }`}
+          <div className="reveal min-w-0">
+            <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} aria-label="Apariciones destacadas en televisión">
+              <CarouselContent className="-ml-3">
+                {FEATURED_APPEARANCES.map((item) => (
+                  <CarouselItem key={item.id} className="basis-[88%] pl-3 sm:basis-[68%] lg:basis-[62%]">
+                    <figure className="group relative overflow-hidden border border-primary-foreground/20 bg-primary-foreground/5">
+                      <img
+                        src={item.image}
+                        alt={item.alt}
+                        width={1280}
+                        height={720}
+                        loading="lazy"
+                        decoding="async"
+                        className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                      />
+                      <figcaption className="min-h-40 border-t border-primary-foreground/20 p-5 md:min-h-44 md:p-6">
+                        <p className="notranslate text-xs uppercase tracking-label text-primary-foreground/60" translate="no">
+                          {item.channel} · {item.program}
+                        </p>
+                        <h3 className="mt-4 line-clamp-3 text-xl leading-tight md:text-2xl">{item.title}</h3>
+                      </figcaption>
+                    </figure>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            <div className="mt-5 flex items-center justify-between">
+              <p className="tabular text-xs text-primary-foreground/60" aria-live="polite">
+                {String(current + 1).padStart(2, "0")} / {String(FEATURED_APPEARANCES.length).padStart(2, "0")}
+              </p>
+              <div className="flex gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  onClick={() => api?.scrollPrev()}
+                  className="rounded-full border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-teal"
+                  aria-label="Aparición anterior"
                 >
-                  <span className="tabular text-xs text-primary-foreground/50">0{index + 1}</span>
-                  <div>
-                    <p className="notranslate text-lg font-semibold leading-tight" translate="no">
-                      {SHORT_NAMES[item.outlet] ?? item.outlet}
-                    </p>
-                    <p className={`mt-2 text-xs leading-snug ${isInternational ? "text-primary-foreground/80" : "text-primary-foreground/55"}`}>
-                      {isInternational ? "Cobertura internacional · EE. UU." : item.context ?? "Cobertura editorial"}
-                    </p>
-                  </div>
-                </li>
-              );
-            })}
-            <li className="hidden min-h-44 items-end border-b border-r border-primary-foreground/20 p-6 text-xs text-primary-foreground/45 md:flex">
-              Prensa · Televisión · Digital
-            </li>
-          </ol>
+                  <ArrowLeft aria-hidden />
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  onClick={() => api?.scrollNext()}
+                  className="rounded-full border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-teal"
+                  aria-label="Siguiente aparición"
+                >
+                  <ArrowRight aria-hidden />
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
