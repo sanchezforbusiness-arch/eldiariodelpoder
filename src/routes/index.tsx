@@ -4,7 +4,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { HeroNoir } from "@/components/ddp/HeroNoir";
 import { GuestSlider } from "@/components/ddp/GuestSlider";
 import { PartnerStrip } from "@/components/ddp/PartnerStrip";
-import { LatestEpisode } from "@/components/ddp/LatestEpisode";
+
 import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
 import { MediaImpact } from "@/components/ddp/MediaImpact";
 import { VideoReel } from "@/components/ddp/VideoReel";
@@ -49,8 +49,6 @@ function Index() {
         <BrandsMarquee />
         <MediaImpact />
         <PartnerStrip />
-        
-        <LatestEpisode />
         <VideoReel />
         <GuestSlider />
         <QuoteWall />
