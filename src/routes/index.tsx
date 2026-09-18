@@ -12,6 +12,7 @@ import { QuoteWall } from "@/components/ddp/QuoteWall";
 
 import { FloatingCta } from "@/components/ddp/FloatingCta";
 import { useReveal } from "@/hooks/use-reveal";
+import { faqSchema } from "@/data/faqSchema";
 
 const ManifestoBand = lazy(() => import("@/components/ddp/ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
 const FaqBand = lazy(() => import("@/components/ddp/FaqBand").then((m) => ({ default: m.FaqBand })));
@@ -35,6 +36,12 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(faqSchema),
+      },
+    ],
   }),
   component: Index,
 });
