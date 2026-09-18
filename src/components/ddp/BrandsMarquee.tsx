@@ -1,5 +1,7 @@
 import unirLogo from "@/assets/logo-unir.png.asset.json";
 import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+import apdLogo from "@/assets/logo-apd.png.asset.json";
+
 
 type Brand = { name: string; domain?: string; logo?: string };
 
@@ -18,7 +20,7 @@ export const BRANDS: Brand[] = [
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
   { name: "EWTN" },
-  { name: "APD", domain: "apd.es" },
+  { name: "APD", domain: "apd.es", logo: apdLogo.url },
   { name: "Contents.com", domain: "contents.com" },
   { name: "Metlabs", domain: "metlabs.io" },
 ];
@@ -31,7 +33,6 @@ export function BrandMark({ domain, logo, name, className = "" }: { domain?: str
         src={logo}
         alt=""
         aria-hidden
-        loading="lazy"
         decoding="async"
         width={24}
         height={24}
@@ -51,7 +52,6 @@ export function BrandMark({ domain, logo, name, className = "" }: { domain?: str
       srcSet={`https://www.google.com/s2/favicons?domain=${domain}&sz=128 2x, https://www.google.com/s2/favicons?domain=${domain}&sz=64 1x`}
       alt=""
       aria-hidden
-      loading="lazy"
       decoding="async"
       width={24}
       height={24}
