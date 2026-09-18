@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "sdk_version": "2.2.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "diario-del-poder",
+      "version": "0.1.0",
+      "title": "Diario del poder"
+    },
+    "tools": [
+      {
+        "name": "list_episodes",
+        "title": "Listar episodios",
+        "description": "Lista los episodios publicados del podcast Diario del Poder: invitado, título, fecha, duración y enlace.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": null,
+        "outputSchema": null
+      },
+      {
+        "name": "get_episode",
+        "title": "Ver un episodio",
+        "description": "Devuelve el detalle de un episodio de Diario del Poder a partir de su slug (por ejemplo 'jordi-juan-la-teoria-de-los-cajones').",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Slug del episodio."
+            }
+          },
+          "required": [
+            "slug"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_guests",
+        "title": "Listar invitados",
+        "description": "Lista los invitados de Diario del Poder (nombre, cargo, temas). Admite una búsqueda por texto sobre nombre, cargo o temas.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "query": {
+              "description": "Texto opcional para filtrar invitados.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_guest",
+        "title": "Ver un invitado",
+        "description": "Devuelve la ficha completa de un invitado de Diario del Poder (biografía, resumen de la conversación, temas e ideas clave) a partir de su slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Slug del invitado."
+            }
+          },
+          "required": [
+            "slug"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_press",
+        "title": "Apariciones en prensa y televisión",
+        "description": "Lista las apariciones de Diario del Poder en prensa, televisión y medios digitales, con medio, titular, fecha y enlace.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": null,
+        "outputSchema": null
+      }
+    ]
+  }
+}
