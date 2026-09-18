@@ -35,7 +35,7 @@ export function Sponsors() {
               {[...sponsors, ...sponsors].map((s, i) => (
                 <span key={i} className="flex h-10 items-center gap-8 whitespace-nowrap px-8 md:gap-10 md:px-10">
                   <span className="flex items-center gap-3 opacity-70 transition-opacity duration-300 hover:opacity-100">
-                    <BrandMark domain={s.domain} name={s.name} />
+                    <BrandMark domain={s.domain} logo={s.logo} name={s.name} />
                     <span className="notranslate text-lg font-medium tracking-tight" translate="no">{s.name}</span>
                     
                   </span>
