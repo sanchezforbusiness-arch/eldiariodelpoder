@@ -33,7 +33,6 @@ export function BrandMark({ domain, logo, name, className = "" }: { domain?: str
         src={logo}
         alt=""
         aria-hidden
-        loading="lazy"
         decoding="async"
         width={24}
         height={24}
