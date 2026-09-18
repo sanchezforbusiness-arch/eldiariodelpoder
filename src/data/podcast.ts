@@ -411,6 +411,18 @@ export const guestList: GuestEntry[] = [
       "Reflexiona también sobre liderazgo, diversidad en los órganos de dirección y el papel social de la empresa.",
     ],
   },
+  {
+    slug: "narcis-rebollo",
+    name: "Narcís Rebollo",
+    role: "Presidente de la discográfica GTS",
+    bio: "Industria musical, gestión de artistas y negocios del entretenimiento desde la dirección de una de las discográficas de referencia en España.",
+    topics: ["industria musical", "discográficas", "gestión de artistas", "entretenimiento", "negocio de la música"],
+    summary: [
+      "Narcís Rebollo preside GTS, una de las discográficas de referencia del mercado español, con décadas de experiencia en la industria musical.",
+      "En Diario del Poder explica cómo ha cambiado el negocio de la música con el streaming, cómo se descubren y gestionan los artistas y por dónde pasa el futuro del sector.",
+      "Comparte además su visión sobre el negocio del entretenimiento y las claves para construir carreras musicales sostenibles.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
