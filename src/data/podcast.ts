@@ -375,6 +375,30 @@ export const guestList: GuestEntry[] = [
       "Comparte además su visión sobre el emprendimiento y el papel de las instituciones educativas en la creación de talento.",
     ],
   },
+  {
+    slug: "anne-lange",
+    name: "Anne Lange",
+    role: "Consejera independiente de INDITEX",
+    bio: "Directiva internacional y consejera independiente. Gobierno corporativo, estrategia y expansión global.",
+    topics: ["gobierno corporativo", "consejos de administración", "INDITEX", "expansión internacional", "retail"],
+    summary: [
+      "Anne Lange es consejera independiente de INDITEX, el mayor grupo de distribución de moda del mundo, tras una trayectoria directiva internacional.",
+      "En Diario del Poder habla de cómo funciona un consejo de administración por dentro, qué aporta un consejero independiente y cómo se supervisa una compañía de la escala de INDITEX.",
+      "Reflexiona también sobre liderazgo femenino en los consejos y sobre el papel de la gobernanza en las grandes corporaciones.",
+    ],
+  },
+  {
+    slug: "eduardo-martinez-cardona",
+    name: "Eduardo Martínez Cardona",
+    role: "Ex Director de ZARA",
+    bio: "Carrera en el núcleo de INDITEX. Retail, marca y operaciones en el mayor grupo de moda del mundo.",
+    topics: ["retail", "moda", "ZARA", "INDITEX", "operaciones"],
+    summary: [
+      "Eduardo Martínez Cardona desarrolló su carrera en la dirección de ZARA, la enseña que cambió el modelo de la moda mundial.",
+      "En Diario del Poder explica cómo funciona la maquinaria de ZARA por dentro: cadencia de producto, logística, tiendas y la obsesión por el cliente.",
+      "Comparte las lecciones de gestión de décadas en el corazón de INDITEX y qué puede aprender cualquier empresa de su modelo.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
