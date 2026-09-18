@@ -52,7 +52,6 @@ export function BrandMark({ domain, logo, name, className = "" }: { domain?: str
       srcSet={`https://www.google.com/s2/favicons?domain=${domain}&sz=128 2x, https://www.google.com/s2/favicons?domain=${domain}&sz=64 1x`}
       alt=""
       aria-hidden
-      loading="lazy"
       decoding="async"
       width={24}
       height={24}
