@@ -38,6 +38,7 @@ export const guestImageBySlug: Record<string, string> = {
   "arturo-de-las-heras": arturoHerasAsset.url,
   "anne-lange": anneLangeAsset.url,
   "eduardo-martinez-cardona": eduardoCardonaAsset.url,
+  "laura-gonzalez-molero": lauraMoleroAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
