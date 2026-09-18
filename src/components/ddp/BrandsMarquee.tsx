@@ -23,7 +23,26 @@ export const BRANDS: Brand[] = [
   { name: "Metlabs", domain: "metlabs.io" },
 ];
 
-export function BrandMark({ domain, name, className = "" }: { domain?: string; name: string; className?: string }) {
+export function BrandMark({ domain, logo, name, className = "" }: { domain?: string; logo?: string; name: string; className?: string }) {
+  if (logo) {
+    // Asset propio: logotipo real de la marca (no recortado a cuadrado)
+    return (
+      <img
+        src={logo}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        decoding="async"
+        width={24}
+        height={24}
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+        className={`h-6 w-auto shrink-0 object-contain ${className}`}
+        title={name}
+      />
+    );
+  }
   if (!domain) return null;
   // PNG (no .ico) para que los logos también se vean en móvil (Safari/iOS no pinta .ico en <img>)
   return (
