@@ -19,6 +19,7 @@ import rocioAsset from "@/assets/guest-rocio-monasterio.png.asset.json";
 import arturoHerasAsset from "@/assets/guest-arturo-de-las-heras.png.asset.json";
 import anneLangeAsset from "@/assets/guest-anne-lange.png.asset.json";
 import eduardoCardonaAsset from "@/assets/guest-eduardo-martinez-cardona.png.asset.json";
+import lauraMoleroAsset from "@/assets/guest-laura-gonzalez-molero.png.asset.json";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
