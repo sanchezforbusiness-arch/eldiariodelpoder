@@ -14,9 +14,8 @@ export const BRANDS: Brand[] = [
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
   { name: "EWTN" },
+  { name: "APD", domain: "apd.es" },
   { name: "Contents.com", domain: "contents.com" },
-  { name: "NoBrainer Partners" },
-  { name: "SenYours" },
   { name: "Metlabs", domain: "metlabs.io" },
 ];
 
