@@ -1,5 +1,3 @@
-import unirLogo from "@/assets/logo-unir.png.asset.json";
-import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
 import apdLogo from "@/assets/logo-apd.png.asset.json";
 
 
