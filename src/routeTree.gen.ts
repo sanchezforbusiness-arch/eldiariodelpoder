@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as AgendaRouteImport } from './routes/agenda'
@@ -22,6 +23,7 @@ import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
 import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
 import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
 import { Route as EpisodiosSlugRouteImport } from './routes/episodios.$slug'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 
 const VictorHugoGandarillaDeAndresRoute =
   VictorHugoGandarillaDeAndresRouteImport.update({
@@ -47,6 +49,11 @@ const PatrocinadoresRoute = PatrocinadoresRouteImport.update({
 const NosotrosRoute = NosotrosRouteImport.update({
   id: '/nosotros',
   path: '/nosotros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManifiestoRoute = ManifiestoRouteImport.update({
@@ -90,17 +97,25 @@ const EpisodiosSlugRoute = EpisodiosSlugRouteImport.update({
   path: '/episodios/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
@@ -111,11 +126,13 @@ export interface FileRoutesByTo {
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/episodios': typeof EpisodiosIndexRoute
@@ -127,11 +144,13 @@ export interface FileRoutesById {
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
@@ -144,11 +163,13 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
+    | '/mcp'
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
+    | '/.well-known/oauth-protected-resource'
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/episodios/'
@@ -159,11 +180,13 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
+    | '/mcp'
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
+    | '/.well-known/oauth-protected-resource'
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/episodios'
@@ -174,11 +197,13 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
+    | '/mcp'
     | '/nosotros'
     | '/patrocinadores'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
+    | '/.well-known/oauth-protected-resource'
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/episodios/'
@@ -190,11 +215,13 @@ export interface RootRouteChildren {
   AgendaRoute: typeof AgendaRoute
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
   ManifiestoRoute: typeof ManifiestoRoute
+  McpRoute: typeof McpRoute
   NosotrosRoute: typeof NosotrosRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PrensaRoute: typeof PrensaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   EpisodiosSlugRoute: typeof EpisodiosSlugRoute
   InvitadosSlugRoute: typeof InvitadosSlugRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
@@ -236,6 +263,13 @@ declare module '@tanstack/react-router' {
       path: '/nosotros'
       fullPath: '/nosotros'
       preLoaderRoute: typeof NosotrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manifiesto': {
@@ -294,6 +328,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EpisodiosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -302,11 +343,14 @@ const rootRouteChildren: RootRouteChildren = {
   AgendaRoute: AgendaRoute,
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
   ManifiestoRoute: ManifiestoRoute,
+  McpRoute: McpRoute,
   NosotrosRoute: NosotrosRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PrensaRoute: PrensaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
   EpisodiosSlugRoute: EpisodiosSlugRoute,
   InvitadosSlugRoute: InvitadosSlugRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
