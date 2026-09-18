@@ -1,5 +1,7 @@
 import unirLogo from "@/assets/logo-unir.png.asset.json";
 import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+import apdLogo from "@/assets/logo-apd.png.asset.json";
+
 
 type Brand = { name: string; domain?: string; logo?: string };
 
@@ -18,7 +20,7 @@ export const BRANDS: Brand[] = [
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
   { name: "EWTN" },
-  { name: "APD", domain: "apd.es" },
+  { name: "APD", domain: "apd.es", logo: apdLogo.url },
   { name: "Contents.com", domain: "contents.com" },
   { name: "Metlabs", domain: "metlabs.io" },
 ];
