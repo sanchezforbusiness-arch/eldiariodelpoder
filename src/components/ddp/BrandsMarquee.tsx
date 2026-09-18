@@ -1,15 +1,19 @@
-type Brand = { name: string; domain?: string };
+import unirLogo from "@/assets/logo-unir.png.asset.json";
+import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+
+type Brand = { name: string; domain?: string; logo?: string };
 
 /**
- * Marcas que han pasado por la mesa. El logotipo se resuelve por dominio;
- * si no carga, se queda el nombre (siempre visible).
+ * Marcas que han pasado por la mesa. El logotipo se resuelve por dominio
+ * (favicon) o por asset propio (`logo`); si no carga, se queda el nombre
+ * (siempre visible).
  */
 export const BRANDS: Brand[] = [
   { name: "Forbes", domain: "forbes.es" },
   { name: "La Vanguardia", domain: "lavanguardia.com" },
   { name: "Fundación La Caixa", domain: "fundacionlacaixa.org" },
-  { name: "UNIR", domain: "unir.net" },
-  { name: "Grupo Proeduca", domain: "proeduca.com" },
+  { name: "UNIR", domain: "unir.net", logo: unirLogo.url },
+  { name: "Grupo Proeduca", domain: "proeduca.com", logo: proeducaLogo.url },
   { name: "Telefónica", domain: "telefonica.com" },
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
@@ -19,7 +23,26 @@ export const BRANDS: Brand[] = [
   { name: "Metlabs", domain: "metlabs.io" },
 ];
 
-export function BrandMark({ domain, name, className = "" }: { domain?: string; name: string; className?: string }) {
+export function BrandMark({ domain, logo, name, className = "" }: { domain?: string; logo?: string; name: string; className?: string }) {
+  if (logo) {
+    // Asset propio: logotipo real de la marca (no recortado a cuadrado)
+    return (
+      <img
+        src={logo}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        decoding="async"
+        width={24}
+        height={24}
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+        className={`h-6 w-auto shrink-0 object-contain ${className}`}
+        title={name}
+      />
+    );
+  }
   if (!domain) return null;
   // PNG (no .ico) para que los logos también se vean en móvil (Safari/iOS no pinta .ico en <img>)
   return (
@@ -52,7 +75,7 @@ export function BrandsMarquee() {
           {[...BRANDS, ...BRANDS].map((b, i) => (
             <span key={i} className="flex h-10 items-center gap-8 whitespace-nowrap px-8 md:gap-10 md:px-10">
               <span className="flex items-center gap-3 opacity-70 transition-opacity duration-300 hover:opacity-100">
-                <BrandMark domain={b.domain} name={b.name} />
+                <BrandMark domain={b.domain} logo={b.logo} name={b.name} />
                 <span className="notranslate text-lg font-medium tracking-tight" translate="no">{b.name}</span>
               </span>
               <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
