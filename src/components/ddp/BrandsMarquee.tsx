@@ -8,6 +8,8 @@ export const BRANDS: Brand[] = [
   { name: "Forbes", domain: "forbes.es" },
   { name: "La Vanguardia", domain: "lavanguardia.com" },
   { name: "Fundación La Caixa", domain: "fundacionlacaixa.org" },
+  { name: "UNIR", domain: "unir.net" },
+  { name: "Grupo Proeduca", domain: "proeduca.com" },
   { name: "Telefónica", domain: "telefonica.com" },
   { name: "Atlético de Madrid", domain: "atleticodemadrid.com" },
   { name: "Osasuna", domain: "osasuna.es" },
