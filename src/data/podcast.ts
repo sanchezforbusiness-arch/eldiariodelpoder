@@ -399,6 +399,18 @@ export const guestList: GuestEntry[] = [
       "Comparte las lecciones de gestión de décadas en el corazón de INDITEX y qué puede aprender cualquier empresa de su modelo.",
     ],
   },
+  {
+    slug: "laura-gonzalez-molero",
+    name: "Laura González-Molero",
+    role: "Presidenta de DKV",
+    bio: "Directiva del sector seguros y salud. Liderazgo corporativo, sostenibilidad y gestión de grandes organizaciones.",
+    topics: ["seguros", "salud", "liderazgo", "gestión corporativa", "sostenibilidad"],
+    summary: [
+      "Laura González-Molero preside DKV, una de las principales aseguradoras de salud de España, tras una amplia trayectoria directiva en el sector.",
+      "En Diario del Poder habla de cómo se dirige una compañía que combina salud, seguros y tecnología, y de los retos de un sistema sanitario bajo presión.",
+      "Reflexiona también sobre liderazgo, diversidad en los órganos de dirección y el papel social de la empresa.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
