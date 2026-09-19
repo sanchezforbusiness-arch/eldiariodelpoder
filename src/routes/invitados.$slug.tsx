@@ -113,6 +113,7 @@ export const Route = createFileRoute("/invitados/$slug")({
             speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "#resumen"] },
             mainEntity: {
               "@type": "Person",
+              "@id": `${url}#person`,
               name: guest.name,
               jobTitle: guest.role,
               description: guest.bio,
