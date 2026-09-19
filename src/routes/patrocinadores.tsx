@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
+import { BrandMark, BRANDS } from "@/components/ddp/BrandsMarquee";
 import { useReveal } from "@/hooks/use-reveal";
 import hosts from "@/assets/bts-hosts-palco.webp";
 
@@ -102,6 +103,7 @@ function PatrocinadoresPage() {
       <Navbar />
       <main>
         <Hero />
+        <Collaborators />
         <Pillars />
         <Tiers />
         <Contact />
@@ -135,15 +137,59 @@ function Hero() {
               El podcast en español sobre liderazgo e influencia. Tu marca, junto a los que deciden.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <a href="#contacto" className="btn-primary w-full sm:w-auto">
-                Hablar con el equipo
+              <Link to="/agenda" className="btn-primary w-full sm:w-auto">
+                Reservar una llamada
                 <ArrowUpRight size={14} />
-              </a>
+              </Link>
               <a href="#opciones" className="btn-outline w-full sm:w-auto">
                 Ver opciones
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Collaborators() {
+  return (
+    <section className="border-t border-border py-16 md:py-24" aria-labelledby="collaborators-heading">
+      <div className="container-ddp">
+        <div className="grid gap-8 border-b border-border pb-10 md:grid-cols-12 md:items-end md:gap-12 md:pb-14">
+          <div className="md:col-span-8 reveal">
+            <span className="mono-label">Marcas colaboradoras</span>
+            <h2 id="collaborators-heading" className="mt-4 max-w-[18ch] text-2xl font-medium leading-[1.05] tracking-tight md:text-display">
+              Ya han formado parte de la conversación.
+            </h2>
+          </div>
+          <p className="max-w-[38ch] text-sm leading-relaxed text-muted-foreground md:col-span-4 md:text-base">
+            Medios, instituciones y compañías que han colaborado con El Diario del Poder.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 border-l border-t border-border sm:grid-cols-3 lg:grid-cols-5 reveal-stagger">
+          {BRANDS.map((brand) => (
+            <div
+              key={brand.name}
+              className="flex min-h-32 items-center justify-center gap-3 border-b border-r border-border px-4 py-8 transition-colors hover:bg-background-alt md:min-h-40 md:px-6"
+            >
+              <BrandMark domain={brand.domain} logo={brand.logo} name={brand.name} className="h-7 md:h-8" />
+              <span className="notranslate text-center text-sm font-medium leading-tight tracking-tight md:text-base" translate="no">
+                {brand.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
+          <p className="max-w-[48ch] text-sm leading-relaxed text-muted-foreground">
+            Si tu marca comparte esta forma de entender la influencia, veamos cómo integrarla con criterio.
+          </p>
+          <Link to="/agenda" className="btn-primary shrink-0">
+            Reservar una llamada
+            <ArrowUpRight size={14} />
+          </Link>
         </div>
       </div>
     </section>
@@ -220,17 +266,17 @@ function Tiers() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contacto"
+              <Link
+                to="/agenda"
                 className={`group inline-flex w-full items-center justify-between gap-3 rounded-full border px-5 py-3.5 text-2xs uppercase tracking-label transition-colors ${
                   t.featured
                     ? "border-foreground bg-foreground text-background hover:bg-foreground/90"
                     : "border-foreground/25 text-foreground hover:border-foreground/45 hover:text-signal"
                 }`}
               >
-                Solicitar info
+                Reservar una llamada
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -253,12 +299,12 @@ function Contact() {
             Tu marca, en conversaciones que importan.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
-            Cuéntanos tu compañía y tus objetivos. Te respondemos en menos de 48 horas con una propuesta a medida.
+            Cuéntanos tu compañía y tus objetivos. En 30 minutos veremos el encaje y los siguientes pasos, sin compromiso.
           </p>
 
           <div className="mt-10 flex w-full max-w-full flex-col items-center gap-5">
             <Link to="/agenda" className="btn-primary">
-              Agendar una llamada
+              Reservar una llamada
               <ArrowUpRight size={14} />
             </Link>
             <a

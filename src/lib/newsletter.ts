@@ -18,6 +18,7 @@ export type NewsletterContenido = {
     fuente?: Fuente;
   };
   firmado?: { titulo?: string; texto?: string; fuente?: Fuente }[];
+  cotizadas?: { empresa?: string; texto?: string; fuente?: Fuente }[];
   quien?: { texto?: string; items?: { etiqueta?: string; texto?: string }[] };
   dato?: { cifra?: string; texto?: string; fuente?: Fuente };
   voz?: { cita?: string; autor?: string; cargo?: string; enlace?: string; enlace_texto?: string };
@@ -43,6 +44,7 @@ export const NEWSLETTER_EMAIL = "contactoeldiariodelpoder@gmail.com";
 export const SECCIONES = [
   "El subrayado",
   "Firmado ayer",
+  "Cotizadas",
   "Quién sube, quién baja",
   "El dato",
   "La voz del poder",
@@ -57,6 +59,7 @@ export function fuentesDeEdicion(c: NewsletterContenido): string[] {
   };
   push(c.subrayado?.fuente);
   c.firmado?.forEach((f) => push(f.fuente));
+  c.cotizadas?.forEach((item) => push(item.fuente));
   push(c.dato?.fuente);
   return Array.from(new Set(urls));
 }

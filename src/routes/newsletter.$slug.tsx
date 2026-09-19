@@ -225,6 +225,23 @@ function EdicionPage() {
               </section>
             )}
 
+            {c.cotizadas && c.cotizadas.length > 0 && (
+              <section className="mt-20" aria-label="Cotizadas">
+                <SectionLabel>Cotizadas</SectionLabel>
+                <div className="mt-6 space-y-10">
+                  {c.cotizadas.map((item, i) => (
+                    <div key={i}>
+                      <p className="text-base leading-relaxed text-muted-foreground">
+                        {item.empresa && <span className="font-medium text-foreground">{item.empresa}. </span>}
+                        {item.texto}
+                      </p>
+                      <FuenteLink fuente={item.fuente} />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {c.quien && (c.quien.texto || (c.quien.items && c.quien.items.length > 0)) && (
               <section className="mt-20" aria-label="Quién sube, quién baja">
                 <SectionLabel>Quién sube, quién baja</SectionLabel>
