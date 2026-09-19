@@ -152,7 +152,7 @@ function EdicionPage() {
                 Lectura: {c.lectura_min} minutos
               </p>
             ) : null}
-            <h1 className="mt-4 text-2xl sm:text-display leading-[0.98] font-medium tracking-tight">
+            <h1 className="mt-4 max-w-[26ch] text-balance text-2xl font-medium leading-[0.98] tracking-tight">
               {edicion.titulo}
             </h1>
           </header>
