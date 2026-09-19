@@ -19,6 +19,7 @@ import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
 import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
 import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
 import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
@@ -77,6 +78,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsletterIndexRoute = NewsletterIndexRouteImport.update({
+  id: '/newsletter/',
+  path: '/newsletter/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InvitadosIndexRoute = InvitadosIndexRouteImport.update({
   id: '/invitados/',
   path: '/invitados/',
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
+  '/newsletter/': typeof NewsletterIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -137,6 +144,7 @@ export interface FileRoutesByTo {
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/episodios': typeof EpisodiosIndexRoute
   '/invitados': typeof InvitadosIndexRoute
+  '/newsletter': typeof NewsletterIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -155,6 +163,7 @@ export interface FileRoutesById {
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
+  '/newsletter/': typeof NewsletterIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -174,6 +183,7 @@ export interface FileRouteTypes {
     | '/invitados/$slug'
     | '/episodios/'
     | '/invitados/'
+    | '/newsletter/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -191,6 +201,7 @@ export interface FileRouteTypes {
     | '/invitados/$slug'
     | '/episodios'
     | '/invitados'
+    | '/newsletter'
   id:
     | '__root__'
     | '/'
@@ -208,6 +219,7 @@ export interface FileRouteTypes {
     | '/invitados/$slug'
     | '/episodios/'
     | '/invitados/'
+    | '/newsletter/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -226,6 +238,7 @@ export interface RootRouteChildren {
   InvitadosSlugRoute: typeof InvitadosSlugRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
   InvitadosIndexRoute: typeof InvitadosIndexRoute
+  NewsletterIndexRoute: typeof NewsletterIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -300,6 +313,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newsletter/': {
+      id: '/newsletter/'
+      path: '/newsletter'
+      fullPath: '/newsletter/'
+      preLoaderRoute: typeof NewsletterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/invitados/': {
       id: '/invitados/'
       path: '/invitados'
@@ -355,6 +375,7 @@ const rootRouteChildren: RootRouteChildren = {
   InvitadosSlugRoute: InvitadosSlugRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
   InvitadosIndexRoute: InvitadosIndexRoute,
+  NewsletterIndexRoute: NewsletterIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
