@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { BrandMark, BRANDS } from "@/components/ddp/BrandsMarquee";
@@ -10,11 +10,11 @@ export const Route = createFileRoute("/patrocinadores")({
   head: () => ({
     meta: [
       { title: "Patrocinadores — Diario del Poder" },
-      {
-        name: "description",
-        content:
-          "Asocia tu marca a conversaciones que importan, con la audiencia de decisores que escucha Diario del Poder. Plata, Oro y Platino — hablemos.",
-      },
+        {
+          name: "description",
+          content:
+            "Asocia tu marca a conversaciones que importan, con la audiencia de decisores que escucha Diario del Poder. Hablemos.",
+        },
       { property: "og:title", content: "Patrocinadores — Diario del Poder" },
       {
         property: "og:description",
@@ -63,38 +63,6 @@ const pillars = [
   },
 ];
 
-const tiers = [
-  {
-    name: "Plata",
-    pitch: "Presencia continuada",
-    perks: [
-      "Logo en web",
-      "1 mención por episodio",
-      "Materiales de prensa",
-    ],
-  },
-  {
-    name: "Oro",
-    pitch: "Asociación de marca",
-    perks: [
-      "Todo lo anterior",
-      "Lectura al inicio de cada episodio",
-      "Un episodio temático hecho contigo",
-      "Acceso a un evento privado",
-    ],
-    featured: true,
-  },
-  {
-    name: "Platino",
-    pitch: "Patrocinador principal",
-    perks: [
-      "Todo lo anterior",
-      "Presentación in-line en cada episodio",
-      "Branded content de larga forma",
-      
-    ],
-  },
-];
 
 function PatrocinadoresPage() {
   useReveal();
