@@ -151,6 +151,28 @@ export const Route = createFileRoute("/invitados/$slug")({
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "PodcastEpisode",
+            name: ep ? `${guest.name} — ${ep.title}` : `${guest.name} en Diario del Poder`,
+            url,
+            inLanguage: "es",
+            partOfSeries: { "@id": `${SITE}/#podcastseries` },
+            author: {
+              "@id": "https://alejandrosanchezmartinez.com/#persona",
+              "@type": "Person",
+              name: "Alejandro Sánchez Martínez",
+            },
+            creator: {
+              "@id": "https://alejandrosanchezmartinez.com/#persona",
+              "@type": "Person",
+              name: "Alejandro Sánchez Martínez",
+            },
+            about: { "@id": `${url}#person` },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: faq.map((f) => ({
               "@type": "Question",
