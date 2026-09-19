@@ -73,7 +73,6 @@ function PatrocinadoresPage() {
         <Hero />
         <Collaborators />
         <Pillars />
-        <Tiers />
         <Contact />
       </main>
       <FooterGrid />
