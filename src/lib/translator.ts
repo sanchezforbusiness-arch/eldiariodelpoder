@@ -212,7 +212,7 @@ export function startTranslation(lang: string) {
 
   observer = new MutationObserver(() => {
     if (timer) clearTimeout(timer);
-    timer = setTimeout(() => void translateDocument(lang), 250);
+    timer = setTimeout(() => void translateDocument(lang), 80);
   });
   observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 }
@@ -224,13 +224,32 @@ export function stopTranslation() {
   timer = null;
 }
 
-export function getStoredLang(): string {
-  if (typeof window === "undefined") return SOURCE_LANG;
+export function getStoredLang(): string | null {
+  if (typeof window === "undefined") return null;
   try {
-    return localStorage.getItem(STORAGE_KEY) || SOURCE_LANG;
+    return localStorage.getItem(STORAGE_KEY);
   } catch {
-    return SOURCE_LANG;
+    return null;
   }
+}
+
+/** Idioma del navegador del visitante, si lo tenemos disponible. */
+export function detectBrowserLang(): string {
+  if (typeof navigator === "undefined") return SOURCE_LANG;
+  const prefs = [...(navigator.languages ?? []), navigator.language].filter(Boolean) as string[];
+  for (const pref of prefs) {
+    const exact = LANGS.find((l) => l.code.toLowerCase() === pref.toLowerCase());
+    if (exact) return exact.code;
+    const base = pref.split("-")[0]?.toLowerCase();
+    const partial = LANGS.find((l) => l.code.split("-")[0].toLowerCase() === base);
+    if (partial) return partial.code;
+  }
+  return SOURCE_LANG;
+}
+
+/** Idioma inicial: el elegido antes por el visitante o, si no, el de su navegador. */
+export function getInitialLang(): string {
+  return getStoredLang() ?? detectBrowserLang();
 }
 
 export function setStoredLang(code: string) {
