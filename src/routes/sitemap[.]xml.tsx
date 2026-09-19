@@ -5,13 +5,14 @@ const SITE = "https://eldiariodelpoder.com";
 
 type Entry = { loc: string; lastmod?: string; changefreq: string; priority: string };
 
-function buildSitemap() {
+function buildSitemap(newsletter: Entry[] = []) {
   const today = new Date().toISOString().slice(0, 10);
 
   const staticPages: Entry[] = [
     { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
     { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: today },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: today },
+    { loc: "/newsletter", changefreq: "daily", priority: "0.9", lastmod: today },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
     { loc: "/prensa", changefreq: "monthly", priority: "0.8" },
@@ -34,7 +35,7 @@ function buildSitemap() {
     priority: "0.7",
   }));
 
-  const all = [...staticPages, ...episodes, ...guests];
+  const all = [...staticPages, ...episodes, ...guests, ...newsletter];
 
   const body = all
     .map(
@@ -49,13 +50,32 @@ function buildSitemap() {
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: () =>
-        new Response(buildSitemap(), {
+      GET: async () => {
+        let newsletter: Entry[] = [];
+        try {
+          const { createPublicServerClient } = await import("@/lib/supabase-public.server");
+          const { data } = await createPublicServerClient()
+            .from("newsletter_ediciones")
+            .select("slug, fecha")
+            .eq("publicada", true)
+            .order("fecha", { ascending: false });
+          newsletter = (data ?? []).map((e) => ({
+            loc: `/newsletter/${e.slug}`,
+            lastmod: e.fecha,
+            changefreq: "monthly",
+            priority: "0.8",
+          }));
+        } catch {
+          newsletter = [];
+        }
+
+        return new Response(buildSitemap(newsletter), {
           headers: {
             "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600",
           },
-        }),
+        });
+      },
     },
   },
 });

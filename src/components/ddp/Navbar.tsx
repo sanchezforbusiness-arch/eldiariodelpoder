@@ -5,6 +5,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 const links = [
   { to: "/episodios", label: "Episodios" },
   { to: "/invitados", label: "Invitados" },
+  { to: "/newsletter", label: "Newsletter" },
   { to: "/nosotros", label: "Nosotros" },
   { to: "/manifiesto", label: "Manifiesto" },
   { to: "/prensa", label: "Prensa" },
