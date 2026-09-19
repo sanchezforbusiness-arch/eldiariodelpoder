@@ -112,7 +112,7 @@ export const Route = createFileRoute("/api/newsletter/publicar")({
           fecha: String(contenido["fecha"]),
           titulo: String(contenido["titulo"]),
           entradilla: String(contenido["entradilla"]),
-          contenido,
+          contenido: contenido as never,
           imagen_social: (contenido["imagen_social"] as string | undefined) ?? null,
           publicada: contenido["publicada"] === false ? false : true,
           updated_at: new Date().toISOString(),
