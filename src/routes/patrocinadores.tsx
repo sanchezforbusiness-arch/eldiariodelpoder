@@ -191,33 +191,23 @@ function Pillars() {
 
 function Contact() {
   return (
- <section id="contacto" className="relative overflow-hidden border-t border-border py-16 md:py-32">
-      <div className="container-ddp relative">
-        <div className="panel mx-auto max-w-3xl px-6 py-14 text-center reveal md:px-12 md:py-20">
-          <span className="mono-label block mb-5">Hablemos</span>
-          <h2 className="text-2xl md:text-display leading-[1.0] font-medium tracking-tight">
-            Tu marca, en conversaciones que importan.
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
-            Cuéntanos tu compañía y tus objetivos. En 30 minutos veremos el encaje y los siguientes pasos, sin compromiso.
-          </p>
-
-          <div className="mt-10 flex w-full max-w-full flex-col items-center gap-5">
-            <Link to="/agenda" className="btn-primary">
+    <section id="contacto" className="border-t border-border py-16 md:py-24">
+      <div className="container-ddp">
+        <div className="panel flex flex-col gap-6 p-6 reveal md:flex-row md:items-center md:justify-between md:p-10">
+          <div>
+            <p className="mono-label">¿Hablamos?</p>
+            <p className="mt-3 max-w-[30ch] text-lg font-medium leading-[1.15] tracking-tight md:text-xl">
+              Reserva 30 minutos y vemos el encaje de tu marca.
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
+            <Link to="/agenda" className="btn-primary w-full sm:w-auto">
               Reservar una llamada
               <ArrowUpRight size={14} />
             </Link>
             <a
               href="mailto:patrocinios@eldiariodelpoder.com?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder"
-              className="btn-outline"
-            >
-              <Mail size={14} />
-              Hablar con nuestro equipo
-              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
-            <a
-              href="mailto:patrocinios@eldiariodelpoder.com"
-              className="text-sm text-muted-foreground hover:text-signal transition-colors"
+              className="text-sm text-muted-foreground hover:text-signal transition-colors sm:text-right"
             >
               patrocinios@eldiariodelpoder.com
             </a>
