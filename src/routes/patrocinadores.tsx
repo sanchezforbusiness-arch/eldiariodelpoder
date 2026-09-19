@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { BrandMark, BRANDS } from "@/components/ddp/BrandsMarquee";
@@ -10,11 +10,11 @@ export const Route = createFileRoute("/patrocinadores")({
   head: () => ({
     meta: [
       { title: "Patrocinadores — Diario del Poder" },
-      {
-        name: "description",
-        content:
-          "Asocia tu marca a conversaciones que importan, con la audiencia de decisores que escucha Diario del Poder. Plata, Oro y Platino — hablemos.",
-      },
+        {
+          name: "description",
+          content:
+            "Asocia tu marca a conversaciones que importan, con la audiencia de decisores que escucha Diario del Poder. Hablemos.",
+        },
       { property: "og:title", content: "Patrocinadores — Diario del Poder" },
       {
         property: "og:description",
@@ -63,38 +63,6 @@ const pillars = [
   },
 ];
 
-const tiers = [
-  {
-    name: "Plata",
-    pitch: "Presencia continuada",
-    perks: [
-      "Logo en web",
-      "1 mención por episodio",
-      "Materiales de prensa",
-    ],
-  },
-  {
-    name: "Oro",
-    pitch: "Asociación de marca",
-    perks: [
-      "Todo lo anterior",
-      "Lectura al inicio de cada episodio",
-      "Un episodio temático hecho contigo",
-      "Acceso a un evento privado",
-    ],
-    featured: true,
-  },
-  {
-    name: "Platino",
-    pitch: "Patrocinador principal",
-    perks: [
-      "Todo lo anterior",
-      "Presentación in-line en cada episodio",
-      "Branded content de larga forma",
-      
-    ],
-  },
-];
 
 function PatrocinadoresPage() {
   useReveal();
@@ -105,7 +73,6 @@ function PatrocinadoresPage() {
         <Hero />
         <Collaborators />
         <Pillars />
-        <Tiers />
         <Contact />
       </main>
       <FooterGrid />
@@ -141,9 +108,6 @@ function Hero() {
                 Reservar una llamada
                 <ArrowUpRight size={14} />
               </Link>
-              <a href="#opciones" className="btn-outline w-full sm:w-auto">
-                Ver opciones
-              </a>
             </div>
           </div>
         </div>
@@ -220,70 +184,6 @@ function Pillars() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Tiers() {
-  return (
- <section id="opciones" className="py-16 md:py-32 border-t border-border bg-background-alt">
-      <div className="container-ddp">
-        <div className="max-w-2xl mb-12 md:mb-16 reveal">
-          <span className="mono-label">Opciones de patrocinio</span>
-          <h2 className="mt-4 text-2xl sm:text-2xl md:text-display leading-[1.05] font-medium tracking-tight">
-            Tres formas de conversar con nuestra audiencia.
-          </h2>
-          <p className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl">
-            Diseñamos cada acuerdo a medida. Estas son las tres formas en las que solemos trabajar.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6 reveal-stagger">
-          {tiers.map((t) => (
-            <article
-              key={t.name}
-              className={`card-clean relative flex flex-col p-8 md:p-10 ${
-                t.featured ? "ring-1 ring-signal/40" : ""
-              }`}
-            >
-              {t.featured && (
-                <span className="absolute right-6 top-6 rounded-full bg-signal px-3 py-1 text-2xs uppercase tracking-label text-white">
-                  Más solicitado
-                </span>
-              )}
-              <p className="text-2xs tracking-label uppercase text-muted-foreground mb-3">
-                {t.pitch}
-              </p>
-              <h3 className="tracking-tight text-2xl md:text-display font-medium mb-8">
-                {t.name}
-              </h3>
-              <ul className="space-y-3 text-sm text-foreground/85 mb-8 flex-1">
-                {t.perks.map((p) => (
-                  <li key={p} className="flex items-start gap-3">
-                    <Check size={14} className="text-foreground mt-1 shrink-0" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/agenda"
-                className={`group inline-flex w-full items-center justify-between gap-3 rounded-full border px-5 py-3.5 text-2xs uppercase tracking-label transition-colors ${
-                  t.featured
-                    ? "border-foreground bg-foreground text-background hover:bg-foreground/90"
-                    : "border-foreground/25 text-foreground hover:border-foreground/45 hover:text-signal"
-                }`}
-              >
-                Reservar una llamada
-                <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-            </article>
-          ))}
-        </div>
-
-        <p className="mt-10 text-xs tracking-label uppercase text-muted-foreground text-center">
-          Acuerdos anuales o por temporada · cerramos detalles en una llamada
-        </p>
       </div>
     </section>
   );
