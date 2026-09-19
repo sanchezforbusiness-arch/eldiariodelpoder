@@ -3,10 +3,11 @@ import { Globe, Check, Loader2 } from "lucide-react";
 import {
   LANGS,
   SOURCE_LANG,
-  getStoredLang,
+  getInitialLang,
   setStoredLang,
   startTranslation,
   stopTranslation,
+  subscribeBusy,
   subscribeLang,
   broadcastLang,
 } from "@/lib/translator";
@@ -18,19 +19,16 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const stored = getStoredLang();
-    if (stored && stored !== SOURCE_LANG) {
-      setCurrent(stored);
-      setBusy(true);
-      startTranslation(stored);
-      const t = setTimeout(() => setBusy(false), 1200);
-      return () => {
-        clearTimeout(t);
-        stopTranslation();
-      };
+    const initial = getInitialLang();
+    if (initial && initial !== SOURCE_LANG) {
+      setCurrent(initial);
+      broadcastLang(initial);
+      startTranslation(initial);
     }
     return () => stopTranslation();
   }, []);
+
+  useEffect(() => subscribeBusy(setBusy), []);
 
   useEffect(() => {
     const unsubscribe = subscribeLang(setCurrent);
@@ -59,10 +57,9 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
       window.location.reload();
       return;
     }
-    setBusy(true);
     startTranslation(code);
-    setTimeout(() => setBusy(false), 1500);
   };
+
 
   const label = current.slice(0, 2).toUpperCase();
 
