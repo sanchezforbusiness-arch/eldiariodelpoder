@@ -22,6 +22,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
 import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
 import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
+import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
 import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
 import { Route as EpisodiosSlugRouteImport } from './routes/episodios.$slug'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
@@ -93,6 +94,11 @@ const EpisodiosIndexRoute = EpisodiosIndexRouteImport.update({
   path: '/episodios/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
+  id: '/newsletter/$slug',
+  path: '/newsletter/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InvitadosSlugRoute = InvitadosSlugRouteImport.update({
   id: '/invitados/$slug',
   path: '/invitados/$slug',
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
+  '/newsletter/$slug': typeof NewsletterSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByTo {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
+  '/newsletter/$slug': typeof NewsletterSlugRoute
   '/episodios': typeof EpisodiosIndexRoute
   '/invitados': typeof InvitadosIndexRoute
   '/newsletter': typeof NewsletterIndexRoute
@@ -161,6 +169,7 @@ export interface FileRoutesById {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
+  '/newsletter/$slug': typeof NewsletterSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
@@ -181,6 +190,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/episodios/$slug'
     | '/invitados/$slug'
+    | '/newsletter/$slug'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/episodios/$slug'
     | '/invitados/$slug'
+    | '/newsletter/$slug'
     | '/episodios'
     | '/invitados'
     | '/newsletter'
@@ -217,6 +228,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/episodios/$slug'
     | '/invitados/$slug'
+    | '/newsletter/$slug'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
@@ -236,6 +248,7 @@ export interface RootRouteChildren {
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   EpisodiosSlugRoute: typeof EpisodiosSlugRoute
   InvitadosSlugRoute: typeof InvitadosSlugRoute
+  NewsletterSlugRoute: typeof NewsletterSlugRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
   InvitadosIndexRoute: typeof InvitadosIndexRoute
   NewsletterIndexRoute: typeof NewsletterIndexRoute
@@ -334,6 +347,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EpisodiosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newsletter/$slug': {
+      id: '/newsletter/$slug'
+      path: '/newsletter/$slug'
+      fullPath: '/newsletter/$slug'
+      preLoaderRoute: typeof NewsletterSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/invitados/$slug': {
       id: '/invitados/$slug'
       path: '/invitados/$slug'
@@ -373,6 +393,7 @@ const rootRouteChildren: RootRouteChildren = {
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   EpisodiosSlugRoute: EpisodiosSlugRoute,
   InvitadosSlugRoute: InvitadosSlugRoute,
+  NewsletterSlugRoute: NewsletterSlugRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
   InvitadosIndexRoute: InvitadosIndexRoute,
   NewsletterIndexRoute: NewsletterIndexRoute,
