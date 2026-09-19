@@ -44,6 +44,48 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_ediciones: {
+        Row: {
+          contenido: Json
+          created_at: string
+          entradilla: string
+          fecha: string
+          id: string
+          imagen_social: string | null
+          numero: number
+          publicada: boolean
+          slug: string
+          titulo: string
+          updated_at: string
+        }
+        Insert: {
+          contenido: Json
+          created_at?: string
+          entradilla: string
+          fecha: string
+          id?: string
+          imagen_social?: string | null
+          numero: number
+          publicada?: boolean
+          slug: string
+          titulo: string
+          updated_at?: string
+        }
+        Update: {
+          contenido?: Json
+          created_at?: string
+          entradilla?: string
+          fecha?: string
+          id?: string
+          imagen_social?: string | null
+          numero?: number
+          publicada?: boolean
+          slug?: string
+          titulo?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       translations: {
         Row: {
           created_at: string
