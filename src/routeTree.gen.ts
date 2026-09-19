@@ -22,10 +22,14 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
 import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
 import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
+import { Route as NewsletterRssDotxmlRouteImport } from './routes/newsletter.rss[.]xml'
+import { Route as NewsletterFeedDotjsonRouteImport } from './routes/newsletter.feed[.]json'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
 import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
 import { Route as EpisodiosSlugRouteImport } from './routes/episodios.$slug'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as NewsletterImagenNombreRouteImport } from './routes/newsletter.imagen.$nombre'
+import { Route as ApiNewsletterPublicarRouteImport } from './routes/api/newsletter/publicar'
 
 const VictorHugoGandarillaDeAndresRoute =
   VictorHugoGandarillaDeAndresRouteImport.update({
@@ -94,6 +98,16 @@ const EpisodiosIndexRoute = EpisodiosIndexRouteImport.update({
   path: '/episodios/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsletterRssDotxmlRoute = NewsletterRssDotxmlRouteImport.update({
+  id: '/newsletter/rss.xml',
+  path: '/newsletter/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterFeedDotjsonRoute = NewsletterFeedDotjsonRouteImport.update({
+  id: '/newsletter/feed.json',
+  path: '/newsletter/feed.json',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
   id: '/newsletter/$slug',
   path: '/newsletter/$slug',
@@ -115,6 +129,16 @@ const Char91DotwellKnownChar93OauthProtectedResourceRoute =
     path: '/.well-known/oauth-protected-resource',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NewsletterImagenNombreRoute = NewsletterImagenNombreRouteImport.update({
+  id: '/newsletter/imagen/$nombre',
+  path: '/newsletter/imagen/$nombre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiNewsletterPublicarRoute = ApiNewsletterPublicarRouteImport.update({
+  id: '/api/newsletter/publicar',
+  path: '/api/newsletter/publicar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -131,9 +155,13 @@ export interface FileRoutesByFullPath {
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
+  '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
+  '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
+  '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
+  '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,9 +178,13 @@ export interface FileRoutesByTo {
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
+  '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
+  '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
   '/episodios': typeof EpisodiosIndexRoute
   '/invitados': typeof InvitadosIndexRoute
   '/newsletter': typeof NewsletterIndexRoute
+  '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
+  '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,9 +202,13 @@ export interface FileRoutesById {
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
+  '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
+  '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
+  '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
+  '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,9 +227,13 @@ export interface FileRouteTypes {
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/newsletter/$slug'
+    | '/newsletter/feed.json'
+    | '/newsletter/rss.xml'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
+    | '/api/newsletter/publicar'
+    | '/newsletter/imagen/$nombre'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,9 +250,13 @@ export interface FileRouteTypes {
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/newsletter/$slug'
+    | '/newsletter/feed.json'
+    | '/newsletter/rss.xml'
     | '/episodios'
     | '/invitados'
     | '/newsletter'
+    | '/api/newsletter/publicar'
+    | '/newsletter/imagen/$nombre'
   id:
     | '__root__'
     | '/'
@@ -229,9 +273,13 @@ export interface FileRouteTypes {
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/newsletter/$slug'
+    | '/newsletter/feed.json'
+    | '/newsletter/rss.xml'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
+    | '/api/newsletter/publicar'
+    | '/newsletter/imagen/$nombre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,9 +297,13 @@ export interface RootRouteChildren {
   EpisodiosSlugRoute: typeof EpisodiosSlugRoute
   InvitadosSlugRoute: typeof InvitadosSlugRoute
   NewsletterSlugRoute: typeof NewsletterSlugRoute
+  NewsletterFeedDotjsonRoute: typeof NewsletterFeedDotjsonRoute
+  NewsletterRssDotxmlRoute: typeof NewsletterRssDotxmlRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
   InvitadosIndexRoute: typeof InvitadosIndexRoute
   NewsletterIndexRoute: typeof NewsletterIndexRoute
+  ApiNewsletterPublicarRoute: typeof ApiNewsletterPublicarRoute
+  NewsletterImagenNombreRoute: typeof NewsletterImagenNombreRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -347,6 +399,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EpisodiosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newsletter/rss.xml': {
+      id: '/newsletter/rss.xml'
+      path: '/newsletter/rss.xml'
+      fullPath: '/newsletter/rss.xml'
+      preLoaderRoute: typeof NewsletterRssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/feed.json': {
+      id: '/newsletter/feed.json'
+      path: '/newsletter/feed.json'
+      fullPath: '/newsletter/feed.json'
+      preLoaderRoute: typeof NewsletterFeedDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/newsletter/$slug': {
       id: '/newsletter/$slug'
       path: '/newsletter/$slug'
@@ -375,6 +441,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newsletter/imagen/$nombre': {
+      id: '/newsletter/imagen/$nombre'
+      path: '/newsletter/imagen/$nombre'
+      fullPath: '/newsletter/imagen/$nombre'
+      preLoaderRoute: typeof NewsletterImagenNombreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/newsletter/publicar': {
+      id: '/api/newsletter/publicar'
+      path: '/api/newsletter/publicar'
+      fullPath: '/api/newsletter/publicar'
+      preLoaderRoute: typeof ApiNewsletterPublicarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -394,9 +474,13 @@ const rootRouteChildren: RootRouteChildren = {
   EpisodiosSlugRoute: EpisodiosSlugRoute,
   InvitadosSlugRoute: InvitadosSlugRoute,
   NewsletterSlugRoute: NewsletterSlugRoute,
+  NewsletterFeedDotjsonRoute: NewsletterFeedDotjsonRoute,
+  NewsletterRssDotxmlRoute: NewsletterRssDotxmlRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
   InvitadosIndexRoute: InvitadosIndexRoute,
   NewsletterIndexRoute: NewsletterIndexRoute,
+  ApiNewsletterPublicarRoute: ApiNewsletterPublicarRoute,
+  NewsletterImagenNombreRoute: NewsletterImagenNombreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
