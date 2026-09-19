@@ -108,9 +108,6 @@ function Hero() {
                 Reservar una llamada
                 <ArrowUpRight size={14} />
               </Link>
-              <a href="#opciones" className="btn-outline w-full sm:w-auto">
-                Ver opciones
-              </a>
             </div>
           </div>
         </div>
