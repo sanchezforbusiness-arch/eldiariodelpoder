@@ -90,6 +90,32 @@ function chunk<T>(items: T[], size: number): T[][] {
 let running = false;
 let queued = false;
 
+/** Suscriptores del estado "traduciendo". */
+const busyListeners = new Set<(busy: boolean) => void>();
+let busyState = false;
+
+function setBusy(value: boolean) {
+  if (busyState === value) return;
+  busyState = value;
+  for (const fn of busyListeners) fn(value);
+}
+
+export function subscribeBusy(fn: (busy: boolean) => void) {
+  busyListeners.add(fn);
+  fn(busyState);
+  return () => {
+    busyListeners.delete(fn);
+  };
+}
+
+/** Prioriza lo que el visitante está viendo ahora mismo. */
+function isVisible(node: Text): boolean {
+  const el = node.parentElement;
+  if (!el) return false;
+  const rect = el.getBoundingClientRect();
+  return rect.bottom > -100 && rect.top < (window.innerHeight || 0) + 300;
+}
+
 async function translateDocument(lang: string) {
   if (lang === SOURCE_LANG) return;
   if (running) {
@@ -114,7 +140,7 @@ async function translateDocument(lang: string) {
       pending.push({ node, core, pre, post, hash: hashText(core) });
     }
 
-    // 1) Aplicar lo que ya está en caché.
+    // 1) Aplicar lo que ya está en caché (instantáneo).
     const uncached: typeof pending = [];
     for (const item of pending) {
       const hit = memory.get(cacheKey(lang, item.hash));
@@ -127,20 +153,7 @@ async function translateDocument(lang: string) {
     }
     if (uncached.length === 0) return;
 
-    // 2) Pedir el resto al servidor (caché en base de datos + IA).
-    const uniqueTexts = [...new Set(uncached.map((i) => i.core))];
-    for (const batch of chunk(uniqueTexts, 60)) {
-      let translations: Record<string, string> = {};
-      try {
-        const res = await translateTexts({ data: { lang, texts: batch } });
-        translations = res.translations;
-      } catch (err) {
-        console.error("[translator]", err);
-        continue;
-      }
-      for (const [hash, value] of Object.entries(translations)) {
-        memory.set(cacheKey(lang, hash), value);
-      }
+    const applyAll = () => {
       for (const item of uncached) {
         const hit = memory.get(cacheKey(lang, item.hash));
         if (hit !== undefined && originals.get(item.node) !== item.node.nodeValue) {
@@ -148,13 +161,36 @@ async function translateDocument(lang: string) {
           originals.set(item.node, item.node.nodeValue);
         }
       }
-    }
+    };
+
+    // 2) Pedir el resto al servidor: primero lo visible, y todos los lotes en paralelo.
+    const visibleFirst = [...uncached].sort(
+      (a, b) => Number(isVisible(b.node)) - Number(isVisible(a.node)),
+    );
+    const uniqueTexts = [...new Set(visibleFirst.map((i) => i.core))];
+
+    setBusy(true);
+    await Promise.all(
+      chunk(uniqueTexts, 20).map(async (batch) => {
+        try {
+          const res = await translateTexts({ data: { lang, texts: batch } });
+          for (const [hash, value] of Object.entries(res.translations)) {
+            memory.set(cacheKey(lang, hash), value);
+          }
+          applyAll();
+        } catch (err) {
+          console.error("[translator]", err);
+        }
+      }),
+    );
     saveCache(lang);
   } finally {
     running = false;
     if (queued) {
       queued = false;
       void translateDocument(lang);
+    } else {
+      setBusy(false);
     }
   }
 }
