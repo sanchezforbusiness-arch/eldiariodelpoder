@@ -199,9 +199,13 @@ let observer: MutationObserver | null = null;
 let timer: ReturnType<typeof setTimeout> | null = null;
 
 /** Arranca la traducción de la página al idioma indicado y la mantiene al navegar. */
+let activeLang: string | null = null;
+
 export function startTranslation(lang: string) {
-  stopTranslation();
   if (typeof document === "undefined") return;
+  if (activeLang === lang && observer) return;
+  stopTranslation();
+  activeLang = lang;
 
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -218,6 +222,7 @@ export function startTranslation(lang: string) {
 }
 
 export function stopTranslation() {
+  activeLang = null;
   observer?.disconnect();
   observer = null;
   if (timer) clearTimeout(timer);
