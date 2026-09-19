@@ -423,6 +423,25 @@ export const guestList: GuestEntry[] = [
       "Comparte además su visión sobre el negocio del entretenimiento y las claves para construir carreras musicales sostenibles.",
     ],
   },
+  {
+    slug: "katalin-kariko",
+    name: "Katalin Karikó",
+    role: "Premio Nobel de Medicina 2023",
+    bio: "Bioquímica pionera del ARN mensajero, base de las vacunas de la pandemia. Premio Nobel de Medicina 2023.",
+    topics: [
+      "ARN mensajero",
+      "vacunas",
+      "ciencia",
+      "Premio Nobel",
+      "investigación",
+      "perseverancia",
+    ],
+    summary: [
+      "Katalin Karikó es bioquímica y Premio Nobel de Medicina 2023 por sus investigaciones que hicieron posible el ARN mensajero modificado, la base de las vacunas que enfrentaron la pandemia.",
+      "En Diario del Poder cuenta una vida de persistencia: décadas de investigación sin reconocimiento, un descuento salarial tras perder su puesto por apostar por una idea que nadie financiaba y la paciencia de trabajar a muy largo plazo.",
+      "Reflexiona sobre cómo se hace ciencia de verdad, qué puede aprender una generación joven de su trayectoria y qué viene ahora en la medicina con el ARN.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
