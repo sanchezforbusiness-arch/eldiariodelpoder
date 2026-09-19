@@ -35,7 +35,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
           name: `${NAME} — Co-fundador y host de Diario del Poder`,
           mainEntity: {
             "@type": "Person",
-            "@id": `${URL}#person`,
+            "@id": "https://alejandrosanchezmartinez.com/#persona",
             name: NAME,
             alternateName: ["Alejandro Sánchez", "Alejandro Sanchez Martinez", "Alex Sánchez Martínez"],
             jobTitle: "Co-fundador y host de Diario del Poder",

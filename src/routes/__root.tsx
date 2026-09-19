@@ -13,6 +13,7 @@ const SITE_IMAGE =
 
 const founderAlejandro = {
   "@type": "Person",
+  "@id": "https://alejandrosanchezmartinez.com/#persona",
   name: "Alejandro Sánchez Martínez",
   url: "https://alejandrosanchezmartinez.com",
   jobTitle: "Co-fundador y host",
@@ -104,6 +105,7 @@ const structuredData = {
     },
     {
       "@type": "PodcastSeries",
+      "@id": `${SITE_URL}/#podcastseries`,
       name: SITE_NAME,
       url: SITE_URL,
       description: SITE_DESCRIPTION,
