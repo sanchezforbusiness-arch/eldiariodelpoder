@@ -1201,7 +1201,12 @@ body {
   font-weight: 500;
   line-height: 0.75;
   letter-spacing: 0;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
+
+.newsletter-masthead span { display: block; }
 
 .newsletter-deck {
   margin-top: 2rem;
