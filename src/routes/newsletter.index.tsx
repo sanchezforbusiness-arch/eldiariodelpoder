@@ -68,7 +68,7 @@ export const Route = createFileRoute("/newsletter/")({
 
 function NewsletterIndex() {
   const { ediciones } = Route.useLoaderData() as { ediciones: Edicion[] };
-  const ultima = ediciones[0];
+
 
   return (
     <div className="newsletter-shell">
