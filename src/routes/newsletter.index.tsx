@@ -119,6 +119,11 @@ function NewsletterIndex() {
                   <li key={e.slug} className="border-t border-border py-8 max-w-[68ch]">
                     <div className={e.imagen_social ? "grid gap-5 sm:grid-cols-[12rem_minmax(0,1fr)] sm:items-start" : undefined}>
                       {e.imagen_social && (
+                        <Link
+                          to="/newsletter/$slug"
+                          params={{ slug: e.slug }}
+                          className="block aspect-video overflow-hidden rounded-sm"
+                        >
                           <img
                             src={e.imagen_social}
                             alt=""
