@@ -11,12 +11,6 @@ const DESCRIPTION =
 const URL = `${SITE}/newsletter`;
 const LEMA =
   "Lo que el poder decidió ayer, contado desde el documento original. Cinco minutos, a las 7:30, sin opinión.";
-const SECTION_ACCENTS = [
-  "newsletter-pill-ube",
-  "newsletter-pill-lime",
-  "newsletter-pill-mandarin",
-  "newsletter-pill-blueberry",
-] as const;
 
 function newsletterImageSrc(value: string) {
   return value.startsWith("storage:")
