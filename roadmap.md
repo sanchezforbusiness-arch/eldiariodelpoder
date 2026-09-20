@@ -10,3 +10,4 @@
 - [x] Verificar la nueva portada y una edición en escritorio y móvil.
 - [x] Rediseñar la portada de newsletter con una dirección editorial coherente con el sitio.
 - [x] Verificar la nueva portada editorial en escritorio y móvil.
+- [ ] Rediseñar y verificar la lectura de cada edición en escritorio y móvil.
