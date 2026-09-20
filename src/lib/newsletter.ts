@@ -6,6 +6,7 @@ export type NewsletterContenido = {
   fecha?: string;
   titulo?: string;
   entradilla?: string;
+  cuerpo_html?: string;
   lectura_min?: number;
   saludo?: string;
   subrayado?: {

@@ -155,9 +155,18 @@ function EdicionPage() {
             <h1 className="mt-4 max-w-[26ch] text-balance text-2xl font-medium leading-[0.98] tracking-tight">
               {edicion.titulo}
             </h1>
+            {edicion.entradilla && (
+              <p className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {edicion.entradilla}
+              </p>
+            )}
           </header>
 
           <div className="max-w-[68ch]">
+            {c.cuerpo_html ? (
+              <div className="mt-10" dangerouslySetInnerHTML={{ __html: c.cuerpo_html }} />
+            ) : (
+              <>
             {c.saludo && (
               <p className="mt-10 text-base md:text-lg leading-relaxed text-muted-foreground">{c.saludo}</p>
             )}
@@ -306,6 +315,8 @@ function EdicionPage() {
                   ))}
                 </ul>
               </section>
+            )}
+              </>
             )}
 
             <section className="mt-20 border-t border-border pt-10" aria-label="Suscríbete">
