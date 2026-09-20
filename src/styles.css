@@ -1116,22 +1116,59 @@ body {
 }
 
 @media (max-width: 767px) {
-  .newsletter-reader-header { padding: 1.5rem 0 2rem; }
-  .newsletter-reader-meta { align-items: flex-start; margin-bottom: 1.5rem; }
-  .newsletter-reader-meta p { flex: 1; }
-  .newsletter-reader-deck { margin-top: 1.5rem; padding-left: 1rem; font-size: 1.2rem; line-height: 1.5; }
-  .newsletter-reader-body { padding-top: 2rem; }
+  .newsletter-reader-breadcrumb {
+    border-bottom: 2px solid var(--newsletter-ink);
+    padding-bottom: 1.25rem;
+  }
+  .newsletter-reader-header {
+    margin-top: 0;
+    border-top: 0;
+    padding: 1.5rem 0 2.25rem;
+  }
+  .newsletter-reader-meta {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .newsletter-reader-meta span { padding: 0.5rem 0.65rem; }
+  .newsletter-reader-meta p { min-width: 0; padding-top: 0.15rem; line-height: 1.4; }
+  .newsletter-title {
+    max-width: 12ch;
+    font-size: clamp(2.55rem, 12vw, 3.35rem);
+    font-weight: 700;
+    line-height: 0.98;
+  }
+  .newsletter-reader-deck {
+    margin-top: 1.75rem;
+    border-left: 3px solid var(--newsletter-ink);
+    padding-left: 1rem;
+    color: var(--newsletter-ink);
+    font-size: 1.18rem;
+    line-height: 1.5;
+  }
+  .newsletter-reader-body { padding-top: 2.25rem; }
   .newsletter-reader-body .newsletter-rich-content .pm,
-  .newsletter-rich-content { font-size: 1.0625rem; line-height: 1.7; }
-  .newsletter-reader-body .newsletter-rich-content .pm .pm-tarjeta { padding: 2.75rem 0; }
+  .newsletter-rich-content { font-size: 1.0625rem; line-height: 1.76; }
+  .newsletter-reader-body .newsletter-rich-content .pm .pm-tarjeta { padding: 3rem 0; }
   .newsletter-reader-body .newsletter-rich-content .pm .pm-carta { padding-top: 0; }
-  .newsletter-reader-body .newsletter-rich-content .pm .pm-carta p:not(.pm-etiqueta):not(.pm-firma) { font-size: 1.0625rem; line-height: 1.72; }
+  .newsletter-reader-body .newsletter-rich-content .pm .pm-carta p:not(.pm-etiqueta):not(.pm-firma) { font-size: 1.08rem; line-height: 1.78; }
   .newsletter-reader-body .newsletter-rich-content .pm .pm-carta p:not(.pm-etiqueta):not(.pm-firma):first-of-type::first-letter { font-size: 4rem; }
   .newsletter-reader-body .newsletter-rich-content .pm .pm-perfil,
   .newsletter-reader-body .newsletter-rich-content .pm .pm-dos:not(.pm-perfil) { grid-template-columns: 1fr; gap: 1.5rem; }
   .newsletter-reader-body .newsletter-rich-content .pm .pm-perfil figure { position: static; }
   .newsletter-reader-body .newsletter-rich-content .pm .pm-hitos li { grid-template-columns: 4rem minmax(0, 1fr); gap: 0.75rem; }
   .newsletter-reader-body .newsletter-rich-content .pm .pm-tarjeta--tinta { margin-inline: -20px; padding-inline: 20px; }
+  .newsletter-reader-body .newsletter-rich-content .pm h2 {
+    max-width: 15ch;
+    font-size: clamp(2rem, 10vw, 2.65rem);
+    line-height: 1;
+  }
+  .newsletter-reader-body .newsletter-rich-content .pm blockquote {
+    border-block-width: 2px;
+    text-align: left;
+  }
 }
 
 .newsletter-hero {
@@ -1294,9 +1331,70 @@ body {
 }
 
 @media (max-width: 767px) {
-  .newsletter-masthead { font-size: clamp(4.25rem, 22vw, 6rem); }
-  .newsletter-deck { font-size: 1.3rem; }
+  .newsletter-hero {
+    border-top-width: 2px;
+    border-bottom-color: var(--newsletter-ink);
+    padding: 2.25rem 0 3rem;
+  }
+  .newsletter-masthead {
+    margin-top: 1rem;
+    font-size: clamp(4.25rem, 22vw, 5.5rem);
+    font-weight: 700;
+    line-height: 0.78;
+  }
+  .newsletter-deck {
+    margin-top: 2.25rem;
+    color: var(--newsletter-ink);
+    font-size: 1.22rem;
+    line-height: 1.45;
+  }
   .newsletter-button { width: 100%; justify-content: space-between; }
+  .newsletter-cover {
+    display: block;
+    aspect-ratio: 16 / 10;
+    margin-top: 2rem;
+    border-top: 2px solid var(--newsletter-ink);
+  }
+  .newsletter-archive { padding-top: 3.75rem; }
+  .newsletter-archive-heading {
+    border-bottom-width: 2px;
+    padding-bottom: 1.25rem;
+  }
+  .newsletter-archive-heading h2 {
+    max-width: 9ch;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 0.95;
+  }
+  .newsletter-featured { gap: 1.75rem; padding: 1.75rem 0 3rem; }
+  .newsletter-featured-meta {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+  .newsletter-featured-meta time { text-align: right; }
+  .newsletter-featured-copy h3,
+  .newsletter-previous h3 {
+    max-width: 16ch;
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .newsletter-featured-copy > p,
+  .newsletter-previous article > p:last-child { font-size: 1rem; line-height: 1.6; }
+  .newsletter-read-link { min-height: 44px; }
+  .newsletter-previous { gap: 2rem; padding-top: 2.5rem; }
+  .newsletter-thumbnail { margin-bottom: 1.25rem; }
+}
+
+@media (max-width: 359px) {
+  .newsletter-masthead { font-size: 4rem; }
+  .newsletter-title { font-size: 2.4rem; }
+  .newsletter-reader-meta { grid-template-columns: 1fr; }
+  .newsletter-reader-meta span { width: fit-content; }
+  .newsletter-featured-meta { grid-template-columns: 1fr; gap: 0.35rem; }
+  .newsletter-featured-meta time { text-align: left; }
+  .newsletter-reader-body .newsletter-rich-content .pm .pm-hitos li { grid-template-columns: 3.25rem minmax(0, 1fr); }
 }
 
 /* ── Muro de frases en movimiento ───────────────────────────── */
