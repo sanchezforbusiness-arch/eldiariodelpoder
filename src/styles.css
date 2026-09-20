@@ -909,6 +909,7 @@ body {
 }
 
 .newsletter-reader-body .pm .pm-carta {
+  background: transparent;
   border-width: 0 0 1px;
   padding-inline: 0;
 }
