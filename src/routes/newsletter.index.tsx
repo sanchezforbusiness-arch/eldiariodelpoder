@@ -5,12 +5,11 @@ import { formatDateEs } from "@/lib/utils";
 import { listarEdiciones } from "@/lib/newsletter.functions";
 import { SITE, SUBSCRIBE_URL, absolutizar, type Edicion } from "@/lib/newsletter";
 
-const TITLE = "Primera Mano — la newsletter diaria de El Diario del Poder";
+const TITLE = "Primera Mano — la newsletter de El Diario del Poder";
 const DESCRIPTION =
-  "Primera Mano: lo que el poder decidió ayer, contado desde el documento original. Cinco minutos, cada mañana a las 7:30, sin opinión.";
+  "Primera Mano: los secretos de los mayores referentes, todos los domingos.";
 const URL = `${SITE}/newsletter`;
-const LEMA =
-  "Lo que el poder decidió ayer, contado desde el documento original. Cinco minutos, a las 7:30, sin opinión.";
+const LEMA = "Los secretos de los mayores referentes. Todos los domingos.";
 
 function newsletterImageSrc(value: string) {
   return value.startsWith("storage:")
@@ -77,7 +76,7 @@ function NewsletterIndex() {
         <div className="container-ddp">
           <header className="newsletter-hero">
             <div className="newsletter-hero-copy">
-              <p className="newsletter-kicker">Newsletter diaria · 7:30</p>
+              <p className="newsletter-kicker">Newsletter semanal · Domingos</p>
               <h1 className="newsletter-masthead">Primera<br className="hidden sm:block" /> Mano</h1>
               <p className="newsletter-deck">{LEMA}</p>
               <a className="newsletter-button" href={SUBSCRIBE_URL} target="_blank" rel="noopener noreferrer">
