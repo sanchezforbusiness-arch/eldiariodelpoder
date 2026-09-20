@@ -77,7 +77,10 @@ function NewsletterIndex() {
           <header className="newsletter-hero">
             <div className="newsletter-hero-copy">
               <p className="newsletter-kicker">Newsletter semanal · Domingos</p>
-              <h1 className="newsletter-masthead">Primera<br className="hidden sm:block" /> Mano</h1>
+              <h1 className="newsletter-masthead">
+                <span>Primera</span>
+                <span>Mano</span>
+              </h1>
               <p className="newsletter-deck">{LEMA}</p>
               <a className="newsletter-button" href={SUBSCRIBE_URL} target="_blank" rel="noopener noreferrer">
                 Suscríbete gratis

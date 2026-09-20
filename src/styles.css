@@ -1201,7 +1201,12 @@ body {
   font-weight: 500;
   line-height: 0.75;
   letter-spacing: 0;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
+
+.newsletter-masthead span { display: block; }
 
 .newsletter-deck {
   margin-top: 2rem;
@@ -1338,9 +1343,9 @@ body {
   }
   .newsletter-masthead {
     margin-top: 1rem;
-    font-size: clamp(4.25rem, 22vw, 5.5rem);
+    font-size: clamp(3.1rem, 15vw, 4.4rem);
     font-weight: 700;
-    line-height: 0.78;
+    line-height: 0.88;
   }
   .newsletter-deck {
     margin-top: 2.25rem;
@@ -1351,7 +1356,7 @@ body {
   .newsletter-button { width: 100%; justify-content: space-between; }
   .newsletter-cover {
     display: block;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     margin-top: 2rem;
     border-top: 2px solid var(--newsletter-ink);
   }
