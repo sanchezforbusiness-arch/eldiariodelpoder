@@ -1,7 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
-import { Masthead } from "@/components/ddp/Masthead";
 import { formatDateEs } from "@/lib/utils";
 import { obtenerEdicion } from "@/lib/newsletter.functions";
 import {
@@ -133,36 +132,33 @@ function EdicionPage() {
   const c = edicion.contenido ?? {};
 
   return (
-    <div className="bg-background text-foreground">
+    <div className="newsletter-shell">
       <Navbar />
-      <main className="pt-28 md:pt-32">
+      <main className="pt-24 md:pt-28">
         <article className="container-ddp">
-          <nav aria-label="Migas de pan" className="text-2xs tracking-label uppercase text-muted-foreground">
-            <Link to="/newsletter" className="hover:text-foreground">
+          <nav aria-label="Migas de pan" className="newsletter-muted flex items-center gap-2 text-xs">
+            <Link to="/newsletter" className="hover:text-[var(--newsletter-ube)]">
               Newsletter
             </Link>
-            <span className="mx-2">/</span>
+            <span aria-hidden>/</span>
             <span>Nº {edicion.numero}</span>
           </nav>
 
-          <header className="mt-6 max-w-[68ch]">
-            <Masthead edition={`Nº ${edicion.numero}`} date={formatDateEs(edicion.fecha)} />
-            {c.lectura_min ? (
-              <p className="mt-3 font-mono text-2xs uppercase tracking-label tabular-nums text-muted-foreground">
-                Lectura: {c.lectura_min} minutos
-              </p>
-            ) : null}
-            <h1 className="mt-4 max-w-[26ch] text-balance text-2xl font-medium leading-[0.98] tracking-tight">
+          <header className="newsletter-card mt-5 max-w-[76rem] px-6 py-9 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+            <p className="newsletter-pill">
+              Nº {edicion.numero} · {formatDateEs(edicion.fecha)}{c.lectura_min ? ` · ${c.lectura_min} minutos` : ""}
+            </p>
+            <h1 className="newsletter-title mt-7 font-semibold">
               {edicion.titulo}
             </h1>
             {edicion.entradilla && (
-              <p className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              <p className="newsletter-muted mt-6 max-w-[58ch] text-lg leading-relaxed md:text-xl">
                 {edicion.entradilla}
               </p>
             )}
           </header>
 
-          <div className="max-w-[68ch]">
+          <div className="max-w-[68ch] pb-4">
             {c.cuerpo_html ? (
               <div className="mt-10" dangerouslySetInnerHTML={{ __html: c.cuerpo_html }} />
             ) : (
@@ -351,7 +347,9 @@ function EdicionPage() {
           </div>
         </article>
       </main>
-      <FooterGrid />
+      <div className="mt-20 bg-background text-foreground">
+        <FooterGrid />
+      </div>
     </div>
   );
 }

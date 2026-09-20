@@ -6,3 +6,5 @@
 - [x] Admitir ediciones maquetadas mediante HTML manteniendo el formato antiguo.
 - [x] Añadir entradilla a la cabecera y miniaturas al archivo de la newsletter.
 - [x] Verificar el nuevo formato de newsletter en escritorio y móvil.
+- [x] Aplicar a /newsletter un lenguaje visual propio inspirado en Clay, sin afectar al resto del sitio.
+- [x] Verificar la nueva portada y una edición en escritorio y móvil.
