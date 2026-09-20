@@ -738,6 +738,96 @@ body {
   box-shadow: none !important;
 }
 
+/* ── Primera Mano: lenguaje visual propio, aislado de la web principal ── */
+.newsletter-shell {
+  --newsletter-canvas: #F4F3F0;
+  --newsletter-card: #FEFDFB;
+  --newsletter-rule: #D1CDC7;
+  --newsletter-muted: #7B7974;
+  --newsletter-ink: #1D1C1A;
+  --newsletter-ube: #6D4CD6;
+  --newsletter-ube-soft: #F5F3FF;
+  --newsletter-lime: #CBD810;
+  --newsletter-lime-soft: #FCFEE2;
+  --newsletter-mandarin: #FF7614;
+  --newsletter-mandarin-soft: #FFF3ED;
+  --newsletter-blueberry: #3859F9;
+  --newsletter-shadow: 0 12px 24px -12px #0000001f, inset 0 0 0 1px #d1cdc799;
+  background: var(--newsletter-canvas);
+  color: var(--newsletter-ink);
+}
+
+.newsletter-card {
+  background: var(--newsletter-card);
+  border-radius: 1.25rem;
+  box-shadow: var(--newsletter-shadow);
+}
+
+.newsletter-element { border-radius: 0.75rem; }
+.newsletter-rule { border-color: var(--newsletter-rule); }
+.newsletter-muted { color: var(--newsletter-muted); }
+.newsletter-ink { color: var(--newsletter-ink); }
+
+.newsletter-pill {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--newsletter-rule);
+  border-radius: 99rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--newsletter-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.newsletter-pill-ube { border-color: var(--newsletter-ube); background: var(--newsletter-ube-soft); color: var(--newsletter-ube); }
+.newsletter-pill-lime { border-color: var(--newsletter-lime); background: var(--newsletter-lime-soft); color: var(--newsletter-ink); }
+.newsletter-pill-mandarin { border-color: var(--newsletter-mandarin); background: var(--newsletter-mandarin-soft); color: var(--newsletter-mandarin); }
+.newsletter-pill-blueberry { border-color: var(--newsletter-blueberry); background: var(--newsletter-card); color: var(--newsletter-blueberry); }
+
+.newsletter-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: var(--newsletter-ink);
+  padding: 0.75rem 1.125rem;
+  color: var(--newsletter-card);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.newsletter-button:hover { background: var(--newsletter-ube); }
+
+.newsletter-title {
+  max-width: 26ch;
+  font-size: 2.5rem;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .newsletter-title { font-size: 3.5rem; }
+}
+
+.newsletter-section-card {
+  min-height: 10rem;
+  padding: 1.25rem;
+}
+
+.newsletter-edition-card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 0.75rem;
+}
+
+.newsletter-edition-card img { transition: transform 500ms var(--ease); }
+.newsletter-edition-card:hover img { transform: scale(1.025); }
+
 /* ── Muro de frases en movimiento ───────────────────────────── */
 @layer components {
   .quote-col {
