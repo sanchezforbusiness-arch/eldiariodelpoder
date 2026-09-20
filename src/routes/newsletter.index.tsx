@@ -18,6 +18,12 @@ const SECTION_ACCENTS = [
   "newsletter-pill-blueberry",
 ] as const;
 
+function newsletterImageSrc(value: string) {
+  return value.startsWith("storage:")
+    ? `/newsletter/imagen/${encodeURIComponent(value.slice("storage:".length))}`
+    : value;
+}
+
 export const Route = createFileRoute("/newsletter/")({
   loader: async () => ({ ediciones: await listarEdiciones() }),
   head: ({ loaderData }) => {
@@ -138,7 +144,12 @@ function NewsletterIndex() {
                         className="newsletter-element block aspect-video overflow-hidden"
                       >
                         {e.imagen_social ? (
-                          <img src={e.imagen_social} alt="" loading="lazy" className="h-full w-full object-cover" />
+                          <img
+                            src={newsletterImageSrc(e.imagen_social)}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-cover"
+                          />
                         ) : (
                           <div className="h-full w-full bg-[var(--newsletter-ube-soft)]" aria-hidden />
                         )}
