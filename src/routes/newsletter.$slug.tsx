@@ -135,32 +135,35 @@ function EdicionPage() {
     <div className="newsletter-shell">
       <Navbar />
       <main className="pt-24 md:pt-28">
-        <article className="container-ddp">
-          <nav aria-label="Migas de pan" className="newsletter-muted flex items-center gap-2 text-xs">
-            <Link to="/newsletter" className="hover:text-[var(--newsletter-ube)]">
+        <article className="container-ddp newsletter-reader">
+          <nav aria-label="Migas de pan" className="newsletter-reader-breadcrumb newsletter-muted flex items-center gap-2 text-xs">
+            <Link to="/newsletter">
               Newsletter
             </Link>
             <span aria-hidden>/</span>
             <span>Nº {edicion.numero}</span>
           </nav>
 
-          <header className="newsletter-card mt-5 max-w-[76rem] px-6 py-9 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
-            <p className="newsletter-pill">
-              Nº {edicion.numero} · {formatDateEs(edicion.fecha)}{c.lectura_min ? ` · ${c.lectura_min} minutos` : ""}
-            </p>
-            <h1 className="newsletter-title mt-7 font-semibold">
+          <header className="newsletter-reader-header">
+            <div className="newsletter-reader-meta">
+              <span>Primera Mano</span>
+              <p>
+                Nº {edicion.numero} · {formatDateEs(edicion.fecha)}{c.lectura_min ? ` · ${c.lectura_min} minutos` : ""}
+              </p>
+            </div>
+            <h1 className="newsletter-title">
               {edicion.titulo}
             </h1>
             {edicion.entradilla && (
-              <p className="newsletter-muted mt-6 max-w-[58ch] text-lg leading-relaxed md:text-xl">
+              <p className="newsletter-reader-deck">
                 {edicion.entradilla}
               </p>
             )}
           </header>
 
-          <div className="max-w-[68ch] pb-4">
+          <div className="newsletter-reader-body pb-4">
             {c.cuerpo_html ? (
-              <div className="mt-10" dangerouslySetInnerHTML={{ __html: c.cuerpo_html }} />
+              <div className="newsletter-rich-content" dangerouslySetInnerHTML={{ __html: c.cuerpo_html }} />
             ) : (
               <>
             {c.saludo && (
