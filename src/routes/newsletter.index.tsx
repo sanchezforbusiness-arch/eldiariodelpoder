@@ -3,7 +3,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { formatDateEs } from "@/lib/utils";
 import { listarEdiciones } from "@/lib/newsletter.functions";
-import { SECCIONES, SITE, SUBSCRIBE_URL, absolutizar, type Edicion } from "@/lib/newsletter";
+import { SITE, SUBSCRIBE_URL, absolutizar, type Edicion } from "@/lib/newsletter";
 
 const TITLE = "Primera Mano — la newsletter diaria de El Diario del Poder";
 const DESCRIPTION =
@@ -11,12 +11,6 @@ const DESCRIPTION =
 const URL = `${SITE}/newsletter`;
 const LEMA =
   "Lo que el poder decidió ayer, contado desde el documento original. Cinco minutos, a las 7:30, sin opinión.";
-const SECTION_ACCENTS = [
-  "newsletter-pill-ube",
-  "newsletter-pill-lime",
-  "newsletter-pill-mandarin",
-  "newsletter-pill-blueberry",
-] as const;
 
 function newsletterImageSrc(value: string) {
   return value.startsWith("storage:")
@@ -93,26 +87,6 @@ function NewsletterIndex() {
               </a>
             </div>
           </header>
-
-          <section className="mt-16 md:mt-20" aria-label="Qué recibes">
-            <div className="flex items-end justify-between gap-4">
-              <div>
-                <p className="newsletter-muted text-xs font-semibold">Cada mañana</p>
-                <h2 className="mt-2 text-2xl">Qué recibes</h2>
-              </div>
-              <span className="newsletter-muted hidden text-xs sm:block">Documento, dato y contexto</span>
-            </div>
-            <ul className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {SECCIONES.map((section, index) => (
-                <li key={section} className="newsletter-card newsletter-section-card flex flex-col justify-between">
-                  <span className={`newsletter-pill ${SECTION_ACCENTS[index % SECTION_ACCENTS.length]}`}>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-8 text-xl leading-tight">{section}</h3>
-                </li>
-              ))}
-            </ul>
-          </section>
 
           {(ultima?.contenido?.metodo || ultima?.contenido?.aviso_ia) && (
             <section className="newsletter-card mt-16 max-w-[68ch] p-6 sm:p-8" aria-label="Cómo se hace">
