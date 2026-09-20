@@ -983,6 +983,11 @@ body {
 }
 
 .newsletter-reader-body .newsletter-rich-content .pm .pm-etiqueta span {
+  display: none;
+}
+
+.newsletter-reader-body .newsletter-rich-content .pm .pm-etiqueta::before {
+  content: "";
   width: 1.75rem;
   height: 1px;
   background: currentColor;
