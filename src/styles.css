@@ -1356,7 +1356,7 @@ body {
   .newsletter-button { width: 100%; justify-content: space-between; }
   .newsletter-cover {
     display: block;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     margin-top: 2rem;
     border-top: 2px solid var(--newsletter-ink);
   }
