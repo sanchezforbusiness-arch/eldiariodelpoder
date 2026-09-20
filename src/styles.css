@@ -1343,9 +1343,9 @@ body {
   }
   .newsletter-masthead {
     margin-top: 1rem;
-    font-size: clamp(4.25rem, 22vw, 5.5rem);
+    font-size: clamp(3.1rem, 15vw, 4.4rem);
     font-weight: 700;
-    line-height: 0.78;
+    line-height: 0.88;
   }
   .newsletter-deck {
     margin-top: 2.25rem;
