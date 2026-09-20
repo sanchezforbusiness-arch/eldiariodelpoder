@@ -33,7 +33,7 @@ export const Route = createFileRoute("/newsletter/rss.xml")({
           })
           .join("\n");
 
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>Primera Mano — El Diario del Poder</title>\n    <link>${SITE}/newsletter</link>\n    <description>Lo que el poder decidió ayer, contado desde el documento original.</description>\n    <language>es-ES</language>\n${items}\n  </channel>\n</rss>\n`;
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>Primera Mano — El Diario del Poder</title>\n    <link>${SITE}/newsletter</link>\n    <description>Los secretos de los mayores referentes, todos los domingos.</description>\n    <language>es-ES</language>\n${items}\n  </channel>\n</rss>\n`;
 
         return new Response(xml, {
           headers: {
