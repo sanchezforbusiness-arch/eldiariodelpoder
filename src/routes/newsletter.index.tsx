@@ -88,20 +88,6 @@ function NewsletterIndex() {
             </div>
           </header>
 
-          {(ultima?.contenido?.metodo || ultima?.contenido?.aviso_ia) && (
-            <section className="newsletter-card mt-16 max-w-[68ch] p-6 sm:p-8" aria-label="Cómo se hace">
-              <p className="newsletter-pill newsletter-pill-lime">Cómo se hace</p>
-              {ultima.contenido.metodo && (
-                <p className="newsletter-muted mt-5 text-base leading-relaxed">{ultima.contenido.metodo}</p>
-              )}
-              {ultima.contenido.aviso_ia && (
-                <p className="newsletter-muted mt-4 text-xs leading-relaxed">
-                  {ultima.contenido.aviso_ia}
-                </p>
-              )}
-            </section>
-          )}
-
           <section className="mt-20 md:mt-24" aria-label="Ediciones">
             <p className="newsletter-muted text-xs font-semibold">Archivo</p>
             <h2 className="mt-2 text-2xl">Ediciones</h2>
