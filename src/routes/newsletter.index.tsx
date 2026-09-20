@@ -68,65 +68,85 @@ export const Route = createFileRoute("/newsletter/")({
 
 function NewsletterIndex() {
   const { ediciones } = Route.useLoaderData() as { ediciones: Edicion[] };
-
+  const [ultima, ...anteriores] = ediciones;
 
   return (
     <div className="newsletter-shell">
       <Navbar />
-      <main className="pt-24 md:pt-28">
+      <main className="pt-24 md:pt-32">
         <div className="container-ddp">
-          <header className="newsletter-card px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-              <div className="max-w-[68ch]">
-                <p className="newsletter-pill newsletter-pill-ube">Newsletter diaria · 7:30</p>
-                <h1 className="newsletter-title mt-7 font-semibold">Primera Mano</h1>
-                <p className="newsletter-muted mt-6 max-w-[58ch] text-lg leading-relaxed">{LEMA}</p>
-              </div>
+          <header className="newsletter-hero">
+            <div className="newsletter-hero-copy">
+              <p className="newsletter-kicker">Newsletter diaria · 7:30</p>
+              <h1 className="newsletter-masthead">Primera<br className="hidden sm:block" /> Mano</h1>
+              <p className="newsletter-deck">{LEMA}</p>
               <a className="newsletter-button" href={SUBSCRIBE_URL} target="_blank" rel="noopener noreferrer">
                 Suscríbete gratis
+                <span aria-hidden>↗</span>
               </a>
             </div>
+
+            {ultima?.imagen_social && (
+              <Link
+                to="/newsletter/$slug"
+                params={{ slug: ultima.slug }}
+                className="newsletter-cover"
+                aria-label={`Leer ${ultima.titulo}`}
+              >
+                <img src={newsletterImageSrc(ultima.imagen_social)} alt="" />
+              </Link>
+            )}
           </header>
 
-          <section className="mt-20 md:mt-24" aria-label="Ediciones">
-            <p className="newsletter-muted text-xs font-semibold">Archivo</p>
-            <h2 className="mt-2 text-2xl">Ediciones</h2>
-            {ediciones.length === 0 ? (
-              <p className="newsletter-muted mt-6">Todavía no hay ediciones publicadas.</p>
+          <section className="newsletter-archive" aria-label="Ediciones">
+            <div className="newsletter-archive-heading">
+              <p className="newsletter-kicker">Archivo</p>
+              <h2>Últimas ediciones</h2>
+            </div>
+
+            {!ultima ? (
+              <p className="newsletter-muted newsletter-empty">Todavía no hay ediciones publicadas.</p>
             ) : (
-              <ul className="mt-7 grid gap-5 md:grid-cols-2">
-                {ediciones.map((e) => (
-                  <li key={e.slug}>
-                    <article className="newsletter-card newsletter-edition-card">
-                      <Link
-                        to="/newsletter/$slug"
-                        params={{ slug: e.slug }}
-                        className="newsletter-element block aspect-video overflow-hidden"
-                      >
-                        {e.imagen_social ? (
-                          <img
-                            src={newsletterImageSrc(e.imagen_social)}
-                            alt=""
-                            loading="lazy"
-                            className="h-full w-full object-cover"
-                          />
-                        ) : (
-                          <div className="h-full w-full bg-[var(--newsletter-ube-soft)]" aria-hidden />
-                        )}
+              <>
+                <article className="newsletter-featured">
+                  <div className="newsletter-featured-meta">
+                    <p>Nº {ultima.numero}</p>
+                    <time dateTime={ultima.fecha}>{formatDateEs(ultima.fecha)}</time>
+                  </div>
+                  <div className="newsletter-featured-copy">
+                    <h3>
+                      <Link to="/newsletter/$slug" params={{ slug: ultima.slug }}>
+                        {ultima.titulo}
                       </Link>
-                      <div className="flex flex-1 flex-col p-3 pt-5 sm:p-5 sm:pt-6">
-                        <p className="newsletter-pill">Nº {e.numero} · {formatDateEs(e.fecha)}</p>
-                        <h3 className="mt-5 text-xl leading-tight">
-                          <Link to="/newsletter/$slug" params={{ slug: e.slug }} className="hover:text-[var(--newsletter-ube)]">
-                            {e.titulo}
-                          </Link>
-                        </h3>
-                        <p className="newsletter-muted mt-4 text-sm leading-relaxed">{e.entradilla}</p>
-                      </div>
-                    </article>
-                  </li>
-                ))}
-              </ul>
+                    </h3>
+                    <p>{ultima.entradilla}</p>
+                    <Link className="newsletter-read-link" to="/newsletter/$slug" params={{ slug: ultima.slug }}>
+                      Leer la edición <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                </article>
+
+                {anteriores.length > 0 && (
+                  <ul className="newsletter-previous">
+                    {anteriores.map((e) => (
+                      <li key={e.slug}>
+                        <article>
+                          {e.imagen_social && (
+                            <Link to="/newsletter/$slug" params={{ slug: e.slug }} className="newsletter-thumbnail">
+                              <img src={newsletterImageSrc(e.imagen_social)} alt="" loading="lazy" />
+                            </Link>
+                          )}
+                          <p className="newsletter-kicker">Nº {e.numero} · {formatDateEs(e.fecha)}</p>
+                          <h3>
+                            <Link to="/newsletter/$slug" params={{ slug: e.slug }}>{e.titulo}</Link>
+                          </h3>
+                          <p>{e.entradilla}</p>
+                        </article>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </>
             )}
           </section>
         </div>
