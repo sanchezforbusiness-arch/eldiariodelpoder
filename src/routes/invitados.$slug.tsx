@@ -307,6 +307,16 @@ function GuestPage() {
             <a className="btn-outline" href={SPOTIFY} target="_blank" rel="noopener noreferrer">
               Escuchar en Spotify
             </a>
+            {guestArticleBySlug[guest.slug] && (
+              <a
+                className="btn-outline"
+                href={guestArticleBySlug[guest.slug].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Leer la entrevista en La Vanguardia
+              </a>
+            )}
             {episode && (
               <Link to="/episodios/$slug" params={{ slug: episode.slug }} className="btn-outline">
                 Ver el episodio
