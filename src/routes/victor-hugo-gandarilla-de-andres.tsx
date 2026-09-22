@@ -35,7 +35,7 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
           name: `${NAME} — Co-fundador y host de Diario del Poder`,
           mainEntity: {
             "@type": "Person",
-            "@id": `${URL}#person`,
+            "@id": VICTOR_ID,
             name: NAME,
             alternateName: [
               "Víctor Hugo Gandarilla",
