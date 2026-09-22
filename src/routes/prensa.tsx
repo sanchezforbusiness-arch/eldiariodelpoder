@@ -5,7 +5,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Press } from "@/components/ddp/Press";
 import { TvAppearances } from "@/components/ddp/TvAppearances";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles } from "@/data/press";
+import { pressArticles, ALEJANDRO_ID, VICTOR_ID } from "@/data/press";
 import { tvAppearances, SITE_URL } from "@/data/tv";
 
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
