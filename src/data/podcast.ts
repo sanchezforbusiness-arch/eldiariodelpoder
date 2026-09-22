@@ -442,6 +442,25 @@ export const guestList: GuestEntry[] = [
       "Reflexiona sobre cómo se hace ciencia de verdad, qué puede aprender una generación joven de su trayectoria y qué viene ahora en la medicina con el ARN.",
     ],
   },
+  {
+    slug: "baroness-kingsmill",
+    name: "Baroness Kingsmill",
+    role: "Consejera de INDITEX · Miembro de la Cámara de los Lores",
+    bio: "Miembro de la House of Lords y consejera de INDITEX. Gobierno corporativo, regulación y liderazgo en las instituciones más exigentes de Europa.",
+    topics: [
+      "House of Lords",
+      "gobierno corporativo",
+      "INDITEX",
+      "regulación",
+      "consejos de administración",
+      "liderazgo",
+    ],
+    summary: [
+      "Baroness Kingsmill es miembro de la House of Lords y consejera de INDITEX, el mayor grupo de distribución de moda del mundo, tras una trayectoria entre la política británica y los consejos de administración europeos.",
+      "En Diario del Poder explica cómo funciona la Cámara de los Lores por dentro, cómo se supervisa una compañía de la escala de INDITEX y qué hace que un consejo funcione de verdad.",
+      "Reflexiona también sobre el poder desde dos trincheras: la regulación y la empresa, y sobre el papel de las mujeres en los órganos de dirección.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
