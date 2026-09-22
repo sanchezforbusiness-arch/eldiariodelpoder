@@ -55,9 +55,9 @@ function Index() {
         <HeroNoir />
         <BrandsMarquee />
         <MediaImpact />
+        <GuestSlider />
         <PartnerStrip />
         <VideoReel />
-        <GuestSlider />
         <QuoteWall />
         <div className="cv-auto">
           <Suspense fallback={<div aria-hidden style={{ minHeight: 560, contain: "layout paint" }} />}>
