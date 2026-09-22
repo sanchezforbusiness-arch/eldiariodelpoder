@@ -11,6 +11,7 @@ import {
 } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
 import { guestCardImageBySlug } from "@/data/guestImages";
+import { guestArticleBySlug } from "@/data/press";
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
@@ -44,6 +45,12 @@ function buildFaq(guest: GuestEntry) {
     q: `¿Qué temas se tratan con ${guest.name}?`,
     a: `${guest.topics.join(", ")}.`,
   });
+  if (guest.slug === "rosa-lagarrigue") {
+    items.push({
+      q: "¿Dónde se publicó la entrevista a Rosa Lagarrigue?",
+      a: `La Vanguardia publicó el 22 de septiembre de 2026 la entrevista, firmada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, a partir de su conversación en Diario del Poder: ${guestArticleBySlug["rosa-lagarrigue"].url}`,
+    });
+  }
   return [...items, ...(guest.qa ?? [])];
 }
 
@@ -167,6 +174,9 @@ export const Route = createFileRoute("/invitados/$slug")({
               name: "Alejandro Sánchez Martínez",
             },
             about: { "@id": `${url}#person` },
+            ...(guestArticleBySlug[guest.slug]
+              ? { subjectOf: { "@id": guestArticleBySlug[guest.slug].schemaId } }
+              : {}),
           }),
         },
         {
@@ -297,6 +307,16 @@ function GuestPage() {
             <a className="btn-outline" href={SPOTIFY} target="_blank" rel="noopener noreferrer">
               Escuchar en Spotify
             </a>
+            {guestArticleBySlug[guest.slug] && (
+              <a
+                className="btn-outline"
+                href={guestArticleBySlug[guest.slug].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Leer la entrevista en La Vanguardia
+              </a>
+            )}
             {episode && (
               <Link to="/episodios/$slug" params={{ slug: episode.slug }} className="btn-outline">
                 Ver el episodio

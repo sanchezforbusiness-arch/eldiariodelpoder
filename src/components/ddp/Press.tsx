@@ -68,7 +68,7 @@ export function Press() {
           <a
             href={featured.url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="group relative block mb-20 md:mb-28 reveal overflow-hidden rounded-sm border border-border hover:border-foreground/40 transition-colors"
           >
             <div className="grid md:grid-cols-5">
@@ -77,20 +77,30 @@ export function Press() {
                 <div className="flex items-center gap-3 mb-8">
                   <span className="h-px w-10 bg-foreground" />
                   <span className="text-2xs tracking-label uppercase text-foreground">
-                    Portada · Media Partner
+                    {featured.label ?? "Portada · Media Partner"}
                   </span>
                 </div>
                 <Quote className="text-muted-foreground mb-4" size={36} />
                 <p className="font-serif text-2xl md:text-2xl lg:text-2xl leading-[1.2] font-light tracking-tight text-foreground/90">
                   {featured.quote}
                 </p>
+                {featured.summary && (
+                  <p className="mt-5 text-sm md:text-base leading-relaxed text-muted-foreground">
+                    {featured.summary}
+                  </p>
+                )}
+                {featured.byline && (
+                  <p className="mt-5 text-2xs tracking-label uppercase text-foreground/80">
+                    {featured.byline}
+                  </p>
+                )}
                 <div className="mt-10 flex items-end justify-between gap-6">
                   <div>
                     <div className="font-serif text-2xl md:text-2xl text-foreground group-hover:text-signal transition-colors">
                       {featured.outlet}
                     </div>
                     <p className="mt-1 text-2xs tracking-label uppercase text-muted-foreground">
-                      Mayo 2026 · Podcast
+                      {featured.dateLabel ?? "Mayo 2026 · Podcast"}
                     </p>
                   </div>
                   <span className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground group-hover:text-signal transition-colors">
@@ -100,13 +110,21 @@ export function Press() {
               </div>
               {/* Right: visual */}
               <div className="md:col-span-2 relative min-h-[260px] md:min-h-0 overflow-hidden bg-background">
-                <iframe
-                  src="https://www.youtube.com/embed/onHImjPIYJI?controls=0&modestbranding=1&rel=0&showinfo=0&mute=1&autoplay=0"
-                  title="Jordi Juan — La Vanguardia"
-                  className="absolute inset-0 w-full h-full pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"
-                  loading="lazy"
-                  allow="autoplay; encrypted-media"
-                />
+                {featured.embedUrl ? (
+                  <iframe
+                    src={featured.embedUrl}
+                    title={featured.headline ?? featured.outlet}
+                    className="absolute inset-0 w-full h-full pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"
+                    loading="lazy"
+                    allow="autoplay; encrypted-media"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <span className="font-serif text-3xl md:text-4xl leading-tight text-foreground/80 text-center">
+                      {featured.outlet}
+                    </span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span className="text-2xs tracking-label uppercase text-muted-foreground border border-border px-3 py-1.5 bg-background/60 backdrop-blur">
@@ -117,6 +135,7 @@ export function Press() {
               </div>
             </div>
           </a>
+
         )}
 
         {/* Section label */}
@@ -132,7 +151,7 @@ export function Press() {
             const Icon = kindIcon[item.kind ?? "digital"];
             return (
               <Tag
-                key={item.outlet}
+                key={`${item.outlet}-${item.url ?? "sin-enlace"}`}
                 {...(item.url ? { href: item.url, target: "_blank", rel: "noreferrer" } : {})}
                 className={`relative bg-card/40 p-5 md:p-8 min-h-[164px] md:min-h-[180px] flex flex-col justify-between overflow-hidden rounded-sm border border-border ${
                   item.url ? "group hover:bg-card/70 hover:border-foreground/40 transition-colors cursor-pointer" : "opacity-60"

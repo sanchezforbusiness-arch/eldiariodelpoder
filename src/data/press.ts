@@ -8,14 +8,59 @@ export type PressItem = {
   headline?: string;
   date?: string;
   summary?: string;
+  /** Etiqueta de la tarjeta destacada */
+  label?: string;
+  /** Pie de fecha de la tarjeta destacada */
+  dateLabel?: string;
+  /** Línea de firma visible */
+  byline?: string;
+  /** Vídeo del panel derecho de la tarjeta destacada */
+  embedUrl?: string;
+  /** @id del nodo NewsArticle en los datos estructurados */
+  schemaId?: string;
+  /** @id de las personas que firman la pieza */
+  authorIds?: string[];
+  /** Fuente en la que se basa la pieza */
+  isBasedOn?: string;
+};
+
+export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
+export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
+
+export const ROSA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-rosa-lagarrigue";
+export const ROSA_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/20260922/11641554/rosa-lagarrigue-mujer-abrio-camino-industria-musical-dominada-hombres-ambicioso-sano.html";
+
+/** Piezas firmadas por los fundadores, indexadas por invitado. */
+export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
+  "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
 };
 
 export const pressItems: PressItem[] = [
   {
     outlet: "La Vanguardia",
+    context: "Artículo firmado por los fundadores — Rosa Lagarrigue",
+    url: ROSA_LAVANGUARDIA_URL,
+    featured: true,
+    kind: "print",
+    label: "Portada · Firmado por los fundadores",
+    dateLabel: "Septiembre 2026 · Podcast",
+    byline: "Un artículo de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
+    quote:
+      "Rosa Lagarrigue, la mujer que abrió camino en una industria musical dominada por hombres: «Ser ambicioso es sano»",
+    headline:
+      "Rosa Lagarrigue, la mujer que abrió camino en una industria musical dominada por hombres: «Ser ambicioso es sano»",
+    date: "2026-09-22",
+    summary:
+      "La legendaria mánager ha sido representante de algunos de los grandes nombres de la música española como Alejandro Sanz",
+    schemaId: ROSA_LAVANGUARDIA_ID,
+    authorIds: [ALEJANDRO_ID, VICTOR_ID],
+    isBasedOn: "https://eldiariodelpoder.com/invitados/rosa-lagarrigue",
+  },
+  {
+    outlet: "La Vanguardia",
     context: "Media Partner — entrevista a Jordi Juan",
     url: "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html",
-    featured: true,
     kind: "print",
     quote: "Una nueva entrega del podcast 'El diario del poder' entrevista al director del diario del Grupo Godó.",
     headline: "Jordi Juan, director de La Vanguardia, en el podcast Diario del Poder",
@@ -23,6 +68,7 @@ export const pressItems: PressItem[] = [
     summary:
       "La Vanguardia publica la entrevista de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés a Jordi Juan, director del diario del Grupo Godó, dentro del podcast Diario del Poder.",
   },
+
   {
     outlet: "Antena 3 — Espejo Público",
     context: "Cobertura Reina Letizia / Universidad de Navarra",

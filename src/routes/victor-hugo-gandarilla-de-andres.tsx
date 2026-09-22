@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles } from "@/data/press";
+import { pressArticles, VICTOR_ID } from "@/data/press";
 import victor from "@/assets/founder-victor.webp";
 
 const URL = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres";
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
           name: `${NAME} — Co-fundador y host de Diario del Poder`,
           mainEntity: {
             "@type": "Person",
-            "@id": `${URL}#person`,
+            "@id": VICTOR_ID,
             name: NAME,
             alternateName: [
               "Víctor Hugo Gandarilla",
@@ -59,10 +59,17 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
             ],
             subjectOf: pressArticles.map((a) => ({
               "@type": "NewsArticle",
+              ...(a.schemaId ? { "@id": a.schemaId } : {}),
               headline: a.headline,
               url: a.url,
               datePublished: a.date,
               publisher: { "@type": "NewsMediaOrganization", name: a.outlet },
+              ...(a.authorIds
+                ? {
+                    author: a.authorIds.map((id) => ({ "@id": id })),
+                    creator: a.authorIds.map((id) => ({ "@id": id })),
+                  }
+                : {}),
             })),
           },
         }),
