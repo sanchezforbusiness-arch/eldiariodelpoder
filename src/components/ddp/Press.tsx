@@ -151,7 +151,7 @@ export function Press() {
             const Icon = kindIcon[item.kind ?? "digital"];
             return (
               <Tag
-                key={item.outlet}
+                key={`${item.outlet}-${item.url ?? "sin-enlace"}`}
                 {...(item.url ? { href: item.url, target: "_blank", rel: "noreferrer" } : {})}
                 className={`relative bg-card/40 p-5 md:p-8 min-h-[164px] md:min-h-[180px] flex flex-col justify-between overflow-hidden rounded-sm border border-border ${
                   item.url ? "group hover:bg-card/70 hover:border-foreground/40 transition-colors cursor-pointer" : "opacity-60"
