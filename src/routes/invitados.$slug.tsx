@@ -11,6 +11,7 @@ import {
 } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
 import { guestCardImageBySlug } from "@/data/guestImages";
+import { guestArticleBySlug } from "@/data/press";
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
