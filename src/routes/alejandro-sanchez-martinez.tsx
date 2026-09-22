@@ -79,10 +79,17 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
             ],
             subjectOf: pressArticles.map((a) => ({
               "@type": "NewsArticle",
+              ...(a.schemaId ? { "@id": a.schemaId } : {}),
               headline: a.headline,
               url: a.url,
               datePublished: a.date,
               publisher: { "@type": "NewsMediaOrganization", name: a.outlet },
+              ...(a.authorIds
+                ? {
+                    author: a.authorIds.map((id) => ({ "@id": id })),
+                    creator: a.authorIds.map((id) => ({ "@id": id })),
+                  }
+                : {}),
             })),
           },
         }),
