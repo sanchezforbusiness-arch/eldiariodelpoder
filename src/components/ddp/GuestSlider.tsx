@@ -4,13 +4,39 @@ import { guestCardImageBySlug } from "@/data/guestImages";
 
 const ALL_GUESTS = guestList.filter((g) => guestCardImageBySlug[g.slug]);
 
-// La cinta empieza a girar en Baroness Kingsmill, manteniendo el orden circular.
-const START_SLUG = "baroness-kingsmill";
-const startIndex = Math.max(
-  0,
-  ALL_GUESTS.findIndex((g) => g.slug === START_SLUG),
+// Orden explícito de la cinta, tal como lo define Alejandro.
+const SLUG_ORDER = [
+  "jordi-juan",
+  "rosa-lagarrigue",
+  "jose-carlos-gonzalez-hurtado",
+  "baroness-kingsmill",
+  "anne-lange",
+  "eduardo-martinez-cardona",
+  "laura-gonzalez-molero",
+  "narcis-rebollo",
+  "katalin-kariko",
+  "jose-maria-aznar",
+  "guillermo-lasso",
+  "esperanza-aguirre",
+  "marcos-de-quinto",
+  "javier-tebas",
+  "andres-rodriguez",
+  "arturo-coello",
+  "martin-selles",
+  "federica-fornaciari",
+  "miguel-anxo-bastos",
+  "daniela-macarena",
+  "mikel-echavarren",
+  "sonsoles-onega",
+  "massimiliano-squillace",
+  "rocio-monasterio",
+  "arturo-de-las-heras",
+];
+
+const bySlug = new Map(ALL_GUESTS.map((g) => [g.slug, g]));
+const GUESTS = SLUG_ORDER.map((slug) => bySlug.get(slug)).filter(
+  (g): g is (typeof ALL_GUESTS)[number] => Boolean(g),
 );
-const GUESTS = [...ALL_GUESTS.slice(startIndex), ...ALL_GUESTS.slice(0, startIndex)];
 
 type Guest = (typeof GUESTS)[number];
 
