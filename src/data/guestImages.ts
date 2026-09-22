@@ -22,6 +22,7 @@ import eduardoCardonaAsset from "@/assets/guest-eduardo-martinez-cardona.png.ass
 import lauraMoleroAsset from "@/assets/guest-laura-gonzalez-molero.png.asset.json";
 import narcisRebolloAsset from "@/assets/guest-narcis-rebollo.png.asset.json";
 import katalinKarikoAsset from "@/assets/guest-katalin-kariko.png.asset.json";
+import baronessKingsmillAsset from "@/assets/guest-baroness-kingsmill.png.asset.json";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
@@ -43,6 +44,7 @@ export const guestImageBySlug: Record<string, string> = {
   "laura-gonzalez-molero": lauraMoleroAsset.url,
   "narcis-rebollo": narcisRebolloAsset.url,
   "katalin-kariko": katalinKarikoAsset.url,
+  "baroness-kingsmill": baronessKingsmillAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
