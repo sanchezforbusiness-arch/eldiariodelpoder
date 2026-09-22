@@ -174,6 +174,9 @@ export const Route = createFileRoute("/invitados/$slug")({
               name: "Alejandro Sánchez Martínez",
             },
             about: { "@id": `${url}#person` },
+            ...(guestArticleBySlug[guest.slug]
+              ? { subjectOf: { "@id": guestArticleBySlug[guest.slug].schemaId } }
+              : {}),
           }),
         },
         {
