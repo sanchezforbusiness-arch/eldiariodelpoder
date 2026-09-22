@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles } from "@/data/press";
+import { pressArticles, VICTOR_ID } from "@/data/press";
 import victor from "@/assets/founder-victor.webp";
 
 const URL = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres";
