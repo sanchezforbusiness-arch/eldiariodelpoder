@@ -31,6 +31,7 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const guests: Entry[] = guestList.map((g) => ({
     loc: `/invitados/${g.slug}`,
+    ...(g.slug === "rosa-lagarrigue" ? { lastmod: "2026-09-22" } : {}),
     changefreq: "monthly",
     priority: "0.7",
   }));
