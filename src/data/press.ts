@@ -16,6 +16,9 @@ export type PressItem = {
   byline?: string;
   /** Vídeo del panel derecho de la tarjeta destacada */
   embedUrl?: string;
+  /** Imagen editorial de la tarjeta destacada */
+  image?: string;
+  imageAlt?: string;
   /** @id del nodo NewsArticle en los datos estructurados */
   schemaId?: string;
   /** @id de las personas que firman la pieza */
@@ -23,6 +26,8 @@ export type PressItem = {
   /** Fuente en la que se basa la pieza */
   isBasedOn?: string;
 };
+
+import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
@@ -46,6 +51,8 @@ export const pressItems: PressItem[] = [
     label: "Portada · Firmado por los fundadores",
     dateLabel: "Septiembre 2026 · Podcast",
     byline: "Un artículo de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
+    image: rosaLaVanguardiaImage.url,
+    imageAlt: "Artículo de La Vanguardia sobre Rosa Lagarrigue, firmado por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
     quote:
       "Rosa Lagarrigue, la mujer que abrió camino en una industria musical dominada por hombres: «Ser ambicioso es sano»",
     headline:

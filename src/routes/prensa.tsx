@@ -125,8 +125,8 @@ function PrensaPage() {
             Prensa & medios
           </h1>
         </header>
-        <Press />
         <TvAppearances />
+        <Press />
  <section className="container-ddp py-12 md:py-24 border-t border-border">
           <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-4">
             Noticias publicadas sobre Diario del Poder

@@ -2,21 +2,9 @@ import { tvAppearances } from "@/data/tv";
 
 export function TvAppearances() {
   return (
- <section id="television" className="border-t border-border py-12 md:py-24">
+ <section id="television" aria-labelledby="television-title" className="pb-12 pt-8 md:pb-24 md:pt-12">
       <div className="container-ddp">
-        <header className="reveal mb-10 md:mb-14 max-w-3xl">
-          <span className="eyebrow block mb-5">
-            <span className="dot-gold mr-2" />En directo en televisión
-          </span>
-          <h2 className="text-2xl md:text-display font-medium leading-[1.05] tracking-tight">
-            Diario del Poder en La Sexta, Antena 3 y Univision
-          </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">
-            Nuestras entrevistas y apariciones en directo en algunos de los medios más vistos de
-            España y Estados Unidos: Zapeando (La Sexta), Espejo Público con Susanna Griso (Antena 3)
-            y los informativos de Univision.
-          </p>
-        </header>
+        <h2 id="television-title" className="sr-only">Apariciones de Diario del Poder en televisión</h2>
 
         <ul className="grid gap-6 md:grid-cols-2 reveal">
           {tvAppearances.map((t) => (

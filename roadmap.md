@@ -11,3 +11,4 @@
 - [x] Rediseñar la portada de newsletter con una dirección editorial coherente con el sitio.
 - [x] Verificar la nueva portada editorial en escritorio y móvil.
 - [x] Rediseñar y verificar la lectura de cada edición en escritorio y móvil.
+- [ ] Reordenar /prensa para abrir con la galería visual y añadir la captura de La Vanguardia a la pieza de Rosa Lagarrigue.
