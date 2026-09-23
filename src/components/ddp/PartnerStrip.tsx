@@ -33,7 +33,7 @@ export function PartnerStrip() {
               Partners
             </span>
             <h2 className="type-section mt-6 font-medium">
-              Nuestro aliados
+              Nuestro aliado
             </h2>
             <p className="mt-4 max-w-[44ch] text-sm text-muted-foreground">
               La Vanguardia amplifica nuestro alcance y hace llegar estas conversaciones a millones de lectores.
