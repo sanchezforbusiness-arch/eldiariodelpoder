@@ -21,14 +21,6 @@ const PARTNERS: Partner[] = [
     cta: "Ver medio",
     tilt: "-2.2deg",
   },
-  {
-    label: "Partner estratégico",
-    name: "Fundación Fortius",
-    line: "«Fundada por Juan Ángel Soto. Trabaja por una sociedad libre y virtuosa desde Madrid.»",
-    href: "https://www.linkedin.com/company/fundacion-fortius",
-    cta: "Ver fundación",
-    tilt: "2.6deg",
-  },
 ];
 
 export function PartnerStrip() {
@@ -41,14 +33,14 @@ export function PartnerStrip() {
               Partners
             </span>
             <h2 className="type-section mt-6 font-medium">
-              Nuestro aliados
+              Nuestro aliado
             </h2>
             <p className="mt-4 max-w-[44ch] text-sm text-muted-foreground">
-              La Vanguardia amplifica nuestro alcance. Fundación Fortius nos permite funcionar como institución de impacto social.
+              La Vanguardia amplifica nuestro alcance y hace llegar estas conversaciones a millones de lectores.
             </p>
           </div>
 
-          <div className="reveal-stagger grid gap-8 sm:grid-cols-2">
+          <div className="reveal-stagger mx-auto w-full max-w-md">
             {PARTNERS.map((p) => (
               <a
                 key={p.name}
