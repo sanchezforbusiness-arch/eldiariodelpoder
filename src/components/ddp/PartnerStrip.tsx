@@ -21,14 +21,6 @@ const PARTNERS: Partner[] = [
     cta: "Ver medio",
     tilt: "-2.2deg",
   },
-  {
-    label: "Partner estratégico",
-    name: "Fundación Fortius",
-    line: "«Fundada por Juan Ángel Soto. Trabaja por una sociedad libre y virtuosa desde Madrid.»",
-    href: "https://www.linkedin.com/company/fundacion-fortius",
-    cta: "Ver fundación",
-    tilt: "2.6deg",
-  },
 ];
 
 export function PartnerStrip() {
@@ -44,7 +36,7 @@ export function PartnerStrip() {
               Nuestro aliados
             </h2>
             <p className="mt-4 max-w-[44ch] text-sm text-muted-foreground">
-              La Vanguardia amplifica nuestro alcance. Fundación Fortius nos permite funcionar como institución de impacto social.
+              La Vanguardia amplifica nuestro alcance y hace llegar estas conversaciones a millones de lectores.
             </p>
           </div>
 
