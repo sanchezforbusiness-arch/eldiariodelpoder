@@ -110,7 +110,17 @@ export function Press() {
               </div>
               {/* Right: visual */}
               <div className="md:col-span-2 relative min-h-[260px] md:min-h-0 overflow-hidden bg-background">
-                {featured.embedUrl ? (
+                {featured.image ? (
+                  <img
+                    src={featured.image}
+                    alt={featured.imageAlt ?? featured.headline ?? featured.outlet}
+                    width={1996}
+                    height={1824}
+                    loading="eager"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                ) : featured.embedUrl ? (
                   <iframe
                     src={featured.embedUrl}
                     title={featured.headline ?? featured.outlet}
@@ -125,7 +135,7 @@ export function Press() {
                     </span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span className="text-2xs tracking-label uppercase text-muted-foreground border border-border px-3 py-1.5 bg-background/60 backdrop-blur">
                     Ver pieza
