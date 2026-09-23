@@ -6,15 +6,6 @@ const ALL_GUESTS = guestList.filter((g) => guestCardImageBySlug[g.slug]);
 
 // Orden explícito de la cinta, tal como lo define Alejandro.
 const SLUG_ORDER = [
-  "jordi-juan",
-  "rosa-lagarrigue",
-  "jose-carlos-gonzalez-hurtado",
-  "baroness-kingsmill",
-  "anne-lange",
-  "eduardo-martinez-cardona",
-  "laura-gonzalez-molero",
-  "narcis-rebollo",
-  "katalin-kariko",
   "jose-maria-aznar",
   "guillermo-lasso",
   "esperanza-aguirre",
@@ -31,6 +22,15 @@ const SLUG_ORDER = [
   "massimiliano-squillace",
   "rocio-monasterio",
   "arturo-de-las-heras",
+  "jordi-juan",
+  "rosa-lagarrigue",
+  "jose-carlos-gonzalez-hurtado",
+  "baroness-kingsmill",
+  "anne-lange",
+  "eduardo-martinez-cardona",
+  "laura-gonzalez-molero",
+  "narcis-rebollo",
+  "katalin-kariko",
 ];
 
 const bySlug = new Map(ALL_GUESTS.map((g) => [g.slug, g]));
