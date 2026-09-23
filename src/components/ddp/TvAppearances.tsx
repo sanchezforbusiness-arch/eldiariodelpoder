@@ -6,7 +6,7 @@ export function TvAppearances() {
       <div className="container-ddp">
         <h2 id="television-title" className="sr-only">Apariciones de Diario del Poder en televisión</h2>
 
-        <ul className="grid gap-6 md:grid-cols-2 reveal">
+        <ul className="grid gap-6 md:grid-cols-2">
           {tvAppearances.map((t) => (
             <li
               key={t.id}
