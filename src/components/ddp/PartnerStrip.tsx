@@ -40,7 +40,7 @@ export function PartnerStrip() {
             </p>
           </div>
 
-          <div className="reveal-stagger grid gap-8 sm:grid-cols-2">
+          <div className="reveal-stagger mx-auto w-full max-w-md">
             {PARTNERS.map((p) => (
               <a
                 key={p.name}
