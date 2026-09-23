@@ -1,4 +1,5 @@
 import jordiJuanAssetEp from "@/assets/guest-jordi-juan.png.asset.json";
+import rosaAssetEp from "@/assets/guest-rosa-lagarrigue.png.asset.json";
 import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import lassoImg from "@/assets/bts-guillermo-lasso.webp";
 import aznarImg from "@/assets/bts-aznar-dialogos.webp";
@@ -31,6 +32,20 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 6,
+    image: rosaAssetEp.url,
+    slug: "rosa-lagarrigue-ser-ambicioso-es-sano",
+    guestSlug: "rosa-lagarrigue",
+    transcript: [],
+    guest: "Rosa Lagarrigue",
+    role: "Fundadora de RLM · Manager de artistas",
+    date: "2026-09-22",
+    title: "Ser ambicioso es sano",
+    url: "https://www.lavanguardia.com/podcast/20260922/11641554/rosa-lagarrigue-mujer-abrio-camino-industria-musical-dominada-hombres-ambicioso-sano.html",
+    description:
+      "La legendaria mánager, representante de algunos de los grandes nombres de la música española como Alejandro Sanz, explica cómo abrió camino en una industria dominada por hombres y por qué ser ambicioso es sano.",
+  },
   {
     episodeNumber: 5,
     image: jordiJuanImg,
