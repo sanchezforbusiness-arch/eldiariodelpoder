@@ -46,6 +46,7 @@ export const guestImageBySlug: Record<string, string> = {
   "narcis-rebollo": narcisRebolloAsset.url,
   "katalin-kariko": katalinKarikoAsset.url,
   "baroness-kingsmill": baronessKingsmillAsset.url,
+  "manuel-falco": manuelFalcoAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
