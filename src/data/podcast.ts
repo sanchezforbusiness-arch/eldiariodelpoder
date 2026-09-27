@@ -476,6 +476,24 @@ export const guestList: GuestEntry[] = [
       "Reflexiona también sobre el poder desde dos trincheras: la regulación y la empresa, y sobre el papel de las mujeres en los órganos de dirección.",
     ],
   },
+  {
+    slug: "manuel-falco",
+    name: "Manuel Falcó Girod",
+    role: "Chairman de Citigroup España · Marqués de Castel-Moncayo",
+    bio: "Banquero internacional al frente de Citi en España. Banca global, grandes decisiones financieras y responsabilidad con título nobiliario.",
+    topics: [
+      "banca",
+      "Citigroup",
+      "finanzas internacionales",
+      "liderazgo corporativo",
+      "grandes decisiones",
+    ],
+    summary: [
+      "Manuel Falcó Girod preside Citigroup en España y es marqués de Castel-Moncayo. Su carrera une la alta banca internacional con una de las tradiciones nobiliarias más antiguas del país.",
+      "En Diario del Poder habla de cómo se toman las decisiones financieras que mueven miles de millones, del papel de la banca global en la economía real y de lo que ha cambiado el sector desde dentro.",
+      "Reflexiona también sobre liderazgo en una institución centenaria y sobre el peso de la historia personal en la manera de dirigir.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
