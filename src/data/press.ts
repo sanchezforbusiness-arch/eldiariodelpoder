@@ -28,6 +28,7 @@ export type PressItem = {
 };
 
 import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
+import aguirreLaVanguardiaImage from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
@@ -36,17 +37,42 @@ export const ROSA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavangu
 export const ROSA_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/20260922/11641554/rosa-lagarrigue-mujer-abrio-camino-industria-musical-dominada-hombres-ambicioso-sano.html";
 
-/** Piezas firmadas por los fundadores, indexadas por invitado. */
+export const AGUIRRE_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-esperanza-aguirre";
+export const AGUIRRE_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20260928/11645564/esperanza-aguirre-cuatro-decadas-politica-conviccion-hijos-son-padres-regimen.html";
+
+/** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (firmadas por los fundadores o bajo la firma del medio). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
+  "esperanza-aguirre": { url: AGUIRRE_LAVANGUARDIA_URL, schemaId: AGUIRRE_LAVANGUARDIA_ID },
 };
 
 export const pressItems: PressItem[] = [
   {
     outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Esperanza Aguirre",
+    url: AGUIRRE_LAVANGUARDIA_URL,
+    featured: true,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Septiembre 2026 · Podcast",
+    byline: "Entrevista de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
+    image: aguirreLaVanguardiaImage.url,
+    imageAlt: "Artículo de La Vanguardia sobre Esperanza Aguirre, expresidenta de la Comunidad de Madrid, en el podcast Diario del Poder",
+    quote:
+      "Esperanza Aguirre, cuatro décadas en política y una convicción: «Los hijos son de los padres, no del régimen»",
+    headline:
+      "Esperanza Aguirre, cuatro décadas en política y una convicción: «Los hijos son de los padres, no del régimen»",
+    date: "2026-09-28",
+    summary:
+      "La expresidenta de la Comunidad de Madrid repasa su trayectoria política, reivindica la libertad de elección educativa y recuerda algunos de los errores y decisiones que han marcado su carrera política",
+    schemaId: AGUIRRE_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/invitados/esperanza-aguirre",
+  },
+  {
+    outlet: "La Vanguardia",
     context: "Artículo firmado por los fundadores — Rosa Lagarrigue",
     url: ROSA_LAVANGUARDIA_URL,
-    featured: true,
     kind: "print",
     label: "Portada · Firmado por los fundadores",
     dateLabel: "Septiembre 2026 · Podcast",
