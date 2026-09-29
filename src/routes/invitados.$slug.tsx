@@ -11,7 +11,7 @@ import {
 } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
 import { guestCardImageBySlug } from "@/data/guestImages";
-import { guestArticleBySlug } from "@/data/press";
+import { guestArticleBySlug, AGUIRRE_LAVANGUARDIA_ID, AGUIRRE_LAVANGUARDIA_URL, VICTOR_ID } from "@/data/press";
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
@@ -163,20 +163,41 @@ export const Route = createFileRoute("/invitados/$slug")({
             url,
             inLanguage: "es",
             partOfSeries: { "@id": `${SITE}/#podcastseries` },
+            ...(ep?.date ? { datePublished: ep.date } : {}),
             author: {
               "@id": "https://alejandrosanchezmartinez.com/#persona",
               "@type": "Person",
               name: "Alejandro Sánchez Martínez",
             },
-            creator: {
-              "@id": "https://alejandrosanchezmartinez.com/#persona",
-              "@type": "Person",
-              name: "Alejandro Sánchez Martínez",
-            },
+            creator: [
+              {
+                "@id": "https://alejandrosanchezmartinez.com/#persona",
+                "@type": "Person",
+                name: "Alejandro Sánchez Martínez",
+              },
+              {
+                "@id": VICTOR_ID,
+                "@type": "Person",
+                name: "Víctor Hugo Gandarilla de Andrés",
+              },
+            ],
             about: { "@id": `${url}#person` },
-            ...(guestArticleBySlug[guest.slug]
-              ? { subjectOf: { "@id": guestArticleBySlug[guest.slug].schemaId } }
-              : {}),
+            ...(guest.slug === "esperanza-aguirre"
+              ? {
+                  subjectOf: {
+                    "@type": "NewsArticle",
+                    "@id": AGUIRRE_LAVANGUARDIA_ID,
+                    headline:
+                      "Esperanza Aguirre, cuatro décadas en política y una convicción: «Los hijos son de los padres, no del régimen»",
+                    url: AGUIRRE_LAVANGUARDIA_URL,
+                    datePublished: "2026-09-28",
+                    inLanguage: "es",
+                    publisher: { "@type": "NewsMediaOrganization", name: "La Vanguardia" },
+                  },
+                }
+              : guestArticleBySlug[guest.slug]
+                ? { subjectOf: { "@id": guestArticleBySlug[guest.slug].schemaId } }
+                : {}),
           }),
         },
         {
