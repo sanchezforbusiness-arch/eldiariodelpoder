@@ -1,5 +1,6 @@
 import jordiJuanAssetEp from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAssetEp from "@/assets/guest-rosa-lagarrigue.png.asset.json";
+import aguirreAssetEp from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import lassoImg from "@/assets/bts-guillermo-lasso.webp";
 import aznarImg from "@/assets/bts-aznar-dialogos.webp";
@@ -32,6 +33,20 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 7,
+    image: aguirreAssetEp.url,
+    slug: "esperanza-aguirre-cuatro-decadas-en-politica",
+    guestSlug: "esperanza-aguirre",
+    transcript: [],
+    guest: "Esperanza Aguirre",
+    role: "Expresidenta de la Comunidad de Madrid",
+    date: "2026-09-28",
+    title: "Cuatro décadas en política",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20260928/11645564/esperanza-aguirre-cuatro-decadas-politica-conviccion-hijos-son-padres-regimen.html",
+    description:
+      "La expresidenta de la Comunidad de Madrid repasa cuatro décadas en política: la libertad de elección educativa («Los hijos son de los padres, no del régimen»), la enseñanza bilingüe que pasó de 25 colegios a cerca del 80% de los centros de la región, los errores que reconoce, sus dos dimisiones y su consejo a los jóvenes: «Hay que esforzarse».",
+  },
   {
     episodeNumber: 6,
     image: rosaAssetEp.url,
@@ -201,10 +216,44 @@ export const guestList: GuestEntry[] = [
     name: "Esperanza Aguirre",
     role: "Expresidenta de la Comunidad de Madrid",
     bio: "Referente político español. Poder, prensa y convicciones.",
-    topics: ["Madrid", "política española", "libertad", "prensa", "liderazgo"],
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20260928/11645564/esperanza-aguirre-cuatro-decadas-politica-conviccion-hijos-son-padres-regimen.html",
+    topics: ["Madrid", "política española", "libertad", "prensa", "liderazgo", "educación", "libertad de elección educativa"],
     summary: [
-      "Esperanza Aguirre fue presidenta de la Comunidad de Madrid y una de las voces más reconocibles de la política española. En Diario del Poder habla sin rodeos de convicciones, de prensa y de lo que cuesta sostener una posición impopular.",
-      "Repasa su forma de entender la libertad, la gestión de Madrid y cómo ha cambiado la conversación pública en España.",
+      "Esperanza Aguirre, expresidenta de la Comunidad de Madrid, repasa en Diario del Poder cuatro décadas en política con una convicción central: «Los hijos son de los padres, no del régimen». Reivindica la libertad de elección educativa como eje de su etapa al frente de Madrid.",
+      "Cuenta cómo impulsó la enseñanza bilingüe en la región, que pasó de 25 colegios a cerca del 80% de los centros: «Los niños de barrios pobres hablan inglés perfectamente. Eso me emociona».",
+      "Reconoce errores, como retirar un real decreto de humanidades en secundaria tras presiones políticas en su etapa en el Ministerio de Educación: «Quizá era demasiado joven e inexperta. La ley me ordenaba hacerlo y debería haberlo mantenido». Y recuerda sus dos dimisiones: «Cuando hubo indicios de que podía haber habido corrupción en mi partido, dimití las dos veces».",
+      "A los jóvenes les deja un consejo, con la disciplina del tenista Carlos Alcaraz como ejemplo: «Hay que esforzarse». Para Aguirre, el poder es una herramienta para actuar y ayudar, no para imponer.",
+    ],
+    keyIdeas: [
+      "«Los hijos son de los padres, no del régimen»: la libertad de elección educativa como convicción central.",
+      "La enseñanza bilingüe en Madrid pasó de 25 colegios a cerca del 80% de los centros de la región.",
+      "«Los niños de barrios pobres hablan inglés perfectamente. Eso me emociona».",
+      "Reconoce como error retirar el real decreto de humanidades en secundaria: «Quizá era demasiado joven e inexperta. La ley me ordenaba hacerlo y debería haberlo mantenido».",
+      "«Cuando hubo indicios de que podía haber habido corrupción en mi partido, dimití las dos veces».",
+      "Consejo a los jóvenes, con Carlos Alcaraz como ejemplo de disciplina: «Hay que esforzarse».",
+    ],
+    qa: [
+      {
+        q: "¿Qué defiende Esperanza Aguirre sobre educación?",
+        a: "La libertad de elección educativa: «Los hijos son de los padres, no del régimen».",
+      },
+      {
+        q: "¿Qué resultado tuvo la enseñanza bilingüe que impulsó en Madrid?",
+        a: "Pasó de 25 colegios a cerca del 80% de los centros de la región. «Los niños de barrios pobres hablan inglés perfectamente. Eso me emociona».",
+      },
+      {
+        q: "¿Qué error reconoce Esperanza Aguirre de su etapa en el Ministerio de Educación?",
+        a: "Retirar un real decreto de humanidades en secundaria tras presiones políticas: «Quizá era demasiado joven e inexperta. La ley me ordenaba hacerlo y debería haberlo mantenido».",
+      },
+      {
+        q: "¿Por qué dimitió Esperanza Aguirre?",
+        a: "«Cuando hubo indicios de que podía haber habido corrupción en mi partido, dimití las dos veces».",
+      },
+      {
+        q: "¿Qué consejo da Esperanza Aguirre a los jóvenes?",
+        a: "«Hay que esforzarse», poniendo como ejemplo la disciplina del tenista Carlos Alcaraz.",
+      },
     ],
   },
   {
