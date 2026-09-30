@@ -33,23 +33,26 @@ export function HeroVideoBg() {
       if (event.origin !== "https://www.youtube-nocookie.com") return;
       const slot = frames.current.findIndex((frame) => frame?.contentWindow === event.source);
       if (slot < 0) return;
-      let message: { event?: string; info?: number };
+      let message: { event?: string; info?: number | { playerState?: number } };
       try { message = typeof event.data === "string" ? JSON.parse(event.data) : event.data; }
       catch { return; }
       if (message?.event === "onReady") {
         frames.current[slot]?.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "mute", args: [] }), event.origin);
         frames.current[slot]?.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), event.origin);
       }
-      if (message?.event === "onStateChange") {
-        if (message.info === 1) setPlaying((previous) => previous.map((value, index) => index === slot ? true : value));
-        if (message.info === 0 || message.info === 2 || message.info === 3) {
-          setPlaying((previous) => previous.map((value, index) => index === slot ? false : value));
-        }
+      const state = message?.event === "onStateChange" ? message.info
+        : message?.event === "infoDelivery" && typeof message.info === "object" ? message.info.playerState : undefined;
+      if (state === 1) {
+        setPlaying((previous) => previous[slot] ? previous : previous.map((value, index) => index === slot ? true : value));
+      } else if (state === 0 || state === 2 || state === 3) {
+        // Keep the current frame visible over the poster during transient buffering.
+        setPlaying((previous) => slot === activeSlot || !previous[slot] ? previous
+          : previous.map((value, index) => index === slot ? false : value));
       }
     };
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
-  }, [enabled]);
+  }, [enabled, activeSlot]);
 
   useEffect(() => {
     const next = 1 - activeSlot;
