@@ -184,9 +184,23 @@ export function Press() {
                   )}
                 </div>
                 <div>
+                  {item.image && (
+                    <div className="mb-4 -mx-5 -mt-5 md:-mx-8 md:-mt-8 overflow-hidden border-b border-border">
+                      <img
+                        src={item.image}
+                        alt={item.imageAlt ?? item.headline ?? item.outlet}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-40 md:h-48 w-full object-cover object-top"
+                      />
+                    </div>
+                  )}
                   <div className="font-serif text-lg leading-[1.15] hyphens-auto break-words sm:text-xl md:text-2xl group-hover:text-signal transition-colors">
                     {item.outlet}
                   </div>
+                  {item.headline && (
+                    <p className="mt-2 text-sm leading-snug text-foreground/90">{item.headline}</p>
+                  )}
                   <div className="mt-3 text-2xs leading-snug tracking-label uppercase text-muted-foreground">
                     {item.context ?? (item.url ? "Leer pieza" : "Próximamente")}
                   </div>
