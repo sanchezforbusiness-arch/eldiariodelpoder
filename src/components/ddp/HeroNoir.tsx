@@ -113,6 +113,7 @@ export function HeroNoir() {
             </div>
           </div>
         </div>
+        <div id="hero-sound-slot" className="absolute right-4 top-24 z-20 md:right-8 md:top-28" />
       </div>
     </section>
   );

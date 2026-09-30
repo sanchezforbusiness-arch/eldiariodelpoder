@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Volume2, VolumeX } from "lucide-react";
 import { episodeList } from "@/data/podcast";
 
@@ -115,7 +116,7 @@ export function HeroVideoBg() {
           />
         )}
       </div>
-      <button
+      {typeof document !== "undefined" && document.getElementById("hero-sound-slot") && createPortal(<button
         type="button"
         onClick={() => {
           const m = !muted;
@@ -123,12 +124,12 @@ export function HeroVideoBg() {
           setMuted(m);
           sendMute(m);
         }}
-        className="mono-label absolute right-4 top-24 z-20 flex items-center gap-2 rounded-full border border-border bg-background/30 px-4 py-2 backdrop-blur-md transition-colors hover:bg-background/50 md:right-8 md:top-28"
+        className="mono-label flex items-center gap-2 rounded-full border border-border bg-background/30 px-4 py-2 backdrop-blur-md transition-colors hover:bg-background/50 md:right-8 md:top-28"
         aria-label={muted ? "Activar sonido" : "Silenciar"}
       >
         {muted ? <VolumeX size={14} /> : <Volume2 size={14} />}
         {muted ? "Escuchar" : "Silenciar"}
-      </button>
+      </button>, document.getElementById("hero-sound-slot")!)}
     </>
   );
 }
