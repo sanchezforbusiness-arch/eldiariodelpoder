@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
-import { Volume2, VolumeX } from "lucide-react";
 import { episodeList } from "@/data/podcast";
 
 const clips = episodeList.filter((e) => e.youtubeId).slice(0, 6);
@@ -20,10 +18,8 @@ export function HeroVideoBg() {
   const [currentReady, setCurrentReady] = useState(false);
   const [nextReady, setNextReady] = useState(false);
   const [crossfading, setCrossfading] = useState(false);
-  const [muted, setMuted] = useState(true);
   const currentFrame = useRef<HTMLIFrameElement>(null);
   const nextFrame = useRef<HTMLIFrameElement>(null);
-  const mutedRef = useRef(true);
 
   useEffect(() => {
     if (!clips.length) return;
@@ -72,18 +68,6 @@ export function HeroVideoBg() {
     }, 1500);
     return () => window.clearTimeout(t);
   }, [crossfading, nextIndex]);
-
-  const sendMute = (m: boolean) => {
-    document.querySelectorAll<HTMLIFrameElement>(".hero-video-frame").forEach((f) =>
-      f.contentWindow?.postMessage(JSON.stringify({ event: "command", func: m ? "mute" : "unMute", args: [] }), "*"),
-    );
-  };
-
-  useEffect(() => {
-    if (mutedRef.current) return;
-    const t = window.setTimeout(() => sendMute(false), 250);
-    return () => window.clearTimeout(t);
-  }, [active]);
 
   if (!enabled) return null;
   const current = clips[active];
