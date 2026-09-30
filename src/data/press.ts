@@ -58,7 +58,7 @@ export const pressItems: PressItem[] = [
     dateLabel: "Septiembre 2026 · Podcast",
     byline: "Entrevista de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
     image: aguirreLaVanguardiaImage.url,
-    imageAlt: "Artículo de La Vanguardia sobre Esperanza Aguirre, expresidenta de la Comunidad de Madrid, en el podcast Diario del Poder",
+    imageAlt: "Esperanza Aguirre, expresidenta de la Comunidad de Madrid, invitada del podcast Diario del Poder en La Vanguardia",
     quote:
       "Esperanza Aguirre, cuatro décadas en política y una convicción: «Los hijos son de los padres, no del régimen»",
     headline:
