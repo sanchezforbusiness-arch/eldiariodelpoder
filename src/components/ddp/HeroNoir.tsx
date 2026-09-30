@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import heroStudio from "@/assets/hero-studio.webp";
 import { guestCardImageBySlug } from "@/data/guestImages";
 import { guestList } from "@/data/podcast";
+import { HeroVideoBg } from "./HeroVideoBg";
 
 const LINES = ["La voz", "del legado."];
 
@@ -52,6 +53,7 @@ export function HeroNoir() {
             className="absolute inset-0 h-full w-full contrast-[1.06] saturate-[0.85]"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
+          <HeroVideoBg />
           <div className="absolute inset-0 bg-[#0B1E17]/25" />
           <div className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-[#07150F] via-[#07150F]/70 to-transparent" />
           <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#07150F]/70 to-transparent" />
@@ -111,6 +113,7 @@ export function HeroNoir() {
             </div>
           </div>
         </div>
+        <div id="hero-sound-slot" className="absolute right-4 top-24 z-20 md:right-8 md:top-28" />
       </div>
     </section>
   );
