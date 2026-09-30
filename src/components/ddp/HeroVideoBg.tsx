@@ -90,46 +90,30 @@ export function HeroVideoBg() {
   const next = clips[nextIndex];
 
   return (
-    <>
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+    <div className="hero-video-wrap pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      <iframe
+        ref={currentFrame}
+        key={`c-${current.youtubeId}-${active}`}
+        src={videoUrl(current.youtubeId!)}
+        title=""
+        tabIndex={-1}
+        allow="autoplay; encrypted-media; picture-in-picture"
+        onLoad={() => onLoad("current")}
+        className={`hero-video-frame${currentReady ? " is-ready" : ""}${crossfading ? " is-outgoing" : ""}`}
+      />
+      {clips.length > 1 && (
         <iframe
-          ref={currentFrame}
-          key={`c-${current.youtubeId}-${active}`}
-          src={videoUrl(current.youtubeId!)}
+          ref={nextFrame}
+          key={`n-${next.youtubeId}-${nextIndex}`}
+          src={videoUrl(next.youtubeId!)}
           title=""
           tabIndex={-1}
+          loading="eager"
           allow="autoplay; encrypted-media; picture-in-picture"
-          onLoad={() => onLoad("current")}
-          className={`hero-video-frame${currentReady ? " is-ready" : ""}${crossfading ? " is-outgoing" : ""}`}
+          onLoad={() => onLoad("next")}
+          className={`hero-video-frame is-incoming${nextReady ? " is-ready" : ""}${crossfading ? " is-visible" : ""}`}
         />
-        {clips.length > 1 && (
-          <iframe
-            ref={nextFrame}
-            key={`n-${next.youtubeId}-${nextIndex}`}
-            src={videoUrl(next.youtubeId!)}
-            title=""
-            tabIndex={-1}
-            loading="eager"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            onLoad={() => onLoad("next")}
-            className={`hero-video-frame is-incoming${nextReady ? " is-ready" : ""}${crossfading ? " is-visible" : ""}`}
-          />
-        )}
-      </div>
-      {typeof document !== "undefined" && document.getElementById("hero-sound-slot") && createPortal(<button
-        type="button"
-        onClick={() => {
-          const m = !muted;
-          mutedRef.current = m;
-          setMuted(m);
-          sendMute(m);
-        }}
-        className="mono-label flex items-center gap-2 rounded-full border border-border bg-background/30 px-4 py-2 backdrop-blur-md transition-colors hover:bg-background/50 md:right-8 md:top-28"
-        aria-label={muted ? "Activar sonido" : "Silenciar"}
-      >
-        {muted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-        {muted ? "Escuchar" : "Silenciar"}
-      </button>, document.getElementById("hero-sound-slot")!)}
-    </>
+      )}
+    </div>
   );
 }
