@@ -23,6 +23,8 @@ export function HeroVideoBg() {
     if (!clips.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
     if (connection?.saveData || (connection?.effectiveType && /2g/.test(connection.effectiveType))) return;
+    // Móvil: solo la foto de portada, los vídeos solo en pantallas grandes.
+    if (window.matchMedia("(max-width: 767px)").matches) return;
     const timer = window.setTimeout(() => setEnabled(true), 600);
     return () => window.clearTimeout(timer);
   }, []);
