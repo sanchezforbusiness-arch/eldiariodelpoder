@@ -24,6 +24,7 @@ import narcisRebolloAsset from "@/assets/guest-narcis-rebollo.png.asset.json";
 import katalinKarikoAsset from "@/assets/guest-katalin-kariko.png.asset.json";
 import baronessKingsmillAsset from "@/assets/guest-baroness-kingsmill.png.asset.json";
 import manuelFalcoAsset from "@/assets/guest-manuel-falco.png.asset.json";
+import marianoBarbacidAsset from "@/assets/guest-mariano-barbacid.jpg.asset.json";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
@@ -47,6 +48,7 @@ export const guestImageBySlug: Record<string, string> = {
   "katalin-kariko": katalinKarikoAsset.url,
   "baroness-kingsmill": baronessKingsmillAsset.url,
   "manuel-falco": manuelFalcoAsset.url,
+  "mariano-barbacid": marianoBarbacidAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
