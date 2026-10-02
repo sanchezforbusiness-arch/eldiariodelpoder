@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { guestList } from "@/data/podcast";
 import { guestCardImageBySlug } from "@/data/guestImages";
 
-const ALL_GUESTS = guestList.filter((g) => guestCardImageBySlug[g.slug]);
+const ALL_GUESTS = guestList;
 
 // Orden explícito de la cinta, tal como lo define Alejandro.
 const SLUG_ORDER = [
@@ -10,28 +10,29 @@ const SLUG_ORDER = [
   "guillermo-lasso",
   "esperanza-aguirre",
   "marcos-de-quinto",
+  "mariano-barbacid",
+  "rosa-lagarrigue",
+  "baroness-kingsmill",
+  "narcis-rebollo",
+  "manuel-falco",
+  "katalin-kariko",
   "javier-tebas",
   "andres-rodriguez",
   "arturo-coello",
   "martin-selles",
-  "federica-fornaciari",
   "miguel-anxo-bastos",
   "daniela-macarena",
   "mikel-echavarren",
-  "sonsoles-onega",
-  "massimiliano-squillace",
   "rocio-monasterio",
-  "arturo-de-las-heras",
-  "jordi-juan",
-  "rosa-lagarrigue",
   "jose-carlos-gonzalez-hurtado",
-  "baroness-kingsmill",
   "anne-lange",
   "eduardo-martinez-cardona",
   "laura-gonzalez-molero",
-  "narcis-rebollo",
-  "katalin-kariko",
-  "manuel-falco",
+  "federica-fornaciari",
+  "sonsoles-onega",
+  "massimiliano-squillace",
+  "arturo-de-las-heras",
+  "jordi-juan",
 ];
 
 const bySlug = new Map(ALL_GUESTS.map((g) => [g.slug, g]));
@@ -42,6 +43,7 @@ const GUESTS = SLUG_ORDER.map((slug) => bySlug.get(slug)).filter(
 type Guest = (typeof GUESTS)[number];
 
 function GuestCard({ guest, className }: { guest: Guest; className: string }) {
+  const image = guestCardImageBySlug[guest.slug];
   return (
     <Link
       to="/invitados/$slug"
@@ -49,15 +51,26 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
       className={`group relative block shrink-0 ${className}`}
     >
       <div className="media-zoom relative aspect-[4/5] overflow-hidden rounded-[18px] bg-card shadow-soft">
-        <img
-          src={guestCardImageBySlug[guest.slug]}
-          alt={guest.name}
-          width={560}
-          height={700}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.02]"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={guest.name}
+            width={560}
+            height={700}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 border border-border bg-card p-6 text-center">
+            <span aria-hidden className="font-serif text-6xl font-light leading-none tracking-tight text-foreground">
+              {guest.name.split(" ").filter(Boolean).map((w) => w[0]).slice(0, 2).join("")}
+            </span>
+            <span className="text-2xs uppercase leading-relaxed tracking-label text-muted-foreground">
+              {guest.role}
+            </span>
+          </div>
+        )}
       </div>
       <h3 className="notranslate mt-3 text-sm font-medium tracking-tight" translate="no">{guest.name}</h3>
       <p className="mt-1 font-serif text-xs font-light text-muted-foreground">

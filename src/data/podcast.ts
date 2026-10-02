@@ -543,6 +543,24 @@ export const guestList: GuestEntry[] = [
       "Reflexiona también sobre liderazgo en una institución centenaria y sobre el peso de la historia personal en la manera de dirigir.",
     ],
   },
+  {
+    slug: "mariano-barbacid",
+    name: "Mariano Barbacid",
+    role: "Bioquímico · Codiscubridor del primer oncogén humano",
+    bio: "Codescubridor del primer oncogén humano y exdirector del CNIO. Ciencia, cáncer y decisiones con impacto de décadas.",
+    topics: [
+      "ciencia",
+      "investigación oncológica",
+      "CNIO",
+      "oncogenes",
+      "liderazgo científico",
+    ],
+    summary: [
+      "Mariano Barbacid es bioquímico y uno de los científicos españoles más citados de la historia: en 1982 codescubrió el primer oncogén humano, el hallazgo que abrió la puerta a entender el cáncer a nivel molecular.",
+      "Dirigió el Centro Nacional de Investigaciones Oncológicas (CNIO) durante más de una década, consolidándolo como referencia internacional, y ha dedicado su carrera a la investigación contra el cáncer.",
+      "En Diario del Poder habla de cómo se dirigen proyectos científicos de muy largo plazo, de qué puede aprender una generación joven de la investigación rigurosa y del papel de España en la ciencia mundial.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
