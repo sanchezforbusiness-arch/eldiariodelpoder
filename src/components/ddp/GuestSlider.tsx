@@ -12,7 +12,6 @@ const SLUG_ORDER = [
   "marcos-de-quinto",
   "mariano-barbacid",
   "rosa-lagarrigue",
-  "baroness-kingsmill",
   "narcis-rebollo",
   "manuel-falco",
   "katalin-kariko",
