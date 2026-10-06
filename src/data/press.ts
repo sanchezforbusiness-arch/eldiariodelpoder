@@ -29,6 +29,7 @@ export type PressItem = {
 
 import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
 import aguirreLaVanguardiaImage from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
+import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
@@ -41,18 +42,42 @@ export const AGUIRRE_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lava
 export const AGUIRRE_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20260928/11645564/esperanza-aguirre-cuatro-decadas-politica-conviccion-hijos-son-padres-regimen.html";
 
+export const BASTOS_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-miguel-anxo-bastos";
+export const BASTOS_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261005/11651520/miguel-anxo-bastos-economista-quieres-puedes-mito-destruye-vidas.html";
+
 /** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (firmadas por los fundadores o bajo la firma del medio). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
   "esperanza-aguirre": { url: AGUIRRE_LAVANGUARDIA_URL, schemaId: AGUIRRE_LAVANGUARDIA_ID },
+  "miguel-anxo-bastos": { url: BASTOS_LAVANGUARDIA_URL, schemaId: BASTOS_LAVANGUARDIA_ID },
 };
 
 export const pressItems: PressItem[] = [
   {
     outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Miguel Anxo Bastos",
+    url: BASTOS_LAVANGUARDIA_URL,
+    featured: true,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Octubre 2026 · Podcast",
+    byline: "Publicado bajo la firma de El Diario del Poder",
+    image: bastosImage.url,
+    imageAlt:
+      "Miguel Anxo Bastos, economista y profesor de la Universidad de Santiago de Compostela, invitado del podcast Diario del Poder",
+    quote: "Miguel Anxo Bastos, economista: «El “si quieres, puedes” es un mito que destruye vidas»",
+    headline: "Miguel Anxo Bastos, economista: «El “si quieres, puedes” es un mito que destruye vidas»",
+    date: "2026-10-05",
+    summary:
+      "El profesor de Economía de la Universidad de Santiago de Compostela defiende el valor del esfuerzo, reivindica el capitalismo y alerta sobre los riesgos del dinero digital controlado por los bancos centrales.",
+    schemaId: BASTOS_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/episodios/miguel-anxo-bastos-si-quieres-puedes-es-un-mito",
+  },
+  {
+    outlet: "La Vanguardia",
     context: "Publicado en La Vanguardia — Esperanza Aguirre",
     url: AGUIRRE_LAVANGUARDIA_URL,
-    featured: true,
     kind: "print",
     label: "Portada · Publicado en La Vanguardia",
     dateLabel: "Septiembre 2026 · Podcast",
