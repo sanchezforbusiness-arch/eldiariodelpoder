@@ -4,6 +4,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { Masthead } from "@/components/ddp/Masthead";
 import { formatDateEs } from "@/lib/utils";
 import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podcast";
+import { guestArticleBySlug, pressItems, ALEJANDRO_ID, VICTOR_ID } from "@/data/press";
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
@@ -32,6 +33,8 @@ export const Route = createFileRoute("/episodios/$slug")({
     const title = `${ep.guest} — ${ep.title} | Diario del Poder`;
     const description = ep.description;
     const img = ep.youtubeId ? `https://i.ytimg.com/vi/${ep.youtubeId}/maxresdefault.jpg` : undefined;
+    const article = ep.guestSlug ? guestArticleBySlug[ep.guestSlug] : undefined;
+    const pressItem = article ? pressItems.find((p) => p.schemaId === article.schemaId) : undefined;
 
     return {
       meta: [
@@ -70,7 +73,22 @@ export const Route = createFileRoute("/episodios/$slug")({
             episodeNumber: ep.episodeNumber,
             ...(ep.date ? { datePublished: ep.date } : {}),
             ...(isoDuration(ep.duration) ? { timeRequired: isoDuration(ep.duration) } : {}),
-            partOfSeries: { "@type": "PodcastSeries", name: "Diario del Poder", url: `${SITE}/` },
+            partOfSeries: { "@type": "PodcastSeries", "@id": `${SITE}/#podcastseries`, name: "Diario del Poder", url: `${SITE}/` },
+            author: { "@id": ALEJANDRO_ID },
+            creator: [{ "@id": ALEJANDRO_ID }, { "@id": VICTOR_ID }],
+            ...(article
+              ? {
+                  subjectOf: {
+                    "@type": "NewsArticle",
+                    "@id": article.schemaId,
+                    url: article.url,
+                    ...(pressItem?.headline ? { headline: pressItem.headline } : {}),
+                    ...(pressItem?.date ? { datePublished: pressItem.date } : {}),
+                    inLanguage: "es",
+                    publisher: { "@type": "NewsMediaOrganization", name: "La Vanguardia" },
+                  },
+                }
+              : {}),
             actor: {
               "@type": "Person",
               name: ep.guest,

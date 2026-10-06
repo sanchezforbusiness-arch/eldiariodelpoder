@@ -1,6 +1,7 @@
 import jordiJuanAssetEp from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAssetEp from "@/assets/guest-rosa-lagarrigue.png.asset.json";
 import aguirreAssetEp from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
+import bastosAssetEp from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import lassoImg from "@/assets/bts-guillermo-lasso.webp";
 import aznarImg from "@/assets/bts-aznar-dialogos.webp";
@@ -33,6 +34,21 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 8,
+    image: bastosAssetEp.url,
+    slug: "miguel-anxo-bastos-si-quieres-puedes-es-un-mito",
+    youtubeId: "YdFiuLe6c1g",
+    guestSlug: "miguel-anxo-bastos",
+    transcript: [],
+    guest: "Miguel Anxo Bastos",
+    role: "Economista · Profesor de la Universidad de Santiago de Compostela",
+    date: "2026-10-05",
+    title: "El «si quieres, puedes» es un mito",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261005/11651520/miguel-anxo-bastos-economista-quieres-puedes-mito-destruye-vidas.html",
+    description:
+      "El profesor de Economía de la Universidad de Santiago de Compostela cuestiona el «si quieres, puedes», defiende el esfuerzo y el capitalismo —«convierte nuestro egoísmo, nuestra codicia, en miel»— y alerta del dinero programable de los bancos centrales: «El problema no es si lo van a hacer, es que pueden hacerlo». Con la participación de Pablo Gómez, CEO y fundador de Metlabs.",
+  },
   {
     episodeNumber: 7,
     image: aguirreAssetEp.url,
@@ -363,12 +379,57 @@ export const guestList: GuestEntry[] = [
   {
     slug: "miguel-anxo-bastos",
     name: "Miguel Anxo Bastos",
-    role: "Economista y profesor",
+    role: "Economista · Profesor de la Universidad de Santiago de Compostela",
     bio: "Escuela austriaca, libertad económica y análisis del poder.",
-    topics: ["escuela austriaca", "economía", "libertad", "análisis del poder"],
+    youtubeId: "YdFiuLe6c1g",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261005/11651520/miguel-anxo-bastos-economista-quieres-puedes-mito-destruye-vidas.html",
+    topics: [
+      "escuela austriaca",
+      "cultura del esfuerzo",
+      "capitalismo",
+      "bitcoin",
+      "stablecoins",
+      "CBDC",
+      "dinero programable",
+      "cálculo económico",
+      "libertad",
+    ],
     summary: [
-      "Miguel Anxo Bastos es profesor y una de las voces más singulares de la escuela austriaca en español. Analiza el poder desde la teoría, sin consignas.",
-      "Hablamos de Estado, incentivos, burocracia y de por qué muchas políticas producen justo lo contrario de lo que prometen.",
+      "Miguel Anxo Bastos, profesor de Economía de la Universidad de Santiago de Compostela, cuestiona en Diario del Poder uno de los mensajes más repetidos de la cultura del esfuerzo: el «si quieres, puedes» puede convertirse en una trampa al ignorar las capacidades, las circunstancias y las limitaciones de cada persona.",
+      "Criado en una aldea gallega de Vigo, entiende el trabajo como algo positivo, no como un castigo: «Yo no sé el concepto de vacaciones de no hacer nada. Siempre había cosas que hacer, siempre había trabajo».",
+      "Defiende el capitalismo como un sistema que convierte el interés individual en beneficio colectivo —«convierte nuestro egoísmo, nuestra codicia, en miel»— con el ejemplo del panadero que madruga para ganar dinero y acaba ofreciendo lo que otros necesitan. «Todos somos empresarios; el problema es saber de qué».",
+      "Con Pablo Gómez, CEO y fundador de Metlabs, debate sobre bitcoin, las stablecoins y las monedas digitales de los bancos centrales (CBDC), y alerta del dinero programable: «El problema no es si lo van a hacer, es que pueden hacerlo». Reivindica el problema del cálculo económico frente a la planificación central y deja un consejo a los jóvenes: «El esfuerzo es fundamental en la vida. No hay que buscar los atajos».",
+    ],
+    keyIdeas: [
+      "El «si quieres, puedes» es un mito que puede destruir vidas si ignora capacidades y limitaciones.",
+      "«El capitalismo es un sistema que convierte nuestro egoísmo, nuestra codicia, en miel».",
+      "«Todos somos empresarios; el problema es saber de qué».",
+      "Sobre el dinero programable de los bancos centrales: «El problema no es si lo van a hacer, es que pueden hacerlo».",
+      "Ningún planificador central puede controlar todas las variables de una economía: el problema del cálculo económico.",
+      "«El esfuerzo es fundamental en la vida. No hay que buscar los atajos».",
+    ],
+    qa: [
+      {
+        q: "¿Por qué dice Miguel Anxo Bastos que el «si quieres, puedes» es un mito?",
+        a: "Porque ignora las capacidades, las circunstancias y las limitaciones de cada persona: «Un niño puede soñar con ser futbolista, pero sin la genética, la altura o las fibras musculares adecuadas, ningún esfuerzo lo llevará a la Premier League».",
+      },
+      {
+        q: "¿Cómo define el capitalismo?",
+        a: "Como «un sistema que convierte nuestro egoísmo, nuestra codicia, en miel».",
+      },
+      {
+        q: "¿Qué riesgo ve en las monedas digitales de los bancos centrales?",
+        a: "La posibilidad de un dinero programable con restricciones de uso, un riesgo para la libertad individual: «El problema no es si lo van a hacer, es que pueden hacerlo».",
+      },
+      {
+        q: "¿Quién participa en la conversación además de Bastos?",
+        a: "Pablo Gómez, CEO y fundador de Metlabs.",
+      },
+      {
+        q: "¿Qué consejo da a los jóvenes?",
+        a: "Identificar aquello para lo que cada uno tiene capacidad, asumir las limitaciones y trabajar para desarrollarlo: «El esfuerzo es fundamental en la vida. No hay que buscar los atajos».",
+      },
     ],
   },
   {
