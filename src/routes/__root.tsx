@@ -33,6 +33,7 @@ const founderAlejandro = {
   },
   affiliation: { "@type": "Organization", name: "Nova Talent" },
   sameAs: [
+    "https://www.wikidata.org/wiki/Q141663896",
     "https://alejandrosanchezmartinez.com",
     "https://eldiariodelpoder.com/alejandro-sanchez-martinez",
     "https://www.linkedin.com/in/alejandrosanchezmartinez",
