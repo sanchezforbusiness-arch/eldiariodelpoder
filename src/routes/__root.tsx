@@ -118,6 +118,7 @@ const structuredData = {
       publisher: { "@id": `${SITE_URL}/#organization` },
       founder: [founderAlejandro, founderVictor],
       sameAs: [
+        DDP_WIKIDATA,
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
       ],
