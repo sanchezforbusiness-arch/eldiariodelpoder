@@ -4,6 +4,7 @@ import { Episodes } from "@/components/ddp/Episodes";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import { episodeList } from "@/data/podcast";
+import { DDP_WIKIDATA } from "@/data/press";
 
 export const Route = createFileRoute("/episodios/")({
   head: () => ({
