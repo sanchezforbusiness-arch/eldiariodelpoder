@@ -52,6 +52,7 @@ export const Route = createFileRoute("/episodios/")({
                 "@type": "PodcastSeries",
                 name: "Diario del Poder",
                 url: "https://eldiariodelpoder.com/",
+                sameAs: [DDP_WIKIDATA],
               },
               actor: { "@type": "Person", name: e.guest },
             },
