@@ -70,6 +70,7 @@ export const Route = createFileRoute("/manifiesto")({
               ],
               url: "https://eldiariodelpoder.com/manifiesto",
               sameAs: [
+                ALEJANDRO_WIKIDATA,
                 "https://alejandrosanchezmartinez.com",
                 "https://www.linkedin.com/in/alejandrosanchezmartinez",
               ],
