@@ -4,7 +4,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { Masthead } from "@/components/ddp/Masthead";
 import { formatDateEs } from "@/lib/utils";
 import { getEpisodeBySlug, getGuestBySlug, type EpisodeEntry } from "@/data/podcast";
-import { guestArticleBySlug, pressItems, ALEJANDRO_ID, VICTOR_ID } from "@/data/press";
+import { guestArticleBySlug, pressItems, ALEJANDRO_ID, VICTOR_ID, DDP_WIKIDATA } from "@/data/press";
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/episodios/$slug")({
             episodeNumber: ep.episodeNumber,
             ...(ep.date ? { datePublished: ep.date } : {}),
             ...(isoDuration(ep.duration) ? { timeRequired: isoDuration(ep.duration) } : {}),
-            partOfSeries: { "@type": "PodcastSeries", "@id": `${SITE}/#podcastseries`, name: "Diario del Poder", url: `${SITE}/` },
+            partOfSeries: { "@type": "PodcastSeries", "@id": `${SITE}/#podcastseries`, name: "Diario del Poder", url: `${SITE}/`, sameAs: [DDP_WIKIDATA] },
             author: { "@id": ALEJANDRO_ID },
             creator: [{ "@id": ALEJANDRO_ID }, { "@id": VICTOR_ID }],
             ...(article
