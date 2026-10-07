@@ -5,7 +5,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Press } from "@/components/ddp/Press";
 import { TvAppearances } from "@/components/ddp/TvAppearances";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, ALEJANDRO_ID, VICTOR_ID } from "@/data/press";
+import { pressArticles, ALEJANDRO_ID, VICTOR_ID, ALEJANDRO_WIKIDATA } from "@/data/press";
 import { tvAppearances, SITE_URL } from "@/data/tv";
 
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
@@ -63,7 +63,7 @@ export const Route = createFileRoute("/prensa")({
                 : {}),
               about: { "@id": "https://eldiariodelpoder.com/#organization" },
               mentions: [
-                { "@type": "Person", "@id": ALEJANDRO_ID, name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
+                { "@type": "Person", "@id": ALEJANDRO_ID, name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: [ALEJANDRO_WIKIDATA, "https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
                 { "@type": "Person", "@id": VICTOR_ID, name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
               ],
             },
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/prensa")({
               },
               about: { "@id": "https://eldiariodelpoder.com/#organization" },
               actor: [
-                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
+                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: [ALEJANDRO_WIKIDATA, "https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
                 { "@type": "Person", name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
               ],
             },

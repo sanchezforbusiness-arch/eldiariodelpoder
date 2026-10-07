@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Manifesto } from "@/components/ddp/Manifesto";
 import { useReveal } from "@/hooks/use-reveal";
+import { ALEJANDRO_WIKIDATA } from "@/data/press";
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
@@ -69,6 +70,7 @@ export const Route = createFileRoute("/manifiesto")({
               ],
               url: "https://eldiariodelpoder.com/manifiesto",
               sameAs: [
+                ALEJANDRO_WIKIDATA,
                 "https://alejandrosanchezmartinez.com",
                 "https://www.linkedin.com/in/alejandrosanchezmartinez",
               ],

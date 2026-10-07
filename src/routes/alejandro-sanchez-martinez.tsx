@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles } from "@/data/press";
+import { pressArticles, ALEJANDRO_WIKIDATA } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
@@ -72,6 +72,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
             image: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp",
             mainEntityOfPage: "https://alejandrosanchezmartinez.com",
             sameAs: [
+              ALEJANDRO_WIKIDATA,
               "https://alejandrosanchezmartinez.com",
               "https://www.linkedin.com/in/alejandrosanchezmartinez",
               "https://www.youtube.com/@eldiariodelpoder",

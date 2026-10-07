@@ -32,7 +32,9 @@ import aguirreLaVanguardiaImage from "@/assets/guest-esperanza-aguirre.jpg.asset
 import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
+export const ALEJANDRO_WIKIDATA = "https://www.wikidata.org/wiki/Q141663896";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
+export const DDP_WIKIDATA = "https://www.wikidata.org/wiki/Q141663909";
 
 export const ROSA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-rosa-lagarrigue";
 export const ROSA_LAVANGUARDIA_URL =

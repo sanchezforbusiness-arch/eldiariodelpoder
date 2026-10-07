@@ -12,6 +12,7 @@ import {
   type Edicion,
   type Fuente,
 } from "@/lib/newsletter";
+import { ALEJANDRO_WIKIDATA } from "@/data/press";
 
 export const Route = createFileRoute("/newsletter/$slug")({
   loader: async ({ params }) => {
@@ -73,6 +74,7 @@ export const Route = createFileRoute("/newsletter/$slug")({
               "@id": "https://alejandrosanchezmartinez.com/#persona",
               name: "Alejandro Sánchez Martínez",
               url: "https://alejandrosanchezmartinez.com/",
+              sameAs: [ALEJANDRO_WIKIDATA, "https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/"],
             },
             publisher: {
               "@type": "Organization",
