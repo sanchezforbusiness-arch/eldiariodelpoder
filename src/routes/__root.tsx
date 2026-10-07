@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
+import { ALEJANDRO_WIKIDATA, DDP_WIKIDATA } from "@/data/press";
 
 import appCss from "../styles.css?url";
 
@@ -83,6 +84,7 @@ const structuredData = {
       },
       founder: [founderAlejandro, founderVictor],
       sameAs: [
+        DDP_WIKIDATA,
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
         "https://www.instagram.com/eldiariodelpoder/",
