@@ -63,7 +63,7 @@ export const Route = createFileRoute("/prensa")({
                 : {}),
               about: { "@id": "https://eldiariodelpoder.com/#organization" },
               mentions: [
-                { "@type": "Person", "@id": ALEJANDRO_ID, name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
+                { "@type": "Person", "@id": ALEJANDRO_ID, name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: [ALEJANDRO_WIKIDATA, "https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
                 { "@type": "Person", "@id": VICTOR_ID, name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
               ],
             },
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/prensa")({
               },
               about: { "@id": "https://eldiariodelpoder.com/#organization" },
               actor: [
-                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
+                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: [ALEJANDRO_WIKIDATA, "https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez"] },
                 { "@type": "Person", name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
               ],
             },
