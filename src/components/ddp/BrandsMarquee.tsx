@@ -1,4 +1,6 @@
 import apdLogo from "@/assets/logo-apd.png.asset.json";
+import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+
 
 
 type Brand = { name: string; domain?: string; logo?: string };
@@ -17,6 +19,8 @@ export const BRANDS: Brand[] = [
   { name: "Osasuna", domain: "osasuna.es" },
   { name: "EWTN" },
   { name: "APD", domain: "apd.es", logo: apdLogo.url },
+  { name: "IESE", domain: "iese.edu" },
+  { name: "Grupo PROEDUCA", logo: proeducaLogo.url },
   { name: "Contents.com", domain: "contents.com" },
   { name: "Metlabs", domain: "metlabs.io" },
 ];
