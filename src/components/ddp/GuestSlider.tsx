@@ -8,6 +8,7 @@ const ALL_GUESTS = guestList;
 const SLUG_ORDER = [
   "jose-maria-aznar",
   "guillermo-lasso",
+  "alvaro-uribe",
   "esperanza-aguirre",
   "marcos-de-quinto",
   "mariano-barbacid",
