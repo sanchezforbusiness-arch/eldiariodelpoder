@@ -19,6 +19,8 @@ export const BRANDS: Brand[] = [
   { name: "Osasuna", domain: "osasuna.es" },
   { name: "EWTN" },
   { name: "APD", domain: "apd.es", logo: apdLogo.url },
+  { name: "IESE", domain: "iese.edu" },
+  { name: "Grupo PROEDUCA", logo: proeducaLogo.url },
   { name: "Contents.com", domain: "contents.com" },
   { name: "Metlabs", domain: "metlabs.io" },
 ];
