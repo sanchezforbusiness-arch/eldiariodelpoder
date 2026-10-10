@@ -1,4 +1,6 @@
 import apdLogo from "@/assets/logo-apd.png.asset.json";
+import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+
 
 
 type Brand = { name: string; domain?: string; logo?: string };
