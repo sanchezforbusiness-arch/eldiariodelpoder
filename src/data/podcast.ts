@@ -622,6 +622,24 @@ export const guestList: GuestEntry[] = [
       "En Diario del Poder habla de cómo se dirigen proyectos científicos de muy largo plazo, de qué puede aprender una generación joven de la investigación rigurosa y del papel de España en la ciencia mundial.",
     ],
   },
+  {
+    slug: "alvaro-uribe",
+    name: "Álvaro Uribe Vélez",
+    role: "Expresidente de Colombia",
+    bio: "Presidente de Colombia entre 2002 y 2010. Poder, seguridad y decisiones de Estado.",
+    topics: [
+      "Colombia",
+      "América Latina",
+      "seguridad",
+      "liderazgo político",
+      "decisiones de Estado",
+    ],
+    summary: [
+      "Álvaro Uribe Vélez fue presidente de Colombia entre 2002 y 2010, después de una trayectoria previa en la Gobernación de Antioquia y en el Senado. En esta conversación con Diario del Poder repasa cómo se toman las decisiones cuando no hay margen de error y qué cambia en una persona cuando ocupa la primera línea del Estado.",
+      "Hablamos de seguridad, de la relación con Estados Unidos y de la economía colombiana en su década de transformación, así como del precio personal de gobernar en un contexto de violencia.",
+      "Cierra con lo que diría hoy a una generación que empieza: criterio propio, trabajo y no confundir popularidad con legado.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
