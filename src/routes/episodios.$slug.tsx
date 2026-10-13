@@ -172,14 +172,14 @@ function EpisodePage() {
             Presentado por{" "}
             <a
               href="https://alejandrosanchezmartinez.com/"
-              className="underline-offset-2 hover:text-foreground hover:underline"
+              className="underline decoration-border underline-offset-2 hover:text-foreground hover:decoration-foreground"
             >
               Alejandro Sánchez Martínez
             </a>{" "}
             y{" "}
             <Link
               to="/victor-hugo-gandarilla-de-andres"
-              className="underline-offset-2 hover:text-foreground hover:underline"
+              className="underline decoration-border underline-offset-2 hover:text-foreground hover:decoration-foreground"
             >
               Víctor Hugo Gandarilla de Andrés
             </Link>
