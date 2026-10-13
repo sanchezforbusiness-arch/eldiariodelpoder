@@ -168,6 +168,23 @@ function EpisodePage() {
             </p>
           </header>
 
+          <p className="mt-5 text-2xs leading-relaxed text-muted-foreground">
+            Presentado por{" "}
+            <a
+              href="https://alejandrosanchezmartinez.com/"
+              className="underline decoration-border underline-offset-2 hover:text-foreground hover:decoration-foreground"
+            >
+              Alejandro Sánchez Martínez
+            </a>{" "}
+            y{" "}
+            <Link
+              to="/victor-hugo-gandarilla-de-andres"
+              className="underline decoration-border underline-offset-2 hover:text-foreground hover:decoration-foreground"
+            >
+              Víctor Hugo Gandarilla de Andrés
+            </Link>
+          </p>
+
           {ep.youtubeId && (
             <section className="mt-12 md:mt-16" aria-label="Episodio en vídeo">
               <div className="relative w-full aspect-video overflow-hidden rounded-sm border border-border bg-card/30">
