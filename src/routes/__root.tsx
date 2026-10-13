@@ -1,6 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
-import { ALEJANDRO_WIKIDATA, DDP_WIKIDATA } from "@/data/press";
 
 import appCss from "../styles.css?url";
 
@@ -34,7 +33,6 @@ const founderAlejandro = {
   },
   affiliation: { "@type": "Organization", name: "Nova Talent" },
   sameAs: [
-    "https://www.wikidata.org/wiki/Q141663896",
     "https://alejandrosanchezmartinez.com",
     "https://eldiariodelpoder.com/alejandro-sanchez-martinez",
     "https://www.linkedin.com/in/alejandrosanchezmartinez",
@@ -84,7 +82,6 @@ const structuredData = {
       },
       founder: [founderAlejandro, founderVictor],
       sameAs: [
-        DDP_WIKIDATA,
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
         "https://www.instagram.com/eldiariodelpoder/",
@@ -118,7 +115,6 @@ const structuredData = {
       publisher: { "@id": `${SITE_URL}/#organization` },
       founder: [founderAlejandro, founderVictor],
       sameAs: [
-        DDP_WIKIDATA,
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",
       ],

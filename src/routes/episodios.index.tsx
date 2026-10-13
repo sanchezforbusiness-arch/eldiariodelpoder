@@ -4,7 +4,6 @@ import { Episodes } from "@/components/ddp/Episodes";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { useReveal } from "@/hooks/use-reveal";
 import { episodeList } from "@/data/podcast";
-import { DDP_WIKIDATA } from "@/data/press";
 
 export const Route = createFileRoute("/episodios/")({
   head: () => ({
@@ -49,10 +48,9 @@ export const Route = createFileRoute("/episodios/")({
               inLanguage: "es-ES",
               episodeNumber: e.episodeNumber,
               partOfSeries: {
-                "@type": "PodcastSeries",
+"@type": "PodcastSeries",
                 name: "Diario del Poder",
                 url: "https://eldiariodelpoder.com/",
-                sameAs: [DDP_WIKIDATA],
               },
               actor: { "@type": "Person", name: e.guest },
             },
