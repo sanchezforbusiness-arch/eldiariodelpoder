@@ -9,62 +9,36 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as PrensaRouteImport } from './routes/prensa'
-import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
-import { Route as NosotrosRouteImport } from './routes/nosotros'
-import { Route as McpRouteImport } from './routes/mcp'
-import { Route as ManifiestoRouteImport } from './routes/manifiesto'
-import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
-import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
-import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
-import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
-import { Route as NewsletterRssDotxmlRouteImport } from './routes/newsletter.rss[.]xml'
-import { Route as NewsletterFeedDotjsonRouteImport } from './routes/newsletter.feed[.]json'
-import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
-import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
-import { Route as EpisodiosSlugRouteImport } from './routes/episodios.$slug'
+import { Route as AgendaRouteImport } from './routes/agenda'
+import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
+import { Route as ManifiestoRouteImport } from './routes/manifiesto'
+import { Route as McpRouteImport } from './routes/mcp'
+import { Route as NosotrosRouteImport } from './routes/nosotros'
+import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
+import { Route as PrensaRouteImport } from './routes/prensa'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
-import { Route as NewsletterImagenNombreRouteImport } from './routes/newsletter.imagen.$nombre'
+import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
+import { Route as EpisodiosSlugRouteImport } from './routes/episodios.$slug'
+import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
+import { Route as InvitadosSlugRouteImport } from './routes/invitados.$slug'
+import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
+import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
+import { Route as NewsletterFeedDotjsonRouteImport } from './routes/newsletter.feed[.]json'
+import { Route as NewsletterRssDotxmlRouteImport } from './routes/newsletter.rss[.]xml'
 import { Route as ApiNewsletterPublicarRouteImport } from './routes/api/newsletter/publicar'
+import { Route as NewsletterImagenNombreRouteImport } from './routes/newsletter.imagen.$nombre'
 
-const VictorHugoGandarillaDeAndresRoute =
-  VictorHugoGandarillaDeAndresRouteImport.update({
-    id: '/victor-hugo-gandarilla-de-andres',
-    path: '/victor-hugo-gandarilla-de-andres',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrensaRoute = PrensaRouteImport.update({
-  id: '/prensa',
-  path: '/prensa',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PatrocinadoresRoute = PatrocinadoresRouteImport.update({
-  id: '/patrocinadores',
-  path: '/patrocinadores',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NosotrosRoute = NosotrosRouteImport.update({
-  id: '/nosotros',
-  path: '/nosotros',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const McpRoute = McpRouteImport.update({
-  id: '/mcp',
-  path: '/mcp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManifiestoRoute = ManifiestoRouteImport.update({
-  id: '/manifiesto',
-  path: '/manifiesto',
+const AgendaRoute = AgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlejandroSanchezMartinezRoute =
@@ -73,49 +47,51 @@ const AlejandroSanchezMartinezRoute =
     path: '/alejandro-sanchez-martinez',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AgendaRoute = AgendaRouteImport.update({
-  id: '/agenda',
-  path: '/agenda',
+const ManifiestoRoute = ManifiestoRouteImport.update({
+  id: '/manifiesto',
+  path: '/manifiesto',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NewsletterIndexRoute = NewsletterIndexRouteImport.update({
-  id: '/newsletter/',
-  path: '/newsletter/',
+const NosotrosRoute = NosotrosRouteImport.update({
+  id: '/nosotros',
+  path: '/nosotros',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InvitadosIndexRoute = InvitadosIndexRouteImport.update({
-  id: '/invitados/',
-  path: '/invitados/',
+const PatrocinadoresRoute = PatrocinadoresRouteImport.update({
+  id: '/patrocinadores',
+  path: '/patrocinadores',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrensaRoute = PrensaRouteImport.update({
+  id: '/prensa',
+  path: '/prensa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VictorHugoGandarillaDeAndresRoute =
+  VictorHugoGandarillaDeAndresRouteImport.update({
+    id: '/victor-hugo-gandarilla-de-andres',
+    path: '/victor-hugo-gandarilla-de-andres',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EpisodiosIndexRoute = EpisodiosIndexRouteImport.update({
   id: '/episodios/',
   path: '/episodios/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsletterRssDotxmlRoute = NewsletterRssDotxmlRouteImport.update({
-  id: '/newsletter/rss.xml',
-  path: '/newsletter/rss.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsletterFeedDotjsonRoute = NewsletterFeedDotjsonRouteImport.update({
-  id: '/newsletter/feed.json',
-  path: '/newsletter/feed.json',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
-  id: '/newsletter/$slug',
-  path: '/newsletter/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InvitadosSlugRoute = InvitadosSlugRouteImport.update({
-  id: '/invitados/$slug',
-  path: '/invitados/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EpisodiosSlugRoute = EpisodiosSlugRouteImport.update({
@@ -123,20 +99,44 @@ const EpisodiosSlugRoute = EpisodiosSlugRouteImport.update({
   path: '/episodios/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Char91DotwellKnownChar93OauthProtectedResourceRoute =
-  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
-    id: '/.well-known/oauth-protected-resource',
-    path: '/.well-known/oauth-protected-resource',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const NewsletterImagenNombreRoute = NewsletterImagenNombreRouteImport.update({
-  id: '/newsletter/imagen/$nombre',
-  path: '/newsletter/imagen/$nombre',
+const InvitadosIndexRoute = InvitadosIndexRouteImport.update({
+  id: '/invitados/',
+  path: '/invitados/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvitadosSlugRoute = InvitadosSlugRouteImport.update({
+  id: '/invitados/$slug',
+  path: '/invitados/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterIndexRoute = NewsletterIndexRouteImport.update({
+  id: '/newsletter/',
+  path: '/newsletter/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
+  id: '/newsletter/$slug',
+  path: '/newsletter/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterFeedDotjsonRoute = NewsletterFeedDotjsonRouteImport.update({
+  id: '/newsletter/feed.json',
+  path: '/newsletter/feed.json',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterRssDotxmlRoute = NewsletterRssDotxmlRouteImport.update({
+  id: '/newsletter/rss.xml',
+  path: '/newsletter/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiNewsletterPublicarRoute = ApiNewsletterPublicarRouteImport.update({
   id: '/api/newsletter/publicar',
   path: '/api/newsletter/publicar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterImagenNombreRoute = NewsletterImagenNombreRouteImport.update({
+  id: '/newsletter/imagen/$nombre',
+  path: '/newsletter/imagen/$nombre',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -308,60 +308,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/victor-hugo-gandarilla-de-andres': {
-      id: '/victor-hugo-gandarilla-de-andres'
-      path: '/victor-hugo-gandarilla-de-andres'
-      fullPath: '/victor-hugo-gandarilla-de-andres'
-      preLoaderRoute: typeof VictorHugoGandarillaDeAndresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prensa': {
-      id: '/prensa'
-      path: '/prensa'
-      fullPath: '/prensa'
-      preLoaderRoute: typeof PrensaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/patrocinadores': {
-      id: '/patrocinadores'
-      path: '/patrocinadores'
-      fullPath: '/patrocinadores'
-      preLoaderRoute: typeof PatrocinadoresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/nosotros': {
-      id: '/nosotros'
-      path: '/nosotros'
-      fullPath: '/nosotros'
-      preLoaderRoute: typeof NosotrosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mcp': {
-      id: '/mcp'
-      path: '/mcp'
-      fullPath: '/mcp'
-      preLoaderRoute: typeof McpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manifiesto': {
-      id: '/manifiesto'
-      path: '/manifiesto'
-      fullPath: '/manifiesto'
-      preLoaderRoute: typeof ManifiestoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/alejandro-sanchez-martinez': {
-      id: '/alejandro-sanchez-martinez'
-      path: '/alejandro-sanchez-martinez'
-      fullPath: '/alejandro-sanchez-martinez'
-      preLoaderRoute: typeof AlejandroSanchezMartinezRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agenda': {
@@ -371,67 +322,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgendaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/alejandro-sanchez-martinez': {
+      id: '/alejandro-sanchez-martinez'
+      path: '/alejandro-sanchez-martinez'
+      fullPath: '/alejandro-sanchez-martinez'
+      preLoaderRoute: typeof AlejandroSanchezMartinezRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/newsletter/': {
-      id: '/newsletter/'
-      path: '/newsletter'
-      fullPath: '/newsletter/'
-      preLoaderRoute: typeof NewsletterIndexRouteImport
+    '/manifiesto': {
+      id: '/manifiesto'
+      path: '/manifiesto'
+      fullPath: '/manifiesto'
+      preLoaderRoute: typeof ManifiestoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/invitados/': {
-      id: '/invitados/'
-      path: '/invitados'
-      fullPath: '/invitados/'
-      preLoaderRoute: typeof InvitadosIndexRouteImport
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/episodios/': {
-      id: '/episodios/'
-      path: '/episodios'
-      fullPath: '/episodios/'
-      preLoaderRoute: typeof EpisodiosIndexRouteImport
+    '/nosotros': {
+      id: '/nosotros'
+      path: '/nosotros'
+      fullPath: '/nosotros'
+      preLoaderRoute: typeof NosotrosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/newsletter/rss.xml': {
-      id: '/newsletter/rss.xml'
-      path: '/newsletter/rss.xml'
-      fullPath: '/newsletter/rss.xml'
-      preLoaderRoute: typeof NewsletterRssDotxmlRouteImport
+    '/patrocinadores': {
+      id: '/patrocinadores'
+      path: '/patrocinadores'
+      fullPath: '/patrocinadores'
+      preLoaderRoute: typeof PatrocinadoresRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/newsletter/feed.json': {
-      id: '/newsletter/feed.json'
-      path: '/newsletter/feed.json'
-      fullPath: '/newsletter/feed.json'
-      preLoaderRoute: typeof NewsletterFeedDotjsonRouteImport
+    '/prensa': {
+      id: '/prensa'
+      path: '/prensa'
+      fullPath: '/prensa'
+      preLoaderRoute: typeof PrensaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/newsletter/$slug': {
-      id: '/newsletter/$slug'
-      path: '/newsletter/$slug'
-      fullPath: '/newsletter/$slug'
-      preLoaderRoute: typeof NewsletterSlugRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/invitados/$slug': {
-      id: '/invitados/$slug'
-      path: '/invitados/$slug'
-      fullPath: '/invitados/$slug'
-      preLoaderRoute: typeof InvitadosSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/episodios/$slug': {
-      id: '/episodios/$slug'
-      path: '/episodios/$slug'
-      fullPath: '/episodios/$slug'
-      preLoaderRoute: typeof EpisodiosSlugRouteImport
+    '/victor-hugo-gandarilla-de-andres': {
+      id: '/victor-hugo-gandarilla-de-andres'
+      path: '/victor-hugo-gandarilla-de-andres'
+      fullPath: '/victor-hugo-gandarilla-de-andres'
+      preLoaderRoute: typeof VictorHugoGandarillaDeAndresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.well-known/oauth-protected-resource': {
@@ -441,11 +385,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/newsletter/imagen/$nombre': {
-      id: '/newsletter/imagen/$nombre'
-      path: '/newsletter/imagen/$nombre'
-      fullPath: '/newsletter/imagen/$nombre'
-      preLoaderRoute: typeof NewsletterImagenNombreRouteImport
+    '/episodios/': {
+      id: '/episodios/'
+      path: '/episodios'
+      fullPath: '/episodios/'
+      preLoaderRoute: typeof EpisodiosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/episodios/$slug': {
+      id: '/episodios/$slug'
+      path: '/episodios/$slug'
+      fullPath: '/episodios/$slug'
+      preLoaderRoute: typeof EpisodiosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/invitados/': {
+      id: '/invitados/'
+      path: '/invitados'
+      fullPath: '/invitados/'
+      preLoaderRoute: typeof InvitadosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/invitados/$slug': {
+      id: '/invitados/$slug'
+      path: '/invitados/$slug'
+      fullPath: '/invitados/$slug'
+      preLoaderRoute: typeof InvitadosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/': {
+      id: '/newsletter/'
+      path: '/newsletter'
+      fullPath: '/newsletter/'
+      preLoaderRoute: typeof NewsletterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/$slug': {
+      id: '/newsletter/$slug'
+      path: '/newsletter/$slug'
+      fullPath: '/newsletter/$slug'
+      preLoaderRoute: typeof NewsletterSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/feed.json': {
+      id: '/newsletter/feed.json'
+      path: '/newsletter/feed.json'
+      fullPath: '/newsletter/feed.json'
+      preLoaderRoute: typeof NewsletterFeedDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/rss.xml': {
+      id: '/newsletter/rss.xml'
+      path: '/newsletter/rss.xml'
+      fullPath: '/newsletter/rss.xml'
+      preLoaderRoute: typeof NewsletterRssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/newsletter/publicar': {
@@ -453,6 +446,13 @@ declare module '@tanstack/react-router' {
       path: '/api/newsletter/publicar'
       fullPath: '/api/newsletter/publicar'
       preLoaderRoute: typeof ApiNewsletterPublicarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/imagen/$nombre': {
+      id: '/newsletter/imagen/$nombre'
+      path: '/newsletter/imagen/$nombre'
+      fullPath: '/newsletter/imagen/$nombre'
+      preLoaderRoute: typeof NewsletterImagenNombreRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
