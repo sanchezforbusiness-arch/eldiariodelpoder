@@ -1,6 +1,7 @@
 import jordiJuanAssetEp from "@/assets/guest-jordi-juan.png.asset.json";
 import rosaAssetEp from "@/assets/guest-rosa-lagarrigue.png.asset.json";
 import aguirreAssetEp from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
+import jcghAssetEp from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 import bastosAssetEp from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import lassoImg from "@/assets/bts-guillermo-lasso.webp";
@@ -34,6 +35,21 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 9,
+    image: jcghAssetEp.url,
+    slug: "jose-carlos-gonzalez-hurtado-el-poder-es-hacer-el-bien",
+    youtubeId: "GeOpCzkA0pA",
+    guestSlug: "jose-carlos-gonzalez-hurtado",
+    transcript: [],
+    guest: "José Carlos González Hurtado",
+    role: "Presidente de EWTN",
+    date: "2026-10-13",
+    title: "El poder es hacer el bien",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261013/11657651/jose-carlos-gonzalez-cupula-empresarial-television-catolica.html",
+    description:
+      "El expresidente de Procter & Gamble en España y exdirectivo de Carrefour, hoy presidente de EWTN, explica cómo entiende el liderazgo, la responsabilidad individual y el propósito vital. Sobre el poder: «Es la capacidad para hacer el bien, para cambiar el mundo».",
+  },
   {
     episodeNumber: 8,
     image: bastosAssetEp.url,
@@ -359,10 +375,44 @@ export const guestList: GuestEntry[] = [
     name: "José Carlos González Hurtado",
     role: "Presidente de EWTN · ex CEO en P&G",
     bio: "Autor de 'Nuevas evidencias científicas de la existencia de Dios'. Fe, ciencia y empresa.",
-    topics: ["EWTN", "fe y ciencia", "empresa", "P&G", "medios religiosos"],
+    youtubeId: "GeOpCzkA0pA",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261013/11657651/jose-carlos-gonzalez-cupula-empresarial-television-catolica.html",
+    topics: ["EWTN", "fe y ciencia", "empresa", "P&G", "Carrefour", "liderazgo", "responsabilidad individual", "propósito vital", "medios religiosos"],
     summary: [
-      "José Carlos González Hurtado dirigió negocios en Procter & Gamble antes de presidir EWTN, la mayor red de medios católicos del mundo. Es autor de 'Nuevas evidencias científicas de la existencia de Dios'.",
-      "Conversamos sobre ciencia y fe sin caricaturas, sobre cómo se gestiona un grupo de medios global y sobre qué le hizo cambiar de vida a mitad de carrera.",
+      "José Carlos González Hurtado preside EWTN, la cadena de televisión católica más grande del mundo. Entró en Procter & Gamble al terminar sus estudios y llegó a director general, vicepresidente y presidente; después fue chief commercial officer de Carrefour —«algo así como el número dos de todo Carrefour global»— y dirigió IRI Worldwide. Hoy combina EWTN con consejos empresariales y la asesoría a un fondo de inversión.",
+      "Para él, el poder «es la capacidad para hacer el bien, para cambiar el mundo». Recuerda una frase de su padre que le ha acompañado siempre: «Alguien tiene que ser el primero. ¿Por qué no tú?». Y defiende la responsabilidad individual: «No eres producto de tus padres, ni de tu ambiente, ni de donde estudiaste. Eres el producto de tus decisiones».",
+      "«Soy padre de siete hijos y marido de Doris». Es autor de «Nuevas evidencias científicas de la existencia de Dios» y «Jesús es Dios», y cuenta que recibe mensajes de jóvenes que se han bautizado o han recuperado la fe tras leer sus libros: «Hay más pruebas documentales de que Jesucristo existió que de Julio César o de Alejandro Magno».",
+      "Su conclusión sobre el propósito vital: «Nadie es feliz por casualidad. La felicidad es deliberada».",
+    ],
+    keyIdeas: [
+      "Sobre el poder: «Es la capacidad para hacer el bien, para cambiar el mundo».",
+      "La frase de su padre: «Alguien tiene que ser el primero. ¿Por qué no tú?».",
+      "«No eres producto de tus padres, ni de tu ambiente, ni de donde estudiaste. Eres el producto de tus decisiones».",
+      "«Hay más pruebas documentales de que Jesucristo existió que de Julio César o de Alejandro Magno».",
+      "«Nadie es feliz por casualidad. La felicidad es deliberada».",
+    ],
+    qa: [
+      {
+        q: "¿Qué es el poder para José Carlos González Hurtado?",
+        a: "«Es la capacidad para hacer el bien, para cambiar el mundo».",
+      },
+      {
+        q: "¿Cuál ha sido su trayectoria profesional?",
+        a: "Entró en Procter & Gamble al terminar sus estudios y llegó a director general, vicepresidente y presidente; después fue chief commercial officer de Carrefour y dirigió IRI Worldwide. Hoy preside EWTN, la cadena de televisión católica más grande del mundo, y combina ese cargo con consejos empresariales y la asesoría a un fondo de inversión.",
+      },
+      {
+        q: "¿Qué libros ha escrito?",
+        a: "«Nuevas evidencias científicas de la existencia de Dios» y «Jesús es Dios». Cuenta que recibe mensajes de jóvenes que se han bautizado o han recuperado la fe tras leerlos.",
+      },
+      {
+        q: "¿Qué piensa de la responsabilidad individual?",
+        a: "«No eres producto de tus padres, ni de tu ambiente, ni de donde estudiaste. Eres el producto de tus decisiones».",
+      },
+      {
+        q: "¿Dónde se puede leer la conversación?",
+        a: "La Vanguardia la publicó el 13 de octubre de 2026 bajo la firma de El Diario del Poder: https://www.lavanguardia.com/podcast/el-diario-del-poder/20261013/11657651/jose-carlos-gonzalez-cupula-empresarial-television-catolica.html",
+      },
     ],
   },
   {

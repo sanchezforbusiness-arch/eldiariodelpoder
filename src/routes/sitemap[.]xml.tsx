@@ -10,12 +10,12 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const staticPages: Entry[] = [
     { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
-    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: today },
+    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-13" },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: today },
     { loc: "/newsletter", changefreq: "daily", priority: "0.9", lastmod: today },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
-    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-09-28" },
+    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-13" },
     { loc: "/patrocinadores", changefreq: "monthly", priority: "0.7" },
     { loc: "/agenda", changefreq: "monthly", priority: "0.6" },
     { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8" },
@@ -32,6 +32,7 @@ function buildSitemap(newsletter: Entry[] = []) {
   const guests: Entry[] = guestList.map((g) => ({
     loc: `/invitados/${g.slug}`,
     ...(g.slug === "rosa-lagarrigue" ? { lastmod: "2026-09-22" } : {}),
+    ...(g.slug === "jose-carlos-gonzalez-hurtado" ? { lastmod: "2026-10-13" } : {}),
     changefreq: "monthly",
     priority: "0.7",
   }));
