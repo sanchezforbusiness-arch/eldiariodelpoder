@@ -16,6 +16,6 @@
 - [x] Centralizar todos los correos en CONTACT_EMAIL.
 - [x] Crear las 22 fichas por país y el índice con los textos literales y marcado solicitado.
 - [x] Añadir enlazado, sitemap y llms.txt; verificar horarios, rutas y ausencia de correos del dominio.
-- [ ] Crear solicitudes de patrocinio con validación, protección antispam y acceso solo de inserción.
-- [ ] Rehacer /patrocinadores con los textos exactos y enlazar la portada al formulario.
-- [ ] Enviar, comprobar y borrar una solicitud de prueba; verificar móvil y escritorio y estado del correo.
+- [x] Crear solicitudes de patrocinio con validación, protección antispam y acceso solo de inserción.
+- [x] Rehacer /patrocinadores con los textos exactos y actualizar el botón de Sponsors al formulario.
+- [x] Enviar, comprobar y borrar una solicitud de prueba; verificar móvil y escritorio y estado del correo (sin mecanismo existente, no se añadió).
