@@ -80,7 +80,7 @@ function Hero() {
     <div className="absolute inset-0 -z-10 bg-background/80" />
     <div className="container-ddp py-16 md:py-24">
       <div className="max-w-4xl"><span className="mono-label">Patrocinadores</span>
-        <h1 className="mt-6 max-w-4xl text-3xl font-medium leading-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">Tu marca, en la conversación que escuchan los que deciden.</h1>
+        <h1 className="mt-6 max-w-4xl text-2xl font-medium leading-tight text-balance">Tu marca, en la conversación que escuchan los que deciden.</h1>
         <p className="mt-7 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">Diario del Poder es el podcast de liderazgo en español: expresidentes, CEOs y referentes en entrevistas largas, publicadas cada lunes con La Vanguardia y escuchadas de Madrid a Ciudad de México.</p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button asChild className="btn-primary h-auto"><a href="#solicitud">Solicitar el media kit<ArrowUpRight size={16} /></a></Button>
@@ -97,13 +97,13 @@ function Figures() {
     ["Cada lunes", "Una conversación publicada en La Vanguardia"], ["TV", "Apariciones en La Sexta, Antena 3 y Univision"],
   ];
   return <section aria-label="Cifras" className="border-b border-border py-10 md:py-16"><div className="container-ddp grid grid-cols-2 gap-x-5 gap-y-8 lg:grid-cols-4 lg:gap-10">
-    {figures.map(([number, label]) => <div key={number} className="min-w-0"><p className="text-2xl font-medium leading-tight sm:text-3xl lg:text-4xl">{number}</p><p className="mt-3 max-w-64 text-sm leading-relaxed text-muted-foreground">{label}</p></div>)}
+    {figures.map(([number, label]) => <div key={number} className="min-w-0"><p className="text-xl font-medium leading-tight md:text-2xl">{number}</p><p className="mt-3 max-w-64 text-sm leading-relaxed text-muted-foreground">{label}</p></div>)}
   </div></section>;
 }
 
 function Cards({ heading, items, countryLink = false }: { heading: string; items: { t: string; d: string }[]; countryLink?: boolean }) {
   return <section className="border-t border-border py-16 md:py-24"><div className="container-ddp">
-    <h2 className="max-w-3xl text-2xl font-medium leading-tight text-balance md:text-4xl reveal">{heading}</h2>
+    <h2 className="max-w-3xl text-2xl font-medium leading-tight text-balance md:text-2xl reveal">{heading}</h2>
     <div className="mt-10 grid gap-4 md:grid-cols-3 reveal-stagger">{items.map((item, index) => <article key={item.t} className="card-clean min-w-0 p-6 md:p-8">
       <h3 className="text-lg font-medium leading-snug">{item.t}</h3><p className="mt-4 text-base leading-relaxed text-muted-foreground">{item.d}</p>
       {countryLink && index === 2 && <Link to="/paises" className="mt-6 inline-flex items-center gap-2 text-sm hover:text-signal">Ver país por país<ArrowUpRight size={16} /></Link>}
@@ -113,8 +113,8 @@ function Cards({ heading, items, countryLink = false }: { heading: string; items
 
 function Process() {
   return <section className="border-t border-border py-16 md:py-24"><div className="container-ddp">
-    <h2 className="text-2xl font-medium leading-tight md:text-4xl reveal">De la solicitud al primer episodio.</h2>
-    <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{steps.map((step, index) => <li key={step.t} className="min-w-0 border-t border-border pt-6"><span className="mono-label">{String(index + 1).padStart(2, "0")}</span><h3 className="mt-4 text-lg font-medium">{step.t}</h3><p className="mt-3 text-base leading-relaxed text-muted-foreground">{step.d}</p></li>)}</ol>
+    <h2 className="text-2xl font-medium leading-tight md:text-2xl reveal">De la solicitud al primer episodio.</h2>
+    <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{steps.map((step, index) => <li key={step.t} className="min-w-0 border-t border-border pt-6"><span className="mono-label font-[family-name:var(--font-mono)]">{String(index + 1).padStart(2, "0")}</span><h3 className="mt-4 text-lg font-medium">{step.t}</h3><p className="mt-3 text-base leading-relaxed text-muted-foreground">{step.d}</p></li>)}</ol>
   </div></section>;
 }
 
