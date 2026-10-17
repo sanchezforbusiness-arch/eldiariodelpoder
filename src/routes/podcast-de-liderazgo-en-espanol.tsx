@@ -6,6 +6,7 @@ import { COUNTRY_REGIONS, countryList } from "@/data/countries";
 import { episodeList } from "@/data/podcast";
 
 const SITE = "https://eldiariodelpoder.com";
+const SITE_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
 const URL = `${SITE}/podcast-de-liderazgo-en-espanol`;
 const TITLE = "Podcast de liderazgo en español | Diario del Poder";
 const DESCRIPTION = "Diario del Poder es el podcast de liderazgo en español: entrevistas largas con expresidentes, CEOs y referentes, en la línea de The Diary of a CEO.";
@@ -37,6 +38,8 @@ export const Route = createFileRoute("/podcast-de-liderazgo-en-espanol")({
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_ES" },
+      { property: "og:image", content: SITE_IMAGE },
+      { name: "twitter:image", content: SITE_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },

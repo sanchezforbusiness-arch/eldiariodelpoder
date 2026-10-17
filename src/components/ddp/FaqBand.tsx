@@ -5,7 +5,7 @@ const FAQ: { q: string; a: ReactNode }[] = faqSchema.mainEntity.map((question, i
     q: question.name,
     a: index === 0 ? (
       <>
-        Un podcast de entrevistas largas, fundado en 2025 en Madrid por{" "}
+        Un podcast en español de entrevistas largas con expresidentes, CEOs y referentes, fundado en 2025 en Madrid por{" "}
         <a
           href="https://alejandrosanchezmartinez.com"
           rel="me noreferrer"
