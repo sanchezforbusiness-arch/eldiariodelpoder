@@ -86,6 +86,51 @@ export type Database = {
         }
         Relationships: []
       }
+      solicitudes_patrocinio: {
+        Row: {
+          cargo: string | null
+          created_at: string | null
+          email: string
+          empresa: string
+          id: string
+          mercados: string[]
+          nombre: string
+          objetivo: string
+          origen: string | null
+          pais: string
+          presupuesto: string
+          web: string | null
+        }
+        Insert: {
+          cargo?: string | null
+          created_at?: string | null
+          email: string
+          empresa: string
+          id?: string
+          mercados?: string[]
+          nombre: string
+          objetivo: string
+          origen?: string | null
+          pais: string
+          presupuesto: string
+          web?: string | null
+        }
+        Update: {
+          cargo?: string | null
+          created_at?: string | null
+          email?: string
+          empresa?: string
+          id?: string
+          mercados?: string[]
+          nombre?: string
+          objetivo?: string
+          origen?: string | null
+          pais?: string
+          presupuesto?: string
+          web?: string | null
+        }
+        Relationships: []
+      }
       translations: {
         Row: {
           created_at: string
