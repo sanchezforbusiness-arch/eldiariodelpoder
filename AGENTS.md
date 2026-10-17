@@ -7,4 +7,5 @@
 - Keep `/paises` as `paises.index.tsx` and country details as `paises.$slug.tsx` so each detail mounts independently, without an index layout swallowing it.
 - Sitemap content sources must paginate public reads and return failure instead of partial XML; lastmod uses only page-specific content timestamps, never generation time.
 - Sponsorship submissions use shared Zod validation in `src/data/sponsorship.ts`, a public server function with an insert-only client and a database rate-limit trigger; this keeps submissions private and validates both entry points.
-- Render the home FAQ from `src/data/faqSchema.ts` and the leadership guide FAQ from its shared route data so visible answers and JSON-LD remain identical; derive guide episode and country lists from the canonical data sources.
+- Render home copy and its FAQ schema from `src/i18n/landing.ts` through LandingContext, with Spanish defaults for shared chrome; HomeLanding owns the unchanged composition and insertion slots so future locales reuse it without duplicating layout. Keep podcast metadata canonical with optional dictionary overrides and only prefix links once translated destinations exist.
+- Render the leadership guide FAQ from its shared route data so visible answers and JSON-LD remain identical; derive guide episode and country lists from the canonical data sources.

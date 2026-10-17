@@ -1,35 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
-import { Navbar } from "@/components/ddp/Navbar";
-import { HeroNoir } from "@/components/ddp/HeroNoir";
-import { GuestSlider } from "@/components/ddp/GuestSlider";
-import { PartnerStrip } from "@/components/ddp/PartnerStrip";
-
-import { BrandsMarquee } from "@/components/ddp/BrandsMarquee";
-import { MediaImpact } from "@/components/ddp/MediaImpact";
-import { VideoReel } from "@/components/ddp/VideoReel";
-import { QuoteWall } from "@/components/ddp/QuoteWall";
-
-import { FloatingCta } from "@/components/ddp/FloatingCta";
-import { useReveal } from "@/hooks/use-reveal";
+import { HomeLanding } from "@/components/ddp/HomeLanding";
+import { LandingProvider } from "@/i18n/LandingContext";
+import { landingEs } from "@/i18n/landing";
 import { faqSchema } from "@/data/faqSchema";
-
-const ManifestoBand = lazy(() => import("@/components/ddp/ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
-const FaqBand = lazy(() => import("@/components/ddp/FaqBand").then((m) => ({ default: m.FaqBand })));
-const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#FFFAF0" },
-      { title: "Diario del Poder — Entrevistas con jefes de Estado y CEOs" },
-      { name: "description", content: "Entrevistas largas con jefes de Estado, CEOs y altos directivos. Conversaciones sin guion, grabadas en Madrid y publicadas sin recortes." },
-      { property: "og:title", content: "Diario del Poder — Entrevistas con jefes de Estado y CEOs" },
-      { property: "og:description", content: "Entrevistas largas con jefes de Estado, CEOs y altos directivos. Sin guion, sin recortes." },
+      { title: landingEs.meta.title },
+      { name: "description", content: landingEs.meta.description },
+      { property: "og:title", content: landingEs.meta.ogTitle },
+      { property: "og:description", content: landingEs.meta.ogDescription },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Diario del Poder" },
-      { property: "og:locale", content: "es_ES" },
+      { property: "og:locale", content: landingEs.meta.ogLocale },
       { property: "og:url", content: "https://eldiariodelpoder.com/" },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
@@ -47,31 +33,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  useReveal();
-  return (
-    <div className="bg-background text-foreground">
-      <Navbar />
-      <main>
-        <HeroNoir />
-        <BrandsMarquee />
-        <MediaImpact />
-        <GuestSlider />
-        <PartnerStrip />
-        <VideoReel />
-        <QuoteWall />
-        <div className="cv-auto">
-          <Suspense fallback={<div aria-hidden style={{ minHeight: 560, contain: "layout paint" }} />}>
-            <ManifestoBand />
-          </Suspense>
-          <Suspense fallback={<div aria-hidden style={{ minHeight: 420, contain: "layout paint" }} />}>
-            <FaqBand />
-          </Suspense>
-        </div>
-      </main>
-      <Suspense fallback={null}>
-        <FooterGrid />
-      </Suspense>
-      <FloatingCta />
-    </div>
-  );
+  return <LandingProvider dict={landingEs}><HomeLanding /></LandingProvider>;
 }

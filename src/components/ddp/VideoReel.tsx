@@ -1,3 +1,4 @@
+import { useLanding, landingText } from "@/i18n/LandingContext";
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { episodeList } from "@/data/podcast";
@@ -19,6 +20,7 @@ const clips = [
 ].slice(0, 5) as typeof withVideo;
 
 export function VideoReel() {
+  const { dict } = useLanding();
   const [playing, setPlaying] = useState<string | null>(null);
   const [previewing, setPreviewing] = useState<string | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -46,7 +48,7 @@ export function VideoReel() {
     <section id="ver" className="section-pad overflow-hidden">
       <div className="container-ddp">
         <h2 className="reveal mx-auto max-w-[16ch] text-center text-xl font-medium leading-[1.02] tracking-tight md:text-2xl">
-          Escucha a quienes deciden,<br className="hidden md:block" /> sin recortes
+          {dict.reel.heading}<br className="hidden md:block" /> {dict.reel.headingEnd}
         </h2>
       </div>
 
@@ -57,6 +59,8 @@ export function VideoReel() {
       >
         {clips.map((e) => {
           const poster = IMAGE_OVERRIDE[e.slug] ?? e.image;
+          const title = dict.episodeTitleBySlug?.[e.slug] ?? e.title;
+          const label = landingText(dict.reel.episodeLabel, { guest: e.guest, title });
           const isPlaying = playing === e.youtubeId;
           const isPreviewing = !isPlaying && previewing === e.youtubeId;
           return (
@@ -69,7 +73,7 @@ export function VideoReel() {
                 {isPlaying ? (
                   <iframe
                     src={`https://www.youtube.com/embed/${e.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-                    title={`${e.guest} — ${e.title}`}
+                    title={label}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 h-full w-full"
@@ -77,13 +81,13 @@ export function VideoReel() {
                 ) : (
                   <button
                     type="button"
-                    onClick={() => setPlaying(e.youtubeId!)}
-                    aria-label={`Reproducir ${e.guest} — ${e.title}`}
+                    onClick={() => setPlaying(e.youtubeId ?? null)}
+                    aria-label={landingText(dict.reel.playLabel, { guest: e.guest, title })}
                     className="absolute inset-0 block h-full w-full cursor-pointer"
                   >
                     <img
                       src={poster}
-                      alt={`${e.guest} — ${e.title}`}
+                      alt={label}
                       loading="lazy"
                       decoding="async"
                       className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -91,7 +95,7 @@ export function VideoReel() {
                     {isPreviewing && (
                       <iframe
                         src={`https://www.youtube.com/embed/${e.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${e.youtubeId}&rel=0&modestbranding=1&playsinline=1`}
-                        title={`Vista previa de ${e.guest}`}
+                        title={landingText(dict.reel.previewTitle, { guest: e.guest })}
                         allow="autoplay; encrypted-media"
                         tabIndex={-1}
                         aria-hidden="true"
@@ -106,7 +110,7 @@ export function VideoReel() {
                     <span className="text-on-image pointer-events-none absolute inset-x-0 bottom-0 block p-5 text-left md:p-8">
                       <span className="mono-label block">{e.guest}</span>
                       <span className="mt-2 block max-w-[28ch] text-base font-medium leading-[1.1] tracking-tight md:text-xl">
-                        {e.title}
+                        {title}
                       </span>
                     </span>
                   </button>

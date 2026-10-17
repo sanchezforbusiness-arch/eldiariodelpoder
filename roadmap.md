@@ -22,3 +22,6 @@
 - [x] Crear la guía pilar con textos literales, episodios publicados y países.
 - [x] Actualizar entidad global, FAQ compartido, enlaces, sitemap y llms.txt con su generador.
 - [x] Verificar HTML, datos estructurados, preguntas y consola en móvil y escritorio.
+- [x] Extraer el diccionario y contexto de portada conservando todos los textos y atributos.
+- [x] Componer HomeLanding y desactivar traducción automática; reservar locales para fase 2.
+- [x] Comparar portada antes/después a 390 y 1440 px y comprobar páginas interiores.

@@ -1,3 +1,4 @@
+import { useLanding, landingText } from "@/i18n/LandingContext";
 import { Link } from "@tanstack/react-router";
 import { guestList } from "@/data/podcast";
 import { guestCardImageBySlug } from "@/data/guestImages";
@@ -43,6 +44,8 @@ const GUESTS = SLUG_ORDER.map((slug) => bySlug.get(slug)).filter(
 type Guest = (typeof GUESTS)[number];
 
 function GuestCard({ guest, className }: { guest: Guest; className: string }) {
+  const { dict } = useLanding();
+  const role = dict.guestRoleBySlug?.[guest.slug] ?? guest.role;
   const image = guestCardImageBySlug[guest.slug];
   return (
     <Link
@@ -67,14 +70,14 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
               {guest.name.split(" ").filter(Boolean).map((w) => w[0]).slice(0, 2).join("")}
             </span>
             <span className="text-2xs uppercase leading-relaxed tracking-label text-muted-foreground">
-              {guest.role}
+              {role}
             </span>
           </div>
         )}
       </div>
       <h3 className="notranslate mt-3 text-sm font-medium tracking-tight" translate="no">{guest.name}</h3>
       <p className="mt-1 font-serif text-xs font-light text-muted-foreground">
-        «{guest.role}»
+        {landingText(dict.guests.roleFormat, { role })}
       </p>
 
     </Link>
@@ -92,11 +95,12 @@ function Track() {
 }
 
 export function GuestSlider() {
+  const { dict } = useLanding();
   return (
- <section id="invitados" aria-label="Invitados" className="section-pad">
+ <section id="invitados" aria-label={dict.guests.ariaLabel} className="section-pad">
       <div className="container-ddp flex items-center justify-end gap-4">
         <Link to="/invitados" className="link-rule tap font-mono text-2xs uppercase tracking-label md:text-2xs">
-          Todos los invitados
+          {dict.guests.allButton}
         </Link>
       </div>
 

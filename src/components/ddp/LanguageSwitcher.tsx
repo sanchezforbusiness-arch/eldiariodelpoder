@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Globe, Check, Loader2 } from "lucide-react";
+import { useLanding } from "@/i18n/LandingContext";
 import {
   LANGS,
   SOURCE_LANG,
@@ -13,6 +14,7 @@ import {
 } from "@/lib/translator";
 
 export function LanguageSwitcher({ className = "" }: { className?: string }) {
+  const { dict } = useLanding();
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState(SOURCE_LANG);
   const [busy, setBusy] = useState(false);
@@ -70,7 +72,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-label="Cambiar idioma"
+        aria-label={dict.nav.languageLabel}
         data-no-translate
         className="notranslate flex h-11 items-center gap-1.5 font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors hover:text-foreground"
       >
@@ -96,7 +98,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
               onClick={() => choose(l.code)}
               className="flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left text-sm text-foreground transition-colors hover:bg-background"
             >
-              {l.label}
+              {dict.nav.languageNames[l.code] ?? l.label}
               {l.code === current && <Check size={14} className="text-signal" aria-hidden />}
             </button>
           ))}

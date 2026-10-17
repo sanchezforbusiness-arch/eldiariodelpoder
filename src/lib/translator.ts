@@ -16,6 +16,8 @@ export const LANGS: Lang[] = [
 
 export const SOURCE_LANG = "es";
 export const STORAGE_KEY = "ddp-lang";
+/** Reserved for phase 2; the selector does not navigate to these routes yet. */
+export const STATIC_LOCALES = { en: "/en", ar: "/ar" } as const;
 
 const SKIP_TAGS = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "CODE", "PRE", "SVG", "IFRAME", "CANVAS"]);
 const MIN_LEN = 2;
@@ -252,9 +254,9 @@ export function detectBrowserLang(): string {
   return SOURCE_LANG;
 }
 
-/** Idioma inicial: el elegido antes por el visitante o, si no, el de su navegador. */
+/** The URL remains in its source language until the visitor explicitly chooses. */
 export function getInitialLang(): string {
-  return getStoredLang() ?? detectBrowserLang();
+  return SOURCE_LANG;
 }
 
 export function setStoredLang(code: string) {

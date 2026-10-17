@@ -1,29 +1,21 @@
-import { faqSchema } from "@/data/faqSchema";
-import type { ReactNode } from "react";
-
-const FAQ: { q: string; a: ReactNode }[] = faqSchema.mainEntity.map((question, index) => ({
-    q: question.name,
-    a: index === 0 ? (
-      <>
-        Un podcast en español de entrevistas largas con expresidentes, CEOs y referentes, fundado en 2025 en Madrid por{" "}
-        <a
-          href="https://alejandrosanchezmartinez.com"
-          rel="me noreferrer"
-          className="transition-colors hover:text-signal"
-        >
-          Alejandro Sánchez Martínez
-        </a>{" "}
-        y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.
-      </>
-    ) : question.acceptedAnswer.text,
-}));
+import { useLanding } from "@/i18n/LandingContext";
 
 export function FaqBand() {
+  const { dict } = useLanding();
+  const FAQ = dict.faq.items.map((item, index) => {
+    const name = dict.faq.founderLinkText;
+    const position = index === 0 ? item.a.indexOf(name) : -1;
+    return { q: item.q, a: position < 0 ? item.a : <>{item.a.slice(0, position)}<a
+      href="https://alejandrosanchezmartinez.com"
+      rel="me noreferrer"
+      className="transition-colors hover:text-signal"
+    >{name}</a>{item.a.slice(position + name.length)}</> };
+  });
   return (
     <section className="section-pad">
       <div className="container-ddp">
         <h2 className="reveal font-serif text-2xl font-light leading-[0.95] tracking-tight">
-          Preguntas frecuentes
+          {dict.faq.heading}
         </h2>
 
         <dl className="reveal-stagger mt-10 grid gap-3 md:mt-12 md:gap-4">

@@ -1,20 +1,20 @@
+import { useLanding } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import heroStudio from "@/assets/hero-studio.webp";
 import { guestCardImageBySlug } from "@/data/guestImages";
-import { guestList } from "@/data/podcast";
 import { HeroVideoBg } from "./HeroVideoBg";
 
-const LINES = ["La voz", "del legado."];
 
 const FACES = [
-  { slug: "jose-maria-aznar", name: "José María Aznar" },
-  { slug: "guillermo-lasso", name: "Guillermo Lasso" },
-  { slug: "marcos-de-quinto", name: "Marcos de Quinto" },
-  { slug: "sonsoles-onega", name: "Sonsoles Ónega" },
+  { slug: "jose-maria-aznar" },
+  { slug: "guillermo-lasso" },
+  { slug: "marcos-de-quinto" },
+  { slug: "sonsoles-onega" },
 ];
 
 export function HeroNoir() {
+  const { dict } = useLanding();
   const [scrolled, setScrolled] = useState(0);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export function HeroNoir() {
           <div className="absolute inset-0 bg-background" />
           <img
             src={heroStudio}
-            alt="Grabación de Diario del Poder en estudio"
+            alt={dict.hero.imageAlt}
             width={1920}
             height={1083}
             fetchPriority="high"
@@ -64,7 +64,7 @@ export function HeroNoir() {
             <h1 className="type-hero font-sans font-medium">
               <span className="line-mask">
                 <span className="line-inner" style={{ "--i": 0 } as React.CSSProperties}>
-                  {LINES[0]}
+                  {dict.hero.lines[0]}
                 </span>
               </span>
               <span className="line-mask">
@@ -72,7 +72,7 @@ export function HeroNoir() {
                   className="line-inner font-serif font-light"
                   style={{ "--i": 1 } as React.CSSProperties}
                 >
-                  {LINES[1]}
+                  {dict.hero.lines[1]}
                 </span>
               </span>
             </h1>
@@ -84,7 +84,7 @@ export function HeroNoir() {
                   <img
                     key={f.slug}
                     src={guestCardImageBySlug[f.slug]}
-                    alt={f.name}
+                    alt={dict.hero.faceNames[f.slug]}
                     loading="lazy"
                     decoding="async"
                     width={96}
@@ -94,20 +94,20 @@ export function HeroNoir() {
                   />
                 ))}
               </span>
-              <span className="mono-label">+77 invitados confirmados</span>
+              <span className="mono-label">{dict.hero.confirmedGuests}</span>
             </div>
 
 
             <div className="mt-7 max-w-[48ch] md:mt-9">
               <p className="prose-editorial">
-                Nos sentamos con los mayores referentes del mundo para que dejen su legado a la juventud.
+                {dict.hero.description}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#ultimo" className="btn-primary w-full sm:w-auto">
-                  Ver el episodio
+                  {dict.hero.episodeButton}
                 </a>
                 <Link to="/invitados" className="btn-outline w-full sm:w-auto">
-                  Nuestros invitados
+                  {dict.hero.guestsButton}
                 </Link>
               </div>
             </div>
