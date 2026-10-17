@@ -25,6 +25,14 @@ export type PressItem = {
   authorIds?: string[];
   /** Fuente en la que se basa la pieza */
   isBasedOn?: string;
+  /** Metadatos de entrevistas de audio en medios externos. */
+  podcast?: {
+    duration: string;
+    seriesName: string;
+    seriesUrl: string;
+    station: string;
+    participantIds: string[];
+  };
 };
 
 import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
@@ -34,6 +42,29 @@ import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
+export const ALEJANDRO_INSTAGRAM = "https://www.instagram.com/alejandro.sanchez.martinez/";
+
+/** Marcado de audio compartido por prensa y las fichas de los entrevistados. */
+export function pressPodcastSchema(item: PressItem) {
+  const podcast = item.podcast;
+  if (!podcast) return undefined;
+  return {
+    "@type": "PodcastEpisode",
+    name: item.headline,
+    url: item.url,
+    datePublished: item.date,
+    description: item.summary,
+    duration: podcast.duration,
+    partOfSeries: {
+      "@type": "PodcastSeries",
+      name: podcast.seriesName,
+      url: podcast.seriesUrl,
+      publisher: { "@type": "RadioStation", name: podcast.station },
+    },
+    about: podcast.participantIds.map((id) => ({ "@id": id })),
+    actor: podcast.participantIds.map((id) => ({ "@id": id })),
+  };
+}
 
 export const ROSA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-rosa-lagarrigue";
 export const ROSA_LAVANGUARDIA_URL =
