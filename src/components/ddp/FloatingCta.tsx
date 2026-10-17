@@ -1,8 +1,10 @@
+import { useLanding, landingText } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 /** CTA flotante discreto: aparece cuando el héroe ya ha pasado. */
 export function FloatingCta() {
+  const { dict } = useLanding();
   const [show, setShow] = useState(false);
 
   useEffect(() => {

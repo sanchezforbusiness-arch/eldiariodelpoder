@@ -1,22 +1,25 @@
+import { useLanding, landingText } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
+export function Navbar() {
+  const { dict } = useLanding();
 const links = [
-  { to: "/episodios", label: "Episodios" },
-  { to: "/invitados", label: "Invitados" },
-  { to: "/nosotros", label: "Nosotros" },
-  { to: "/manifiesto", label: "Manifiesto" },
-  { to: "/newsletter", label: "Newsletter" },
-  { to: "/prensa", label: "Prensa" },
+  { to: "/episodios", label: dict.nav.labels["/episodios"] },
+  { to: "/invitados", label: dict.nav.labels["/invitados"] },
+  { to: "/nosotros", label: dict.nav.labels["/nosotros"] },
+  { to: "/manifiesto", label: dict.nav.labels["/manifiesto"] },
+  { to: "/newsletter", label: dict.nav.labels["/newsletter"] },
+  { to: "/prensa", label: dict.nav.labels["/prensa"] },
 ] as const;
 
 const secondary = [
-  { to: "/patrocinadores", label: "Patrocinadores" },
-  { to: "/agenda", label: "Agenda" },
+  { to: "/patrocinadores", label: dict.nav.labels["/patrocinadores"] },
+  { to: "/agenda", label: dict.nav.labels["/agenda"] },
 ] as const;
 
-export function Navbar() {
+
   const [hidden, setHidden] = useState(false);
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
@@ -71,7 +74,7 @@ export function Navbar() {
             hash="top"
             className="tap min-w-0 max-w-full truncate font-mono text-2xs uppercase tracking-label text-foreground lg:text-2xs"
           >
-            Diario del Poder
+            {dict.nav.brand}
           </Link>
         </div>
 
@@ -93,7 +96,7 @@ export function Navbar() {
 
         <div className="hidden items-center justify-end gap-6 lg:flex">
           <Link to="/patrocinadores" className="font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors hover:text-foreground">
-            Patrocinadores
+            {dict.nav.labels["/patrocinadores"]}
           </Link>
           <LanguageSwitcher />
         </div>
@@ -104,7 +107,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             className="-mr-2 flex h-12 w-12 flex-col items-end justify-center gap-[6px] pr-2"
             aria-expanded={open}
-            aria-label="Menú"
+            aria-label={dict.nav.menuLabel}
           >
             <span className={`block h-px w-6 bg-foreground transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
             <span className={`block h-px w-6 bg-foreground transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />

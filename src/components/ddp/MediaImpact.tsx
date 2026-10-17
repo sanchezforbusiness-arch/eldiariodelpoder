@@ -1,3 +1,4 @@
+import { useLanding, landingText } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Play } from "lucide-react";
@@ -20,6 +21,7 @@ const FEATURED_APPEARANCES = [
 ].filter((item): item is NonNullable<typeof item> => Boolean(item));
 
 export function MediaImpact() {
+  const { dict } = useLanding();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -45,26 +47,26 @@ export function MediaImpact() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] lg:gap-20">
           <div className="reveal">
             <h2 id="media-impact-title" className="type-section mt-5 max-w-[11ch]">
-              Apariciones en medios
+              {dict.media.heading}
             </h2>
             <Link
               to="/prensa"
               className="tap mt-7 inline-flex items-center gap-2 border-b border-foreground/40 text-sm font-medium transition-colors hover:border-foreground"
             >
-              Ver todas las apariciones
+              {dict.media.allButton}
               <ArrowUpRight aria-hidden className="h-4 w-4" />
             </Link>
           </div>
 
           <div className="reveal min-w-0">
-            <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} aria-label="Apariciones destacadas en televisión">
+            <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} aria-label={dict.media.carouselLabel}>
               <CarouselContent className="-ml-3">
                 {FEATURED_APPEARANCES.map((item) => (
                   <CarouselItem key={item.id} className="basis-[88%] pl-3 sm:basis-[68%] lg:basis-[62%]">
                     <figure className="group relative aspect-[16/10] overflow-hidden rounded-[28px] bg-card md:aspect-[16/9]">
                       <img
                         src={item.image}
-                        alt={item.alt}
+                        alt={(dict.media.appearanceById[item.id]?.alt ?? item.alt)}
                         width={1280}
                         height={720}
                         loading="lazy"
@@ -77,9 +79,9 @@ export function MediaImpact() {
                       </span>
                       <figcaption className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground md:p-8">
                         <p className="notranslate text-xs uppercase tracking-label text-primary-foreground/75" translate="no">
-                          {item.channel} · {item.program}
+                          {(dict.media.appearanceById[item.id]?.channel ?? item.channel)} · {(dict.media.appearanceById[item.id]?.program ?? item.program)}
                         </p>
-                        <h3 className="mt-3 line-clamp-2 max-w-[26ch] text-xl leading-tight md:text-2xl">{item.title}</h3>
+                        <h3 className="mt-3 line-clamp-2 max-w-[26ch] text-xl leading-tight md:text-2xl">{(dict.media.appearanceById[item.id]?.title ?? item.title)}</h3>
                       </figcaption>
                     </figure>
                   </CarouselItem>
@@ -89,7 +91,7 @@ export function MediaImpact() {
 
             <div className="mt-5 flex items-center justify-between">
               <p className="tabular text-xs text-muted-foreground" aria-live="polite">
-                {String(current + 1).padStart(2, "0")} / {String(FEATURED_APPEARANCES.length).padStart(2, "0")}
+                {landingText(dict.media.counter, { current: String(current + 1).padStart(2, "0"), total: String(FEATURED_APPEARANCES.length).padStart(2, "0") })}
               </p>
               <div className="flex gap-2">
                 <Button
@@ -98,7 +100,7 @@ export function MediaImpact() {
                   size="icon"
                   onClick={() => api?.scrollPrev()}
                   className="rounded-full border-border bg-transparent text-foreground hover:bg-foreground hover:text-background"
-                  aria-label="Aparición anterior"
+                  aria-label={dict.media.previousLabel}
                 >
                   <ArrowLeft aria-hidden />
                 </Button>
@@ -108,7 +110,7 @@ export function MediaImpact() {
                   size="icon"
                   onClick={() => api?.scrollNext()}
                   className="rounded-full border-border bg-foreground text-background hover:bg-foreground/85 hover:text-background"
-                  aria-label="Siguiente aparición"
+                  aria-label={dict.media.nextLabel}
                 >
                   <ArrowRight aria-hidden />
                 </Button>
