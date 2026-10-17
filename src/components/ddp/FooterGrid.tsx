@@ -1,4 +1,16 @@
 import { Link } from "@tanstack/react-router";
+import { CONTACT_EMAIL } from "@/data/contact";
+
+const MAIN_COUNTRIES = [
+  { slug: "mexico", name: "México" },
+  { slug: "colombia", name: "Colombia" },
+  { slug: "argentina", name: "Argentina" },
+  { slug: "espana", name: "España" },
+  { slug: "estados-unidos", name: "Estados Unidos" },
+  { slug: "peru", name: "Perú" },
+  { slug: "chile", name: "Chile" },
+  { slug: "venezuela", name: "Venezuela" },
+];
 
 const NAV = [
   { to: "/episodios", label: "Episodios" },
@@ -37,7 +49,7 @@ export function FooterGrid() {
             <Link to="/agenda" className="btn-primary w-full md:w-auto">
               Agendar una llamada
             </Link>
-            <a href="mailto:contacto@eldiariodelpoder.com" className="btn-outline w-full md:w-auto">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="btn-outline w-full md:w-auto">
               Escríbenos
             </a>
           </div>
@@ -47,10 +59,10 @@ export function FooterGrid() {
           <div className="md:col-span-4">
             <p className="mono-label">Contacto</p>
             <a
-              href="mailto:contacto@eldiariodelpoder.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="link-rule tap mt-4 flex items-center break-all font-mono text-2xs"
             >
-              contacto@eldiariodelpoder.com
+              {CONTACT_EMAIL}
             </a>
             <p className="mono-label mt-8">Madrid, España</p>
           </div>
@@ -81,6 +93,14 @@ export function FooterGrid() {
             </ul>
           </div>
         </div>
+
+        <nav aria-label="En tu país" className="mt-12 border-t border-border pt-8">
+          <p className="mono-label">En tu país</p>
+          <ul className="mt-4 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-5">
+            <li><Link to="/paises" className="tap flex items-center text-sm transition-colors hover:text-signal">Todos los países</Link></li>
+            {MAIN_COUNTRIES.map((country) => <li key={country.slug}><Link to="/paises/$slug" params={{ slug: country.slug }} className="tap flex items-center text-sm transition-colors hover:text-signal">{country.name}</Link></li>)}
+          </ul>
+        </nav>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-border py-6 md:flex-row md:items-center md:justify-between">
           <p className="mono-label">© {new Date().getFullYear()} Diario del Poder</p>
