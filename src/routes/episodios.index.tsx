@@ -45,7 +45,7 @@ export const Route = createFileRoute("/episodios/")({
               name: `${e.guest} — ${e.title}`,
               description: e.description,
               url: `https://eldiariodelpoder.com/episodios/${e.slug}`,
-              inLanguage: "es-ES",
+              inLanguage: "es",
               episodeNumber: e.episodeNumber,
               partOfSeries: {
 "@type": "PodcastSeries",
@@ -77,6 +77,7 @@ function EpisodiosPage() {
             CEOs y referentes. Cada episodio es una conversación sin guion sobre liderazgo,
             decisiones difíciles y legado. Disponible en YouTube y Spotify.
           </p>
+          <p className="mt-4 text-sm text-muted-foreground">¿Qué es Diario del Poder? <Link to="/podcast-de-liderazgo-en-espanol" className="link-rule">Lee la guía.</Link></p>
         </header>
         <Episodes />
  <section className="container-ddp py-12 md:py-24 border-t border-border">

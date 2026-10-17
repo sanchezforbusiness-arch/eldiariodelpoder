@@ -19,3 +19,6 @@
 - [x] Crear solicitudes de patrocinio con validación, protección antispam y acceso solo de inserción.
 - [x] Rehacer /patrocinadores con los textos exactos y actualizar el botón de Sponsors al formulario.
 - [x] Enviar, comprobar y borrar una solicitud de prueba; verificar móvil y escritorio y estado del correo (sin mecanismo existente, no se añadió).
+- [x] Crear la guía pilar con textos literales, episodios publicados y países.
+- [x] Actualizar entidad global, FAQ compartido, enlaces, sitemap y llms.txt con su generador.
+- [x] Verificar HTML, datos estructurados, preguntas y consola en móvil y escritorio.

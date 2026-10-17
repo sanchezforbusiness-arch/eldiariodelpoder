@@ -13,6 +13,7 @@ const MAIN_COUNTRIES = [
 ];
 
 const NAV = [
+  { to: "/podcast-de-liderazgo-en-espanol", label: "El podcast" },
   { to: "/episodios", label: "Episodios" },
   { to: "/invitados", label: "Invitados" },
   { to: "/newsletter", label: "Newsletter" },
