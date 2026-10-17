@@ -11,9 +11,9 @@ import {
 } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
 import { guestCardImageBySlug } from "@/data/guestImages";
-import { guestArticleBySlug, AGUIRRE_LAVANGUARDIA_ID, AGUIRRE_LAVANGUARDIA_URL, VICTOR_ID } from "@/data/press";
+import { guestArticleBySlug, AGUIRRE_LAVANGUARDIA_ID, AGUIRRE_LAVANGUARDIA_URL, VICTOR_ID, ALEJANDRO_INSTAGRAM } from "@/data/press";
 
-const ALEJANDRO_SAMEAS = ["https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/"];
+const ALEJANDRO_SAMEAS = ["https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/", ALEJANDRO_INSTAGRAM];
 
 const SITE = "https://eldiariodelpoder.com";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";

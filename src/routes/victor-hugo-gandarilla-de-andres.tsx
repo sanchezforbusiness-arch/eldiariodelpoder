@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, VICTOR_ID } from "@/data/press";
+import { pressArticles, pressPodcastSchema, VICTOR_ID } from "@/data/press";
 import victor from "@/assets/founder-victor.webp";
 
 const URL = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres";
@@ -57,7 +57,7 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
               "https://www.youtube.com/@eldiariodelpoder",
               "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
             ],
-            subjectOf: pressArticles.map((a) => ({
+            subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? ({
               "@type": "NewsArticle",
               ...(a.schemaId ? { "@id": a.schemaId } : {}),
               headline: a.headline,

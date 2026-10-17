@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
+import { ALEJANDRO_INSTAGRAM } from "@/data/press";
 
 import appCss from "../styles.css?url";
 
@@ -36,6 +37,7 @@ const founderAlejandro = {
     "https://alejandrosanchezmartinez.com",
     "https://eldiariodelpoder.com/alejandro-sanchez-martinez",
     "https://www.linkedin.com/in/alejandrosanchezmartinez",
+    ALEJANDRO_INSTAGRAM,
   ],
 };
 
