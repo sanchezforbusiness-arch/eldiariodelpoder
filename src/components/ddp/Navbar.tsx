@@ -25,7 +25,7 @@ const secondary = [
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
-  const overHero = pathname === "/";
+  const overHero = pathname === "/" || /^\/(en|ar)(\/|$)/.test(pathname) || (pathname.startsWith("/paises/") && pathname !== "/paises/espana");
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -70,7 +70,7 @@ const secondary = [
       <div className="container-ddp grid h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:h-16 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6">
         <div className="min-w-0">
           <Link
-            to="/"
+            to={dict.linkPrefix === "/en" ? "/en" : dict.linkPrefix === "/ar" ? "/ar" : "/"}
             hash="top"
             className="tap min-w-0 max-w-full truncate font-mono text-2xs uppercase tracking-label text-foreground lg:text-2xs"
           >

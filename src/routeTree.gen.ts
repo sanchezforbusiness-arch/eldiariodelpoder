@@ -21,6 +21,8 @@ import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as ArIndexRouteImport } from './routes/ar.index'
+import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
 import { Route as EpisodiosSlugRouteImport } from './routes/episodios.$slug'
 import { Route as InvitadosIndexRouteImport } from './routes/invitados.index'
@@ -98,6 +100,16 @@ const Char91DotwellKnownChar93OauthProtectedResourceRoute =
     path: '/.well-known/oauth-protected-resource',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ArIndexRoute = ArIndexRouteImport.update({
+  id: '/ar/',
+  path: '/ar/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EpisodiosIndexRoute = EpisodiosIndexRouteImport.update({
   id: '/episodios/',
   path: '/episodios/',
@@ -178,6 +190,8 @@ export interface FileRoutesByFullPath {
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
   '/paises/$slug': typeof PaisesSlugRoute
+  '/ar/': typeof ArIndexRoute
+  '/en/': typeof EnIndexRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
@@ -204,6 +218,8 @@ export interface FileRoutesByTo {
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
   '/paises/$slug': typeof PaisesSlugRoute
+  '/ar': typeof ArIndexRoute
+  '/en': typeof EnIndexRoute
   '/episodios': typeof EpisodiosIndexRoute
   '/invitados': typeof InvitadosIndexRoute
   '/newsletter': typeof NewsletterIndexRoute
@@ -231,6 +247,8 @@ export interface FileRoutesById {
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
   '/paises/$slug': typeof PaisesSlugRoute
+  '/ar/': typeof ArIndexRoute
+  '/en/': typeof EnIndexRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
@@ -259,6 +277,8 @@ export interface FileRouteTypes {
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
     | '/paises/$slug'
+    | '/ar/'
+    | '/en/'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
@@ -285,6 +305,8 @@ export interface FileRouteTypes {
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
     | '/paises/$slug'
+    | '/ar'
+    | '/en'
     | '/episodios'
     | '/invitados'
     | '/newsletter'
@@ -311,6 +333,8 @@ export interface FileRouteTypes {
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
     | '/paises/$slug'
+    | '/ar/'
+    | '/en/'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
@@ -338,6 +362,8 @@ export interface RootRouteChildren {
   NewsletterFeedDotjsonRoute: typeof NewsletterFeedDotjsonRoute
   NewsletterRssDotxmlRoute: typeof NewsletterRssDotxmlRoute
   PaisesSlugRoute: typeof PaisesSlugRoute
+  ArIndexRoute: typeof ArIndexRoute
+  EnIndexRoute: typeof EnIndexRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
   InvitadosIndexRoute: typeof InvitadosIndexRoute
   NewsletterIndexRoute: typeof NewsletterIndexRoute
@@ -430,6 +456,20 @@ declare module '@tanstack/react-router' {
       path: '/.well-known/oauth-protected-resource'
       fullPath: '/.well-known/oauth-protected-resource'
       preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ar/': {
+      id: '/ar/'
+      path: '/ar'
+      fullPath: '/ar/'
+      preLoaderRoute: typeof ArIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/episodios/': {
@@ -539,6 +579,8 @@ const rootRouteChildren: RootRouteChildren = {
   NewsletterFeedDotjsonRoute: NewsletterFeedDotjsonRoute,
   NewsletterRssDotxmlRoute: NewsletterRssDotxmlRoute,
   PaisesSlugRoute: PaisesSlugRoute,
+  ArIndexRoute: ArIndexRoute,
+  EnIndexRoute: EnIndexRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
   InvitadosIndexRoute: InvitadosIndexRoute,
   NewsletterIndexRoute: NewsletterIndexRoute,

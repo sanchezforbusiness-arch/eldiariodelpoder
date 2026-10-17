@@ -25,3 +25,7 @@
 - [x] Extraer el diccionario y contexto de portada conservando todos los textos y atributos.
 - [x] Componer HomeLanding y desactivar traducción automática; reservar locales para fase 2.
 - [x] Comparar portada antes/después a 390 y 1440 px y comprobar páginas interiores.
+- [x] Añadir diccionarios literales inglés, árabe y país; rutas propias y selector con enlaces reales.
+- [x] Adaptar 21 países con HomeLanding y conservar España; mantener horarios y FAQ en una instantánea.
+- [x] Añadir fuente árabe y ajustes RTL acotados; hreflang, sitemap y llms.txt.
+- [x] Verificar preservación, HTML servido, navegación y capturas a 390 y 1440 px.

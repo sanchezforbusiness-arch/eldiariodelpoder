@@ -15,13 +15,13 @@ const ManifestoBand = lazy(() => import("./ManifestoBand").then((m) => ({ defaul
 const FaqBand = lazy(() => import("./FaqBand").then((m) => ({ default: m.FaqBand })));
 const FooterGrid = lazy(() => import("./FooterGrid").then((m) => ({ default: m.FooterGrid })));
 
-export function HomeLanding({ afterHero, beforeFaq }: { afterHero?: ReactNode; beforeFaq?: ReactNode }) {
+export function HomeLanding({ afterHero, beforeFaq, mainLang }: { afterHero?: ReactNode; beforeFaq?: ReactNode; mainLang?: string }) {
   const { lang, dir } = useLanding();
   useReveal();
   return (
     <div className="bg-background text-foreground">
       <Navbar />
-      <main lang={lang} dir={dir}>
+      <main lang={mainLang ?? lang} dir={dir}>
         <HeroNoir />
         {afterHero}
         <BrandsMarquee />

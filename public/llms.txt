@@ -60,6 +60,8 @@ Co-fundador y host del podcast Diario del Poder. Top 10 de España en Marketing 
 Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#television
 
 ## Páginas
+- [English](https://eldiariodelpoder.com/en): Diario del Poder explained in English (interviews are in Spanish).
+- [العربية](https://eldiariodelpoder.com/ar): التعريف بالبرنامج باللغة العربية (المقابلات باللغة الإسبانية).
 
 - [Podcast de liderazgo en español](https://eldiariodelpoder.com/podcast-de-liderazgo-en-espanol): Qué es Diario del Poder, en qué se parece a The Diary of a CEO y cómo escucharlo.
 - [Países](https://eldiariodelpoder.com/paises): Hora de estreno y episodios recomendados en cada país hispanohablante.

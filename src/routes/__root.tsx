@@ -3,6 +3,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
 import { ALEJANDRO_INSTAGRAM } from "@/data/press";
+import { localeForPath } from "@/i18n/locale";
 
 import appCss from "../styles.css?url";
 
@@ -217,8 +218,10 @@ export const Route = createRootRoute({
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const lang = localeForPath(pathname);
   return (
-    <html lang="es">
+    <html lang={lang} dir={lang === "ar" ? "rtl" : undefined}>
       <head>
         <HeadContent />
       </head>

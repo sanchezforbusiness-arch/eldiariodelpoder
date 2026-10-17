@@ -3,6 +3,7 @@ import { HomeLanding } from "@/components/ddp/HomeLanding";
 import { LandingProvider } from "@/i18n/LandingContext";
 import { landingEs } from "@/i18n/landing";
 import { faqSchema } from "@/data/faqSchema";
+import { landingAlternates } from "@/i18n/landingHead";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/" }],
+    links: [{ rel: "canonical", href: "https://eldiariodelpoder.com/" }, ...landingAlternates],
     scripts: [
       {
         type: "application/ld+json",
