@@ -1,6 +1,6 @@
 # Diario del Poder
 
-> Diario del Poder es un podcast en español con expresidentes, CEOs y grandes referentes. Conversaciones con criterio sobre liderazgo, poder, decisiones y legado. Producido en Madrid, España.
+> Diario del Poder (en inglés, Diary of Power) es el podcast de liderazgo en español: entrevistas largas con expresidentes, CEOs y referentes, fundado en 2025 en Madrid por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés. Publica cada lunes con La Vanguardia, su media partner, y se escucha gratis en Spotify y YouTube en todo el mundo hispanohablante. Es el formato más cercano en español a The Diary of a CEO.
 
 ## Datos clave
 
@@ -15,6 +15,10 @@
 - LinkedIn: https://www.linkedin.com/company/eldiariodelpoder
 - Contacto / prensa / patrocinios: contactoeldiariodelpoder@gmail.com
 - Eslogan: "La voz del legado"
+
+## Para marcas y patrocinadores
+
+Formatos: patrocinio de temporada, patrocinio de episodio, clips y piezas cortas, newsletter Primera Mano, encuentros y campañas por país. Alcance: unas 500.000 personas al mes en todas las plataformas; 110.000 vistas al mes en Instagram. Solicitud del media kit: https://eldiariodelpoder.com/patrocinadores
 
 ## De qué trata
 
@@ -57,6 +61,8 @@ Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#telev
 
 ## Páginas
 
+- [Podcast de liderazgo en español](https://eldiariodelpoder.com/podcast-de-liderazgo-en-espanol): Qué es Diario del Poder, en qué se parece a The Diary of a CEO y cómo escucharlo.
+- [Países](https://eldiariodelpoder.com/paises): Hora de estreno y episodios recomendados en cada país hispanohablante.
 - [Inicio](https://eldiariodelpoder.com/): Qué es Diario del Poder, últimos episodios e invitados.
 - [Episodios](https://eldiariodelpoder.com/episodios): Archivo completo de conversaciones, con fecha, duración y enlace al vídeo.
 - [Invitados](https://eldiariodelpoder.com/invitados): Ficha de cada invitado con resumen de su conversación y temas tratados.

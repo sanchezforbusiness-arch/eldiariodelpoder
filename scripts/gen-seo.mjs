@@ -29,6 +29,8 @@ const guests = parse(
 
 const staticPages = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9" },
+  { path: "/paises", changefreq: "weekly", priority: "0.8" },
   { path: "/episodios", changefreq: "weekly", priority: "0.9" },
   { path: "/invitados", changefreq: "weekly", priority: "0.9" },
   { path: "/nosotros", changefreq: "monthly", priority: "0.8" },
@@ -79,6 +81,8 @@ const head = llms.slice(0, llms.indexOf("## Páginas") === -1 ? llms.length : ll
 const pages = `
 ## Páginas
 
+- [Podcast de liderazgo en español](${SITE}/podcast-de-liderazgo-en-espanol): Qué es Diario del Poder, en qué se parece a The Diary of a CEO y cómo escucharlo.
+- [Países](${SITE}/paises): Hora de estreno y episodios recomendados en cada país hispanohablante.
 - [Inicio](${SITE}/): Qué es Diario del Poder, últimos episodios e invitados.
 - [Episodios](${SITE}/episodios): Archivo completo de conversaciones, con fecha, duración y enlace al vídeo.
 - [Invitados](${SITE}/invitados): Ficha de cada invitado con resumen de su conversación y temas tratados.
