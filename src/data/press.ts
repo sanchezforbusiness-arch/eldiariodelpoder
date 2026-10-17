@@ -25,6 +25,14 @@ export type PressItem = {
   authorIds?: string[];
   /** Fuente en la que se basa la pieza */
   isBasedOn?: string;
+  /** Metadatos de entrevistas de audio en medios externos. */
+  podcast?: {
+    duration: string;
+    seriesName: string;
+    seriesUrl: string;
+    station: string;
+    participantIds: string[];
+  };
 };
 
 import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
@@ -34,6 +42,29 @@ import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
+export const ALEJANDRO_INSTAGRAM = "https://www.instagram.com/alejandro.sanchez.martinez/";
+
+/** Marcado de audio compartido por prensa y las fichas de los entrevistados. */
+export function pressPodcastSchema(item: PressItem) {
+  const podcast = item.podcast;
+  if (!podcast) return undefined;
+  return {
+    "@type": "PodcastEpisode",
+    name: item.headline,
+    url: item.url,
+    datePublished: item.date,
+    description: item.summary,
+    duration: podcast.duration,
+    partOfSeries: {
+      "@type": "PodcastSeries",
+      name: podcast.seriesName,
+      url: podcast.seriesUrl,
+      publisher: { "@type": "RadioStation", name: podcast.station },
+    },
+    about: podcast.participantIds.map((id) => ({ "@id": id })),
+    actor: podcast.participantIds.map((id) => ({ "@id": id })),
+  };
+}
 
 export const ROSA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-rosa-lagarrigue";
 export const ROSA_LAVANGUARDIA_URL =
@@ -140,6 +171,23 @@ export const pressItems: PressItem[] = [
     isBasedOn: "https://eldiariodelpoder.com/invitados/rosa-lagarrigue",
   },
   {
+    outlet: "Radio UASLP · 2 x 1",
+    context: "Entrevista en podcast · Audio",
+    label: "Entrevista en podcast · Audio",
+    url: "https://open.spotify.com/episode/17vhnK9phFjTLaeAGl3B1g",
+    headline: "La nueva generación frente al poder",
+    date: "2026-09-08",
+    kind: "radio",
+    summary: "Entrevista de 52 minutos a Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, cofundadores y hosts de El Diario del Poder, sobre lo que han aprendido entrevistando a líderes: humildad, capacidad de escuchar, empatía, propósito y el valor de atreverse a pedir.",
+    podcast: {
+      duration: "PT51M44S",
+      seriesName: "2 x 1",
+      seriesUrl: "https://open.spotify.com/show/5TboOk08IDWFZBphQyZYit",
+      station: "Radio UASLP",
+      participantIds: [ALEJANDRO_ID, VICTOR_ID],
+    },
+  },
+  {
     outlet: "La Vanguardia",
     context: "Media Partner — entrevista a Jordi Juan",
     url: "https://www.lavanguardia.com/podcast/20260527/11548978/jordi-juan-director-vanguardia-entrevista-podcast-diario-del-poder.html",
@@ -168,6 +216,34 @@ export const pressItems: PressItem[] = [
     headline: "Zapeando comenta el momento viral de la Reina Letizia con Diario del Poder",
     date: "2026-05-11",
     summary: "La Sexta emite el clip de los fundadores de Diario del Poder pidiendo una entrevista a la Reina Letizia.",
+  },
+  {
+    outlet: "20minutos",
+    kind: "digital",
+    date: "2026-05-11",
+    headline: "La reina Letizia les devuelve la pregunta a los estudiantes que querían entrevistarla: «Vosotros, ¿sobre qué preguntáis?»",
+    url: "https://www.20minutos.es/gente/reina-letizia-les-devuelve-pregunta-los-estudiantes-que-querian-entrevistarla-vosotros-sobre-que-preguntais_6968857_0.html",
+  },
+  {
+    outlet: "Lecturas",
+    kind: "digital",
+    date: "2026-05-11",
+    headline: "Una experta en realeza, sobre la reina Letizia: «Tiene una gran habilidad para reconducir situaciones inesperadas»",
+    url: "https://www.lecturas.com/realeza/experta-sobre-video-viral-reina-letizia-tiene-gran-habilidad-para-reconducir-situaciones-inesperadas-sin-generar-incomodidad-ni-humillacion-otra-persona_192656",
+  },
+  {
+    outlet: "Diez Minutos",
+    kind: "digital",
+    date: "2026-05-09",
+    headline: "La Reina Letizia se hace viral tras su reacción a una petición de entrevista: «Lo estáis consiguiendo»",
+    url: "https://www.diezminutos.es/familia-real/monarquia-espanola/a71259234/reina-letizia-reaccion-viral-entrevista-lo-estais-consiguiendo/",
+  },
+  {
+    outlet: "Semana",
+    kind: "digital",
+    date: "2026-05-09",
+    headline: "La Reina Letizia se vuelve viral por su reacción a una propuesta de entrevista: «Yo creo que lo estáis consiguiendo»",
+    url: "https://www.semana.es/realeza/reina-letizia-se-vuelve-viral-por-su-reaccion-propuesta-entrevista-yo-creo-que-estais-consiguiendo_2814249",
   },
   {
     outlet: "El Español",

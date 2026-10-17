@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, Globe, Linkedin } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { pressArticles } from "@/data/press";
@@ -11,12 +11,13 @@ export type FounderProfileProps = {
   img: string;
   linkedin: string;
   website?: string;
+  instagram?: string;
   lead: string;
   paragraphs: string[];
   facts: { label: string; value: string }[];
 };
 
-export function FounderProfile({ name, role, img, linkedin, website, lead, paragraphs, facts }: FounderProfileProps) {
+export function FounderProfile({ name, role, img, linkedin, website, instagram, lead, paragraphs, facts }: FounderProfileProps) {
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
@@ -51,6 +52,16 @@ export function FounderProfile({ name, role, img, linkedin, website, lead, parag
                   className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
                 >
                   <Globe size={16} /> Web personal
+                </a>
+              )}
+              {instagram && (
+                <a
+                  href={instagram}
+                  target="_blank"
+                  rel="me noopener"
+                  className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
+                >
+                  <Instagram size={16} /> Instagram
                 </a>
               )}
             </div>
