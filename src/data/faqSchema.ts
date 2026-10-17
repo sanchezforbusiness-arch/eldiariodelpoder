@@ -11,12 +11,20 @@ export const faqSchema = {
       name: "¿Qué es Diario del Poder?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Diario del Poder es un podcast en español de entrevistas largas con expresidentes, CEOs y grandes referentes internacionales. Conversaciones con criterio sobre liderazgo, poder y legado, producidas en Madrid.",
+        text: "Un podcast de entrevistas largas, fundado en 2025 en Madrid por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Quién está detrás de Diario del Poder?",
+      name: "¿Hay un podcast como The Diary of a CEO en español?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí: Diario del Poder sigue ese formato de conversaciones largas y sin guion con líderes de primer nivel, desde el mundo hispano y con foco en el poder y el legado.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Quién está detrás?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con un patronato de apoyo y La Vanguardia como media partner.",
@@ -24,26 +32,26 @@ export const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Dónde puedo escuchar Diario del Poder?",
+      name: "¿A quién entrevistáis?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "En Spotify (open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ), en YouTube (@eldiariodelpoder) y en eldiariodelpoder.com.",
+        text: "A quien ha tenido que decidir: jefes de Estado, presidentes, CEOs y referentes. Han pasado José María Aznar, Guillermo Lasso, Marcos de Quinto, Jordi Juan o Esperanza Aguirre.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Quiénes han sido invitados en el podcast?",
+      name: "¿Dónde se escucha?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Entre otros: José María Aznar, Guillermo Lasso, Esperanza Aguirre, Javier Tebas, Andrés Rodríguez (Forbes), Jordi Juan (La Vanguardia), Rosa Lagarrigue, José Carlos González Hurtado (EWTN), Martín Sellés (Farmaindustria), Arturo Coello, Miguel Anxo Bastos y Mikel Echavarren.",
+        text: "En YouTube y en Spotify, completo y sin recortes. También publicamos entrevistas con La Vanguardia.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Cómo puedo contactar con Diario del Poder para prensa o patrocinios?",
+      name: "¿Cómo os escribo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: `Escribiendo a ${CONTACT_EMAIL}.`,
+        text: `A ${CONTACT_EMAIL}: prensa, patrocinios o propuestas de invitados. Leemos todo y contestamos.`,
       },
     },
   ],

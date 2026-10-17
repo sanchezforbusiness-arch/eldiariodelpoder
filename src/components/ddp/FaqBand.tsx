@@ -1,10 +1,9 @@
-import { CONTACT_EMAIL } from "@/data/contact";
+import { faqSchema } from "@/data/faqSchema";
 import type { ReactNode } from "react";
 
-const FAQ: { q: string; a: ReactNode }[] = [
-  {
-    q: "¿Qué es Diario del Poder?",
-    a: (
+const FAQ: { q: string; a: ReactNode }[] = faqSchema.mainEntity.map((question, index) => ({
+    q: question.name,
+    a: index === 0 ? (
       <>
         Un podcast de entrevistas largas, fundado en 2025 en Madrid por{" "}
         <a
@@ -16,25 +15,8 @@ const FAQ: { q: string; a: ReactNode }[] = [
         </a>{" "}
         y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.
       </>
-    ),
-  },
-  {
-    q: "¿Quién está detrás?",
-    a: "Una redacción independiente fundada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, con un patronato de apoyo y La Vanguardia como media partner.",
-  },
-  {
-    q: "¿A quién entrevistáis?",
-    a: "A quien ha tenido que decidir: jefes de Estado, presidentes, CEOs y referentes. Han pasado José María Aznar, Guillermo Lasso, Marcos de Quinto, Jordi Juan o Esperanza Aguirre.",
-  },
-  {
-    q: "¿Dónde se escucha?",
-    a: "En YouTube y en Spotify, completo y sin recortes. También publicamos entrevistas con La Vanguardia.",
-  },
-  {
-    q: "¿Cómo os escribo?",
-    a: `A ${CONTACT_EMAIL}: prensa, patrocinios o propuestas de invitados. Leemos todo y contestamos.`,
-  },
-];
+    ) : question.acceptedAnswer.text,
+}));
 
 export function FaqBand() {
   return (
