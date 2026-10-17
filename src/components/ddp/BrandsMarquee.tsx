@@ -1,5 +1,5 @@
 import { landingEs } from "@/i18n/landing";
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 import apdLogo from "@/assets/logo-apd.png.asset.json";
 import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
 
@@ -28,12 +28,13 @@ export const BRANDS: Brand[] = [
 ];
 
 export function BrandMark({ domain, logo, name, className = "" }: { domain?: string; logo?: string; name: string; className?: string }) {
+  const { dict } = useLanding();
   if (logo) {
     // Asset propio: logotipo real de la marca (no recortado a cuadrado)
     return (
       <img
         src={logo}
-        alt=""
+        alt={dict.brands.logoAlt}
         aria-hidden
         decoding="async"
         width={24}
@@ -52,7 +53,7 @@ export function BrandMark({ domain, logo, name, className = "" }: { domain?: str
     <img
       src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`}
       srcSet={`https://www.google.com/s2/favicons?domain=${domain}&sz=128 2x, https://www.google.com/s2/favicons?domain=${domain}&sz=64 1x`}
-      alt=""
+      alt={dict.brands.logoAlt}
       aria-hidden
       decoding="async"
       width={24}

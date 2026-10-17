@@ -1,4 +1,4 @@
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 
 export function FaqBand() {
   const { dict } = useLanding();

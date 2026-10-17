@@ -1,17 +1,8 @@
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 /**
  * Bloque de partners: titular editorial a la izquierda y tarjetas "pinchadas"
  * ligeramente giradas a la derecha (media partner y partner estratégico).
  */
-
-type Partner = {
-  label: string;
-  name: string;
-  line: string;
-  href: string;
-  cta: string;
-  tilt: string;
-};
 
 const PARTNERS = [
   {

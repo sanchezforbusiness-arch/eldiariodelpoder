@@ -1,4 +1,4 @@
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 import { Link } from "@tanstack/react-router";
 
 export function ManifestoBand() {

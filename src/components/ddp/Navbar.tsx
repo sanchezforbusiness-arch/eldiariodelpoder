@@ -1,4 +1,4 @@
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { LanguageSwitcher } from "./LanguageSwitcher";
