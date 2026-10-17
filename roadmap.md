@@ -12,4 +12,4 @@
 - [x] Verificar la nueva portada editorial en escritorio y móvil.
 - [x] Rediseñar y verificar la lectura de cada edición en escritorio y móvil.
 - [x] Reordenar /prensa para abrir con la galería visual y añadir la captura de La Vanguardia a la pieza de Rosa Lagarrigue.
-- [ ] Añadir Instagram de Alejandro y cinco piezas de prensa con marcado de audio y verificar las fichas.
+- [x] Añadir Instagram de Alejandro y cinco piezas de prensa con marcado de audio y verificar las fichas.
