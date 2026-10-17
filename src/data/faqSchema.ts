@@ -11,7 +11,7 @@ export const faqSchema = {
       name: "¿Qué es Diario del Poder?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Un podcast de entrevistas largas, fundado en 2025 en Madrid por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.",
+        text: "Un podcast en español de entrevistas largas con expresidentes, CEOs y referentes, fundado en 2025 en Madrid por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés. La Vanguardia es nuestro media partner.",
       },
     },
     {
@@ -35,7 +35,7 @@ export const faqSchema = {
       name: "¿A quién entrevistáis?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A quien ha tenido que decidir: jefes de Estado, presidentes, CEOs y referentes. Han pasado José María Aznar, Guillermo Lasso, Marcos de Quinto, Jordi Juan o Esperanza Aguirre.",
+        text: "A quien ha tenido que decidir: jefes de Estado, presidentes, CEOs y referentes. Han pasado José María Aznar, Guillermo Lasso, Esperanza Aguirre, Andrés Rodríguez (Forbes) o Jordi Juan (La Vanguardia).",
       },
     },
     {
