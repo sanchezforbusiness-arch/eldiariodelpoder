@@ -21,7 +21,7 @@ const FEATURED_APPEARANCES = [
 ].filter((item): item is NonNullable<typeof item> => Boolean(item));
 
 export function MediaImpact() {
-  const { dict } = useLanding();
+  const { dict, dir } = useLanding();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -59,7 +59,7 @@ export function MediaImpact() {
           </div>
 
           <div className="reveal min-w-0">
-            <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} aria-label={dict.media.carouselLabel}>
+            <Carousel setApi={setApi} opts={{ loop: true, align: "start", direction: dir }} onKeyDownCapture={dir === "rtl" ? (event) => { if (event.key === "ArrowLeft") { event.preventDefault(); api?.scrollNext(); } else if (event.key === "ArrowRight") { event.preventDefault(); api?.scrollPrev(); } } : undefined} aria-label={dict.media.carouselLabel}>
               <CarouselContent className="-ml-3">
                 {FEATURED_APPEARANCES.map((item) => (
                   <CarouselItem key={item.id} className="basis-[88%] pl-3 sm:basis-[68%] lg:basis-[62%]">
