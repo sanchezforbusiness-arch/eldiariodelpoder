@@ -1514,3 +1514,4 @@ html:lang(ar) header .left-0 { left: auto; inset-inline-start: 0; }
 html:lang(ar) .btn-primary, html:lang(ar) .btn-outline { line-height: 1.5; white-space: normal; }
 html:lang(ar) [href^="mailto:"] { direction: ltr; unicode-bidi: isolate; }
 html:lang(ar) .notranslate[translate="no"] { unicode-bidi: isolate; }
+html:lang(ar) .tabular { direction: ltr; unicode-bidi: isolate; }

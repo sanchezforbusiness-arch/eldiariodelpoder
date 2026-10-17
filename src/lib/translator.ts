@@ -16,7 +16,7 @@ export const LANGS: Lang[] = [
 
 export const SOURCE_LANG = "es";
 export const STORAGE_KEY = "ddp-lang";
-/** Reserved for phase 2; the selector does not navigate to these routes yet. */
+/** Static landing editions; other languages remain opt-in translations. */
 export const STATIC_LOCALES = { en: "/en", ar: "/ar" } as const;
 
 const SKIP_TAGS = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "CODE", "PRE", "SVG", "IFRAME", "CANVAS"]);

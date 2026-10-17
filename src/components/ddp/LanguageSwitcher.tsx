@@ -104,7 +104,9 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
           className="notranslate surface-light absolute right-0 top-full z-50 mt-1 max-h-[70dvh] min-w-44 overflow-y-auto rounded-xl border border-border bg-card py-1 text-foreground shadow-lg"
         >
           {LANGS.map((l) => {
-            const href = staticLanguageHref(l.code, pathname);
+            const href = l.code in STATIC_LOCALES
+              ? STATIC_LOCALES[l.code as keyof typeof STATIC_LOCALES]
+              : staticLanguageHref(l.code, pathname);
             const content = <>{dict.nav.languageNames[l.code] ?? l.label}{l.code === current && <Check size={14} className="text-signal" aria-hidden />}</>;
             const optionClass = "flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left text-sm text-foreground transition-colors hover:bg-background";
             return href !== undefined ? (
