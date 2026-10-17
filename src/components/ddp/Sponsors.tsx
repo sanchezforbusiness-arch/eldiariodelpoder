@@ -1,24 +1,12 @@
-import { CONTACT_EMAIL } from "@/data/contact";
-import { useState } from "react";
-import { Mail, Copy, Check } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+
 import { BrandMark, BRANDS } from "@/components/ddp/BrandsMarquee";
 
 const sponsors = BRANDS;
 const partners = ["La Vanguardia"];
 
 export function Sponsors() {
-  const email = CONTACT_EMAIL;
-  const [revealed, setRevealed] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2200);
-    } catch { /* noop */ }
-  };
-
   return (
  <section id="sponsors" className="py-16 md:py-32 border-t border-border">
       <div className="container-ddp space-y-20">
@@ -47,33 +35,9 @@ export function Sponsors() {
           </div>
 
           <div className="mt-12 flex flex-col items-center gap-4">
-            {!revealed ? (
-              <button type="button" onClick={() => setRevealed(true)} className="btn-outline">
-                Quiero el media kit
-              </button>
-            ) : (
-              <div className="w-full max-w-xl border border-border rounded-sm bg-card/40 px-6 py-6 text-center">
-                <p className="text-2xs tracking-label uppercase text-foreground mb-3">Hablemos</p>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-                  <a
-                    href={`mailto:${email}?subject=Media%20Kit%20—%20Diario%20del%20Poder`}
-                    className="group inline-flex items-center justify-center gap-2 font-serif text-lg md:text-xl text-foreground hover:text-signal transition-colors break-all"
-                  >
-                    <Mail size={16} className="text-foreground shrink-0" />
-                    {email}
-                  </a>
-                  <button
-                    type="button"
-                    onClick={handleCopy}
-                    aria-label="Copiar correo"
-                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-2xs tracking-label uppercase border border-border text-muted-foreground hover:border-foreground/40 hover:text-signal transition-colors"
-                  >
-                    {copied ? <Check size={12} /> : <Copy size={12} />}
-                    {copied ? "Copiado" : "Copiar"}
-                  </button>
-                </div>
-              </div>
-            )}
+            <Button asChild className="btn-primary h-auto">
+              <Link to="/patrocinadores" hash="solicitud">Solicitar el media kit</Link>
+            </Button>
           </div>
         </div>
 
