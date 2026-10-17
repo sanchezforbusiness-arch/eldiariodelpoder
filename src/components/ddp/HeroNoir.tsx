@@ -1,9 +1,8 @@
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import heroStudio from "@/assets/hero-studio.webp";
 import { guestCardImageBySlug } from "@/data/guestImages";
-import { guestList } from "@/data/podcast";
 import { HeroVideoBg } from "./HeroVideoBg";
 
 
@@ -101,14 +100,14 @@ export function HeroNoir() {
 
             <div className="mt-7 max-w-[48ch] md:mt-9">
               <p className="prose-editorial">
-                Nos sentamos con los mayores referentes del mundo para que dejen su legado a la juventud.
+                {dict.hero.description}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#ultimo" className="btn-primary w-full sm:w-auto">
-                  Ver el episodio
+                  {dict.hero.episodeButton}
                 </a>
                 <Link to="/invitados" className="btn-outline w-full sm:w-auto">
-                  Nuestros invitados
+                  {dict.hero.guestsButton}
                 </Link>
               </div>
             </div>

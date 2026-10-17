@@ -1,4 +1,4 @@
-import { useLanding, landingText } from "@/i18n/LandingContext";
+import { useLanding } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
@@ -26,7 +26,7 @@ export function FloatingCta() {
         className="tap gap-2 rounded-sm border border-foreground bg-foreground px-5 py-3 font-mono text-2xs uppercase tracking-label text-background transition-colors duration-300 hover:bg-background hover:text-foreground"
       >
         <span className="h-1.5 w-1.5 rounded-full bg-signal" aria-hidden />
-        Hablemos
+        {dict.floatingCta.label}
       </Link>
     </div>
   );
