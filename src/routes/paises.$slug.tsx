@@ -6,16 +6,31 @@ import { Button } from "@/components/ui/button";
 import { CONTACT_EMAIL } from "@/data/contact";
 import { COUNTRY_REGIONS, countryList, getCountryBySlug } from "@/data/countries";
 import { countryPageData, COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "@/data/countryPage";
+import { HomeLanding } from "@/components/ddp/HomeLanding";
+import { CountryBand } from "@/components/ddp/CountryBand";
+import { CountrySponsor } from "@/components/ddp/CountrySponsor";
+import { LandingProvider } from "@/i18n/LandingContext";
+import { landingForCountry } from "@/i18n/landing.country";
 
 export const Route = createFileRoute("/paises/$slug")({
   loader: ({ params }) => {
     const country = getCountryBySlug(params.slug);
     if (!country) throw notFound();
-    return countryPageData(country);
+    const snapshot = countryPageData(country);
+    const landing = country.slug === "espana" ? null : landingForCountry(country);
+    if (landing) {
+      // Use the existing snapshot's schedule to avoid a date boundary between
+      // the visible country band, SSR, hydration and structured data.
+      landing.faq.items = [landing.faq.items[0], ...snapshot.faq.map(({ question, answer }) => ({ q: question, a: answer }))];
+    }
+    return { ...snapshot, landing };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "País no disponible — Diario del Poder" }, { name: "robots", content: "noindex" }] };
-    const { country, episodes, faq } = loaderData;
+    const { country, episodes } = loaderData;
+    const faq = loaderData.landing
+      ? loaderData.landing.faq.items.map(({ q, a }) => ({ question: q, answer: a }))
+      : loaderData.faq;
     const url = `${COUNTRY_SITE}/paises/${country.slug}`;
     return {
       meta: [
@@ -89,7 +104,14 @@ function CountryError({ reset }: ErrorComponentProps) {
 }
 
 function CountryPage() {
-  const { country, zones, episodes, faq } = Route.useLoaderData();
+  const { country, zones, episodes, faq, landing } = Route.useLoaderData();
+  if (landing) return (
+    <LandingProvider dict={landing} lang="es" dir="ltr">
+      <HomeLanding mainLang={country.locale}
+        afterHero={<CountryBand country={country} zones={zones} episodes={episodes} />}
+        beforeFaq={<CountrySponsor country={country} />} />
+    </LandingProvider>
+  );
   return (
     <div className="bg-background text-foreground">
       <Navbar />

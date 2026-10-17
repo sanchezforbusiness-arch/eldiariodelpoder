@@ -9,6 +9,8 @@ type Entry = { loc: string; lastmod?: string; changefreq: string; priority: stri
 function buildSitemap(newsletter: Entry[] = []) {
   const staticPages: Entry[] = [
     { loc: "/", changefreq: "weekly", priority: "1.0" },
+    { loc: "/en", changefreq: "weekly", priority: "0.8" },
+    { loc: "/ar", changefreq: "weekly", priority: "0.8" },
     { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9" },
     { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-13" },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9" },
