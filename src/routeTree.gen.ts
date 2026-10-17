@@ -16,6 +16,7 @@ import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
+import { Route as PodcastDeLiderazgoEnEspanolRouteImport } from './routes/podcast-de-liderazgo-en-espanol'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
@@ -69,6 +70,12 @@ const PatrocinadoresRoute = PatrocinadoresRouteImport.update({
   path: '/patrocinadores',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PodcastDeLiderazgoEnEspanolRoute =
+  PodcastDeLiderazgoEnEspanolRouteImport.update({
+    id: '/podcast-de-liderazgo-en-espanol',
+    path: '/podcast-de-liderazgo-en-espanol',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrensaRoute = PrensaRouteImport.update({
   id: '/prensa',
   path: '/prensa',
@@ -160,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
+  '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -185,6 +193,7 @@ export interface FileRoutesByTo {
   '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
+  '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -211,6 +220,7 @@ export interface FileRoutesById {
   '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
+  '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -238,6 +248,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/nosotros'
     | '/patrocinadores'
+    | '/podcast-de-liderazgo-en-espanol'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -263,6 +274,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/nosotros'
     | '/patrocinadores'
+    | '/podcast-de-liderazgo-en-espanol'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -288,6 +300,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/nosotros'
     | '/patrocinadores'
+    | '/podcast-de-liderazgo-en-espanol'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -314,6 +327,7 @@ export interface RootRouteChildren {
   McpRoute: typeof McpRoute
   NosotrosRoute: typeof NosotrosRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
+  PodcastDeLiderazgoEnEspanolRoute: typeof PodcastDeLiderazgoEnEspanolRoute
   PrensaRoute: typeof PrensaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
@@ -381,6 +395,13 @@ declare module '@tanstack/react-router' {
       path: '/patrocinadores'
       fullPath: '/patrocinadores'
       preLoaderRoute: typeof PatrocinadoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podcast-de-liderazgo-en-espanol': {
+      id: '/podcast-de-liderazgo-en-espanol'
+      path: '/podcast-de-liderazgo-en-espanol'
+      fullPath: '/podcast-de-liderazgo-en-espanol'
+      preLoaderRoute: typeof PodcastDeLiderazgoEnEspanolRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prensa': {
@@ -506,6 +527,7 @@ const rootRouteChildren: RootRouteChildren = {
   McpRoute: McpRoute,
   NosotrosRoute: NosotrosRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
+  PodcastDeLiderazgoEnEspanolRoute: PodcastDeLiderazgoEnEspanolRoute,
   PrensaRoute: PrensaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
