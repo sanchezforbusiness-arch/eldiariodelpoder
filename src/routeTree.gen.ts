@@ -28,6 +28,8 @@ import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
 import { Route as NewsletterFeedDotjsonRouteImport } from './routes/newsletter.feed[.]json'
 import { Route as NewsletterRssDotxmlRouteImport } from './routes/newsletter.rss[.]xml'
+import { Route as PaisesIndexRouteImport } from './routes/paises.index'
+import { Route as PaisesSlugRouteImport } from './routes/paises.$slug'
 import { Route as ApiNewsletterPublicarRouteImport } from './routes/api/newsletter/publicar'
 import { Route as NewsletterImagenNombreRouteImport } from './routes/newsletter.imagen.$nombre'
 
@@ -129,6 +131,16 @@ const NewsletterRssDotxmlRoute = NewsletterRssDotxmlRouteImport.update({
   path: '/newsletter/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PaisesIndexRoute = PaisesIndexRouteImport.update({
+  id: '/paises/',
+  path: '/paises/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaisesSlugRoute = PaisesSlugRouteImport.update({
+  id: '/paises/$slug',
+  path: '/paises/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiNewsletterPublicarRoute = ApiNewsletterPublicarRouteImport.update({
   id: '/api/newsletter/publicar',
   path: '/api/newsletter/publicar',
@@ -157,9 +169,11 @@ export interface FileRoutesByFullPath {
   '/newsletter/$slug': typeof NewsletterSlugRoute
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
+  '/paises/$slug': typeof PaisesSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
+  '/paises/': typeof PaisesIndexRoute
   '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
   '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
 }
@@ -180,9 +194,11 @@ export interface FileRoutesByTo {
   '/newsletter/$slug': typeof NewsletterSlugRoute
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
+  '/paises/$slug': typeof PaisesSlugRoute
   '/episodios': typeof EpisodiosIndexRoute
   '/invitados': typeof InvitadosIndexRoute
   '/newsletter': typeof NewsletterIndexRoute
+  '/paises': typeof PaisesIndexRoute
   '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
   '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
 }
@@ -204,9 +220,11 @@ export interface FileRoutesById {
   '/newsletter/$slug': typeof NewsletterSlugRoute
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
+  '/paises/$slug': typeof PaisesSlugRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
+  '/paises/': typeof PaisesIndexRoute
   '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
   '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
 }
@@ -229,9 +247,11 @@ export interface FileRouteTypes {
     | '/newsletter/$slug'
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
+    | '/paises/$slug'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
+    | '/paises/'
     | '/api/newsletter/publicar'
     | '/newsletter/imagen/$nombre'
   fileRoutesByTo: FileRoutesByTo
@@ -252,9 +272,11 @@ export interface FileRouteTypes {
     | '/newsletter/$slug'
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
+    | '/paises/$slug'
     | '/episodios'
     | '/invitados'
     | '/newsletter'
+    | '/paises'
     | '/api/newsletter/publicar'
     | '/newsletter/imagen/$nombre'
   id:
@@ -275,9 +297,11 @@ export interface FileRouteTypes {
     | '/newsletter/$slug'
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
+    | '/paises/$slug'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
+    | '/paises/'
     | '/api/newsletter/publicar'
     | '/newsletter/imagen/$nombre'
   fileRoutesById: FileRoutesById
@@ -299,9 +323,11 @@ export interface RootRouteChildren {
   NewsletterSlugRoute: typeof NewsletterSlugRoute
   NewsletterFeedDotjsonRoute: typeof NewsletterFeedDotjsonRoute
   NewsletterRssDotxmlRoute: typeof NewsletterRssDotxmlRoute
+  PaisesSlugRoute: typeof PaisesSlugRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
   InvitadosIndexRoute: typeof InvitadosIndexRoute
   NewsletterIndexRoute: typeof NewsletterIndexRoute
+  PaisesIndexRoute: typeof PaisesIndexRoute
   ApiNewsletterPublicarRoute: typeof ApiNewsletterPublicarRoute
   NewsletterImagenNombreRoute: typeof NewsletterImagenNombreRoute
 }
@@ -441,6 +467,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsletterRssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/paises/': {
+      id: '/paises/'
+      path: '/paises'
+      fullPath: '/paises/'
+      preLoaderRoute: typeof PaisesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paises/$slug': {
+      id: '/paises/$slug'
+      path: '/paises/$slug'
+      fullPath: '/paises/$slug'
+      preLoaderRoute: typeof PaisesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/newsletter/publicar': {
       id: '/api/newsletter/publicar'
       path: '/api/newsletter/publicar'
@@ -476,9 +516,11 @@ const rootRouteChildren: RootRouteChildren = {
   NewsletterSlugRoute: NewsletterSlugRoute,
   NewsletterFeedDotjsonRoute: NewsletterFeedDotjsonRoute,
   NewsletterRssDotxmlRoute: NewsletterRssDotxmlRoute,
+  PaisesSlugRoute: PaisesSlugRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
   InvitadosIndexRoute: InvitadosIndexRoute,
   NewsletterIndexRoute: NewsletterIndexRoute,
+  PaisesIndexRoute: PaisesIndexRoute,
   ApiNewsletterPublicarRoute: ApiNewsletterPublicarRoute,
   NewsletterImagenNombreRoute: NewsletterImagenNombreRoute,
 }

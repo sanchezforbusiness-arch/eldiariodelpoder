@@ -7,13 +7,13 @@
 - Nombre: Diario del Poder (DDP)
 - Formato: Podcast de entrevistas largas (video + audio)
 - Idioma: Español
-- País: España (Madrid)
+- Sede: Madrid, España · Audiencia: todo el mundo hispanohablante (España, América y Estados Unidos)
 - Web oficial: https://eldiariodelpoder.com
 - Spotify: https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ
 - YouTube: https://www.youtube.com/@eldiariodelpoder
 - Instagram: https://www.instagram.com/eldiariodelpoder/
 - LinkedIn: https://www.linkedin.com/company/eldiariodelpoder
-- Contacto / prensa / patrocinios: contacto@eldiariodelpoder.com
+- Contacto / prensa / patrocinios: contactoeldiariodelpoder@gmail.com
 - Eslogan: "La voz del legado"
 
 ## De qué trata
@@ -67,6 +67,31 @@ Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#telev
 - [Agenda](https://eldiariodelpoder.com/agenda): Reservar una llamada con la redacción.
 - [Alejandro Sánchez Martínez](https://eldiariodelpoder.com/alejandro-sanchez-martinez): Co-fundador y host. Web personal: https://alejandrosanchezmartinez.com
 - [Víctor Hugo Gandarilla de Andrés](https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres): Co-fundador y host.
+
+## Por país
+
+- [Diario del Poder en México](https://eldiariodelpoder.com/paises/mexico): El podcast en español con expresidentes, CEOs y referentes, para quien lidera en México. Entrevistas largas sobre poder, empresa y legado.
+- [Diario del Poder en Colombia](https://eldiariodelpoder.com/paises/colombia): Entrevistas largas en español con expresidentes, CEOs y referentes. El podcast de liderazgo y poder para quien decide en Colombia.
+- [Diario del Poder en Argentina](https://eldiariodelpoder.com/paises/argentina): Economía, poder y empresa en conversaciones largas en español. Expresidentes, CEOs y pensadores en el podcast Diario del Poder.
+- [Diario del Poder en Perú](https://eldiariodelpoder.com/paises/peru): El podcast en español sobre liderazgo, poder y empresa. Expresidentes, CEOs y referentes en entrevistas largas. Para quien decide en Perú.
+- [Diario del Poder en Venezuela](https://eldiariodelpoder.com/paises/venezuela): Poder, libertad económica y empresa en entrevistas largas en español. El podcast Diario del Poder, para venezolanos dentro y fuera del país.
+- [Diario del Poder en Chile](https://eldiariodelpoder.com/paises/chile): Entrevistas largas en español con expresidentes, CEOs y referentes. Liderazgo, economía y empresa para quien decide en Chile.
+- [Diario del Poder en Ecuador](https://eldiariodelpoder.com/paises/ecuador): Guillermo Lasso, expresidente de Ecuador, en el podcast Diario del Poder. Entrevistas largas en español con líderes, CEOs y referentes.
+- [Diario del Poder en Guatemala](https://eldiariodelpoder.com/paises/guatemala): El podcast en español con expresidentes, CEOs y referentes. Liderazgo, empresa e instituciones para quien decide en Guatemala.
+- [Diario del Poder en Cuba](https://eldiariodelpoder.com/paises/cuba): Entrevistas largas en español sobre poder, libertad y empresa. Diario del Poder, para cubanos en la isla, Miami y Madrid. Gratis en YouTube.
+- [Diario del Poder en Bolivia](https://eldiariodelpoder.com/paises/bolivia): Economía, poder y empresa en entrevistas largas en español. Expresidentes, CEOs y referentes en el podcast Diario del Poder, para Bolivia.
+- [Diario del Poder en República Dominicana](https://eldiariodelpoder.com/paises/republica-dominicana): El podcast en español con expresidentes, CEOs y referentes. Empresa, inversión y liderazgo para quien decide en República Dominicana.
+- [Diario del Poder en Honduras](https://eldiariodelpoder.com/paises/honduras): Entrevistas largas en español con expresidentes, CEOs y referentes. Liderazgo, instituciones y empresa para Honduras y su diáspora.
+- [Diario del Poder en Paraguay](https://eldiariodelpoder.com/paises/paraguay): Economía, empresa y poder en entrevistas largas en español. Expresidentes, CEOs y referentes en el podcast Diario del Poder, para Paraguay.
+- [Diario del Poder en El Salvador](https://eldiariodelpoder.com/paises/el-salvador): Bitcoin, dinero y poder en entrevistas largas en español. Expresidentes, CEOs y economistas en el podcast Diario del Poder, para El Salvador.
+- [Diario del Poder en Nicaragua](https://eldiariodelpoder.com/paises/nicaragua): Entrevistas largas en español sobre poder, instituciones y empresa. Diario del Poder, para nicaragüenses en el país, Costa Rica, Miami y Madrid.
+- [Diario del Poder en Costa Rica](https://eldiariodelpoder.com/paises/costa-rica): El podcast en español con expresidentes, CEOs y referentes. Liderazgo, empresa e instituciones para quien decide en Costa Rica.
+- [Diario del Poder en Panamá](https://eldiariodelpoder.com/paises/panama): Finanzas, empresa y poder en entrevistas largas en español. Expresidentes, CEOs y referentes en el podcast Diario del Poder, para Panamá.
+- [Diario del Poder en Uruguay](https://eldiariodelpoder.com/paises/uruguay): Entrevistas largas en español con expresidentes, CEOs y referentes. Liderazgo, instituciones y empresa para quien decide en Uruguay.
+- [Diario del Poder en Puerto Rico](https://eldiariodelpoder.com/paises/puerto-rico): Música, empresa e inversión en entrevistas largas en español. Expresidentes, CEOs y referentes en el podcast Diario del Poder, para Puerto Rico.
+- [Diario del Poder en Guinea Ecuatorial](https://eldiariodelpoder.com/paises/guinea-ecuatorial): Diario del Poder, el podcast de liderazgo en español, también para Guinea Ecuatorial, el único país africano con el español como lengua oficial.
+- [Diario del Poder en Estados Unidos](https://eldiariodelpoder.com/paises/estados-unidos): El podcast de liderazgo en español para la audiencia hispana de Estados Unidos. Expresidentes, CEOs y referentes en entrevistas largas.
+- [Diario del Poder en España](https://eldiariodelpoder.com/paises/espana): El podcast español de entrevistas con expresidentes, CEOs y referentes, publicado con La Vanguardia. Liderazgo, poder y legado desde Madrid.
 
 ## Episodios
 

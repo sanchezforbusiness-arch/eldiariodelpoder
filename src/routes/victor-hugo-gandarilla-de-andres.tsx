@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
@@ -135,7 +136,7 @@ function Page() {
         { label: "Base", value: "España" },
         { label: "Reconocimiento", value: "Top 10 España en Marketing y Comunicación (Nova 111)" },
         { label: "Formación", value: "Universidad de Navarra" },
-        { label: "Contacto", value: "contacto@eldiariodelpoder.com" },
+        { label: "Contacto", value: CONTACT_EMAIL },
       ]}
     />
   );

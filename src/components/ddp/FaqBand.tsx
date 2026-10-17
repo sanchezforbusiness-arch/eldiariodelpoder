@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import type { ReactNode } from "react";
 
 const FAQ: { q: string; a: ReactNode }[] = [
@@ -31,7 +32,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "¿Cómo os escribo?",
-    a: "A contacto@eldiariodelpoder.com: prensa, patrocinios o propuestas de invitados. Leemos todo y contestamos.",
+    a: `A ${CONTACT_EMAIL}: prensa, patrocinios o propuestas de invitados. Leemos todo y contestamos.`,
   },
 ];
 

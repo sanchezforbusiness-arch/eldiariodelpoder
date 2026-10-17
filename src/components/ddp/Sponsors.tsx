@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
 import { BrandMark, BRANDS } from "@/components/ddp/BrandsMarquee";
@@ -6,7 +7,7 @@ const sponsors = BRANDS;
 const partners = ["La Vanguardia"];
 
 export function Sponsors() {
-  const email = "patrocinios@eldiariodelpoder.com";
+  const email = CONTACT_EMAIL;
   const [revealed, setRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
 

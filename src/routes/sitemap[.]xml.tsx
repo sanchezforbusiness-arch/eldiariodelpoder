@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { episodeList, guestList } from "@/data/podcast";
+import { countryList } from "@/data/countries";
 
 const SITE = "https://eldiariodelpoder.com";
 
 type Entry = { loc: string; lastmod?: string; changefreq: string; priority: string };
 
 function buildSitemap(newsletter: Entry[] = []) {
-  const today = new Date().toISOString().slice(0, 10);
-
   const staticPages: Entry[] = [
-    { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
+    { loc: "/", changefreq: "weekly", priority: "1.0" },
     { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-13" },
-    { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: today },
-    { loc: "/newsletter", changefreq: "daily", priority: "0.9", lastmod: today },
+    { loc: "/invitados", changefreq: "weekly", priority: "0.9" },
+    { loc: "/newsletter", changefreq: "daily", priority: "0.9" },
+    { loc: "/paises", changefreq: "weekly", priority: "0.8" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
     { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-13" },
@@ -37,7 +37,11 @@ function buildSitemap(newsletter: Entry[] = []) {
     priority: "0.7",
   }));
 
-  const all = [...staticPages, ...episodes, ...guests, ...newsletter];
+  const countries: Entry[] = countryList.map((country) => ({
+    loc: `/paises/${country.slug}`,
+    changefreq: "monthly", priority: "0.7", lastmod: "2026-10-18",
+  }));
+  const all = [...staticPages, ...episodes, ...guests, ...countries, ...newsletter];
 
   const body = all
     .map(
@@ -54,21 +58,27 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         let newsletter: Entry[] = [];
-        try {
-          const { createPublicServerClient } = await import("@/lib/supabase-public.server");
-          const { data } = await createPublicServerClient()
+        const { createPublicServerClient } = await import("@/lib/supabase-public.server");
+        const client = createPublicServerClient();
+        const pageSize = 500;
+        for (let offset = 0; ; offset += pageSize) {
+          const { data, error } = await client
             .from("newsletter_ediciones")
             .select("slug, fecha")
             .eq("publicada", true)
-            .order("fecha", { ascending: false });
-          newsletter = (data ?? []).map((e) => ({
+            .order("fecha", { ascending: false })
+            .order("slug", { ascending: true })
+            .range(offset, offset + pageSize - 1);
+          if (error || !data) {
+            return new Response("Sitemap temporalmente no disponible", { status: 503 });
+          }
+          newsletter.push(...data.map((e) => ({
             loc: `/newsletter/${e.slug}`,
             lastmod: e.fecha,
             changefreq: "monthly",
             priority: "0.8",
-          }));
-        } catch {
-          newsletter = [];
+          })));
+          if (data.length < pageSize) break;
         }
 
         return new Response(buildSitemap(newsletter), {

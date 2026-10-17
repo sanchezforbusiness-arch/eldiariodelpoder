@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
@@ -161,7 +162,7 @@ function Page() {
         { label: "Cargos", value: "Presidente de Kifaru Club · Talent Agent en Nova Talent · Responsable de embajadores de la 111 List" },
         { label: "Temas", value: "Liderazgo, poder, empresa, legado" },
         { label: "Web", value: "alejandrosanchezmartinez.com" },
-        { label: "Contacto", value: "contacto@eldiariodelpoder.com" },
+        { label: "Contacto", value: CONTACT_EMAIL },
       ]}
     />
   );

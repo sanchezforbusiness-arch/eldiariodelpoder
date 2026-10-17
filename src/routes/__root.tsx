@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
 import { ALEJANDRO_INSTAGRAM } from "@/data/press";
@@ -61,7 +62,7 @@ const structuredData = {
       logo: SITE_IMAGE,
       foundingDate: "2025",
       foundingLocation: "Madrid, España",
-      email: "contacto@eldiariodelpoder.com",
+      email: CONTACT_EMAIL,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Madrid",
@@ -69,7 +70,7 @@ const structuredData = {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        email: "contacto@eldiariodelpoder.com",
+        email: CONTACT_EMAIL,
         contactType: "Contacto general",
         areaServed: "ES",
         availableLanguage: ["Spanish", "English"],
