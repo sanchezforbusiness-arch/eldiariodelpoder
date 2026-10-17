@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
@@ -206,10 +207,10 @@ function Contact() {
               <ArrowUpRight size={14} />
             </Link>
             <a
-              href="mailto:patrocinios@eldiariodelpoder.com?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder"
+              href={`mailto:${CONTACT_EMAIL}?subject=Patrocinadores%20%E2%80%94%20Diario%20del%20Poder`}
               className="text-sm text-muted-foreground hover:text-signal transition-colors sm:text-right"
             >
-              patrocinios@eldiariodelpoder.com
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>

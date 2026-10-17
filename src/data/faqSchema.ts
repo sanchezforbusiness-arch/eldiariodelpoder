@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 const SITE_URL = "https://eldiariodelpoder.com";
 
 export const faqSchema = {
@@ -42,7 +43,7 @@ export const faqSchema = {
       name: "¿Cómo puedo contactar con Diario del Poder para prensa o patrocinios?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Escribiendo a contacto@eldiariodelpoder.com.",
+        text: `Escribiendo a ${CONTACT_EMAIL}.`,
       },
     },
   ],

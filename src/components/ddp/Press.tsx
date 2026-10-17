@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/data/contact";
 import { ArrowUpRight, Quote, Radio, Tv, Newspaper, Globe2 } from "lucide-react";
 import { pressItems } from "@/data/press";
 
@@ -220,13 +221,13 @@ export function Press() {
             </h3>
           </div>
           <a
-            href="mailto:prensa@eldiariodelpoder.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="group flex w-full items-center justify-between gap-4 border border-border hover:border-foreground/40 rounded-sm p-5 md:gap-6 md:p-8 transition-colors"
           >
             <div className="min-w-0">
               <p className="text-2xs tracking-label uppercase text-muted-foreground mb-2">Email</p>
               <p className="font-serif text-base leading-tight break-all text-foreground group-hover:text-signal transition-colors sm:text-xl md:text-2xl">
-                prensa@eldiariodelpoder.com
+                {CONTACT_EMAIL}
               </p>
             </div>
             <ArrowUpRight size={28} className="text-muted-foreground group-hover:text-signal group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0" />
