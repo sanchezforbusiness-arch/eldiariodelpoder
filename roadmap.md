@@ -13,6 +13,6 @@
 - [x] Rediseñar y verificar la lectura de cada edición en escritorio y móvil.
 - [x] Reordenar /prensa para abrir con la galería visual y añadir la captura de La Vanguardia a la pieza de Rosa Lagarrigue.
 - [x] Añadir Instagram de Alejandro y cinco piezas de prensa con marcado de audio y verificar las fichas.
-- [ ] Centralizar todos los correos en CONTACT_EMAIL.
-- [ ] Crear las 22 fichas por país y el índice con los textos literales y marcado solicitado.
-- [ ] Añadir enlazado, sitemap y llms.txt; verificar horarios, rutas y ausencia de correos del dominio.
+- [x] Centralizar todos los correos en CONTACT_EMAIL.
+- [x] Crear las 22 fichas por país y el índice con los textos literales y marcado solicitado.
+- [x] Añadir enlazado, sitemap y llms.txt; verificar horarios, rutas y ausencia de correos del dominio.

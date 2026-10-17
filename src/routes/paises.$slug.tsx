@@ -111,7 +111,7 @@ function CountryPage() {
           <div className="container-ddp">
             <h2 className="text-xl font-medium md:text-2xl">Estreno semanal</h2>
             <ul className="mt-6 space-y-3">
-              {zones.map((zone) => <li key={zone.tz} className="mono-label leading-relaxed">{zone.label}: cada {zone.weekday} a las {zone.time}</li>)}
+              {zones.map((zone) => <li key={zone.tz} className="font-(family-name:--font-mono) text-sm leading-relaxed">{zone.label}: cada {zone.weekday} a las {zone.time}</li>)}
             </ul>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">La Vanguardia publica una nueva conversación cada lunes a las 15:00, hora de Madrid</p>
           </div>
