@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
-import { pressArticles } from "@/data/press";
+import { pressArticles, type PressItem } from "@/data/press";
 import { guestList } from "@/data/podcast";
 
 export type FounderProfileProps = {
@@ -15,9 +15,11 @@ export type FounderProfileProps = {
   lead: string;
   paragraphs: string[];
   facts: { label: string; value: string }[];
+  vanguardia?: PressItem[];
+  vanguardiaFaq?: { q: string; a: string };
 };
 
-export function FounderProfile({ name, role, img, linkedin, website, instagram, lead, paragraphs, facts }: FounderProfileProps) {
+export function FounderProfile({ name, role, img, linkedin, website, instagram, lead, paragraphs, facts, vanguardia, vanguardiaFaq }: FounderProfileProps) {
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
@@ -115,6 +117,34 @@ export function FounderProfile({ name, role, img, linkedin, website, instagram, 
             ))}
           </ul>
         </section>
+
+ {vanguardia && vanguardia.length > 0 && (
+          <section className="container-ddp py-12 md:py-24 border-t border-border">
+            <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-8">En La Vanguardia</h2>
+            <ul className="space-y-8 max-w-3xl">
+              {vanguardia.map((a) => (
+                <li key={a.url}>
+                  <p className="mono-label mb-1">{a.date ? a.date.slice(0, 10).split("-").reverse().join("/") : ""}</p>
+                  <a
+                    href={a.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-serif text-xl md:text-2xl leading-snug hover:text-signal transition-colors inline-flex items-start gap-2"
+                  >
+                    {a.headline} <ArrowUpRight size={16} className="mt-2 shrink-0" />
+                  </a>
+                  <blockquote className="mt-2 text-sm text-muted-foreground leading-relaxed">«{a.founderQuote}»</blockquote>
+                </li>
+              ))}
+            </ul>
+            {vanguardiaFaq && (
+              <details className="mt-10 max-w-3xl border-t border-border pt-6">
+                <summary className="cursor-pointer text-base font-medium">{vanguardiaFaq.q}</summary>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{vanguardiaFaq.a}</p>
+              </details>
+            )}
+          </section>
+        )}
 
  <section className="container-ddp py-12 md:py-24 border-t border-border">
           <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-8">

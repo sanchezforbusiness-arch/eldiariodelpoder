@@ -23,6 +23,8 @@ export type PressItem = {
   schemaId?: string;
   /** @id de las personas que firman la pieza */
   authorIds?: string[];
+  /** Cita literal del cuerpo que nombra a los fundadores con los dos apellidos */
+  founderQuote?: string;
   /** Fuente en la que se basa la pieza */
   isBasedOn?: string;
   /** Metadatos de entrevistas de audio en medios externos. */
@@ -86,7 +88,7 @@ export const FORNACIARI_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#l
 export const FORNACIARI_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html";
 
-/** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (firmadas por los fundadores o bajo la firma del medio). */
+/** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (publicadas bajo la firma de El Diario del Poder). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
   "esperanza-aguirre": { url: AGUIRRE_LAVANGUARDIA_URL, schemaId: AGUIRRE_LAVANGUARDIA_ID },
@@ -106,6 +108,7 @@ export const pressItems: PressItem[] = [
     dateLabel: "Octubre 2026 · Podcast",
     byline: "Publicado bajo la firma de El Diario del Poder",
     embedUrl: "https://www.youtube-nocookie.com/embed/03FllesvHxc",
+    founderQuote: "afirma en una entrevista con ‘El Diario del Poder’, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
     quote: "Federica Fornaciari, experta en liderazgo y estrategia empresarial: “El verdadero poder es saber hacerse imprescindible”",
     headline: "Federica Fornaciari, experta en liderazgo y estrategia empresarial: “El verdadero poder es saber hacerse imprescindible”",
     date: "2026-10-19T15:00:00+02:00",
@@ -159,6 +162,7 @@ export const pressItems: PressItem[] = [
     label: "Portada · Publicado en La Vanguardia",
     dateLabel: "Septiembre 2026 · Podcast",
     byline: "Entrevista de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
+    founderQuote: "en una entrevista con ‘El Diario del Poder’, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
     image: aguirreLaVanguardiaImage.url,
     imageAlt: "Esperanza Aguirre, expresidenta de la Comunidad de Madrid, invitada del podcast Diario del Poder en La Vanguardia",
     quote:
@@ -173,14 +177,15 @@ export const pressItems: PressItem[] = [
   },
   {
     outlet: "La Vanguardia",
-    context: "Artículo firmado por los fundadores — Rosa Lagarrigue",
+    context: "Publicado en La Vanguardia — Rosa Lagarrigue",
     url: ROSA_LAVANGUARDIA_URL,
     kind: "print",
-    label: "Portada · Firmado por los fundadores",
+    label: "Portada · Publicado en La Vanguardia",
     dateLabel: "Septiembre 2026 · Podcast",
-    byline: "Un artículo de Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
+    byline: "Publicado bajo la firma de El Diario del Poder · Entrevista conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
+    founderQuote: "en una entrevista fruto del podcast ‘El Diario del Poder’, conducido por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
     image: rosaLaVanguardiaImage.url,
-    imageAlt: "Artículo de La Vanguardia sobre Rosa Lagarrigue, firmado por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés",
+    imageAlt: "Artículo de La Vanguardia sobre Rosa Lagarrigue, a partir de su entrevista en el podcast Diario del Poder",
     quote:
       "Rosa Lagarrigue, la mujer que abrió camino en una industria musical dominada por hombres: «Ser ambicioso es sano»",
     headline:
@@ -189,7 +194,6 @@ export const pressItems: PressItem[] = [
     summary:
       "La legendaria mánager ha sido representante de algunos de los grandes nombres de la música española como Alejandro Sanz",
     schemaId: ROSA_LAVANGUARDIA_ID,
-    authorIds: [ALEJANDRO_ID, VICTOR_ID],
     isBasedOn: "https://eldiariodelpoder.com/invitados/rosa-lagarrigue",
   },
   {
@@ -314,5 +318,13 @@ export const pressItems: PressItem[] = [
   { outlet: "Navarra TV", kind: "tv" },
   { outlet: "Univision", context: "Entrevista en directo · EE. UU.", kind: "tv" },
 ];
+
+/** Piezas cuyo cuerpo nombra a los fundadores con los dos apellidos. */
+export const founderNamedArticles = (): PressItem[] => pressItems.filter((i) => i.founderQuote);
+
+/** Respuesta compartida (FAQ visible, JSON-LD y llms.txt) sobre La Vanguardia. */
+export function vanguardiaAnswer(name: string) {
+  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder. Tres de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026) y Federica Fornaciari (19/10/2026)—: la entrevista fue “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez”.`;
+}
 
 export const pressArticles = pressItems.filter((i) => i.url && i.headline);
