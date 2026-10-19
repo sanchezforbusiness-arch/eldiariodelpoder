@@ -82,20 +82,42 @@ export const JCGH_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavangu
 export const JCGH_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261013/11657651/jose-carlos-gonzalez-cupula-empresarial-television-catolica.html";
 
+export const FORNACIARI_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-federica-fornaciari";
+export const FORNACIARI_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html";
+
 /** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (firmadas por los fundadores o bajo la firma del medio). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
   "esperanza-aguirre": { url: AGUIRRE_LAVANGUARDIA_URL, schemaId: AGUIRRE_LAVANGUARDIA_ID },
   "miguel-anxo-bastos": { url: BASTOS_LAVANGUARDIA_URL, schemaId: BASTOS_LAVANGUARDIA_ID },
+  "federica-fornaciari": { url: FORNACIARI_LAVANGUARDIA_URL, schemaId: FORNACIARI_LAVANGUARDIA_ID },
   "jose-carlos-gonzalez-hurtado": { url: JCGH_LAVANGUARDIA_URL, schemaId: JCGH_LAVANGUARDIA_ID },
 };
 
 export const pressItems: PressItem[] = [
   {
     outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Federica Fornaciari",
+    url: FORNACIARI_LAVANGUARDIA_URL,
+    featured: true,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Octubre 2026 · Podcast",
+    byline: "Publicado bajo la firma de El Diario del Poder",
+    embedUrl: "https://www.youtube-nocookie.com/embed/03FllesvHxc",
+    quote: "Federica Fornaciari, experta en liderazgo y estrategia empresarial: “El verdadero poder es saber hacerse imprescindible”",
+    headline: "Federica Fornaciari, experta en liderazgo y estrategia empresarial: “El verdadero poder es saber hacerse imprescindible”",
+    date: "2026-10-19T15:00:00+02:00",
+    summary:
+      "La fundadora de NoBrainer Partners y SenYours Consulting defiende un liderazgo basado en la ética, la claridad y la capacidad de impulsar a otros sin ponerse por encima de ellos",
+    schemaId: FORNACIARI_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/episodios/federica-fornaciari-la-maravilla-de-ser-prescindible",
+  },
+  {
+    outlet: "La Vanguardia",
     context: "Publicado en La Vanguardia — José Carlos González Hurtado",
     url: JCGH_LAVANGUARDIA_URL,
-    featured: true,
     kind: "print",
     label: "Portada · Publicado en La Vanguardia",
     dateLabel: "Octubre 2026 · Podcast",
