@@ -7,6 +7,7 @@ import andresImg from "@/assets/bts-andres-rodriguez.webp";
 import lassoImg from "@/assets/bts-guillermo-lasso.webp";
 import aznarImg from "@/assets/bts-aznar-dialogos.webp";
 import echavarrenImg from "@/assets/guest-echavarren.webp";
+import fornaciariImg from "@/assets/guest-8.webp";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -35,6 +36,21 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 10,
+    image: fornaciariImg,
+    slug: "federica-fornaciari-la-maravilla-de-ser-prescindible",
+    youtubeId: "03FllesvHxc",
+    guestSlug: "federica-fornaciari",
+    transcript: [],
+    guest: "Federica Fornaciari",
+    role: "Fundadora de NoBrainer Partners y SenYours Consulting",
+    date: "2026-10-19",
+    title: "La maravilla de ser prescindible",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html",
+    description:
+      "La fundadora de NoBrainer Partners y SenYours Consulting defiende un liderazgo basado en la ética, la claridad y la capacidad de impulsar a otros sin ponerse por encima de ellos. Sobre el poder: «El poder es ser imprescindible solo mientras una persona crece y, cuando llega a su pico, saber quitarte de en medio sin ningún celo. Esa es la maravilla de ser prescindible».",
+  },
   {
     episodeNumber: 9,
     image: jcghAssetEp.url,
@@ -419,11 +435,45 @@ export const guestList: GuestEntry[] = [
     slug: "federica-fornaciari",
     name: "Federica Fornaciari",
     role: "Founder de SenYours y NoBrainer Partners",
-    bio: "Ex-Bain, profesora en IE, IESE y Bocconi. Estrategia y marca.",
-    topics: ["estrategia", "consultoría", "marca", "emprendimiento"],
+    bio: "Experta en liderazgo y estrategia empresarial. Fundadora de NoBrainer Partners y SenYours Consulting; advisor de Diario del Poder.",
+    youtubeId: "03FllesvHxc",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html",
+    topics: ["liderazgo", "estrategia empresarial", "M&A", "captación de fondos", "ética", "claridad", "inteligencia artificial", "éxito y felicidad", "legado"],
     summary: [
-      "Federica Fornaciari pasó por Bain y hoy dirige SenYours y NoBrainer Partners, además de dar clase en IE, IESE y Bocconi.",
-      "Hablamos de estrategia aplicada, de cómo se construye una marca desde cero y de la diferencia entre asesorar y decidir.",
+      "Federica Fornaciari ha pasado por Jakala, Bain & Company, Yoox Net-a-Porter, Havas y VML (grupo WPP), y fue vicepresidenta ejecutiva global de Marketing y Estrategia de WAM Global, donde trabajó en expansión internacional y M&A. Fue directora general por primera vez a los 28 años y lleva 12 años como profesora.",
+      "Hoy dirige NoBrainer Partners —M&A, captación de fondos y asesoría de liderazgo— y SenYours Consulting, que lidera con Cristina Núñez. Es autora del libro «El arte de quedarse» y forma parte del advisory board de Diario del Poder.",
+      "Para ella, el poder es «la capacidad de influenciar», ejercida «al lado de las personas, no por encima»: «El poder es ser imprescindible solo mientras una persona crece y, cuando llega a su pico, saber quitarte de en medio sin ningún celo. Esa es la maravilla de ser prescindible».",
+      "Sobre liderar equipos: «La gente es mucho más fuerte de lo que pensamos, pero merece y pide claridad». Sobre la inteligencia artificial: «El prompting no es un arte, es pensar con espíritu crítico». Y sobre la ambición: «La insatisfacción es como una droga: te crea la ansiedad de querer siempre más, y tu motor deja de ser el propósito». «Felicidad y éxito son cosas diferentes».",
+    ],
+    keyIdeas: [
+      "«El poder es ser imprescindible solo mientras una persona crece y, cuando llega a su pico, saber quitarte de en medio sin ningún celo. Esa es la maravilla de ser prescindible».",
+      "El poder es «la capacidad de influenciar», ejercida «al lado de las personas, no por encima».",
+      "«La gente es mucho más fuerte de lo que pensamos, pero merece y pide claridad».",
+      "«El prompting no es un arte, es pensar con espíritu crítico».",
+      "«Felicidad y éxito son cosas diferentes».",
+    ],
+    qa: [
+      {
+        q: "¿Qué es el poder para Federica Fornaciari?",
+        a: "«La capacidad de influenciar», ejercida «al lado de las personas, no por encima». «El poder es ser imprescindible solo mientras una persona crece y, cuando llega a su pico, saber quitarte de en medio sin ningún celo. Esa es la maravilla de ser prescindible».",
+      },
+      {
+        q: "¿Cuál ha sido su trayectoria profesional?",
+        a: "Ha trabajado en Jakala, Bain & Company, Yoox Net-a-Porter, Havas y VML (grupo WPP), y fue vicepresidenta ejecutiva global de Marketing y Estrategia de WAM Global. Hoy dirige NoBrainer Partners y SenYours Consulting, esta última con Cristina Núñez. Fue directora general por primera vez a los 28 años y es profesora desde hace 12.",
+      },
+      {
+        q: "¿Qué libro ha escrito?",
+        a: "«El arte de quedarse».",
+      },
+      {
+        q: "¿Qué legado quiere dejar?",
+        a: "«Que todas las personas que entren en contacto conmigo se lleven algo que les haga bien».",
+      },
+      {
+        q: "¿Dónde se puede leer la conversación?",
+        a: "La Vanguardia la publicó el 19 de octubre de 2026 bajo la firma de El Diario del Poder: https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html",
+      },
     ],
   },
   {
