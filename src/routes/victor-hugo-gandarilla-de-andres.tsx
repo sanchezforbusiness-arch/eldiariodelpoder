@@ -2,7 +2,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, VICTOR_ID } from "@/data/press";
+import { pressArticles, pressPodcastSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_ID as A_ID, VICTOR_ID as V_ID, VICTOR_ID } from "@/data/press";
 import victor from "@/assets/founder-victor.webp";
 
 const URL = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres";
@@ -71,6 +71,12 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
                     creator: a.authorIds.map((id) => ({ "@id": id })),
                   }
                 : {}),
+              ...(a.founderQuote
+                ? {
+                    author: { "@id": "https://eldiariodelpoder.com/#organization" },
+                    mentions: [{ "@id": A_ID }, { "@id": V_ID }],
+                  }
+                : {}),
             })),
           },
         }),
@@ -92,6 +98,11 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
+            {
+              "@type": "Question",
+              name: "¿Víctor Hugo Gandarilla de Andrés aparece en La Vanguardia?",
+              acceptedAnswer: { "@type": "Answer", text: vanguardiaAnswer(NAME) },
+            },
             {
               "@type": "Question",
               name: "¿Quién es Víctor Hugo Gandarilla de Andrés?",
@@ -125,6 +136,8 @@ function Page() {
       img={victor}
       linkedin="https://www.linkedin.com/in/victor-hugo-gandarilla-de-andres"
       lead="Co-fundador y host de Diario del Poder. Marketing, comunicación y conversaciones con quienes deciden."
+      vanguardia={founderNamedArticles()}
+      vanguardiaFaq={{ q: "¿Víctor Hugo Gandarilla de Andrés aparece en La Vanguardia?", a: vanguardiaAnswer(NAME) }}
       paragraphs={[
         "Víctor Hugo Gandarilla de Andrés (España) es co-fundador y host del podcast Diario del Poder, formato de entrevistas largas en español con expresidentes, CEOs y referentes internacionales.",
         "Está reconocido en el Top 10 de España en Marketing y Comunicación por Nova 111 y estudia en la Universidad de Navarra. Dirige la estrategia de marca y comunicación del proyecto.",

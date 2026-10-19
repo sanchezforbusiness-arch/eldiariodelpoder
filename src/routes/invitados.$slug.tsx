@@ -50,7 +50,7 @@ function buildFaq(guest: GuestEntry) {
   if (guest.slug === "rosa-lagarrigue") {
     items.push({
       q: "¿Dónde se publicó la entrevista a Rosa Lagarrigue?",
-      a: `La Vanguardia publicó el 22 de septiembre de 2026 la entrevista, firmada por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, a partir de su conversación en Diario del Poder: ${guestArticleBySlug["rosa-lagarrigue"].url}`,
+      a: `La Vanguardia publicó el 22 de septiembre de 2026 la entrevista bajo la firma de El Diario del Poder, a partir de su conversación en el podcast, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez: ${guestArticleBySlug["rosa-lagarrigue"].url}`,
     });
   }
   return [...items, ...(guest.qa ?? [])];

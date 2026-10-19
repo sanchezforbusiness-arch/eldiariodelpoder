@@ -2,7 +2,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, ALEJANDRO_INSTAGRAM } from "@/data/press";
+import { pressArticles, pressPodcastSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_ID as A_ID, VICTOR_ID as V_ID, ALEJANDRO_INSTAGRAM } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
@@ -92,6 +92,12 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
                     creator: a.authorIds.map((id) => ({ "@id": id })),
                   }
                 : {}),
+              ...(a.founderQuote
+                ? {
+                    author: { "@id": "https://eldiariodelpoder.com/#organization" },
+                    mentions: [{ "@id": A_ID }, { "@id": V_ID }],
+                  }
+                : {}),
             })),
           },
         }),
@@ -113,6 +119,11 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
+            {
+              "@type": "Question",
+              name: "¿Alejandro Sánchez Martínez aparece en La Vanguardia?",
+              acceptedAnswer: { "@type": "Answer", text: vanguardiaAnswer(NAME) },
+            },
             {
               "@type": "Question",
               name: "¿Quién es Alejandro Sánchez Martínez?",
@@ -148,6 +159,8 @@ function Page() {
       website="https://alejandrosanchezmartinez.com"
       instagram={ALEJANDRO_INSTAGRAM}
       lead="Co-fundador y host de Diario del Poder. Entrevista a quienes toman las decisiones que nos afectan: expresidentes, CEOs y referentes internacionales."
+      vanguardia={founderNamedArticles()}
+      vanguardiaFaq={{ q: "¿Alejandro Sánchez Martínez aparece en La Vanguardia?", a: vanguardiaAnswer(NAME) }}
       paragraphs={[
         "Alejandro Sánchez Martínez (A Coruña, España) es co-fundador y host del podcast Diario del Poder, un formato de entrevistas largas en español con expresidentes de Gobierno, CEOs y grandes referentes empresariales y culturales.",
         "Es presidente de Kifaru Club, Talent Agent en Nova Talent y responsable de embajadores de la 111 List, el listado del talento joven europeo. Su trabajo se centra en trasladar el criterio y el legado de quienes ya han llegado a la próxima generación.",
