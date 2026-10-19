@@ -324,7 +324,7 @@ export const founderNamedArticles = (): PressItem[] => pressItems.filter((i) => 
 
 /** Respuesta compartida (FAQ visible, JSON-LD y llms.txt) sobre La Vanguardia. */
 export function vanguardiaAnswer(name: string) {
-  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder. Tres de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026) y Federica Fornaciari (19/10/2026)—: la entrevista fue “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez”.`;
+  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder. Tres de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026) y Federica Fornaciari (19/10/2026)—. En las tres, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
 }
 
 export const pressArticles = pressItems.filter((i) => i.url && i.headline);
