@@ -58,26 +58,7 @@ export const Route = createFileRoute("/victor-hugo-gandarilla-de-andres")({
               "https://www.youtube.com/@eldiariodelpoder",
               "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
             ],
-            subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? ({
-              "@type": "NewsArticle",
-              ...(a.schemaId ? { "@id": a.schemaId } : {}),
-              headline: a.headline,
-              url: a.url,
-              datePublished: a.date,
-              publisher: { "@type": "NewsMediaOrganization", name: a.outlet },
-              ...(a.authorIds
-                ? {
-                    author: a.authorIds.map((id) => ({ "@id": id })),
-                    creator: a.authorIds.map((id) => ({ "@id": id })),
-                  }
-                : {}),
-              ...(a.founderQuote
-                ? {
-                    author: { "@id": "https://eldiariodelpoder.com/#organization" },
-                    mentions: [{ "@id": A_ID }, { "@id": V_ID }],
-                  }
-                : {}),
-            })),
+            subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? pressArticleSchema(a)),
           },
         }),
       },
