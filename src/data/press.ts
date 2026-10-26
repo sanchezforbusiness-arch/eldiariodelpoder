@@ -1,4 +1,5 @@
 export type PressItem = {
+
   outlet: string;
   context?: string;
   url?: string;
@@ -76,6 +77,39 @@ export function pressPodcastSchema(item: PressItem) {
     },
     about: podcast.participantIds.map((id) => ({ "@id": id })),
     actor: podcast.participantIds.map((id) => ({ "@id": id })),
+  };
+}
+
+/** Nodo NewsArticle compartido por /prensa y las fichas de los fundadores. */
+export function pressArticleSchema(a: PressItem) {
+  const mentions = a.extraMentions ?? (a.founderQuote && !a.externalAuthor ? [{ "@id": ALEJANDRO_ID }, { "@id": VICTOR_ID }] : undefined);
+  return {
+    "@type": "NewsArticle",
+    ...(a.schemaId ? { "@id": a.schemaId } : {}),
+    headline: a.headline,
+    url: a.url,
+    datePublished: a.date,
+    description: a.summary,
+    inLanguage: "es",
+    publisher: {
+      "@type": "NewsMediaOrganization",
+      name: a.outlet,
+      ...(a.publisherAreaServed ? { areaServed: a.publisherAreaServed } : {}),
+    },
+    ...(a.isBasedOn ? { isBasedOn: a.isBasedOn } : {}),
+    ...(a.authorIds
+      ? {
+          author: a.authorIds.map((id) => ({ "@id": id })),
+          creator: a.authorIds.map((id) => ({ "@id": id })),
+        }
+      : {}),
+    ...(a.externalAuthor
+      ? { author: { "@type": "Person", name: a.externalAuthor.name, ...(a.externalAuthor.url ? { url: a.externalAuthor.url } : {}) } }
+      : a.founderQuote
+        ? { author: { "@id": ORGANIZATION_ID } }
+        : {}),
+    about: a.aboutIds ? a.aboutIds.map((id) => ({ "@id": id })) : { "@id": ORGANIZATION_ID },
+    ...(mentions ? { mentions } : {}),
   };
 }
 
