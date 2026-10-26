@@ -60,7 +60,7 @@ function ClubPage() {
         <header className="container-ddp py-16 md:py-24">
           <Masthead />
           <p className="mono-label mt-8">{clubCopy.eyebrow}</p>
-          <h1 className="mt-6 text-2xl font-medium leading-tight md:text-6xl">{clubCopy.title}</h1>
+          <h1 className="mt-6 text-2xl font-medium leading-tight">{clubCopy.title}</h1>
           <p className="mt-6 max-w-3xl font-serif text-xl leading-snug md:text-2xl">{clubCopy.motto}</p>
           <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground">{clubCopy.description}</p>
           <blockquote className="mt-10 max-w-3xl border-s-2 border-signal ps-6 text-lg leading-relaxed">{clubCopy.houseRule}</blockquote>
