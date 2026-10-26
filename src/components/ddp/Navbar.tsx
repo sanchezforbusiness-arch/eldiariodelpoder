@@ -123,6 +123,7 @@ const secondary = [
               <Link
                 key={l.to}
                 to={l.to}
+                onClick={() => setOpen(false)}
                 style={{ animationDelay: `${i * 50}ms` }}
                 className="animate-fade-in border-b border-border py-5 text-2xl font-medium leading-none tracking-tight active:text-signal"
               >
