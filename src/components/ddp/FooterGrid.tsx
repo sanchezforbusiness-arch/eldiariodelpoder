@@ -1,5 +1,6 @@
 import { useLanding } from "@/i18n/LandingContext";
 import { Link } from "@tanstack/react-router";
+import { CLUB_URL } from "@/data/club";
 
 export function FooterGrid() {
   const { dict } = useLanding();
@@ -19,7 +20,7 @@ const NAV = [
   { to: "/episodios", label: dict.footer.labels["/episodios"] },
   { to: "/invitados", label: dict.footer.labels["/invitados"] },
   { to: "/newsletter", label: dict.footer.labels["/newsletter"] },
-   { to: "/club", label: dict.footer.labels["/club"] },
+  { href: CLUB_URL, label: dict.footer.labels.club },
   { to: "/nosotros", label: dict.footer.labels["/nosotros"] },
   { to: "/manifiesto", label: dict.footer.labels["/manifiesto"] },
   { to: "/prensa", label: dict.footer.labels["/prensa"] },
@@ -75,10 +76,16 @@ const SOCIAL = [
             <p className="mono-label">{dict.footer.navLabel}</p>
             <ul className="mt-2 grid grid-cols-2">
               {NAV.map((l) => (
-                <li key={l.to}>
+                <li key={"href" in l ? l.href : l.to}>
+                  {"href" in l ? (
+                    <a href={l.href} rel="noopener" className="tap flex items-center text-sm tracking-tight transition-colors hover:text-signal">
+                      {l.label}
+                    </a>
+                  ) : (
                   <Link to={l.to} className="tap flex items-center text-sm tracking-tight transition-colors hover:text-signal">
                     {l.label}
                   </Link>
+                  )}
                 </li>
               ))}
             </ul>

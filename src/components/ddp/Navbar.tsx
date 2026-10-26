@@ -2,6 +2,7 @@ import { useLanding } from "@/i18n/LandingContext";
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { CLUB_URL } from "@/data/club";
 
 export function Navbar() {
   const { dict } = useLanding();
@@ -11,7 +12,7 @@ const links = [
   { to: "/nosotros", label: dict.nav.labels["/nosotros"] },
   { to: "/manifiesto", label: dict.nav.labels["/manifiesto"] },
   { to: "/newsletter", label: dict.nav.labels["/newsletter"] },
-   { to: "/club", label: dict.nav.labels["/club"] },
+  { href: CLUB_URL, label: dict.nav.labels.club },
   { to: "/prensa", label: dict.nav.labels["/prensa"] },
 ] as const;
 
@@ -81,6 +82,14 @@ const secondary = [
 
         <nav className="hidden items-center gap-5 xl:gap-8 lg:flex">
           {links.map((l) => {
+            if ("href" in l) {
+              return (
+                <a key={l.href} href={l.href} rel="noopener" className="group relative font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                  {l.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-full origin-left bg-signal transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] scale-x-0 group-hover:scale-x-100" />
+                </a>
+              );
+            }
             const active = pathname === l.to;
             return (
               <Link key={l.to} to={l.to} className="group relative font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors duration-300 hover:text-foreground">
@@ -119,7 +128,18 @@ const secondary = [
       {open && (
         <div className="fixed inset-x-0 top-14 z-40 h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain bg-background lg:hidden">
           <nav className="container-ddp safe-b flex flex-col pt-8">
-            {[...links, ...secondary].map((l, i) => (
+            {[...links, ...secondary].map((l, i) => "href" in l ? (
+              <a
+                key={l.href}
+                href={l.href}
+                rel="noopener"
+                onClick={() => setOpen(false)}
+                style={{ animationDelay: `${i * 50}ms` }}
+                className="animate-fade-in border-b border-border py-5 text-2xl font-medium leading-none tracking-tight active:text-signal"
+              >
+                {l.label}
+              </a>
+            ) : (
               <Link
                 key={l.to}
                 to={l.to}

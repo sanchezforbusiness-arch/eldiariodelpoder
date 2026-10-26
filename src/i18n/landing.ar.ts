@@ -52,11 +52,6 @@ export const landingAr: LandingDict = {
     quoteFormat: "«{line}»",
   },
   manifesto: { heading: "البيان", lead: "نحن المنصّة التي يترك فيها أبرز القادة في العالم إرثهم للأجيال القادمة.", blocks: ["نريد أن نفهم الإنسان الكامن خلف الشخصية العامة التي يعرفها الجميع.", "نُعيد للسلطة معناها: لا بوصفها قوة، بل بوصفها القدرة على التأثير الإيجابي في المجتمع."], button: "اقرأ البيان" },
-  club: {
-    heading: "من الميكروفون إلى المائدة",
-    description: "تستمر الحوارات التي تُجرى في Diario del Poder داخل Club del Poder: عشاء خلف أبواب مغلقة في مدريد، وإرشاد وLaunchpad.",
-    button: "تعرّف على النادي",
-  },
   faq: {
     heading: "الأسئلة الشائعة", founderLinkText: "Alejandro Sánchez Martínez",
     items: [
@@ -70,12 +65,12 @@ export const landingAr: LandingDict = {
   },
   floatingCta: { label: "لنتحدّث" },
   nav: {
-    brand: "Diario del Poder", labels: { "/episodios": "الحلقات", "/invitados": "الضيوف", "/nosotros": "من نحن", "/manifiesto": "البيان", "/newsletter": "النشرة", "/club": "النادي", "/prensa": "الصحافة", "/patrocinadores": "الرعاة", "/agenda": "احجز مكالمة" },
+    brand: "Diario del Poder", labels: { "/episodios": "الحلقات", "/invitados": "الضيوف", "/nosotros": "من نحن", "/manifiesto": "البيان", "/newsletter": "النشرة", "club": "النادي", "/prensa": "الصحافة", "/patrocinadores": "الرعاة", "/agenda": "احجز مكالمة" },
     menuLabel: "القائمة", languageLabel: "تغيير اللغة", languageNames: landingEs.nav.languageNames,
   },
   footer: {
     contactHeading: "لنتحدّث؟", contactDescription: "اقتراحات الضيوف والصحافة والرعاية.", callButton: "احجز مكالمة", emailButton: "راسلنا", contactLabel: "التواصل", email: CONTACT_EMAIL, location: "مدريد، إسبانيا", navLabel: "تصفّح",
-    labels: { "/podcast-de-liderazgo-en-espanol": "البودكاست", "/episodios": "الحلقات", "/invitados": "الضيوف", "/newsletter": "النشرة", "/club": "Club del Poder", "/nosotros": "من نحن", "/manifiesto": "البيان", "/prensa": "الصحافة", "/patrocinadores": "الرعاة", "/agenda": "احجز مكالمة" },
+    labels: { "/podcast-de-liderazgo-en-espanol": "البودكاست", "/episodios": "الحلقات", "/invitados": "الضيوف", "/newsletter": "النشرة", "club": "Club del Poder", "/nosotros": "من نحن", "/manifiesto": "البيان", "/prensa": "الصحافة", "/patrocinadores": "الرعاة", "/agenda": "احجز مكالمة" },
     listenLabel: "استمع", socialLabels: landingEs.footer.socialLabels, countriesLabel: "الدول الناطقة بالإسبانية", allCountries: "جميع الدول",
     countryNames: { mexico: "المكسيك", colombia: "كولومبيا", argentina: "الأرجنتين", espana: "إسبانيا", "estados-unidos": "الولايات المتحدة", peru: "بيرو", chile: "تشيلي", venezuela: "فنزويلا" },
     copyright: "Diario del Poder", copyrightSymbol: "©", alejandro: "Alejandro Sánchez Martínez", victor: "Víctor Hugo Gandarilla de Andrés", founderSeparator: " · ",
