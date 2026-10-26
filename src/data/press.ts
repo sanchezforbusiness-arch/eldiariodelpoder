@@ -99,6 +99,10 @@ export const FORNACIARI_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#l
 export const FORNACIARI_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html";
 
+export const DIARIO_EXTRA_ID = "https://eldiariodelpoder.com/prensa#diario-extra-fundadores";
+export const DIARIO_EXTRA_URL =
+  "https://www.extra.ec/noticia/mundo/diario-podcast-jovenes-entrevista-lideres-mundiales-166037.html";
+
 /** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (publicadas bajo la firma de El Diario del Poder). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
