@@ -1,5 +1,6 @@
 import { countryList } from "@/data/countries";
 import { CONTACT_EMAIL } from "@/data/contact";
+import { CLUB_URL, CLUB_ID } from "@/data/club";
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
 import { ALEJANDRO_INSTAGRAM } from "@/data/press";
@@ -88,6 +89,7 @@ const structuredData = {
         description: "Media partner oficial de Diario del Poder.",
       },
       founder: [founderAlejandro, founderVictor],
+      subOrganization: { "@type": "Organization", "@id": CLUB_ID, name: "Club del Poder", url: CLUB_URL },
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",

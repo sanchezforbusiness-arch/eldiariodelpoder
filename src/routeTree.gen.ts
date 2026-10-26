@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
+import { Route as ClubRouteImport } from './routes/club'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
@@ -52,6 +53,11 @@ const AlejandroSanchezMartinezRoute =
     path: '/alejandro-sanchez-martinez',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ClubRoute = ClubRouteImport.update({
+  id: '/club',
+  path: '/club',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManifiestoRoute = ManifiestoRouteImport.update({
   id: '/manifiesto',
   path: '/manifiesto',
@@ -175,6 +181,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/club': typeof ClubRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
@@ -203,6 +210,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/club': typeof ClubRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
@@ -232,6 +240,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/club': typeof ClubRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
   '/nosotros': typeof NosotrosRoute
@@ -262,6 +271,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/club'
     | '/manifiesto'
     | '/mcp'
     | '/nosotros'
@@ -290,6 +300,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/club'
     | '/manifiesto'
     | '/mcp'
     | '/nosotros'
@@ -318,6 +329,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/club'
     | '/manifiesto'
     | '/mcp'
     | '/nosotros'
@@ -347,6 +359,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgendaRoute: typeof AgendaRoute
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
+  ClubRoute: typeof ClubRoute
   ManifiestoRoute: typeof ManifiestoRoute
   McpRoute: typeof McpRoute
   NosotrosRoute: typeof NosotrosRoute
@@ -393,6 +406,13 @@ declare module '@tanstack/react-router' {
       path: '/alejandro-sanchez-martinez'
       fullPath: '/alejandro-sanchez-martinez'
       preLoaderRoute: typeof AlejandroSanchezMartinezRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/club': {
+      id: '/club'
+      path: '/club'
+      fullPath: '/club'
+      preLoaderRoute: typeof ClubRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manifiesto': {
@@ -563,6 +583,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgendaRoute: AgendaRoute,
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
+  ClubRoute: ClubRoute,
   ManifiestoRoute: ManifiestoRoute,
   McpRoute: McpRoute,
   NosotrosRoute: NosotrosRoute,

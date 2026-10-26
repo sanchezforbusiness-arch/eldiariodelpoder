@@ -19,6 +19,7 @@ const NAV = [
   { to: "/episodios", label: dict.footer.labels["/episodios"] },
   { to: "/invitados", label: dict.footer.labels["/invitados"] },
   { to: "/newsletter", label: dict.footer.labels["/newsletter"] },
+   { to: "/club", label: dict.footer.labels["/club"] },
   { to: "/nosotros", label: dict.footer.labels["/nosotros"] },
   { to: "/manifiesto", label: dict.footer.labels["/manifiesto"] },
   { to: "/prensa", label: dict.footer.labels["/prensa"] },

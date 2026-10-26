@@ -11,6 +11,7 @@ const links = [
   { to: "/nosotros", label: dict.nav.labels["/nosotros"] },
   { to: "/manifiesto", label: dict.nav.labels["/manifiesto"] },
   { to: "/newsletter", label: dict.nav.labels["/newsletter"] },
+   { to: "/club", label: dict.nav.labels["/club"] },
   { to: "/prensa", label: dict.nav.labels["/prensa"] },
 ] as const;
 
@@ -78,7 +79,7 @@ const secondary = [
           </Link>
         </div>
 
-        <nav className="hidden items-center gap-10 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex">
           {links.map((l) => {
             const active = pathname === l.to;
             return (
@@ -122,6 +123,7 @@ const secondary = [
               <Link
                 key={l.to}
                 to={l.to}
+                onClick={() => setOpen(false)}
                 style={{ animationDelay: `${i * 50}ms` }}
                 className="animate-fade-in border-b border-border py-5 text-2xl font-medium leading-none tracking-tight active:text-signal"
               >

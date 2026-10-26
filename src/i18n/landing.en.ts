@@ -60,6 +60,11 @@ export const landingEn: LandingDict = {
     blocks: ["We want to understand the person behind the public figure everyone knows.", "We reclaim the meaning of power: not as force, but as the capacity to influence society for the better."],
     button: "Read the manifesto",
   },
+  club: {
+    heading: "From the microphone to the table",
+    description: "What is said on Diario del Poder continues at Club del Poder: closed-door dinners in Madrid, mentoring and Launchpad.",
+    button: "Discover the club",
+  },
   faq: {
     heading: "Frequently asked questions", founderLinkText: "Alejandro Sánchez Martínez",
     items: [
@@ -74,12 +79,12 @@ export const landingEn: LandingDict = {
   floatingCta: { label: "Let's talk" },
   nav: {
     brand: "Diario del Poder",
-    labels: { "/episodios": "Episodes", "/invitados": "Guests", "/nosotros": "About us", "/manifiesto": "Manifesto", "/newsletter": "Newsletter", "/prensa": "Press", "/patrocinadores": "Sponsors", "/agenda": "Book a call" },
+    labels: { "/episodios": "Episodes", "/invitados": "Guests", "/nosotros": "About us", "/manifiesto": "Manifesto", "/newsletter": "Newsletter", "/club": "Club", "/prensa": "Press", "/patrocinadores": "Sponsors", "/agenda": "Book a call" },
     menuLabel: "Menu", languageLabel: "Change language", languageNames: landingEs.nav.languageNames,
   },
   footer: {
     contactHeading: "Shall we talk?", contactDescription: "Guest proposals, press and sponsorship.", callButton: "Book a call", emailButton: "Email us", contactLabel: "Contact", email: CONTACT_EMAIL, location: "Madrid, Spain", navLabel: "Explore",
-    labels: { "/podcast-de-liderazgo-en-espanol": "The podcast", "/episodios": "Episodes", "/invitados": "Guests", "/newsletter": "Newsletter", "/nosotros": "About us", "/manifiesto": "Manifesto", "/prensa": "Press", "/patrocinadores": "Sponsors", "/agenda": "Book a call" },
+    labels: { "/podcast-de-liderazgo-en-espanol": "The podcast", "/episodios": "Episodes", "/invitados": "Guests", "/newsletter": "Newsletter", "/club": "Club del Poder", "/nosotros": "About us", "/manifiesto": "Manifesto", "/prensa": "Press", "/patrocinadores": "Sponsors", "/agenda": "Book a call" },
     listenLabel: "Listen", socialLabels: landingEs.footer.socialLabels, countriesLabel: "Spanish-speaking countries", allCountries: "All countries",
     countryNames: { mexico: "Mexico", colombia: "Colombia", argentina: "Argentina", espana: "Spain", "estados-unidos": "United States", peru: "Peru", chile: "Chile", venezuela: "Venezuela" },
     copyright: "Diario del Poder", copyrightSymbol: "©", alejandro: "Alejandro Sánchez Martínez", victor: "Víctor Hugo Gandarilla de Andrés", founderSeparator: " · ",
