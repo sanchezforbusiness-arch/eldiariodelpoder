@@ -35,16 +35,27 @@ export type PressItem = {
     station: string;
     participantIds: string[];
   };
+  /** Firma externa de la pieza (persona), cuando no la firma la marca. */
+  externalAuthor?: { name: string; url?: string };
+  /** Área servida del medio que publica (p. ej. "Ecuador"). */
+  publisherAreaServed?: string;
+  /** Nodos `about` del NewsArticle (por defecto, la organización). */
+  aboutIds?: string[];
+  /** Nodos `mentions` del NewsArticle cuando no son los dos fundadores. */
+  extraMentions?: Record<string, unknown>[];
 };
 
 import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
 import aguirreLaVanguardiaImage from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 import jcghImage from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
+import diarioExtraImage from "@/assets/diario-extra-fundadores.webp.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
 export const ALEJANDRO_INSTAGRAM = "https://www.instagram.com/alejandro.sanchez.martinez/";
+export const ORGANIZATION_ID = "https://eldiariodelpoder.com/#organization";
+export const PODCAST_SERIES_ID = "https://eldiariodelpoder.com/#podcastseries";
 
 /** Marcado de audio compartido por prensa y las fichas de los entrevistados. */
 export function pressPodcastSchema(item: PressItem) {
