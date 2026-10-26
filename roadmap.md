@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Añadir /club, datos centralizados y enlaces en navegación, pie y portada traducida.
-- [ ] Vincular las entidades del Diario y el club, sitemap y llms.txt; verificar textos y enlaces sin publicar.
+- [x] Añadir /club, datos centralizados y enlaces en navegación, pie y portada traducida.
+- [x] Vincular las entidades del Diario y el club, sitemap y llms.txt; verificar textos y enlaces sin publicar.
 
 - [x] Mejorar Patrocinadores mostrando las 10 marcas colaboradoras y priorizando la reserva en /agenda.
 - [x] Añadir «Cotizadas» al modelo y renderizado de la newsletter, incluyendo sus fuentes en JSON-LD.
