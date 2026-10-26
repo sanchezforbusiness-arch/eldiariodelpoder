@@ -82,6 +82,7 @@ export type LandingDict = {
     "blocks": string[];
     "button": string;
   };
+  "club": { heading: string; description: string; button: string };
   "faq": {
     "heading": string;
     "founderLinkText": string;
@@ -283,6 +284,11 @@ export const landingEs: LandingDict = {
     ],
     "button": "Leer el manifiesto"
   },
+  "club": {
+    heading: "Del micrófono a la mesa",
+    description: "Lo que se dice en el Diario, se sigue hablando en el Club del Poder: cenas a puerta cerrada en Madrid, mentoría y Launchpad.",
+    button: "Conocer el club",
+  },
   "faq": {
     "heading": "Preguntas frecuentes",
     "founderLinkText": "Alejandro Sánchez Martínez",
@@ -324,6 +330,7 @@ export const landingEs: LandingDict = {
       "/nosotros": "Nosotros",
       "/manifiesto": "Manifiesto",
       "/newsletter": "Newsletter",
+      "/club": "Club",
       "/prensa": "Prensa",
       "/patrocinadores": "Patrocinadores",
       "/agenda": "Agenda"
@@ -356,6 +363,7 @@ export const landingEs: LandingDict = {
       "/episodios": "Episodios",
       "/invitados": "Invitados",
       "/newsletter": "Newsletter",
+      "/club": "Club del Poder",
       "/nosotros": "Nosotros",
       "/manifiesto": "Manifiesto",
       "/prensa": "Prensa",

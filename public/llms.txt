@@ -62,6 +62,7 @@ Co-fundador y host del podcast Diario del Poder. Top 10 de España en Marketing 
 Galería con las capturas de emisión: https://eldiariodelpoder.com/prensa#television
 
 ## Páginas
+- [Club del Poder](https://eldiariodelpoder.com/club): club privado de El Diario del Poder en Madrid — /club.
 - [English](https://eldiariodelpoder.com/en): Diario del Poder explained in English (interviews are in Spanish).
 - [العربية](https://eldiariodelpoder.com/ar): التعريف بالبرنامج باللغة العربية (المقابلات باللغة الإسبانية).
 
