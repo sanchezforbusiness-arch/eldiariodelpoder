@@ -10,7 +10,6 @@ import { QuoteWall } from "./QuoteWall";
 import { FloatingCta } from "./FloatingCta";
 import { useReveal } from "@/hooks/use-reveal";
 import { useLanding } from "@/i18n/LandingContext";
-import { ClubBand } from "./ClubBand";
 
 const ManifestoBand = lazy(() => import("./ManifestoBand").then((m) => ({ default: m.ManifestoBand })));
 const FaqBand = lazy(() => import("./FaqBand").then((m) => ({ default: m.FaqBand })));
@@ -36,7 +35,6 @@ export function HomeLanding({ afterHero, beforeFaq, mainLang }: { afterHero?: Re
             <ManifestoBand />
           </Suspense>
           {beforeFaq}
-          <ClubBand />
           <Suspense fallback={<div aria-hidden style={{ minHeight: 420, contain: "layout paint" }} />}>
             <FaqBand />
           </Suspense>

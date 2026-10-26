@@ -1,7 +1,7 @@
 # Roadmap
 
-- [x] Añadir /club, datos centralizados y enlaces en navegación, pie y portada traducida.
-- [x] Vincular las entidades del Diario y el club, sitemap y llms.txt; verificar textos y enlaces sin publicar.
+- [x] Dejar solo enlaces externos al Club del Poder en menú y pie; retirar página, franja y textos de portada, y conservar CLUB_URL y CLUB_ID.
+- [x] Mantener la relación de entidades y actualizar sitemap y llms.txt; verificar ausencia de ruta interna y enlaces sin publicar.
 
 - [x] Mejorar Patrocinadores mostrando las 10 marcas colaboradoras y priorizando la reserva en /agenda.
 - [x] Añadir «Cotizadas» al modelo y renderizado de la newsletter, incluyendo sus fuentes en JSON-LD.
