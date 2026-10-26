@@ -1,5 +1,4 @@
 export type PressItem = {
-
   outlet: string;
   context?: string;
   url?: string;
@@ -148,10 +147,37 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
 
 export const pressItems: PressItem[] = [
   {
+    outlet: "Diario Extra (Ecuador)",
+    context: "Reportaje sobre los fundadores — Mundo",
+    url: DIARIO_EXTRA_URL,
+    featured: true,
+    kind: "digital",
+    label: "Portada · Reportaje sobre los fundadores",
+    dateLabel: "Octubre 2026 · Reportaje",
+    byline: "Reportaje de Valeria Alvear · Diario Extra",
+    image: diarioExtraImage.url,
+    imageAlt:
+      "Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, cofundadores de El Diario del Poder, en la fotografía del reportaje de Diario Extra",
+    quote: "El Diario del Poder: el pódcast de jóvenes que entrevista a líderes mundiales",
+    headline: "El Diario del Poder: el pódcast de jóvenes que entrevista a líderes mundiales",
+    date: "2026-10-26T13:05:13-05:00",
+    summary:
+      "Dos estudiantes universitarios impulsan un pódcast que busca rescatar el lado humano y las lecciones de líderes mundiales para la juventud",
+    schemaId: DIARIO_EXTRA_ID,
+    founderQuote:
+      "Esa fue la apuesta de Alejandro Sánchez Martínez y Víctor Gandarilla, dos estudiantes de la Universidad de Navarra que decidieron acercarse a personas cuyas trayectorias despertaban su curiosidad. Alejandro, natural de Galicia, dirige el proyecto; Víctor, de México, es su cofundador.",
+    externalAuthor: { name: "Valeria Alvear", url: "https://www.extra.ec/autores/valeria-alvear/" },
+    publisherAreaServed: "Ecuador",
+    aboutIds: [ALEJANDRO_ID, VICTOR_ID, PODCAST_SERIES_ID, ORGANIZATION_ID],
+    extraMentions: [
+      { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
+      { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ],
+  },
+  {
     outlet: "La Vanguardia",
     context: "Publicado en La Vanguardia — Federica Fornaciari",
     url: FORNACIARI_LAVANGUARDIA_URL,
-    featured: true,
     kind: "print",
     label: "Portada · Publicado en La Vanguardia",
     dateLabel: "Octubre 2026 · Podcast",
