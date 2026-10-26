@@ -2,7 +2,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_ID as A_ID, VICTOR_ID as V_ID, ALEJANDRO_INSTAGRAM } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, DIARIO_EXTRA_URL } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
