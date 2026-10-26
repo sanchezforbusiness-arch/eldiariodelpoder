@@ -35,16 +35,27 @@ export type PressItem = {
     station: string;
     participantIds: string[];
   };
+  /** Firma externa de la pieza (persona), cuando no la firma la marca. */
+  externalAuthor?: { name: string; url?: string };
+  /** Área servida del medio que publica (p. ej. "Ecuador"). */
+  publisherAreaServed?: string;
+  /** Nodos `about` del NewsArticle (por defecto, la organización). */
+  aboutIds?: string[];
+  /** Nodos `mentions` del NewsArticle cuando no son los dos fundadores. */
+  extraMentions?: Record<string, unknown>[];
 };
 
 import rosaLaVanguardiaImage from "@/assets/la-vanguardia-rosa-lagarrigue.png.asset.json";
 import aguirreLaVanguardiaImage from "@/assets/guest-esperanza-aguirre.jpg.asset.json";
 import jcghImage from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
+import diarioExtraImage from "@/assets/diario-extra-fundadores.webp.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
 export const ALEJANDRO_INSTAGRAM = "https://www.instagram.com/alejandro.sanchez.martinez/";
+export const ORGANIZATION_ID = "https://eldiariodelpoder.com/#organization";
+export const PODCAST_SERIES_ID = "https://eldiariodelpoder.com/#podcastseries";
 
 /** Marcado de audio compartido por prensa y las fichas de los entrevistados. */
 export function pressPodcastSchema(item: PressItem) {
@@ -68,6 +79,39 @@ export function pressPodcastSchema(item: PressItem) {
   };
 }
 
+/** Nodo NewsArticle compartido por /prensa y las fichas de los fundadores. */
+export function pressArticleSchema(a: PressItem) {
+  const mentions = a.extraMentions ?? (a.founderQuote && !a.externalAuthor ? [{ "@id": ALEJANDRO_ID }, { "@id": VICTOR_ID }] : undefined);
+  return {
+    "@type": "NewsArticle",
+    ...(a.schemaId ? { "@id": a.schemaId } : {}),
+    headline: a.headline,
+    url: a.url,
+    datePublished: a.date,
+    description: a.summary,
+    inLanguage: "es",
+    publisher: {
+      "@type": "NewsMediaOrganization",
+      name: a.outlet,
+      ...(a.publisherAreaServed ? { areaServed: a.publisherAreaServed } : {}),
+    },
+    ...(a.isBasedOn ? { isBasedOn: a.isBasedOn } : {}),
+    ...(a.authorIds
+      ? {
+          author: a.authorIds.map((id) => ({ "@id": id })),
+          creator: a.authorIds.map((id) => ({ "@id": id })),
+        }
+      : {}),
+    ...(a.externalAuthor
+      ? { author: { "@type": "Person", name: a.externalAuthor.name, ...(a.externalAuthor.url ? { url: a.externalAuthor.url } : {}) } }
+      : a.founderQuote
+        ? { author: { "@id": ORGANIZATION_ID } }
+        : {}),
+    about: a.aboutIds ? a.aboutIds.map((id) => ({ "@id": id })) : { "@id": ORGANIZATION_ID },
+    ...(mentions ? { mentions } : {}),
+  };
+}
+
 export const ROSA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-rosa-lagarrigue";
 export const ROSA_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/20260922/11641554/rosa-lagarrigue-mujer-abrio-camino-industria-musical-dominada-hombres-ambicioso-sano.html";
@@ -88,6 +132,10 @@ export const FORNACIARI_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#l
 export const FORNACIARI_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html";
 
+export const DIARIO_EXTRA_ID = "https://eldiariodelpoder.com/prensa#diario-extra-fundadores";
+export const DIARIO_EXTRA_URL =
+  "https://www.extra.ec/noticia/mundo/diario-podcast-jovenes-entrevista-lideres-mundiales-166037.html";
+
 /** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (publicadas bajo la firma de El Diario del Poder). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
@@ -99,10 +147,37 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
 
 export const pressItems: PressItem[] = [
   {
+    outlet: "Diario Extra (Ecuador)",
+    context: "Reportaje sobre los fundadores — Mundo",
+    url: DIARIO_EXTRA_URL,
+    featured: true,
+    kind: "digital",
+    label: "Portada · Reportaje sobre los fundadores",
+    dateLabel: "Octubre 2026 · Reportaje",
+    byline: "Reportaje de Valeria Alvear · Diario Extra",
+    image: diarioExtraImage.url,
+    imageAlt:
+      "Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, cofundadores de El Diario del Poder, en la fotografía del reportaje de Diario Extra",
+    quote: "El Diario del Poder: el pódcast de jóvenes que entrevista a líderes mundiales",
+    headline: "El Diario del Poder: el pódcast de jóvenes que entrevista a líderes mundiales",
+    date: "2026-10-26T13:05:13-05:00",
+    summary:
+      "Dos estudiantes universitarios impulsan un pódcast que busca rescatar el lado humano y las lecciones de líderes mundiales para la juventud",
+    schemaId: DIARIO_EXTRA_ID,
+    founderQuote:
+      "Esa fue la apuesta de Alejandro Sánchez Martínez y Víctor Gandarilla, dos estudiantes de la Universidad de Navarra que decidieron acercarse a personas cuyas trayectorias despertaban su curiosidad. Alejandro, natural de Galicia, dirige el proyecto; Víctor, de México, es su cofundador.",
+    externalAuthor: { name: "Valeria Alvear", url: "https://www.extra.ec/autores/valeria-alvear/" },
+    publisherAreaServed: "Ecuador",
+    aboutIds: [ALEJANDRO_ID, VICTOR_ID, PODCAST_SERIES_ID, ORGANIZATION_ID],
+    extraMentions: [
+      { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
+      { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ],
+  },
+  {
     outlet: "La Vanguardia",
     context: "Publicado en La Vanguardia — Federica Fornaciari",
     url: FORNACIARI_LAVANGUARDIA_URL,
-    featured: true,
     kind: "print",
     label: "Portada · Publicado en La Vanguardia",
     dateLabel: "Octubre 2026 · Podcast",

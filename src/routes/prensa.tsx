@@ -5,7 +5,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Press } from "@/components/ddp/Press";
 import { TvAppearances } from "@/components/ddp/TvAppearances";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, ALEJANDRO_INSTAGRAM, ALEJANDRO_ID, VICTOR_ID } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, ALEJANDRO_INSTAGRAM } from "@/data/press";
 import { tvAppearances, SITE_URL } from "@/data/tv";
 
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
@@ -45,28 +45,7 @@ export const Route = createFileRoute("/prensa")({
           itemListElement: pressArticles.map((a, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            item: pressPodcastSchema(a) ?? {
-              "@type": "NewsArticle",
-              ...(a.schemaId ? { "@id": a.schemaId } : {}),
-              headline: a.headline,
-              url: a.url,
-              datePublished: a.date,
-              description: a.summary,
-              inLanguage: "es",
-              publisher: { "@type": "NewsMediaOrganization", name: a.outlet },
-              ...(a.isBasedOn ? { isBasedOn: a.isBasedOn } : {}),
-              ...(a.authorIds
-                ? {
-                    author: a.authorIds.map((id) => ({ "@id": id })),
-                    creator: a.authorIds.map((id) => ({ "@id": id })),
-                  }
-                : {}),
-              about: { "@id": "https://eldiariodelpoder.com/#organization" },
-              mentions: [
-                { "@type": "Person", "@id": ALEJANDRO_ID, name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez", ALEJANDRO_INSTAGRAM] },
-                { "@type": "Person", "@id": VICTOR_ID, name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
-              ],
-            },
+            item: pressPodcastSchema(a) ?? pressArticleSchema(a),
           })),
 
         }),

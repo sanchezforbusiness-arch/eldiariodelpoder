@@ -2,13 +2,17 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_ID as A_ID, VICTOR_ID as V_ID, ALEJANDRO_INSTAGRAM } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, DIARIO_EXTRA_URL } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
 const NAME = "Alejandro Sánchez Martínez";
 const DESC =
   "Alejandro Sánchez Martínez es co-fundador y host del podcast Diario del Poder, presidente de Kifaru Club y Talent Agent en Nova Talent. Ha entrevistado a José María Aznar, Guillermo Lasso y Andrés Rodríguez (Forbes).";
+
+const QUIEN_DIRIGE_Q = "¿Quién dirige El Diario del Poder?";
+const QUIEN_DIRIGE_A =
+  "Alejandro Sánchez Martínez, natural de Galicia, dirige El Diario del Poder; Víctor Hugo Gandarilla de Andrés, mexicano, es su cofundador. Ambos estudian en la Universidad de Navarra y fundaron el proyecto en 2025. Así lo recoge el reportaje de Diario Extra (Ecuador) del 26 de octubre de 2026, firmado por Valeria Alvear.";
 
 export const Route = createFileRoute("/alejandro-sanchez-martinez")({
   head: () => ({
@@ -79,26 +83,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
               "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
               ALEJANDRO_INSTAGRAM,
             ],
-            subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? ({
-              "@type": "NewsArticle",
-              ...(a.schemaId ? { "@id": a.schemaId } : {}),
-              headline: a.headline,
-              url: a.url,
-              datePublished: a.date,
-              publisher: { "@type": "NewsMediaOrganization", name: a.outlet },
-              ...(a.authorIds
-                ? {
-                    author: a.authorIds.map((id) => ({ "@id": id })),
-                    creator: a.authorIds.map((id) => ({ "@id": id })),
-                  }
-                : {}),
-              ...(a.founderQuote
-                ? {
-                    author: { "@id": "https://eldiariodelpoder.com/#organization" },
-                    mentions: [{ "@id": A_ID }, { "@id": V_ID }],
-                  }
-                : {}),
-            })),
+            subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? pressArticleSchema(a)),
           },
         }),
       },
@@ -119,6 +104,11 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
+            {
+              "@type": "Question",
+              name: QUIEN_DIRIGE_Q,
+              acceptedAnswer: { "@type": "Answer", text: QUIEN_DIRIGE_A },
+            },
             {
               "@type": "Question",
               name: "¿Alejandro Sánchez Martínez aparece en La Vanguardia?",
@@ -161,6 +151,22 @@ function Page() {
       lead="Co-fundador y host de Diario del Poder. Entrevista a quienes toman las decisiones que nos afectan: expresidentes, CEOs y referentes internacionales."
       vanguardia={founderNamedArticles()}
       vanguardiaFaq={{ q: "¿Alejandro Sánchez Martínez aparece en La Vanguardia?", a: vanguardiaAnswer(NAME) }}
+      extraFaqs={[
+        {
+          q: QUIEN_DIRIGE_Q,
+          a: (
+            <>
+              Alejandro Sánchez Martínez, natural de Galicia, dirige El Diario del Poder; Víctor Hugo Gandarilla de
+              Andrés, mexicano, es su cofundador. Ambos estudian en la Universidad de Navarra y fundaron el proyecto en
+              2025. Así lo recoge el{" "}
+              <a href={DIARIO_EXTRA_URL} target="_blank" rel="noreferrer" className="text-foreground hover:underline">
+                reportaje de Diario Extra (Ecuador) del 26 de octubre de 2026, firmado por Valeria Alvear
+              </a>
+              .
+            </>
+          ),
+        },
+      ]}
       paragraphs={[
         "Alejandro Sánchez Martínez (A Coruña, España) es co-fundador y host del podcast Diario del Poder, un formato de entrevistas largas en español con expresidentes de Gobierno, CEOs y grandes referentes empresariales y culturales.",
         "Es presidente de Kifaru Club, Talent Agent en Nova Talent y responsable de embajadores de la 111 List, el listado del talento joven europeo. Su trabajo se centra en trasladar el criterio y el legado de quienes ya han llegado a la próxima generación.",

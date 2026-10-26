@@ -1,6 +1,54 @@
 import { describe, test } from "node:test";
 import assert from "node:assert/strict";
-import { ALEJANDRO_ID, VICTOR_ID, pressItems, pressPodcastSchema } from "./press";
+import {
+  ALEJANDRO_ID,
+  VICTOR_ID,
+  ORGANIZATION_ID,
+  PODCAST_SERIES_ID,
+  DIARIO_EXTRA_URL,
+  pressItems,
+  pressPodcastSchema,
+  pressArticleSchema,
+  vanguardiaAnswer,
+} from "./press";
+
+describe("Diario Extra founders report", () => {
+  const item = pressItems.find((entry) => entry.url === DIARIO_EXTRA_URL);
+
+  test("it is the first and only featured press piece", () => {
+    assert.equal(pressItems[0]?.url, DIARIO_EXTRA_URL);
+    assert.deepEqual(pressItems.filter((entry) => entry.featured).map((entry) => entry.url), [DIARIO_EXTRA_URL]);
+  });
+
+  test("the NewsArticle is signed by Valeria Alvear, not by the founders or the brand", () => {
+    const schema = item && pressArticleSchema(item);
+    assert.deepEqual(schema?.author, {
+      "@type": "Person",
+      name: "Valeria Alvear",
+      url: "https://www.extra.ec/autores/valeria-alvear/",
+    });
+  });
+
+  test("the article is about the founders and the podcast, and mentions Lasso and La Vanguardia", () => {
+    const schema = item && pressArticleSchema(item);
+    assert.deepEqual(schema?.about, [
+      { "@id": ALEJANDRO_ID },
+      { "@id": VICTOR_ID },
+      { "@id": PODCAST_SERIES_ID },
+      { "@id": ORGANIZATION_ID },
+    ]);
+    assert.deepEqual(schema?.mentions, [
+      { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
+      { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ]);
+    assert.deepEqual(schema?.publisher, { "@type": "NewsMediaOrganization", name: "Diario Extra (Ecuador)", areaServed: "Ecuador" });
+  });
+
+  test("the La Vanguardia FAQ still counts exactly three pieces", () => {
+    assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Tres de esas piezas/);
+    assert.doesNotMatch(vanguardiaAnswer("Alejandro Sánchez Martínez"), /[Cc]uatro/);
+  });
+});
 
 describe("Radio UASLP press metadata", () => {
   const item = pressItems.find((entry) => entry.url === "https://open.spotify.com/episode/17vhnK9phFjTLaeAGl3B1g");

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
@@ -17,9 +18,10 @@ export type FounderProfileProps = {
   facts: { label: string; value: string }[];
   vanguardia?: PressItem[];
   vanguardiaFaq?: { q: string; a: string };
+  extraFaqs?: { q: string; a: ReactNode }[];
 };
 
-export function FounderProfile({ name, role, img, linkedin, website, instagram, lead, paragraphs, facts, vanguardia, vanguardiaFaq }: FounderProfileProps) {
+export function FounderProfile({ name, role, img, linkedin, website, instagram, lead, paragraphs, facts, vanguardia, vanguardiaFaq, extraFaqs }: FounderProfileProps) {
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
@@ -120,11 +122,15 @@ export function FounderProfile({ name, role, img, linkedin, website, instagram, 
 
  {vanguardia && vanguardia.length > 0 && (
           <section className="container-ddp py-12 md:py-24 border-t border-border">
-            <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-8">En La Vanguardia</h2>
+            <h2 className="tracking-tight text-2xl md:text-2xl font-medium mb-8">
+              {vanguardia.every((a) => a.outlet === "La Vanguardia") ? "En La Vanguardia" : "Sobre ellos en prensa"}
+            </h2>
             <ul className="space-y-8 max-w-3xl">
               {vanguardia.map((a) => (
                 <li key={a.url}>
-                  <p className="mono-label mb-1">{a.date ? a.date.slice(0, 10).split("-").reverse().join("/") : ""}</p>
+                  <p className="mono-label mb-1">
+                    {a.date ? a.date.slice(0, 10).split("-").reverse().join("/") : ""} · {a.outlet}
+                  </p>
                   <a
                     href={a.url}
                     target="_blank"
@@ -143,6 +149,12 @@ export function FounderProfile({ name, role, img, linkedin, website, instagram, 
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{vanguardiaFaq.a}</p>
               </details>
             )}
+            {extraFaqs?.map((f) => (
+              <details key={f.q} className="mt-6 max-w-3xl border-t border-border pt-6">
+                <summary className="cursor-pointer text-base font-medium">{f.q}</summary>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
+              </details>
+            ))}
           </section>
         )}
 
