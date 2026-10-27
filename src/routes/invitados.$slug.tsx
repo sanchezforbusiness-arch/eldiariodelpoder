@@ -124,6 +124,7 @@ export const Route = createFileRoute("/invitados/$slug")({
               "@type": "Person",
               "@id": `${url}#person`,
               name: guest.name,
+              ...(guest.alternateName ? { alternateName: guest.alternateName } : {}),
               jobTitle: guest.role,
               description: guest.bio,
               ...(absImg ? { image: absImg } : {}),
