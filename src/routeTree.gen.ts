@@ -14,6 +14,7 @@ import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MejoresPodcastsDeLiderazgoEnEspanolRouteImport } from './routes/mejores-podcasts-de-liderazgo-en-espanol'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as PodcastDeLiderazgoEnEspanolRouteImport } from './routes/podcast-de-liderazgo-en-espanol'
@@ -62,6 +63,12 @@ const McpRoute = McpRouteImport.update({
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MejoresPodcastsDeLiderazgoEnEspanolRoute =
+  MejoresPodcastsDeLiderazgoEnEspanolRouteImport.update({
+    id: '/mejores-podcasts-de-liderazgo-en-espanol',
+    path: '/mejores-podcasts-de-liderazgo-en-espanol',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const NosotrosRoute = NosotrosRouteImport.update({
   id: '/nosotros',
   path: '/nosotros',
@@ -177,6 +184,7 @@ export interface FileRoutesByFullPath {
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
+  '/mejores-podcasts-de-liderazgo-en-espanol': typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
@@ -205,6 +213,7 @@ export interface FileRoutesByTo {
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
+  '/mejores-podcasts-de-liderazgo-en-espanol': typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
@@ -234,6 +243,7 @@ export interface FileRoutesById {
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
+  '/mejores-podcasts-de-liderazgo-en-espanol': typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
@@ -264,6 +274,7 @@ export interface FileRouteTypes {
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
     | '/mcp'
+    | '/mejores-podcasts-de-liderazgo-en-espanol'
     | '/nosotros'
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
@@ -292,6 +303,7 @@ export interface FileRouteTypes {
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
     | '/mcp'
+    | '/mejores-podcasts-de-liderazgo-en-espanol'
     | '/nosotros'
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
@@ -320,6 +332,7 @@ export interface FileRouteTypes {
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
     | '/mcp'
+    | '/mejores-podcasts-de-liderazgo-en-espanol'
     | '/nosotros'
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
@@ -349,6 +362,7 @@ export interface RootRouteChildren {
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
   ManifiestoRoute: typeof ManifiestoRoute
   McpRoute: typeof McpRoute
+  MejoresPodcastsDeLiderazgoEnEspanolRoute: typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
   NosotrosRoute: typeof NosotrosRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PodcastDeLiderazgoEnEspanolRoute: typeof PodcastDeLiderazgoEnEspanolRoute
@@ -407,6 +421,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mejores-podcasts-de-liderazgo-en-espanol': {
+      id: '/mejores-podcasts-de-liderazgo-en-espanol'
+      path: '/mejores-podcasts-de-liderazgo-en-espanol'
+      fullPath: '/mejores-podcasts-de-liderazgo-en-espanol'
+      preLoaderRoute: typeof MejoresPodcastsDeLiderazgoEnEspanolRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nosotros': {
@@ -565,6 +586,8 @@ const rootRouteChildren: RootRouteChildren = {
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
   ManifiestoRoute: ManifiestoRoute,
   McpRoute: McpRoute,
+  MejoresPodcastsDeLiderazgoEnEspanolRoute:
+    MejoresPodcastsDeLiderazgoEnEspanolRoute,
   NosotrosRoute: NosotrosRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PodcastDeLiderazgoEnEspanolRoute: PodcastDeLiderazgoEnEspanolRoute,
