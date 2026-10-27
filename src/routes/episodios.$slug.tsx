@@ -14,8 +14,9 @@ function isoDuration(raw?: string) {
   if (!raw) return undefined;
   const h = raw.match(/(\d+)\s*h/i);
   const m = raw.match(/(\d+)\s*m/i);
+  const sec = raw.match(/(\d+)\s*s/i);
   if (!h && !m) return undefined;
-  return `PT${h ? `${Number(h[1])}H` : ""}${m ? `${Number(m[1])}M` : ""}`;
+  return `PT${h ? `${Number(h[1])}H` : ""}${m ? `${Number(m[1])}M` : ""}${sec ? `${Number(sec[1])}S` : ""}`;
 }
 
 export const Route = createFileRoute("/episodios/$slug")({

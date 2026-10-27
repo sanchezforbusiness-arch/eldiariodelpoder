@@ -8,6 +8,7 @@ import lassoImg from "@/assets/bts-guillermo-lasso.webp";
 import aznarImg from "@/assets/bts-aznar-dialogos.webp";
 import echavarrenImg from "@/assets/guest-echavarren.webp";
 import fornaciariImg from "@/assets/guest-8.webp";
+import danielaAssetEp from "@/assets/guest-daniela-macarena.png.asset.json";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -36,6 +37,22 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 11,
+    image: danielaAssetEp.url,
+    slug: "daniela-mcarena-crear-un-proyecto-viral-desde-cero",
+    youtubeId: "t0ivuqdA4js",
+    guestSlug: "daniela-macarena",
+    transcript: [],
+    guest: "Daniela McArena",
+    role: "Cofundadora de Ac2ality",
+    date: "2026-10-26",
+    duration: "1h 01m 08s",
+    title: "Crear un proyecto viral desde cero",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html",
+    description:
+      "La cofundadora de Ac2ality repasa su apuesta por la creatividad, el poder de la visualización y la entrada de Atresmedia como accionista mayoritario. Empezó a resumir noticias en Instagram y TikTok desde la Misión Permanente de España ante Naciones Unidas en Nueva York: «Yo sin quererlo creé algo que no existía». Sobre liderar: «Para liderar una empresa, la gente te tiene que admirar».",
+  },
   {
     episodeNumber: 10,
     image: fornaciariImg,
@@ -200,6 +217,8 @@ export type GuestEntry = {
   /** URL slug: /invitados/<slug> */
   slug: string;
   name: string;
+  /** Grafía alternativa del nombre (JSON-LD alternateName) */
+  alternateName?: string;
   role: string;
   bio: string;
   /** ID del vídeo de YouTube de la entrevista, si está publicada */
@@ -534,13 +553,52 @@ export const guestList: GuestEntry[] = [
   },
   {
     slug: "daniela-macarena",
-    name: "Daniela Macarena",
-    role: "Co-fundadora de Ac2ality",
-    bio: "Nueva generación de medios y comunicación para jóvenes.",
-    topics: ["medios digitales", "Ac2ality", "TikTok", "comunicación", "emprendimiento joven"],
+    name: "Daniela McArena",
+    alternateName: "Daniela Macarena",
+    role: "Cofundadora de Ac2ality",
+    bio: "Cofundadora de Ac2ality, el medio que resume la actualidad en redes sociales, y autora de «Los 10 poderes del éxito» (Espasa).",
+    youtubeId: "t0ivuqdA4js",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html",
+    topics: ["medios digitales", "Ac2ality", "TikTok", "Instagram", "creatividad", "visualización", "liderazgo", "emprendimiento", "Atresmedia"],
     summary: [
-      "Daniela Macarena co-fundó Ac2ality, el medio que explica la actualidad a millones de jóvenes en vertical.",
-      "Nos cuenta cómo se monta un medio desde una habitación, qué funciona de verdad en redes y cómo se sostiene un negocio informativo con audiencia joven.",
+      "Daniela McArena nació en Madrid en 1996 y se licenció en Relaciones Internacionales y Ciencias Políticas por la Queen Mary University of London. Trabajando en la Misión Permanente de España ante Naciones Unidas en Nueva York empezó a resumir noticias en Instagram y, después, en TikTok: «Yo sin quererlo creé algo que no existía».",
+      "Así nació Ac2ality, que hoy supera los siete millones de seguidores en TikTok y tiene a Atresmedia como accionista mayoritario. Su equipo ronda las doce personas y asegura que nunca ha leído un currículum para seleccionarlo. «La mayoría de las noticias, créeme, en un minuto las puedes contar».",
+      "En la conversación repasa su apuesta por la creatividad y el poder de la visualización, y defiende un liderazgo basado en la admiración: «Para liderar una empresa, la gente te tiene que admirar». Sobre la gestión: «Es mucho mejor controlar tus gastos que tener mucha facturación».",
+      "Es autora de «Los 10 poderes del éxito» (Espasa) y quiere dar el salto a la televisión con un programa de entrevistas. Su misión: «Servir a los demás para hacer de este mundo un lugar mejor».",
+    ],
+    keyIdeas: [
+      "«Para liderar una empresa, la gente te tiene que admirar».",
+      "«Cuando la gente te admira por cómo eres, tienes mucho poder de influenciar a la gente».",
+      "«Yo sin quererlo creé algo que no existía».",
+      "«La mayoría de las noticias, créeme, en un minuto las puedes contar».",
+      "«Es mucho mejor controlar tus gastos que tener mucha facturación».",
+    ],
+    qa: [
+      {
+        q: "¿Qué es el poder para Daniela McArena?",
+        a: "Lo vincula a la admiración: «Cuando la gente te admira por cómo eres, tienes mucho poder de influenciar a la gente». Y en la empresa: «Para liderar una empresa, la gente te tiene que admirar».",
+      },
+      {
+        q: "¿Cómo nació Ac2ality?",
+        a: "Mientras trabajaba en la Misión Permanente de España ante Naciones Unidas en Nueva York, empezó a resumir noticias en Instagram y luego en TikTok. Hoy Ac2ality supera los siete millones de seguidores en TikTok y tiene a Atresmedia como accionista mayoritario.",
+      },
+      {
+        q: "¿Cómo selecciona a su equipo?",
+        a: "Su equipo es de unas doce personas y nunca ha leído un currículum para seleccionarlo.",
+      },
+      {
+        q: "¿Qué libro ha escrito?",
+        a: "«Los 10 poderes del éxito» (Espasa).",
+      },
+      {
+        q: "¿Cuál es su misión?",
+        a: "«Mi misión es servir a los demás para hacer de este mundo un lugar mejor».",
+      },
+      {
+        q: "¿Dónde se puede leer la conversación?",
+        a: "La Vanguardia la publicó el 27 de octubre de 2026 bajo la firma de El Diario del Poder: https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html",
+      },
     ],
   },
   {
