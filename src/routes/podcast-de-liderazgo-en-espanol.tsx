@@ -140,6 +140,7 @@ function LeadershipPodcastPage() {
               <a href="https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ" className="btn-primary" target="_blank" rel="noopener noreferrer">Spotify<ArrowUpRight size={16} aria-hidden /></a>
               <a href="https://www.youtube.com/@eldiariodelpoder" className="btn-outline" target="_blank" rel="noopener noreferrer">YouTube<ArrowUpRight size={16} aria-hidden /></a>
             </div>
+            <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground">Más recomendaciones en la <Link to="/mejores-podcasts-de-liderazgo-en-espanol">guía de los mejores podcasts de liderazgo en español</Link>.</p>
             <h3 className="mt-14 text-lg font-medium">En tu país</h3>
             <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {COUNTRY_REGIONS.map((region) => <nav key={region} aria-label={region}><h4 className="mono-label">{region}</h4><ul className="mt-3">{countryList.filter((country) => country.region === region).map((country) => <li key={country.slug}><Link to="/paises/$slug" params={{ slug: country.slug }} className="tap flex items-center text-sm transition-colors hover:text-signal">{country.name}</Link></li>)}</ul></nav>)}
