@@ -132,6 +132,14 @@ export const FORNACIARI_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#l
 export const FORNACIARI_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261019/11662685/federica-fornaciari-experta-liderazgo-estrategia-empresarial-verdadero-hacerse-prescindible.html";
 
+export const MCARENA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-daniela-mcarena";
+export const MCARENA_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html";
+
+/** Sección propia de La Vanguardia para las piezas del podcast (desde el 28/09/2026) y página de autor de la marca. */
+export const LAVANGUARDIA_SECTION_URL = "https://www.lavanguardia.com/podcast/el-diario-del-poder";
+export const LAVANGUARDIA_AUTHOR_URL = "https://www.lavanguardia.com/autores/el-diario-del-poder.html";
+
 export const DIARIO_EXTRA_ID = "https://eldiariodelpoder.com/prensa#diario-extra-fundadores";
 export const DIARIO_EXTRA_URL =
   "https://www.extra.ec/noticia/mundo/diario-podcast-jovenes-entrevista-lideres-mundiales-166037.html";
@@ -142,6 +150,7 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
   "esperanza-aguirre": { url: AGUIRRE_LAVANGUARDIA_URL, schemaId: AGUIRRE_LAVANGUARDIA_ID },
   "miguel-anxo-bastos": { url: BASTOS_LAVANGUARDIA_URL, schemaId: BASTOS_LAVANGUARDIA_ID },
   "federica-fornaciari": { url: FORNACIARI_LAVANGUARDIA_URL, schemaId: FORNACIARI_LAVANGUARDIA_ID },
+  "daniela-macarena": { url: MCARENA_LAVANGUARDIA_URL, schemaId: MCARENA_LAVANGUARDIA_ID },
   "jose-carlos-gonzalez-hurtado": { url: JCGH_LAVANGUARDIA_URL, schemaId: JCGH_LAVANGUARDIA_ID },
 };
 
@@ -173,6 +182,24 @@ export const pressItems: PressItem[] = [
       { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
       { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
     ],
+  },
+  {
+    outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Daniela McArena",
+    url: MCARENA_LAVANGUARDIA_URL,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Octubre 2026 · Podcast",
+    byline: "Publicado bajo la firma de El Diario del Poder",
+    embedUrl: "https://www.youtube-nocookie.com/embed/t0ivuqdA4js",
+    founderQuote: "ha repasado su trayectoria en una entrevista en El Diario del Poder, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
+    quote: "Daniela McArena, cofundadora de Ac2ality: “Para liderar una empresa, la gente te tiene que admirar”",
+    headline: "Daniela McArena, cofundadora de Ac2ality: “Para liderar una empresa, la gente te tiene que admirar”",
+    date: "2026-10-27T11:59:17+01:00",
+    summary:
+      "La cofundadora de Ac2ality repasa su apuesta por la creatividad, el poder de la visualización y la entrada de Atresmedia como accionista mayoritario",
+    schemaId: MCARENA_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/episodios/daniela-mcarena-crear-un-proyecto-viral-desde-cero",
   },
   {
     outlet: "La Vanguardia",
@@ -399,7 +426,7 @@ export const founderNamedArticles = (): PressItem[] => pressItems.filter((i) => 
 
 /** Respuesta compartida (FAQ visible, JSON-LD y llms.txt) sobre La Vanguardia. */
 export function vanguardiaAnswer(name: string) {
-  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder. Tres de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026) y Federica Fornaciari (19/10/2026)—. En las tres, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
+  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder y, desde el 28/09/2026, en una sección propia, «El diario del poder». Cuatro de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026), Federica Fornaciari (19/10/2026) y Daniela McArena (27/10/2026)—. En las cuatro, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
 }
 
 export const pressArticles = pressItems.filter((i) => i.url && i.headline);

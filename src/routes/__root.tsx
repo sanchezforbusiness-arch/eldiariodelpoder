@@ -57,6 +57,7 @@ const structuredData = {
         "https://www.youtube.com/@eldiariodelpoder",
         "https://www.instagram.com/eldiariodelpoder/",
         "https://www.linkedin.com/company/eldiariodelpoder",
+        "https://www.lavanguardia.com/autores/el-diario-del-poder.html",
       ],
     },
     {

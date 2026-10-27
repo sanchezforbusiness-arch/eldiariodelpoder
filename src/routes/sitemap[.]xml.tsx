@@ -13,17 +13,17 @@ function buildSitemap(newsletter: Entry[] = []) {
     { loc: "/ar", changefreq: "weekly", priority: "0.8" },
     { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-27" },
     { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9" },
-    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-19" },
+    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-27" },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9" },
     { loc: "/newsletter", changefreq: "daily", priority: "0.9" },
     { loc: "/paises", changefreq: "weekly", priority: "0.8" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
-    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-26" },
+    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-27" },
     { loc: "/patrocinadores", changefreq: "monthly", priority: "0.7" },
     { loc: "/agenda", changefreq: "monthly", priority: "0.6" },
-    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-26" },
-    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-26" },
+    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-27" },
+    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-27" },
   ];
 
   const episodes: Entry[] = episodeList.map((e) => ({
@@ -36,6 +36,7 @@ function buildSitemap(newsletter: Entry[] = []) {
   const guests: Entry[] = guestList.map((g) => ({
     loc: `/invitados/${g.slug}`,
     ...(g.slug === "rosa-lagarrigue" ? { lastmod: "2026-09-22" } : {}),
+    ...(g.slug === "daniela-macarena" ? { lastmod: "2026-10-27" } : {}),
     ...(g.slug === "federica-fornaciari" ? { lastmod: "2026-10-19" } : {}),
     ...(g.slug === "jose-carlos-gonzalez-hurtado" ? { lastmod: "2026-10-13" } : {}),
     changefreq: "monthly",

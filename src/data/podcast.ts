@@ -47,7 +47,7 @@ const episodesRaw: Omit<EpisodeEntry, "n">[] = [
     guest: "Daniela McArena",
     role: "Cofundadora de Ac2ality",
     date: "2026-10-26",
-    duration: "1h 01m",
+    duration: "1h 01m 08s",
     title: "Crear un proyecto viral desde cero",
     url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html",
     description:
