@@ -51,7 +51,7 @@ const structuredData = {
         description: "Media partner oficial de Diario del Poder.",
       },
       founder: [founderAlejandro, founderVictor],
-      subOrganization: { "@type": "Organization", "@id": CLUB_ID, name: "Club del Poder", url: CLUB_URL },
+      subOrganization: { "@type": "Organization", "@id": CLUB_ID, name: "El Club del Poder", url: CLUB_URL },
       sameAs: [
         "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
         "https://www.youtube.com/@eldiariodelpoder",

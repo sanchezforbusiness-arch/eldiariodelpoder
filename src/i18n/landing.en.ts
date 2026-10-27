@@ -79,7 +79,7 @@ export const landingEn: LandingDict = {
   },
   footer: {
     contactHeading: "Shall we talk?", contactDescription: "Guest proposals, press and sponsorship.", callButton: "Book a call", emailButton: "Email us", contactLabel: "Contact", email: CONTACT_EMAIL, location: "Madrid, Spain", navLabel: "Explore",
-    labels: { "/podcast-de-liderazgo-en-espanol": "The podcast", "/episodios": "Episodes", "/invitados": "Guests", "/newsletter": "Newsletter", "club": "Club del Poder", "/nosotros": "About us", "/manifiesto": "Manifesto", "/prensa": "Press", "/patrocinadores": "Sponsors", "/agenda": "Book a call" },
+    labels: { "/podcast-de-liderazgo-en-espanol": "The podcast", "/episodios": "Episodes", "/invitados": "Guests", "/newsletter": "Newsletter", "club": "El Club del Poder", "/nosotros": "About us", "/manifiesto": "Manifesto", "/prensa": "Press", "/patrocinadores": "Sponsors", "/agenda": "Book a call" },
     listenLabel: "Listen", socialLabels: landingEs.footer.socialLabels, countriesLabel: "Spanish-speaking countries", allCountries: "All countries",
     countryNames: { mexico: "Mexico", colombia: "Colombia", argentina: "Argentina", espana: "Spain", "estados-unidos": "United States", peru: "Peru", chile: "Chile", venezuela: "Venezuela" },
     copyright: "Diario del Poder", copyrightSymbol: "©", alejandro: "Alejandro Sánchez Martínez", victor: "Víctor Hugo Gandarilla de Andrés", founderSeparator: " · ",
