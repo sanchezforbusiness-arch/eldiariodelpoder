@@ -70,7 +70,7 @@ export const landingAr: LandingDict = {
   },
   footer: {
     contactHeading: "لنتحدّث؟", contactDescription: "اقتراحات الضيوف والصحافة والرعاية.", callButton: "احجز مكالمة", emailButton: "راسلنا", contactLabel: "التواصل", email: CONTACT_EMAIL, location: "مدريد، إسبانيا", navLabel: "تصفّح",
-    labels: { "/podcast-de-liderazgo-en-espanol": "البودكاست", "/episodios": "الحلقات", "/invitados": "الضيوف", "/newsletter": "النشرة", "club": "Club del Poder", "/nosotros": "من نحن", "/manifiesto": "البيان", "/prensa": "الصحافة", "/patrocinadores": "الرعاة", "/agenda": "احجز مكالمة" },
+    labels: { "/podcast-de-liderazgo-en-espanol": "البودكاست", "/episodios": "الحلقات", "/invitados": "الضيوف", "/newsletter": "النشرة", "club": "El Club del Poder", "/nosotros": "من نحن", "/manifiesto": "البيان", "/prensa": "الصحافة", "/patrocinadores": "الرعاة", "/agenda": "احجز مكالمة" },
     listenLabel: "استمع", socialLabels: landingEs.footer.socialLabels, countriesLabel: "الدول الناطقة بالإسبانية", allCountries: "جميع الدول",
     countryNames: { mexico: "المكسيك", colombia: "كولومبيا", argentina: "الأرجنتين", espana: "إسبانيا", "estados-unidos": "الولايات المتحدة", peru: "بيرو", chile: "تشيلي", venezuela: "فنزويلا" },
     copyright: "Diario del Poder", copyrightSymbol: "©", alejandro: "Alejandro Sánchez Martínez", victor: "Víctor Hugo Gandarilla de Andrés", founderSeparator: " · ",

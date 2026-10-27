@@ -357,7 +357,7 @@ export const landingEs: LandingDict = {
       "/episodios": "Episodios",
       "/invitados": "Invitados",
       "/newsletter": "Newsletter",
-      "club": "Club del Poder",
+      "club": "El Club del Poder",
       "/nosotros": "Nosotros",
       "/manifiesto": "Manifiesto",
       "/prensa": "Prensa",
