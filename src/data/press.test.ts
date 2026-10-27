@@ -44,7 +44,7 @@ describe("Diario Extra founders report", () => {
     assert.deepEqual(schema?.publisher, { "@type": "NewsMediaOrganization", name: "Diario Extra (Ecuador)", areaServed: "Ecuador" });
   });
 
-  test("the La Vanguardia FAQ still counts exactly three pieces", () => {
+  test("the La Vanguardia FAQ counts exactly four pieces", () => {
     assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Cuatro de esas piezas/);
     assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Daniela McArena \(27\/10\/2026\)/);
     assert.doesNotMatch(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Tres de esas|En las tres/);
