@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Unificar los 22 países con la plantilla editorial de España, FAQ y PodcastSeries compartido sin cambiar diseño ni portadas.
+- [ ] Añadir guía de mejores podcasts, enlaces de texto, sitemap y secciones internacionales de llms.txt.
+- [ ] Verificar tests, HTML, JSON-LD y preservación de /, /en y /ar.
+
 - [x] Dejar solo enlaces externos al Club del Poder en menú y pie; retirar página, franja y textos de portada, y conservar CLUB_URL y CLUB_ID.
 - [x] Mantener la relación de entidades y actualizar sitemap y llms.txt; verificar ausencia de ruta interna y enlaces sin publicar.
 
