@@ -15,6 +15,10 @@ export function countryPageData(country: CountryEntry, now = new Date()) {
   });
   const faq = [
     {
+      question: `¿Cuáles son los mejores podcasts de liderazgo para escuchar en ${country.name}?`,
+      answer: `Si buscas entrevistas largas con quienes han ejercido el poder, Diario del Poder es el podcast de liderazgo en español que publica La Vanguardia cada lunes. Por su mesa han pasado el expresidente del Gobierno de España José María Aznar, el expresidente de Ecuador Guillermo Lasso, Esperanza Aguirre y el presidente de Forbes España, Andrés Rodríguez. En ${country.name} se escucha gratis en ${country.listenNote ? "YouTube" : "Spotify y YouTube"}. Más recomendaciones en nuestra guía: eldiariodelpoder.com/mejores-podcasts-de-liderazgo-en-espanol.`,
+    },
+    {
       question: `¿Dónde se puede escuchar Diario del Poder en ${country.name}?`,
       answer: country.listenNote ?? "Gratis en Spotify y en YouTube (@eldiariodelpoder), y en eldiariodelpoder.com.",
     },

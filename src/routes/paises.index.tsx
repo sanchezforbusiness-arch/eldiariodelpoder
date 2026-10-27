@@ -73,6 +73,7 @@ function CountryIndex() {
           <p className="mono-label">Diario del Poder · Países</p>
           <h1 className="mt-5 max-w-4xl text-2xl font-medium leading-tight text-balance md:text-3xl">Un podcast en español, escuchado en cada país</h1>
           <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">Diario del Poder se graba en Madrid y se escucha en todo el mundo hispanohablante. Elige tu país para ver a qué hora se estrena cada episodio, por qué conversaciones empezar y cómo pueden participar las marcas locales.</p>
+          <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">Consulta nuestra <Link to="/mejores-podcasts-de-liderazgo-en-espanol">guía de los mejores podcasts de liderazgo en español</Link>.</p>
         </header>
         {COUNTRY_REGIONS.map((region) => (
           <section key={region} className="border-t border-border py-16 md:py-24">

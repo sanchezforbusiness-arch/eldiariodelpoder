@@ -11,6 +11,7 @@ function buildSitemap(newsletter: Entry[] = []) {
     { loc: "/", changefreq: "weekly", priority: "1.0" },
     { loc: "/en", changefreq: "weekly", priority: "0.8" },
     { loc: "/ar", changefreq: "weekly", priority: "0.8" },
+    { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-27" },
     { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9" },
     { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-19" },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9" },
@@ -43,7 +44,7 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const countries: Entry[] = countryList.map((country) => ({
     loc: `/paises/${country.slug}`,
-    changefreq: "monthly", priority: "0.7", lastmod: "2026-10-18",
+    changefreq: "monthly", priority: "0.7", lastmod: "2026-10-27",
   }));
   const all = [...staticPages, ...episodes, ...guests, ...countries, ...newsletter];
 
