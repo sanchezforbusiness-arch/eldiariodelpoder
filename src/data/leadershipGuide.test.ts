@@ -10,7 +10,9 @@ test("guide includes exactly the eight supplied podcasts, with no fabricated ext
     assert.equal("url" in item, false);
     assert.equal("@id" in item, false);
   }
-  assert.equal(guideItemList.itemListElement[3]?.item.name, "itnig");
+  const itnig = guideItemList.itemListElement[3]?.item;
+  assert.ok(itnig && "name" in itnig);
+  assert.equal(itnig.name, "itnig");
   assert.equal("author" in (guideItemList.itemListElement[3]?.item ?? {}), false);
   assert.equal("author" in (guideItemList.itemListElement[4]?.item ?? {}), false);
 });
