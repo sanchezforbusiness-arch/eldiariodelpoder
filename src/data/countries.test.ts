@@ -38,4 +38,27 @@ describe("Country publication rules", () => {
     assert.equal(CONTACT_EMAIL, "contactoeldiariodelpoder@gmail.com");
     assert.equal(BOOKING_EMAIL, CONTACT_EMAIL);
   });
+
+  test("all 22 countries keep the four existing FAQ answers after the new discovery question", () => {
+    for (const country of countryList) {
+      const { faq, zones } = countryPageData(country);
+      assert.equal(faq.length, 5);
+      assert.equal(faq[1].answer, country.listenNote ?? "Gratis en Spotify y en YouTube (@eldiariodelpoder), y en eldiariodelpoder.com.");
+      assert.equal(faq[2].answer, `Cada ${zones[0]?.weekday} a las ${zones[0]?.time} (${zones[0]?.label}), cuando La Vanguardia publica la conversación de la semana.`);
+      assert.equal(faq[3].answer, country.guestsAnswer);
+      assert.equal(faq[4].answer, `${country.sponsor} Las opciones y el formulario están en eldiariodelpoder.com/patrocinadores.`);
+    }
+  });
+
+  test("Cuba recommends YouTube only in the discovery answer", () => {
+    const country = getCountryBySlug("cuba");
+    assert.ok(country);
+    assert.ok(countryPageData(country).faq[0]?.answer.includes("En Cuba se escucha gratis en YouTube."));
+  });
+
+  test("Mexico recommends Spotify and YouTube in the discovery answer", () => {
+    const country = getCountryBySlug("mexico");
+    assert.ok(country);
+    assert.ok(countryPageData(country).faq[0]?.answer.includes("En México se escucha gratis en Spotify y YouTube."));
+  });
 });
