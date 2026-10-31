@@ -28,6 +28,8 @@ export type EpisodeEntry = {
   guestSlug?: string;
   /** Transcripción en párrafos (pendiente de rellenar) */
   transcript?: string[];
+  /** No bajar la primera letra del título al componer el H1 (nombres propios como Forbes) */
+  keepTitleCase?: boolean;
   guest: string;
   title: string;
   url: string;
