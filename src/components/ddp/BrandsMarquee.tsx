@@ -2,6 +2,8 @@ import { landingEs } from "@/i18n/landing";
 import { useLanding } from "@/i18n/LandingContext";
 import apdLogo from "@/assets/logo-apd.png.asset.json";
 import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+import palantirLogo from "@/assets/logo-palantir.svg";
+
 
 
 
@@ -15,6 +17,7 @@ type Brand = { name: string; domain?: string; logo?: string };
 export const BRANDS: Brand[] = [
   { name: landingEs.brands.names["Forbes"], domain: "forbes.es" },
   { name: landingEs.brands.names["La Vanguardia"], domain: "lavanguardia.com" },
+  { name: "Palantir", domain: "palantir.com", logo: palantirLogo },
   { name: landingEs.brands.names["Fundaci\u00f3n La Caixa"], domain: "fundacionlacaixa.org" },
   { name: landingEs.brands.names["Telef\u00f3nica"], domain: "telefonica.com" },
   { name: landingEs.brands.names["Atl\u00e9tico de Madrid"], domain: "atleticodemadrid.com" },
