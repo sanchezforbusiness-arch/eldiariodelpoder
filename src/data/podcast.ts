@@ -9,6 +9,7 @@ import aznarImg from "@/assets/bts-aznar-dialogos.webp";
 import echavarrenImg from "@/assets/guest-echavarren.webp";
 import fornaciariImg from "@/assets/guest-8.webp";
 import danielaAssetEp from "@/assets/guest-daniela-macarena.png.asset.json";
+import { danielaChapters, danielaQuotes, danielaFaq } from "./danielaEpisode";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -34,6 +35,12 @@ export type EpisodeEntry = {
   role?: string;
   date?: string;
   duration?: string;
+  durationSeconds?: number;
+  chapters?: { start: number; title: string }[];
+  quotes?: { text: string; start: number }[];
+  faq?: { question: string; answer: string; start?: number }[];
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
@@ -47,11 +54,17 @@ const episodesRaw: Omit<EpisodeEntry, "n">[] = [
     guest: "Daniela McArena",
     role: "Cofundadora de Ac2ality",
     date: "2026-10-26",
-    duration: "1h 01m 08s",
+    duration: "1h 01m 07s",
+    durationSeconds: 3667,
+    chapters: danielaChapters,
+    quotes: danielaQuotes,
+    faq: danielaFaq,
+    seoTitle: "Daniela McArena (Ac2ality): crear un proyecto viral desde cero | Diario del Poder",
+    seoDescription: "Entrevista a Daniela McArena, cofundadora de Ac2ality: cómo nació, la venta a Atresmedia, cómo lidera y los 29 momentos clave de la conversación.",
     title: "Crear un proyecto viral desde cero",
     url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html",
     description:
-      "La cofundadora de Ac2ality repasa su apuesta por la creatividad, el poder de la visualización y la entrada de Atresmedia como accionista mayoritario. Empezó a resumir noticias en Instagram y TikTok desde la Misión Permanente de España ante Naciones Unidas en Nueva York: «Yo sin quererlo creé algo que no existía». Sobre liderar: «Para liderar una empresa, la gente te tiene que admirar».",
+      "Daniela McArena es cofundadora de Ac2ality (2020), el medio de noticias en español más seguido de TikTok, con Atresmedia como accionista mayoritario. En esta conversación explica cómo nació Ac2ality, su venta a Atresmedia, cómo lidera a su equipo y el panel de visualización que utiliza desde los diez años. «Para liderar una empresa, la gente te tiene que admirar.»",
   },
   {
     episodeNumber: 10,
@@ -218,7 +231,13 @@ export type GuestEntry = {
   slug: string;
   name: string;
   /** Grafía alternativa del nombre (JSON-LD alternateName) */
-  alternateName?: string;
+  alternateName?: string | string[];
+  sameAs?: string[];
+  birthDate?: string;
+  birthPlace?: string;
+  alumniOf?: { name: string; sameAs?: string };
+  organization?: { id: string; name: string; url: string; foundingDate: string; sameAs: string[]; parentOrganization?: { name: string; sameAs: string[] } };
+  books?: { name: string; publisher: string; isbn: string; datePublished: string; url: string }[];
   role: string;
   bio: string;
   /** ID del vídeo de YouTube de la entrevista, si está publicada */
@@ -554,7 +573,17 @@ export const guestList: GuestEntry[] = [
   {
     slug: "daniela-macarena",
     name: "Daniela McArena",
-    alternateName: "Daniela Macarena",
+    alternateName: ["Daniela Macarena", "Daniela Álvarez"],
+    sameAs: ["https://www.youtube.com/@danielamcarena", "https://www.planetadelibros.com/autor/daniela-mcarena/000063873"],
+    birthDate: "1996",
+    birthPlace: "Torrelodones, Comunidad de Madrid, España",
+    alumniOf: { name: "Queen Mary University of London", sameAs: "https://en.wikipedia.org/wiki/Queen_Mary_University_of_London" },
+    organization: {
+      id: "https://eldiariodelpoder.com/invitados/daniela-macarena#ac2ality", name: "Ac2ality", url: "https://www.ac2ality.com", foundingDate: "2020",
+      sameAs: ["https://es.wikipedia.org/wiki/Ac2ality", "https://www.wikidata.org/wiki/Q123185900", "https://www.tiktok.com/@ac2ality", "https://www.instagram.com/ac2ality/"],
+      parentOrganization: { name: "Atresmedia", sameAs: ["https://es.wikipedia.org/wiki/Atresmedia", "https://www.wikidata.org/wiki/Q3118227"] },
+    },
+    books: [{ name: "Los 10 poderes del éxito", publisher: "Espasa", isbn: "978-84-670-7794-0", datePublished: "2025-10-29", url: "https://www.planetadelibros.com/libro-los-10-poderes-del-exito/419806" }],
     role: "Cofundadora de Ac2ality",
     bio: "Cofundadora de Ac2ality, el medio que resume la actualidad en redes sociales, y autora de «Los 10 poderes del éxito» (Espasa).",
     youtubeId: "t0ivuqdA4js",
