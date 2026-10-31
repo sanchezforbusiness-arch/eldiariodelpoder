@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Crear tres guías SEO/GEO con los podcasts verificados y la plantilla editorial existente.
+- [ ] Ampliar FAQ de los 22 países, enlazado entre guías y grupo del pie, género de la serie, llms.txt y sitemap.
+- [ ] Verificar las nuevas páginas, países, enlaces, marcado y pruebas sin publicar.
+
 - [x] Añadir el reportaje de Dircomfidencial, la FAQ de financiación y sus datos de prensa sin cambiar diseño.
 - [x] Actualizar llms.txt y fechas del sitemap; verificar las tres páginas y pruebas.
 
