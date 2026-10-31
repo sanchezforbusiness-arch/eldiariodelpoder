@@ -125,7 +125,7 @@ function LeadershipPodcastPage() {
                 <li key={episode.slug}>
                   <Link to="/episodios/$slug" params={{ slug: episode.slug }} className="row-index gap-4 grid-cols-[36px_minmax(0,1fr)] md:grid-cols-[48px_minmax(0,1fr)_110px]">
                     <span className="mono-label tabular-nums">{String(episode.episodeNumber).padStart(2, "0")}</span>
-                    <span className="min-w-0"><span className="block text-lg font-medium">{episode.guest}</span><span className="mt-2 block text-sm text-muted-foreground">{episode.title}</span>{episode.date && <time dateTime={episode.date} className="mono-label mt-3 block md:hidden">{episode.date.split("-").reverse().join("/")}</time>}</span>
+                    <span className="min-w-0"><span className="block text-lg font-medium">{episode.guest}</span><span className="mt-2 block text-sm text-muted-foreground">{episode.title}{episode.episodeNumber === 11 ? " · liderar desde la admiración" : ""}</span>{episode.date && <time dateTime={episode.date} className="mono-label mt-3 block md:hidden">{episode.date.split("-").reverse().join("/")}</time>}</span>
                     {episode.date && <time dateTime={episode.date} className="mono-label hidden text-right tabular-nums md:block">{episode.date.split("-").reverse().join("/")}</time>}
                   </Link>
                 </li>

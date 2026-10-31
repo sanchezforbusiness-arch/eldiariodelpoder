@@ -9,15 +9,15 @@ type Entry = { loc: string; lastmod?: string; changefreq: string; priority: stri
 function buildSitemap(newsletter: Entry[] = []) {
   const staticPages: Entry[] = [
     { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-10-31" },
-    { loc: "/en", changefreq: "weekly", priority: "0.8" },
-    { loc: "/ar", changefreq: "weekly", priority: "0.8" },
+    { loc: "/en", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
+    { loc: "/ar", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-de-entrevistas-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/podcasts-para-jovenes", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
-    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-27" },
-    { loc: "/invitados", changefreq: "weekly", priority: "0.9" },
+    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-31" },
+    { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/newsletter", changefreq: "daily", priority: "0.9" },
     { loc: "/paises", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
@@ -31,17 +31,14 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const episodes: Entry[] = episodeList.map((e) => ({
     loc: `/episodios/${e.slug}`,
-    lastmod: e.date,
+    lastmod: "2026-10-31",
     changefreq: "monthly",
     priority: "0.8",
   }));
 
   const guests: Entry[] = guestList.map((g) => ({
     loc: `/invitados/${g.slug}`,
-    ...(g.slug === "rosa-lagarrigue" ? { lastmod: "2026-09-22" } : {}),
-    ...(g.slug === "daniela-macarena" ? { lastmod: "2026-10-27" } : {}),
-    ...(g.slug === "federica-fornaciari" ? { lastmod: "2026-10-19" } : {}),
-    ...(g.slug === "jose-carlos-gonzalez-hurtado" ? { lastmod: "2026-10-13" } : {}),
+    ...(episodeList.some((e) => e.guestSlug === g.slug) ? { lastmod: "2026-10-31" } : {}),
     changefreq: "monthly",
     priority: "0.7",
   }));
