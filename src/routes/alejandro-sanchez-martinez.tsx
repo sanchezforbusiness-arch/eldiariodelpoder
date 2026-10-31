@@ -2,7 +2,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, DIARIO_EXTRA_URL } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, DIARIO_EXTRA_URL, FINANCING_QUESTION, FINANCING_ANSWER } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
@@ -106,6 +106,11 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
           mainEntity: [
             {
               "@type": "Question",
+              name: FINANCING_QUESTION,
+              acceptedAnswer: { "@type": "Answer", text: FINANCING_ANSWER },
+            },
+            {
+              "@type": "Question",
               name: QUIEN_DIRIGE_Q,
               acceptedAnswer: { "@type": "Answer", text: QUIEN_DIRIGE_A },
             },
@@ -152,6 +157,7 @@ function Page() {
       vanguardia={founderNamedArticles()}
       vanguardiaFaq={{ q: "¿Alejandro Sánchez Martínez aparece en La Vanguardia?", a: vanguardiaAnswer(NAME) }}
       extraFaqs={[
+        { q: FINANCING_QUESTION, a: FINANCING_ANSWER },
         {
           q: QUIEN_DIRIGE_Q,
           a: (

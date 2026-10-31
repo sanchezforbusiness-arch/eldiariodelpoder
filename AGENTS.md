@@ -1,6 +1,7 @@
 # Project conventions
 
 - Keep press entries and external audio metadata in `src/data/press.ts`; use its `pressPodcastSchema` helper in press and founder JSON-LD so audio interviews are never marked as news articles.
+- Use `pressArticleSchema` for press and founder NewsArticle nodes, with typed external authors and shared founder FAQ data in `src/data/press.ts`, so editorial organizations are not marked as people and visible answers match structured data.
 - Founder profiles accept optional social links so adding one founder's profile does not change another's links.
 - Use `src/data/contact.ts` as the sole contact-email source so mailbox updates propagate to visible content, mailto links and structured data.
 - Keep literal country editorial data in `src/data/countries.ts`; country loaders use `src/data/countryPage.ts` to share a stable schedule and FAQ snapshot between SSR, hydration and JSON-LD.

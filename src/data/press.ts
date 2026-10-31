@@ -7,6 +7,7 @@ export type PressItem = {
   quote?: string;
   headline?: string;
   date?: string;
+  dateModified?: string;
   summary?: string;
   /** Etiqueta de la tarjeta destacada */
   label?: string;
@@ -23,7 +24,7 @@ export type PressItem = {
   schemaId?: string;
   /** @id de las personas que firman la pieza */
   authorIds?: string[];
-  /** Cita literal del cuerpo que nombra a los fundadores con los dos apellidos */
+  /** Cita literal del cuerpo o del pie de foto que identifica a los fundadores */
   founderQuote?: string;
   /** Fuente en la que se basa la pieza */
   isBasedOn?: string;
@@ -35,8 +36,8 @@ export type PressItem = {
     station: string;
     participantIds: string[];
   };
-  /** Firma externa de la pieza (persona), cuando no la firma la marca. */
-  externalAuthor?: { name: string; url?: string };
+  /** Firma externa de la pieza; por defecto una persona. */
+  externalAuthor?: { name: string; url?: string; type?: "Person" | "Organization" };
   /** Área servida del medio que publica (p. ej. "Ecuador"). */
   publisherAreaServed?: string;
   /** Nodos `about` del NewsArticle (por defecto, la organización). */
@@ -50,6 +51,7 @@ import aguirreLaVanguardiaImage from "@/assets/guest-esperanza-aguirre.jpg.asset
 import jcghImage from "@/assets/guest-jc-gonzalez-hurtado.png.asset.json";
 import bastosImage from "@/assets/guest-miguel-anxo-bastos.jpg.asset.json";
 import diarioExtraImage from "@/assets/diario-extra-fundadores.webp.asset.json";
+import dircomfidencialImage from "@/assets/dircomfidencial-fundadores.webp.asset.json";
 
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
@@ -88,6 +90,7 @@ export function pressArticleSchema(a: PressItem) {
     headline: a.headline,
     url: a.url,
     datePublished: a.date,
+    ...(a.dateModified ? { dateModified: a.dateModified } : {}),
     description: a.summary,
     inLanguage: "es",
     publisher: {
@@ -103,7 +106,7 @@ export function pressArticleSchema(a: PressItem) {
         }
       : {}),
     ...(a.externalAuthor
-      ? { author: { "@type": "Person", name: a.externalAuthor.name, ...(a.externalAuthor.url ? { url: a.externalAuthor.url } : {}) } }
+      ? { author: { "@type": a.externalAuthor.type ?? "Person", name: a.externalAuthor.name, ...(a.externalAuthor.url ? { url: a.externalAuthor.url } : {}) } }
       : a.founderQuote
         ? { author: { "@id": ORGANIZATION_ID } }
         : {}),
@@ -144,6 +147,14 @@ export const DIARIO_EXTRA_ID = "https://eldiariodelpoder.com/prensa#diario-extra
 export const DIARIO_EXTRA_URL =
   "https://www.extra.ec/noticia/mundo/diario-podcast-jovenes-entrevista-lideres-mundiales-166037.html";
 
+export const DIRCOMFIDENCIAL_ID = "https://eldiariodelpoder.com/prensa#dircomfidencial-fundadores";
+export const DIRCOMFIDENCIAL_URL =
+  "https://dircomfidencial.com/medios/dos-jovenes-impulsan-diario-del-poder-medio-para-conectar-a-las-nuevas-generaciones-con-lideres-inspiradores-20261028-0402/";
+
+export const FINANCING_QUESTION = "¿Cómo se financia El Diario del Poder?";
+export const FINANCING_ANSWER =
+  "Con dos vías: el patrocinio tradicional y las «píldoras del poder», piezas en las que las propias marcas participan en el podcast. Sus fundadores, Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, declararon a Dircomfidencial el 28 de octubre de 2026 que el proyecto es rentable y que el siguiente paso son entrevistas internacionales, en otros idiomas, documentales y un club para su comunidad.";
+
 /** Piezas publicadas en medios a partir de las entrevistas, indexadas por invitado (publicadas bajo la firma de El Diario del Poder). */
 export const guestArticleBySlug: Record<string, { url: string; schemaId: string }> = {
   "rosa-lagarrigue": { url: ROSA_LAVANGUARDIA_URL, schemaId: ROSA_LAVANGUARDIA_ID },
@@ -156,10 +167,44 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
 
 export const pressItems: PressItem[] = [
   {
+    outlet: "Dircomfidencial",
+    context: "Reportaje sobre los fundadores — Medios",
+    url: DIRCOMFIDENCIAL_URL,
+    featured: true,
+    kind: "digital",
+    label: "Portada · Reportaje sobre los fundadores",
+    dateLabel: "Octubre 2026 · Reportaje",
+    byline: "Redacción Dircomfidencial · Sección Medios",
+    image: dircomfidencialImage.url,
+    imageAlt: "Víctor Hugo Gandarilla de Andrés (izquierda) y Alejandro Sánchez Martínez, fundadores de El Diario del Poder, en la fotografía del reportaje de Dircomfidencial",
+    quote: "Dos universitarios convierten su podcast con Aznar, Uribe y Tebas en un negocio rentable con ambición internacional",
+    headline: "Dos universitarios convierten su podcast con Aznar, Uribe y Tebas en un negocio rentable con ambición internacional",
+    date: "2026-10-28T04:02:00+01:00",
+    dateModified: "2026-10-29T08:56:20+01:00",
+    summary: "Dos compañeros de la Universidad de Navarra, de 21 y 22 años, impulsan El Diario del Poder, un medio que conecta a líderes inspiradores con jóvenes.",
+    schemaId: DIRCOMFIDENCIAL_ID,
+    // Aquí es el pie de foto; el cuerpo usa la forma corta de Alejandro.
+    founderQuote: "Víctor Hugo Gandarilla (izq.) y Alejandro Sánchez Martínez",
+    externalAuthor: { name: "Redacción Dircomfidencial", url: "https://dircomfidencial.com/", type: "Organization" },
+    publisherAreaServed: "España",
+    aboutIds: [ALEJANDRO_ID, VICTOR_ID, PODCAST_SERIES_ID, ORGANIZATION_ID],
+    extraMentions: [
+      { "@type": "Person", name: "José María Aznar", jobTitle: "Expresidente del Gobierno de España" },
+      { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
+      { "@type": "Person", name: "Álvaro Uribe", jobTitle: "Expresidente de Colombia" },
+      { "@type": "Person", name: "Javier Tebas" },
+      { "@type": "Person", name: "Laura González-Molero" },
+      { "@type": "Person", name: "Federica Fornaciari", "@id": "https://eldiariodelpoder.com/invitados/federica-fornaciari#person" },
+      { "@type": "Person", name: "Íñigo Rivero" },
+      { "@type": "Person", name: "Jordi Urbea" },
+      { "@type": "CollegeOrUniversity", name: "Universidad de Navarra" },
+      { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ],
+  },
+  {
     outlet: "Diario Extra (Ecuador)",
     context: "Reportaje sobre los fundadores — Mundo",
     url: DIARIO_EXTRA_URL,
-    featured: true,
     kind: "digital",
     label: "Portada · Reportaje sobre los fundadores",
     dateLabel: "Octubre 2026 · Reportaje",
@@ -421,7 +466,7 @@ export const pressItems: PressItem[] = [
   { outlet: "Univision", context: "Entrevista en directo · EE. UU.", kind: "tv" },
 ];
 
-/** Piezas cuyo cuerpo nombra a los fundadores con los dos apellidos. */
+/** Piezas que identifican a los fundadores en el cuerpo o el pie de foto. */
 export const founderNamedArticles = (): PressItem[] => pressItems.filter((i) => i.founderQuote);
 
 /** Respuesta compartida (FAQ visible, JSON-LD y llms.txt) sobre La Vanguardia. */

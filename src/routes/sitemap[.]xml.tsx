@@ -19,11 +19,11 @@ function buildSitemap(newsletter: Entry[] = []) {
     { loc: "/paises", changefreq: "weekly", priority: "0.8" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
-    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-27" },
+    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/patrocinadores", changefreq: "monthly", priority: "0.7" },
     { loc: "/agenda", changefreq: "monthly", priority: "0.6" },
-    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-27" },
-    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-27" },
+    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
+    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
   ];
 
   const episodes: Entry[] = episodeList.map((e) => ({
