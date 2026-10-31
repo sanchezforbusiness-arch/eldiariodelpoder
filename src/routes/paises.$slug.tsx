@@ -5,7 +5,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { Button } from "@/components/ui/button";
 import { CONTACT_EMAIL } from "@/data/contact";
 import { COUNTRY_REGIONS, countryList, getCountryBySlug } from "@/data/countries";
-import { countryPageData, COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "@/data/countryPage";
+import { countryPageData, countryPageTitle, COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "@/data/countryPage";
 import { podcastSeriesSchema } from "@/data/podcastSeries";
 
 export const Route = createFileRoute("/paises/$slug")({
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/paises/$slug")({
     const url = `${COUNTRY_SITE}/paises/${country.slug}`;
     return {
       meta: [
-        { title: country.metaTitle },
+        { title: countryPageTitle(country) },
         { name: "description", content: country.metaDescription },
-        { property: "og:title", content: country.metaTitle },
+        { property: "og:title", content: countryPageTitle(country) },
         { property: "og:description", content: country.metaDescription },
         { property: "og:url", content: url },
         { property: "og:type", content: "website" },
@@ -166,6 +166,7 @@ function CountryPage() {
                 </details>
               ))}
             </div>
+            <p className="mt-5 max-w-4xl text-base leading-relaxed text-muted-foreground">Más recomendaciones: <Link to="/mejores-podcasts-en-espanol">Mejores podcasts en español por temas</Link> · <Link to="/mejores-podcasts-de-liderazgo-en-espanol">Podcasts de liderazgo</Link>.</p>
           </div>
         </section>
 

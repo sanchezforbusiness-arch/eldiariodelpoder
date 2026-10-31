@@ -14,10 +14,13 @@ import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MejoresPodcastsDeEntrevistasEnEspanolRouteImport } from './routes/mejores-podcasts-de-entrevistas-en-espanol'
 import { Route as MejoresPodcastsDeLiderazgoEnEspanolRouteImport } from './routes/mejores-podcasts-de-liderazgo-en-espanol'
+import { Route as MejoresPodcastsEnEspanolRouteImport } from './routes/mejores-podcasts-en-espanol'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as PodcastDeLiderazgoEnEspanolRouteImport } from './routes/podcast-de-liderazgo-en-espanol'
+import { Route as PodcastsParaJovenesRouteImport } from './routes/podcasts-para-jovenes'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
@@ -63,10 +66,22 @@ const McpRoute = McpRouteImport.update({
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MejoresPodcastsDeEntrevistasEnEspanolRoute =
+  MejoresPodcastsDeEntrevistasEnEspanolRouteImport.update({
+    id: '/mejores-podcasts-de-entrevistas-en-espanol',
+    path: '/mejores-podcasts-de-entrevistas-en-espanol',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MejoresPodcastsDeLiderazgoEnEspanolRoute =
   MejoresPodcastsDeLiderazgoEnEspanolRouteImport.update({
     id: '/mejores-podcasts-de-liderazgo-en-espanol',
     path: '/mejores-podcasts-de-liderazgo-en-espanol',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MejoresPodcastsEnEspanolRoute =
+  MejoresPodcastsEnEspanolRouteImport.update({
+    id: '/mejores-podcasts-en-espanol',
+    path: '/mejores-podcasts-en-espanol',
     getParentRoute: () => rootRouteImport,
   } as any)
 const NosotrosRoute = NosotrosRouteImport.update({
@@ -85,6 +100,11 @@ const PodcastDeLiderazgoEnEspanolRoute =
     path: '/podcast-de-liderazgo-en-espanol',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PodcastsParaJovenesRoute = PodcastsParaJovenesRouteImport.update({
+  id: '/podcasts-para-jovenes',
+  path: '/podcasts-para-jovenes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrensaRoute = PrensaRouteImport.update({
   id: '/prensa',
   path: '/prensa',
@@ -184,10 +204,13 @@ export interface FileRoutesByFullPath {
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
+  '/mejores-podcasts-de-entrevistas-en-espanol': typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
   '/mejores-podcasts-de-liderazgo-en-espanol': typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
+  '/mejores-podcasts-en-espanol': typeof MejoresPodcastsEnEspanolRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
+  '/podcasts-para-jovenes': typeof PodcastsParaJovenesRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -213,10 +236,13 @@ export interface FileRoutesByTo {
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
+  '/mejores-podcasts-de-entrevistas-en-espanol': typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
   '/mejores-podcasts-de-liderazgo-en-espanol': typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
+  '/mejores-podcasts-en-espanol': typeof MejoresPodcastsEnEspanolRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
+  '/podcasts-para-jovenes': typeof PodcastsParaJovenesRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -243,10 +269,13 @@ export interface FileRoutesById {
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
+  '/mejores-podcasts-de-entrevistas-en-espanol': typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
   '/mejores-podcasts-de-liderazgo-en-espanol': typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
+  '/mejores-podcasts-en-espanol': typeof MejoresPodcastsEnEspanolRoute
   '/nosotros': typeof NosotrosRoute
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
+  '/podcasts-para-jovenes': typeof PodcastsParaJovenesRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -274,10 +303,13 @@ export interface FileRouteTypes {
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
     | '/mcp'
+    | '/mejores-podcasts-de-entrevistas-en-espanol'
     | '/mejores-podcasts-de-liderazgo-en-espanol'
+    | '/mejores-podcasts-en-espanol'
     | '/nosotros'
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
+    | '/podcasts-para-jovenes'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -303,10 +335,13 @@ export interface FileRouteTypes {
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
     | '/mcp'
+    | '/mejores-podcasts-de-entrevistas-en-espanol'
     | '/mejores-podcasts-de-liderazgo-en-espanol'
+    | '/mejores-podcasts-en-espanol'
     | '/nosotros'
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
+    | '/podcasts-para-jovenes'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -332,10 +367,13 @@ export interface FileRouteTypes {
     | '/alejandro-sanchez-martinez'
     | '/manifiesto'
     | '/mcp'
+    | '/mejores-podcasts-de-entrevistas-en-espanol'
     | '/mejores-podcasts-de-liderazgo-en-espanol'
+    | '/mejores-podcasts-en-espanol'
     | '/nosotros'
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
+    | '/podcasts-para-jovenes'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -362,10 +400,13 @@ export interface RootRouteChildren {
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
   ManifiestoRoute: typeof ManifiestoRoute
   McpRoute: typeof McpRoute
+  MejoresPodcastsDeEntrevistasEnEspanolRoute: typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
   MejoresPodcastsDeLiderazgoEnEspanolRoute: typeof MejoresPodcastsDeLiderazgoEnEspanolRoute
+  MejoresPodcastsEnEspanolRoute: typeof MejoresPodcastsEnEspanolRoute
   NosotrosRoute: typeof NosotrosRoute
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PodcastDeLiderazgoEnEspanolRoute: typeof PodcastDeLiderazgoEnEspanolRoute
+  PodcastsParaJovenesRoute: typeof PodcastsParaJovenesRoute
   PrensaRoute: typeof PrensaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
@@ -423,11 +464,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mejores-podcasts-de-entrevistas-en-espanol': {
+      id: '/mejores-podcasts-de-entrevistas-en-espanol'
+      path: '/mejores-podcasts-de-entrevistas-en-espanol'
+      fullPath: '/mejores-podcasts-de-entrevistas-en-espanol'
+      preLoaderRoute: typeof MejoresPodcastsDeEntrevistasEnEspanolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mejores-podcasts-de-liderazgo-en-espanol': {
       id: '/mejores-podcasts-de-liderazgo-en-espanol'
       path: '/mejores-podcasts-de-liderazgo-en-espanol'
       fullPath: '/mejores-podcasts-de-liderazgo-en-espanol'
       preLoaderRoute: typeof MejoresPodcastsDeLiderazgoEnEspanolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mejores-podcasts-en-espanol': {
+      id: '/mejores-podcasts-en-espanol'
+      path: '/mejores-podcasts-en-espanol'
+      fullPath: '/mejores-podcasts-en-espanol'
+      preLoaderRoute: typeof MejoresPodcastsEnEspanolRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nosotros': {
@@ -449,6 +504,13 @@ declare module '@tanstack/react-router' {
       path: '/podcast-de-liderazgo-en-espanol'
       fullPath: '/podcast-de-liderazgo-en-espanol'
       preLoaderRoute: typeof PodcastDeLiderazgoEnEspanolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podcasts-para-jovenes': {
+      id: '/podcasts-para-jovenes'
+      path: '/podcasts-para-jovenes'
+      fullPath: '/podcasts-para-jovenes'
+      preLoaderRoute: typeof PodcastsParaJovenesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prensa': {
@@ -586,11 +648,15 @@ const rootRouteChildren: RootRouteChildren = {
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
   ManifiestoRoute: ManifiestoRoute,
   McpRoute: McpRoute,
+  MejoresPodcastsDeEntrevistasEnEspanolRoute:
+    MejoresPodcastsDeEntrevistasEnEspanolRoute,
   MejoresPodcastsDeLiderazgoEnEspanolRoute:
     MejoresPodcastsDeLiderazgoEnEspanolRoute,
+  MejoresPodcastsEnEspanolRoute: MejoresPodcastsEnEspanolRoute,
   NosotrosRoute: NosotrosRoute,
   PatrocinadoresRoute: PatrocinadoresRoute,
   PodcastDeLiderazgoEnEspanolRoute: PodcastDeLiderazgoEnEspanolRoute,
+  PodcastsParaJovenesRoute: PodcastsParaJovenesRoute,
   PrensaRoute: PrensaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,

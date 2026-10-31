@@ -4,6 +4,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { COUNTRY_REGIONS, countryList } from "@/data/countries";
 import { COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "@/data/countryPage";
 import { GUIDE_URL, GUIDE_TITLE, GUIDE_DESCRIPTION, GUIDE_DATE, guideSections, guideCriteria, guideFaq, guideItemList } from "@/data/leadershipGuide";
+import { DISCOVERY_DATE, guideLinks } from "@/data/spanishPodcastsGuide";
 
 export const Route = createFileRoute("/mejores-podcasts-de-liderazgo-en-espanol")({
   head: () => ({
@@ -32,7 +33,7 @@ export const Route = createFileRoute("/mejores-podcasts-de-liderazgo-en-espanol"
             name: GUIDE_TITLE, description: GUIDE_DESCRIPTION, inLanguage: "es",
             isPartOf: { "@id": `${COUNTRY_SITE}/#website` },
             about: { "@id": `${COUNTRY_SITE}/#podcastseries` },
-            datePublished: GUIDE_DATE, dateModified: GUIDE_DATE,
+            datePublished: GUIDE_DATE, dateModified: DISCOVERY_DATE,
             author: { "@type": "Organization", "@id": `${COUNTRY_SITE}/#organization` },
             publisher: { "@type": "Organization", "@id": `${COUNTRY_SITE}/#organization` },
           },
@@ -112,6 +113,7 @@ function BestLeadershipPodcastsPage() {
             <div className="mt-10 max-w-4xl">
               {guideFaq.map(({ question, answer }) => <details key={question} className="border-b border-border py-5"><summary className="cursor-pointer text-base font-medium leading-relaxed">{question}</summary><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{answer}</p></details>)}
             </div>
+            <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground">{guideLinks.filter((entry) => entry.to !== "/mejores-podcasts-de-liderazgo-en-espanol").map((entry, index) => <span key={entry.to}>{index > 0 && " · "}<Link to={entry.to}>{entry.label}</Link></span>)}</p>
           </div>
         </section>
       </main>

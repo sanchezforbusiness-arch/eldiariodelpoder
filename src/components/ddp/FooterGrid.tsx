@@ -1,6 +1,7 @@
 import { useLanding } from "@/i18n/LandingContext";
 import { Link } from "@tanstack/react-router";
 import { CLUB_URL } from "@/data/club";
+import { guideLinks } from "@/data/spanishPodcastsGuide";
 
 export function FooterGrid() {
   const { dict } = useLanding();
@@ -110,6 +111,13 @@ const SOCIAL = [
           <ul className="mt-4 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-5">
             <li><Link to="/paises" className="tap flex items-center text-sm transition-colors hover:text-signal">{dict.footer.allCountries}</Link></li>
             {MAIN_COUNTRIES.map((country) => <li key={country.slug}><Link to="/paises/$slug" params={{ slug: country.slug }} className="tap flex items-center text-sm transition-colors hover:text-signal">{country.name}</Link></li>)}
+          </ul>
+        </nav>
+
+        <nav aria-label="Guías" className="mt-12 border-t border-border pt-8">
+          <p className="mono-label">Guías</p>
+          <ul className="mt-4 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-5">
+            {guideLinks.map((guide) => <li key={guide.to}><Link to={guide.to} className="tap flex items-center text-sm transition-colors hover:text-signal">{guide.label}</Link></li>)}
           </ul>
         </nav>
 
