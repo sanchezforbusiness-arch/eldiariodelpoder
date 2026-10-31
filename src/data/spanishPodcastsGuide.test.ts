@@ -49,7 +49,8 @@ describe('Verified podcast discovery data', () => {
   });
   test('country titles retain valid existing titles and replace invalid ones within the given limit', () => {
     for (const c of countryList) {
-      assert.equal(countryPageTitle(c), c.metaTitle);
+      if (/podcast/i.test(c.metaTitle) && c.metaTitle.includes(c.name)) assert.equal(countryPageTitle(c), c.metaTitle);
+      else assert.ok(countryPageTitle(c).includes(c.name));
       const fallback = countryPageTitle({ ...c, metaTitle: 'Sin tema' });
       assert.ok(fallback.includes(c.name) && fallback.includes('Podcast'));
       assert.ok(fallback.length <= 65);
