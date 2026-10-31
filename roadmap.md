@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Añadir capítulos, citas y FAQ del episodio 11, corregir duración y unificar identidades de episodios e invitada.
-- [ ] Sustituir la cita de portada en tres idiomas, actualizar pilar, llms.txt y fechas del sitemap.
-- [ ] Verificar marcado, enlaces por minuto y preservación del resto de episodios.
+- [x] Añadir capítulos, citas y FAQ del episodio 11, corregir duración y unificar identidades de episodios e invitada.
+- [x] Sustituir la cita de portada en tres idiomas, actualizar pilar, llms.txt y fechas del sitemap.
+- [x] Verificar marcado, enlaces por minuto y preservación del resto de episodios.
 
 - [x] Crear tres guías SEO/GEO con los podcasts verificados y la plantilla editorial existente.
 - [x] Ampliar FAQ de los 22 países, enlazado entre guías y grupo del pie, género de la serie, llms.txt y sitemap.
