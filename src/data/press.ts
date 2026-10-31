@@ -9,6 +9,8 @@ export type PressItem = {
   date?: string;
   dateModified?: string;
   summary?: string;
+  /** Descripción de marcado cuando la entradilla contiene datos que deben omitirse del JSON-LD. */
+  schemaDescription?: string;
   /** Etiqueta de la tarjeta destacada */
   label?: string;
   /** Pie de fecha de la tarjeta destacada */
@@ -91,7 +93,7 @@ export function pressArticleSchema(a: PressItem) {
     url: a.url,
     datePublished: a.date,
     ...(a.dateModified ? { dateModified: a.dateModified } : {}),
-    description: a.summary,
+    description: a.schemaDescription ?? a.summary,
     inLanguage: "es",
     publisher: {
       "@type": "NewsMediaOrganization",
@@ -182,6 +184,7 @@ export const pressItems: PressItem[] = [
     date: "2026-10-28T04:02:00+01:00",
     dateModified: "2026-10-29T08:56:20+01:00",
     summary: "Dos compañeros de la Universidad de Navarra, de 21 y 22 años, impulsan El Diario del Poder, un medio que conecta a líderes inspiradores con jóvenes.",
+    schemaDescription: "Dos compañeros de la Universidad de Navarra impulsan El Diario del Poder, un medio que conecta a líderes inspiradores con jóvenes.",
     schemaId: DIRCOMFIDENCIAL_ID,
     // Aquí es el pie de foto; el cuerpo usa la forma corta de Alejandro.
     founderQuote: "Víctor Hugo Gandarilla (izq.) y Alejandro Sánchez Martínez",
