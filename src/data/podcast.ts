@@ -28,6 +28,8 @@ export type EpisodeEntry = {
   guestSlug?: string;
   /** Transcripción en párrafos (pendiente de rellenar) */
   transcript?: string[];
+  /** No bajar la primera letra del título al componer el H1 (nombres propios como Forbes) */
+  keepTitleCase?: boolean;
   guest: string;
   title: string;
   url: string;
@@ -167,6 +169,7 @@ const episodesRaw: Omit<EpisodeEntry, "n">[] = [
     date: "2026-04-18",
     duration: "1h 12m",
     title: "Forbes, lujo y poder desde la Forbes House",
+    keepTitleCase: true,
     url: "https://youtu.be/nTtgtxG7UNs",
     description:
       "El presidente de Forbes España habla de construir un imperio editorial, del negocio del lujo y de qué separa a quien tiene dinero de quien tiene influencia.",

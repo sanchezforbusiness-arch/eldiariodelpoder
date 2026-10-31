@@ -5,7 +5,7 @@ export const episodeUrl = (ep: EpisodeEntry) => `${SITE}/episodios/${ep.slug}`;
 export const episodeId = (ep: EpisodeEntry) => `${episodeUrl(ep)}#episode`;
 export const guestId = (slug: string) => `${SITE}/invitados/${slug}#person`;
 export const timestampUrl = (youtubeId: string, start: number) => `https://www.youtube.com/watch?v=${youtubeId}&t=${start}s`;
-export const episodeHeading = (ep: EpisodeEntry) => `${ep.guest}: ${ep.title.charAt(0).toLocaleLowerCase("es")}${ep.title.slice(1)}`;
+export const episodeHeading = (ep: EpisodeEntry) => ep.keepTitleCase ? `${ep.guest}: ${ep.title}` : `${ep.guest}: ${ep.title.charAt(0).toLocaleLowerCase("es")}${ep.title.slice(1)}`;
 
 export function isoDuration(raw?: string) {
   if (!raw) return undefined;
