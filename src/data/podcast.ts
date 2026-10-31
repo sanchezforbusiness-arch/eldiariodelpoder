@@ -169,6 +169,7 @@ const episodesRaw: Omit<EpisodeEntry, "n">[] = [
     date: "2026-04-18",
     duration: "1h 12m",
     title: "Forbes, lujo y poder desde la Forbes House",
+    keepTitleCase: true,
     url: "https://youtu.be/nTtgtxG7UNs",
     description:
       "El presidente de Forbes España habla de construir un imperio editorial, del negocio del lujo y de qué separa a quien tiene dinero de quien tiene influencia.",
