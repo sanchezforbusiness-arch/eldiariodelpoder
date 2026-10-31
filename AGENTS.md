@@ -13,6 +13,7 @@
 - All 22 country pages use the existing Spain editorial template and countryPageData snapshot; never render HomeLanding for countries so country-specific content, schedules and FAQ remain aligned with SSR and JSON-LD.
 - Keep the canonical full PodcastSeries in src/data/podcastSeries.ts, shared by the home graph and country graphs to prevent divergent entity metadata.
 - Keep ranking-guide entries and FAQ in src/data/leadershipGuide.ts; omit unknown external hosts and URLs rather than inventing structured data.
+- Keep discovery guides and their podcast catalog, FAQ, metadata and link directory in `src/data/spanishPodcastsGuide.ts`; reuse the leadership-guide classes in `PodcastDiscoveryGuide` and derive llms.txt additions from the same data so visible recommendations and structured data stay aligned.
 - Static language choices are real anchors; other languages use a one-use session marker when returning from a static edition to Spanish, so translation happens only after an explicit choice and never from browser preferences.
 - Render the leadership guide FAQ from its shared route data so visible answers and JSON-LD remain identical; derive guide episode and country lists from the canonical data sources.
 - Keep only CLUB_URL and its derived CLUB_ID in `src/data/club.ts` so changing the club domain requires one code edit. The club has no internal page or landing band: navigation and footer use direct same-tab external anchors styled like their peers, while the home Organization retains its subOrganization reference.

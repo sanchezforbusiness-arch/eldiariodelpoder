@@ -33,6 +33,7 @@ export const podcastSeriesSchema = {
   url: COUNTRY_SITE,
   description: "El podcast de liderazgo en español: expresidentes, CEOs y referentes en entrevistas largas. Cada lunes con La Vanguardia. Gratis en Spotify y YouTube.",
   inLanguage: "es",
+  genre: ["Entrevistas", "Liderazgo", "Negocios", "Política", "Sociedad"],
   image: COUNTRY_SOCIAL_IMAGE,
   alternateName: ["El Diario del Poder", "Diary of Power"],
   countryOfOrigin: { "@type": "Country", name: "España" },

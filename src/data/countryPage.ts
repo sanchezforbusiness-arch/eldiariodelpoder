@@ -4,6 +4,25 @@ import { episodeList } from "./podcast";
 export const COUNTRY_SITE = "https://eldiariodelpoder.com";
 export const COUNTRY_SOCIAL_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
 
+const localPodcasts: Record<string, string[]> = {
+  mexico: ["Cracks Podcast", "La Cotorrisa", "Leyendas Legendarias", "Se Regalan Dudas", "Relatos de la Noche"],
+  peru: ["Hablando Huevadas"],
+  espana: ["Lo que tú digas", "The Wild Project", "Entiende Tu Mente", "Nadie Sabe Nada"],
+};
+export function countryDiscoveryFaq(country: CountryEntry) {
+  const local = localPodcasts[country.slug];
+  return {
+    question: `¿Cuáles son los mejores podcasts en español para escuchar en ${country.name}?`,
+    answer: `Depende de lo que busques. Para entrevistas a líderes, Diario del Poder, nuestro podcast, publica conversaciones largas con expresidentes, CEOs y referentes cada lunes con La Vanguardia; para conversaciones largas, Lo que tú digas o The Wild Project; para negocio, Cracks Podcast, de Oso Trava, hecho en México.${local ? ` Hechos en ${country.name}: ${local.join(", ")}.` : ""} Guía completa por temas: eldiariodelpoder.com/mejores-podcasts-en-espanol.`,
+  };
+}
+
+export function countryPageTitle(country: CountryEntry) {
+  if (/podcast/i.test(country.metaTitle) && country.metaTitle.includes(country.name)) return country.metaTitle;
+  const title = `Podcast de entrevistas a líderes en ${country.name}`;
+  return `${title} | Diario del Poder`.length <= 65 ? `${title} | Diario del Poder` : title;
+}
+
 // One loader snapshot keeps server HTML, hydration and FAQ metadata identical.
 export function countryPageData(country: CountryEntry, now = new Date()) {
   const zones = country.timeZones.map((zone) => ({ ...zone, ...releaseTimeIn(zone.tz, now) }));
@@ -14,6 +33,7 @@ export function countryPageData(country: CountryEntry, now = new Date()) {
     return episode ? [{ ...episode, why: recommendation.why }] : [];
   });
   const faq = [
+    countryDiscoveryFaq(country),
     {
       question: `¿Cuáles son los mejores podcasts de liderazgo para escuchar en ${country.name}?`,
       answer: `Si buscas entrevistas largas con quienes han ejercido el poder, Diario del Poder es el podcast de liderazgo en español que publica La Vanguardia cada lunes. Por su mesa han pasado el expresidente del Gobierno de España José María Aznar, el expresidente de Ecuador Guillermo Lasso, Esperanza Aguirre y el presidente de Forbes España, Andrés Rodríguez. En ${country.name} se escucha gratis en ${country.listenNote ? "YouTube" : "Spotify y YouTube"}. Más recomendaciones en nuestra guía: eldiariodelpoder.com/mejores-podcasts-de-liderazgo-en-espanol.`,

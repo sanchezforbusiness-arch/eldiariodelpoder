@@ -8,15 +8,18 @@ type Entry = { loc: string; lastmod?: string; changefreq: string; priority: stri
 
 function buildSitemap(newsletter: Entry[] = []) {
   const staticPages: Entry[] = [
-    { loc: "/", changefreq: "weekly", priority: "1.0" },
+    { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-10-31" },
     { loc: "/en", changefreq: "weekly", priority: "0.8" },
     { loc: "/ar", changefreq: "weekly", priority: "0.8" },
-    { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-27" },
-    { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9" },
+    { loc: "/mejores-podcasts-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
+    { loc: "/mejores-podcasts-de-entrevistas-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
+    { loc: "/podcasts-para-jovenes", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
+    { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
+    { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-27" },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9" },
     { loc: "/newsletter", changefreq: "daily", priority: "0.9" },
-    { loc: "/paises", changefreq: "weekly", priority: "0.8" },
+    { loc: "/paises", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
     { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
@@ -45,7 +48,7 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const countries: Entry[] = countryList.map((country) => ({
     loc: `/paises/${country.slug}`,
-    changefreq: "monthly", priority: "0.7", lastmod: "2026-10-27",
+    changefreq: "monthly", priority: "0.7", lastmod: "2026-10-31",
   }));
   const all = [...staticPages, ...episodes, ...guests, ...countries, ...newsletter];
 
