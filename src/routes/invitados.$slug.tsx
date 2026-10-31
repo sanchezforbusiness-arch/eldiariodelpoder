@@ -15,7 +15,7 @@ import { guestArticleBySlug, AGUIRRE_LAVANGUARDIA_ID, AGUIRRE_LAVANGUARDIA_URL, 
 
 const ALEJANDRO_SAMEAS = ["https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/", ALEJANDRO_INSTAGRAM];
 
-const SITE = "https://eldiariodelpoder.com";
+import { SITE, episodeId, isoDuration, episodeClips, guestOrganization, guestBooks } from "@/data/episodeSchema";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 
 /** Preguntas frecuentes construidas solo con datos reales del invitado y su episodio. */
@@ -76,11 +76,13 @@ export const Route = createFileRoute("/invitados/$slug")({
     const epUrl = ep ? `${SITE}/episodios/${ep.slug}` : undefined;
     const faq = buildFaq(guest);
 
-    const clips = (guest.chapters ?? []).map((c, i) => ({
+    const organization = guestOrganization(guest);
+    const books = guestBooks(guest);
+    const clips = ep?.chapters?.length ? episodeClips(ep) : (guest.chapters ?? []).map((c, i) => ({
       "@type": "Clip",
       name: c.title,
       startOffset: c.seconds,
-      ...(guest.chapters?.[i + 1] ? { endOffset: guest.chapters[i + 1]!.seconds } : {}),
+      ...(guest.chapters?.[i + 1] ? { endOffset: guest.chapters?.[i + 1]?.seconds } : {}),
       url: `https://www.youtube.com/watch?v=${guest.youtubeId}&t=${c.seconds}s`,
     }));
 
@@ -125,12 +127,18 @@ export const Route = createFileRoute("/invitados/$slug")({
               "@id": `${url}#person`,
               name: guest.name,
               ...(guest.alternateName ? { alternateName: guest.alternateName } : {}),
+              ...(guest.sameAs ? { sameAs: guest.sameAs } : {}),
+              ...(guest.birthDate ? { birthDate: guest.birthDate } : {}),
+              ...(guest.birthPlace ? { birthPlace: { "@type": "Place", name: guest.birthPlace } } : {}),
+              ...(guest.alumniOf ? { alumniOf: { "@type": "CollegeOrUniversity", ...guest.alumniOf } } : {}),
+              ...(organization ? { worksFor: organization } : {}),
               jobTitle: guest.role,
               description: guest.bio,
               ...(absImg ? { image: absImg } : {}),
               knowsAbout: guest.topics,
               subjectOf: {
                 "@type": "PodcastEpisode",
+                ...(ep ? { "@id": episodeId(ep) } : {}),
                 name: ep ? `${guest.name} — ${ep.title}` : `${guest.name} — Diario del Poder`,
                 url: epUrl ?? url,
                 description: ep?.description ?? guest.summary[0],
@@ -148,6 +156,7 @@ export const Route = createFileRoute("/invitados/$slug")({
                         contentUrl: `https://www.youtube.com/watch?v=${guest.youtubeId}`,
                         thumbnailUrl: `https://i.ytimg.com/vi/${guest.youtubeId}/maxresdefault.jpg`,
                         ...(ep?.date ? { uploadDate: ep.date } : {}),
+                        ...(isoDuration(ep?.duration) ? { duration: isoDuration(ep?.duration) } : {}),
                         ...(clips.length ? { hasPart: clips } : {}),
                         ...(guest.transcript?.length ? { transcript: guest.transcript.join("\n\n") } : {}),
                       },
@@ -162,8 +171,9 @@ export const Route = createFileRoute("/invitados/$slug")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "PodcastEpisode",
+            ...(ep ? { "@id": episodeId(ep) } : {}),
             name: ep ? `${guest.name} — ${ep.title}` : `${guest.name} en Diario del Poder`,
-            url,
+            url: epUrl ?? url,
             inLanguage: "es",
             partOfSeries: { "@id": `${SITE}/#podcastseries` },
             ...(ep?.date ? { datePublished: ep.date } : {}),
@@ -186,7 +196,8 @@ export const Route = createFileRoute("/invitados/$slug")({
                 name: "Víctor Hugo Gandarilla de Andrés",
               },
             ],
-            about: { "@id": `${url}#person` },
+            about: [{ "@id": `${url}#person` }, ...(organization ? [{ "@id": organization["@id"] }] : [])],
+            actor: { "@id": `${url}#person` },
             ...(guest.slug === "esperanza-aguirre"
               ? {
                   subjectOf: {
@@ -217,6 +228,7 @@ export const Route = createFileRoute("/invitados/$slug")({
             })),
           }),
         },
+        ...books.map((book) => ({ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", ...book }) })),
       ],
     };
   },
@@ -345,7 +357,7 @@ function GuestPage() {
             )}
             {episode && (
               <Link to="/episodios/$slug" params={{ slug: episode.slug }} className="btn-outline">
-                Ver el episodio
+                {episode.chapters?.length ? `Ver los ${episode.chapters.length} momentos clave del episodio` : "Ver el episodio"}
               </Link>
             )}
             {guest.externalUrl && (
