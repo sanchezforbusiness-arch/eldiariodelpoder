@@ -262,7 +262,7 @@ export const landingEs: LandingDict = {
       "jose-carlos-gonzalez-hurtado": "La fe es esencial para encontrar tu propósito en la vida.",
       "federica-fornaciari": "Los jóvenes son la clave para el futuro y estos chicos son una muestra de ello.",
       "miguel-anxo-bastos": "Capitalismo, ahorro y trabajo duro. La energía que tenéis siendo jóvenes no la volveréis a tener.",
-      "daniela-macarena": "Para ser una persona con poder tienes que manifestarlo.",
+      "daniela-macarena": "Para liderar una empresa, la gente te tiene que admirar.",
       "andres-rodriguez": "Me gustaría ilusionar a los jóvenes para que se den cuenta de que son capaces de hacer lo que se propongan.",
       "martin-selles": "Yo veo a muchos jóvenes con un proyecto de vida claro, agradecidos por su primera oportunidad y dispuestos a esforzarse. Los jóvenes reales no son la caricatura desganada que a veces nos quieren vender.",
       "mikel-echavarren": "Muy buena entrevista con unos jóvenes muy simpáticos y preparados"

@@ -47,7 +47,7 @@ export const landingEn: LandingDict = {
       "jose-carlos-gonzalez-hurtado": "Faith is essential to finding your purpose in life.",
       "federica-fornaciari": "Young people are the key to the future, and these two are proof of it.",
       "miguel-anxo-bastos": "Capitalism, saving and hard work. The energy you have while you're young will never come back.",
-      "daniela-macarena": "To be a person with power, you have to show it.",
+      "daniela-macarena": "To lead a company, people have to admire you.",
       "andres-rodriguez": "I'd like to inspire young people to realise they can achieve whatever they set out to do.",
       "martin-selles": "I see many young people with a clear life plan, grateful for their first opportunity and willing to work hard. Real young people are not the listless caricature we are sometimes sold.",
       "mikel-echavarren": "A very good interview with two very friendly, well-prepared young people.",
