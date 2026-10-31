@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Añadir el reportaje de Dircomfidencial, la FAQ de financiación y sus datos de prensa sin cambiar diseño.
+- [ ] Actualizar llms.txt y fechas del sitemap; verificar las tres páginas y pruebas.
+
 - [x] Unificar los 22 países con la plantilla editorial de España, FAQ y PodcastSeries compartido sin cambiar diseño ni portadas.
 - [x] Añadir guía de mejores podcasts, enlaces de texto, sitemap y secciones internacionales de llms.txt.
 - [x] Verificar tests, HTML, JSON-LD y preservación de /, /en y /ar.
