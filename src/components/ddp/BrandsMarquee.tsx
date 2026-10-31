@@ -2,6 +2,8 @@ import { landingEs } from "@/i18n/landing";
 import { useLanding } from "@/i18n/LandingContext";
 import apdLogo from "@/assets/logo-apd.png.asset.json";
 import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
+import palantirLogo from "@/assets/logo-palantir.svg";
+
 
 
 

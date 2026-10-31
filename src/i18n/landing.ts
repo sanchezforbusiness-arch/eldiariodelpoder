@@ -161,6 +161,7 @@ export const landingEs: LandingDict = {
     "names": {
       "Forbes": "Forbes",
       "La Vanguardia": "La Vanguardia",
+      "Palantir": "Palantir",
       "Fundación La Caixa": "Fundación La Caixa",
       "Telefónica": "Telefónica",
       "Atlético de Madrid": "Atlético de Madrid",
