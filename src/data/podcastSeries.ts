@@ -1,5 +1,6 @@
 import { countryList } from "./countries";
 import { ALEJANDRO_ID, VICTOR_ID, ALEJANDRO_INSTAGRAM } from "./press";
+import { episodeList } from "./podcast";
 import { COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "./countryPage";
 
 export const founderAlejandro = {
@@ -33,6 +34,7 @@ export const podcastSeriesSchema = {
   url: COUNTRY_SITE,
   description: "El podcast de liderazgo en español: expresidentes, CEOs y referentes en entrevistas largas. Cada lunes con La Vanguardia. Gratis en Spotify y YouTube.",
   inLanguage: "es",
+  numberOfEpisodes: episodeList.length,
   genre: ["Entrevistas", "Liderazgo", "Negocios", "Política", "Sociedad"],
   image: COUNTRY_SOCIAL_IMAGE,
   alternateName: ["El Diario del Poder", "Diary of Power"],
