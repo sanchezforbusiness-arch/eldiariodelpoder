@@ -141,6 +141,10 @@ export const MCARENA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lava
 export const MCARENA_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html";
 
+export const URIBE_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-alvaro-uribe";
+export const URIBE_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261102/11674281/alvaro-uribe-seguridad-hay-paz-seguridad-democratica.html";
+
 /** Sección propia de La Vanguardia para las piezas del podcast (desde el 28/09/2026) y página de autor de la marca. */
 export const LAVANGUARDIA_SECTION_URL = "https://www.lavanguardia.com/podcast/el-diario-del-poder";
 export const LAVANGUARDIA_AUTHOR_URL = "https://www.lavanguardia.com/autores/el-diario-del-poder.html";
@@ -164,6 +168,7 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
   "miguel-anxo-bastos": { url: BASTOS_LAVANGUARDIA_URL, schemaId: BASTOS_LAVANGUARDIA_ID },
   "federica-fornaciari": { url: FORNACIARI_LAVANGUARDIA_URL, schemaId: FORNACIARI_LAVANGUARDIA_ID },
   "daniela-macarena": { url: MCARENA_LAVANGUARDIA_URL, schemaId: MCARENA_LAVANGUARDIA_ID },
+  "alvaro-uribe": { url: URIBE_LAVANGUARDIA_URL, schemaId: URIBE_LAVANGUARDIA_ID },
   "jose-carlos-gonzalez-hurtado": { url: JCGH_LAVANGUARDIA_URL, schemaId: JCGH_LAVANGUARDIA_ID },
 };
 
@@ -230,6 +235,24 @@ export const pressItems: PressItem[] = [
       { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
       { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
     ],
+  },
+  {
+    outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Álvaro Uribe",
+    url: URIBE_LAVANGUARDIA_URL,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Noviembre 2026 · Podcast",
+    byline: "Publicado bajo la firma de El Diario del Poder",
+    embedUrl: "https://www.youtube-nocookie.com/embed/dtzr09bnxCc",
+    founderQuote: "afirma en una entrevista con 'El Diario del Poder', conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
+    quote: "Álvaro Uribe: “Sin seguridad no hay paz, pero la seguridad tiene que ser democrática”",
+    headline: "Álvaro Uribe: “Sin seguridad no hay paz, pero la seguridad tiene que ser democrática”",
+    date: "2026-11-02T16:05:09+01:00",
+    summary:
+      "El expresidente colombiano repasa su trayectoria política, reivindica el legado de sus dos mandatos y aconseja a los jóvenes centrarse en el trabajo cotidiano",
+    schemaId: URIBE_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/episodios/alvaro-uribe-soy-superviviente-por-milagro",
   },
   {
     outlet: "La Vanguardia",
