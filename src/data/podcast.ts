@@ -10,6 +10,7 @@ import echavarrenImg from "@/assets/guest-echavarren.webp";
 import fornaciariImg from "@/assets/guest-8.webp";
 import danielaAssetEp from "@/assets/guest-daniela-macarena.png.asset.json";
 import { danielaChapters, danielaQuotes, danielaFaq } from "./danielaEpisode";
+import { uribeChapters, uribeQuotes, uribeFaq } from "./uribeEpisode";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -46,6 +47,28 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 12,
+    image: "https://i.ytimg.com/vi/dtzr09bnxCc/maxresdefault.jpg",
+    slug: "alvaro-uribe-soy-superviviente-por-milagro",
+    youtubeId: "dtzr09bnxCc",
+    guestSlug: "alvaro-uribe",
+    transcript: [],
+    guest: "Álvaro Uribe",
+    role: "Expresidente de Colombia",
+    date: "2026-11-02",
+    duration: "15m 33s",
+    durationSeconds: 933,
+    chapters: uribeChapters,
+    quotes: uribeQuotes,
+    faq: uribeFaq,
+    seoTitle: "Álvaro Uribe: «Soy superviviente por milagro» | Diario del Poder",
+    seoDescription: "Entrevista a Álvaro Uribe, expresidente de Colombia: el país que heredó en 2002, la seguridad democrática, la fe, su legado y su consejo a los jóvenes.",
+    title: "Soy superviviente por milagro",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261102/11674281/alvaro-uribe-seguridad-hay-paz-seguridad-democratica.html",
+    description:
+      "Álvaro Uribe repasa medio siglo de vida pública: nacer en plena violencia política, el país que heredó en 2002 (cuatro millones de colombianos fuera y jóvenes que querían irse «sin tiquete de regreso»), el paso del círculo vicioso al virtuoso («más seguridad, más inversión, menos pobreza»), la seguridad democrática frente a «la seguridad de las viejas dictaduras», la fe, el asesinato de su padre y su legado material e inmaterial. Consejo final a los jóvenes: «Hagan bien lo del día a día». Conducida por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés.",
+  },
   {
     episodeNumber: 11,
     image: danielaAssetEp.url,
@@ -815,19 +838,33 @@ export const guestList: GuestEntry[] = [
   {
     slug: "alvaro-uribe",
     name: "Álvaro Uribe Vélez",
+    sameAs: ["https://es.wikipedia.org/wiki/%C3%81lvaro_Uribe"],
+    birthDate: "1952",
+    birthPlace: "Medellín, Colombia",
+    alumniOf: { name: "St Antony's College, Universidad de Oxford" },
     role: "Expresidente de Colombia",
     bio: "Presidente de Colombia entre 2002 y 2010. Poder, seguridad y decisiones de Estado.",
+    youtubeId: "dtzr09bnxCc",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261102/11674281/alvaro-uribe-seguridad-hay-paz-seguridad-democratica.html",
     topics: [
       "Colombia",
       "América Latina",
-      "seguridad",
+      "seguridad democrática",
       "liderazgo político",
-      "decisiones de Estado",
+      "legado",
     ],
     summary: [
-      "Álvaro Uribe Vélez fue presidente de Colombia entre 2002 y 2010, después de una trayectoria previa en la Gobernación de Antioquia y en el Senado. En esta conversación con Diario del Poder repasa cómo se toman las decisiones cuando no hay margen de error y qué cambia en una persona cuando ocupa la primera línea del Estado.",
-      "Hablamos de seguridad, de la relación con Estados Unidos y de la economía colombiana en su década de transformación, así como del precio personal de gobernar en un contexto de violencia.",
-      "Cierra con lo que diría hoy a una generación que empieza: criterio propio, trabajo y no confundir popularidad con legado.",
+      "Álvaro Uribe Vélez nació en Medellín en 1952. Fue alcalde de Medellín, senador y gobernador de Antioquia; tras la gobernación estudió en St Antony's College (Oxford). Presidió Colombia entre 2002 y 2010, reelegido en 2006.",
+      "En la conversación recuerda el país que heredó en 2002 y el paso del círculo vicioso al virtuoso: «Más seguridad, más inversión, menos pobreza». Defiende una seguridad democrática frente a «la seguridad de las viejas dictaduras latinoamericanas».",
+      "Habla de la fe, del asesinato de su padre y de su legado material e inmaterial: «Yo soy sobreviviente por milagro». Su consejo a los jóvenes: «Hagan bien lo del día a día».",
+    ],
+    keyIdeas: [
+      "«Sin seguridad no hay paz, pero la seguridad tiene que ser democrática para todos, con libertades, con respeto a la Constitución».",
+      "«Preferíamos siempre la credibilidad a la aprobación».",
+      "«La fe no se puede convertir en un negocio de la política».",
+      "«Si no hay emprendimiento privado, no hay recursos para lo social».",
+      "«Hagan bien lo del día a día».",
     ],
   },
 ];

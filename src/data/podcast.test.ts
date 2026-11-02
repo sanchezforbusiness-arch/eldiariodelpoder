@@ -38,8 +38,17 @@ describe("Daniela verified episode data", () => {
     assert.equal(guestBooks(guest)[0]?.isbn, "978-84-670-7794-0");
     assert.equal(guestBooks(guest)[0]?.datePublished, "2025-10-29");
   });
+  test("episode 12 (Uribe) carries its verified chapters, quotes and FAQ", () => {
+    const uribe = episodeList.find((entry) => entry.episodeNumber === 12);
+    assert.equal(uribe?.slug, "alvaro-uribe-soy-superviviente-por-milagro");
+    assert.equal(uribe?.durationSeconds, 933);
+    assert.equal(uribe?.chapters?.length, 12);
+    assert.equal(uribe?.quotes?.length, 10);
+    assert.equal(uribe?.faq?.length, 5);
+    assert.equal(episodeList.length, 12);
+  });
   test("other ten episodes do not gain optional sections", () => {
-    const others = episodeList.filter((entry) => entry.episodeNumber !== 11);
+    const others = episodeList.filter((entry) => entry.episodeNumber < 11);
     assert.equal(others.length, 10);
     for (const other of others) {
       assert.equal(other.chapters, undefined);

@@ -8,25 +8,25 @@ type Entry = { loc: string; lastmod?: string; changefreq: string; priority: stri
 
 function buildSitemap(newsletter: Entry[] = []) {
   const staticPages: Entry[] = [
-    { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-10-31" },
+    { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-11-02" },
     { loc: "/en", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/ar", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-de-entrevistas-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/podcasts-para-jovenes", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
-    { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
-    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-31" },
-    { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: "2026-10-31" },
+    { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-11-02" },
+    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-11-02" },
+    { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: "2026-11-02" },
     { loc: "/newsletter", changefreq: "daily", priority: "0.9" },
     { loc: "/paises", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
-    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
+    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-02" },
     { loc: "/patrocinadores", changefreq: "monthly", priority: "0.7" },
     { loc: "/agenda", changefreq: "monthly", priority: "0.6" },
-    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
-    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-10-31" },
+    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-02" },
+    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-02" },
   ];
 
   const episodes: Entry[] = episodeList.map((e) => ({
