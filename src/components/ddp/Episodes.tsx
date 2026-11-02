@@ -47,7 +47,7 @@ export function Episodes() {
           </div>
         </a>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 reveal-stagger">
+        <div className={`grid grid-cols-1 gap-5 md:gap-8 reveal-stagger ${rest.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           {rest.map((e, index) => (
             <a key={e.slug} href={e.url} target="_blank" rel="noreferrer" className="group block">
               <div className="text-on-image relative aspect-[4/5] overflow-hidden rounded-[20px] bg-card hover-lift">
