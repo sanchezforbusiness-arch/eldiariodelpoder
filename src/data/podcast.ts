@@ -10,6 +10,7 @@ import echavarrenImg from "@/assets/guest-echavarren.webp";
 import fornaciariImg from "@/assets/guest-8.webp";
 import danielaAssetEp from "@/assets/guest-daniela-macarena.png.asset.json";
 import { danielaChapters, danielaQuotes, danielaFaq } from "./danielaEpisode";
+import { uribeChapters, uribeQuotes, uribeFaq } from "./uribeEpisode";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -46,6 +47,28 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 12,
+    image: "https://i.ytimg.com/vi/dtzr09bnxCc/maxresdefault.jpg",
+    slug: "alvaro-uribe-soy-superviviente-por-milagro",
+    youtubeId: "dtzr09bnxCc",
+    guestSlug: "alvaro-uribe",
+    transcript: [],
+    guest: "Álvaro Uribe",
+    role: "Expresidente de Colombia",
+    date: "2026-11-02",
+    duration: "15m 33s",
+    durationSeconds: 933,
+    chapters: uribeChapters,
+    quotes: uribeQuotes,
+    faq: uribeFaq,
+    seoTitle: "Álvaro Uribe: «Soy superviviente por milagro» | Diario del Poder",
+    seoDescription: "Entrevista a Álvaro Uribe, expresidente de Colombia: el país que heredó en 2002, la seguridad democrática, la fe, su legado y su consejo a los jóvenes.",
+    title: "Soy superviviente por milagro",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261102/11674281/alvaro-uribe-seguridad-hay-paz-seguridad-democratica.html",
+    description:
+      "Álvaro Uribe repasa medio siglo de vida pública: nacer en plena violencia política, el país que heredó en 2002 (cuatro millones de colombianos fuera y jóvenes que querían irse «sin tiquete de regreso»), el paso del círculo vicioso al virtuoso («más seguridad, más inversión, menos pobreza»), la seguridad democrática frente a «la seguridad de las viejas dictaduras», la fe, el asesinato de su padre y su legado material e inmaterial. Consejo final a los jóvenes: «Hagan bien lo del día a día». Conducida por Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés.",
+  },
   {
     episodeNumber: 11,
     image: danielaAssetEp.url,
