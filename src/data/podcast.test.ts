@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import assert from "node:assert/strict";
-import { episodeList, getGuestBySlug } from "./podcast";
+import { episodeList, getGuestBySlug, FEATURED_EPISODE_SLUGS, featuredEpisodes } from "./podcast";
 import { episodeClips, episodeId, guestId, isoDuration, guestOrganization, guestBooks } from "./episodeSchema";
 
 describe("Daniela verified episode data", () => {
@@ -56,5 +56,31 @@ describe("Daniela verified episode data", () => {
       assert.equal(other.faq, undefined);
       assert.deepEqual(episodeClips(other), []);
     }
+  });
+});
+
+describe("featured episodes of /episodios", () => {
+  test("the selection is an explicit, hand-maintained slug list", () => {
+    assert.deepEqual([...FEATURED_EPISODE_SLUGS], [
+      "andres-rodriguez-forbes-lujo-y-poder",
+      "jose-maria-aznar-liderar-un-pais",
+      "guillermo-lasso-gobernar-en-crisis",
+      "alvaro-uribe-soy-superviviente-por-milagro",
+    ]);
+  });
+  test("exactly those four episodes resolve, in that order, with their visible names", () => {
+    assert.deepEqual(featuredEpisodes.map((e) => e.slug), [...FEATURED_EPISODE_SLUGS]);
+    assert.deepEqual(featuredEpisodes.map((e) => e.guest), [
+      "Andrés Rodríguez", "José María Aznar", "Guillermo Lasso", "Álvaro Uribe",
+    ]);
+    assert.deepEqual(featuredEpisodes.map((e) => e.title), [
+      "Forbes, lujo y poder desde la Forbes House",
+      "Liderar un país",
+      "Gobernar en plena crisis",
+      "Soy superviviente por milagro",
+    ]);
+  });
+  test("every featured slug exists in the archive, so the hand list cannot silently drop one", () => {
+    assert.equal(featuredEpisodes.length, FEATURED_EPISODE_SLUGS.length);
   });
 });
