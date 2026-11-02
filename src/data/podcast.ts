@@ -252,6 +252,18 @@ export const episodeList: EpisodeEntry[] = [...episodesRaw]
   .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
   .map((e, i) => ({ ...e, n: String(i + 1).padStart(2, "0") }));
 
+/**
+ * Episodios destacados en el bloque superior de /episodios, en el orden mostrado.
+ * Se mantiene a mano: añade, quita o reordena slugs para cambiar la selección.
+ */
+export const FEATURED_EPISODE_SLUGS = [
+  "andres-rodriguez-forbes-lujo-y-poder",
+  "jose-maria-aznar-liderar-un-pais",
+  "guillermo-lasso-gobernar-en-crisis",
+  "alvaro-uribe-soy-superviviente-por-milagro",
+];
+
+
 export type GuestEntry = {
   /** URL slug: /invitados/<slug> */
   slug: string;
@@ -872,3 +884,9 @@ export const guestList: GuestEntry[] = [
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
 
 export const getEpisodeBySlug = (slug: string) => episodeList.find((e) => e.slug === slug);
+
+/** Episodios destacados en el orden exacto de FEATURED_EPISODE_SLUGS. */
+export const featuredEpisodes: EpisodeEntry[] = FEATURED_EPISODE_SLUGS
+  .map((slug) => getEpisodeBySlug(slug))
+  .filter((e): e is EpisodeEntry => Boolean(e));
+
