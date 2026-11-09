@@ -1,5 +1,7 @@
 # Project conventions
 
+- Use GuestEntry.interviewStatus = "recorded" for recorded, unpublished interviews; keep guest profiles and discovery cards but suppress playback, interview claims and PodcastEpisode schema until publication.
+
 - Gate newsletter visibility, route availability and discovery text through src/data/newsletter.ts; serve the preserved llms.txt source through its server route so one flag restores all newsletter content.
 
 - Keep press entries and external audio metadata in `src/data/press.ts`; use its `pressPodcastSchema` helper in press and founder JSON-LD so audio interviews are never marked as news articles.

@@ -20,6 +20,12 @@ const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 
 /** Preguntas frecuentes construidas solo con datos reales del invitado y su episodio. */
 function buildFaq(guest: GuestEntry) {
+  if (guest.interviewStatus === "recorded") {
+    return [
+      { q: `¿Quién es ${guest.name}?`, a: guest.bio },
+      { q: `¿Está publicada la entrevista a ${guest.name}?`, a: guest.summary.join(" ") },
+    ];
+  }
   const ep = episodeList.find((e) => e.guestSlug === guest.slug);
   const items: { q: string; a: string }[] = [
     {
@@ -68,8 +74,11 @@ export const Route = createFileRoute("/invitados/$slug")({
       return { meta: [{ title: "Invitado no encontrado — Diario del Poder" }, { name: "robots", content: "noindex" }] };
     }
     const url = `${SITE}/invitados/${guest.slug}`;
-    const title = `${guest.name} en Diario del Poder | Entrevista completa`;
-    const description = `${guest.name}, ${guest.role}. Entrevista completa, resumen, ideas clave y preguntas frecuentes en el podcast Diario del Poder: ${guest.topics.slice(0, 4).join(", ")}.`;
+    const recorded = guest.interviewStatus === "recorded";
+    const title = `${guest.name} en Diario del Poder | ${recorded ? "Próximamente" : "Entrevista completa"}`;
+    const description = recorded
+      ? `${guest.name}, ${guest.role}. Entrevista grabada el 7 de noviembre de 2026. Próximamente.`
+      : `${guest.name}, ${guest.role}. Entrevista completa, resumen, ideas clave y preguntas frecuentes en el podcast Diario del Poder: ${guest.topics.slice(0, 4).join(", ")}.`;
     const img = guestCardImageBySlug[guest.slug];
     const absImg = img ? (img.startsWith("http") ? img : `${SITE}${img}`) : undefined;
     const ep = episodeList.find((e) => e.guestSlug === guest.slug);
@@ -136,7 +145,7 @@ export const Route = createFileRoute("/invitados/$slug")({
               description: guest.bio,
               ...(absImg ? { image: absImg } : {}),
               knowsAbout: guest.topics,
-              subjectOf: {
+              ...(!recorded ? { subjectOf: {
                 "@type": "PodcastEpisode",
                 ...(ep ? { "@id": episodeId(ep) } : {}),
                 name: ep ? `${guest.name} — ${ep.title}` : `${guest.name} — Diario del Poder`,
@@ -162,11 +171,11 @@ export const Route = createFileRoute("/invitados/$slug")({
                       },
                     }
                   : {}),
-              },
+              } } : {}),
             },
           }),
         },
-        {
+        ...(!recorded ? [{
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
@@ -215,7 +224,7 @@ export const Route = createFileRoute("/invitados/$slug")({
                 ? { subjectOf: { "@id": guestArticleBySlug[guest.slug].schemaId } }
                 : {}),
           }),
-        },
+        }] : []),
         {
           type: "application/ld+json",
           children: JSON.stringify({
@@ -261,6 +270,7 @@ function GuestPage() {
   const { guest } = Route.useLoaderData() as { guest: GuestEntry };
   const img = guestCardImageBySlug[guest.slug];
   const episode = episodeList.find((e) => e.guestSlug === guest.slug);
+  const recorded = guest.interviewStatus === "recorded";
   const faq = buildFaq(guest);
 
   const related = (guest.relatedSlugs?.length
@@ -274,7 +284,7 @@ function GuestPage() {
     { id: "resumen", label: "Resumen" },
     guest.keyIdeas?.length ? { id: "ideas", label: "Ideas clave" } : null,
     guest.chapters?.length ? { id: "capitulos", label: "Capítulos" } : null,
-    { id: "temas", label: "Temas" },
+    !recorded ? { id: "temas", label: "Temas" } : null,
     guest.transcript?.length ? { id: "transcripcion", label: "Transcripción" } : null,
     { id: "faq", label: "Preguntas frecuentes" },
     { id: "relacionados", label: "Relacionados" },
@@ -307,7 +317,7 @@ function GuestPage() {
             {img && (
               <img
                 src={img}
-                alt={`${guest.name}, ${guest.role}, en el podcast Diario del Poder`}
+                alt={recorded ? guest.name : `${guest.name}, ${guest.role}, en el podcast Diario del Poder`}
                 width={512}
                 height={640}
                 className="w-full max-w-[320px] aspect-[4/5] object-cover rounded-sm contrast-110"
@@ -331,7 +341,8 @@ function GuestPage() {
             </section>
           )}
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          {recorded && <p className="mono-label mt-8">Próximamente</p>}
+          {!recorded && <div className="mt-8 flex flex-wrap gap-3">
             {guest.youtubeId && (
               <a
                 className="btn-primary"
@@ -365,7 +376,7 @@ function GuestPage() {
                 Leer la entrevista
               </a>
             )}
-          </div>
+          </div>}
 
           <nav aria-label="En esta página" className="mt-10 border-y border-border py-4">
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-2xs tracking-label uppercase text-muted-foreground">
@@ -379,7 +390,7 @@ function GuestPage() {
 
           <section className="mt-12 md:mt-16 grid gap-10 md:grid-cols-[1.5fr_1fr] md:items-start">
             <div>
-              <SectionTitle id="resumen">Resumen de la conversación</SectionTitle>
+              <SectionTitle id="resumen">{recorded ? "Entrevista" : "Resumen de la conversación"}</SectionTitle>
               <div className="mt-6 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
                 {guest.summary.map((p) => (
                   <p key={p.slice(0, 24)}>{p}</p>
@@ -422,7 +433,7 @@ function GuestPage() {
               ) : null}
             </div>
 
-            <aside className="panel rounded-sm p-6 h-fit md:sticky md:top-28">
+            {!recorded && <aside className="panel rounded-sm p-6 h-fit md:sticky md:top-28">
               <h2 id="temas" className="scroll-mt-28 text-2xs tracking-label uppercase text-muted-foreground">Temas</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {guest.topics.map((t) => (
@@ -449,7 +460,7 @@ function GuestPage() {
                   </div>
                 </dl>
               )}
-            </aside>
+            </aside>}
           </section>
 
           {guest.transcript?.length ? (

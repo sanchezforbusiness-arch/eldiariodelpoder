@@ -84,3 +84,22 @@ describe("featured episodes of /episodios", () => {
     assert.equal(featuredEpisodes.length, FEATURED_EPISODE_SLUGS.length);
   });
 });
+
+describe("Isaac Querub is recorded but unpublished", () => {
+  test("a guest profile exists without creating a published episode", () => {
+    const guest = getGuestBySlug("isaac-querub");
+    assert.ok(guest);
+    assert.equal(guest.name, "Isaac Querub");
+    assert.equal(guest.interviewStatus, "recorded");
+    assert.equal(episodeList.some((ep) => ep.guestSlug === "isaac-querub"), false);
+  });
+  test("unverified media, chapters and social profiles are absent", () => {
+    const guest = getGuestBySlug("isaac-querub");
+    assert.ok(guest);
+    assert.equal(guest.youtubeId, undefined);
+    assert.equal(guest.externalUrl, undefined);
+    assert.equal(guest.chapters, undefined);
+    assert.equal(guest.sameAs, undefined);
+    assert.deepEqual(guest.topics, []);
+  });
+});

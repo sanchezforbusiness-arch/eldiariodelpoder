@@ -95,7 +95,7 @@ function InvitadosPage() {
                       <div className="aspect-[4/3] overflow-hidden bg-background-alt">
                         <img
                           src={img}
-                          alt={`${g.name}, invitado de Diario del Poder`}
+                          alt={g.interviewStatus === "recorded" ? g.name : `${g.name}, invitado de Diario del Poder`}
                           loading="lazy"
                           decoding="async"
                           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
@@ -109,7 +109,7 @@ function InvitadosPage() {
                       <p className="mt-1.5 text-2xs uppercase tracking-label text-muted-foreground">{g.role}</p>
                       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{g.bio}</p>
                       <span className="mt-5 inline-flex items-center gap-2 text-2xs uppercase tracking-label text-muted-foreground transition-colors group-hover:text-foreground">
-                        Ver entrevista
+                        {g.interviewStatus === "recorded" ? "Próximamente" : "Ver entrevista"}
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </span>
                     </div>
