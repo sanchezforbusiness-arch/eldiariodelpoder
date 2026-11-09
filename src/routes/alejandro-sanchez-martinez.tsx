@@ -2,7 +2,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA, DIARIO_EXTRA_URL, FINANCING_QUESTION, FINANCING_ANSWER } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA, DIARIO_EXTRA_URL, FINANCING_QUESTION, FINANCING_ANSWER } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
@@ -66,6 +66,11 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
                 addressCountry: "ES",
               },
             },
+            homeLocation: {
+              "@type": "Place",
+              name: "Madrid, Comunidad de Madrid, España",
+              address: { "@type": "PostalAddress", addressLocality: "Madrid", addressRegion: "Comunidad de Madrid", addressCountry: "ES" },
+            },
             knowsLanguage: ["es", "en"],
             knowsAbout: ["Podcasting", "Liderazgo", "Entrevistas", "Comunicación", "Poder", "Empresa"],
             worksFor: { "@id": "https://eldiariodelpoder.com/#organization" },
@@ -82,6 +87,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
               "https://www.youtube.com/@eldiariodelpoder",
               "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
               ALEJANDRO_INSTAGRAM,
+              ALEJANDRO_X,
               ALEJANDRO_WIKIDATA,
             ],
             subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? pressArticleSchema(a)),
@@ -154,6 +160,7 @@ function Page() {
       linkedin="https://www.linkedin.com/in/alejandrosanchezmartinez"
       website="https://alejandrosanchezmartinez.com"
       instagram={ALEJANDRO_INSTAGRAM}
+      x={ALEJANDRO_X}
       lead="Co-fundador y host de Diario del Poder. Entrevista a quienes toman las decisiones que nos afectan: expresidentes, CEOs y referentes internacionales."
       vanguardia={founderNamedArticles()}
       vanguardiaFaq={{ q: "¿Alejandro Sánchez Martínez aparece en La Vanguardia?", a: vanguardiaAnswer(NAME) }}
