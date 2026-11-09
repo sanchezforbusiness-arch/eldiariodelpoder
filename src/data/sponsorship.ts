@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { countryList } from "./countries";
+import { NEWSLETTER_ENABLED, newsletterText } from "./newsletter";
 
 export const SPONSOR_MARKETS = ["España", "México", "Colombia", "Argentina", "Chile", "Perú", "Estados Unidos (comunidad hispana)", "Centroamérica y Caribe", "Todo el mundo hispanohablante"] as const;
 export const SPONSOR_BUDGETS = ["Menos de 5.000 €", "5.000 – 15.000 €", "15.000 – 50.000 €", "Más de 50.000 €", "Aún no lo sé"] as const;
@@ -35,7 +36,7 @@ export const SPONSOR_FORMATS = [
   { t: "Newsletter Primera Mano", d: "Patrocinio de edición en la newsletter del medio, leída por la parte más fiel de la audiencia." },
   { t: "Encuentros", d: "Conversaciones en directo y encuentros privados con invitados y comunidad." },
   { t: "Campañas por país", d: "Activa tu marca en los mercados que te importan: España, México, Colombia, Argentina, la comunidad hispana de Estados Unidos y el resto del mundo hispanohablante." },
-];
+].filter((format) => NEWSLETTER_ENABLED || format.t !== "Newsletter Primera Mano");
 
 export function sponsorshipFaq(brands: string[]) {
   const brandNames = brands.length > 1 ? `${brands.slice(0, -1).join(", ")} y ${brands.at(-1)}` : brands.join("");
@@ -44,7 +45,7 @@ export function sponsorshipFaq(brands: string[]) {
     { q: "¿En qué países se escucha Diario del Poder?", a: "En todo el mundo hispanohablante. La base de la audiencia está en España y crece en América Latina y en la comunidad hispana de Estados Unidos." },
     { q: "¿Puede la marca elegir al invitado o las preguntas?", a: "No. La línea editorial es de la redacción. Sí trabajamos contigo para elegir las conversaciones que mejor encajan con tu sector." },
     { q: "¿Qué marcas han colaborado con Diario del Poder?", a: `${brandNames}, entre otras.` },
-    { q: "¿Qué formatos de patrocinio hay?", a: "Patrocinio de temporada, patrocinio de episodio, clips y piezas cortas, newsletter Primera Mano, encuentros y campañas por país." },
+    { q: "¿Qué formatos de patrocinio hay?", a: newsletterText("Patrocinio de temporada, patrocinio de episodio, clips y piezas cortas, newsletter Primera Mano, encuentros y campañas por país.") },
     { q: "¿Cómo empezamos?", a: "Rellena el formulario de esta página o reserva una llamada de 30 minutos. Te respondemos con el media kit y una propuesta." },
   ];
 }

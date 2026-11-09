@@ -1,5 +1,7 @@
 # Project conventions
 
+- Gate newsletter visibility, route availability and discovery text through src/data/newsletter.ts; serve the preserved llms.txt source through its server route so one flag restores all newsletter content.
+
 - Keep press entries and external audio metadata in `src/data/press.ts`; use its `pressPodcastSchema` helper in press and founder JSON-LD so audio interviews are never marked as news articles.
 - Use `pressArticleSchema` for press and founder NewsArticle nodes, with typed external authors and shared founder FAQ data in `src/data/press.ts`, so editorial organizations are not marked as people and visible answers match structured data.
 - Founder profiles accept optional social links so adding one founder's profile does not change another's links.

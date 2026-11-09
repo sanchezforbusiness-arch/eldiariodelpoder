@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Ocultar toda la newsletter con un único flag reversible, incluidas rutas, sitemap, llms.txt y menciones.
+- [ ] Verificar páginas y redirecciones en navegador y ejecutar todas las pruebas, sin publicar.
+
 - [x] Añadir capítulos, citas y FAQ del episodio 11, corregir duración y unificar identidades de episodios e invitada.
 - [x] Sustituir la cita de portada en tres idiomas, actualizar pilar, llms.txt y fechas del sitemap.
 - [x] Verificar marcado, enlaces por minuto y preservación del resto de episodios.

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { CLUB_URL } from "@/data/club";
+import { NEWSLETTER_ENABLED } from "@/data/newsletter";
 
 export function Navbar() {
   const { dict } = useLanding();
@@ -15,6 +16,7 @@ const links = [
   { href: CLUB_URL, label: dict.nav.labels.club },
   { to: "/prensa", label: dict.nav.labels["/prensa"] },
 ] as const;
+const visibleLinks = links.filter((link) => NEWSLETTER_ENABLED || !("to" in link) || link.to !== "/newsletter");
 
 const secondary = [
   { to: "/patrocinadores", label: dict.nav.labels["/patrocinadores"] },
@@ -81,7 +83,7 @@ const secondary = [
         </div>
 
         <nav className="hidden items-center gap-5 xl:gap-8 lg:flex">
-          {links.map((l) => {
+          {visibleLinks.map((l) => {
             if ("href" in l) {
               return (
                 <a key={l.href} href={l.href} rel="noopener" className="group relative font-mono text-2xs uppercase tracking-label text-muted-foreground transition-colors duration-300 hover:text-foreground">
@@ -128,7 +130,7 @@ const secondary = [
       {open && (
         <div className="fixed inset-x-0 top-14 z-40 h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain bg-background lg:hidden">
           <nav className="container-ddp safe-b flex flex-col pt-8">
-            {[...links, ...secondary].map((l, i) => "href" in l ? (
+            {[...visibleLinks, ...secondary].map((l, i) => "href" in l ? (
               <a
                 key={l.href}
                 href={l.href}

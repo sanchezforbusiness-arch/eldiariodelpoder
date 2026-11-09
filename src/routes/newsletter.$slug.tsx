@@ -1,4 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
+import { NEWSLETTER_ENABLED } from "@/data/newsletter";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { formatDateEs } from "@/lib/utils";
@@ -15,12 +16,16 @@ import {
 } from "@/lib/newsletter";
 
 export const Route = createFileRoute("/newsletter/$slug")({
+  beforeLoad: () => {
+    if (!NEWSLETTER_ENABLED) throw redirect({ to: "/", statusCode: 302, headers: { "X-Robots-Tag": "noindex", "Cache-Control": "no-store" } });
+  },
   loader: async ({ params }) => {
     const edicion = await obtenerEdicion({ data: { slug: params.slug } });
     if (!edicion) throw notFound();
     return { edicion };
   },
   head: ({ loaderData }) => {
+    if (!NEWSLETTER_ENABLED) return { meta: [{ name: "robots", content: "noindex" }] };
     const e = loaderData?.edicion as Edicion | undefined;
     if (!e) {
       return {
