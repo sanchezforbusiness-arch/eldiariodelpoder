@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { NEWSLETTER_ENABLED } from "@/data/newsletter";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { formatDateEs } from "@/lib/utils";
@@ -18,8 +19,12 @@ function newsletterImageSrc(value: string) {
 }
 
 export const Route = createFileRoute("/newsletter/")({
+  beforeLoad: () => {
+    if (!NEWSLETTER_ENABLED) throw redirect({ to: "/", statusCode: 302, headers: { "X-Robots-Tag": "noindex", "Cache-Control": "no-store" } });
+  },
   loader: async () => ({ ediciones: await listarEdiciones() }),
   head: ({ loaderData }) => {
+    if (!NEWSLETTER_ENABLED) return { meta: [{ name: "robots", content: "noindex" }] };
     const ediciones = (loaderData?.ediciones ?? []) as Edicion[];
     const ultima = ediciones[0];
     const img = absolutizar(ultima?.imagen_social);

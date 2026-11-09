@@ -2,6 +2,7 @@ import { useLanding } from "@/i18n/LandingContext";
 import { Link } from "@tanstack/react-router";
 import { CLUB_URL } from "@/data/club";
 import { guideLinks } from "@/data/spanishPodcastsGuide";
+import { NEWSLETTER_ENABLED } from "@/data/newsletter";
 
 export function FooterGrid() {
   const { dict } = useLanding();
@@ -76,7 +77,7 @@ const SOCIAL = [
           <nav className="md:col-span-4">
             <p className="mono-label">{dict.footer.navLabel}</p>
             <ul className="mt-2 grid grid-cols-2">
-              {NAV.map((l) => (
+              {NAV.filter((link) => NEWSLETTER_ENABLED || !("to" in link) || link.to !== "/newsletter").map((l) => (
                 <li key={"href" in l ? l.href : l.to}>
                   {"href" in l ? (
                     <a href={l.href} rel="noopener" className="tap flex items-center text-sm tracking-tight transition-colors hover:text-signal">

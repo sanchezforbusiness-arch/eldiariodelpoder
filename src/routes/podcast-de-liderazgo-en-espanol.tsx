@@ -5,6 +5,7 @@ import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { COUNTRY_REGIONS, countryList } from "@/data/countries";
 import { episodeList } from "@/data/podcast";
 import { guideLinks } from "@/data/spanishPodcastsGuide";
+import { newsletterText } from "@/data/newsletter";
 
 const SITE = "https://eldiariodelpoder.com";
 const SITE_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
@@ -26,7 +27,7 @@ const FAQ = [
   { q: "¿Cada cuánto se publica un episodio?", a: "Cada lunes a las 15:00, hora de Madrid, cuando La Vanguardia publica la conversación de la semana. La hora en cada país está en eldiariodelpoder.com/paises." },
   { q: "¿Dónde se puede escuchar?", a: "Gratis en Spotify, en YouTube (@eldiariodelpoder) y en eldiariodelpoder.com." },
   { q: "¿Es gratis?", a: "Sí. Todas las entrevistas están completas y gratis." },
-  { q: "¿Cómo se puede patrocinar Diario del Poder?", a: "Desde eldiariodelpoder.com/patrocinadores: formatos de temporada, episodio, clips, newsletter, encuentros y campañas por país, con un formulario para pedir el media kit." },
+  { q: "¿Cómo se puede patrocinar Diario del Poder?", a: newsletterText("Desde eldiariodelpoder.com/patrocinadores: formatos de temporada, episodio, clips, newsletter, encuentros y campañas por país, con un formulario para pedir el media kit.") },
 ];
 
 export const Route = createFileRoute("/podcast-de-liderazgo-en-espanol")({

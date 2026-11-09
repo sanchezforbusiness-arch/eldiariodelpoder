@@ -1,4 +1,4 @@
-// Regenera public/sitemap.xml y las secciones de enlaces de public/llms.txt
+// Regenera public/sitemap.xml y las secciones de enlaces de src/data/llms-source.txt
 // a partir de src/data/podcast.ts. Ejecutar: bun scripts/gen-seo.mjs
 import { readFileSync, writeFileSync } from "node:fs";
 
@@ -75,7 +75,7 @@ const xml = [
 writeFileSync("public/sitemap.xml", xml);
 
 // --- llms.txt: reescribe las secciones de enlaces manteniendo la cabecera ---
-const llms = readFileSync("public/llms.txt", "utf8");
+const llms = readFileSync("src/data/llms-source.txt", "utf8");
 const head = llms.slice(0, llms.indexOf("## Páginas") === -1 ? llms.length : llms.indexOf("## Páginas")).trimEnd();
 
 const pages = `
@@ -114,6 +114,6 @@ ${guests.map((g) => `- [${g.name}](${SITE}/invitados/${g.slug}): ${g.role}.`).jo
 - [Sitemap](${SITE}/sitemap.xml): Índice de todas las URLs públicas.
 `;
 
-writeFileSync("public/llms.txt", `${head}\n${pages}`);
+writeFileSync("src/data/llms-source.txt", `${head}\n${pages}`);
 
 console.log(`sitemap: ${entries.length} urls · episodios: ${episodes.length} · invitados: ${guests.length}`);

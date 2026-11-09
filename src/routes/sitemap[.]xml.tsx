@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { episodeList, guestList } from "@/data/podcast";
 import { countryList } from "@/data/countries";
+import { NEWSLETTER_ENABLED } from "@/data/newsletter";
 
 const SITE = "https://eldiariodelpoder.com";
 
@@ -47,7 +48,7 @@ function buildSitemap(newsletter: Entry[] = []) {
     loc: `/paises/${country.slug}`,
     changefreq: "monthly", priority: "0.7", lastmod: "2026-10-31",
   }));
-  const all = [...staticPages, ...episodes, ...guests, ...countries, ...newsletter];
+  const all = [...staticPages.filter((page) => NEWSLETTER_ENABLED || page.loc !== "/newsletter"), ...episodes, ...guests, ...countries, ...(NEWSLETTER_ENABLED ? newsletter : [])];
 
   const body = all
     .map(
@@ -64,6 +65,7 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         let newsletter: Entry[] = [];
+        if (NEWSLETTER_ENABLED) {
         const { createPublicServerClient } = await import("@/lib/supabase-public.server");
         const client = createPublicServerClient();
         const pageSize = 500;
@@ -85,6 +87,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
           })));
           if (data.length < pageSize) break;
+        }
         }
 
         return new Response(buildSitemap(newsletter), {

@@ -10,9 +10,10 @@ import { countryList } from "@/data/countries";
 import { SPONSOR_FORMATS, sponsorshipFaq } from "@/data/sponsorship";
 import { useReveal } from "@/hooks/use-reveal";
 import hosts from "@/assets/bts-hosts-palco.webp";
+import { NEWSLETTER_ENABLED } from "@/data/newsletter";
 
 const title = "Patrocinar un podcast en español | Diario del Poder";
-const description = "Publicidad en el podcast de liderazgo en español: patrocinio de temporada, episodios, clips y newsletter. Llega a directivos y jóvenes con ambición en España y América.";
+const description = `Publicidad en el podcast de liderazgo en español: patrocinio de temporada, episodios, clips${NEWSLETTER_ENABLED ? " y newsletter" : ""}. Llega a directivos y jóvenes con ambición en España y América.`;
 const url = "https://eldiariodelpoder.com/patrocinadores";
 const faqs = sponsorshipFaq(BRANDS.map((brand) => brand.name));
 
