@@ -881,17 +881,16 @@ export const guestList: GuestEntry[] = [
       "«Hagan bien lo del día a día».",
     ],
   },
+  {
+    slug: "isaac-querub",
+    name: "Isaac Querub",
+    role: "Expresidente de la Federación de Comunidades Judías de España",
+    bio: "Presidió la Federación de Comunidades Judías de España (FCJE) entre 2011 y 2020. Antes, fue consejero delegado de Glencore España durante más de dos décadas. Hoy es consejero independiente en el consejo de supervisión de Unimot.",
+    interviewStatus: "recorded",
+    summary: ["La entrevista se grabó el 7 de noviembre de 2026, conducida por Víctor Hugo Gandarilla. El episodio aún no está publicado."],
+    topics: [],
+  },
 ];
-
-guestList.push({
-  slug: "isaac-querub",
-  name: "Isaac Querub",
-  role: "Expresidente de la Federación de Comunidades Judías de España",
-  bio: "Presidió la Federación de Comunidades Judías de España (FCJE) entre 2011 y 2020. Antes, fue consejero delegado de Glencore España durante más de dos décadas. Hoy es consejero independiente en el consejo de supervisión de Unimot.",
-  interviewStatus: "recorded",
-  summary: ["La entrevista se grabó el 7 de noviembre de 2026, conducida por Víctor Hugo Gandarilla. El episodio aún no está publicado."],
-  topics: [],
-});
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
 
