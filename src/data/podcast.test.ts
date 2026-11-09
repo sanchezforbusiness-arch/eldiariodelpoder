@@ -45,7 +45,7 @@ describe("Daniela verified episode data", () => {
     assert.equal(uribe?.chapters?.length, 12);
     assert.equal(uribe?.quotes?.length, 10);
     assert.equal(uribe?.faq?.length, 5);
-    assert.equal(episodeList.length, 12);
+    assert.equal(episodeList.length, 13);
   });
   test("other ten episodes do not gain optional sections", () => {
     const others = episodeList.filter((entry) => entry.episodeNumber < 11);
