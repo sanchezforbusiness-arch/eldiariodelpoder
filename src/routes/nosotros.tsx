@@ -88,7 +88,7 @@ function NosotrosPage() {
             </div>
             <div className="md:col-span-4">
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Dos fundadores y tres asesores. Una redacción en Madrid.
+                Dos fundadores y cuatro asesores. Una redacción en Madrid.
               </p>
             </div>
           </div>
