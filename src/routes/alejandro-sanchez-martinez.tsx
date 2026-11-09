@@ -2,7 +2,7 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { FounderProfile } from "@/components/ddp/FounderProfile";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, DIARIO_EXTRA_URL, FINANCING_QUESTION, FINANCING_ANSWER } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, founderNamedArticles, vanguardiaAnswer, ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA, DIARIO_EXTRA_URL, FINANCING_QUESTION, FINANCING_ANSWER } from "@/data/press";
 import alejandro from "@/assets/founder-alejandro.webp";
 
 const URL = "https://eldiariodelpoder.com/alejandro-sanchez-martinez";
@@ -82,6 +82,7 @@ export const Route = createFileRoute("/alejandro-sanchez-martinez")({
               "https://www.youtube.com/@eldiariodelpoder",
               "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ",
               ALEJANDRO_INSTAGRAM,
+              ALEJANDRO_WIKIDATA,
             ],
             subjectOf: pressArticles.map((a) => pressPodcastSchema(a) ?? pressArticleSchema(a)),
           },

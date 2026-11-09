@@ -4,7 +4,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { formatDateEs } from "@/lib/utils";
 import { obtenerEdicion } from "@/lib/newsletter.functions";
-import { ALEJANDRO_INSTAGRAM } from "@/data/press";
+import { ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA } from "@/data/press";
 import {
   NEWSLETTER_EMAIL,
   SITE,
@@ -79,7 +79,7 @@ export const Route = createFileRoute("/newsletter/$slug")({
               "@id": "https://alejandrosanchezmartinez.com/#persona",
               name: "Alejandro Sánchez Martínez",
               url: "https://alejandrosanchezmartinez.com/",
-              sameAs: ["https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/", ALEJANDRO_INSTAGRAM],
+              sameAs: ["https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/", ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA],
             },
             publisher: {
               "@type": "Organization",
