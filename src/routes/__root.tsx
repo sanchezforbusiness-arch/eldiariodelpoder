@@ -2,6 +2,7 @@ import { countryList } from "@/data/countries";
 import { CONTACT_EMAIL } from "@/data/contact";
 import { advisorMembers } from "@/data/advisors";
 import { CLUB_URL, CLUB_ID } from "@/data/club";
+import { PODCAST_WIKIDATA } from "@/data/press";
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
 import { founderAlejandro, founderVictor, podcastSeriesSchema } from "@/data/podcastSeries";
@@ -60,6 +61,7 @@ const structuredData = {
         "https://www.instagram.com/eldiariodelpoder/",
         "https://www.linkedin.com/company/eldiariodelpoder",
         "https://www.lavanguardia.com/autores/el-diario-del-poder.html",
+        PODCAST_WIKIDATA,
       ],
     },
     {
