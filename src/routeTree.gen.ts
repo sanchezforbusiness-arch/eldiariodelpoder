@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as MejoresPodcastsDeEntrevistasEnEspanolRouteImport } from './routes/mejores-podcasts-de-entrevistas-en-espanol'
@@ -56,6 +57,11 @@ const AlejandroSanchezMartinezRoute =
     path: '/alejandro-sanchez-martinez',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManifiestoRoute = ManifiestoRouteImport.update({
   id: '/manifiesto',
   path: '/manifiesto',
@@ -202,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
   '/mejores-podcasts-de-entrevistas-en-espanol': typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
@@ -234,6 +241,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
   '/mejores-podcasts-de-entrevistas-en-espanol': typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
@@ -267,6 +275,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
   '/mejores-podcasts-de-entrevistas-en-espanol': typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
@@ -301,6 +310,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/llms.txt'
     | '/manifiesto'
     | '/mcp'
     | '/mejores-podcasts-de-entrevistas-en-espanol'
@@ -333,6 +343,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/llms.txt'
     | '/manifiesto'
     | '/mcp'
     | '/mejores-podcasts-de-entrevistas-en-espanol'
@@ -365,6 +376,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/llms.txt'
     | '/manifiesto'
     | '/mcp'
     | '/mejores-podcasts-de-entrevistas-en-espanol'
@@ -398,6 +410,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgendaRoute: typeof AgendaRoute
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   ManifiestoRoute: typeof ManifiestoRoute
   McpRoute: typeof McpRoute
   MejoresPodcastsDeEntrevistasEnEspanolRoute: typeof MejoresPodcastsDeEntrevistasEnEspanolRoute
@@ -448,6 +461,13 @@ declare module '@tanstack/react-router' {
       path: '/alejandro-sanchez-martinez'
       fullPath: '/alejandro-sanchez-martinez'
       preLoaderRoute: typeof AlejandroSanchezMartinezRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manifiesto': {
@@ -646,6 +666,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgendaRoute: AgendaRoute,
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   ManifiestoRoute: ManifiestoRoute,
   McpRoute: McpRoute,
   MejoresPodcastsDeEntrevistasEnEspanolRoute:
