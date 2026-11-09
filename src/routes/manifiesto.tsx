@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Manifesto } from "@/components/ddp/Manifesto";
 import { useReveal } from "@/hooks/use-reveal";
-import { ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA } from "@/data/press";
+import { ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA } from "@/data/press";
 
 const Sponsors = lazy(() => import("@/components/ddp/Sponsors").then((m) => ({ default: m.Sponsors })));
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
@@ -63,6 +63,11 @@ export const Route = createFileRoute("/manifiesto")({
                 "@type": "Place",
                 name: "Madrid, España",
               },
+              homeLocation: {
+                "@type": "Place",
+                name: "Madrid, Comunidad de Madrid, España",
+                address: { "@type": "PostalAddress", addressLocality: "Madrid", addressRegion: "Comunidad de Madrid", addressCountry: "ES" },
+              },
               worksFor: { "@id": "https://eldiariodelpoder.com/#organization" },
               affiliation: [
                 { "@type": "Organization", name: "Kifaru Club" },
@@ -73,6 +78,7 @@ export const Route = createFileRoute("/manifiesto")({
                 "https://alejandrosanchezmartinez.com",
                 "https://www.linkedin.com/in/alejandrosanchezmartinez",
                 ALEJANDRO_INSTAGRAM,
+                ALEJANDRO_X,
                 ALEJANDRO_WIKIDATA,
               ],
             },

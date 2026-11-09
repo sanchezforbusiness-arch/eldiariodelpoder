@@ -1,5 +1,5 @@
 import { countryList } from "./countries";
-import { ALEJANDRO_ID, VICTOR_ID, ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA, PODCAST_WIKIDATA } from "./press";
+import { ALEJANDRO_ID, VICTOR_ID, ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA, PODCAST_WIKIDATA } from "./press";
 import { episodeList } from "./podcast";
 import { COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "./countryPage";
 
@@ -14,8 +14,12 @@ export const founderAlejandro = {
     address: { "@type": "PostalAddress", addressLocality: "A Coruña", addressRegion: "Galicia", addressCountry: "ES" },
   },
   workLocation: { "@type": "Place", name: "Madrid, España" },
+  homeLocation: {
+    "@type": "Place", name: "Madrid, Comunidad de Madrid, España",
+    address: { "@type": "PostalAddress", addressLocality: "Madrid", addressRegion: "Comunidad de Madrid", addressCountry: "ES" },
+  },
   affiliation: { "@type": "Organization", name: "Nova Talent" },
-  sameAs: ["https://alejandrosanchezmartinez.com", "https://eldiariodelpoder.com/alejandro-sanchez-martinez", "https://www.linkedin.com/in/alejandrosanchezmartinez", ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA],
+  sameAs: ["https://alejandrosanchezmartinez.com", "https://eldiariodelpoder.com/alejandro-sanchez-martinez", "https://www.linkedin.com/in/alejandrosanchezmartinez", ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA],
 };
 
 export const founderVictor = {

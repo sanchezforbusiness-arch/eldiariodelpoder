@@ -58,6 +58,7 @@ import dircomfidencialImage from "@/assets/dircomfidencial-fundadores.webp.asset
 export const ALEJANDRO_ID = "https://alejandrosanchezmartinez.com/#persona";
 export const VICTOR_ID = "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres#persona";
 export const ALEJANDRO_INSTAGRAM = "https://www.instagram.com/alejandro.sanchez.martinez/";
+export const ALEJANDRO_X = "https://x.com/ASanchezMtnez";
 export const ALEJANDRO_WIKIDATA = "https://www.wikidata.org/wiki/Q141883059";
 export const PODCAST_WIKIDATA = "https://www.wikidata.org/wiki/Q141883060";
 export const ORGANIZATION_ID = "https://eldiariodelpoder.com/#organization";

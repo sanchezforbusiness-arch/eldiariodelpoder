@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { pressArticles, type PressItem } from "@/data/press";
@@ -13,6 +13,7 @@ export type FounderProfileProps = {
   linkedin: string;
   website?: string;
   instagram?: string;
+  x?: string;
   lead: string;
   paragraphs: string[];
   facts: { label: string; value: string }[];
@@ -21,7 +22,7 @@ export type FounderProfileProps = {
   extraFaqs?: { q: string; a: ReactNode }[];
 };
 
-export function FounderProfile({ name, role, img, linkedin, website, instagram, lead, paragraphs, facts, vanguardia, vanguardiaFaq, extraFaqs }: FounderProfileProps) {
+export function FounderProfile({ name, role, img, linkedin, website, instagram, x, lead, paragraphs, facts, vanguardia, vanguardiaFaq, extraFaqs }: FounderProfileProps) {
   return (
     <div className="bg-background text-foreground page-enter">
       <Navbar />
@@ -66,6 +67,16 @@ export function FounderProfile({ name, role, img, linkedin, website, instagram, 
                   className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
                 >
                   <Instagram size={16} /> Instagram
+                </a>
+              )}
+              {x && (
+                <a
+                  href={x}
+                  target="_blank"
+                  rel="me noopener"
+                  className="inline-flex items-center gap-2 text-2xs tracking-label uppercase text-foreground hover:text-signal transition-colors"
+                >
+                  <Twitter size={16} /> X
                 </a>
               )}
             </div>

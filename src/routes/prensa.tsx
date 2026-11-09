@@ -5,7 +5,7 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { Press } from "@/components/ddp/Press";
 import { TvAppearances } from "@/components/ddp/TvAppearances";
 import { useReveal } from "@/hooks/use-reveal";
-import { pressArticles, pressPodcastSchema, pressArticleSchema, ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA } from "@/data/press";
+import { pressArticles, pressPodcastSchema, pressArticleSchema, ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA } from "@/data/press";
 import { tvAppearances, SITE_URL } from "@/data/tv";
 
 const FooterGrid = lazy(() => import("@/components/ddp/FooterGrid").then((m) => ({ default: m.FooterGrid })));
@@ -76,7 +76,7 @@ export const Route = createFileRoute("/prensa")({
               },
               about: { "@id": "https://eldiariodelpoder.com/#organization" },
               actor: [
-                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez", ALEJANDRO_INSTAGRAM, ALEJANDRO_WIKIDATA] },
+                { "@type": "Person", name: "Alejandro Sánchez Martínez", url: "https://eldiariodelpoder.com/alejandro-sanchez-martinez", sameAs: ["https://alejandrosanchezmartinez.com", "https://www.linkedin.com/in/alejandrosanchezmartinez", ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA] },
                 { "@type": "Person", name: "Víctor Hugo Gandarilla de Andrés", url: "https://eldiariodelpoder.com/victor-hugo-gandarilla-de-andres" },
               ],
             },
