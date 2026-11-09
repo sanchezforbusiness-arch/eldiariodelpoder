@@ -11,6 +11,7 @@ import fornaciariImg from "@/assets/guest-8.webp";
 import danielaAssetEp from "@/assets/guest-daniela-macarena.png.asset.json";
 import { danielaChapters, danielaQuotes, danielaFaq } from "./danielaEpisode";
 import { uribeChapters, uribeQuotes, uribeFaq } from "./uribeEpisode";
+import { querubChapters, querubQuotes, querubFaq } from "./querubEpisode";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -47,6 +48,28 @@ export type EpisodeEntry = {
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 13,
+    image: "https://i.ytimg.com/vi/e4SucwXWQ9U/maxresdefault.jpg",
+    slug: "isaac-querub-las-3-reglas-de-oro-para-triunfar-en-los-negocios",
+    youtubeId: "e4SucwXWQ9U",
+    guestSlug: "isaac-querub",
+    transcript: [],
+    guest: "Isaac Querub",
+    role: "Expresidente de la Federación de Comunidades Judías de España",
+    date: "2026-11-09",
+    duration: "52m 41s",
+    durationSeconds: 3161,
+    chapters: querubChapters,
+    quotes: querubQuotes,
+    faq: querubFaq,
+    seoTitle: "Isaac Querub: las 3 reglas de oro de los negocios | Diario del Poder",
+    seoDescription: "Entrevista a Isaac Querub, expresidente de la FCJE: de Tánger a Glencore, las 3 reglas de oro de Marc Rich, el poder, la libertad y las tres leyes.",
+    title: "Las 3 reglas de oro para triunfar en los negocios",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261109/11680189/isaac-querub-ex-lider-comunidad-judia-espanola-capacidad-hombre-contribuir-comun.html",
+    description:
+      "Isaac Querub repasa su trayectoria: de Tánger a Madrid en 1966, el Liceo Francés e ICADE, 22 años en Marc Rich y Glencore —consejero delegado a los 33—, las 3 reglas de oro de Marc Rich («Primera, las relaciones personales. Segundo, las relaciones personales y tercero, las relaciones personales»), qué es el poder, la libertad, sus mentores y las tres leyes aprobadas por unanimidad durante su presidencia de la FCJE. Conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez.",
+  },
   {
     episodeNumber: 12,
     image: "https://i.ytimg.com/vi/dtzr09bnxCc/maxresdefault.jpg",
@@ -275,6 +298,10 @@ export type GuestEntry = {
   birthPlace?: string;
   alumniOf?: { name: string; sameAs?: string };
   organization?: { id: string; name: string; url: string; foundingDate: string; sameAs: string[]; parentOrganization?: { name: string; sameAs: string[] } };
+  /** Organizaciones a las que ha estado vinculado (JSON-LD affiliation) */
+  affiliation?: { name: string; url?: string }[];
+  /** Reconocimiento descrito con precisión (JSON-LD award) */
+  award?: string;
   books?: { name: string; publisher: string; isbn: string; datePublished: string; url: string }[];
   role: string;
   bio: string;
@@ -884,11 +911,42 @@ export const guestList: GuestEntry[] = [
   {
     slug: "isaac-querub",
     name: "Isaac Querub",
+    alternateName: ["Isaac Querub Caro"],
+    birthPlace: "Tánger, Marruecos",
+    alumniOf: { name: "ICADE" },
+    affiliation: [
+      { name: "Federación de Comunidades Judías de España", url: "https://www.fcje.org/" },
+      { name: "Glencore" },
+      { name: "Yad Vashem" },
+      { name: "Universidad de Tel Aviv" },
+    ],
+    award: "Premio Príncipe de Asturias de la Concordia 2007, concedido a Yad Vashem; Isaac Querub lo recogió en su nombre",
     role: "Expresidente de la Federación de Comunidades Judías de España",
     bio: "Presidió la Federación de Comunidades Judías de España (FCJE) entre 2011 y 2020. Antes, fue consejero delegado de Glencore España durante más de dos décadas. Hoy es consejero independiente en el consejo de supervisión de Unimot.",
-    interviewStatus: "recorded",
-    summary: ["La entrevista se grabó el 7 de noviembre de 2026, conducida por Víctor Hugo Gandarilla. El episodio aún no está publicado."],
-    topics: [],
+    youtubeId: "e4SucwXWQ9U",
+    externalUrl:
+      "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261109/11680189/isaac-querub-ex-lider-comunidad-judia-espanola-capacidad-hombre-contribuir-comun.html",
+    summary: [
+      "Isaac Querub Caro nació en Tánger (Marruecos), en una familia judía sefardí, y llegó a Madrid en 1966. Estudió en el Liceo Francés de Tánger y de Madrid y cursó Derecho y Empresariales en ICADE, donde fue el único alumno judío durante cinco años.",
+      "Entró en Marc Rich, origen de Glencore, antes de los 25 años; a los 27 tenía una gran responsabilidad y era uno de los mayores accionistas, y a los 33 fue consejero delegado. Pasó 22 años en la compañía, viajando 244 días al año por países como Congo, Nigeria, Ghana o Angola, y salió por motivos de salud: «tomé la decisión dentro de una ambulancia». Hoy sigue en materias primas con participaciones en varias compañías.",
+      "Presidió la Comunidad Judía de Madrid con 39 años, Yad Vashem España y la FCJE entre 2011 y 2020, y es gobernador de la Universidad de Tel Aviv. Durante su mandato se aprobaron por unanimidad tres leyes: el antisemitismo y la negación del Holocausto en el Código Penal, el estudio obligatorio del Holocausto en la escuela y la Ley 12/2015 de nacionalidad para los descendientes de los sefardíes. Recogió en nombre de Yad Vashem el Premio Príncipe de Asturias de la Concordia 2007.",
+      "Sus mentores fueron Eduardo García de Enterría, Max Mazin y Marc Rich. Para él, el poder es «la capacidad de poder tener influencia, pero para hacer el bien».",
+    ],
+    topics: [
+      "negocios",
+      "materias primas",
+      "Glencore",
+      "comunidad judía",
+      "FCJE",
+      "liderazgo",
+    ],
+    keyIdeas: [
+      "«Primera, las relaciones personales. Segundo, las relaciones personales y tercero, las relaciones personales».",
+      "«Para Mark Rich la flexibilidad era el sinónimo de la inteligencia».",
+      "«El hombre sabio es aquel que se cae siete veces y se levanta ocho».",
+      "«La libertad, el principal patrimonio de la humanidad».",
+      "«En la vida tienes que tener un propósito».",
+    ],
   },
 ];
 

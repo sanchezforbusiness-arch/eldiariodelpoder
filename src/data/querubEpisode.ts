@@ -1,0 +1,42 @@
+// Official chapter starts and literal quotations supplied for episode 13.
+export const querubChapters = [
+  { start: 0, title: "Avance" },
+  { start: 102, title: "Bienvenida" },
+  { start: 120, title: "Tánger y la llegada a Madrid en 1966" },
+  { start: 435, title: "Liceo Francés e ICADE" },
+  { start: 560, title: "La familia y los valores" },
+  { start: 620, title: "Ser judío en Europa" },
+  { start: 750, title: "22 años en Marc Rich y Glencore" },
+  { start: 925, title: "Disciplina, foco, conocimiento y respeto" },
+  { start: 1045, title: "Salir de Glencore" },
+  { start: 1100, title: "La clave para negociar: las 3 reglas de oro" },
+  { start: 1290, title: "Fracaso y lealtad" },
+  { start: 1415, title: "¿Qué es el poder?" },
+  { start: 1530, title: "Judíos y poder: realidad y prejuicio" },
+  { start: 1880, title: "La libertad" },
+  { start: 2070, title: "Los mentores" },
+  { start: 2205, title: "Viktor Frankl y el propósito" },
+  { start: 2340, title: "La FCJE y las tres leyes" },
+  { start: 2740, title: "Premio Príncipe de Asturias y Yad Vashem" },
+  { start: 2960, title: "Propósito, precio y legado" },
+];
+export const querubQuotes = [
+  { text: "La auténtica educación, yo creo que es la que se da alrededor de una mesa.", start: 575 },
+  { text: "Nos han expulsado de muchísimos países, pero aquí seguimos.", start: 700 },
+  { text: "La disciplina, el foco, el conocimiento y el respeto, el respeto por la gente del lugar donde trabajábamos.", start: 930 },
+  { text: "Para Mark Rich la flexibilidad era el sinónimo de la inteligencia.", start: 1120 },
+  { text: "Primera, las relaciones personales. Segundo, las relaciones personales y tercero, las relaciones personales.", start: 1145 },
+  { text: "El hombre sabio es aquel que se cae siete veces y se levanta ocho.", start: 1325 },
+  { text: "Para mí personalmente es la capacidad de poder tener influencia, pero para hacer el bien.", start: 1430 },
+  { text: "Ha habido mucho más judíos pobres y que han sufrido que judíos ricos.", start: 1595 },
+  { text: "La libertad, el principal patrimonio de la humanidad.", start: 1890 },
+  { text: "En la vida tienes que tener un propósito.", start: 2280 },
+  { text: "Lo volvería a repetir a pesar de conocer el precio.", start: 3090 },
+];
+export const querubFaq = [
+  { question: "¿Quién es Isaac Querub?", answer: "Isaac Querub Caro nació en Tánger (Marruecos), en una familia judía sefardí, y llegó a Madrid en 1966. Estudió Derecho y Empresariales en ICADE. Pasó 22 años en Marc Rich, origen de Glencore, donde fue consejero delegado a los 33 años. Presidió la Comunidad Judía de Madrid, Yad Vashem España y la Federación de Comunidades Judías de España (FCJE) entre 2011 y 2020, y es gobernador de la Universidad de Tel Aviv.", start: 120 },
+  { question: "¿Qué es el poder para Isaac Querub?", answer: "«Para mí personalmente es la capacidad de poder tener influencia, pero para hacer el bien».", start: 1430 },
+  { question: "¿Cuáles son las 3 reglas de oro de Marc Rich para los negocios?", answer: "«Primera, las relaciones personales. Segundo, las relaciones personales y tercero, las relaciones personales». Añade: «Para Mark Rich la flexibilidad era el sinónimo de la inteligencia».", start: 1145 },
+  { question: "¿Qué leyes impulsó la FCJE bajo su presidencia?", answer: "Tres leyes aprobadas por unanimidad: la inclusión del antisemitismo y la negación del Holocausto en el Código Penal; el estudio obligatorio del Holocausto en el currículo escolar (de 15 a 18 años), negociado con el ministro Wert; y la Ley 12/2015, de 24 de junio, que concede la nacionalidad a los descendientes de los sefardíes expulsados en 1492 (156.000 solicitudes y unos 75.000 pasaportes, según sus datos).", start: 2340 },
+  { question: "¿Dónde se publicó la entrevista con Isaac Querub?", answer: "En el canal de YouTube de El Diario del Poder y en La Vanguardia, que la publicó el 9 de noviembre de 2026 bajo la firma de El Diario del Poder, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez: https://www.lavanguardia.com/podcast/el-diario-del-poder/20261109/11680189/isaac-querub-ex-lider-comunidad-judia-espanola-capacidad-hombre-contribuir-comun.html" },
+];
