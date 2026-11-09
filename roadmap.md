@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Centralizar advisors y crear tres fichas, conectar Federica y Nosotros, actualizar organización, llms.txt y sitemap.
+- [ ] Verificar páginas, enlaces, identidades y todas las pruebas sin publicar.
+
 - [x] Añadir Isaac Querub con foto y ficha sin episodio publicado; verificar navegador, marcado y tests sin publicar.
 
 - [x] Ocultar toda la newsletter con un único flag reversible, incluidas rutas, sitemap, llms.txt y menciones.
