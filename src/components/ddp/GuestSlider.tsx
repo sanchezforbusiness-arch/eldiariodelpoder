@@ -34,6 +34,7 @@ const SLUG_ORDER = [
   "massimiliano-squillace",
   "arturo-de-las-heras",
   "jordi-juan",
+  "isaac-querub",
 ];
 
 const bySlug = new Map(ALL_GUESTS.map((g) => [g.slug, g]));
