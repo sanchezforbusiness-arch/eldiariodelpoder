@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { Team } from "@/components/ddp/Team";
+import { advisors, advisorPersonId } from "@/data/advisors";
 import { useReveal } from "@/hooks/use-reveal";
 
 
@@ -46,6 +47,7 @@ export const Route = createFileRoute("/nosotros")({
           description:
             "Las personas detrás de Diario del Poder: fundadores, hosts y advisors. Hecho en Madrid.",
           mainEntity: { "@id": "https://eldiariodelpoder.com/#organization" },
+          mentions: advisors.map((advisor) => ({ "@id": advisorPersonId(advisor) })),
         }),
       },
       {
