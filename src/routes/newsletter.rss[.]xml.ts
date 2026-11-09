@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { disabledNewsletterResponse } from "@/data/newsletter";
 
 const SITE = "https://eldiariodelpoder.com";
 
@@ -14,6 +15,8 @@ export const Route = createFileRoute("/newsletter/rss.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const disabled = disabledNewsletterResponse("/newsletter/rss.xml");
+        if (disabled) return disabled;
         const { createPublicServerClient } = await import("@/lib/supabase-public.server");
         const supabase = createPublicServerClient();
         const { data, error } = await supabase

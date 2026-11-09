@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { disabledNewsletterResponse } from "@/data/newsletter";
 
 /** Sirve públicamente las imágenes subidas por la automatización al almacenamiento privado. */
 export const Route = createFileRoute("/newsletter/imagen/$nombre")({
   server: {
     handlers: {
       GET: async ({ params }) => {
+        const disabled = disabledNewsletterResponse("/newsletter/imagen/");
+        if (disabled) return disabled;
         const nombre = params.nombre;
         if (!/^[A-Za-z0-9._-]+$/.test(nombre)) {
           return new Response("Nombre no válido", { status: 400 });
