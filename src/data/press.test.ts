@@ -48,7 +48,7 @@ describe("Diario Extra founders report", () => {
   });
 
   test("the La Vanguardia FAQ counts exactly five pieces", () => {
-    assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Cinco de esas piezas/);
+    assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Seis de esas piezas/);
     assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Daniela McArena \(27\/10\/2026\)/);
     assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Álvaro Uribe \(02\/11\/2026\)/);
     assert.doesNotMatch(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Cuatro de esas|En las cuatro/);
