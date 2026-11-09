@@ -36,6 +36,13 @@ const advisors = [
     ln: "https://www.linkedin.com/in/federica-ilaria-fornaciari-mba",
   },
   {
+    name: "David García Núñez",
+    role: "Advisor · Comunicación & Relaciones Institucionales",
+    bio: "Director de Comunicación y Marketing del Grupo FCC. Presidente de Madrid Capital Mundial y fundador del Club Español de Directores de Relaciones Institucionales y Comunicación. Profesor en IE University. Forbes Best Dircom.",
+    img: david,
+    ln: "https://www.linkedin.com/in/dgarcian/",
+  },
+  {
     name: "Iñigo Rivero",
     role: "Advisor · M&A & Patrimonios",
     bio: "Managing Partner de Paterberg y Lejeune. Asesora a family offices, consejos y grandes patrimonios.",
@@ -48,13 +55,6 @@ const advisors = [
     bio: "CEO de Ogilvy Spain. Asesor en estrategia de marca, reputación y narrativa institucional para líderes globales.",
     img: jordiUrbea.url,
     ln: "https://www.linkedin.com/in/jordiurbea/",
-  },
-  {
-    name: "David García Núñez",
-    role: "Advisor · Comunicación & Relaciones Institucionales",
-    bio: "Director de Comunicación y Marketing del Grupo FCC. Presidente de Madrid Capital Mundial y fundador del Club Español de Directores de Relaciones Institucionales y Comunicación. Profesor en IE University. Forbes Best Dircom.",
-    img: david,
-    ln: "https://www.linkedin.com/in/dgarcian/",
   },
 ];
 
