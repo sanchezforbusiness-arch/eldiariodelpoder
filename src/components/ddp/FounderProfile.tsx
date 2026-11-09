@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Globe, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { pressArticles, type PressItem } from "@/data/press";
