@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import g8 from "@/assets/guest-8.webp";
 import inigo from "@/assets/advisor-inigo.webp";
 import jordiUrbea from "@/assets/jordi-urbea.png.asset.json";
+import david from "@/assets/advisor-david.webp";
 import alejandro from "@/assets/founder-alejandro.webp";
 import victor from "@/assets/founder-victor.webp";
 
@@ -47,6 +48,13 @@ const advisors = [
     bio: "CEO de Ogilvy Spain. Asesor en estrategia de marca, reputación y narrativa institucional para líderes globales.",
     img: jordiUrbea.url,
     ln: "https://www.linkedin.com/in/jordiurbea/",
+  },
+  {
+    name: "David García Núñez",
+    role: "Advisor · Comunicación & Relaciones Institucionales",
+    bio: "Director de Comunicación y Marketing del Grupo FCC. Presidente de Madrid Capital Mundial y fundador del Club Español de Directores de Relaciones Institucionales y Comunicación. Profesor en IE University. Forbes Best Dircom.",
+    img: david,
+    ln: "https://www.linkedin.com/in/dgarcian/",
   },
 ];
 
@@ -134,7 +142,7 @@ export function Team() {
           <span>Quienes nos guían</span>
           <span aria-hidden className="h-px flex-1 bg-border" />
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10">
           {advisors.map((m) => <Person key={m.name} m={m} />)}
         </div>
       </div>
