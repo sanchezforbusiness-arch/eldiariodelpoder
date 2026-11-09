@@ -45,7 +45,7 @@ describe("Daniela verified episode data", () => {
     assert.equal(uribe?.chapters?.length, 12);
     assert.equal(uribe?.quotes?.length, 10);
     assert.equal(uribe?.faq?.length, 5);
-    assert.equal(episodeList.length, 12);
+    assert.equal(episodeList.length, 13);
   });
   test("other ten episodes do not gain optional sections", () => {
     const others = episodeList.filter((entry) => entry.episodeNumber < 11);
@@ -85,21 +85,23 @@ describe("featured episodes of /episodios", () => {
   });
 });
 
-describe("Isaac Querub is recorded but unpublished", () => {
-  test("a guest profile exists without creating a published episode", () => {
+describe("Isaac Querub episode 13 is published", () => {
+  test("guest is no longer recorded-only and episode 13 exists", () => {
     const guest = getGuestBySlug("isaac-querub");
     assert.ok(guest);
-    assert.equal(guest.name, "Isaac Querub");
-    assert.equal(guest.interviewStatus, "recorded");
-    assert.equal(episodeList.some((ep) => ep.guestSlug === "isaac-querub"), false);
+    assert.equal(guest.interviewStatus, undefined);
+    assert.deepEqual(guest.alternateName, ["Isaac Querub Caro"]);
+    const ep = episodeList.find((e) => e.episodeNumber === 13);
+    assert.equal(ep?.slug, "isaac-querub-las-3-reglas-de-oro-para-triunfar-en-los-negocios");
+    assert.equal(ep?.youtubeId, "e4SucwXWQ9U");
+    assert.equal(ep?.durationSeconds, 3161);
+    assert.equal(ep?.chapters?.length, 19);
+    assert.equal(ep?.quotes?.length, 11);
+    assert.equal(ep?.faq?.length, 5);
+    assert.equal(episodeList.length, 13);
   });
-  test("unverified media, chapters and social profiles are absent", () => {
-    const guest = getGuestBySlug("isaac-querub");
-    assert.ok(guest);
-    assert.equal(guest.youtubeId, undefined);
-    assert.equal(guest.externalUrl, undefined);
-    assert.equal(guest.chapters, undefined);
-    assert.equal(guest.sameAs, undefined);
-    assert.deepEqual(guest.topics, []);
+  test("quotes use the corrected seconds", () => {
+    const ep = episodeList.find((e) => e.episodeNumber === 13);
+    assert.deepEqual(ep?.quotes?.map((q) => q.start), [575, 700, 930, 1120, 1145, 1325, 1430, 1595, 1890, 2280, 3090]);
   });
 });

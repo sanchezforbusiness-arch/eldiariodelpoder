@@ -143,6 +143,8 @@ export const Route = createFileRoute("/invitados/$slug")({
               ...(guest.birthPlace ? { birthPlace: { "@type": "Place", name: guest.birthPlace } } : {}),
               ...(guest.alumniOf ? { alumniOf: { "@type": "CollegeOrUniversity", ...guest.alumniOf } } : {}),
               ...(organization ? { worksFor: organization } : {}),
+              ...(guest.affiliation ? { affiliation: guest.affiliation.map((o) => ({ "@type": "Organization", ...o })) } : {}),
+              ...(guest.award ? { award: guest.award } : {}),
               jobTitle: guest.role,
               description: guest.bio,
               ...(absImg ? { image: absImg } : {}),

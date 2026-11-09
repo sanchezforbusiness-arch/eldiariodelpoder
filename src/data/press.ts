@@ -141,6 +141,10 @@ export const MCARENA_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lava
 export const MCARENA_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261027/11669209/daniela-mcarena-cofundadora-ac2ality-liderar-empresa-gente-te-admirar.html";
 
+export const QUERUB_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-isaac-querub";
+export const QUERUB_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261109/11680189/isaac-querub-ex-lider-comunidad-judia-espanola-capacidad-hombre-contribuir-comun.html";
+
 export const URIBE_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-alvaro-uribe";
 export const URIBE_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261102/11674281/alvaro-uribe-seguridad-hay-paz-seguridad-democratica.html";
@@ -169,6 +173,7 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
   "federica-fornaciari": { url: FORNACIARI_LAVANGUARDIA_URL, schemaId: FORNACIARI_LAVANGUARDIA_ID },
   "daniela-macarena": { url: MCARENA_LAVANGUARDIA_URL, schemaId: MCARENA_LAVANGUARDIA_ID },
   "alvaro-uribe": { url: URIBE_LAVANGUARDIA_URL, schemaId: URIBE_LAVANGUARDIA_ID },
+  "isaac-querub": { url: QUERUB_LAVANGUARDIA_URL, schemaId: QUERUB_LAVANGUARDIA_ID },
   "jose-carlos-gonzalez-hurtado": { url: JCGH_LAVANGUARDIA_URL, schemaId: JCGH_LAVANGUARDIA_ID },
 };
 
@@ -234,6 +239,33 @@ export const pressItems: PressItem[] = [
     extraMentions: [
       { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
       { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ],
+  },
+  {
+    outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Isaac Querub",
+    url: QUERUB_LAVANGUARDIA_URL,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Noviembre 2026 · Podcast",
+    byline: "Publicado bajo la firma de El Diario del Poder",
+    embedUrl: "https://www.youtube-nocookie.com/embed/e4SucwXWQ9U",
+    founderQuote: "explica en una entrevista con 'El Diario del Poder', conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
+    quote: "Isaac Querub, ex líder de la comunidad judía española: “El poder es la capacidad que tiene el hombre de contribuir al bien común”",
+    headline: "Isaac Querub, ex líder de la comunidad judía española: “El poder es la capacidad que tiene el hombre de contribuir al bien común”",
+    date: "2026-11-09T17:53:00+01:00",
+    summary:
+      "El ex presidente de la Federación de Comunidades Judías de España repasa su trayectoria, desde su infancia en Tánger hasta su paso por Glencore y su labor para impulsar leyes sobre el antisemitismo, el Holocausto y la nacionalidad de los sefardíes",
+    schemaId: QUERUB_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/episodios/isaac-querub-las-3-reglas-de-oro-para-triunfar-en-los-negocios",
+    extraMentions: [
+      { "@type": "Person", "@id": "https://eldiariodelpoder.com/invitados/isaac-querub#person", name: "Isaac Querub" },
+      { "@id": ALEJANDRO_ID },
+      { "@id": VICTOR_ID },
+      { "@type": "Organization", name: "Federación de Comunidades Judías de España", url: "https://www.fcje.org/" },
+      { "@type": "Organization", name: "Glencore" },
+      { "@type": "Organization", name: "Yad Vashem" },
+      { "@type": "Place", name: "Tánger" },
     ],
   },
   {
@@ -497,7 +529,7 @@ export const founderNamedArticles = (): PressItem[] => pressItems.filter((i) => 
 
 /** Respuesta compartida (FAQ visible, JSON-LD y llms.txt) sobre La Vanguardia. */
 export function vanguardiaAnswer(name: string) {
-  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder y, desde el 28/09/2026, en una sección propia, «El diario del poder». Cinco de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026), Federica Fornaciari (19/10/2026), Daniela McArena (27/10/2026) y Álvaro Uribe (02/11/2026)—. En las cinco, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
+  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder y, desde el 28/09/2026, en una sección propia, «El diario del poder». Seis de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026), Federica Fornaciari (19/10/2026), Daniela McArena (27/10/2026), Álvaro Uribe (02/11/2026) e Isaac Querub (09/11/2026)—. En las seis, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
 }
 
 export const pressArticles = pressItems.filter((i) => i.url && i.headline);
