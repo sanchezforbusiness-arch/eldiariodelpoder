@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Añadir Isaac Querub con foto y ficha sin episodio publicado; verificar navegador, marcado y tests sin publicar.
+
 - [x] Ocultar toda la newsletter con un único flag reversible, incluidas rutas, sitemap, llms.txt y menciones.
 - [x] Verificar páginas y redirecciones en navegador y ejecutar todas las pruebas, sin publicar.
 
