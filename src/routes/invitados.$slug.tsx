@@ -11,6 +11,7 @@ import {
 } from "@/data/podcast";
 import { formatDateEs } from "@/lib/utils";
 import { guestCardImageBySlug } from "@/data/guestImages";
+import { advisors, advisorPerson, advisorMembership } from "@/data/advisors";
 import { guestArticleBySlug, AGUIRRE_LAVANGUARDIA_ID, AGUIRRE_LAVANGUARDIA_URL, VICTOR_ID, ALEJANDRO_INSTAGRAM } from "@/data/press";
 
 const ALEJANDRO_SAMEAS = ["https://alejandrosanchezmartinez.com/", "https://www.linkedin.com/in/alejandrosanchezmartinez/", ALEJANDRO_INSTAGRAM];
@@ -87,6 +88,7 @@ export const Route = createFileRoute("/invitados/$slug")({
 
     const organization = guestOrganization(guest);
     const books = guestBooks(guest);
+    const advisor = advisors.find((entry) => entry.guestSlug === guest.slug);
     const clips = ep?.chapters?.length ? episodeClips(ep) : (guest.chapters ?? []).map((c, i) => ({
       "@type": "Clip",
       name: c.title,
@@ -145,6 +147,7 @@ export const Route = createFileRoute("/invitados/$slug")({
               description: guest.bio,
               ...(absImg ? { image: absImg } : {}),
               knowsAbout: guest.topics,
+              ...(advisor ? { ...advisorPerson(advisor), memberOf: advisorMembership(advisor) } : {}),
               ...(!recorded ? { subjectOf: {
                 "@type": "PodcastEpisode",
                 ...(ep ? { "@id": episodeId(ep) } : {}),
@@ -324,6 +327,14 @@ function GuestPage() {
               />
             )}
           </header>
+
+          {advisors.filter((entry) => entry.guestSlug === guest.slug).map((advisor) => (
+            <section key={advisor.slug} className="mt-12 border-t border-border pt-8">
+              <h2 className="text-xl font-medium">Advisor de Diario del Poder · {advisor.area}</h2>
+              <div className="mt-4 max-w-3xl space-y-4 text-base text-muted-foreground leading-relaxed">{advisor.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+              <Link to="/nosotros" className="tap mt-4 text-sm text-muted-foreground hover:text-signal">Consejo asesor de Diario del Poder</Link>
+            </section>
+          ))}
 
           {guest.youtubeId && (
             <section id="entrevista" className="mt-12 md:mt-16 scroll-mt-28" aria-label="Entrevista en vídeo">

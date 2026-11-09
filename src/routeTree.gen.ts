@@ -26,6 +26,7 @@ import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as AdvisorsSlugRouteImport } from './routes/advisors.$slug'
 import { Route as ArIndexRouteImport } from './routes/ar.index'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EpisodiosIndexRouteImport } from './routes/episodios.index'
@@ -133,6 +134,11 @@ const Char91DotwellKnownChar93OauthProtectedResourceRoute =
     path: '/.well-known/oauth-protected-resource',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvisorsSlugRoute = AdvisorsSlugRouteImport.update({
+  id: '/advisors/$slug',
+  path: '/advisors/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArIndexRoute = ArIndexRouteImport.update({
   id: '/ar/',
   path: '/ar/',
@@ -222,6 +228,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/advisors/$slug': typeof AdvisorsSlugRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
@@ -255,6 +262,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/advisors/$slug': typeof AdvisorsSlugRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
@@ -289,6 +297,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/advisors/$slug': typeof AdvisorsSlugRoute
   '/episodios/$slug': typeof EpisodiosSlugRoute
   '/invitados/$slug': typeof InvitadosSlugRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
@@ -324,6 +333,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
     | '/.well-known/oauth-protected-resource'
+    | '/advisors/$slug'
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/newsletter/$slug'
@@ -357,6 +367,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
     | '/.well-known/oauth-protected-resource'
+    | '/advisors/$slug'
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/newsletter/$slug'
@@ -390,6 +401,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
     | '/.well-known/oauth-protected-resource'
+    | '/advisors/$slug'
     | '/episodios/$slug'
     | '/invitados/$slug'
     | '/newsletter/$slug'
@@ -424,6 +436,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  AdvisorsSlugRoute: typeof AdvisorsSlugRoute
   EpisodiosSlugRoute: typeof EpisodiosSlugRoute
   InvitadosSlugRoute: typeof InvitadosSlugRoute
   NewsletterSlugRoute: typeof NewsletterSlugRoute
@@ -561,6 +574,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advisors/$slug': {
+      id: '/advisors/$slug'
+      path: '/advisors/$slug'
+      fullPath: '/advisors/$slug'
+      preLoaderRoute: typeof AdvisorsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ar/': {
       id: '/ar/'
       path: '/ar'
@@ -683,6 +703,7 @@ const rootRouteChildren: RootRouteChildren = {
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
+  AdvisorsSlugRoute: AdvisorsSlugRoute,
   EpisodiosSlugRoute: EpisodiosSlugRoute,
   InvitadosSlugRoute: InvitadosSlugRoute,
   NewsletterSlugRoute: NewsletterSlugRoute,

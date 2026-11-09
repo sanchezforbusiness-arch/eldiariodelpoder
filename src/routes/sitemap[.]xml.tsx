@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { episodeList, guestList } from "@/data/podcast";
 import { countryList } from "@/data/countries";
 import { NEWSLETTER_ENABLED } from "@/data/newsletter";
+import { advisors, advisorPath } from "@/data/advisors";
 
 const SITE = "https://eldiariodelpoder.com";
 
@@ -48,7 +49,8 @@ function buildSitemap(newsletter: Entry[] = []) {
     loc: `/paises/${country.slug}`,
     changefreq: "monthly", priority: "0.7", lastmod: "2026-10-31",
   }));
-  const all = [...staticPages.filter((page) => NEWSLETTER_ENABLED || page.loc !== "/newsletter"), ...episodes, ...guests, ...countries, ...(NEWSLETTER_ENABLED ? newsletter : [])];
+  const advisorPages: Entry[] = advisors.filter((advisor) => !advisor.guestSlug).map((advisor) => ({ loc: advisorPath(advisor), lastmod: "2026-11-09", changefreq: "monthly", priority: "0.7" }));
+  const all = [...staticPages.filter((page) => NEWSLETTER_ENABLED || page.loc !== "/newsletter"), ...episodes, ...guests, ...countries, ...advisorPages, ...(NEWSLETTER_ENABLED ? newsletter : [])];
 
   const body = all
     .map(

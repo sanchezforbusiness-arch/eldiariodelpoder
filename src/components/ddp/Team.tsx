@@ -1,9 +1,7 @@
 import { Globe, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import g8 from "@/assets/guest-8.webp";
-import inigo from "@/assets/advisor-inigo.webp";
-import jordiUrbea from "@/assets/jordi-urbea.png.asset.json";
-import david from "@/assets/advisor-david.webp";
+import { advisors, type AdvisorEntry } from "@/data/advisors";
+import { AdvisorLink } from "@/components/ddp/AdvisorProfile";
 import alejandro from "@/assets/founder-alejandro.webp";
 import victor from "@/assets/founder-victor.webp";
 
@@ -27,37 +25,6 @@ const founders = [
   },
 ];
 
-const advisors = [
-  {
-    name: "Federica Fornaciari",
-    role: "Advisor · Estrategia & Marca",
-    bio: "Founder de SenYours y NoBrainer Partners. Ex-Bain. Profesora en IE, IESE y Bocconi. Forbes Top 100.",
-    img: g8,
-    ln: "https://www.linkedin.com/in/federica-ilaria-fornaciari-mba",
-  },
-  {
-    name: "David García Núñez",
-    role: "Advisor · Comunicación & Relaciones Institucionales",
-    bio: "Director de Comunicación y Marketing del Grupo FCC. Presidente de Madrid Capital Mundial y fundador del Club Español de Directores de Relaciones Institucionales y Comunicación. Profesor en IE University. Forbes Best Dircom.",
-    img: david,
-    ln: "https://www.linkedin.com/in/dgarcian/",
-  },
-  {
-    name: "Iñigo Rivero",
-    role: "Advisor · M&A & Patrimonios",
-    bio: "Managing Partner de Paterberg y Lejeune. Asesora a family offices, consejos y grandes patrimonios.",
-    img: inigo,
-    ln: "https://www.linkedin.com/in/iñigo-rivero-iruretagoyena-88351b30",
-  },
-  {
-    name: "Jordi Urbea",
-    role: "Advisor · Comunicación & CEO de Ogilvy Spain",
-    bio: "CEO de Ogilvy Spain. Asesor en estrategia de marca, reputación y narrativa institucional para líderes globales.",
-    img: jordiUrbea.url,
-    ln: "https://www.linkedin.com/in/jordiurbea/",
-  },
-];
-
 function initials(name: string) {
   return name
     .split(" ")
@@ -67,9 +34,10 @@ function initials(name: string) {
     .join("");
 }
 
-function Person({ m }: { m: { name: string; role: string; bio: string; img?: string; ln: string; web?: string; to?: string } }) {
+function Person({ m, advisor }: { m: { name: string; role: string; bio: string; img?: string; ln: string; web?: string; to?: string }; advisor?: AdvisorEntry }) {
   return (
     <article className="group" itemScope itemType="https://schema.org/Person">
+      {advisor ? <AdvisorLink advisor={advisor} className="block" ><div className="relative aspect-[4/5] overflow-hidden bg-card mb-5"><img src={m.img} alt={m.name} width={512} height={640} loading="lazy" className="absolute inset-0 w-full h-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.03]" itemProp="image" /><div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" /></div></AdvisorLink> : (
       <div className="relative aspect-[4/5] overflow-hidden bg-card mb-5">
         {m.img ? (
         <img
@@ -91,10 +59,10 @@ function Person({ m }: { m: { name: string; role: string; bio: string; img?: str
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-      </div>
+      </div>)}
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="notranslate tracking-tight text-2xl md:text-lg leading-tight" translate="no" itemProp="name">{m.name}</h3>
+          <h3 className="notranslate tracking-tight text-2xl md:text-lg leading-tight" translate="no" itemProp="name">{advisor ? <AdvisorLink advisor={advisor}>{m.name}</AdvisorLink> : m.name}</h3>
           <p className="mt-1.5 text-2xs tracking-label uppercase text-foreground" itemProp="jobTitle">{m.role}</p>
         </div>
         <div className="flex items-center gap-3 mt-2">
@@ -143,7 +111,7 @@ export function Team() {
           <span aria-hidden className="h-px flex-1 bg-border" />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10">
-          {advisors.map((m) => <Person key={m.name} m={m} />)}
+          {advisors.map((m) => <Person key={m.name} m={m} advisor={m} />)}
         </div>
       </div>
     </section>

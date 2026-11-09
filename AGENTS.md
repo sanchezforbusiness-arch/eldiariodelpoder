@@ -1,5 +1,7 @@
 # Project conventions
 
+- Keep advisor identities, biographies, FAQ and memberships in src/data/advisors.ts; Team and profile schemas consume it, with Federica reusing her guest profile and existing Person ID to avoid duplicate entities.
+
 - Use GuestEntry.interviewStatus = "recorded" for recorded, unpublished interviews; keep guest profiles and discovery cards but suppress playback, interview claims and PodcastEpisode schema until publication.
 
 - Gate newsletter visibility, route availability and discovery text through src/data/newsletter.ts; serve the preserved llms.txt source through its server route so one flag restores all newsletter content.
