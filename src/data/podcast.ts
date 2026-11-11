@@ -352,6 +352,18 @@ export const guestList: GuestEntry[] = [
     ],
   },
   {
+    slug: "jordi-sevilla",
+    name: "Jordi Sevilla",
+    role: "Exministro de Administraciones Públicas",
+    bio: "Economista. Ministro de Administraciones Públicas (2004-2007) y expresidente de Red Eléctrica.",
+    interviewStatus: "recorded",
+    topics: ["política española", "economía", "administración pública", "energía", "liderazgo"],
+    summary: [
+      "Jordi Sevilla es economista y fue ministro de Administraciones Públicas entre 2004 y 2007. Después presidió Red Eléctrica.",
+      "En Diario del Poder habla de política económica, de cómo funciona el Estado por dentro y de lo que aprendió pasando del Gobierno a la empresa.",
+    ],
+  },
+  {
     slug: "guillermo-lasso",
     name: "Guillermo Lasso",
     role: "Expresidente de Ecuador",
@@ -946,6 +958,18 @@ export const guestList: GuestEntry[] = [
       "«El hombre sabio es aquel que se cae siete veces y se levanta ocho».",
       "«La libertad, el principal patrimonio de la humanidad».",
       "«En la vida tienes que tener un propósito».",
+    ],
+  },
+  {
+    slug: "federico-trillo",
+    name: "Federico Trillo",
+    role: "Exministro de Defensa",
+    bio: "Ministro de Defensa (2000-2004), expresidente del Congreso de los Diputados y exembajador de España en Reino Unido.",
+    interviewStatus: "recorded",
+    topics: ["política española", "defensa", "Congreso de los Diputados", "diplomacia", "liderazgo"],
+    summary: [
+      "Federico Trillo fue ministro de Defensa entre 2000 y 2004, presidente del Congreso de los Diputados entre 1996 y 2000 y embajador de España en Reino Unido.",
+      "En Diario del Poder habla de las decisiones de Estado, de la vida parlamentaria y de la diplomacia vista desde dentro.",
     ],
   },
 ];
