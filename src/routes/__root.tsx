@@ -7,6 +7,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } f
 import { SiteChrome } from "@/components/ddp/SiteChrome";
 import { founderAlejandro, founderVictor, podcastSeriesSchema } from "@/data/podcastSeries";
 import { localeForPath } from "@/i18n/locale";
+import { BRAND_IMAGES, BRAND_LOGO, ogImageMeta } from "@/data/siteImages";
 
 import appCss from "../styles.css?url";
 
@@ -16,7 +17,7 @@ const SITE_TITLE = "Diario del Poder — El podcast de liderazgo en español";
 const SITE_DESCRIPTION =
   "El podcast de liderazgo en español: expresidentes, CEOs y referentes en entrevistas largas. Cada lunes con La Vanguardia. Gratis en Spotify y YouTube.";
 const SITE_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
+  "https://eldiariodelpoder.com/og/ddp-portada-1200x630.jpg";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -28,7 +29,8 @@ const structuredData = {
       alternateName: ["DDP", "El Diario del Poder", "Diary of Power"],
       knowsAbout: ["Liderazgo", "Poder", "Política", "Empresa", "Medios", "Legado"],
       url: SITE_URL,
-      logo: SITE_IMAGE,
+      logo: BRAND_LOGO,
+      image: BRAND_IMAGES,
       foundingDate: "2025",
       foundingLocation: "Madrid, España",
       email: CONTACT_EMAIL,
@@ -72,6 +74,7 @@ const structuredData = {
       alternateName: ["DDP", "El Diario del Poder"],
       description: SITE_DESCRIPTION,
       publisher: { "@id": `${SITE_URL}/#organization` },
+      image: BRAND_IMAGES,
       inLanguage: "es",
       potentialAction: {
         "@type": "SearchAction",
@@ -117,13 +120,12 @@ export const Route = createRootRoute({
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "googlebot", content: "index, follow" },
       { name: "keywords", content: "Diario del Poder, El Diario del Poder, Diary of Power, podcast de liderazgo en español, podcast en español, Diary of a CEO en español, podcast de poder, podcast empresarial, podcast de política, entrevistas a expresidentes, entrevistas a CEOs" },
-      { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: "es_ES" },
       ...["es_MX", "es_AR", "es_CO", "es_CL", "es_PE", "es_US"].map((locale) => ({ property: "og:locale:alternate", content: locale })),
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      ...ogImageMeta,
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESCRIPTION },
     ],

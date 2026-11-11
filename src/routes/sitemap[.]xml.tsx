@@ -1,3 +1,6 @@
+import { ALL_OG_IMAGES } from "@/data/siteImages";
+import { guestCardImageBySlug } from "@/data/guestImages";
+import { SLUG_ORDER } from "@/components/ddp/GuestSlider";
 import { createFileRoute } from "@tanstack/react-router";
 import { episodeList, guestList } from "@/data/podcast";
 import { countryList } from "@/data/countries";
@@ -6,13 +9,16 @@ import { advisors, advisorPath } from "@/data/advisors";
 
 const SITE = "https://eldiariodelpoder.com";
 
-type Entry = { loc: string; lastmod?: string; changefreq: string; priority: string };
+type Entry = { loc: string; lastmod?: string; changefreq: string; priority: string; images?: string[] };
+const abs = (u: string) => (u.startsWith("http") ? u : `${SITE}${u.startsWith("/") ? "" : "/"}${u}`);
+const xmlEsc = (u: string) => u.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const homeImages = [...ALL_OG_IMAGES, ...SLUG_ORDER.map((s) => guestCardImageBySlug[s]).filter(Boolean).map(abs)];
 
 function buildSitemap(newsletter: Entry[] = []) {
   const staticPages: Entry[] = [
-    { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-11-09" },
-    { loc: "/en", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
-    { loc: "/ar", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
+    { loc: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-11-11", images: homeImages },
+    { loc: "/en", changefreq: "weekly", priority: "0.8", lastmod: "2026-11-11" },
+    { loc: "/ar", changefreq: "weekly", priority: "0.8", lastmod: "2026-11-11" },
     { loc: "/mejores-podcasts-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-de-entrevistas-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/podcasts-para-jovenes", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
@@ -36,6 +42,7 @@ function buildSitemap(newsletter: Entry[] = []) {
     lastmod: e.slug.startsWith("isaac-querub") ? "2026-11-09" : "2026-10-31",
     changefreq: "monthly",
     priority: "0.8",
+    images: [e.youtubeId ? `https://i.ytimg.com/vi/${e.youtubeId}/maxresdefault.jpg` : guestCardImageBySlug[e.guestSlug]].filter(Boolean).map((u) => abs(u as string)),
   }));
 
   const guests: Entry[] = guestList.map((g) => ({
@@ -43,6 +50,7 @@ function buildSitemap(newsletter: Entry[] = []) {
     ...(episodeList.some((e) => e.guestSlug === g.slug) ? { lastmod: g.slug === "isaac-querub" ? "2026-11-09" : "2026-10-31" } : {}),
     changefreq: "monthly",
     priority: "0.7",
+    images: guestCardImageBySlug[g.slug] ? [abs(guestCardImageBySlug[g.slug])] : [],
   }));
 
   const countries: Entry[] = countryList.map((country) => ({
@@ -55,11 +63,11 @@ function buildSitemap(newsletter: Entry[] = []) {
   const body = all
     .map(
       (u) =>
-        `  <url>\n    <loc>${SITE}${u.loc}</loc>\n${u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>\n` : ""}    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`,
+        `  <url>\n    <loc>${SITE}${u.loc}</loc>\n${u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>\n` : ""}    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n${(u.images ?? []).map((img) => `    <image:image>\n      <image:loc>${xmlEsc(img)}</image:loc>\n    </image:image>\n`).join("")}  </url>`,
     )
     .join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>\n`;
 }
 
 export const Route = createFileRoute("/sitemap.xml")({

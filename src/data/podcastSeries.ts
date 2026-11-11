@@ -1,3 +1,4 @@
+import { BRAND_IMAGES } from "@/data/siteImages";
 import { countryList } from "./countries";
 import { ALEJANDRO_ID, VICTOR_ID, ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA, PODCAST_WIKIDATA } from "./press";
 import { episodeList } from "./podcast";
@@ -40,7 +41,7 @@ export const podcastSeriesSchema = {
   inLanguage: "es",
   numberOfEpisodes: episodeList.length,
   genre: ["Entrevistas", "Liderazgo", "Negocios", "Política", "Sociedad"],
-  image: COUNTRY_SOCIAL_IMAGE,
+  image: BRAND_IMAGES,
   alternateName: ["El Diario del Poder", "Diary of Power"],
   countryOfOrigin: { "@type": "Country", name: "España" },
   audience: { "@type": "Audience", geographicArea: countryList.map((country) => ({ "@type": "Country", name: country.name })) },

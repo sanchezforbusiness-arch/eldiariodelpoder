@@ -2,7 +2,7 @@ import { countryList, releaseTimeIn, type CountryEntry } from "./countries";
 import { episodeList } from "./podcast";
 
 export const COUNTRY_SITE = "https://eldiariodelpoder.com";
-export const COUNTRY_SOCIAL_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
+export const COUNTRY_SOCIAL_IMAGE = "https://eldiariodelpoder.com/og/ddp-portada-1200x630.jpg";
 
 const localPodcasts: Record<string, string[]> = {
   mexico: ["Cracks Podcast", "La Cotorrisa", "Leyendas Legendarias", "Se Regalan Dudas", "Relatos de la Noche"],
