@@ -6,7 +6,7 @@ import { guestCardImageBySlug } from "@/data/guestImages";
 const ALL_GUESTS = guestList;
 
 // Orden explícito de la cinta, tal como lo define Alejandro.
-const SLUG_ORDER = [
+export const SLUG_ORDER = [
   "jose-maria-aznar",
   "guillermo-lasso",
   "alvaro-uribe",
@@ -44,7 +44,7 @@ const GUESTS = SLUG_ORDER.map((slug) => bySlug.get(slug)).filter(
 
 type Guest = (typeof GUESTS)[number];
 
-function GuestCard({ guest, className }: { guest: Guest; className: string }) {
+function GuestCard({ guest, className, duplicate = false, eager = false }: { guest: Guest; className: string; duplicate?: boolean; eager?: boolean }) {
   const { dict } = useLanding();
   const role = dict.guestRoleBySlug?.[guest.slug] ?? guest.role;
   const image = guestCardImageBySlug[guest.slug];
@@ -58,10 +58,11 @@ function GuestCard({ guest, className }: { guest: Guest; className: string }) {
         {image ? (
           <img
             src={image}
-            alt={guest.name}
+            alt={duplicate ? "" : guest.name}
+            aria-hidden={duplicate ? true : undefined}
             width={560}
             height={700}
-            loading="lazy"
+            loading={eager ? "eager" : "lazy"}
             decoding="async"
             className="absolute inset-0 h-full w-full object-cover contrast-110 transition-transform duration-700 group-hover:scale-[1.02]"
           />
@@ -89,7 +90,7 @@ function Track() {
   return (
     <div className="flex shrink-0">
       {GUESTS.map((g) => (
-        <GuestCard key={g.slug} guest={g} className="w-[220px] px-2 sm:w-[300px] sm:px-3" />
+        <GuestCard key={g.slug} guest={g} duplicate className="w-[220px] px-2 sm:w-[300px] sm:px-3" />
       ))}
     </div>
   );
@@ -109,8 +110,8 @@ export function GuestSlider() {
 
       {/* Móvil: carrusel con anclaje, sin movimiento automático */}
       <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[11vw] md:hidden">
-        {GUESTS.map((g) => (
-          <GuestCard key={g.slug} guest={g} className="w-[78vw] snap-center" />
+        {GUESTS.map((g, i) => (
+          <GuestCard key={g.slug} guest={g} eager={i < 4} className="w-[78vw] snap-center" />
         ))}
       </div>
 

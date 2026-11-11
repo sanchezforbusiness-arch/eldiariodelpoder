@@ -8,7 +8,7 @@ import { guideLinks } from "@/data/spanishPodcastsGuide";
 import { newsletterText } from "@/data/newsletter";
 
 const SITE = "https://eldiariodelpoder.com";
-const SITE_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/xgc7PGWxv9hHJojOjN9MvpZln972/social-images/social-1777472729991-PLATILLAS_PODCAST_(1).webp";
+const SITE_IMAGE = "https://eldiariodelpoder.com/og/ddp-portada-1200x630.jpg";
 const URL = `${SITE}/podcast-de-liderazgo-en-espanol`;
 const TITLE = "Podcast de liderazgo en español | Diario del Poder";
 const DESCRIPTION = "Diario del Poder es el podcast de liderazgo en español: entrevistas largas con expresidentes, CEOs y referentes, en la línea de The Diary of a CEO.";
