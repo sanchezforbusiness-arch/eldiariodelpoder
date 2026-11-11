@@ -2,7 +2,7 @@ import { BRAND_IMAGES } from "@/data/siteImages";
 import { countryList } from "./countries";
 import { ALEJANDRO_ID, VICTOR_ID, ALEJANDRO_INSTAGRAM, ALEJANDRO_X, ALEJANDRO_WIKIDATA, PODCAST_WIKIDATA } from "./press";
 import { episodeList } from "./podcast";
-import { COUNTRY_SITE, COUNTRY_SOCIAL_IMAGE } from "./countryPage";
+import { COUNTRY_SITE } from "./countryPage";
 
 export const founderAlejandro = {
   "@type": "Person",

@@ -16,8 +16,6 @@ const SITE_NAME = "Diario del Poder";
 const SITE_TITLE = "Diario del Poder — El podcast de liderazgo en español";
 const SITE_DESCRIPTION =
   "El podcast de liderazgo en español: expresidentes, CEOs y referentes en entrevistas largas. Cada lunes con La Vanguardia. Gratis en Spotify y YouTube.";
-const SITE_IMAGE =
-  "https://eldiariodelpoder.com/og/ddp-portada-1200x630.jpg";
 
 const structuredData = {
   "@context": "https://schema.org",

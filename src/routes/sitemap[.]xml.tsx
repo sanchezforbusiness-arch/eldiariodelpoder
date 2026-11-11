@@ -42,7 +42,7 @@ function buildSitemap(newsletter: Entry[] = []) {
     lastmod: e.slug.startsWith("isaac-querub") ? "2026-11-09" : "2026-10-31",
     changefreq: "monthly",
     priority: "0.8",
-    images: [e.youtubeId ? `https://i.ytimg.com/vi/${e.youtubeId}/maxresdefault.jpg` : guestCardImageBySlug[e.guestSlug]].filter(Boolean).map((u) => abs(u as string)),
+    images: [e.youtubeId ? `https://i.ytimg.com/vi/${e.youtubeId}/maxresdefault.jpg` : (e.guestSlug ? guestCardImageBySlug[e.guestSlug] : undefined)].filter(Boolean).map((u) => abs(u as string)),
   }));
 
   const guests: Entry[] = guestList.map((g) => ({
