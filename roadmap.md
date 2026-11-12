@@ -1,57 +1,16 @@
-# Roadmap
+# Roadmap — Noticias + DDP Premium
 
-- [x] Centralizar advisors y crear tres fichas, conectar Federica y Nosotros, actualizar organización, llms.txt y sitemap.
-- [x] Verificar páginas, enlaces, identidades y todas las pruebas sin publicar.
+## Hecho
+- [x] Base de datos: noticias, noticias_premium, suscripciones, premium_solicitudes, correcciones_solicitudes (RLS, límites)
+- [x] Tipografía Archivo autoalojada (public/fonts)
+- [x] 11 imágenes de sección (public/noticias/secciones)
+- [x] Datos: src/data/noticias.ts, premium.ts, correcciones.ts
 
-- [x] Añadir Isaac Querub con foto y ficha sin episodio publicado; verificar navegador, marcado y tests sin publicar.
-
-- [x] Ocultar toda la newsletter con un único flag reversible, incluidas rutas, sitemap, llms.txt y menciones.
-- [x] Verificar páginas y redirecciones en navegador y ejecutar todas las pruebas, sin publicar.
-
-- [x] Añadir capítulos, citas y FAQ del episodio 11, corregir duración y unificar identidades de episodios e invitada.
-- [x] Sustituir la cita de portada en tres idiomas, actualizar pilar, llms.txt y fechas del sitemap.
-- [x] Verificar marcado, enlaces por minuto y preservación del resto de episodios.
-
-- [x] Crear tres guías SEO/GEO con los podcasts verificados y la plantilla editorial existente.
-- [x] Ampliar FAQ de los 22 países, enlazado entre guías y grupo del pie, género de la serie, llms.txt y sitemap.
-- [x] Verificar las nuevas páginas, países, enlaces, marcado y pruebas sin publicar.
-
-- [x] Añadir el reportaje de Dircomfidencial, la FAQ de financiación y sus datos de prensa sin cambiar diseño.
-- [x] Actualizar llms.txt y fechas del sitemap; verificar las tres páginas y pruebas.
-
-- [x] Unificar los 22 países con la plantilla editorial de España, FAQ y PodcastSeries compartido sin cambiar diseño ni portadas.
-- [x] Añadir guía de mejores podcasts, enlaces de texto, sitemap y secciones internacionales de llms.txt.
-- [x] Verificar tests, HTML, JSON-LD y preservación de /, /en y /ar.
-
-- [x] Dejar solo enlaces externos al Club del Poder en menú y pie; retirar página, franja y textos de portada, y conservar CLUB_URL y CLUB_ID.
-- [x] Mantener la relación de entidades y actualizar sitemap y llms.txt; verificar ausencia de ruta interna y enlaces sin publicar.
-
-- [x] Mejorar Patrocinadores mostrando las 10 marcas colaboradoras y priorizando la reserva en /agenda.
-- [x] Añadir «Cotizadas» al modelo y renderizado de la newsletter, incluyendo sus fuentes en JSON-LD.
-- [x] Verificar ambas páginas en escritorio y móvil.
-- [x] Admitir ediciones maquetadas mediante HTML manteniendo el formato antiguo.
-- [x] Añadir entradilla a la cabecera y miniaturas al archivo de la newsletter.
-- [x] Verificar el nuevo formato de newsletter en escritorio y móvil.
-- [x] Aplicar a /newsletter un lenguaje visual propio inspirado en Clay, sin afectar al resto del sitio.
-- [x] Verificar la nueva portada y una edición en escritorio y móvil.
-- [x] Rediseñar la portada de newsletter con una dirección editorial coherente con el sitio.
-- [x] Verificar la nueva portada editorial en escritorio y móvil.
-- [x] Rediseñar y verificar la lectura de cada edición en escritorio y móvil.
-- [x] Reordenar /prensa para abrir con la galería visual y añadir la captura de La Vanguardia a la pieza de Rosa Lagarrigue.
-- [x] Añadir Instagram de Alejandro y cinco piezas de prensa con marcado de audio y verificar las fichas.
-- [x] Centralizar todos los correos en CONTACT_EMAIL.
-- [x] Crear las 22 fichas por país y el índice con los textos literales y marcado solicitado.
-- [x] Añadir enlazado, sitemap y llms.txt; verificar horarios, rutas y ausencia de correos del dominio.
-- [x] Crear solicitudes de patrocinio con validación, protección antispam y acceso solo de inserción.
-- [x] Rehacer /patrocinadores con los textos exactos y actualizar el botón de Sponsors al formulario.
-- [x] Enviar, comprobar y borrar una solicitud de prueba; verificar móvil y escritorio y estado del correo (sin mecanismo existente, no se añadió).
-- [x] Crear la guía pilar con textos literales, episodios publicados y países.
-- [x] Actualizar entidad global, FAQ compartido, enlaces, sitemap y llms.txt con su generador.
-- [x] Verificar HTML, datos estructurados, preguntas y consola en móvil y escritorio.
-- [x] Extraer el diccionario y contexto de portada conservando todos los textos y atributos.
-- [x] Componer HomeLanding y desactivar traducción automática; reservar locales para fase 2.
-- [x] Comparar portada antes/después a 390 y 1440 px y comprobar páginas interiores.
-- [x] Añadir diccionarios literales inglés, árabe y país; rutas propias y selector con enlaces reales.
-- [x] Adaptar 21 países con HomeLanding y conservar España; mantener horarios y FAQ en una instantánea.
-- [x] Añadir fuente árabe y ajustes RTL acotados; hreflang, sitemap y llms.txt.
-- [x] Verificar preservación, HTML servido, navegación y capturas a 390 y 1440 px.
+## Pendiente
+- [ ] Tokens news-* y @font-face Archivo en styles.css
+- [ ] Funciones de servidor de lectura, paywall con sesión, lista de acceso, correcciones, punto Stripe (TODO)
+- [ ] Rutas /noticias (portada, sección, noticia con 301, edición, hemeroteca, autor, tema), /premium, /cuenta
+- [ ] Páginas de confianza: /politica-editorial, /correcciones, /aviso-legal, /contacto, /redaccion
+- [ ] RSS, sitemap-news, sitemap de noticias, índice de sitemaps, robots.txt
+- [ ] Navbar, pie, bloque «Hoy en Noticias», Organization JSON-LD, llms.txt
+- [ ] Noticia de prueba no publicada, tests, verificación en navegador
