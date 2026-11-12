@@ -972,6 +972,19 @@ export const guestList: GuestEntry[] = [
       "En Diario del Poder habla de las decisiones de Estado, de la vida parlamentaria y de la diplomacia vista desde dentro.",
     ],
   },
+  {
+    slug: "jose-manuel-villarejo",
+    name: "José Manuel Villarejo",
+    role: "Excomisario del Cuerpo Nacional de Policía",
+    bio: "Comisario jubilado del Cuerpo Nacional de Policía, donde trabajó durante décadas en el ámbito de la información. Nació en El Carpio (Córdoba) en 1951.",
+    interviewStatus: "recorded",
+    birthPlace: "El Carpio, Córdoba",
+    topics: ["policía", "inteligencia", "poder", "justicia", "política española"],
+    summary: [
+      "José Manuel Villarejo es comisario jubilado del Cuerpo Nacional de Policía. Nacido en El Carpio (Córdoba) en 1951, ingresó en la Policía en los años setenta y trabajó durante décadas en el ámbito de la información.",
+      "En Diario del Poder habla de su trayectoria y de cómo se ve el poder desde los servicios de información policial.",
+    ],
+  },
 ];
 
 export const getGuestBySlug = (slug: string) => guestList.find((g) => g.slug === slug);
