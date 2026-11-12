@@ -3,6 +3,7 @@ import { useLanding } from "@/i18n/LandingContext";
 import apdLogo from "@/assets/logo-apd.png.asset.json";
 import proeducaLogo from "@/assets/logo-proeduca.png.asset.json";
 import palantirLogo from "@/assets/logo-palantir.svg";
+import ameibLogo from "@/assets/logo-ameib.png.asset.json";
 
 
 
@@ -28,6 +29,7 @@ export const BRANDS: Brand[] = [
   { name: landingEs.brands.names["Grupo PROEDUCA"], logo: proeducaLogo.url },
   { name: landingEs.brands.names["Contents.com"], domain: "contents.com" },
   { name: landingEs.brands.names["Metlabs"], domain: "metlabs.io" },
+  { name: "Asociación de Mujeres Empresarias Iberoamericanas", domain: "asociacionpachamama.org", logo: ameibLogo.url },
 ];
 
 export function BrandMark({ domain, logo, name, className = "" }: { domain?: string; logo?: string; name: string; className?: string }) {
