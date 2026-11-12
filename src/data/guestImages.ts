@@ -29,6 +29,7 @@ import alvaroUribeAsset from "@/assets/guest-alvaro-uribe.jpg.asset.json";
 import isaacAsset from "@/assets/guest-isaac-querub.webp.asset.json";
 import jordiSevillaAsset from "@/assets/guest-jordi-sevilla.jpg.asset.json";
 import federicoTrilloAsset from "@/assets/guest-federico-trillo.jpg.asset.json";
+import joseManuelVillarejoAsset from "@/assets/guest-jose-manuel-villarejo.jpg.asset.json";
 
 /** Retratos alojados de forma estable (URL absoluta válida para og:image). */
 export const guestImageBySlug: Record<string, string> = {
@@ -57,6 +58,7 @@ export const guestImageBySlug: Record<string, string> = {
   "isaac-querub": isaacAsset.url,
   "jordi-sevilla": jordiSevillaAsset.url,
   "federico-trillo": federicoTrilloAsset.url,
+  "jose-manuel-villarejo": joseManuelVillarejoAsset.url,
 };
 
 /** Retratos para las tarjetas de los carruseles (incluye los locales). */
