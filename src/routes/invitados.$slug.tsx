@@ -78,7 +78,7 @@ export const Route = createFileRoute("/invitados/$slug")({
     const recorded = guest.interviewStatus === "recorded";
     const title = `${guest.name} en Diario del Poder | ${recorded ? "Próximamente" : "Entrevista completa"}`;
     const description = recorded
-      ? `${guest.name}, ${guest.role}. Entrevista grabada el 7 de noviembre de 2026. Próximamente.`
+      ? `${guest.name}, ${guest.role}. Entrevista grabada. Próximamente.`
       : `${guest.name}, ${guest.role}. Entrevista completa, resumen, ideas clave y preguntas frecuentes en el podcast Diario del Poder: ${guest.topics.slice(0, 4).join(", ")}.`;
     const img = guestCardImageBySlug[guest.slug];
     const absImg = img ? (img.startsWith("http") ? img : `${SITE}${img}`) : undefined;
