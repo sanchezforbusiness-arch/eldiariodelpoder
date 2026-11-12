@@ -15,6 +15,13 @@
       "when": 1792278164966,
       "tag": "0001_create_solicitudes_patrocinio",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794504252406,
+      "tag": "0002_create_noticias_premium",
+      "breakpoints": true
     }
   ]
 }

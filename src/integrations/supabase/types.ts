@@ -44,6 +44,33 @@ export type Database = {
         }
         Relationships: []
       }
+      correcciones_solicitudes: {
+        Row: {
+          created_at: string | null
+          descripcion: string
+          email: string
+          id: string
+          nombre: string
+          url: string
+        }
+        Insert: {
+          created_at?: string | null
+          descripcion: string
+          email: string
+          id?: string
+          nombre: string
+          url: string
+        }
+        Update: {
+          created_at?: string | null
+          descripcion?: string
+          email?: string
+          id?: string
+          nombre?: string
+          url?: string
+        }
+        Relationships: []
+      }
       newsletter_ediciones: {
         Row: {
           contenido: Json
@@ -83,6 +110,131 @@ export type Database = {
           slug?: string
           titulo?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      noticias: {
+        Row: {
+          antetitulo: string | null
+          autor: string
+          coautor: string | null
+          created_at: string | null
+          cuerpo: string
+          destacada: boolean
+          edicion: string
+          es_premium: boolean
+          etiquetas: string[]
+          fecha_actualizacion: string
+          fecha_publicacion: string
+          fuentes: Json
+          id: string
+          imagen_alt: string | null
+          imagen_credito: string | null
+          imagen_url: string | null
+          lugar: string | null
+          prioridad: number
+          publicada: boolean
+          seccion: string
+          slug: string
+          subtitulo: string
+          tiempo_lectura: number | null
+          titular: string
+        }
+        Insert: {
+          antetitulo?: string | null
+          autor: string
+          coautor?: string | null
+          created_at?: string | null
+          cuerpo: string
+          destacada?: boolean
+          edicion?: string
+          es_premium?: boolean
+          etiquetas?: string[]
+          fecha_actualizacion?: string
+          fecha_publicacion?: string
+          fuentes?: Json
+          id?: string
+          imagen_alt?: string | null
+          imagen_credito?: string | null
+          imagen_url?: string | null
+          lugar?: string | null
+          prioridad?: number
+          publicada?: boolean
+          seccion: string
+          slug: string
+          subtitulo: string
+          tiempo_lectura?: number | null
+          titular: string
+        }
+        Update: {
+          antetitulo?: string | null
+          autor?: string
+          coautor?: string | null
+          created_at?: string | null
+          cuerpo?: string
+          destacada?: boolean
+          edicion?: string
+          es_premium?: boolean
+          etiquetas?: string[]
+          fecha_actualizacion?: string
+          fecha_publicacion?: string
+          fuentes?: Json
+          id?: string
+          imagen_alt?: string | null
+          imagen_credito?: string | null
+          imagen_url?: string | null
+          lugar?: string | null
+          prioridad?: number
+          publicada?: boolean
+          seccion?: string
+          slug?: string
+          subtitulo?: string
+          tiempo_lectura?: number | null
+          titular?: string
+        }
+        Relationships: []
+      }
+      noticias_premium: {
+        Row: {
+          cuerpo: string
+          noticia_id: string
+        }
+        Insert: {
+          cuerpo: string
+          noticia_id: string
+        }
+        Update: {
+          cuerpo?: string
+          noticia_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "noticias_premium_noticia_id_fkey"
+            columns: ["noticia_id"]
+            isOneToOne: true
+            referencedRelation: "noticias"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      premium_solicitudes: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+          plan: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+          plan?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
+          plan?: string | null
         }
         Relationships: []
       }
@@ -131,6 +283,45 @@ export type Database = {
         }
         Relationships: []
       }
+      suscripciones: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          estado: string
+          fin: string | null
+          id: string
+          inicio: string | null
+          plan: string | null
+          stripe_customer_id: string | null
+          stripe_subscription_id: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          estado?: string
+          fin?: string | null
+          id?: string
+          inicio?: string | null
+          plan?: string | null
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          estado?: string
+          fin?: string | null
+          id?: string
+          inicio?: string | null
+          plan?: string | null
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       translations: {
         Row: {
           created_at: string
@@ -163,7 +354,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      tiene_premium_activo: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
