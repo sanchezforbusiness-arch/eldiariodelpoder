@@ -3,6 +3,24 @@
 @import "tw-animate-css";
 
 @font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('/fonts/archivo-var-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('/fonts/archivo-var-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+1E00-1EFF;
+}
+
+@font-face {
   font-family: 'Inter Tight';
   font-style: normal;
   font-weight: 300 800;
@@ -54,6 +72,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-news: 'Archivo', Arial, sans-serif;
+  --color-news-paper: #FFFFFF;
+  --color-news-ink: #0E111A;
+  --color-news-muted: #5B6170;
+  --color-news-meta: #828595;
+  --color-news-rule: #E7EBEE;
+  --color-news-accent: #F04438;
+  --color-news-on-dark: #FAFAFA;
+  --text-news-body: 1.25rem;
+  --text-news-headline: 3.5rem;
+  --text-news-lead: 4.5rem;
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Newsreader", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -109,6 +138,28 @@
   --color-ochre: var(--brand-ochre);
   --color-mint: var(--brand-mint);
 }
+
+.news-surface { background: var(--color-news-paper); color: var(--color-news-ink); min-height: 100vh; }
+.news-surface h1, .news-surface h2, .news-surface h3, .news-heading {
+  font-family: var(--font-news); font-weight: 900; font-stretch: 115%;
+  font-variation-settings: 'wdth' 115; line-height: 1.05; letter-spacing: 0; text-transform: uppercase;
+}
+.news-surface .news-meta { font-family: var(--font-mono); letter-spacing: 0; }
+.news-surface .news-body { font-family: var(--font-serif); font-size: var(--text-news-body); line-height: 1.6; max-width: 680px; }
+.news-body p, .news-body ul, .news-body ol, .news-body blockquote { margin-block: 1.2em; }
+.news-body h2 { font-size: var(--text-xl); margin-block: 1.8em 0.8em; }
+.news-body h3 { font-size: var(--text-lg); margin-block: 1.5em 0.6em; }
+.news-body ul { list-style: disc; padding-left: 1.5em; }
+.news-body ol { list-style: decimal; padding-left: 1.5em; }
+.news-body blockquote { border-left: 3px solid var(--color-news-accent); padding-left: 1.2em; }
+.news-body a { text-decoration: underline; text-underline-offset: 3px; }
+.news-button { border-radius: 2px; background: var(--color-news-ink); color: var(--color-news-on-dark); min-height: 44px; white-space: normal; }
+.news-button:hover { background: var(--color-news-accent); }
+.news-input { display: block; width: 100%; border: 1px solid var(--color-news-rule); border-radius: 2px; background: var(--color-news-paper); color: var(--color-news-ink); padding: 12px; margin-top: 6px; }
+.news-premium { background: var(--color-news-ink); color: var(--color-news-on-dark); border-left: 3px solid var(--color-news-accent); padding: 3px 7px; font-size: var(--text-2xs); }
+.news-section-label { display: inline-block; transform: rotate(-1deg); border: 1px solid var(--color-news-ink); padding: 8px 14px; }
+.news-paywall-fade { height: 48px; background: linear-gradient(transparent, var(--color-news-paper)); }
+.news-lead-copy { background: var(--color-news-ink); color: var(--color-news-on-dark); }
 
 :root {
   --radius: 16px;
