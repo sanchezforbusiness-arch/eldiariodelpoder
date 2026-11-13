@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AlejandroSanchezMartinezRouteImport } from './routes/alejandro-sanchez-martinez'
+import { Route as CuentaRouteImport } from './routes/cuenta'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as McpRouteImport } from './routes/mcp'
@@ -22,6 +23,7 @@ import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as PatrocinadoresRouteImport } from './routes/patrocinadores'
 import { Route as PodcastDeLiderazgoEnEspanolRouteImport } from './routes/podcast-de-liderazgo-en-espanol'
 import { Route as PodcastsParaJovenesRouteImport } from './routes/podcasts-para-jovenes'
+import { Route as PremiumRouteImport } from './routes/premium'
 import { Route as PrensaRouteImport } from './routes/prensa'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VictorHugoGandarillaDeAndresRouteImport } from './routes/victor-hugo-gandarilla-de-andres'
@@ -37,10 +39,17 @@ import { Route as NewsletterIndexRouteImport } from './routes/newsletter.index'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
 import { Route as NewsletterFeedDotjsonRouteImport } from './routes/newsletter.feed[.]json'
 import { Route as NewsletterRssDotxmlRouteImport } from './routes/newsletter.rss[.]xml'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
+import { Route as NoticiasSeccionRouteImport } from './routes/noticias.$seccion'
+import { Route as NoticiasHemerotecaRouteImport } from './routes/noticias.hemeroteca'
 import { Route as PaisesIndexRouteImport } from './routes/paises.index'
 import { Route as PaisesSlugRouteImport } from './routes/paises.$slug'
 import { Route as ApiNewsletterPublicarRouteImport } from './routes/api/newsletter/publicar'
 import { Route as NewsletterImagenNombreRouteImport } from './routes/newsletter.imagen.$nombre'
+import { Route as NoticiasSeccionSlugRouteImport } from './routes/noticias.$seccion_.$slug'
+import { Route as NoticiasAutorSlugRouteImport } from './routes/noticias.autor.$slug'
+import { Route as NoticiasEdicionFechaRouteImport } from './routes/noticias.edicion.$fecha'
+import { Route as NoticiasTemaSlugRouteImport } from './routes/noticias.tema.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +67,11 @@ const AlejandroSanchezMartinezRoute =
     path: '/alejandro-sanchez-martinez',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CuentaRoute = CuentaRouteImport.update({
+  id: '/cuenta',
+  path: '/cuenta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
@@ -110,6 +124,11 @@ const PodcastDeLiderazgoEnEspanolRoute =
 const PodcastsParaJovenesRoute = PodcastsParaJovenesRouteImport.update({
   id: '/podcasts-para-jovenes',
   path: '/podcasts-para-jovenes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PremiumRoute = PremiumRouteImport.update({
+  id: '/premium',
+  path: '/premium',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrensaRoute = PrensaRouteImport.update({
@@ -189,6 +208,21 @@ const NewsletterRssDotxmlRoute = NewsletterRssDotxmlRouteImport.update({
   path: '/newsletter/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasSeccionRoute = NoticiasSeccionRouteImport.update({
+  id: '/noticias/$seccion',
+  path: '/noticias/$seccion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasHemerotecaRoute = NoticiasHemerotecaRouteImport.update({
+  id: '/noticias/hemeroteca',
+  path: '/noticias/hemeroteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaisesIndexRoute = PaisesIndexRouteImport.update({
   id: '/paises/',
   path: '/paises/',
@@ -209,11 +243,32 @@ const NewsletterImagenNombreRoute = NewsletterImagenNombreRouteImport.update({
   path: '/newsletter/imagen/$nombre',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NoticiasSeccionSlugRoute = NoticiasSeccionSlugRouteImport.update({
+  id: '/noticias/$seccion_/$slug',
+  path: '/noticias/$seccion/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasAutorSlugRoute = NoticiasAutorSlugRouteImport.update({
+  id: '/noticias/autor/$slug',
+  path: '/noticias/autor/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasEdicionFechaRoute = NoticiasEdicionFechaRouteImport.update({
+  id: '/noticias/edicion/$fecha',
+  path: '/noticias/edicion/$fecha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasTemaSlugRoute = NoticiasTemaSlugRouteImport.update({
+  id: '/noticias/tema/$slug',
+  path: '/noticias/tema/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/cuenta': typeof CuentaRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
@@ -224,6 +279,7 @@ export interface FileRoutesByFullPath {
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
   '/podcasts-para-jovenes': typeof PodcastsParaJovenesRoute
+  '/premium': typeof PremiumRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -234,20 +290,28 @@ export interface FileRoutesByFullPath {
   '/newsletter/$slug': typeof NewsletterSlugRoute
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
+  '/noticias/$seccion': typeof NoticiasSeccionRoute
+  '/noticias/hemeroteca': typeof NoticiasHemerotecaRoute
   '/paises/$slug': typeof PaisesSlugRoute
   '/ar/': typeof ArIndexRoute
   '/en/': typeof EnIndexRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
   '/paises/': typeof PaisesIndexRoute
   '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
   '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
+  '/noticias/$seccion/$slug': typeof NoticiasSeccionSlugRoute
+  '/noticias/autor/$slug': typeof NoticiasAutorSlugRoute
+  '/noticias/edicion/$fecha': typeof NoticiasEdicionFechaRoute
+  '/noticias/tema/$slug': typeof NoticiasTemaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/cuenta': typeof CuentaRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
@@ -258,6 +322,7 @@ export interface FileRoutesByTo {
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
   '/podcasts-para-jovenes': typeof PodcastsParaJovenesRoute
+  '/premium': typeof PremiumRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -268,21 +333,29 @@ export interface FileRoutesByTo {
   '/newsletter/$slug': typeof NewsletterSlugRoute
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
+  '/noticias/$seccion': typeof NoticiasSeccionRoute
+  '/noticias/hemeroteca': typeof NoticiasHemerotecaRoute
   '/paises/$slug': typeof PaisesSlugRoute
   '/ar': typeof ArIndexRoute
   '/en': typeof EnIndexRoute
   '/episodios': typeof EpisodiosIndexRoute
   '/invitados': typeof InvitadosIndexRoute
   '/newsletter': typeof NewsletterIndexRoute
+  '/noticias': typeof NoticiasIndexRoute
   '/paises': typeof PaisesIndexRoute
   '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
   '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
+  '/noticias/$seccion/$slug': typeof NoticiasSeccionSlugRoute
+  '/noticias/autor/$slug': typeof NoticiasAutorSlugRoute
+  '/noticias/edicion/$fecha': typeof NoticiasEdicionFechaRoute
+  '/noticias/tema/$slug': typeof NoticiasTemaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/alejandro-sanchez-martinez': typeof AlejandroSanchezMartinezRoute
+  '/cuenta': typeof CuentaRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/manifiesto': typeof ManifiestoRoute
   '/mcp': typeof McpRoute
@@ -293,6 +366,7 @@ export interface FileRoutesById {
   '/patrocinadores': typeof PatrocinadoresRoute
   '/podcast-de-liderazgo-en-espanol': typeof PodcastDeLiderazgoEnEspanolRoute
   '/podcasts-para-jovenes': typeof PodcastsParaJovenesRoute
+  '/premium': typeof PremiumRoute
   '/prensa': typeof PrensaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/victor-hugo-gandarilla-de-andres': typeof VictorHugoGandarillaDeAndresRoute
@@ -303,15 +377,22 @@ export interface FileRoutesById {
   '/newsletter/$slug': typeof NewsletterSlugRoute
   '/newsletter/feed.json': typeof NewsletterFeedDotjsonRoute
   '/newsletter/rss.xml': typeof NewsletterRssDotxmlRoute
+  '/noticias/$seccion': typeof NoticiasSeccionRoute
+  '/noticias/hemeroteca': typeof NoticiasHemerotecaRoute
   '/paises/$slug': typeof PaisesSlugRoute
   '/ar/': typeof ArIndexRoute
   '/en/': typeof EnIndexRoute
   '/episodios/': typeof EpisodiosIndexRoute
   '/invitados/': typeof InvitadosIndexRoute
   '/newsletter/': typeof NewsletterIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
   '/paises/': typeof PaisesIndexRoute
   '/api/newsletter/publicar': typeof ApiNewsletterPublicarRoute
   '/newsletter/imagen/$nombre': typeof NewsletterImagenNombreRoute
+  '/noticias/$seccion_/$slug': typeof NoticiasSeccionSlugRoute
+  '/noticias/autor/$slug': typeof NoticiasAutorSlugRoute
+  '/noticias/edicion/$fecha': typeof NoticiasEdicionFechaRoute
+  '/noticias/tema/$slug': typeof NoticiasTemaSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -319,6 +400,7 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/cuenta'
     | '/llms.txt'
     | '/manifiesto'
     | '/mcp'
@@ -329,6 +411,7 @@ export interface FileRouteTypes {
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
     | '/podcasts-para-jovenes'
+    | '/premium'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -339,20 +422,28 @@ export interface FileRouteTypes {
     | '/newsletter/$slug'
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
+    | '/noticias/$seccion'
+    | '/noticias/hemeroteca'
     | '/paises/$slug'
     | '/ar/'
     | '/en/'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
+    | '/noticias/'
     | '/paises/'
     | '/api/newsletter/publicar'
     | '/newsletter/imagen/$nombre'
+    | '/noticias/$seccion/$slug'
+    | '/noticias/autor/$slug'
+    | '/noticias/edicion/$fecha'
+    | '/noticias/tema/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/cuenta'
     | '/llms.txt'
     | '/manifiesto'
     | '/mcp'
@@ -363,6 +454,7 @@ export interface FileRouteTypes {
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
     | '/podcasts-para-jovenes'
+    | '/premium'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -373,20 +465,28 @@ export interface FileRouteTypes {
     | '/newsletter/$slug'
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
+    | '/noticias/$seccion'
+    | '/noticias/hemeroteca'
     | '/paises/$slug'
     | '/ar'
     | '/en'
     | '/episodios'
     | '/invitados'
     | '/newsletter'
+    | '/noticias'
     | '/paises'
     | '/api/newsletter/publicar'
     | '/newsletter/imagen/$nombre'
+    | '/noticias/$seccion/$slug'
+    | '/noticias/autor/$slug'
+    | '/noticias/edicion/$fecha'
+    | '/noticias/tema/$slug'
   id:
     | '__root__'
     | '/'
     | '/agenda'
     | '/alejandro-sanchez-martinez'
+    | '/cuenta'
     | '/llms.txt'
     | '/manifiesto'
     | '/mcp'
@@ -397,6 +497,7 @@ export interface FileRouteTypes {
     | '/patrocinadores'
     | '/podcast-de-liderazgo-en-espanol'
     | '/podcasts-para-jovenes'
+    | '/premium'
     | '/prensa'
     | '/sitemap.xml'
     | '/victor-hugo-gandarilla-de-andres'
@@ -407,21 +508,29 @@ export interface FileRouteTypes {
     | '/newsletter/$slug'
     | '/newsletter/feed.json'
     | '/newsletter/rss.xml'
+    | '/noticias/$seccion'
+    | '/noticias/hemeroteca'
     | '/paises/$slug'
     | '/ar/'
     | '/en/'
     | '/episodios/'
     | '/invitados/'
     | '/newsletter/'
+    | '/noticias/'
     | '/paises/'
     | '/api/newsletter/publicar'
     | '/newsletter/imagen/$nombre'
+    | '/noticias/$seccion_/$slug'
+    | '/noticias/autor/$slug'
+    | '/noticias/edicion/$fecha'
+    | '/noticias/tema/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgendaRoute: typeof AgendaRoute
   AlejandroSanchezMartinezRoute: typeof AlejandroSanchezMartinezRoute
+  CuentaRoute: typeof CuentaRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   ManifiestoRoute: typeof ManifiestoRoute
   McpRoute: typeof McpRoute
@@ -432,6 +541,7 @@ export interface RootRouteChildren {
   PatrocinadoresRoute: typeof PatrocinadoresRoute
   PodcastDeLiderazgoEnEspanolRoute: typeof PodcastDeLiderazgoEnEspanolRoute
   PodcastsParaJovenesRoute: typeof PodcastsParaJovenesRoute
+  PremiumRoute: typeof PremiumRoute
   PrensaRoute: typeof PrensaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VictorHugoGandarillaDeAndresRoute: typeof VictorHugoGandarillaDeAndresRoute
@@ -442,15 +552,22 @@ export interface RootRouteChildren {
   NewsletterSlugRoute: typeof NewsletterSlugRoute
   NewsletterFeedDotjsonRoute: typeof NewsletterFeedDotjsonRoute
   NewsletterRssDotxmlRoute: typeof NewsletterRssDotxmlRoute
+  NoticiasSeccionRoute: typeof NoticiasSeccionRoute
+  NoticiasHemerotecaRoute: typeof NoticiasHemerotecaRoute
   PaisesSlugRoute: typeof PaisesSlugRoute
   ArIndexRoute: typeof ArIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   EpisodiosIndexRoute: typeof EpisodiosIndexRoute
   InvitadosIndexRoute: typeof InvitadosIndexRoute
   NewsletterIndexRoute: typeof NewsletterIndexRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
   PaisesIndexRoute: typeof PaisesIndexRoute
   ApiNewsletterPublicarRoute: typeof ApiNewsletterPublicarRoute
   NewsletterImagenNombreRoute: typeof NewsletterImagenNombreRoute
+  NoticiasSeccionSlugRoute: typeof NoticiasSeccionSlugRoute
+  NoticiasAutorSlugRoute: typeof NoticiasAutorSlugRoute
+  NoticiasEdicionFechaRoute: typeof NoticiasEdicionFechaRoute
+  NoticiasTemaSlugRoute: typeof NoticiasTemaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -474,6 +591,13 @@ declare module '@tanstack/react-router' {
       path: '/alejandro-sanchez-martinez'
       fullPath: '/alejandro-sanchez-martinez'
       preLoaderRoute: typeof AlejandroSanchezMartinezRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cuenta': {
+      id: '/cuenta'
+      path: '/cuenta'
+      fullPath: '/cuenta'
+      preLoaderRoute: typeof CuentaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms.txt': {
@@ -544,6 +668,13 @@ declare module '@tanstack/react-router' {
       path: '/podcasts-para-jovenes'
       fullPath: '/podcasts-para-jovenes'
       preLoaderRoute: typeof PodcastsParaJovenesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/premium': {
+      id: '/premium'
+      path: '/premium'
+      fullPath: '/premium'
+      preLoaderRoute: typeof PremiumRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prensa': {
@@ -651,6 +782,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsletterRssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/$seccion': {
+      id: '/noticias/$seccion'
+      path: '/noticias/$seccion'
+      fullPath: '/noticias/$seccion'
+      preLoaderRoute: typeof NoticiasSeccionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/hemeroteca': {
+      id: '/noticias/hemeroteca'
+      path: '/noticias/hemeroteca'
+      fullPath: '/noticias/hemeroteca'
+      preLoaderRoute: typeof NoticiasHemerotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/paises/': {
       id: '/paises/'
       path: '/paises'
@@ -679,6 +831,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsletterImagenNombreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/noticias/$seccion_/$slug': {
+      id: '/noticias/$seccion_/$slug'
+      path: '/noticias/$seccion/$slug'
+      fullPath: '/noticias/$seccion/$slug'
+      preLoaderRoute: typeof NoticiasSeccionSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/autor/$slug': {
+      id: '/noticias/autor/$slug'
+      path: '/noticias/autor/$slug'
+      fullPath: '/noticias/autor/$slug'
+      preLoaderRoute: typeof NoticiasAutorSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/edicion/$fecha': {
+      id: '/noticias/edicion/$fecha'
+      path: '/noticias/edicion/$fecha'
+      fullPath: '/noticias/edicion/$fecha'
+      preLoaderRoute: typeof NoticiasEdicionFechaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/tema/$slug': {
+      id: '/noticias/tema/$slug'
+      path: '/noticias/tema/$slug'
+      fullPath: '/noticias/tema/$slug'
+      preLoaderRoute: typeof NoticiasTemaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -686,6 +866,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgendaRoute: AgendaRoute,
   AlejandroSanchezMartinezRoute: AlejandroSanchezMartinezRoute,
+  CuentaRoute: CuentaRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   ManifiestoRoute: ManifiestoRoute,
   McpRoute: McpRoute,
@@ -698,6 +879,7 @@ const rootRouteChildren: RootRouteChildren = {
   PatrocinadoresRoute: PatrocinadoresRoute,
   PodcastDeLiderazgoEnEspanolRoute: PodcastDeLiderazgoEnEspanolRoute,
   PodcastsParaJovenesRoute: PodcastsParaJovenesRoute,
+  PremiumRoute: PremiumRoute,
   PrensaRoute: PrensaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VictorHugoGandarillaDeAndresRoute: VictorHugoGandarillaDeAndresRoute,
@@ -709,15 +891,22 @@ const rootRouteChildren: RootRouteChildren = {
   NewsletterSlugRoute: NewsletterSlugRoute,
   NewsletterFeedDotjsonRoute: NewsletterFeedDotjsonRoute,
   NewsletterRssDotxmlRoute: NewsletterRssDotxmlRoute,
+  NoticiasSeccionRoute: NoticiasSeccionRoute,
+  NoticiasHemerotecaRoute: NoticiasHemerotecaRoute,
   PaisesSlugRoute: PaisesSlugRoute,
   ArIndexRoute: ArIndexRoute,
   EnIndexRoute: EnIndexRoute,
   EpisodiosIndexRoute: EpisodiosIndexRoute,
   InvitadosIndexRoute: InvitadosIndexRoute,
   NewsletterIndexRoute: NewsletterIndexRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
   PaisesIndexRoute: PaisesIndexRoute,
   ApiNewsletterPublicarRoute: ApiNewsletterPublicarRoute,
   NewsletterImagenNombreRoute: NewsletterImagenNombreRoute,
+  NoticiasSeccionSlugRoute: NoticiasSeccionSlugRoute,
+  NoticiasAutorSlugRoute: NoticiasAutorSlugRoute,
+  NoticiasEdicionFechaRoute: NoticiasEdicionFechaRoute,
+  NoticiasTemaSlugRoute: NoticiasTemaSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

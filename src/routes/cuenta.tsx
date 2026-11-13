@@ -1,0 +1,14 @@
+import {useState} from 'react';
+import {createFileRoute,useNavigate} from '@tanstack/react-router';
+import {useQuery,useQueryClient} from '@tanstack/react-query';
+import {useServerFn} from '@tanstack/react-start';
+import {supabase} from '@/integrations/supabase/client';
+import {useNewsAuth} from '@/components/news/NewsAuth';
+import {NewsLayout} from '@/components/news/NewsLayout';
+import {Button} from '@/components/ui/button';
+import {accountStatus} from '@/lib/noticias.functions';
+import {newsHead} from '@/data/noticiasHead';
+export const Route=createFileRoute('/cuenta')({head:()=>newsHead('/cuenta','Tu cuenta','Acceso por correo y estado de tu suscripción a DDP Premium.',{noindex:true}),component:Page});
+function Page(){const{user,ready}=useNewsAuth();const fetch=useServerFn(accountStatus);const queryClient=useQueryClient();const navigate=useNavigate();const[status,setStatus]=useState('');const[busy,setBusy]=useState(false);const subscription=useQuery({queryKey:['news-account',user?.id],queryFn:()=>fetch(),enabled:!!user,retry:false});
+ return <NewsLayout><div className="max-w-2xl"><h1 className="mb-8 text-2xl">Tu cuenta</h1>{!ready?<p role="status">Comprobando sesión…</p>:user?<><p className="text-sm">{user.email}</p><h2 className="mt-8 text-xl">DDP Premium</h2>{subscription.isPending?<p role="status" className="mt-4">Consultando tu suscripción…</p>:subscription.isError?<p role="alert" className="mt-4">No se pudo consultar tu suscripción. <Button onClick={()=>subscription.refetch()} className="news-button">Reintentar</Button></p>:<><p className="mt-4">{subscription.data.active?'Suscripción activa':'Sin suscripción activa'}</p><ul className="mt-4 space-y-3 text-sm">{subscription.data.subscriptions.map(s=><li key={s.id}>{s.plan} · {s.estado}{s.fin?' · Hasta '+new Date(s.fin).toLocaleDateString('es-ES'):''}</li>)}</ul></>}<Button className="news-button mt-8" onClick={async()=>{await queryClient.cancelQueries();queryClient.clear();await supabase.auth.signOut();await navigate({to:'/cuenta',replace:true});}}>Cerrar sesión</Button></>:<form onSubmit={async e=>{e.preventDefault();const f=new FormData(e.currentTarget);const email=String(f.get('email')??'').trim();setBusy(true);try{const{error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.origin+'/cuenta'}});setStatus(error?'No se pudo enviar el enlace. Inténtalo más tarde.':'Revisa tu correo para iniciar sesión.');}catch{setStatus('No se pudo enviar el enlace. Inténtalo más tarde.');}finally{setBusy(false);}}}><label className="text-sm">Correo electrónico<input type="email" name="email" required autoComplete="email" className="news-input"/></label><Button type="submit" className="news-button mt-5" disabled={busy}>{busy?'Enviando…':'Recibir enlace de acceso'}</Button></form>}{status&&<p role="status" className="mt-5 text-sm">{status}</p>}</div></NewsLayout>;
+}
