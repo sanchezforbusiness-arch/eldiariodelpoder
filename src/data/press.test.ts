@@ -8,6 +8,8 @@ import {
   DIARIO_EXTRA_URL,
   DIRCOMFIDENCIAL_URL,
   DIRCOMFIDENCIAL_ID,
+  FALCO_LAVANGUARDIA_URL,
+  QUERUB_LAVANGUARDIA_URL,
   founderNamedArticles,
   pressItems,
   pressPodcastSchema,
@@ -47,12 +49,31 @@ describe("Diario Extra founders report", () => {
     assert.deepEqual(schema?.publisher, { "@type": "NewsMediaOrganization", name: "Diario Extra (Ecuador)", areaServed: "Ecuador" });
   });
 
-  test("the La Vanguardia FAQ counts exactly six pieces", () => {
-    assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Seis de esas piezas/);
+  test("the La Vanguardia FAQ counts exactly seven pieces", () => {
+    assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Siete de esas piezas/);
     assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Daniela McArena \(27\/10\/2026\)/);
     assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Álvaro Uribe \(02\/11\/2026\)/);
-    assert.doesNotMatch(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Cinco de esas|En las cinco/);
-    assert.equal(founderNamedArticles().filter((entry) => entry.outlet === "La Vanguardia").length, 6);
+    assert.match(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Manolo Falcó \(16\/11\/2026\)/);
+    assert.doesNotMatch(vanguardiaAnswer("Alejandro Sánchez Martínez"), /Seis de esas|En las seis/);
+    assert.equal(founderNamedArticles().filter((entry) => entry.outlet === "La Vanguardia").length, 7);
+  });
+});
+
+describe("Manolo Falcó La Vanguardia article", () => {
+  test("the new article takes Querub's position immediately before it", () => {
+    assert.equal(pressItems[2]?.url, FALCO_LAVANGUARDIA_URL);
+    assert.equal(pressItems[3]?.url, QUERUB_LAVANGUARDIA_URL);
+  });
+  test("brand authorship and both founder mentions use canonical identities", () => {
+    const item = pressItems.find((i) => i.url === FALCO_LAVANGUARDIA_URL);
+    assert.ok(item);
+    const schema = pressArticleSchema(item);
+    assert.deepEqual(schema.author, { "@id": ORGANIZATION_ID });
+    assert.equal(item.authorIds, undefined);
+    assert.equal(schema.datePublished, "2026-11-16T17:54:10+01:00");
+    assert.ok(schema.mentions?.some((m) => m["@id"] === ALEJANDRO_ID));
+    assert.ok(schema.mentions?.some((m) => m["@id"] === VICTOR_ID));
+    assert.equal(item.founderQuote, "ha reflexionado sobre el poder, el liderazgo y la confianza en una entrevista con 'El Diario del Poder', conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez");
   });
 });
 
