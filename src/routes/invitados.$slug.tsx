@@ -164,12 +164,12 @@ export const Route = createFileRoute("/invitados/$slug")({
                   ? {
                       associatedMedia: {
                         "@type": "VideoObject",
-                        name: `${guest.name} en Diario del Poder`,
-                        description: guest.summary[0],
+                        name: ep?.videoTitle ?? `${guest.name} en Diario del Poder`,
+                        description: ep?.videoTitle ? ep.description : guest.summary[0],
                         embedUrl: `https://www.youtube.com/embed/${guest.youtubeId}`,
                         contentUrl: `https://www.youtube.com/watch?v=${guest.youtubeId}`,
                         thumbnailUrl: `https://i.ytimg.com/vi/${guest.youtubeId}/maxresdefault.jpg`,
-                        ...(ep?.date ? { uploadDate: ep.date } : {}),
+                        ...(ep?.videoUploadDate ?? ep?.date ? { uploadDate: ep?.videoUploadDate ?? ep?.date } : {}),
                         ...(isoDuration(ep?.duration) ? { duration: isoDuration(ep?.duration) } : {}),
                         ...(clips.length ? { hasPart: clips } : {}),
                         ...(guest.transcript?.length ? { transcript: guest.transcript.join("\n\n") } : {}),
