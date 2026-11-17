@@ -39,7 +39,7 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const episodes: Entry[] = episodeList.map((e) => ({
     loc: `/episodios/${e.slug}`,
-    lastmod: e.slug.startsWith("isaac-querub") ? "2026-11-09" : "2026-10-31",
+    ...(e.episodeNumber === 14 ? { lastmod: "2026-11-16" } : e.slug.startsWith("isaac-querub") ? { lastmod: "2026-11-09" } : {}),
     changefreq: "monthly",
     priority: "0.8",
     images: [e.youtubeId ? `https://i.ytimg.com/vi/${e.youtubeId}/maxresdefault.jpg` : (e.guestSlug ? guestCardImageBySlug[e.guestSlug] : undefined)].filter(Boolean).map((u) => abs(u as string)),
@@ -47,7 +47,7 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const guests: Entry[] = guestList.map((g) => ({
     loc: `/invitados/${g.slug}`,
-    ...(episodeList.some((e) => e.guestSlug === g.slug) ? { lastmod: g.slug === "isaac-querub" ? "2026-11-09" : "2026-10-31" } : {}),
+    ...(g.slug === "manuel-falco" ? { lastmod: "2026-11-16" } : g.slug === "isaac-querub" ? { lastmod: "2026-11-09" } : {}),
     changefreq: "monthly",
     priority: "0.7",
     images: guestCardImageBySlug[g.slug] ? [abs(guestCardImageBySlug[g.slug])] : [],

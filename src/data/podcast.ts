@@ -12,6 +12,7 @@ import danielaAssetEp from "@/assets/guest-daniela-macarena.png.asset.json";
 import { danielaChapters, danielaQuotes, danielaFaq } from "./danielaEpisode";
 import { uribeChapters, uribeQuotes, uribeFaq } from "./uribeEpisode";
 import { querubChapters, querubQuotes, querubFaq } from "./querubEpisode";
+import { falcoChapters, falcoQuotes, falcoFaq } from "./falcoEpisode";
 
 const jordiJuanImg = jordiJuanAssetEp.url;
 
@@ -45,9 +46,34 @@ export type EpisodeEntry = {
   faq?: { question: string; answer: string; start?: number }[];
   seoTitle?: string;
   seoDescription?: string;
+  videoTitle?: string;
+  videoUploadDate?: string;
 };
 
 const episodesRaw: Omit<EpisodeEntry, "n">[] = [
+  {
+    episodeNumber: 14,
+    image: "https://i.ytimg.com/vi/SOnC06oWQ0w/maxresdefault.jpg",
+    slug: "manolo-falco-como-construir-una-carrera-de-exito-sin-perder-tus-valores",
+    youtubeId: "SOnC06oWQ0w",
+    guestSlug: "manuel-falco",
+    transcript: [],
+    guest: "Manolo Falcó",
+    role: "Presidente de la Banca de Inversión y Corporativa Global de Citi",
+    date: "2026-11-16",
+    duration: "1h 00m 30s",
+    durationSeconds: 3630,
+    chapters: falcoChapters,
+    quotes: falcoQuotes,
+    faq: falcoFaq,
+    seoTitle: "Manolo Falcó: carrera de éxito y valores | Diario del Poder",
+    seoDescription: "Manolo Falcó comparte cómo tomar decisiones, construir confianza y asumir riesgos sin perder la humildad, la familia ni los valores.",
+    videoTitle: "Manolo Falcó: Cómo construir una carrera de éxito sin perder tus valores | El Diario Del Poder",
+    videoUploadDate: "2026-11-16T06:00:55-08:00",
+    title: "Cómo construir una carrera de éxito sin perder tus valores",
+    url: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261116/11685229/manolo-falco-anuncia-marcha-citi-28-anos-oportunidad-responsabilidad.html",
+    description: "Manolo Falcó comparte las lecciones que lo llevaron a liderar en la banca internacional: cómo tomar decisiones, construir confianza, asumir riesgos y alcanzar el éxito sin perder la humildad, la familia ni los valores.",
+  },
   {
     episodeNumber: 13,
     image: "https://i.ytimg.com/vi/e4SucwXWQ9U/maxresdefault.jpg",
@@ -854,20 +880,30 @@ export const guestList: GuestEntry[] = [
   },
   {
     slug: "manuel-falco",
-    name: "Manuel Falcó Girod",
-    role: "Chairman de Citigroup España · Marqués de Castel-Moncayo",
-    bio: "Banquero internacional al frente de Citi en España. Banca global, grandes decisiones financieras y responsabilidad con título nobiliario.",
+    name: "Manolo Falcó",
+    alternateName: ["Manuel Falcó y Girod", "Manuel Falcó Girod"],
+    role: "Presidente de la Banca de Inversión y Corporativa Global de Citi",
+    bio: "Presidente de la Banca de Inversión y Corporativa Global de Citi; dejará la entidad a final de 2026 tras 28 años para una nueva etapa profesional en España ligada al proyecto familiar.",
+    birthPlace: "California",
+    sameAs: ["https://es.wikipedia.org/wiki/Manuel_Falc%C3%B3_Girod", "https://www.wikidata.org/wiki/Q88587621"],
+    affiliation: [{ name: "Citi" }],
+    alumniOf: { name: "Universidad CEU San Pablo" },
+    youtubeId: "SOnC06oWQ0w",
+    externalUrl: "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261116/11685229/manolo-falco-anuncia-marcha-citi-28-anos-oportunidad-responsabilidad.html",
     topics: [
       "banca",
-      "Citigroup",
-      "finanzas internacionales",
-      "liderazgo corporativo",
-      "grandes decisiones",
+      "Citi",
+      "liderazgo",
+      "confianza",
+      "valores",
+      "Marqués de Griñón",
+      "emprendimiento",
     ],
     summary: [
-      "Manuel Falcó Girod preside Citigroup en España y es marqués de Castel-Moncayo. Su carrera une la alta banca internacional con una de las tradiciones nobiliarias más antiguas del país.",
-      "En Diario del Poder habla de cómo se toman las decisiones financieras que mueven miles de millones, del papel de la banca global en la economía real y de lo que ha cambiado el sector desde dentro.",
-      "Reflexiona también sobre liderazgo en una institución centenaria y sobre el peso de la historia personal en la manera de dirigir.",
+      "Manolo Falcó, también conocido como Manuel Falcó y Girod o Manuel Falcó Girod, nació en California y es licenciado en Administración y Dirección de Empresas por la Universidad CEU San Pablo (Madrid). Empezó en banca de inversión en SG Warburg en 1989; en 1998 entró en Schroders, cuya división de banca de inversión pasó después a Citi.",
+      "Dirigió el negocio en España y Portugal, encabezó la banca corporativa y de inversión para Europa, Oriente Medio y África y en 2018 fue nombrado codirector global. Es presidente de la Banca de Inversión y Corporativa Global de Citi y dejará la entidad a final de 2026 tras 28 años, para una nueva etapa profesional en España ligada al proyecto familiar.",
+      "Hijo de Carlos Falcó, marqués de Griñón, ha recomprado junto a sus hermanas el 100 % de la bodega Marqués de Griñón y prepara convertir El Rincón, la residencia familiar, en un negocio de eventos y hospitalidad.",
+      "En Diario del Poder comparte cómo tomar decisiones, construir confianza, asumir riesgos y alcanzar el éxito sin perder la humildad, la familia ni los valores. La entrevista, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez, se publicó en YouTube y en La Vanguardia el 16/11/2026.",
     ],
   },
   {

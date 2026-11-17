@@ -45,7 +45,7 @@ describe("Daniela verified episode data", () => {
     assert.equal(uribe?.chapters?.length, 12);
     assert.equal(uribe?.quotes?.length, 10);
     assert.equal(uribe?.faq?.length, 5);
-    assert.equal(episodeList.length, 13);
+    assert.equal(episodeList.length, 14);
   });
   test("other ten episodes do not gain optional sections", () => {
     const others = episodeList.filter((entry) => entry.episodeNumber < 11);
@@ -98,10 +98,50 @@ describe("Isaac Querub episode 13 is published", () => {
     assert.equal(ep?.chapters?.length, 19);
     assert.equal(ep?.quotes?.length, 11);
     assert.equal(ep?.faq?.length, 5);
-    assert.equal(episodeList.length, 13);
+    assert.equal(episodeList.length, 14);
   });
   test("quotes use the corrected seconds", () => {
     const ep = episodeList.find((e) => e.episodeNumber === 13);
     assert.deepEqual(ep?.quotes?.map((q) => q.start), [575, 700, 930, 1120, 1145, 1325, 1430, 1595, 1890, 2280, 3090]);
+  });
+});
+
+describe("Manolo Falcó episode 14", () => {
+  const ep = episodeList.find((e) => e.episodeNumber === 14);
+  test("episode 14 is the most recent with the verified date, video and duration", () => {
+    assert.ok(ep);
+    assert.equal(episodeList[0], ep);
+    assert.equal(ep.slug, "manolo-falco-como-construir-una-carrera-de-exito-sin-perder-tus-valores");
+    assert.equal(ep.date, "2026-11-16");
+    assert.equal(ep.youtubeId, "SOnC06oWQ0w");
+    assert.equal(ep.durationSeconds, 3630);
+    assert.equal(isoDuration(ep.duration), "PT1H0M30S");
+    assert.equal(ep.videoUploadDate, "2026-11-16T06:00:55-08:00");
+  });
+  test("the 26 official clips have exact start and end boundaries", () => {
+    assert.ok(ep);
+    const starts = [0,123,154,288,415,583,740,879,945,1102,1290,1429,1574,1645,1800,1961,2024,2143,2429,2531,2700,2750,3071,3167,3414,3534];
+    const clips = episodeClips(ep);
+    assert.deepEqual(clips.map((c) => c.startOffset), starts);
+    assert.deepEqual(clips.map((c) => c.endOffset), [...starts.slice(1),3630]);
+    assert.deepEqual(clips.map((c) => c.url), starts.map((start) => `https://www.youtube.com/watch?v=SOnC06oWQ0w&t=${start}s`));
+  });
+  test("eleven verified quotes retain their supplied seconds and five FAQ exist", () => {
+    assert.deepEqual(ep?.quotes?.map((q) => q.start), [886,898,1500,1563,532,1690,1949,2051,3297,3438,3538]);
+    assert.equal(ep?.quotes?.[0]?.text, "Es la oportunidad de hacer cosas y de hacerlas a tu manera; es una responsabilidad obviamente, porque si te equivocas es culpa tuya y no debes esconderte");
+    assert.equal(ep?.faq?.length, 5);
+  });
+  test("the existing guest identity has no birth year and only verified affiliations", () => {
+    const guest = getGuestBySlug("manuel-falco");
+    assert.ok(guest);
+    assert.equal(guest.name, "Manolo Falcó");
+    assert.deepEqual(guest.alternateName, ["Manuel Falcó y Girod", "Manuel Falcó Girod"]);
+    assert.equal(guest.birthDate, undefined);
+    assert.equal(guest.birthPlace, "California");
+    assert.deepEqual(guest.sameAs, ["https://es.wikipedia.org/wiki/Manuel_Falc%C3%B3_Girod", "https://www.wikidata.org/wiki/Q88587621"]);
+    assert.deepEqual(guest.affiliation, [{ name: "Citi" }]);
+    assert.deepEqual(guest.alumniOf, { name: "Universidad CEU San Pablo" });
+    assert.equal(guest.interviewStatus, undefined);
+    assert.equal(guest.youtubeId, "SOnC06oWQ0w");
   });
 });

@@ -94,13 +94,13 @@ export const Route = createFileRoute("/episodios/$slug")({
               ? {
                   associatedMedia: {
                     "@type": "VideoObject",
-                    name: `${ep.guest} — ${ep.title}`,
-                    description,
+                    name: ep.videoTitle ?? `${ep.guest} — ${ep.title}`,
+                    description: ep.videoTitle ? ep.description : description,
                     embedUrl: `https://www.youtube.com/embed/${ep.youtubeId}`,
                     contentUrl: `https://www.youtube.com/watch?v=${ep.youtubeId}`,
                     thumbnailUrl: `https://i.ytimg.com/vi/${ep.youtubeId}/maxresdefault.jpg`,
                     ...(isoDuration(ep.duration) ? { duration: isoDuration(ep.duration) } : {}),
-                    ...(ep.date ? { uploadDate: ep.date } : {}),
+                    ...(ep.videoUploadDate ?? ep.date ? { uploadDate: ep.videoUploadDate ?? ep.date } : {}),
                     ...(ep.chapters?.length ? { hasPart: episodeClips(ep) } : {}),
                   },
                 }

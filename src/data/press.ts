@@ -148,6 +148,10 @@ export const QUERUB_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavan
 export const QUERUB_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261109/11680189/isaac-querub-ex-lider-comunidad-judia-espanola-capacidad-hombre-contribuir-comun.html";
 
+export const FALCO_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-manolo-falco";
+export const FALCO_LAVANGUARDIA_URL =
+  "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261116/11685229/manolo-falco-anuncia-marcha-citi-28-anos-oportunidad-responsabilidad.html";
+
 export const URIBE_LAVANGUARDIA_ID = "https://eldiariodelpoder.com/prensa#lavanguardia-alvaro-uribe";
 export const URIBE_LAVANGUARDIA_URL =
   "https://www.lavanguardia.com/podcast/el-diario-del-poder/20261102/11674281/alvaro-uribe-seguridad-hay-paz-seguridad-democratica.html";
@@ -177,6 +181,7 @@ export const guestArticleBySlug: Record<string, { url: string; schemaId: string 
   "daniela-macarena": { url: MCARENA_LAVANGUARDIA_URL, schemaId: MCARENA_LAVANGUARDIA_ID },
   "alvaro-uribe": { url: URIBE_LAVANGUARDIA_URL, schemaId: URIBE_LAVANGUARDIA_ID },
   "isaac-querub": { url: QUERUB_LAVANGUARDIA_URL, schemaId: QUERUB_LAVANGUARDIA_ID },
+  "manuel-falco": { url: FALCO_LAVANGUARDIA_URL, schemaId: FALCO_LAVANGUARDIA_ID },
   "jose-carlos-gonzalez-hurtado": { url: JCGH_LAVANGUARDIA_URL, schemaId: JCGH_LAVANGUARDIA_ID },
 };
 
@@ -242,6 +247,31 @@ export const pressItems: PressItem[] = [
     extraMentions: [
       { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
       { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ],
+  },
+  {
+    outlet: "La Vanguardia",
+    context: "Publicado en La Vanguardia — Manolo Falcó",
+    url: FALCO_LAVANGUARDIA_URL,
+    kind: "print",
+    label: "Portada · Publicado en La Vanguardia",
+    dateLabel: "Noviembre 2026 · Podcast",
+    byline: "Publicado bajo la firma de El Diario del Poder",
+    embedUrl: "https://www.youtube-nocookie.com/embed/SOnC06oWQ0w",
+    founderQuote: "ha reflexionado sobre el poder, el liderazgo y la confianza en una entrevista con 'El Diario del Poder', conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez",
+    quote: "Manolo Falcó anuncia su marcha de Citi tras 28 años: “El poder es una oportunidad, pero también una responsabilidad”",
+    headline: "Manolo Falcó anuncia su marcha de Citi tras 28 años: “El poder es una oportunidad, pero también una responsabilidad”",
+    date: "2026-11-16T17:54:10+01:00",
+    summary: "El banquero ha recomprado junto a sus hermanas el 100% de la bodega Marqués de Griñón y prepara la transformación de El Rincón, la residencia familiar, en un negocio de eventos y hospitalidad",
+    schemaId: FALCO_LAVANGUARDIA_ID,
+    isBasedOn: "https://eldiariodelpoder.com/episodios/manolo-falco-como-construir-una-carrera-de-exito-sin-perder-tus-valores",
+    extraMentions: [
+      { "@type": "Person", "@id": "https://eldiariodelpoder.com/invitados/manuel-falco#person", name: "Manolo Falcó" },
+      { "@id": ALEJANDRO_ID },
+      { "@id": VICTOR_ID },
+      { "@type": "Organization", name: "Citi" },
+      { "@type": "Organization", name: "Marqués de Griñón" },
+      { "@type": "Place", name: "El Rincón" },
     ],
   },
   {
@@ -532,7 +562,7 @@ export const founderNamedArticles = (): PressItem[] => pressItems.filter((i) => 
 
 /** Respuesta compartida (FAQ visible, JSON-LD y llms.txt) sobre La Vanguardia. */
 export function vanguardiaAnswer(name: string) {
-  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder y, desde el 28/09/2026, en una sección propia, «El diario del poder». Seis de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026), Federica Fornaciari (19/10/2026), Daniela McArena (27/10/2026), Álvaro Uribe (02/11/2026) e Isaac Querub (09/11/2026)—. En las seis, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
+  return `Sí. La Vanguardia, media partner de El Diario del Poder, publica las conversaciones del podcast bajo la firma de El Diario del Poder y, desde el 28/09/2026, en una sección propia, «El diario del poder». Siete de esas piezas le nombran con los dos apellidos como entrevistador —las de Rosa Lagarrigue (22/09/2026), Esperanza Aguirre (28/09/2026), Federica Fornaciari (19/10/2026), Daniela McArena (27/10/2026), Álvaro Uribe (02/11/2026), Isaac Querub (09/11/2026) y Manolo Falcó (16/11/2026)—. En las siete, La Vanguardia les presenta como quienes conducen la entrevista: “conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez” (en la de Rosa Lagarrigue, “conducido”, referido al podcast).`;
 }
 
 export const pressArticles = pressItems.filter((i) => i.url && i.headline);
