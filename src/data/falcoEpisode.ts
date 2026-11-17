@@ -1,0 +1,51 @@
+// Official chapter starts and literal quotations supplied for episode 14.
+export const falcoChapters = [
+  { start: 0, title: "Avance del episodio" },
+  { start: 123, title: "Presentación de Manolo Falcó" },
+  { start: 154, title: "De California a liderar en la banca global" },
+  { start: 288, title: "El consejo que cambió su carrera" },
+  { start: 415, title: "La importancia de ser autosuficiente" },
+  { start: 583, title: "El legado emprendedor de su padre" },
+  { start: 740, title: "El futuro de Marqués de Griñón" },
+  { start: 879, title: "¿Qué significa realmente tener poder?" },
+  { start: 945, title: "Cómo tomar decisiones importantes" },
+  { start: 1102, title: "Consejos para construir una carrera de éxito" },
+  { start: 1290, title: "Su mayor error profesional" },
+  { start: 1429, title: "Cómo ganarse la confianza de un cliente" },
+  { start: 1574, title: "¿El dinero cambia a las personas?" },
+  { start: 1645, title: "Cómo mantener la humildad al alcanzar el éxito" },
+  { start: 1800, title: "El futuro de la banca ante la inteligencia artificial" },
+  { start: 1961, title: "Por qué las relaciones humanas serán más importantes" },
+  { start: 2024, title: "¿El líder nace o se hace?" },
+  { start: 2143, title: "Los referentes que marcaron su liderazgo" },
+  { start: 2429, title: "Los sacrificios detrás de una gran carrera" },
+  { start: 2531, title: "El consejo que se daría a los 22 años" },
+  { start: 2700, title: "Cómo asumir riesgos de forma inteligente" },
+  { start: 2750, title: "El precio de pertenecer a una familia conocida" },
+  { start: 3071, title: "La importancia de la fe" },
+  { start: 3167, title: "Familia, propósito y compromiso con España" },
+  { start: 3414, title: "Cómo superar el miedo a emprender" },
+  { start: 3534, title: "El legado que quiere dejar" },
+];
+
+export const falcoQuotes = [
+  { start: 886, text: "Es la oportunidad de hacer cosas y de hacerlas a tu manera; es una responsabilidad obviamente, porque si te equivocas es culpa tuya y no debes esconderte" },
+  { start: 898, text: "El poder sin un buen equipo no es nada; el poder sin una buena estrategia no es nada" },
+  { start: 1500, text: "Todos los banqueros tenemos fama de que en cuanto hay una operación le decimos al cliente que la haga, porque ahí hay un fee. Hay que saber decir que no" },
+  { start: 1563, text: "es un arte. No es solo una ciencia" },
+  { start: 532, text: "Muy pronto entendí que tenía que depender de mí" },
+  { start: 1690, text: "Yo nunca he pensado en lo que ganaba […] Yo lo que quería era aprender" },
+  { start: 1949, text: "te da una base increíble para hacer lo que quieras en la vida" },
+  { start: 2051, text: "Yo creo que los líderes se hacen" },
+  { start: 3297, text: "Se está despertando en mí un gran instinto empresarial" },
+  { start: 3438, text: "Yo creo que hay que lanzarse a la piscina" },
+  { start: 3538, text: "Quiero pasar como una buena persona, alguien con muchos amigos y una familia, que se acuerden un poco de mí" },
+];
+
+export const falcoFaq = [
+  { question: "¿Quién es Manolo Falcó?", answer: "Manolo Falcó, también conocido como Manuel Falcó y Girod o Manuel Falcó Girod, es presidente de la Banca de Inversión y Corporativa Global de Citi. Nació en California, es licenciado en Administración y Dirección de Empresas por la Universidad CEU San Pablo (Madrid) e hijo de Carlos Falcó, marqués de Griñón.", start: 154 },
+  { question: "¿Qué es el poder para Manolo Falcó?", answer: "«Es la oportunidad de hacer cosas y de hacerlas a tu manera; es una responsabilidad obviamente, porque si te equivocas es culpa tuya y no debes esconderte». Añade: «El poder sin un buen equipo no es nada; el poder sin una buena estrategia no es nada».", start: 886 },
+  { question: "¿Por qué deja Citi?", answer: "Dejará Citi a final de 2026, tras 28 años, para una nueva etapa profesional en España ligada al proyecto familiar." },
+  { question: "¿Qué es Marqués de Griñón y qué va a hacer con ella?", answer: "Marqués de Griñón es la bodega de la que Manolo Falcó ha recomprado junto a sus hermanas el 100 %. Además, prepara convertir El Rincón, la residencia familiar, en un negocio de eventos y hospitalidad.", start: 740 },
+  { question: "¿Dónde se publicó la entrevista?", answer: "En el canal de YouTube de El Diario del Poder y en La Vanguardia el 16/11/2026, conducida por Víctor Hugo Gandarilla de Andrés y Alejandro Sánchez Martínez: https://www.lavanguardia.com/podcast/el-diario-del-poder/20261116/11685229/manolo-falco-anuncia-marcha-citi-28-anos-oportunidad-responsabilidad.html" },
+];

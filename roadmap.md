@@ -1,5 +1,8 @@
 # Roadmap — Noticias + DDP Premium
 
+## Encargo acotado actual — Manolo Falcó
+- [ ] Episodio 14, ficha, La Vanguardia, FAQ compartida, llms y sitemap; pruebas y verificación. Noticias/Premium fuera de este encargo.
+
 ## Hecho
 - [x] Base de datos: noticias, noticias_premium, suscripciones, premium_solicitudes, correcciones_solicitudes (RLS, límites)
 - [x] Tipografía Archivo autoalojada (public/fonts)
