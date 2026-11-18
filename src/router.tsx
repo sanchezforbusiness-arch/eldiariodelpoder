@@ -1,4 +1,5 @@
 import { createRouter, useRouter, type ErrorComponentProps } from "@tanstack/react-router";
+import { QueryClient } from "@tanstack/react-query";
 import { routeTree } from "./routeTree.gen";
 
 function DefaultErrorComponent({ error, reset }: ErrorComponentProps) {
@@ -59,7 +60,7 @@ function DefaultErrorComponent({ error, reset }: ErrorComponentProps) {
 export const getRouter = () => {
   const router = createRouter({
     routeTree,
-    context: {},
+    context: { queryClient: new QueryClient() },
     scrollRestoration: true,
     defaultPreload: "intent",
     defaultPreloadStaleTime: 0,

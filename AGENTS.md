@@ -25,3 +25,5 @@
 - Keep only CLUB_URL and its derived CLUB_ID in `src/data/club.ts` so changing the club domain requires one code edit. The club has no internal page or landing band: navigation and footer use direct same-tab external anchors styled like their peers, while the home Organization retains its subOrganization reference.
 - Keep optional episode chapters, quotes and FAQ in podcast data, with literal Daniela content in danielaEpisode; use episodeSchema helpers for shared episode IDs, duration, clips and guest organization/book nodes so guest and episode pages describe the same entities without changing episodes lacking optional content.
 - Store supplied official video titles and upload timestamps as optional episode metadata, consumed by both episode and guest VideoObject nodes; absent values preserve existing behavior.
+- Declare QueryClient in root router context and instantiate it per router so news loader data infers without casts or serializing the client through beforeLoad.
+- Derive personal interview links through episodeSchema.personalInterviewUrl so editorial slug exceptions and trailing slashes stay consistent.

@@ -3,11 +3,13 @@ import { CONTACT_EMAIL } from "@/data/contact";
 import { advisorMembers } from "@/data/advisors";
 import { CLUB_URL, CLUB_ID } from "@/data/club";
 import { PODCAST_WIKIDATA } from "@/data/press";
-import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { SiteChrome } from "@/components/ddp/SiteChrome";
 import { founderAlejandro, founderVictor, podcastSeriesSchema } from "@/data/podcastSeries";
 import { localeForPath } from "@/i18n/locale";
 import { BRAND_IMAGES, BRAND_LOGO, ogImageMeta } from "@/data/siteImages";
+
+import type { QueryClient } from "@tanstack/react-query";
 
 import appCss from "../styles.css?url";
 
@@ -106,7 +108,7 @@ function NotFoundComponent() {
   );
 }
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },

@@ -2,6 +2,7 @@
 
 ## Encargo acotado actual — Manolo Falcó
 - [ ] Episodio 14, ficha, La Vanguardia, FAQ compartida, llms y sitemap; pruebas y verificación. Noticias/Premium fuera de este encargo.
+- [ ] Corregir solo los tipos pendientes; añadir Infoperiodistas y enlaces personales; verificar fechas, páginas y todas las pruebas. Noticias/Premium permanece en pausa.
 
 ## Hecho
 - [x] Base de datos: noticias, noticias_premium, suscripciones, premium_solicitudes, correcciones_solicitudes (RLS, límites)

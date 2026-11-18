@@ -8,6 +8,8 @@ import {
   DIARIO_EXTRA_URL,
   DIRCOMFIDENCIAL_URL,
   DIRCOMFIDENCIAL_ID,
+  INFOPERIODISTAS_ID,
+  INFOPERIODISTAS_URL,
   FALCO_LAVANGUARDIA_URL,
   QUERUB_LAVANGUARDIA_URL,
   founderNamedArticles,
@@ -21,7 +23,7 @@ describe("Diario Extra founders report", () => {
   const item = pressItems.find((entry) => entry.url === DIARIO_EXTRA_URL);
 
   test("it remains in the press grid after Dircomfidencial becomes featured", () => {
-    assert.equal(pressItems[1]?.url, DIARIO_EXTRA_URL);
+    assert.equal(pressItems[2]?.url, DIARIO_EXTRA_URL);
     assert.equal(Boolean(item?.featured), false);
   });
 
@@ -61,8 +63,8 @@ describe("Diario Extra founders report", () => {
 
 describe("Manolo Falcó La Vanguardia article", () => {
   test("the new article takes Querub's position immediately before it", () => {
-    assert.equal(pressItems[2]?.url, FALCO_LAVANGUARDIA_URL);
-    assert.equal(pressItems[3]?.url, QUERUB_LAVANGUARDIA_URL);
+    assert.equal(pressItems[3]?.url, FALCO_LAVANGUARDIA_URL);
+    assert.equal(pressItems[4]?.url, QUERUB_LAVANGUARDIA_URL);
   });
   test("brand authorship and both founder mentions use canonical identities", () => {
     const item = pressItems.find((i) => i.url === FALCO_LAVANGUARDIA_URL);
@@ -147,5 +149,24 @@ describe("Radio UASLP press metadata", () => {
     for (const fragment of ["17vhnK9phFjTLaeAGl3B1g", "6968857_0", "192656", "a71259234", "2814249"]) {
       assert.equal(pressItems.filter((entry) => entry.url?.includes(fragment)).length, 1);
     }
+  });
+});
+ describe("Infoperiodistas founders article", () => {
+  test("follows Dircomfidencial without displacing the featured report", () => {
+    assert.equal(pressItems[1]?.url, INFOPERIODISTAS_URL);
+    assert.equal(founderNamedArticles()[1]?.url, INFOPERIODISTAS_URL);
+    assert.equal(Boolean(pressItems[1]?.featured), false);
+  });
+  test("uses the verified identity, timestamp, organizational author and mentions", () => {
+    const item = pressItems.find(i => i.url === INFOPERIODISTAS_URL);
+    assert.ok(item);
+    const schema = pressArticleSchema(item);
+    assert.equal(schema["@id"], INFOPERIODISTAS_ID);
+    assert.equal(schema.datePublished, "2026-10-30T09:00:54+01:00");
+    assert.deepEqual(schema.author, {"@type":"Organization", name:"Infoperiodistas", url:"https://diario.infoperiodistas.info/"});
+    assert.deepEqual(schema.about, [ALEJANDRO_ID, VICTOR_ID, PODCAST_SERIES_ID, ORGANIZATION_ID].map(id => ({"@id":id})));
+    assert.equal(schema.mentions?.length, 7);
+    assert.equal(item.image, undefined);
+    assert.doesNotMatch(JSON.stringify(schema), /birthDate|licenciado|edad/);
   });
 });

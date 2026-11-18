@@ -169,6 +169,8 @@ export const DIRCOMFIDENCIAL_URL =
   "https://dircomfidencial.com/medios/dos-jovenes-impulsan-diario-del-poder-medio-para-conectar-a-las-nuevas-generaciones-con-lideres-inspiradores-20261028-0402/";
 
 export const FINANCING_QUESTION = "¿Cómo se financia El Diario del Poder?";
+export const INFOPERIODISTAS_ID = "https://eldiariodelpoder.com/prensa#infoperiodistas-fundadores";
+export const INFOPERIODISTAS_URL = "https://diario.infoperiodistas.info/dos-universitarios-impulsan-el-medio-digital-el-diario-del-poder/";
 export const FINANCING_ANSWER =
   "Con dos vías: el patrocinio tradicional y las «píldoras del poder», piezas en las que las propias marcas participan en el podcast. Sus fundadores, Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés, declararon a Dircomfidencial el 28 de octubre de 2026 que el proyecto es rentable y que el siguiente paso son entrevistas internacionales, en otros idiomas, documentales y un club para su comunidad.";
 
@@ -218,6 +220,34 @@ export const pressItems: PressItem[] = [
       { "@type": "Person", name: "Federica Fornaciari", "@id": "https://eldiariodelpoder.com/invitados/federica-fornaciari#person" },
       { "@type": "Person", name: "Íñigo Rivero" },
       { "@type": "Person", name: "Jordi Urbea" },
+      { "@type": "CollegeOrUniversity", name: "Universidad de Navarra" },
+      { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
+    ],
+  },
+  {
+    outlet: "Infoperiodistas",
+    context: "Artículo sobre los fundadores — Medios",
+    url: INFOPERIODISTAS_URL,
+    kind: "digital",
+    label: "Portada · Artículo sobre los fundadores",
+    dateLabel: "Octubre 2026 · Medios",
+    byline: "Infoperiodistas · Sección Medios",
+    quote: "Dos universitarios impulsan el medio digital 'El Diario del Poder'",
+    headline: "Dos universitarios impulsan el medio digital 'El Diario del Poder'",
+    date: "2026-10-30T09:00:54+01:00",
+    summary: "Alejandro Sánchez y Víctor Hugo Gandarilla desarrollan un proyecto de entrevistas a personalidades de la política, la empresa y el deporte.",
+    schemaDescription: "Artículo sobre El Diario del Poder y sus dos impulsores, Alejandro Sánchez Martínez y Víctor Hugo Gandarilla de Andrés: cómo nació el proyecto, sus entrevistas y el acuerdo de colaboración con La Vanguardia.",
+    schemaId: INFOPERIODISTAS_ID,
+    founderQuote: "Alejandro Sánchez Martínez y Víctor Hugo Gandarilla",
+    externalAuthor: { name: "Infoperiodistas", url: "https://diario.infoperiodistas.info/", type: "Organization" },
+    publisherAreaServed: "España",
+    aboutIds: [ALEJANDRO_ID, VICTOR_ID, PODCAST_SERIES_ID, ORGANIZATION_ID],
+    extraMentions: [
+      { "@type": "Person", name: "José María Aznar", jobTitle: "Expresidente del Gobierno de España" },
+      { "@type": "Person", name: "Álvaro Uribe", jobTitle: "Expresidente de Colombia" },
+      { "@type": "Person", name: "Guillermo Lasso", jobTitle: "Expresidente de Ecuador" },
+      { "@type": "Person", name: "Javier Tebas" },
+      { "@type": "Organization", name: "LaLiga" },
       { "@type": "CollegeOrUniversity", name: "Universidad de Navarra" },
       { "@type": "NewsMediaOrganization", name: "La Vanguardia", url: "https://www.lavanguardia.com/" },
     ],

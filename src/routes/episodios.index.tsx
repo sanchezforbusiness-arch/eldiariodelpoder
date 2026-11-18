@@ -78,6 +78,7 @@ function EpisodiosPage() {
             decisiones difíciles y legado. Disponible en YouTube y Spotify.
           </p>
           <p className="mt-4 text-sm text-muted-foreground">¿Qué es Diario del Poder? <Link to="/podcast-de-liderazgo-en-espanol" className="link-rule">Lee la guía.</Link></p>
+          <p className="mt-5 text-2xs leading-relaxed text-muted-foreground"><a href="https://alejandrosanchezmartinez.com/entrevistas/" className="underline decoration-border underline-offset-2 hover:text-foreground hover:decoration-foreground">Todas las entrevistas en alejandrosanchezmartinez.com</a></p>
         </header>
         <Episodes />
  <section className="container-ddp py-12 md:py-24 border-t border-border">

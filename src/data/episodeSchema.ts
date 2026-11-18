@@ -39,3 +39,9 @@ export function guestBooks(guest: GuestEntry) {
     author: { "@id": guestId(guest.slug) }, publisher: { "@type": "Organization", name: book.publisher },
     isbn: book.isbn, datePublished: book.datePublished, url: book.url }));
 }
+/** Canonical personal-site interview paths, including the two editorial slug exceptions. */
+export function personalInterviewUrl(guestSlug?: string) {
+  if (!guestSlug) return undefined;
+  const slug = guestSlug === "manuel-falco" ? "manolo-falco" : guestSlug === "daniela-macarena" ? "daniela-mcarena" : guestSlug;
+  return `https://alejandrosanchezmartinez.com/entrevistas/${slug}/`;
+}

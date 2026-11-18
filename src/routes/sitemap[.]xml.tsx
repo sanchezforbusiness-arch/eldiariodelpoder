@@ -24,22 +24,22 @@ function buildSitemap(newsletter: Entry[] = []) {
     { loc: "/podcasts-para-jovenes", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/mejores-podcasts-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-10-31" },
     { loc: "/podcast-de-liderazgo-en-espanol", changefreq: "monthly", priority: "0.9", lastmod: "2026-11-02" },
-    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-11-09" },
+    { loc: "/episodios", changefreq: "weekly", priority: "0.9", lastmod: "2026-11-17" },
     { loc: "/invitados", changefreq: "weekly", priority: "0.9", lastmod: "2026-11-09" },
     { loc: "/newsletter", changefreq: "daily", priority: "0.9" },
     { loc: "/paises", changefreq: "weekly", priority: "0.8", lastmod: "2026-10-31" },
     { loc: "/nosotros", changefreq: "monthly", priority: "0.8" },
     { loc: "/manifiesto", changefreq: "monthly", priority: "0.7" },
-    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-09" },
+    { loc: "/prensa", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-17" },
     { loc: "/patrocinadores", changefreq: "monthly", priority: "0.7" },
     { loc: "/agenda", changefreq: "monthly", priority: "0.6" },
-    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-09" },
-    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-09" },
+    { loc: "/alejandro-sanchez-martinez", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-17" },
+    { loc: "/victor-hugo-gandarilla-de-andres", changefreq: "monthly", priority: "0.8", lastmod: "2026-11-17" },
   ];
 
   const episodes: Entry[] = episodeList.map((e) => ({
     loc: `/episodios/${e.slug}`,
-    ...(e.episodeNumber === 14 ? { lastmod: "2026-11-16" } : e.slug.startsWith("isaac-querub") ? { lastmod: "2026-11-09" } : {}),
+    ...(e.episodeNumber === 14 ? { lastmod: "2026-11-16" } : e.slug.startsWith("isaac-querub") ? { lastmod: "2026-11-09" } : { lastmod: "2026-11-17" }),
     changefreq: "monthly",
     priority: "0.8",
     images: [e.youtubeId ? `https://i.ytimg.com/vi/${e.youtubeId}/maxresdefault.jpg` : (e.guestSlug ? guestCardImageBySlug[e.guestSlug] : undefined)].filter(Boolean).map((u) => abs(u as string)),
@@ -47,7 +47,7 @@ function buildSitemap(newsletter: Entry[] = []) {
 
   const guests: Entry[] = guestList.map((g) => ({
     loc: `/invitados/${g.slug}`,
-    ...(g.slug === "manuel-falco" ? { lastmod: "2026-11-16" } : g.slug === "isaac-querub" ? { lastmod: "2026-11-09" } : {}),
+    ...(g.slug === "manuel-falco" ? { lastmod: "2026-11-16" } : g.slug === "isaac-querub" ? { lastmod: "2026-11-09" } : { lastmod: "2026-10-31" }),
     changefreq: "monthly",
     priority: "0.7",
     images: guestCardImageBySlug[g.slug] ? [abs(guestCardImageBySlug[g.slug])] : [],

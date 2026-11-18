@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import assert from "node:assert/strict";
 import { episodeList, getGuestBySlug, FEATURED_EPISODE_SLUGS, featuredEpisodes } from "./podcast";
-import { episodeClips, episodeId, guestId, isoDuration, guestOrganization, guestBooks } from "./episodeSchema";
+import { episodeClips, episodeId, guestId, isoDuration, guestOrganization, guestBooks, personalInterviewUrl } from "./episodeSchema";
 
 describe("Daniela verified episode data", () => {
   const ep = episodeList.find((entry) => entry.episodeNumber === 11);
@@ -144,4 +144,11 @@ describe("Manolo Falcó episode 14", () => {
     assert.equal(guest.interviewStatus, undefined);
     assert.equal(guest.youtubeId, "SOnC06oWQ0w");
   });
+});
+
+describe("personal interview links", () => {
+  test("uses the guest slug with a trailing slash", () => {assert.equal(personalInterviewUrl("isaac-querub"), "https://alejandrosanchezmartinez.com/entrevistas/isaac-querub/");});
+  test("Falcó uses manolo-falco", () => {assert.equal(personalInterviewUrl("manuel-falco"), "https://alejandrosanchezmartinez.com/entrevistas/manolo-falco/");});
+  test("Daniela uses daniela-mcarena", () => {assert.equal(personalInterviewUrl("daniela-macarena"), "https://alejandrosanchezmartinez.com/entrevistas/daniela-mcarena/");});
+  test("no guest means no personal link", () => {assert.equal(personalInterviewUrl(), undefined);});
 });

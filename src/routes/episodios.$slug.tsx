@@ -3,10 +3,10 @@ import { Navbar } from "@/components/ddp/Navbar";
 import { FooterGrid } from "@/components/ddp/FooterGrid";
 import { Masthead } from "@/components/ddp/Masthead";
 import { formatDateEs } from "@/lib/utils";
-import { getEpisodeBySlug, getGuestBySlug, formatTimecode, type EpisodeEntry } from "@/data/podcast";
+import { getEpisodeBySlug, getGuestBySlug, formatTimecode } from "@/data/podcast";
 import { guestArticleBySlug, pressItems, ALEJANDRO_ID, VICTOR_ID } from "@/data/press";
 
-import { SITE, isoDuration, episodeId, guestId, episodeClips, episodeHeading, timestampUrl } from "@/data/episodeSchema";
+import { SITE, isoDuration, episodeId, guestId, episodeClips, episodeHeading, timestampUrl, personalInterviewUrl } from "@/data/episodeSchema";
 const SPOTIFY = "https://open.spotify.com/show/4Yu7OTX95y3IZPQ23nTSKJ";
 
 export const Route = createFileRoute("/episodios/$slug")({
@@ -133,7 +133,7 @@ function EpisodeNotFound() {
 }
 
 function EpisodePage() {
-  const { episode: ep } = Route.useLoaderData() as { episode: EpisodeEntry };
+  const { episode: ep } = Route.useLoaderData();
   const guest = ep.guestSlug ? getGuestBySlug(ep.guestSlug) : undefined;
 
   return (
@@ -237,6 +237,7 @@ function EpisodePage() {
                 <a className="btn-outline" href={ep.url} target="_blank" rel="noopener noreferrer">Leer la entrevista en La Vanguardia</a>
               )}
             </div>
+            {ep.guestSlug && <p className="mt-5 text-2xs leading-relaxed text-muted-foreground"><a href={personalInterviewUrl(ep.guestSlug)} className="underline decoration-border underline-offset-2 hover:text-foreground hover:decoration-foreground">Esta entrevista en la web de Alejandro Sánchez Martínez</a></p>}
           </section>
 
           {ep.chapters?.length && ep.youtubeId ? (
